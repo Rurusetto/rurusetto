@@ -1,6 +1,6 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "osu! ruleset"
 theme = "hugo-cards"
 paginate = 6
 

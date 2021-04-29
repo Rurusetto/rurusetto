@@ -1,7 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
+// <link rel="stylesheet" href="https://use.typekit.net/cnm5kka.css"
+@import url("https://use.typekit.net/cnm5kka.css");
 
 // Our variables
 $base-font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+// $base-font-family: all-round-gothic, "Helvetica Neue", Helvetica, Arial, sans-serif;
 $base-font-size:   16px;
 $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
@@ -11,7 +14,7 @@ $spacing-unit:     30px;
 
 $text-color:       #111;
 $background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+$brand-color:      #ff66aa;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);

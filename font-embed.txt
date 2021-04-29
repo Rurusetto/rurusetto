@@ -1,0 +1,88 @@
+All Round Gothic XLig Oblique
+
+font-family: all-round-gothic, sans-serif;
+
+font-weight: 200;
+
+font-style: italic;
+
+
+All Round Gothic XLig
+
+font-family: all-round-gothic, sans-serif;
+
+font-weight: 200;
+
+font-style: normal;
+
+
+All Round Gothic Book
+
+font-family: all-round-gothic, sans-serif;
+
+font-weight: 400;
+
+font-style: normal;
+
+
+All Round Gothic Book Oblique
+
+font-family: all-round-gothic, sans-serif;
+
+font-weight: 400;
+
+font-style: italic;
+
+
+All Round Gothic Medium
+
+font-family: all-round-gothic, sans-serif;
+
+font-weight: 500;
+
+font-style: normal;
+
+
+All Round Gothic Medium Oblique
+
+font-family: all-round-gothic, sans-serif;
+
+font-weight: 500;
+
+font-style: italic;
+
+
+All Round Gothic Demi
+
+font-family: all-round-gothic, sans-serif;
+
+font-weight: 600;
+
+font-style: normal;
+
+
+All Round Gothic Demi Oblique
+
+font-family: all-round-gothic, sans-serif;
+
+font-weight: 600;
+
+font-style: italic;
+
+
+All Round Gothic Bold
+
+font-family: all-round-gothic, sans-serif;
+
+font-weight: 700;
+
+font-style: normal;
+
+
+All Round Gothic Bold Oblique
+
+font-family: all-round-gothic, sans-serif;
+
+font-weight: 700;
+
+font-style: italic;

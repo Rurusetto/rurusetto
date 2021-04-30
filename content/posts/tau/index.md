@@ -23,6 +23,7 @@ Tau is a custom ruleset surrounding a paddle and some notes. Based idea from [pi
 # gameplay
 
 Tau's gameplay revolves around a paddle which is moved around a circle with the mouse. In the circle, there are different types of notes trying to escape it. The player has to move the paddle to block these notes, then hit them using keyboard keys.
+You can see all note types in [Tau gameplay note types wiki](https://github.com/Altenhh/tau/wiki/Note-types).
 
 # controls
 

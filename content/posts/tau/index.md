@@ -43,14 +43,17 @@ Tau can play on both tablet or mouse with keyboard. Use the pointer to move a pa
 
 - ![Easy Icon](mod-icon/easy-mod.png) Easy
   - Larger hit area, more forgiving HP drain, less acuracy required, and three lives!
+    - Make a game easier by increase paddle size, less HP drain, less acuracy required and 3x of max health.
   - Score Multiplier: 0.50x
 
 - ![No Fail Icon](mod-icon/no-fail-mod.png) No Fail
   - You can't fail, no matter what.
+    - Make it impossoble to fail.
   - Score Multiplier: 0.50x
 
 - ![Half Time Icon](mod-icon/half-time-mod.png) Half Time
   - Less Zoom...
+    - Decreases speed .75x.
   - Score Multiplier: 0.30x
   - Click the icon again will be *Daycore Mod* : Whoaaaaa...
 
@@ -62,16 +65,21 @@ Tau can play on both tablet or mouse with keyboard. Use the pointer to move a pa
 
 - ![Sudden Death Icon](mod-icon/sudden-death-mod.png) Sudden Death
   - Miss and fail.
+    - If you miss, you fail.
 
 - ![Double Time Icon](mod-icon/double-time-mod.png) Double Time
   - Zoooooooooom...
+    - Increased speed 1.50x.
   - Score Multiplier: 1.12x
   - Click the icon again will be `Nightcore Mod` : Uguuuuuuuu...
+    - Increases speed 1.50x and raises audio pitch.
 
 - ![Flashlight Icon](mod-icon/flashlight-mod.png) Flashlight
   - Restricted view area
+    - You can see only around the pointer.
   - Score Multiplier: 1.12x
   - Click the icon again will be `Blinds Mod` : Play with blind on your screen
+    - Two doors on the playfield will make you cannot see the note.
 
 ### automation
 
@@ -80,6 +88,7 @@ Tau can play on both tablet or mouse with keyboard. Use the pointer to move a pa
 
 - ![Relax Icon](mod-icon/relax-mod.png) Relax
   - You don't need to click. Give your clicking/tapping fingers a break from the heat of things.
+    - Just move a paddle.
 
 ### conversion
 
@@ -91,8 +100,10 @@ Tau can play on both tablet or mouse with keyboard. Use the pointer to move a pa
 
 - ![Wind Up Icon](mod-icon/wind-up-mod.png) Wind Up
   - Can you keep up?
+    - Slowly increases speed from 1.00x to 1.50x throughout the map and raises the pitch alongside the speed.
   - The song speed will be getting faster and faster
   - Click the icon again will be `Wind Down Mod` : Slooow doooown...
+    - Slowly decreases speed from 1.00x to 0.75x throughout the map and lowers the pitch alongside the speed.
 
 # settings
 

@@ -2,11 +2,10 @@
 layout: page
 title: ruleset status
 permalink: /status/
+img: None
 ---
 
 Last Update : 
-
-### Icon Description
 
 ✅ = Everything work. Can play
 
@@ -19,6 +18,6 @@ Last Update :
 {{< table "table table-striped" >}}
 | Rulesets  | Status | Download |
 |---------|--------|--------|
-| [Sentakki](/posts/sentakki)  | ✅  | [⬇️ 2021.416.0](https://github.com/LumpBloom7/sentakki/releases/download/2021.416.0/osu.Game.Rulesets.Sentakki.dll)
+| [sentakki](/posts/sentakki)  | ✅  | [⬇️2021.416.0](https://github.com/LumpBloom7/sentakki/releases/download/2021.416.0/osu.Game.Rulesets.Sentakki.dll) |
 
 {{</ table >}}

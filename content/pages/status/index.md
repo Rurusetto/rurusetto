@@ -5,7 +5,7 @@ permalink: /status/
 img: None
 ---
 
-Last Update : April 30, 2021 08:20 UTC
+Last Update : April 30, 2021 13:06 UTC
 
 ✅ = Everything work. Can play normally.
 

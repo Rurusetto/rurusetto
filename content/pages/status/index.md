@@ -5,13 +5,13 @@ permalink: /status/
 img: None
 ---
 
-Last Update : 
+Last Update : April 30, 2021 08:20 UTC
 
-✅ = Everything work. Can play
+✅ = Everything work. Can play normally.
 
 ⚠️ = Can import but not work sometimes
 
-❌ = Cannot import
+❌ = Import error
 
 <!-- Use table style from https://discourse.gohugo.io/t/how-to-customise-tables/15661 -->
 
@@ -19,5 +19,6 @@ Last Update :
 | Rulesets  | Status | Download |
 |---------|--------|--------|
 | [sentakki](/posts/sentakki)  | ✅  | [⬇️2021.416.0](https://github.com/LumpBloom7/sentakki/releases/download/2021.416.0/osu.Game.Rulesets.Sentakki.dll) |
+| [tau](/posts/tau)  | ✅  | [⬇️2021.416.0](https://github.com/Altenhh/tau/releases/download/2021.416.0/osu.Game.Rulesets.Tau.dll) |
 
 {{</ table >}}

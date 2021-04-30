@@ -37,7 +37,6 @@ Sentakki is primarily designed for touch screen. However you can play it normall
   - Less Zoom...
   - Score Multiplier: 0.30x
   - Click the icon again will be *Daycore Mod* : Whoaaaaa...
-  - You can increase or decrease speed by slider.
 
 - ![No Fail Icon](mod-icon/no-fail-mod.png) No Fail
   - You can't fail, no matter what.
@@ -64,7 +63,7 @@ Sentakki is primarily designed for touch screen. However you can play it normall
 ### automation
 
 - ![Autoplay Icon](mod-icon/autoplay-mod.png) Autoplay
-  - Watch the automated play through the song.
+  - Watch a perfect automated play through the song.
 
 - ![Auto Touch Icon](mod-icon/auto-touch-mod.png) Auto Touch
   - Focused on the laned notes. Touch screen notes will be completed automatically.
@@ -81,7 +80,7 @@ Sentakki is primarily designed for touch screen. However you can play it normall
 - ![Wind Up Icon](mod-icon/wind-up-mod.png) Wind Up
   - Can you keep up?
   - The song speed will be getting faster and faster
-  - Click the icon again will be `Perfect Mod` : Slooow doooown...
+  - Click the icon again will be `Wind Down Mod` : Slooow doooown...
 
 - ![Spin Icon](mod-icon/spin-mod.png) Spin
   - Replicate the true washing machine experience.

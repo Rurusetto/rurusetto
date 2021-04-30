@@ -29,7 +29,18 @@ Mainly is player need to tap notes as they intersect the ring. Sentakki have mai
 
 Sentakki is primarily designed for touch screen. However you can play it normally on desktop too. If you play on touch screen you can enable experiment mod to try multiple note.
 
-<!-- TODO: Default key like osu -->
+### default setting
+
+- Button 1 - `Z` `M1`
+- Button 2 - `X` `M2`
+- Key 1 - 1
+- Key 2 - 2
+- Key 3 - 3
+- Key 4 - 4
+- Key 5 - 5
+- Key 6 - 6
+- Key 7 - 7
+- Key 8 - 8
 
 # mods
 
@@ -39,7 +50,7 @@ Sentakki is primarily designed for touch screen. However you can play it normall
   - Less Zoom...
     - Decreases speed .75x.
   - Score Multiplier: 0.30x
-  - Click the icon again will be *Daycore Mod* : Whoaaaaa...
+  - Click the icon again for `Daycore Mod` : Whoaaaaa...
     - Decreases speed .75x and lowers audio pitch.
 
 - ![No Fail Icon](mod-icon/no-fail-mod.png) No Fail
@@ -66,7 +77,7 @@ Sentakki is primarily designed for touch screen. However you can play it normall
   - Zoooooooooom...
     - Increased speed 1.50x.
   - Score Multiplier: 1.12x
-  - Click the icon again will be `Nightcore Mod` : Uguuuuuuuu...
+  - Click the icon again for `Nightcore Mod` : Uguuuuuuuu...
     - Increases speed 1.50x and raises audio pitch.
 
 ### automation

@@ -2,13 +2,13 @@
     <div class="container">
         <div class="row p20">
             {{ with .Site.Params.copyright }}
-                <div class="col-md-4 text-center mt25">All rights reserved by <a target="_blank" href="{{ .link }}">{{ .name }}</a></div>
+                <div class="col-md-4 text-center mt25">Made with ❤️ by <a target="_blank" href="{{ .link }}">{{ .name }}</a></div>
             {{ end }}
 
             <div class="col-md-4 text-center mt25" >
-                {{ with .Site.Params.builtBy }}
+                <!-- {{ with .Site.Params.builtBy }}
                 <a target="_blank" href="https://bool.netlify.com"><img src="https://img.shields.io/badge/Built%20by-bool-brightgreen.svg" alt="{{.}}"></a>
-                {{ end }}
+                {{ end }} -->
             </div>
             <div class="col-md-4 text-center mt25">
                {{ with .Site.Params.facebook }}

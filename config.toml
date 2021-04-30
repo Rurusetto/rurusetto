@@ -5,13 +5,13 @@ theme = "hugo-cards"
 paginate = 6
 
 [params]
-  builtBy = "bool"
+  builtBy = "HelloYeew"
   defaultImage = "default.jpg"
 
   facebook = ""
   quora = ""
-  twitter = "http://twitter.com/bul_ikana"
-  github = "http://github.com/bul-ikana"
+  twitter = ""
+  github = "http://github.com/HelloYeew/osu-ruleset-pages"
   email = ""
 
   fbLikeBox = ""
@@ -25,5 +25,5 @@ paginate = 6
   custom_css = ["css/custom.css"]
 
   [params.copyright]
-     name = "bool"
-     link = "https://bool.netlify.com"
+     name = "HelloYeew"
+     link = "https://helloyeew.dev"

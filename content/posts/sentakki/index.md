@@ -1,16 +1,18 @@
 ---
-title: "Sentakki"
+title: "sentakki"
 draft: true
 img: "sentakki-logo.png"
+date: 2021-04-17
 summary: "A custom ruleset based on Sega&rsquo;s arcade rhythm game maimai"
 ---
 
-# Status
+# status
 
 - Status : Work in progress but playable
-- Last Update : 2021.416.0 (17 Mar)
+- Last Update : 2021.416.0
+- Can import and play without error : Yes
 
-# Overview
+# overview
 
 - Creator : [Bloom](https://github.com/LumpBloom7)
 - Availability : Available publicly
@@ -20,17 +22,17 @@ summary: "A custom ruleset based on Sega&rsquo;s arcade rhythm game maimai"
 
 Sentakki is a custom ruleset based on Sega's arcade rhythm game maimai. The ruleset is developed by Bloom.
 
-# Gameplay
+# gameplay
 
 Mainly is player need to tap notes as they intersect the ring. Sentakki have mainly 6 different note types. You can see all note types detail [here](https://github.com/LumpBloom7/sentakki/wiki/Note-types).
 
-# Controls
+# controls
 
-Sentakki is primarily designed for touch screen. However you can play it normally on desktop to. If you play on touch screen you can enable experiment mod to try multiple note.
+Sentakki is primarily designed for touch screen. However you can play it normally on desktop too. If you play on touch screen you can enable experiment mod to try multiple note.
 
-# Mods
+# mods
 
-### Difficulty Reduction
+### difficulty reduction
 
 - ![Half Time Icon](mod-icon/half-time-mod.png) Half Time
   - Less Zoom...
@@ -42,7 +44,7 @@ Sentakki is primarily designed for touch screen. However you can play it normall
   - You can't fail, no matter what.
   - Score Multiplier: 0.50x
 
-### Difficulty Increase
+### difficulty increase
 
 - ![Hard Rock Icon](mod-icon/hard-rock-mod.png) Hard Rock
   - Everything just got a bit harder...
@@ -60,7 +62,7 @@ Sentakki is primarily designed for touch screen. However you can play it normall
   - Score Multiplier: 1.12x
   - Click the icon again will be `Nightcore Mod` : Uguuuuuuuu...
 
-### Automation
+### automation
 
 - ![Autoplay Icon](mod-icon/autoplay-mod.png) Autoplay
   - Watch the automated play through the song.
@@ -69,13 +71,13 @@ Sentakki is primarily designed for touch screen. However you can play it normall
   - Focused on the laned notes. Touch screen notes will be completed automatically.
   - Score Multiplier: 0.50x
 
-### Conversion
+### conversion
 
 - ![Mirror Icon](mod-icon/mirror-mod.png) Mirror
   - Flip the playfield horizontally, vertically or both!
   - You can select to *Mirror vertically*, *Mirror vertically* or both.
 
-### Fun
+### fun
 
 - ![Wind Up Icon](mod-icon/wind-up-mod.png) Wind Up
   - Can you keep up?
@@ -89,6 +91,10 @@ Sentakki is primarily designed for touch screen. However you can play it normall
   - Some experimental features to be added to future sentakki builds. Autoplay/No-Fail recommended. Replay unsupported.
   - Function that you can enable to experience it are *Twin notes*, *Twin slides* and *Touch notes*
 
-# Settings
+# settings
 
 You can see a full setting detail in [Sentakki option wiki page](https://github.com/LumpBloom7/sentakki/wiki/Options).
+
+# demo
+
+{{< youtube id="DEpT1ReTKo0" >}}

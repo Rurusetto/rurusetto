@@ -85,7 +85,7 @@ Hitokori require only button to control. You can use keyboard key or left mouse 
 
 ### automation
 
-- ![Auto Icon](mod-icon/autoplay-mod.png) Auto
+- ![Auto Icon](mod-icon/auto-mod.png) Auto
   - Let a cute bot do all the hard work
 
 ### conversion

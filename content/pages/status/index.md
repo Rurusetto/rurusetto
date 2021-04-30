@@ -7,11 +7,11 @@ img: None
 
 Last Update : April 30, 2021 20:10 UTC
 
-✅ = Everything work. Can play normally.
+✅ = Everything work.
 
-⚠️ = Can import but some function is not working or making client crash.
+⚠️ = Can import but some function or mod is not working or making client crash.
 
-❌ = Import error
+❌ = Cannot import.
 
 <!-- Use table style from https://discourse.gohugo.io/t/how-to-customise-tables/15661 -->
 

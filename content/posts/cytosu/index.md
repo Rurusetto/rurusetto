@@ -9,7 +9,7 @@ summary: "Cytus-like game mechanics within osu!lazer as a ruleset"
 
 - Status : Active development
 - Last Update : 2021.417.0
-- Can import and play without error : Autoplay mod make a game crash.
+- Can import and play without error : Autoplay mod make client crash.
 
 # overview
 

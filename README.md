@@ -1,4 +1,4 @@
-# osu! ruleset wiki(?)
+# osu! rulesets wiki(?)
 
  A page or wiki that contain all osu! ruleset
 

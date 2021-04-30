@@ -18,7 +18,7 @@ summary: "A customized osu! mode surrounding a paddle and some notes."
 - GitHub Repositories : [Altenhh/tau](https://github.com/Altenhh/tau/)
 - Discord : [tau](https://discord.com/invite/7Y8GXAa)
 
-Tau is a custom ruleset surrounding a paddle and some notes. Based idea from [pizzazip's Tau](https://deadlysprinklez.itch.io/tau).
+Tau is a custom ruleset surrounding a paddle and some notes. Based idea from [pizzazip's Tau](https://deadlysprinklez.itch.io/tau). The ruleset is developed by Laica.
 
 # gameplay
 

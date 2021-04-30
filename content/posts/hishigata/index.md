@@ -1,25 +1,25 @@
 ---
-title: "sentakki"
-img: "sentakki-logo.png"
-date: 2021-04-17
+title: "hishigata"
+img: "hishigata-logo.png"
+date: 2021-03-12
 summary: "A custom ruleset based on Sega&rsquo;s arcade rhythm game maimai"
 ---
 
 # status
 
 - Status : Active development
-- Last Update : 2021.416.0
+- Last Update : 2021.311.0
 - Can import and play without error : Yes
 
 # overview
 
 - Creator : [Bloom](https://github.com/LumpBloom7)
 - Availability : Available publicly
-- GitHub Repositories : [LumpBloom7/sentakki](https://github.com/LumpBloom7/sentakki)
+- GitHub Repositories : [LumpBloom7/hishigata](https://github.com/LumpBloom7/hishigata)
 - Discord : [hishikki Dev Server](https://discord.gg/CQPNADu)
 - Support : [Ko-fi](https://ko-fi.com/bloom) or [PayPal](https://www.paypal.com/paypalme/DerrickTimmermans)
 
-Sentakki is a custom ruleset based on Sega's arcade rhythm game maimai. The ruleset is developed by Bloom.
+Sentakki is a custom ruleset based on [Project Rhombus](https://www.pcgamingwiki.com/wiki/Project_Rhombus). The ruleset is developed by Bloom.
 
 # gameplay
 

@@ -17,7 +17,7 @@ summary: "Cytus-like game mechanics within osu!lazer as a ruleset"
 - Availability : Available Publicly
 - GitHub Repositories : [GSculerlor/Cytosu](https://github.com/GSculerlor/Cytosu)
 
-Cytosu is a custom ruleset based on [Cytus](https://en.wikipedia.org/wiki/Cytus).
+Cytosu is a custom ruleset based on [Cytus](https://en.wikipedia.org/wiki/Cytus). The ruleset is developed by Ganen.
 
 # gameplay
 

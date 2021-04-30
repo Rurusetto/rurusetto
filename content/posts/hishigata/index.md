@@ -23,7 +23,7 @@ Sentakki is a custom ruleset based on [Project Rhombus](https://www.pcgamingwiki
 
 # gameplay
 
-Use arrow keys or touch controls and point the cursor in the direction of the oncoming arrows to block them.
+Use arrow keys or touch control and point the cursor in the direction of the oncoming arrows to block them.
 
 # controls
 

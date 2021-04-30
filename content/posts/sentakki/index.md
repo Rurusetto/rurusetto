@@ -33,14 +33,14 @@ Sentakki is primarily designed for touch screen. However you can play it normall
 
 - Button 1 - `Z` `M1`
 - Button 2 - `X` `M2`
-- Key 1 - 1
-- Key 2 - 2
-- Key 3 - 3
-- Key 4 - 4
-- Key 5 - 5
-- Key 6 - 6
-- Key 7 - 7
-- Key 8 - 8
+- Key 1 - `1`
+- Key 2 - `2`
+- Key 3 - `3`
+- Key 4 - `4`
+- Key 5 - `5`
+- Key 6 - `6`
+- Key 7 - `7`
+- Key 8 - `8`
 
 # mods
 

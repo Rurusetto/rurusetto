@@ -29,6 +29,8 @@ Mainly is player need to tap notes as they intersect the ring. Sentakki have mai
 
 Sentakki is primarily designed for touch screen. However you can play it normally on desktop too. If you play on touch screen you can enable experiment mod to try multiple note.
 
+<!-- TODO: Default key like osu -->
+
 # mods
 
 ### difficulty reduction

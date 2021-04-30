@@ -13,6 +13,7 @@ Thank you for showing interest in the development of osu! rulesets wiki. This gu
       - [Markdown](#markdown)
       - [Git and GitHub](#git-and-github)
       - [Start making a new pages](#start-making-a-new-pages)
+      - [Want to see what's look like in a website?](#want-to-see-whats-look-like-in-a-website)
 
 ## I would like to submit an issue!
 
@@ -82,11 +83,11 @@ ruleset-folder-page
 |
 |-- index.md            # This is a main markdown file.
 |
-|-- ruleset-logo.png    # Ruleset logo. Size must be 1200 x 750 px
+|-- ruleset-logo.png    # Ruleset logo. Size must be 1200 x 750 px and must be a transparent PNG.
 |
 |-- mod-icon            # Picture folder contain all mod icon. You can put other picture to if you have more picture than mod icon.
     |
-    |-- blablabla-mod.png
+    |-- blablabla-mod.png  # Mod icon require 20 x 28 px and must be a transparent PNG.
 ```
 
 An `index.md` file header must be like this.
@@ -101,5 +102,11 @@ summary: "Summary on the front post"
 ```
 
 Due to a font that use in this website. The header must be no capitalized. Please follow page structure from other ruleset pages.
+
+#### Want to see what's look like in a website?
+
+You can go to your pull request post and click this button to open preview mode. It will update everytime you commit and push a code.
+
+![Deploy preview](deploy-preview.png)
 
 That's all. If you have any problem, you can leaving a comment in the relevant issue or pull requests, or use [development server](). We will try to help you as much as we can.

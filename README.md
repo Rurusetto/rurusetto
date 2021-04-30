@@ -1,6 +1,6 @@
 # osu! rulesets wiki(?)
 
- A page or wiki that contain all osu! ruleset
+ A page or wiki that contain all osu! rulesets
 
 # Development Status
 

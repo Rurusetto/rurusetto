@@ -2,7 +2,7 @@
 title: "tau"
 img: "tau-logo.png"
 date: 2021-04-17
-summary: "A custom ruleset based on Sega&rsquo;s arcade rhythm game maimai"
+summary: "A customized osu! mode surrounding a paddle and some notes."
 ---
 
 # status
@@ -83,7 +83,7 @@ Tau can play on both tablet or mouse with keyboard. Use the pointer to move a pa
 
 ### conversion
 
-- ![Mirror Icon](mod-icon/mirror-mod.png) Mirror
+- ![Difficulty Adjust Icon](mod-icon/difficulty-adjust-mod.png) Difficulty Adjust
   - Override a beatmap's difficulty settings.
   - You can override *HP Drain*, *Accuracy*, *Paddle Size*, *Approach Rate* and *Extended Limits*
 

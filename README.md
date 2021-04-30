@@ -15,3 +15,5 @@ Please see [the "contributing" file](CONTRIBUTING.md) if you are interested in h
 ## License
 
 The majority of content in this repository is licensed under MIT license. Please see [the license file](LICENSE) for more information. tl;dr you can do whatever you want as long as you include the original copyright and license notice in any copy of the software/source.
+
+The licensing here does not directly apply to `osu!` and `ppy`, as it is bound to its own licensing.

@@ -2,7 +2,7 @@
 title: "tau"
 img: "tau-logo.png"
 date: 2021-04-17
-summary: "A customized osu! mode surrounding a paddle and some notes."
+summary: "A customize osu! ruleset with a circle surrounding a paddle and some notes."
 ---
 
 # status
@@ -14,11 +14,11 @@ summary: "A customized osu! mode surrounding a paddle and some notes."
 # overview
 
 - Creator : [Laica](https://github.com/Altenhh)
-- Availability : Available publicly
+- Availability : Available Publicly
 - GitHub Repositories : [Altenhh/tau](https://github.com/Altenhh/tau/)
 - Discord : [tau](https://discord.com/invite/7Y8GXAa)
 
-Tau is a custom ruleset surrounding a paddle and some notes. Based idea from [pizzazip's Tau](https://deadlysprinklez.itch.io/tau). The ruleset is developed by Laica.
+Tau is a custom ruleset with a circle surrounding a paddle and some notes. Based on idea from [pizzazip's Tau](https://deadlysprinklez.itch.io/tau). The ruleset is developed by Laica.
 
 # gameplay
 
@@ -27,17 +27,17 @@ You can see all note types in [Tau gameplay note types wiki](https://github.com/
 
 # controls
 
-Tau can play on both tablet or mouse with keyboard. Use the pointer to move a paddle while use the keyboard to hit the notes.
+Tau can be played on tablet or mouse with keyboard. Use the pointer to move a paddle and use the keyboard to hit the notes.
 
-### default setting
+### default settings
 
-- Left tick button - `Z` `M1`
-- Right tick button - `X` `M2`
-- Hard beats button - `SPACE`
+- Left Tick Button - `Z` `M1`
+- Right Tick Button - `X` `M2`
+- Hard Beats Button - `SPACE`
 
 # mods
 
-> Full detail in [Tau gameplay mods wiki](https://github.com/Altenhh/tau/wiki/Gameplay-mods).
+> Full list in [Tau gameplay mods wiki](https://github.com/Altenhh/tau/wiki/Gameplay-mods).
 
 ### difficulty reduction
 
@@ -48,14 +48,14 @@ Tau can play on both tablet or mouse with keyboard. Use the pointer to move a pa
 
 - ![No Fail Icon](mod-icon/no-fail-mod.png) No Fail
   - You can't fail, no matter what.
-    - Make it impossoble to fail.
+    - Makes it impossible to fail.
   - Score Multiplier: 0.50x
 
 - ![Half Time Icon](mod-icon/half-time-mod.png) Half Time
   - Less Zoom...
     - Decreases speed .75x.
   - Score Multiplier: 0.30x
-  - Click the icon again will be *Daycore Mod* : Whoaaaaa...
+  - Click the icon again for *Daycore Mod* : Whoaaaaa...
 
 ### difficulty increase
 
@@ -71,15 +71,15 @@ Tau can play on both tablet or mouse with keyboard. Use the pointer to move a pa
   - Zoooooooooom...
     - Increased speed 1.50x.
   - Score Multiplier: 1.12x
-  - Click the icon again will be `Nightcore Mod` : Uguuuuuuuu...
-    - Increases speed 1.50x and raises audio pitch.
+  - Click the icon again for `Nightcore Mod` : Uguuuuuuuu...
+    - Increases speed by 1.50x and raises audio pitch.
 
 - ![Flashlight Icon](mod-icon/flashlight-mod.png) Flashlight
   - Restricted view area
-    - You can see only around the pointer.
+    - You can only see the area around the pointer.
   - Score Multiplier: 1.12x
-  - Click the icon again will be `Blinds Mod` : Play with blind on your screen
-    - Two doors on the playfield will make you cannot see the note.
+  - Click the icon again for `Blinds Mod` : Play with blinds on your screen
+    - Two doors on the playfield will make it to where you cannot see the note when your HP is high.
 
 ### automation
 
@@ -102,12 +102,12 @@ Tau can play on both tablet or mouse with keyboard. Use the pointer to move a pa
   - Can you keep up?
     - Slowly increases speed from 1.00x to 1.50x throughout the map and raises the pitch alongside the speed.
   - The song speed will be getting faster and faster
-  - Click the icon again will be `Wind Down Mod` : Slooow doooown...
+  - Click the icon again for `Wind Down Mod` : Slooow doooown...
     - Slowly decreases speed from 1.00x to 0.75x throughout the map and lowers the pitch alongside the speed.
 
 # settings
 
-You can see a full setting detail in [Tau option wiki page](https://github.com/Altenhh/tau/wiki/Options).
+You can see a full list of settings in [Tau option wiki page](https://github.com/Altenhh/tau/wiki/Options).
 
 # demo
 

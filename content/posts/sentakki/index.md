@@ -1,6 +1,5 @@
 ---
 title: "sentakki"
-draft: true
 img: "sentakki-logo.png"
 date: 2021-04-17
 summary: "A custom ruleset based on Sega&rsquo;s arcade rhythm game maimai"

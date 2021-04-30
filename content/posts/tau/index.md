@@ -22,25 +22,36 @@ Tau is a custom ruleset surrounding a paddle and some notes. Based idea from [pi
 
 # gameplay
 
-Mainly is player need to tap notes as they intersect the ring. Sentakki have mainly 6 different note types. You can see all note types detail [here](https://github.com/LumpBloom7/sentakki/wiki/Note-types).
+Tau's gameplay revolves around a paddle which is moved around a circle with the mouse. In the circle, there are different types of notes trying to escape it. The player has to move the paddle to block these notes, then hit them using keyboard keys.
 
 # controls
 
-Sentakki is primarily designed for touch screen. However you can play it normally on desktop too. If you play on touch screen you can enable experiment mod to try multiple note.
+Tau can play on both tablet or mouse with keyboard. Use the pointer to move a paddle while use the keyboard to hit the notes.
+
+### default setting
+
+- Left tick button - `Z` `M1`
+- Right tick button - `X` `M2`
+- Hard beats button - `SPACE`
 
 # mods
 
+> Full detail in [Tau gameplay mods wiki](https://github.com/Altenhh/tau/wiki/Gameplay-mods).
+
 ### difficulty reduction
+
+- ![Easy Icon](mod-icon/easy-mod.png) Easy
+  - Larger hit area, more forgiving HP drain, less acuracy required, and three lives!
+  - Score Multiplier: 0.50x
+
+- ![No Fail Icon](mod-icon/no-fail-mod.png) No Fail
+  - You can't fail, no matter what.
+  - Score Multiplier: 0.50x
 
 - ![Half Time Icon](mod-icon/half-time-mod.png) Half Time
   - Less Zoom...
   - Score Multiplier: 0.30x
   - Click the icon again will be *Daycore Mod* : Whoaaaaa...
-  - You can increase or decrease speed by slider.
-
-- ![No Fail Icon](mod-icon/no-fail-mod.png) No Fail
-  - You can't fail, no matter what.
-  - Score Multiplier: 0.50x
 
 ### difficulty increase
 
@@ -51,48 +62,41 @@ Sentakki is primarily designed for touch screen. However you can play it normall
 - ![Sudden Death Icon](mod-icon/sudden-death-mod.png) Sudden Death
   - Miss and fail.
 
-- ![Challenge Icon](mod-icon/hard-rock-mod.png) Challenge
-  - You only get a small margin for error
-  - You can select *number of lives* option from 5,10,20,50,100,200 and 300
-
 - ![Double Time Icon](mod-icon/double-time-mod.png) Double Time
   - Zoooooooooom...
   - Score Multiplier: 1.12x
   - Click the icon again will be `Nightcore Mod` : Uguuuuuuuu...
 
+- ![Flashlight Icon](mod-icon/flashlight-mod.png) Flashlight
+  - Restricted view area
+  - Score Multiplier: 1.12x
+  - Click the icon again will be `Blinds Mod` : Play with blind on your screen
+
 ### automation
 
 - ![Autoplay Icon](mod-icon/autoplay-mod.png) Autoplay
-  - Watch the automated play through the song.
+  - Watch a perfect automated play through the song.
 
-- ![Auto Touch Icon](mod-icon/auto-touch-mod.png) Auto Touch
-  - Focused on the laned notes. Touch screen notes will be completed automatically.
-  - Score Multiplier: 0.50x
+- ![Relax Icon](mod-icon/relax-mod.png) Relax
+  - You don't need to click. Give your clicking/tapping fingers a break from the heat of things.
 
 ### conversion
 
 - ![Mirror Icon](mod-icon/mirror-mod.png) Mirror
-  - Flip the playfield horizontally, vertically or both!
-  - You can select to *Mirror vertically*, *Mirror vertically* or both.
+  - Override a beatmap's difficulty settings.
+  - You can override *HP Drain*, *Accuracy*, *Paddle Size*, *Approach Rate* and *Extended Limits*
 
 ### fun
 
 - ![Wind Up Icon](mod-icon/wind-up-mod.png) Wind Up
   - Can you keep up?
   - The song speed will be getting faster and faster
-  - Click the icon again will be `Perfect Mod` : Slooow doooown...
-
-- ![Spin Icon](mod-icon/spin-mod.png) Spin
-  - Replicate the true washing machine experience.
-
-- ![Experimental Icon](mod-icon/experimental-mod.png) Experimental
-  - Some experimental features to be added to future sentakki builds. Autoplay/No-Fail recommended. Replay unsupported.
-  - Function that you can enable to experience it are *Twin notes*, *Twin slides* and *Touch notes*
+  - Click the icon again will be `Wind Down Mod` : Slooow doooown...
 
 # settings
 
-You can see a full setting detail in [Sentakki option wiki page](https://github.com/LumpBloom7/sentakki/wiki/Options).
+You can see a full setting detail in [Tau option wiki page](https://github.com/Altenhh/tau/wiki/Options).
 
 # demo
 
-{{< youtube id="DEpT1ReTKo0" >}}
+{{< youtube id="OB691bFTnhE" >}}

@@ -9,7 +9,7 @@ Last Update : April 30, 2021 20:10 UTC
 
 ✅ = Everything work. Can play normally.
 
-⚠️ = Can import but not work sometimes
+⚠️ = Can import but some function not working
 
 ❌ = Import error
 

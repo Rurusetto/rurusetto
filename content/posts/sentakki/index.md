@@ -7,7 +7,7 @@ summary: "A custom ruleset based on Sega&rsquo;s arcade rhythm game maimai"
 
 # status
 
-- Status : Work in progress but playable
+- Status : Active development
 - Last Update : 2021.416.0
 - Can import and play without error : Yes
 
@@ -29,17 +29,22 @@ Mainly is player need to tap notes as they intersect the ring. Sentakki have mai
 
 Sentakki is primarily designed for touch screen. However you can play it normally on desktop too. If you play on touch screen you can enable experiment mod to try multiple note.
 
+<!-- TODO: Default key like osu -->
+
 # mods
 
 ### difficulty reduction
 
 - ![Half Time Icon](mod-icon/half-time-mod.png) Half Time
   - Less Zoom...
+    - Decreases speed .75x.
   - Score Multiplier: 0.30x
   - Click the icon again will be *Daycore Mod* : Whoaaaaa...
+    - Decreases speed .75x and lowers audio pitch.
 
 - ![No Fail Icon](mod-icon/no-fail-mod.png) No Fail
   - You can't fail, no matter what.
+    - Make it impossoble to fail.
   - Score Multiplier: 0.50x
 
 ### difficulty increase
@@ -50,15 +55,19 @@ Sentakki is primarily designed for touch screen. However you can play it normall
 
 - ![Sudden Death Icon](mod-icon/sudden-death-mod.png) Sudden Death
   - Miss and fail.
+    - If you miss, you fail.
 
 - ![Challenge Icon](mod-icon/hard-rock-mod.png) Challenge
   - You only get a small margin for error
+    - Decrease max health to make a game more challenge.
   - You can select *number of lives* option from 5,10,20,50,100,200 and 300
 
 - ![Double Time Icon](mod-icon/double-time-mod.png) Double Time
   - Zoooooooooom...
+    - Increased speed 1.50x.
   - Score Multiplier: 1.12x
   - Click the icon again will be `Nightcore Mod` : Uguuuuuuuu...
+    - Increases speed 1.50x and raises audio pitch.
 
 ### automation
 
@@ -79,8 +88,10 @@ Sentakki is primarily designed for touch screen. However you can play it normall
 
 - ![Wind Up Icon](mod-icon/wind-up-mod.png) Wind Up
   - Can you keep up?
+    - Slowly increases speed from 1.00x to 1.50x throughout the map and raises the pitch alongside the speed.
   - The song speed will be getting faster and faster
   - Click the icon again will be `Wind Down Mod` : Slooow doooown...
+    - Slowly decreases speed from 1.00x to 0.75x throughout the map and lowers the pitch alongside the speed.
 
 - ![Spin Icon](mod-icon/spin-mod.png) Spin
   - Replicate the true washing machine experience.

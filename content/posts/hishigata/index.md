@@ -79,7 +79,7 @@ Mainly use arrow keys. You can use touch control too.
 - ![Wind Up Icon](mod-icon/wind-up-mod.png) Wind Up
   - Can you keep up?
     - Slowly increases speed from 1.00x to 1.50x throughout the map and raises the pitch alongside the speed.
-  - Click the icon again will be `Wind Down Mod` : Slooow doooown...
+  - Click the icon again for `Wind Down Mod` : Slooow doooown...
     - Slowly decreases speed from 1.00x to 0.75x throughout the map and lowers the pitch alongside the speed.
 
 # settings

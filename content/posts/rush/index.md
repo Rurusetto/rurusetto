@@ -52,7 +52,7 @@ Only on keyboard.
   - Less Zoom...
     - Decreases speed .75x.
   - Score Multiplier: 0.30x
-  - Click the icon again will be *Daycore Mod* : Whoaaaaa...
+  - Click the icon again for `Daycore Mod` : Whoaaaaa...
     - Decreases speed .75x and lowers audio pitch.
 
 ### difficulty increase
@@ -61,13 +61,14 @@ Only on keyboard.
   - Zoooooooooom...
     - Increased speed 1.50x.
   - Score Multiplier: 1.12x
-  - Click the icon again will be `Nightcore Mod` : Uguuuuuuuu...
+  - Click the icon again for `Nightcore Mod` : Uguuuuuuuu...
     - Increases speed 1.50x and raises audio pitch.
 
 ### automation
 
 - ![Autoplay Icon](mod-icon/autoplay-mod.png) Autoplay
   - Watch a perfect automated play through the song.
+  - Click the icon again for `Cinema Mod` : Watch the video without visual distractions.
 
 # settings
 

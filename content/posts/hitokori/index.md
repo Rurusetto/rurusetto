@@ -25,7 +25,7 @@ Guide two orbiting planets down a path without breaking their perfect equilibriu
 
 # controls
 
-Hitokori require only button to control. Keyboard key or mouse click. Can play on touch screen.
+Hitokori require only button to control. You can use keyboard key or left mouse click. Can play on touch screen.
 
 ### default setting
 

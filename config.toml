@@ -1,8 +1,8 @@
 baseURL = "https://osu-ruleset.netlify.app/"
 languageCode = "en-us"
-title = "osu! ruleset"
+title = "osu! rulesets"
 theme = "hugo-cards"
-paginate = 6
+paginate = 50
 
 [params]
   builtBy = "HelloYeew"

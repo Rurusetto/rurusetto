@@ -1,6 +1,6 @@
-baseURL = "http://circleclickinggame.rulesets.info/"
+baseURL = "http://rulesets.info/"
 languageCode = "en-us"
-title = "osu! rulesets"
+title = "rūrusetto"
 theme = "hugo-cards"
 paginate = 50
 
@@ -11,7 +11,7 @@ paginate = 50
   facebook = ""
   quora = ""
   twitter = ""
-  github = "http://github.com/HelloYeew/osu-ruleset-pages"
+  github = "https://github.com/HelloYeew/rurusetto"
   email = ""
 
   fbLikeBox = ""

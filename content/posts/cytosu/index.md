@@ -7,9 +7,9 @@ summary: "Cytus-like game mechanics within osu!lazer as a ruleset"
 
 # status
 
-- Status : Active development
+- Status : Active Development
 - Last Update : 2021.417.0
-- Can import and play without error : Autoplay mod make client crash.
+- Can import and play without error : Autoplay mod causes client to crash.
 
 # overview
 
@@ -17,11 +17,11 @@ summary: "Cytus-like game mechanics within osu!lazer as a ruleset"
 - Availability : Available Publicly
 - GitHub Repositories : [GSculerlor/Cytosu](https://github.com/GSculerlor/Cytosu)
 
-Cytosu is a custom ruleset based on [Cytus](https://en.wikipedia.org/wiki/Cytus). The ruleset is developed by Ganen.
+Cytosu is a custom ruleset based on [Cytus](https://www.rayark.com/en/games/cytus2/). The ruleset is developed by Ganen.
 
 # gameplay
 
-The gameplay of Cytosu relies on Active Scan Line, a line that moves up and down across the screen. The player must tap a circle notes as the Active Scan Line passes over them, following the music. Different types of notes are used: Click Note (a single circular note, requires tapping the object in time), Drag Note (a continuous track of notes, requires dragging along the track), and Hold Note (has an extended ribbon meter, requires the note to be held until the meter is filled).
+The gameplay of Cytosu relies on an Active Scan Line, a line that moves up and down across the screen. The player must tap circle notes as the Active Scan Line passes over them, following the music. Different types of notes are used: Click Note (a single circular note, requires tapping the object in time), Drag Note (a continuous track of notes, requires dragging along the track), and Hold Note (has an extended ribbon meter, requires the note to be held until the meter is filled).
 
 # controls
 
@@ -50,6 +50,6 @@ Cytosu based gameplay design for touch screen but can be played on tablet or mou
 
 You can adjust `Show Cursor` by toggle button.
 
-# demo
+# video
 
 {{< youtube id="EiqCZI84waQ" >}}

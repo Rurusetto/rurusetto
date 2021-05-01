@@ -2,11 +2,11 @@
 name: Add a new ruleset
 about: Request to add a new ruleset in wiki.
 title: ''
-labels: ''
+labels: new-ruleset
 assignees: ''
 
 ---
 
 Ruleset name :
 
-Ruleset repositories name :
+Ruleset repositories name and link :

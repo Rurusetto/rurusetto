@@ -48,7 +48,7 @@ Cytosu based gameplay design for touch screen but can be played on tablet or mou
 
 # settings
 
-You can adjust `Show Cursor` by switch.
+You can adjust `Show Cursor` by toggle button.
 
 # demo
 

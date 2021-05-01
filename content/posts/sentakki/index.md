@@ -23,13 +23,13 @@ Sentakki is a custom ruleset based on Sega's arcade rhythm game maimai. The rule
 
 # gameplay
 
-Mainly is player need to tap notes as they intersect the ring. Sentakki have mainly 6 different note types. You can see all note types detail [here](https://github.com/LumpBloom7/sentakki/wiki/Note-types).
+Tap, touch, slide, hold to the beat! Sentakki have mainly 6 different note types. You can see all note types detail [here](https://github.com/LumpBloom7/sentakki/wiki/Note-types).
 
 # controls
 
-Sentakki is primarily designed for touch screen. However you can play it normally on desktop too. If you play on touch screen you can enable experiment mod to try multiple note.
+Sentakki is primarily designed with touch screens in mind. However traditional input methods aren't left out, and it's possible to play with the mouse. Twin experiment could be activated to make full use of multi-touch.
 
-### default setting
+### default controls
 
 - Button 1 - `Z` `M1`
 - Button 2 - `X` `M2`
@@ -93,7 +93,6 @@ Sentakki is primarily designed for touch screen. However you can play it normall
 
 - ![Mirror Icon](mod-icon/mirror-mod.png) Mirror
   - Flip the playfield horizontally, vertically or both!
-  - You can select to *Mirror vertically*, *Mirror vertically* or both.
 
 ### fun
 
@@ -106,14 +105,15 @@ Sentakki is primarily designed for touch screen. However you can play it normall
 
 - ![Spin Icon](mod-icon/spin-mod.png) Spin
   - Replicate the true washing machine experience.
+    - Spins the playfield during gameplay
 
 - ![Experimental Icon](mod-icon/experimental-mod.png) Experimental
   - Some experimental features to be added to future sentakki builds. Autoplay/No-Fail recommended. Replay unsupported.
-  - Function that you can enable to experience it are *Twin notes*, *Twin slides* and *Touch notes*
+  - Experiment that are availables are *Twin notes*, *Twin slides* and *Touch notes*
 
 # settings
 
-You can see a full setting detail in [Sentakki option wiki page](https://github.com/LumpBloom7/sentakki/wiki/Options).
+You can see a list of settings and what they do in [Sentakki option wiki page](https://github.com/LumpBloom7/sentakki/wiki/Options).
 
 # demo
 

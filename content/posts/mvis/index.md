@@ -7,7 +7,7 @@ summary: "A custom visual game mode for osu!lazer project."
 
 # status
 
-- Status : Active development
+- Status : basic implementation with no optimisation
 - Last Update : 2021.429.0
 - Can import and play without error : Yes
 
@@ -15,8 +15,9 @@ summary: "A custom visual game mode for osu!lazer project."
 
 - Creator : [Evast](https://github.com/EVAST9919)
 - Availability : Available Publicly
-- GitHub Repositories : [EVAST9919/lazer-m-vis/](https://github.com/EVAST9919/lazer-m-vis/)
+- GitHub Repositories : [EVAST9919/lazer-m-vis](https://github.com/EVAST9919/lazer-m-vis/)
 - Discord : [Evast's Server](https://discord.com/invite/7Y8GXAa)
+- Support : [Patreon](https://patreon.com/evast)
 
 Mvis is a custom ruleset for music visualizer. The ruleset is developed by Evast.
 

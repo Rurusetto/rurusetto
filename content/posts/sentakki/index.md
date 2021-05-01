@@ -1,7 +1,7 @@
 ---
 title: "sentakki"
 img: "sentakki-logo.png"
-date: 2021-04-17
+date: 2021-04-16
 summary: "A custom ruleset based on Sega&rsquo;s arcade rhythm game maimai"
 ---
 
@@ -117,4 +117,4 @@ You can see a list of settings and what they do in [Sentakki option wiki page](h
 
 # demo
 
-{{< youtube id="DEpT1ReTKo0" >}}
+{{< youtube id="BDOc3PSDYFU" >}}

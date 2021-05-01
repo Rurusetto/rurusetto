@@ -1,4 +1,4 @@
-baseURL = "https://osu-ruleset.netlify.app/"
+baseURL = "http://osu.rulesets.info/"
 languageCode = "en-us"
 title = "osu! rulesets"
 theme = "hugo-cards"

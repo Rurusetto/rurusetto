@@ -10,3 +10,7 @@ assignees: ''
 Ruleset name :
 
 Ruleset repositories name and link :
+
+Are you a ruleset owner? :
+
+Do you want to add it yourself? :

@@ -7,24 +7,12 @@ assignees: ''
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+What page that bug occured :
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+Time that bug occured (UTC) :
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+Describe the bug :
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+Screenshot :
 
-**Devices**
-What devices this issue occured.
-
-**Additional context**
-Add any other context about the problem here.
+Device :

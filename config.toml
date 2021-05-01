@@ -1,6 +1,6 @@
 baseURL = "http://rulesets.info/"
 languageCode = "en-us"
-title = "unofficial osu! rulesets"
+title = "Rūrusetto"
 theme = "hugo-cards"
 paginate = 50
 
@@ -12,7 +12,7 @@ paginate = 50
   quora = ""
   twitter = ""
   github = "https://github.com/HelloYeew/unofficial-osu-ruleset-pages"
-  email = ""
+  email = "contact@rulesets.info"
 
   fbLikeBox = ""
   fbAppId = ""

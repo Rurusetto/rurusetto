@@ -1,6 +1,6 @@
 # Contributing Guidelines
 
-Thank you for showing interest in the development of osu! rulesets wiki. This guidelines below is a guidelines. There are not "official rules" or something like that, but following them will help everyone deal with things in the most efficient manner.
+Thank you for showing interest in the development of unofficial osu! rulesets wiki. This guidelines below is a guidelines. There are not "official rules" or something like that, but following them will help everyone deal with things in the most efficient manner.
 
 ## Table of contents
 

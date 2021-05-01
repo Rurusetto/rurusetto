@@ -28,7 +28,7 @@ The character is running and player control a character to kicking off approachi
 
 Only on keyboard.
 
-### default setting
+### default controls
 
 - Ground (Primary) - `J` `M2`
 - Ground (Secondary) - `K`

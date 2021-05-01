@@ -15,6 +15,7 @@ Please see [the "contributing" file](CONTRIBUTING.md) if you are interested in h
 ## Disclaimer
 
 Pippi icon : [@annytf](https://twitter.com/annytf/status/991050258183434240)
+
 Default ruleset icon : [osu-resources](https://github.com/ppy/osu-resources)
 
 ## License

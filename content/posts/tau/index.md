@@ -29,7 +29,7 @@ You can see all note types in [Tau gameplay note types wiki](https://github.com/
 
 Tau can be played on tablet or mouse with keyboard. Use the pointer to move a paddle and use the keyboard to hit the notes.
 
-### default settings
+### default controls
 
 - Left Tick Button - `Z` `M1`
 - Right Tick Button - `X` `M2`

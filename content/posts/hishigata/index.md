@@ -29,7 +29,7 @@ Use arrow keys or touch control and point the cursor in the direction of the onc
 
 Mainly use arrow keys. You can use touch control too.
 
-### default setting
+### default controls
 
 - Up - `UP` `W`
 - Right - `RIGHT` `D`

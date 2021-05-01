@@ -29,7 +29,7 @@ Player control a character to escape from a lot of cherries that follow by a rhy
 
 Use arrow keys to control a character. Cannot play on touch screen device.
 
-### default settings
+### default controls
 
 - Move Left - `LEFT`
 - Move Right - `RIGHT`

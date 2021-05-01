@@ -27,7 +27,7 @@ Guide two orbiting planets down a path without breaking their perfect equilibriu
 
 Hitokori require only button to control. You can use keyboard key or left mouse click. Can play on touch screen.
 
-### default setting
+### default controls
 
 - Button 1 - `Z` `M1`
 - Button 2 - `X` `M2`

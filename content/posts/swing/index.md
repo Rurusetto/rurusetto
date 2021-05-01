@@ -29,7 +29,7 @@ In playfield it have 2 circle lanes (red and blue.) A gameplay is similar to Tai
 
 Require at least 4 button (primary 2 keys and additional 2 keys) on 2 lanes. Best on keyboard. Cannot play on touch screen device.
 
-### default settings
+### default controls
 
 - Up Swing - `Z`
 - Up Swing (Additional) - `X`

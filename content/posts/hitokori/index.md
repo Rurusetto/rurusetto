@@ -113,7 +113,7 @@ Hitokori require only button to control. You can use keyboard key or left mouse 
 
 # settings
 
-You can adjust
+PLayer can adjust
 
 - `Camera speed` by slider
 - `Orbit ring opacity` by slider

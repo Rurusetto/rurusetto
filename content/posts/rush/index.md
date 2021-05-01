@@ -22,7 +22,7 @@ Rush! is a custom ruleset based loosely on Muse Dash. The ruleset is developed b
 
 # gameplay
 
-The character is running and you control a character to kicking off approaching enemies and dodging traps by jump or slide
+The character is running and player control a character to kicking off approaching enemies and dodging traps by jump or slide
 
 # controls
 

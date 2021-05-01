@@ -7,17 +7,17 @@ summary: "A custom osu! ruleset based on a dance of fire and ice"
 
 # status
 
-- Status : On hold
+- Status : On Hold
 - Last Update : 0.18.5
 - Can import and play without error : Yes
 
 # overview
 
 - Creator : [Peri](https://github.com/Flutterish)
-- Availability : Available publicly
+- Availability : Available Publicly
 - GitHub Repositories : [Flutterish/Hitokori](https://github.com/Flutterish/Hitokori)
 
-Hitokori ( fire and ice ) is a custom osu! ruleset based on [A Dance of Fire and Ice](https://store.steampowered.com/app/977950/A_Dance_of_Fire_and_Ice/). The ruleset is developed by Peri.
+Hitokori is a custom osu! ruleset based on [A Dance of Fire and Ice](https://7thbe.at/#adofai). The ruleset is developed by Peri.
 
 # gameplay
 
@@ -25,7 +25,7 @@ Guide two orbiting planets down a path without breaking their perfect equilibriu
 
 # controls
 
-Hitokori require only button to control. You can use keyboard key or left mouse click. Can play on touch screen.
+Hitokori require only button to control. You can use keyboard, mouse, or touchscreen to play.
 
 ### default controls
 
@@ -38,7 +38,7 @@ Hitokori require only button to control. You can use keyboard key or left mouse 
 
 - ![Easy Icon](mod-icon/easy-mod.png) Easy
   - I didn't play with fire
-    - Make a game easier by less HP drain, less acuracy required and increase max health.
+    - Make the game easier by having less HP drain, less acuracy required, and increased max health.
   - Score Multiplier: 0.50x
 
 - ![No Fail Icon](mod-icon/no-fail-mod.png) No Fail
@@ -58,7 +58,7 @@ Hitokori require only button to control. You can use keyboard key or left mouse 
 
 - ![Hard Rock Icon](mod-icon/hard-rock-mod.png) Hard Rock
   - Through the fire and the flames
-    - A bit harder
+    - A bit harder.
   - Score Multiplier: 1.10x
 
 - ![Sudden Death Icon](mod-icon/sudden-death-mod.png) Sudden Death
@@ -68,19 +68,19 @@ Hitokori require only button to control. You can use keyboard key or left mouse 
 
 - ![Double Time Icon](mod-icon/double-time-mod.png) Double Time
   - SPeeEEeEdddD
-    - Increased speed 1.50x.
+    - Increases speed 1.50x.
   - Score Multiplier: 1.12x
   - Click the icon again for `Nightcore Mod` : Uguuuuuuuu...
     - Increases speed 1.50x and raises audio pitch.
 
 - ![Hidden Icon](mod-icon/hidden-mod.png) Hidden
   - Just like your feelings
-    - Before a planet reach a white circle, a white circle will be disappeared.
+    - Before a planet reaches the white circle, the white circle will disappear.
   - Score Multiplier: 1.10x
 
 - ![Flashlight Icon](mod-icon/flashlight-mod.png) Flashlight
   - Welcome to Night City
-    - You can only see the area around the pointer.
+    - You can only see the area around the planets.
   - Score Multiplier: 1.12x
 
 ### automation
@@ -92,11 +92,11 @@ Hitokori require only button to control. You can use keyboard key or left mouse 
 
 - ![Hold Tiles Icon](mod-icon/hold-tiles-mod.png) Hold Tiles
   - Don't hold yourself back
-    - Adds tiles you need to hold
+    - Adds tiles you need to hold.
 
 - ![Spin Tiles Icon](mod-icon/spin-tiles-mod.png) Spin Tiles
   - Prepare for a spin
-    - Adds tiles that you have to press multiple times at the same speed
+    - Adds tiles that you have to press multiple times at the same speed.
 
 - ![Untangle Icon](mod-icon/untangle-mod.png) Untangle
   - WIP
@@ -105,15 +105,15 @@ Hitokori require only button to control. You can use keyboard key or left mouse 
 
 - ![Reverse Spin Icon](mod-icon/reverse-spin-mod.png) Reverse Spin
   - You make me spin right round, baby right round
-    - Makes the whole playfield spin
+    - Makes the whole playfield spin.
 
 - ![Triplets Icon](mod-icon/triplets-mod.png) Triplets
   - Trice the fun
-    - Play with 3 orbitals
+    - Play with 3 planets.
 
 # settings
 
-PLayer can adjust
+The player can adjust
 
 - `Camera speed` by slider
 - `Orbit ring opacity` by slider
@@ -122,6 +122,6 @@ PLayer can adjust
 - `Hold/Spin connector width` by switch.
 - `First orbital color`, `Second orbital color`, `Third orbital color` by color panel or enter hex color code
 
-# demo
+# video
 
 {{< youtube id="CD8K3mGTlO4" >}}

@@ -1,6 +1,6 @@
 # Contributing Guidelines
 
-Thank you for showing interest in the development of unofficial osu! rulesets wiki. This guidelines below is a guidelines. There are not "official rules" or something like that, but following them will help everyone deal with things in the most efficient manner.
+Thank you for showing interest in the development of Rūrusetto. This guidelines below is a guidelines. There are not "official rules" or something like that, but following them will help everyone deal with things in the most efficient manner.
 
 ## Table of contents
 
@@ -38,7 +38,7 @@ You can contribute this website in many ways! So it's have 2 big ways. Before we
 You are web developer? Let's start technically about this website! This website build by using [Hugo framework](https://github.com/gohugoio/hugo) and publish using [Netlify](https://www.netlify.com/). A main structure of this website is like this.
 
 ```
-osu-ruleset-pages
+rurusetto
 |
 |-- archetypes      # Markdown file theme when you use Hugo command line to generate a new page
 |

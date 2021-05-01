@@ -2,7 +2,7 @@
 
  [![Netlify Status](https://api.netlify.com/api/v1/badges/dda6b2bf-05d7-4d90-ad9d-b2a4c1bca8fa/deploy-status)](https://app.netlify.com/sites/osu-ruleset/deploys)
 
- An unofficial wiki that contain all osu! rulesets
+ A wiki that contain all osu! rulesets
 
 ## Development Status
 

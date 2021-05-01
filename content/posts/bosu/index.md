@@ -7,7 +7,7 @@ summary: "A custom game mode for osu!lazer project based on &rdquo;I wanna be th
 
 # status
 
-- Status : usable (but buggy due to amout of HitObjects)
+- Status : Usable (but unstable due to amount of HitObjects)
 - Last Update : 2021.417.0
 - Can import and play without error : Yes
 
@@ -19,15 +19,15 @@ summary: "A custom game mode for osu!lazer project based on &rdquo;I wanna be th
 - Discord : [Evast's Server](https://discord.com/invite/7Y8GXAa)
 - Support : [Patreon](https://patreon.com/evast)
 
-Tau is a custom ruleset based on [I wanna be the Boshy](https://en.wikipedia.org/wiki/I_Wanna_Be_the_Boshy) game. The ruleset is developed by Evast.
+Tau is a custom ruleset based on [I Wanna Be the Boshy](https://grynsoft.com/old-games#:~:text=I%20Wanna%20Be%20The%20Boshy%20(2010)) game. The ruleset is developed by Evast.
 
 # gameplay
 
-Player control a character to escape from a lot of cherries that follow by a rhythm. Player can control a character to shoot cherries, jump and move around the map.
+The player controls a character trying escape from a lot of cherries that appear to the beat. The player can control jump and move around the map to avoid said cherries.
 
 # controls
 
-Use arrow keys to control a character. Cannot play on touch screen device.
+Use arrow keys to control the character. Can't be played on a touch screen.
 
 ### default controls
 
@@ -42,7 +42,7 @@ Use arrow keys to control a character. Cannot play on touch screen device.
 
 - ![Easy Icon](mod-icon/easy-mod.png) Easy
   - Larger hit area, more forgiving HP drain, less acuracy required, and three lives!
-    - Make a game easier by increase paddle size, less HP drain, less acuracy required and 3x of max health.
+    - Make the game easier by having increased paddle size, less HP drain, less acuracy required, and 3x max health.
   - Score Multiplier: 0.50x
 
 - ![No Fail Icon](mod-icon/no-fail-mod.png) No Fail
@@ -60,7 +60,7 @@ Use arrow keys to control a character. Cannot play on touch screen device.
 
 - ![Sudden Death Icon](mod-icon/sudden-death-mod.png) Sudden Death
   - Miss and fail.
-    - If you miss, you fail.
+    - If you get hit, you fail.
 
 - ![Hidden Icon](mod-icon/hidden-mod.png) Hidden
   - Cherries will become invisible near you.
@@ -68,7 +68,7 @@ Use arrow keys to control a character. Cannot play on touch screen device.
 
 - ![Double Time Icon](mod-icon/double-time-mod.png) Double Time
   - Zoooooooooom...
-    - Increased speed 1.50x.
+    - Increases speed 1.50x.
   - Score Multiplier: 1.10x
   - Click the icon again for `Nightcore Mod` : Uguuuuuuuu...
     - Increases speed by 1.50x and raises audio pitch.
@@ -89,8 +89,8 @@ Use arrow keys to control a character. Cannot play on touch screen device.
 
 # settings
 
-No setting available
+No settings available.
 
-# demo
+# video
 
 {{< youtube id="ICQVS9xMycg" >}}

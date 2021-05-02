@@ -221,12 +221,9 @@ This adjusts the size of "Beats" notes to make them smaller in size or bigger ba
 ## Kiai Effect
 This options allows you to choose in between 3 different Kiai effects (the particles that show up in gameplay alongside the visualizer) and you will be able to choose in between the following three options:
 
-  1. Turbulent 
-    This is the default option, and it allows the particles to roam freely in the air of the screen and roam around it.
-  2. Classic 
-    This is the old classic version of the kiai effects, and it has a certain locked pattern where the particles are restrained.
-  3. Disabled
-    This option disables the particles entirely.
+  1. *Turbulent * : This is the default option, and it allows the particles to roam freely in the air of the screen and roam around it.
+  2. *Classic * : This is the old classic version of the kiai effects, and it has a certain locked pattern where the particles are restrained.
+  3. *Disabled* : This option disables the particles entirely.
 
 # demo
 

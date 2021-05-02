@@ -165,7 +165,7 @@ Tau can be played on tablet or mouse with keyboard. Use the pointer to move a pa
   - Click the icon again for `Blinds Mod` : Play with blinds on your screen
     - Two doors on the playfield will make it to where you cannot see the note when your HP is high.
 
-### automation
+## automation
 ![Automation](Images/Automation.png)
 
 - ![Autoplay Icon](mod-icon/autoplay-mod.png) Autoplay
@@ -175,14 +175,14 @@ Tau can be played on tablet or mouse with keyboard. Use the pointer to move a pa
   - You don't need to click. Give your clicking/tapping fingers a break from the heat of things.
     - Just move a paddle.
 
-### conversion
+## conversion
 ![Difficulty Reduction](Images/DifficultyReduction.png)
 
 - ![Difficulty Adjust Icon](mod-icon/difficulty-adjust-mod.png) Difficulty Adjust
   - Override a beatmap's difficulty settings.
   - You can override *HP Drain*, *Accuracy*, *Paddle Size*, *Approach Rate* and *Extended Limits*
 
-### fun
+## fun
 ![Fun](Images/Fun.png)
 
 - ![Wind Up Icon](mod-icon/wind-up-mod.png) Wind Up

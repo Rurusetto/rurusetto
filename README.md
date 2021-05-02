@@ -1,6 +1,7 @@
 # Rūrusetto (ルールセット)
 
  [![Netlify Status](https://api.netlify.com/api/v1/badges/dda6b2bf-05d7-4d90-ad9d-b2a4c1bca8fa/deploy-status)](https://app.netlify.com/sites/osu-ruleset/deploys)
+ [![Discord Shield](https://discordapp.com/api/guilds/700619421466624050/widget.png?style=shield)](https://discord.gg/CQPNADu)
 
  A wiki that contain all osu! rulesets
 

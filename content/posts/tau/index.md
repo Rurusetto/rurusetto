@@ -80,11 +80,13 @@ These notes will appear from the center and move towards the ring. They look lik
 *And you can easily customize that keybind to another key in the settings of osu!* 
 
 
+{{< table "table table-striped" >}}
 | Judgement | Score Value | Accuracy |
 | --------- | ----------- | -------- |
 | Miss      | 0           | 0%       |
 | Good      | 200         | 66.66%   |
 | Great     | 300         | 100%     |
+{{</ table >}}
 
 
 ## Sliders

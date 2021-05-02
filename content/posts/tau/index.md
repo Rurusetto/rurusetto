@@ -67,11 +67,13 @@ These notes will appear from the center and move towards the ring. Move the padd
 *And you can easily customize that keybind to another key in the settings of osu!*
 
 
+{{< table "table table-striped" >}}
 | Judgement | Score Value | Accuracy |
 | --------- | ----------- | -------- |
 | Miss      | 0           | 0%       |
 | Good      | 200         | 33.66%   |
 | Great     | 300         | 100%     |
+{{</ table >}}
 
 
 ## HardBeats

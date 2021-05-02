@@ -109,4 +109,4 @@ You can go to your pull request post and click this button to open preview mode.
 
 ![Deploy preview](deploy-preview.png)
 
-That's all. If you have any problem, you can leaving a comment in the relevant issue or pull requests, or use [development server](). We will try to help you as much as we can.
+That's all. If you have any problem, you can leaving a comment in the relevant issue or pull requests, or use [development server](https://discord.gg/CQPNADu). We will try to help you as much as we can.

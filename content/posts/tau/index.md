@@ -36,11 +36,15 @@ This is an empty playfield, the parts it contains are the following:
 
  This is the cursor   /       This is the paddle
   1.  The Cursor
-    This is your mouse, it shows you where on the screen your mouse currently is.
+  
+  This is your mouse, it shows you where on the screen your mouse currently is.
     
   *The closer the cursor is to the middle of the screen the faster your paddle moves, the further away the cursor is from the middle of the playfield the slower your paddle moves (Because the circle you move your mouse in becomes smaller) keep this in mind while playing to make it easier to play*
+  
   2. The Paddle 
+  
     You move it by moving your mouse and cursor, you use it to hit the notes and not let them escape your grasp.
+    
     *You should always move it to the place the next note you are gonna hit is heading and keep it there until the note intersects the paddle and you press the button required for that specific note.*
 
 

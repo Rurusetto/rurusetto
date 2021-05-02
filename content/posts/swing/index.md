@@ -1,14 +1,14 @@
 ---
 title: "swing"
 img: "swing-logo.png"
-date: 2021-02-05
+date: 2021-05-02
 summary: "A custom game mode for osu!lazer project."
 ---
 
 # status
 
 - Status : WIP (but most features have been done)
-- Last Update : 2021.329.1
+- Last Update : 2021.502.0
 - Can import and play without error : Yes
 
 # overview

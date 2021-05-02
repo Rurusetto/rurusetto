@@ -5,9 +5,11 @@ permalink: /status/
 img: None
 ---
 
-Last Update : May 1, 2021 10:43 UTC
+Last Update : May 2, 2021 08:00 UTC
 
-✅ = Everything work.
+✅ = Everything work perfectly.
+
+🔵 = Show in-game error but can play normally.
 
 ⚠️ = Can import but some function or mod is not working or making client crash.
 
@@ -23,9 +25,9 @@ Last Update : May 1, 2021 10:43 UTC
 | [bosu](/posts/bosu)  | ✅  | [⬇️2021.417.0](https://github.com/EVAST9919/bosu/releases/download/2021.417.0/osu.Game.Rulesets.Bosu.dll) |
 | [cytosu](/posts/cytosu)  | ⚠️ | [⬇️2021.417.0](https://github.com/GSculerlor/Cytosu/releases/download/2021.417.0/osu.Game.Rulesets.Cytosu.dll) |
 | [sentakki](/posts/sentakki)  | ✅ | [⬇️2021.416.0](https://github.com/LumpBloom7/sentakki/releases/download/2021.416.0/osu.Game.Rulesets.Sentakki.dll) |
-| [tau](/posts/tau)  | ✅ | [⬇️2021.416.0](https://github.com/Altenhh/tau/releases/download/2021.416.0/osu.Game.Rulesets.Tau.dll) |
+| [tau](/posts/tau)  | ⚠️ | [⬇️2021.416.0](https://github.com/Altenhh/tau/releases/download/2021.416.0/osu.Game.Rulesets.Tau.dll) |
 | [rush!](/posts/rush)  | ✅ | [⬇️2021.411.0](https://github.com/Beamographic/rush/releases/download/2021.411.0/osu.Game.Rulesets.Rush.dll) |
-| [swing](/posts/swing)  | ✅ | [⬇️2021.329.1](https://github.com/EVAST9919/lazer-swing/releases/download/2021.329.1/osu.Game.Rulesets.Swing.dll) |
+| [swing](/posts/swing)  | ⚠️ | [⬇️2021.329.1](https://github.com/EVAST9919/lazer-swing/releases/download/2021.329.1/osu.Game.Rulesets.Swing.dll) |
 | [hishigata](/posts/sentakki)  | ✅ | [⬇️2021.311.0](https://github.com/LumpBloom7/hishigata/releases/download/2021.311.0/osu.Game.Rulesets.Hishigata.dll) |
 <!-- | [karaoke!](/posts/karaoke)  | ❌ | [⬇️2021.0116.0](https://github.com/karaoke-dev/karaoke/releases/download/2021.0116.0/osu.Game.Rulesets.Karaoke.dll) | -->
 

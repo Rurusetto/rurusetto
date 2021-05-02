@@ -18,12 +18,92 @@ summary: "A customize osu! ruleset with a circle surrounding a paddle and some n
 - GitHub Repositories : [Altenhh/tau](https://github.com/Altenhh/tau/)
 - Discord : [tau](https://discord.com/invite/7Y8GXAa)
 
-Tau is a custom ruleset with a circle surrounding a paddle and some notes. Based on idea from [pizzazip's Tau](https://deadlysprinklez.itch.io/tau). The ruleset is developed by Laica.
+Tau is a custom ruleset with a circle surrounding a paddle and some notes.
+
+ *The idea is based on [pizzazip's Tau](https://deadlysprinklez.itch.io/tau). The ruleset is developed by [Laica](https://github.com/Altenhh).*
 
 # gameplay
 
 Tau's gameplay revolves around a paddle which is moved around a circle with the mouse. In the circle, there are different types of notes trying to escape it. The player has to move the paddle to block these notes, then hit them using keyboard keys.
-You can see all note types in [Tau gameplay note types wiki](https://github.com/Altenhh/tau/wiki/Note-types).
+
+The gameplay playfield looks like the following:
+
+![Playfield](Images/Playfield.png)
+
+This is an empty playfield, the parts it contains are the following:
+
+![Cursor](Images/Cursor.png) ![Paddle](Images/Paddle.png)
+
+ This is the cursor   /       This is the paddle
+  1.  The Cursor
+    This is your mouse, it shows you where on the screen your mouse currently is.
+    
+  *The closer the cursor is to the middle of the screen the faster your paddle moves, the further away the cursor is from the middle of the playfield the slower your paddle moves (Because the circle you move your mouse in becomes smaller) keep this in mind while playing to make it easier to play*
+  2. The Paddle 
+    You move it by moving your mouse and cursor, you use it to hit the notes and not let them escape your grasp.
+    *You should always move it to the place the next note you are gonna hit is heading and keep it there until the note intersects the paddle and you press the button required for that specific note.*
+
+
+
+# note types
+
+![Gameplaymods](Images/HeaderNotes.png)
+
+> Source: [Tau note types wiki](https://github.com/Altenhh/tau/wiki/Note-types).
+
+## Beats
+
+![Beats](Images/Beats.png)
+
+These notes will appear from the center and move towards the ring. Move the paddle to the place they are going towards and hit them as they intersect the ring to maximize score.
+
+*You can hit "Beats" using the mouse left and right buttons or using the Z and X buttons in your keyboard*
+
+*And you can easily customize that keybind to another key in the settings of osu!*
+
+
+| Judgement | Score Value | Accuracy |
+| --------- | ----------- | -------- |
+| Miss      | 0           | 0%       |
+| Good      | 200         | 33.66%   |
+| Great     | 300         | 100%     |
+
+
+## HardBeats
+
+![HardBeats](Images/HardBeats.png)
+
+These notes will appear from the center and move towards the ring. They look like a giant circle heading towards the outer ring. Hit them as the head intersects the ring, You can hit "HardBeats" wherever you are on the ring so you do not need to aim for them.
+
+*You can hit "HardBeats" using the Space bar button in your keybaord*
+
+*And you can easily customize that keybind to another key in the settings of osu!* 
+
+
+| Judgement | Score Value | Accuracy |
+| --------- | ----------- | -------- |
+| Miss      | 0           | 0%       |
+| Good      | 200         | 66.66%   |
+| Great     | 300         | 100%     |
+
+
+## Sliders
+
+![Sliders](Images/Sliders.png)
+
+These notes will appear from the center and move towards the ring. They look like a long line that you will have to follow whereever it goes. Tap them as the head intersects the ring, then follow the body with your paddle and release the note when the tail reaches the ring.
+
+*You can hit "Sliders" using the mouse left and right buttons or using the Z and X buttons in your keyboard*
+
+*And you can easily customize that keybind to another key in the settings of osu!*
+
+
+| Judgement | Score Value | Accuracy |
+| --------- | ----------- | -------- |
+| Miss      | 0           | 0%       |
+| Good      | 200         | 66.66%   |
+| Great     | 300         | 100%     |
+
 
 # controls
 
@@ -37,9 +117,12 @@ Tau can be played on tablet or mouse with keyboard. Use the pointer to move a pa
 
 # mods
 
-> Full list in [Tau gameplay mods wiki](https://github.com/Altenhh/tau/wiki/Gameplay-mods).
+![Gameplaymods](Images/HeaderMods.png)
 
-### difficulty reduction
+> Source: [Tau gameplay mods wiki](https://github.com/Altenhh/tau/wiki/Gameplay-mods).
+
+## difficulty reduction
+![Difficulty Reduction](Images/DifficultyReduction.png)
 
 - ![Easy Icon](mod-icon/easy-mod.png) Easy
   - Larger hit area, more forgiving HP drain, less acuracy required, and three lives!
@@ -57,7 +140,8 @@ Tau can be played on tablet or mouse with keyboard. Use the pointer to move a pa
   - Score Multiplier: 0.30x
   - Click the icon again for *Daycore Mod* : Whoaaaaa...
 
-### difficulty increase
+## difficulty increase
+![DifficultyIncreasen](Images/DifficultyIncrease.png)
 
 - ![Hard Rock Icon](mod-icon/hard-rock-mod.png) Hard Rock
   - Everything just got a bit harder...
@@ -82,6 +166,7 @@ Tau can be played on tablet or mouse with keyboard. Use the pointer to move a pa
     - Two doors on the playfield will make it to where you cannot see the note when your HP is high.
 
 ### automation
+![Automation](Images/Automation.png)
 
 - ![Autoplay Icon](mod-icon/autoplay-mod.png) Autoplay
   - Watch a perfect automated play through the song.
@@ -91,12 +176,14 @@ Tau can be played on tablet or mouse with keyboard. Use the pointer to move a pa
     - Just move a paddle.
 
 ### conversion
+![Difficulty Reduction](Images/DifficultyReduction.png)
 
 - ![Difficulty Adjust Icon](mod-icon/difficulty-adjust-mod.png) Difficulty Adjust
   - Override a beatmap's difficulty settings.
   - You can override *HP Drain*, *Accuracy*, *Paddle Size*, *Approach Rate* and *Extended Limits*
 
 ### fun
+![Fun](Images/Fun.png)
 
 - ![Wind Up Icon](mod-icon/wind-up-mod.png) Wind Up
   - Can you keep up?
@@ -107,7 +194,37 @@ Tau can be played on tablet or mouse with keyboard. Use the pointer to move a pa
 
 # settings
 
-You can see a full list of settings in [Tau option wiki page](https://github.com/Altenhh/tau/wiki/Options).
+Tau has a few options to customize your experience while playing this gamemode, you may have even stumbled upon this section within the option menus
+
+![Options](Images/Options.png)
+
+This page will serve as a kind of reference to what each customization option does, and to allow you to find the perfect setup.
+
+## Show Visualizer
+
+This option allows users to disable the visualizer that shows up around the ring during the gameplay at times.
+
+## Playfield dim
+
+This adjusts the background dim inside the playfield "Inside the ring" 
+
+*Basically putting it to a hundered makes it all black and putting it to 0 makes it go the same dim you have in osu! original settings*
+
+## Beat Size
+
+This adjusts the size of "Beats" notes to make them smaller in size or bigger based on the player's best interest
+
+*If you change the settings and you do not know how to restore it to the default just press the orange button that shows up near the setting*
+
+## Kiai Effect
+This options allows you to choose in between 3 different Kiai effects (the particles that show up in gameplay alongside the visualizer) and you will be able to choose in between the following three options:
+
+  1. Turbulent 
+    This is the default option, and it allows the particles to roam freely in the air of the screen and roam around it.
+  2. Classic 
+    This is the old classic version of the kiai effects, and it has a certain locked pattern where the particles are restrained.
+  3. Disabled
+    This option disables the particles entirely.
 
 # demo
 

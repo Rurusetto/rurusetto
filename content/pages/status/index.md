@@ -22,7 +22,7 @@ Last Update : May 2, 2021 08:30 UTC
 |---------|--------|--------|--------|
 | [mvis](/posts/mvis)  | ✅  | Everything work | [⬇️2021.429.0](https://github.com/EVAST9919/lazer-m-vis/releases/download/2021.429.0/osu.Game.Rulesets.Mvis.dll) |
 | [hitokori](/posts/hitokori)  | ✅ | Everything work | [⬇️0.18.5](https://github.com/Flutterish/Hitokori/releases/download/0.18.5-2021.04.26/osu.Game.Rulesets.Hitokori.dll) |
-| [bosu](/posts/bosu)  | ✅ | Everything work | [⬇️2021.417.0](https://github.com/EVAST9919/bosu/releases/download/2021.417.0/osu.Game.Rulesets.Bosu.dll) |
+| [bosu](/posts/bosu)  | ✅ | Everything work | [⬇️2021.502.0](https://github.com/EVAST9919/bosu/releases/download/2021.502.0/osu.Game.Rulesets.Bosu.dll) |
 | [cytosu](/posts/cytosu)  | ⚠️ | Autoplay mod causes client to crash. | [⬇️2021.417.0](https://github.com/GSculerlor/Cytosu/releases/download/2021.417.0/osu.Game.Rulesets.Cytosu.dll) |
 | [sentakki](/posts/sentakki)  | ⚠️ | Adjust note entry speed during playing make a client crash. | [⬇️2021.416.0](https://github.com/LumpBloom7/sentakki/releases/download/2021.416.0/osu.Game.Rulesets.Sentakki.dll) |
 | [tau](/posts/tau)  | 🔵 | Error during launch a client but can play normally | [⬇️2021.416.0](https://github.com/Altenhh/tau/releases/download/2021.416.0/osu.Game.Rulesets.Tau.dll) |

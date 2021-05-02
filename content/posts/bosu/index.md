@@ -1,7 +1,7 @@
 ---
 title: "bosu"
 img: "bosu-logo.png"
-date: 2021-04-17
+date: 2021-05-02
 summary: "A custom game mode for osu!lazer project based on &rdquo;I wanna be the Boshy&rdquo; game"
 ---
 

@@ -25,7 +25,7 @@ Last Update : May 2, 2021 09:04 UTC
 | [bosu](/posts/bosu)  | ✅ | Everything work | [⬇️2021.502.0](https://github.com/EVAST9919/bosu/releases/download/2021.502.0/osu.Game.Rulesets.Bosu.dll) |
 | [cytosu](/posts/cytosu)  | ⚠️ | Autoplay mod causes client to crash. | [⬇️2021.417.0](https://github.com/GSculerlor/Cytosu/releases/download/2021.417.0/osu.Game.Rulesets.Cytosu.dll) |
 | [sentakki](/posts/sentakki)  | ✅ | Everything work | [⬇️2021.502.0](https://github.com/LumpBloom7/sentakki/releases/download/2021.502.0/osu.Game.Rulesets.Sentakki.dll) |
-| [tau](/posts/tau)  | 🔵 | Error during launch a client but can play normally | [⬇️2021.416.0](https://github.com/Altenhh/tau/releases/download/2021.416.0/osu.Game.Rulesets.Tau.dll) |
+| [tau](/posts/tau)  | ✅ | Everything work | [⬇️2021.502.0](https://github.com/Altenhh/tau/releases/download/2021.502.0/osu.Game.Rulesets.Tau.dll) |
 | [rush!](/posts/rush)  | ✅ | Everything work | [⬇️2021.411.0](https://github.com/Beamographic/rush/releases/download/2021.411.0/osu.Game.Rulesets.Rush.dll) |
 | [swing](/posts/swing)  | 🔵 | Error during launch a client but can play normally | [⬇️2021.329.1](https://github.com/EVAST9919/lazer-swing/releases/download/2021.329.1/osu.Game.Rulesets.Swing.dll) |
 | [hishigata](/posts/hishigata)  | ✅ | Everything work | [⬇️2021.311.0](https://github.com/LumpBloom7/hishigata/releases/download/2021.311.0/osu.Game.Rulesets.Hishigata.dll) |

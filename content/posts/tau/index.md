@@ -1,7 +1,7 @@
 ---
 title: "tau"
 img: "tau-logo.png"
-date: 2021-04-17
+date: 2021-02-05
 summary: "A customize osu! ruleset with a circle surrounding a paddle and some notes."
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "swing"
 img: "swing-logo.png"
-date: 2021-03-29
+date: 2021-02-05
 summary: "A custom game mode for osu!lazer project."
 ---
 

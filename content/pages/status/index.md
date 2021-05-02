@@ -5,7 +5,7 @@ permalink: /status/
 img: None
 ---
 
-Last Update : May 2, 2021 09:04 UTC
+Last Update : May 2, 2021 09:19 UTC
 
 ✅ = Everything work perfectly.
 
@@ -27,7 +27,7 @@ Last Update : May 2, 2021 09:04 UTC
 | [sentakki](/posts/sentakki)  | ✅ | Everything work | [⬇️2021.502.0](https://github.com/LumpBloom7/sentakki/releases/) |
 | [tau](/posts/tau)  | ✅ | Everything work | [⬇️2021.502.0](https://github.com/Altenhh/tau/releases/latest) |
 | [rush!](/posts/rush)  | ✅ | Everything work | [⬇️2021.411.0](https://github.com/Beamographic/rush/releases/tag/2021.411.0) |
-| [swing](/posts/swing)  | 🔵 | Error during launch a client but can play normally | [⬇️2021.329.1](https://github.com/EVAST9919/lazer-swing/releases/latest) |
+| [swing](/posts/swing)  | ✅ | Everything work | [⬇️2021.502.0](https://github.com/EVAST9919/lazer-swing/releases/latest) |
 | [hishigata](/posts/hishigata)  | ✅ | Everything work | [⬇️2021.311.0](https://github.com/LumpBloom7/hishigata/releases/latest) |
 <!-- | [karaoke!](/posts/karaoke)  | ❌ | [⬇️2021.0116.0](https://github.com/karaoke-dev/karaoke/releases/download/2021.0116.0/osu.Game.Rulesets.Karaoke.dll) | -->
 

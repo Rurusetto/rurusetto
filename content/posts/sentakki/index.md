@@ -1,7 +1,7 @@
 ---
 title: "sentakki"
 img: "sentakki-logo.png"
-date: 2021-04-16
+date: 2021-05-02
 summary: "A custom ruleset based on Sega&rsquo;s arcade rhythm game maimai"
 ---
 
@@ -9,7 +9,7 @@ summary: "A custom ruleset based on Sega&rsquo;s arcade rhythm game maimai"
 
 - Status : Active development
 - Last Update : 2021.416.0
-- Can import and play without error : Adjust note entry speed during playing make a client crash.
+- Can import and play without error : Yes
 
 # overview
 

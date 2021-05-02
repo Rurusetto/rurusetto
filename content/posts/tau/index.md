@@ -216,7 +216,7 @@ This adjusts the background dim inside the playfield "Inside the ring"
 
 This adjusts the size of "Beats" notes to make them smaller in size or bigger based on the player's best interest
 
-*If you change the settings and you do not know how to restore it to the default just press the orange button that shows up near the setting*
+*If you change the settings and you do not know how to restore it to the default just press the orange button that shows up near the setting.*
 
 ## Kiai Effect
 This options allows you to choose in between 3 different Kiai effects (the particles that show up in gameplay alongside the visualizer) and you will be able to choose in between the following three options:

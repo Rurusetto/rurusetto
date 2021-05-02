@@ -9,7 +9,7 @@ summary: "A custom ruleset based on Sega&rsquo;s arcade rhythm game maimai"
 
 - Status : Active development
 - Last Update : 2021.416.0
-- Can import and play without error : Yes
+- Can import and play without error : Adjust note entry speed during playing make a client crash.
 
 # overview
 

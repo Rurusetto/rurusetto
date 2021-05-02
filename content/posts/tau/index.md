@@ -32,9 +32,10 @@ The gameplay playfield looks like the following:
 
 This is an empty playfield, the parts it contains are the following:
 
-![Cursor](Images/Cursor.png) ![Paddle](Images/Paddle.png)
-
- This is the cursor   /       This is the paddle
+![Cursor](Images/Cursor.png)
+*This is the cursor*
+![Paddle](Images/Paddle.png)
+*This is the paddle*
   1.  The Cursor
   
   This is your mouse, it shows you where on the screen your mouse currently is.

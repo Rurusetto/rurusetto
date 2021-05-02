@@ -24,7 +24,7 @@ Tau is a custom ruleset with a circle surrounding a paddle and some notes.
 
 # gameplay
 
-Tau's gameplay revolves around a paddle which is moved around a circle with the mouse. In the circle, there are different types of notes trying to escape it. The player has to move the paddle to block these notes, then hit them using keyboard keys.
+Tau's gameplay revolves around a paddle which is moved around a circle. In the circle, there are different types of notes trying to escape it. The player has to move the paddle to block these notes, then hit them using keyboard keys according to what button each noter requires.
 
 The gameplay playfield looks like the following:
 
@@ -38,7 +38,7 @@ This is an empty playfield, the parts it contains are:
   
   This is your mouse, it shows you where on the screen your mouse currently is.
     
-  *The closer the cursor is to the middle of the screen the faster your paddle moves, the further away the cursor is from the middle of the playfield the slower your paddle moves (Because the circle you move your mouse in becomes smaller/bigger) keep this in mind while playing as it makes it easier to play and switch in between higher sensitivity and lower sensitivity*
+  *The closer the cursor is to the centre of the screen the faster your paddle moves, the further away the cursor is from the centre of the playfield the slower your paddle moves (Because the circle you move your mouse in becomes smaller/bigger) keep this in mind while playing as it makes it easier to play and switch in between higher sensitivity and lower sensitivity when needed*
 
 ![Paddle](Images/Paddle.png)
 
@@ -46,7 +46,7 @@ This is an empty playfield, the parts it contains are:
  
   You move it by moving your mouse and cursor, you use it to hit the notes and not let them escape your grasp.
 
-  *You should always move it to the place the next note you are gonna hit is heading and keep it there until the note intersects the paddle and you press the button required for that specific note.*
+  *You should always move it to the place the next note you are gonna hit is heading and keep it there until the note intersects the paddle and by pressing the button required for that note you maximize the score it can give.*
 
 
 
@@ -60,9 +60,9 @@ This is an empty playfield, the parts it contains are:
 
 ![Beats](Images/Beats.png)
 
-These notes will appear from the center and move towards the ring. Move the paddle to the place they are going towards and hit them as they intersect the ring to maximize score.
+These notes will appear from the centre and move towards the ring. Move the paddle to the place they are going towards and hit them as they intersect the ring to maximize score.
 
-*You can hit "Beats" using the mouse left and right buttons or using the Z and X buttons in your keyboard*
+*You can hit "Beats" using the mouse left and right buttons or using the Z and X buttons in your keyboard.*
 
 *And you can easily customize that keybind to another key in the settings of osu!*
 
@@ -80,9 +80,9 @@ These notes will appear from the center and move towards the ring. Move the padd
 
 ![HardBeats](Images/HardBeats.png)
 
-These notes will appear from the center and move towards the ring. They look like a giant circle heading towards the outer ring. Hit them as the head intersects the ring, You can hit "HardBeats" wherever you are on the ring so you do not need to aim for them.
+These notes will appear from the centre and move towards the ring. They look like a giant circle heading towards the outer ring. Hit them as the head intersects the ring, You can hit "HardBeats" wherever your paddle is on the ring so you do not need to aim for them however the button on the keyboard that you press to hit them with is different from all other note types.
 
-*You can hit "HardBeats" using the Space bar button in your keybaord*
+*You can hit "HardBeats" using the Space bar button in your keybaord.*
 
 *And you can easily customize that keybind to another key in the settings of osu!* 
 
@@ -100,9 +100,9 @@ These notes will appear from the center and move towards the ring. They look lik
 
 ![Sliders](Images/Sliders.png)
 
-These notes will appear from the center and move towards the ring. They look like a long line that you will have to follow it wherever it goes. Tap them as the head intersects the ring, then follow the body with your paddle and release the note when the tail reaches the ring.
+These notes will appear from the centre and move towards the ring. They look like a long line that you will have to follow it wherever it goes. Tap them as the head intersects the ring, then follow the body with your paddle and release the note when the tail reaches the ring.
 
-*You can hit "Sliders" using the mouse left and right buttons or using the Z and X buttons in your keyboard*
+*You can hit "Sliders" using the mouse left and right buttons or using the Z and X buttons in your keyboard.*
 
 *And you can easily customize that keybind to another key in the settings of osu!*
 
@@ -118,7 +118,7 @@ These notes will appear from the center and move towards the ring. They look lik
 
 # controls
 
-Tau can be played on tablet or mouse with keyboard. Use the pointer to move a paddle and use the keyboard to hit the notes.
+Tau can be played on tablet or mouse with keyboard. Use the pointer to move the paddle and use the keyboard to hit the notes accordingly.
 
 ### default controls
 
@@ -187,7 +187,7 @@ Tau can be played on tablet or mouse with keyboard. Use the pointer to move a pa
     - Just move a paddle.
 
 ## conversion
-![Difficulty Reduction](Images/DifficultyReduction.png)
+![Conversion](Images/Conversion.png)
 
 - ![Difficulty Adjust Icon](mod-icon/difficulty-adjust-mod.png) Difficulty Adjust
   - Override a beatmap's difficulty settings.
@@ -205,7 +205,7 @@ Tau can be played on tablet or mouse with keyboard. Use the pointer to move a pa
 
 # settings
 
-Tau has a few options to customize your experience while playing this gamemode, you may have even stumbled upon this section within the option menus
+Tau has a few options to customize your experience while playing this gamemode, you may have even stumbled upon this section within the option menus.
 
 ![Options](Images/Options.png)
 
@@ -217,9 +217,9 @@ This option allows users to disable the visualizer that shows up around the ring
 
 ## Playfield dim
 
-This adjusts the background dim inside the playfield (Inside the ring) 
+This adjusts the background dim inside the playfield (Inside the ring).
 
-*Basically putting it to a hundred makes it pitch black and putting it to 0 makes it go the same dim you have in osu!'s original settings*
+*Basically putting it to a hundred makes it pitch black and putting it to 0 makes it go the same dim you have in osu!'s original settings.*
 
 ## Beat Size
 

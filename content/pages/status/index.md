@@ -5,7 +5,7 @@ permalink: /status/
 img: None
 ---
 
-Last Update : May 2, 2021 09:19 UTC
+Last Update : May 3, 2021 03:49 UTC
 
 ✅ = Everything work perfectly.
 

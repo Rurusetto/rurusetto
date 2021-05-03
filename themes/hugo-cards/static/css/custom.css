@@ -1,1 +1,7 @@
 /*Add your custom css here. This will override any existinc thems css*/
+
+body.dark-mode, 
+body.dark-mode main * {
+    background: rgb(45, 45, 45);
+    color: #f5f5f5;
+}

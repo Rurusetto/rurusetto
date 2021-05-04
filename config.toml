@@ -25,5 +25,5 @@ paginate = 50
   custom_css = ["css/custom.css"]
 
   [params.copyright]
-     name = "Rūrusetto"
+     name = "Rūrusetto team"
      link = "https://github.com/Rurusetto"

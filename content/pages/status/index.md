@@ -6,7 +6,7 @@ img: None
 summary: "Ruleset status page."
 ---
 
-Last Update : May 3, 2021 03:49 UTC
+Last Update : May 4, 2021 06:15 UTC
 
 ✅ = Everything work perfectly.
 
@@ -21,7 +21,7 @@ Last Update : May 3, 2021 03:49 UTC
 {{< table "table table-striped" >}}
 | Rulesets  | Status | Description | Download |
 |---------|--------|--------|--------|
-| [mvis](/posts/mvis)  | ✅  | Everything work | [⬇️2021.429.0](https://github.com/EVAST9919/lazer-m-vis/releases/latest) |
+| [mvis](/posts/mvis)  | ✅  | Everything work | [⬇️2021.504.1](https://github.com/EVAST9919/lazer-m-vis/releases/latest) |
 | [hitokori](/posts/hitokori)  | ✅ | Everything work | [⬇️0.18.5](https://github.com/Flutterish/Hitokori/releases/latest) |
 | [bosu](/posts/bosu)  | ✅ | Everything work | [⬇️2021.502.0](https://github.com/EVAST9919/bosu/releases/latest) |
 | [cytosu](/posts/cytosu)  | ⚠️ | Autoplay mod causes client to crash. | [⬇️2021.417.0](https://github.com/GSculerlor/Cytosu/releases/tag/2021.417.0) |

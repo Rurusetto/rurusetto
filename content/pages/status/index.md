@@ -3,7 +3,7 @@ layout: page
 title: rulesets status
 permalink: /status/
 img: None
-summary: "Ruleset statuys page."
+summary: "Ruleset status page."
 ---
 
 Last Update : May 3, 2021 03:49 UTC

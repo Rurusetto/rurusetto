@@ -1,7 +1,5 @@
 /*Add your custom css here. This will override any existinc thems css*/
 
-/* Dark mode style by https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/#design */
-
 body.dark-mode, 
 body.dark-mode main * {
     background: #2d2d2d;
@@ -18,15 +16,15 @@ body.dark-mode div.post-meta {
 }
 
 body.dark-mode div.panel {
-  background-color: #2d2d2d;
+  background-color: #fff;
 }
 
 body.dark-mode nav.navbar {
-  border-bottom: 1px solid #2d2d2d;
+  border-bottom: 1px solid #fff;
 }
 
 body.dark-mode footer {
-  border-top: 1px solid #2d2d2d;
+  border-top: 1px solid #fff;
 }
 
 body.dark-mode span.post-meta {

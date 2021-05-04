@@ -7,7 +7,7 @@ summary: "A ruleset based on Project Rhombus."
 
 # status
 
-- Status : Active development
+- Status : Active Development
 - Last Update : 2021.311.0
 - Can import and play without error : Yes
 
@@ -23,11 +23,11 @@ Sentakki is a custom ruleset based on [Project Rhombus](https://www.pcgamingwiki
 
 # gameplay
 
-Use arrow keys or touch control and point the cursor in the direction of the oncoming arrows to block them.
+Use the arrow keys or touch screen to point the cursor in the direction of the oncoming arrows to block them.
 
 # controls
 
-Mainly use arrow keys. You can use touch control too.
+Arrow keys or touch screen.
 
 ### default controls
 
@@ -44,12 +44,12 @@ Mainly use arrow keys. You can use touch control too.
   - Less Zoom...
     - Decreases speed .75x.
   - Score Multiplier: 0.30x
-  - Click the icon again will be *Daycore Mod* : Whoaaaaa...
+  - Click the icon again for*Daycore Mod* : Whoaaaaa...
     - Decreases speed .75x and lowers audio pitch.
 
 - ![No Fail Icon](mod-icon/no-fail-mod.png) No Fail
   - You can't fail, no matter what.
-    - Make it impossoble to fail.
+    - Makes it impossoble to fail.
   - Score Multiplier: 0.50x
 
 ### difficulty increase
@@ -64,9 +64,9 @@ Mainly use arrow keys. You can use touch control too.
 
 - ![Double Time Icon](mod-icon/double-time-mod.png) Double Time
   - Zoooooooooom...
-    - Increased speed 1.50x.
+    - Increases speed 1.50x.
   - Score Multiplier: 1.12x
-  - Click the icon again will be `Nightcore Mod` : Uguuuuuuuu...
+  - Click the icon again for `Nightcore Mod` : Uguuuuuuuu...
     - Increases speed 1.50x and raises audio pitch.
 
 ### automation
@@ -84,8 +84,8 @@ Mainly use arrow keys. You can use touch control too.
 
 # settings
 
-You can adjust `arrow shape` to *sharp* or *round*.
+You can set `arrow shape` to *sharp* or *round*.
 
-# demo
+# video
 
 {{< youtube id="v0FV6D1HaBk" >}}

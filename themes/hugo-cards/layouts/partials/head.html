@@ -13,13 +13,9 @@
 <meta name="msapplication-TileColor" content="#ff66aa">
 <meta name="theme-color" content="#ff66aa">
 
-<!-- Primary Meta Tags -->
-<title>rūrusetto</title>
-<meta name="title" content="Rūrusetto">
-<meta name="description" content="A page that contain all osu! ruleset">
-
 <title>{{ .Title}}{{if .IsPage}} - {{.Site.Title}}{{ end }}</title>
 {{partial "seo.html" .}}
+<title>rūrusetto</title>
 
 {{ $main := resources.Get "sass/main.scss" | resources.ToCSS (dict "outputStyle" "compressed")}}
 <link rel="stylesheet" href="{{ $main.RelPermalink }}">

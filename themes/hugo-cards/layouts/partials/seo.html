@@ -1,3 +1,4 @@
+<meta name="title" content="{{ .Title }}{{ if .IsHome }} - {{ .Site.Params.Tagline }}{{ else }} - {{ .Site.Title }}{{ end }}">
 <meta name="description" content="{{ if .Description }}{{ .Description | plainify }}{{ else }}{{if .IsPage}}{{ .Summary | plainify  }}{{ end }}{{ end }}"/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="{{ .Permalink }}" />

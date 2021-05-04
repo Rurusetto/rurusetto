@@ -32,3 +32,11 @@ body.dark-mode nav.navbar {
 body.dark-mode footer {
   border-top: 1px solid #2d2d2d;
 }
+
+body.dark-mode span.post-meta {
+  color: #909090;
+}
+
+body.dark-mode p.post-meta {
+  color: #909090;
+}

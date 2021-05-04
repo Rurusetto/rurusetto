@@ -2,13 +2,13 @@
     <div class="container">
         <div class="row p20">
             {{ with .Site.Params.copyright }}
-                <div class="col-md-4 text-center mt25">Made with ❤️ by <a target="_blank" href="{{ .link }}">{{ .name }}</a> and <a href=https://github.com/HelloYeew/unofficial-osu-ruleset-pages/graphs/contributors>contributors</a></div>
+                <div class="col-md-4 text-center mt25">Made with ❤️ by <a target="_blank" href="{{ .link }}">{{ .name }}</a> and <a href=https://github.com/Rurusetto/rurusetto/graphs/contributors>contributors</a></div>
             {{ end }}
 
             <div class="col-md-4 text-center mt25" >
-                <!-- {{ with .Site.Params.builtBy }}
-                <a target="_blank" href="https://bool.netlify.com"><img src="https://img.shields.io/badge/Built%20by-bool-brightgreen.svg" alt="{{.}}"></a>
-                {{ end }} -->
+                <a href="https://www.netlify.com">
+                    <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" />
+                </a>
             </div>
             <div class="col-md-4 text-center mt25">
                {{ with .Site.Params.facebook }}

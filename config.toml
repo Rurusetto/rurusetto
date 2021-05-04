@@ -5,7 +5,7 @@ theme = "hugo-cards"
 paginate = 50
 
 [params]
-  builtBy = "HelloYeew"
+  builtBy = "Rūrusetto"
   defaultImage = "default.jpg"
 
   facebook = ""

@@ -8,15 +8,18 @@
 <meta name="twitter:title" content="{{ .Title }}{{ if .IsHome }} - {{ .Site.Params.Tagline }}{{ else }} - {{ .Site.Title }}{{ end }}" />
 <meta name="twitter:site" content="{{ .Site.Params.twitter }}" />
 <meta name="twitter:creator" content="{{ .Site.Params.twitter }}" />
+<meta property="twitter:url" content="http://rulesets.info/">
+<meta property="twitter:image" content="https://cdn.discordapp.com/attachments/818164894776033330/838009159030276109/pippi-ruleset.png">
 
 <!-- OG data -->
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
-<meta content="{{ .Title }}{{ if .IsHome }} - {{ .Site.Params.Tagline }}{{ else }} - {{ .Site.Title }}{{ end }}" property="og:title">
-<meta content="{{ if .Description }}{{ .Description | plainify }}{{ else }}{{if .IsPage}}{{ .Summary | plainify  }}{{ end }}{{ end }}" property="og:description">
+<meta property="og:title" content="{{ .Title }}{{ if .IsHome }} - {{ .Site.Params.Tagline }}{{ else }} - {{ .Site.Title }}{{ end }}">
+<meta property="og:description" content="{{ if .Description }}{{ .Description | plainify }}{{ else }}{{if .IsPage}}{{ .Summary | plainify  }}{{ end }}{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:site_name" content="{{ .Site.Title }}" />
+<meta property="og:image" content="https://cdn.discordapp.com/attachments/818164894776033330/838009159030276109/pippi-ruleset.png">
 {{ range .Params.categories }}<meta property="article:section" content="{{ . }}" />{{ end }}
-{{ if isset .Params "date" }}<meta property="article:published_time" content="{{ time .Date }}" />{{ end }}
+{{ if isset .Params "date" }}<meta property="article:published_time" content="Latest release at {{ time .Date }}" />{{ end }}
 
 <!-- JSON-LD -->
 {{ if .IsHome }}

@@ -8,10 +8,6 @@ body.dark-mode main * {
     color: #f5f5f5; /* Dark mode font color*/
 }
 
-body.dark-mode img {
-  filter: grayscale(50%);
-}
-
 body.dark-mode div.panel-body {
   background-color: #2d2d2d;
   color: #fff

@@ -5,13 +5,13 @@ theme = "hugo-cards"
 paginate = 50
 
 [params]
-  builtBy = "HelloYeew"
+  builtBy = "Rūrusetto"
   defaultImage = "default.jpg"
 
   facebook = ""
   quora = ""
   twitter = ""
-  github = "https://github.com/HelloYeew/rurusetto"
+  github = "https://github.com/Rurusetto/rurusetto/"
   email = "contact@rulesets.info"
 
   fbLikeBox = ""
@@ -19,11 +19,11 @@ paginate = 50
   fbPageUrl = ""
   fbPageTitle = ""
 
-  analytics = ""
+  analytics = "G-S7VFDFXDB9"
   disqus = ""
 
   custom_css = ["css/custom.css"]
 
   [params.copyright]
-     name = "HelloYeew"
-     link = "https://helloyeew.dev"
+     name = "Rūrusetto team"
+     link = "https://github.com/Rurusetto"

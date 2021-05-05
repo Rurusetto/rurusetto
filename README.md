@@ -30,8 +30,8 @@ Please make sure you have the following prerequisites:
 Clone the repository:
 
 ```shell
-git clone https://github.com/ppy/osu
-cd osu
+git clone https://github.com/Rurusetto/rurusetto/
+cd rurusetto
 ```
 
 To update the source code to the latest commit, run the following command inside the Rūrusetto directory:

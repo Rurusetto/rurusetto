@@ -2,6 +2,8 @@
 layout: page
 title: install framework
 permalink: /install/
-img: None
+img: 
 summary: "Instruction to install a ruleset to osu!lazer."
 ---
+
+*It's blank bro.*

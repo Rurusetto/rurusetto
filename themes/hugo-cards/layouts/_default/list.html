@@ -1,9 +1,13 @@
 {{ define "main" }}
 
 <div class="home">
- 
+
+    <h4 align="center">This is a development instance of the rūrusetto. Some function in dark mode like color invert will not work here.</h4>
   
+
     <div class="row pack">
+
+      
 
         {{ $paginator := .Paginate (where .Site.RegularPages "Section" "posts") }}
         {{ range $paginator.Pages }}   

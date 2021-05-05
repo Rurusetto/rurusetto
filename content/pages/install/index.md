@@ -18,19 +18,19 @@ Then, download a ruleset file by press on `.dll` file in release list.
 
 # import rulesets to osu!lazer
 
-### Step 1 : Navigate to osu! data directory
+### step 1 : navigate to osu! data directory
 
 Open the setting menu in osu!, in `General` part there would be a button to `Open osu! folder`. On windows you could navigate to the data folder directly via Windows Explorer, by default this location is `%AppData%/osu!/rulesets`. On MacOS default this location is in application itself.
 
 ![open-osu-folder.png](img/open-osu-folder.png)
 
-### Step 2: Installing the ruleset
+### step 2: installing the ruleset
 
 Copy the ruleset file (.dll file that you just download) into the rulesets directory, do make sure that duplicate copies of the ruleset is overwritten.
 
 Other rulesets also could share the same folder.
 
-### Stpe 3: Have fun!
+### stpe 3: have fun!
 
 After completing the above steps. If you already open osu!lazer during install you may need to restart osu!lazer. Once osu!lazer is started, you should see the ruleset alongside the standard rulesets.
 

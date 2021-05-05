@@ -17,12 +17,13 @@ A website structure is almost finish. Current adding more ruleset to website.
 
 ## Developing Rūrusetto codebase
 
-*If you don't want to developing a codebase but you want to contribute a wiki you can skip to [contributing](#contributing) part.*
+*If you are only interested in contributing to wiki content, instead of the underlying backend, please skip to [contributing](#contributing).*
 
 Please make sure you have the following prerequisites:
 
 - [Hugo Framework](https://gohugo.io/)
 - Text IDE. We recommend IDE with intelligent code completion and syntax highlighting if you work with a codebase. Our recommendation is [Visual Studio Code](https://code.visualstudio.com/)
+- [Git](https://git-scm.com/)
 
 ### Downloading the source code
 

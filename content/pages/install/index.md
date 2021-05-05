@@ -8,11 +8,11 @@ summary: "Instruction to install and update rulesets to osu!lazer."
 
 # download rulesets file
 
-Go to ruleset's repositories release page or go to [rulesets status page](https://rulesets.info/pages/status) and press download button to go to ruleset's repositories release page.
+Go to the GitHub release page of the desired ruleset. A table of rulesets and their download links can be found here [rulesets status page](https://rulesets.info/pages/status).
 
 ![status page](img/status-download.png)
 
-Then, download a ruleset file by press on `.dll` file in release list.
+Then, download a ruleset file by selecting the `.dll` file in release list.
 
 ![sentakki release download](img/sentakki-release-download.png)
 
@@ -20,7 +20,7 @@ Then, download a ruleset file by press on `.dll` file in release list.
 
 ### step 1 : navigate to osu! data directory
 
-Open the setting menu in osu!, in `General` part there would be a button to `Open osu! folder`. On windows you could navigate to the data folder directly via Windows Explorer, by default this location is `%AppData%/osu!/rulesets`. On MacOS default this location is in application itself.
+In osu!lazer's setting panel, there is a button to `Open osu! folder` within the "General" section. On windows you could navigate to the data folder directly via Windows Explorer, by default this location is `%AppData%/osu!/rulesets`. On MacOS default this location is in application itself.
 
 ![open-osu-folder.png](img/open-osu-folder.png)
 
@@ -32,7 +32,7 @@ Other rulesets also could share the same folder.
 
 ### stpe 3: have fun!
 
-After completing the above steps. If you already open osu!lazer during install you may need to restart osu!lazer. Once osu!lazer is started, you should see the ruleset alongside the standard rulesets.
+After completing the above steps, you may need to restart osu!lazer if it is already open. Once restarted, you should see the ruleset alongside the standard rulesets.
 
 ![complete installation](img/rulesets-complete.png)
 

@@ -5,9 +5,55 @@
 
  A wiki that contain all osu! rulesets
 
+## Domain
+
+- Dev build (Some function in dark mode like color invert will not work.) : https://dev.rulesets.info/
+- Official build : https://rulesets.info/
+- Directly to a ruleset page : https://[rulesetname].rulesets.info/
+
 ## Development Status
 
 A website structure is almost finish. Current adding more ruleset to website.
+
+## Developing Rūrusetto codebase
+
+*If you don't want to developing a codebase but you want to contribute a wiki you can skip to [contributing](#contributing) part.*
+
+Please make sure you have the following prerequisites:
+
+- [Hugo Framework](https://gohugo.io/)
+- Text IDE. We recommend IDE with intelligent code completion and syntax highlighting if you work with a codebase. Our recommendation is [Visual Studio Code](https://code.visualstudio.com/)
+
+### Downloading the source code
+
+Clone the repository:
+
+```shell
+git clone https://github.com/ppy/osu
+cd osu
+```
+
+To update the source code to the latest commit, run the following command inside the Rūrusetto directory:
+
+```shell
+git pull
+```
+
+### Start a development server
+
+Run this command inside the Rūrusetto directory, this will enable a development in http://localhost:1313/ and this support fast render and reload:
+
+```shell
+hugo server
+```
+
+### Build this website
+
+Run this command inside the Rūrusetto directory, complete build will available in `public` directory inside source code directory.
+
+```shell
+hugo
+```
 
 ## Contributing
 

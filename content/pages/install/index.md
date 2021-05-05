@@ -12,13 +12,13 @@ Go to the GitHub release page of the desired ruleset. A table of rulesets and th
 
 ![status page](img/status-download.png)
 
-Then, download a ruleset file by selecting the `.dll` file in release list.
+Then download the ruleset by selecting the `.dll` file in the release list and downloading that file only.
 
 ![sentakki release download](img/sentakki-release-download.png)
 
 # import rulesets to osu!lazer
 
-### step 1 : navigate to osu! data directory
+### step 1: navigate to osu! data directory
 
 In osu!lazer's setting panel, there is a button to `Open osu! folder` within the "General" section. On windows you could navigate to the data folder directly via Windows Explorer, by default this location is `%AppData%/osu!/rulesets`. On MacOS default this location is in application itself.
 
@@ -26,7 +26,7 @@ In osu!lazer's setting panel, there is a button to `Open osu! folder` within the
 
 ### step 2: installing the ruleset
 
-Copy the ruleset file (.dll file that you just download) into the rulesets directory, do make sure that duplicate copies of the ruleset is overwritten.
+Copy the ruleset file (.dll file that you just downloaded) into the rulesets directory, do make sure that duplicate copies of the ruleset are overwritten.
 
 Other rulesets also could share the same folder.
 

@@ -7,17 +7,17 @@
 
 ## Domain
 
-- Dev build (Some function in dark mode like color invert will not work.) : https://dev.rulesets.info/
-- Official build : https://rulesets.info/
-- Directly to a ruleset page : https://[rulesetname].rulesets.info/
+- Dev build (Some functions in dark mode like color inversion might not work): https://dev.rulesets.info/
+- Official build: https://rulesets.info/
+- Directly to a ruleset page: https://[rulesetname].rulesets.info/
 
 ## Development Status
 
-A website structure is almost finish. Current adding more ruleset to website.
+The website structure is almost finished. Currently adding more ruleset pages to the website and improving on the pages currently in place.
 
 ## Developing Rūrusetto codebase
 
-*If you are only interested in contributing to wiki content, instead of the underlying backend, please skip to [contributing](#contributing).*
+*If you are only interested in contributing to the wiki content, instead of the underlying backend, please skip to [contributing](#contributing).*
 
 Please make sure you have the following prerequisites:
 
@@ -42,7 +42,7 @@ git pull
 
 ### Start a development server
 
-Run this command inside the Rūrusetto directory, this will enable a development in http://localhost:1313/ and this support fast render and reload:
+Run this command inside the Rūrusetto directory, this will enable a development environment in http://localhost:1313/ and this support fast render and reload:
 
 ```shell
 hugo server
@@ -50,7 +50,7 @@ hugo server
 
 ### Build this website
 
-Run this command inside the Rūrusetto directory, complete build will available in `public` directory inside source code directory.
+Run this command inside the Rūrusetto directory, complete build will be available in `public` directory inside source code directory.
 
 ```shell
 hugo

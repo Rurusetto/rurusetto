@@ -1,4 +1,4 @@
-baseURL = "http://dev.rulesets.info/"
+baseURL = "https://dev.rulesets.info/"
 languageCode = "en-us"
 title = "rūrusetto"
 theme = "hugo-cards"
@@ -19,7 +19,7 @@ paginate = 50
   fbPageUrl = ""
   fbPageTitle = ""
 
-  analytics = "2587975926"
+  analytics = "UA-180749805-1"
   disqus = ""
 
   custom_css = ["css/custom.css"]

@@ -23,6 +23,11 @@ body.dark-mode div.panel {
   background-color: #2d2d2d;
 }
 
+/* This make me scared */
+/* body.dark-mode img {
+  filter: invert(1)
+} */
+
 body.dark-mode nav.navbar {
   border-bottom: 1px solid #696969;
 }

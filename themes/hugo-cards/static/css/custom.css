@@ -15,8 +15,6 @@ body.dark-mode div.img-logo {
   filter: invert(1)
 }
 
-
-
 body.dark-mode div.post-meta {
   color: #f5f5f5;
 }
@@ -26,17 +24,17 @@ body.dark-mode div.panel {
 }
 
 body.dark-mode nav.navbar {
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #696969;
 }
 
 body.dark-mode footer {
-  border-top: 1px solid #fff;
+  border-top: 1px solid #696969;
 }
 
 body.dark-mode span.post-meta {
-  color: #909090;
+  color: #aaaaaa;
 }
 
 body.dark-mode p.post-meta {
-  color: #909090;
+  color: #aaaaaa;
 }

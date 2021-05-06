@@ -6,7 +6,7 @@ img: None
 summary: "Ruleset status page."
 ---
 
-Last Update : May 6, 2021 10:17 UTC
+Last Update : May 6, 2021 20:45 UTC
 
 ✅ = Everything work perfectly.
 
@@ -30,6 +30,7 @@ Last Update : May 6, 2021 10:17 UTC
 | [rush!](/posts/rush)  | ✅ | Everything works | 2021.411.0 (April 11, 2021) | [⬇️](https://github.com/Beamographic/rush/releases/) |
 | [swing](/posts/swing)  | ✅ | Everything works | 2021.502.0 (May 2, 2021) | [⬇️](https://github.com/EVAST9919/lazer-swing/releases/latest) |
 | [hishigata](/posts/hishigata)  | ✅ | Everything works | 2021.311.0 (March 12, 2021) | [⬇️](https://github.com/LumpBloom7/hishigata/releases/latest) |
+| [soyokaze!](/posts/soyokaze)  | ✅ | Everything works | 2021.419.1 (April 20, 2021) | [⬇️](https://github.com/goodtrailer/soyokaze/releases/latest) |
 {{</ table >}}
 
 <!-- TODO: Make pop up changelog -->

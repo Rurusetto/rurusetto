@@ -64,7 +64,7 @@ Hitokori require only button to control. You can use keyboard, mouse, or touchsc
 - ![Sudden Death Icon](mod-icon/sudden-death-mod.png) Sudden Death
   - Just like the old days
     - If you miss, you fail.
-  - Click the icon again for `Perfect Mod` : SS or quit
+  - Click the icon again for `Perfect Mod` : SS or quit.
 
 - ![Double Time Icon](mod-icon/double-time-mod.png) Double Time
   - SPeeEEeEdddD

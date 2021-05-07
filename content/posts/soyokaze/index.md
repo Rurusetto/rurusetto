@@ -103,15 +103,15 @@ Can only use keyboard to play.
 
 Player can adjust
 
-- `Show Input Overlay` by toggle button
-- `Show Kiai Visualizer` by toggle button
-- `Hit Circle distance from screen center` by slider
-- `Hit Circle gap` by slider
-- `Judgement distance from screen center` by slider
-- `Judgement gap` by slider
-- `Input Overlay distance from screen center` by slider
-- `Input Overlay gap` by slider
-- `Kiai Visualizer distance from screen center` by slider
+- `Show Input Overlay` by a toggle button
+- `Show Kiai Visualizer` by a toggle button
+- `Hit Circle distance from screen center` by a slider
+- `Hit Circle gap` by a slider
+- `Judgement distance from screen center` by a slider
+- `Judgement gap` by a slider
+- `Input Overlay distance from screen center` by a slider
+- `Input Overlay gap` by a slider
+- `Kiai Visualizer distance from screen center` by a slider
 
 # preview
 

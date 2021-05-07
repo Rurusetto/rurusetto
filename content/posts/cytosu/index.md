@@ -60,8 +60,8 @@ Cytosu based gameplay design for touch screen but can be played on tablet or mou
 ### automation
 
 - ![Relax Icon](mod-icon/relax-mod.png) Relax
-  - To lazy to click your keyboard, eh?
-    - Just move your mouse to a circle note.
+  - Too lazy to click your keyboard, eh?
+    - You only need to move your cursor to the notes, you do not have to click them.
 
 - ![Autoplay Icon](mod-icon/autoplay-mod.png) Autoplay
   - Watch a perfect automated play through the song.

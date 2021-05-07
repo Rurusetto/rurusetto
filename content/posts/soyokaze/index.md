@@ -21,7 +21,7 @@ Soyokaze! is a custom ruleset mimicking Genshin Impact's Ballads of Breeze mini-
 
 # gameplay
 
-Primarily in soyokaze! have 2 rhythm rings. A rhythm ring is like DPAD, it have 4 side (north, ease, south and west). A note will gradually be appear at the four side of the ring and then disappear. Player must press a note in time before it disappear.
+Primarily in soyokaze! the player has 2 rhythm rings. A rhythm ring is like DPAD, it have 4 side (north, east, south and west). A note will appear at one of the four sides of both rings and then disappear. The player must press the note in time before it disappears using the keyboard button assigned for this specific note placement.
 
 # controls
 
@@ -43,12 +43,12 @@ Can only use keyboard to play.
 ### difficulty reduction
 
 - ![Easy Icon](mod-icon/easy-mod.png) Easy
-  - Larger circles, more forgiving HP drain, less accuracy required, and multiple lives. As a bonus, it make the map impossible to read!
+  - Larger circles, more forgiving HP drain, less accuracy required, and multiple lives. As a bonus, it makes the map impossible to read!
   - Score Multiplier: 0.85x
 
 - ![No Fail Icon](mod-icon/no-fail-mod.png) No Fail
   - You can't fail, no matter what.
-    - Make it impossoble to fail.
+    - Makes it impossible to fail.
   - Score Multiplier: 0.50x
 
 - ![Half Time Icon](mod-icon/half-time-mod.png) Half Time
@@ -88,7 +88,7 @@ Can only use keyboard to play.
 
 - ![Difficulty Adjust Icon](mod-icon/difficulty-adjust-mod.png) Difficulty Adjust
   - Override a beatmap's difficulty settings.
-  - You can override *HP Drain*, *Accuracy*, *Paddle Size*, *Approach Rate* and *Extended Limits*
+  - You can override *Circle Size*, *HP Drain*, *Accuracy*, *Approach Rate* and *Extended Limits*
 
 ### fun
 
@@ -113,6 +113,6 @@ Player can adjust
 - `Input Overlay gap` by slider
 - `Kiai Visualizer distance from screen center` by slider
 
-# demo
+# preview
 
 {{< youtube id="hWjG0W7EiAE" >}}

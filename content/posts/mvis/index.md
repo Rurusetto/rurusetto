@@ -1,14 +1,14 @@
 ---
 title: "mvis"
 img: "mvis-logo.png"
-date: 2021-05-07
+date: 2021-05-08
 summary: "A custom visual game mode for osu!lazer project."
 ---
 
 # status
 
 - Status : basic implementation with no optimisation
-- Last Update : 2021.507.2
+- Last Update : 2021.508.0
 - Can import and play without error : Yes
 
 # overview

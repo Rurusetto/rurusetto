@@ -9,7 +9,7 @@ summary: "Cytus-like game mechanics within osu!lazer as a ruleset"
 
 - Status : Active Development
 - Last Update : 2021.417.0
-- Can import and play without error : Autoplay mod causes client to crash.
+- Can import and play without error : Yes
 
 # overview
 
@@ -41,7 +41,27 @@ Cytosu based gameplay design for touch screen but can be played on tablet or mou
     - Makes it impossible to fail.
   - Score Multiplier: 0.50x
 
+- ![Half Time Icon](mod-icon/half-time-mod.png) Half Time
+  - Less Zoom...
+    - Decreases speed .75x.
+  - Score Multiplier: 0.30x
+  - Click the icon again for*Daycore Mod* : Whoaaaaa...
+    - Decreases speed .75x and lowers audio pitch.
+
+### difficulty increase
+
+- ![Double Time Icon](mod-icon/double-time-mod.png) Double Time
+  - Zoooooooooom...
+    - Increases speed 1.50x.
+  - Score Multiplier: 1.12x
+  - Click the icon again for `Nightcore Mod` : Uguuuuuuuu...
+    - Increases speed 1.50x and raises audio pitch.
+
 ### automation
+
+- ![Relax Icon](mod-icon/relax-mod.png) Relax
+  - Too lazy to click your keyboard, eh?
+    - You only need to move your cursor to the notes, you do not have to click them.
 
 - ![Autoplay Icon](mod-icon/autoplay-mod.png) Autoplay
   - Watch a perfect automated play through the song.

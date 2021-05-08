@@ -1,14 +1,14 @@
 ---
 title: "mvis"
 img: "mvis-logo.png"
-date: 2021-05-04
+date: 2021-05-08
 summary: "A custom visual game mode for osu!lazer project."
 ---
 
 # status
 
 - Status : basic implementation with no optimisation
-- Last Update : 2021.504.1
+- Last Update : 2021.508.0
 - Can import and play without error : Yes
 
 # overview
@@ -50,14 +50,20 @@ No control required
 
 Player can adjust
 
-- `Show particles` by toggle button
-- `Particles count` by slider
+- `Show particles` by a toggle button
+- `Particles count` by a slider
 - `Bar type` to *Basic*, *Rounded* or *Fall*
-- `Visualizer amount` by slider
-- `Bar width` by slider
-- `Bars per visual` by slider
-- `Rotation` by slider
-- `Use custom accent colour` by toggle button
+- `Symmetry` by a toggle button
+- `Visualizer amount` by a slider
+- `Bar width` by a slider
+- `Total bar count` by a slider
+- `Decay` by a slider
+- `Height Multiplier` by a slider
+- `Rotation` by a slider
+- `Radius` by a slider
+- `X Position` by a slider
+- `Y Position` by a slider
+- `Use custom accent colour` by a toggle button
 
 # demo
 

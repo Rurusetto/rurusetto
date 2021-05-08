@@ -6,7 +6,7 @@ img: None
 summary: "Ruleset status page."
 ---
 
-Last Update : May 7, 2021 17:08 UTC
+Last Update : May 8, 2021 17:46 UTC
 
 ✅ = Everything work perfectly.
 

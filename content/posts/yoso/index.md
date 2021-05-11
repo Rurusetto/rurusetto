@@ -27,12 +27,12 @@ Guide two orbiting planets down a path without breaking their perfect equilibriu
 
 Player can use left click or keyboard key to hit planets on a line.
 
-# mods
-
 ### default controls
 
 - Hit - `Z` `M1`
 - Hit (Additional) - `X` `M2`
+
+# mods
 
 ### difficulty reduction
 

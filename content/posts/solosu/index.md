@@ -42,15 +42,13 @@ The player has 3 lanes it can be on - left, center and right. The player is on t
 
 ### default controls
 
-- (Movement) Left - `LEFT`
-- (Movement) Center - `UP`
-- (Movement) Right - `RIGHT`
-- (Action) Action 1 - `Z`
-- (Action) Action 2 - `X`
+- Left - `LEFT`
+- Center - `UP`
+- Right - `RIGHT`
 
 ### flexible input
 
-Solosu, similarly to [hishigata](https://rulesets.info/posts/hishigata/), implements a control system called flexible input. This system allows you to hold for example Left, then while still holding Left, hold Right, then release Right, and in effect the player would have moved to the Left lane, then the Right lane and then back to the Left lane. Additionally, packets have to be intercepted with action buttons.
+Solosu, similarly to [hishigata](https://rulesets.info/posts/hishigata/), implements a control system called flexible input. This system allows you to hold for example Left, then while still holding Left, hold Right, then release Right, and in effect the player would have moved to the Left lane, then the Right lane and then back to the Left lane.
 
 Flexible input tech:
 

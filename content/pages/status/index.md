@@ -6,7 +6,7 @@ img: None
 summary: "Ruleset status page."
 ---
 
-Last Update : May 11, 2021 18:06 UTC
+Last Update : May 11, 2021 19:19 UTC
 
 ✅ = Everything works perfectly.
 
@@ -31,6 +31,7 @@ Last Update : May 11, 2021 18:06 UTC
 | [soyokaze!](/posts/soyokaze)  | ✅ | Everything works | 2021.419.1 (April 20, 2021) | [⬇️](https://github.com/goodtrailer/soyokaze/releases/latest) |
 | [osu!DIVA](/posts/osu-diva)  | ✅ | Everything works | 2021.331.0 (April 4, 2021) | [⬇️](https://github.com/Artemis-chan/osu-DIVA/releases/latest) |
 | [solosu](/posts/solosu)  | ✅ | Everything works | - (April 29, 2021) | [⬇️](https://cdn.discordapp.com/attachments/719981519007121498/837055801507708948/osu.Game.Rulesets.Solosu.dll) |
+| [yoso](/posts/yoso)  | ✅ | Everything works | 2021.502.0 (May 2, 2021) | [↗️ Patreon](https://www.patreon.com/posts/yoso-2021-502-0-50753558?utm_medium=clipboard_copy&utm_source=copy_to_clipboard&utm_campaign=postshare) |
 {{</ table >}}
 
 <!-- TODO: Make pop up changelog -->

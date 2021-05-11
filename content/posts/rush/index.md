@@ -74,6 +74,6 @@ Only on keyboard.
 
 No setting available
 
-# demo
+# preview
 
 {{< youtube id="tLs1cqeLJ1U" >}}

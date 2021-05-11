@@ -1,60 +1,56 @@
 ---
-title: "swing"
-img: "swing-logo.png"
+title: "Yoso"
+img: "yoso-logo.png"
 date: 2021-05-02
-summary: "A custom game mode for osu!lazer project."
+summary: "A custom osu! ruleset based on A Dance of Fire and Ice."
 ---
 
 # status
 
-- Status : WIP (but most features have been done)
+- Status : Active development
 - Last Update : 2021.502.0
 - Can import and play without error : Yes
 
 # overview
 
 - Creator : [Evast](https://github.com/EVAST9919)
-- Availability : Available Publicly
-- GitHub Repositories : [EVAST9919/lazer-swing](https://github.com/EVAST9919/lazer-swing)
-- Discord : [Evast's Server](https://discord.com/invite/7Y8GXAa)
-- Support : [Patreon](https://patreon.com/evast)
+- Availability : Available on Evast's supporter on Patroen
+- Patreon : [EVAST](https://www.patreon.com/evast/posts)
 
-Swing is a custom ruleset developed by Evast.
+Yoso is a custom osu! ruleset based on [A Dance of Fire and Ice](https://7thbe.at/#adofai). The ruleset is developed by Evast. This ruleset only available at Evast's Patreon page.
 
-# gameplay
+# gameplay 
 
-In playfield it have 2 circle lanes (red and blue.) A gameplay is similar to Taiko, when a note reach a center circle press it.
+Guide two orbiting planets down a path without breaking their perfect equilibrium. Press on every beat of the music to move in a line. <!-- This need to be more descriptive -->
 
 # controls
 
-Require at least 4 button (primary 2 keys and additional 2 keys) on 2 lanes. Best on keyboard. Cannot play on touch screen device.
+Player can use left click or keyboard key to hit planets on a line.
 
 ### default controls
 
-- Up Swing - `Z`
-- Up Swing (Additional) - `X`
-- Down Swing - `N`
-- Down Swing (Additional) - `M`
+- Hit - `Z` `M1`
+- Hit (Additional) - `X` `M2`
 
 # mods
 
 ### difficulty reduction
 
 - ![Easy Icon](mod-icon/easy-mod.png) Easy
-  - Larger hit area, more forgiving HP drain, less acuracy required, and three lives!
-    - Make a game easier by less HP drain, less acuracy required and 3x of max health.
-  - Score Multiplier: 0.50x
+  - Larger circles, more forgiving HP drain, less accuracy required, and multiple lives. As a bonus, it makes the map impossible to read!
+  - Score Multiplier: 0.85x
 
 - ![No Fail Icon](mod-icon/no-fail-mod.png) No Fail
   - You can't fail, no matter what.
-    - Makes it impossible to fail.
+    - Makes it impossoble to fail.
   - Score Multiplier: 0.50x
 
 - ![Half Time Icon](mod-icon/half-time-mod.png) Half Time
   - Less Zoom...
     - Decreases speed .75x.
   - Score Multiplier: 0.30x
-  - Click the icon again for *Daycore Mod* : Whoaaaaa...
+  - Click the icon again for*Daycore Mod* : Whoaaaaa...
+    - Decreases speed .75x and lowers audio pitch.
 
 ### difficulty increase
 
@@ -65,9 +61,9 @@ Require at least 4 button (primary 2 keys and additional 2 keys) on 2 lanes. Bes
 - ![Double Time Icon](mod-icon/double-time-mod.png) Double Time
   - Zoooooooooom...
     - Increases speed 1.50x.
-  - Score Multiplier: 1.10x
+  - Score Multiplier: 1.12x
   - Click the icon again for `Nightcore Mod` : Uguuuuuuuu...
-    - Increases speed by 1.50x and raises audio pitch.
+    - Increases speed 1.50x and raises audio pitch.
 
 ### automation
 
@@ -79,28 +75,21 @@ Require at least 4 button (primary 2 keys and additional 2 keys) on 2 lanes. Bes
 
 - ![Difficulty Adjust Icon](mod-icon/difficulty-adjust-mod.png) Difficulty Adjust
   - Override a beatmap's difficulty settings.
-  - You can override *HP Drain*, *Accuracy*, *Paddle Size*, *Approach Rate* and *Extended Limits*
-
-- ![No Sliders Icon](mod-icon/alternate-mod.png) No Sliders
-  - Only circles matter.
-
-- ![Alternate Icon](mod-icon/alternate-mod.png) Alternate
-  - Left-right
+  - You can override *Circle Size*, *HP Drain*, *Accuracy*, *Approach Rate* and *Extended Limits*
 
 ### fun
 
 - ![Wind Up Icon](mod-icon/wind-up-mod.png) Wind Up
   - Can you keep up?
     - Slowly increases speed from 1.00x to 1.50x throughout the map and raises the pitch alongside the speed.
-  - The song speed will be getting faster and faster
   - Click the icon again for `Wind Down Mod` : Slooow doooown...
     - Slowly decreases speed from 1.00x to 0.75x throughout the map and lowers the pitch alongside the speed.
   - *Initial rate*, *Final rate*, and *Adjust pitch* are customizable parameters.
 
 # settings
 
-Player can change `Playfield orientation` to *Taiko* or *Mania*.
+Player can change `Show planet orbit` via a toggle button.
 
 # preview
 
-{{< youtube id="sbiOY0cLU7I" >}}
+{{< youtube id="qYxaI8SnNyA" >}}

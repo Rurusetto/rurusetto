@@ -65,6 +65,6 @@ Player can adjust
 - `Y Position` by a slider
 - `Use custom accent colour` by a toggle button
 
-# demo
+# preview
 
 {{< youtube id="H7zLqTfw_1E" >}}

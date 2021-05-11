@@ -58,7 +58,7 @@ Can only use keyboard to play.
 
 - ![Double Time Icon](mod-icon/double-time-mod.png) Double Time
   - Zoooooooooom...
-    - Increased speed 1.50x.
+    - Increases speed 1.50x.
   - Score Multiplier: 1.12x
   - Click the icon again for `Nightcore Mod` : Uguuuuuuuu...
     - Increases speed 1.50x and raises audio pitch.

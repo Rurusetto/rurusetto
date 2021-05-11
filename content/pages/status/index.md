@@ -8,7 +8,7 @@ summary: "Ruleset status page."
 
 Last Update : May 10, 2021 15:48 UTC
 
-✅ = Everything work perfectly.
+✅ = Everything works perfectly.
 
 🔵 = Show in-game error but can play normally.
 

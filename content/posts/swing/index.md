@@ -64,7 +64,7 @@ Require at least 4 button (primary 2 keys and additional 2 keys) on 2 lanes. Bes
 
 - ![Double Time Icon](mod-icon/double-time-mod.png) Double Time
   - Zoooooooooom...
-    - Increased speed 1.50x.
+    - Increases speed 1.50x.
   - Score Multiplier: 1.10x
   - Click the icon again for `Nightcore Mod` : Uguuuuuuuu...
     - Increases speed by 1.50x and raises audio pitch.

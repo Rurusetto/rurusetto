@@ -8,7 +8,7 @@ summary: "A custom osu! ruleset based on solous"
 # status
 
 - Status : Finished
-- Last Update : No version tag
+- Last Update : No release tag
 - Can import and play without error : Yes
 
 # overview
@@ -52,4 +52,4 @@ No setting available
 
 # preview
 
-No available now
+Not available now

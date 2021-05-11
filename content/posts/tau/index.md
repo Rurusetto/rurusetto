@@ -202,7 +202,7 @@ Tau can be played on tablet or mouse with keyboard. Use the pointer to move the 
   - The song speed will be getting faster and faster
   - Click the icon again for `Wind Down Mod` : Slooow doooown...
     - Slowly decreases speed from 1.00x to 0.75x throughout the map and lowers the pitch alongside the speed.
-  - You can make a customisation on *Initial rate*, *Final rate*, and *Adjust pitch*
+  - *Initial rate*, *Final rate*, and *Adjust pitch* are customizable parameters.
 
 # settings
 

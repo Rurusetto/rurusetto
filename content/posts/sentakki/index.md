@@ -102,7 +102,7 @@ Sentakki is primarily designed with touch screens in mind. However traditional i
   - The song speed will be getting faster and faster
   - Click the icon again will be `Wind Down Mod` : Slooow doooown...
     - Slowly decreases speed from 1.00x to 0.75x throughout the map and lowers the pitch alongside the speed.
-  - You can make a customisation on *Initial rate*, *Final rate*, and *Adjust pitch*
+  - *Initial rate*, *Final rate*, and *Adjust pitch* are customizable parameters.
 
 - ![Spin Icon](mod-icon/spin-mod.png) Spin
   - Replicate the true washing machine experience.

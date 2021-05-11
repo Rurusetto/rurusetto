@@ -81,6 +81,7 @@ Arrow keys or touch screen.
     - Slowly increases speed from 1.00x to 1.50x throughout the map and raises the pitch alongside the speed.
   - Click the icon again for `Wind Down Mod` : Slooow doooown...
     - Slowly decreases speed from 1.00x to 0.75x throughout the map and lowers the pitch alongside the speed.
+  - You can make a customisation on *Initial rate*, *Final rate*, and *Adjust pitch*
 
 # settings
 

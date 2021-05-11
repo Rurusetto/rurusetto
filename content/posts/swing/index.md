@@ -95,12 +95,12 @@ Require at least 4 button (primary 2 keys and additional 2 keys) on 2 lanes. Bes
   - The song speed will be getting faster and faster
   - Click the icon again for `Wind Down Mod` : Slooow doooown...
     - Slowly decreases speed from 1.00x to 0.75x throughout the map and lowers the pitch alongside the speed.
-    - You can adjust *Initial rate*, *Final rate* and *Adjust pitch*
+  - You can make a customisation on *Initial rate*, *Final rate*, and *Adjust pitch*
 
 # settings
 
 Player can change `Playfield orientation` to *Taiko* or *Mania*.
 
-# demo
+# preview
 
 {{< youtube id="sbiOY0cLU7I" >}}

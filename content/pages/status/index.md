@@ -6,17 +6,15 @@ img: None
 summary: "Ruleset status page."
 ---
 
-Last Update : May 8, 2021 17:50 UTC
+Last Update : May 10, 2021 15:48 UTC
 
-✅ = Everything work perfectly.
+✅ = Everything works perfectly.
 
 🔵 = Show in-game error but can play normally.
 
 ⚠️ = Can import but some function or mod is not working or making client crash.
 
 ❌ = Cannot import.
-
-<!-- Use table style from https://discourse.gohugo.io/t/how-to-customise-tables/15661 -->
 
 {{< table "table table-striped" >}}
 | Rulesets  | Status | Description | Latest Version | Download |
@@ -31,6 +29,7 @@ Last Update : May 8, 2021 17:50 UTC
 | [swing](/posts/swing)  | ✅ | Everything works | 2021.502.0 (May 2, 2021) | [⬇️](https://github.com/EVAST9919/lazer-swing/releases/latest) |
 | [hishigata](/posts/hishigata)  | ✅ | Everything works | 2021.311.0 (March 12, 2021) | [⬇️](https://github.com/LumpBloom7/hishigata/releases/latest) |
 | [soyokaze!](/posts/soyokaze)  | ✅ | Everything works | 2021.419.1 (April 20, 2021) | [⬇️](https://github.com/goodtrailer/soyokaze/releases/latest) |
+| [osu!DIVA](/posts/osu-diva)  | ✅ | Everything works | 2021.331.0 (April 4, 2021) | [⬇️](https://github.com/Artemis-chan/osu-DIVA/releases/latest) |
 {{</ table >}}
 
 <!-- TODO: Make pop up changelog -->

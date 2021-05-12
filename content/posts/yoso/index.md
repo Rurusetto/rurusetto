@@ -19,7 +19,7 @@ summary: "A custom osu! ruleset based on A Dance of Fire and Ice."
 
 Yoso is a custom osu! ruleset based on [A Dance of Fire and Ice](https://7thbe.at/#adofai). The ruleset is developed by Evast. This ruleset only available at Evast's Patreon page.
 
-# gameplay 
+# gameplay
 
 Guide two orbiting planets down a path without breaking their perfect equilibrium. Press on every beat of the music to move in a line. <!-- This need to be more descriptive -->
 

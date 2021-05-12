@@ -7,6 +7,8 @@ assignees: ''
 
 ---
 
+<!-- Before make a new issue please check rulesets list that we plan to add at https://github.com/Rurusetto/rurusetto/projects/1 -->
+
 Ruleset name :
 
 Ruleset repositories name and link :

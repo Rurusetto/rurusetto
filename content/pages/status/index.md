@@ -6,7 +6,7 @@ img: None
 summary: "Ruleset status page."
 ---
 
-Last Update : May 12, 2021 10:47 UTC
+Last Update : May 12, 2021 11:00 UTC
 
 ✅ = Everything works perfectly.
 
@@ -33,6 +33,7 @@ Last Update : May 12, 2021 10:47 UTC
 | [solosu](/posts/solosu)  | ✅ | Everything works | - (April 29, 2021) | [⬇️](https://cdn.discordapp.com/attachments/719981519007121498/837055801507708948/osu.Game.Rulesets.Solosu.dll) |
 | [yoso](/posts/yoso)  | ✅ | Everything works | 2021.502.0 (May 2, 2021) | [↗️ Patreon](https://www.patreon.com/posts/yoso-2021-502-0-50753558) |
 | [windblume](/posts/windblume)  | ✅ | Everything works | 2021.311.0 (March 11, 2021) | [↗️ Patreon](https://www.patreon.com/posts/windblume-2021-0-48625676) |
+| [touhosu](/posts/touhosu)  | ✅ | Everything works | 2021.417.0 (April 17, 2021) | [↗️ Patreon](https://www.patreon.com/posts/touhosu-2021-417-50138188) |
 {{</ table >}}
 
 <!-- TODO: Make pop up changelog -->

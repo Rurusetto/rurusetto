@@ -17,7 +17,7 @@ summary: "A custom osu! ruleset based on A Dance of Fire and Ice."
 - Availability : Available on Evast's supporter on Patroen
 - Patreon : [EVAST](https://www.patreon.com/evast/posts)
 
-Yoso is a custom osu! ruleset based on [A Dance of Fire and Ice](https://7thbe.at/#adofai). The ruleset is developed by Evast. This ruleset only available at Evast's Patreon page.
+Yoso is a custom osu! ruleset based on [A Dance of Fire and Ice](https://7thbe.at/#adofai). The ruleset is developed by Evast and is only available at Evast's Patreon page.
 
 # gameplay
 
@@ -49,7 +49,7 @@ Player can use left click or keyboard key to hit planets on a line.
   - Less Zoom...
     - Decreases speed .75x.
   - Score Multiplier: 0.30x
-  - Click the icon again for*Daycore Mod* : Whoaaaaa...
+  - Click the icon again for`Daycore Mod` : Whoaaaaa...
     - Decreases speed .75x and lowers audio pitch.
 
 ### difficulty increase

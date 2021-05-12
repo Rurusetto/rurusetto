@@ -1,7 +1,7 @@
 ---
 title: "touhosu"
 date: 2021-04-17T16:57:00+07:00
-summary: "A custom osu! ruleset based on Touhou Project game."
+summary: "A custom osu! ruleset based on Touhou Project games."
 ---
 
 <!-- Wait for logo -->
@@ -18,17 +18,17 @@ summary: "A custom osu! ruleset based on Touhou Project game."
 - Availability : Available on Evast's supporter on Patroen
 - Patreon : [EVAST](https://www.patreon.com/evast/posts)
 
-Touhosu is a custom osu! ruleset based on [Touhou Project game](https://en.wikipedia.org/wiki/Touhou_Project#Games). The ruleset is developed by Evast. This ruleset only available at Evast's Patreon page.
+Touhosu is a custom osu! ruleset based on [Touhou Project games](https://en.wikipedia.org/wiki/Touhou_Project#Games). The ruleset is developed by Evast and is only available at Evast's Patreon page
 
 # gameplay
 
-Player control a character (a character is [Reimu Hakurei](https://touhou.fandom.com/wiki/Reimu_Hakurei), main character of Touhou Project) to escape from a bullet from enemies that coming fall along with a rhythm. A character's live will gradually regen. If a character hit by a bullet, a character losts a live. Player can control a character to shoot an enemies but since creator has not add an enemies now, it's not affect. If a player want your character to move slower a player can use *Focus* to make a character moving slower.
+The player controls a character (the character visual is [Reimu Hakurei](https://touhou.fandom.com/wiki/Reimu_Hakurei), the main character of Touhou Project), escaping from enemies' bullets spawns to the rhythm. The character's lives will gradually regen. When hit by a bullet, the character loses a live. The player is able to shoot enemies, but given the lack of enemies, it is pretty much useless. `Focus` mode can be used in order to slow down player movement.
 
 <!-- TODO: Make sure more about focus control. -->
 
 # controls
 
-Can only use keyboard to play.
+Only playable using a keyboard.
 
 ### default controls
 
@@ -49,14 +49,14 @@ Can only use keyboard to play.
 
 - ![No Fail Icon](mod-icon/no-fail-mod.png) No Fail
   - You can't fail, no matter what.
-    - Makes it impossoble to fail.
+    - Makes it impossible to fail.
   - Score Multiplier: 0.50x
 
 - ![Half Time Icon](mod-icon/half-time-mod.png) Half Time
   - Less Zoom...
     - Decreases speed .75x.
   - Score Multiplier: 0.30x
-  - Click the icon again for*Daycore Mod* : Whoaaaaa...
+  - Click the icon again for `Daycore Mod` : Whoaaaaa...
     - Decreases speed .75x and lowers audio pitch.
 
 ### difficulty increase
@@ -93,7 +93,7 @@ Can only use keyboard to play.
 
 # settings
 
-Player can adjust `Playfield dim` by a slider.
+A slider is present to adjust the playfield dim.
 
 # preview
 

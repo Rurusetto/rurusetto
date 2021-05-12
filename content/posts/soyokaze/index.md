@@ -25,7 +25,7 @@ Primarily in soyokaze! the player has 2 rhythm rings. A rhythm ring is like DPAD
 
 # controls
 
-Can only use keyboard to play.
+Only playable using a keyboard.
 
 ### default controls
 

@@ -2,7 +2,7 @@
 title: "osu!DIVA"
 img: "osu-diva-logo.png"
 date: 2021-04-04
-summary: "Recreate Hatsune Miku: Project DIVA as a custom mode for osu!"
+summary: "A recreation of Hatsune Miku: Project DIVA as a custom mode for osu!"
 ---
 
 # status
@@ -25,7 +25,7 @@ osu!DIVA have mainly 4 note types (square, triangle, cross and circle). Various 
 
 # controls
 
-Can only use keyboard to play.
+Only playable using a keyboard.
 
 ### default controls
 

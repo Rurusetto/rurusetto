@@ -1,7 +1,7 @@
 ---
 title: "Yoso"
 img: "yoso-logo.png"
-date: 2021-05-02
+date: 2021-05-02T15:54:00+07:00
 summary: "A custom osu! ruleset based on A Dance of Fire and Ice."
 ---
 

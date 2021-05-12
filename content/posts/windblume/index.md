@@ -1,7 +1,7 @@
 ---
 title: "windblume"
 img: "windblume-logo.png"
-date: 2021-03-11
+date: 2021-03-11T23:58:00+07:00
 summary: "A custom osu! ruleset based on Genshin Impact’s Ballads of Breeze mini-game."
 ---
 

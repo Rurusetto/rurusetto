@@ -50,7 +50,7 @@ Hitokori require only button to control. You can use keyboard, mouse, or touchsc
   - Am I cool yet?
     - Decreases speed .75x.
   - Score Multiplier: 0.40x
-  - Click the icon again for *Daycore Mod* : Ice, ice baby
+  - Click the icon again for `Daycore Mod` : Ice, ice baby
     - Score Multiplier: 0.30x
     - Decreases speed to .75x and lowers audio pitch.
 

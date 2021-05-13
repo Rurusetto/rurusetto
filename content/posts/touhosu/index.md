@@ -1,9 +1,11 @@
 ---
-title: "Yoso"
-img: "yoso-logo.png"
-date: 2021-05-02T15:54:00+07:00
-summary: "A custom osu! ruleset based on A Dance of Fire and Ice."
+title: "touhosu"
+img: "touhosu-logo.png"
+date: 2021-05-13T04:00:00+07:00
+summary: "A custom osu! ruleset based on Touhou Project games."
 ---
+
+<!-- Wait for logo -->
 
 # status
 
@@ -14,42 +16,50 @@ summary: "A custom osu! ruleset based on A Dance of Fire and Ice."
 # overview
 
 - Creator : [Evast](https://github.com/EVAST9919)
-- Availability : Available on Evast's supporter on Patroen
-- Patreon : [EVAST](https://www.patreon.com/evast/posts)
+- Availability : Available Publicly
+- GitHub Repositories : [EVAST9919/bosu](https://github.com/EVAST9919/bosu)
+- Discord : [Evast's Server](https://discord.com/invite/7Y8GXAa)
+- Support : [Patreon](https://patreon.com/evast)
 
-Yoso is a custom osu! ruleset based on [A Dance of Fire and Ice](https://7thbe.at/#adofai). The ruleset is developed by Evast and is only available at Evast's Patreon page.
+Touhosu is a custom osu! ruleset based on [Touhou Project games](https://en.wikipedia.org/wiki/Touhou_Project#Games). The ruleset is developed by Evast and is only available at Evast's Patreon page
 
 # gameplay
 
-Guide two orbiting planets down a path without breaking their perfect equilibrium. Press on every beat of the music to move in a line. <!-- This need to be more descriptive -->
+The player controls a character (the character visual is [Reimu Hakurei](https://touhou.fandom.com/wiki/Reimu_Hakurei), the main character of Touhou Project), escaping from enemies' bullets spawns to the rhythm. The character's lives will gradually regen. When hit by a bullet, the character loses a live. The player is able to shoot enemies, but given the lack of enemies, it is pretty much useless. `Focus` mode can be used in order to slow down player movement.
+
+<!-- TODO: Make sure more about focus control. -->
 
 # controls
 
-Player can use left click or keyboard key to hit planets on a line.
+Only playable using a keyboard.
 
 ### default controls
 
-- Hit - `Z` `M1`
-- Hit (Additional) - `X` `M2`
+- Move Left - `LEFT`
+- Move Right - `RIGHT`
+- Move Up - `UP`
+- Move Down - `DOWN`
+- Shoot - `Z`
+- Focus - `SHIFT`
 
 # mods
 
 ### difficulty reduction
 
 - ![Easy Icon](mod-icon/easy-mod.png) Easy
-  - Larger circles, more forgiving HP drain, less accuracy required, and multiple lives. As a bonus, it makes the map impossible to read!
-  - Score Multiplier: 0.85x
+  - Smaller bullets, more forgiving HP drain and three lives!
+  - Score Multiplier: 0.50x
 
 - ![No Fail Icon](mod-icon/no-fail-mod.png) No Fail
   - You can't fail, no matter what.
-    - Makes it impossoble to fail.
+    - Makes it impossible to fail.
   - Score Multiplier: 0.50x
 
 - ![Half Time Icon](mod-icon/half-time-mod.png) Half Time
   - Less Zoom...
     - Decreases speed .75x.
   - Score Multiplier: 0.30x
-  - Click the icon again for`Daycore Mod` : Whoaaaaa...
+  - Click the icon again for `Daycore Mod` : Whoaaaaa...
     - Decreases speed .75x and lowers audio pitch.
 
 ### difficulty increase
@@ -61,21 +71,19 @@ Player can use left click or keyboard key to hit planets on a line.
 - ![Double Time Icon](mod-icon/double-time-mod.png) Double Time
   - Zoooooooooom...
     - Increases speed 1.50x.
-  - Score Multiplier: 1.12x
+  - Score Multiplier: 1.10x
   - Click the icon again for `Nightcore Mod` : Uguuuuuuuu...
     - Increases speed 1.50x and raises audio pitch.
+
+- ![Hidden Icon](mod-icon/hidden-mod.png) Hidden
+  - Bullets will become invisible near you.
+  - Score Multiplier: 1.06x
 
 ### automation
 
 - ![Autoplay Icon](mod-icon/autoplay-mod.png) Autoplay
   - Watch a perfect automated play through the song.
   - Click the icon again for `Cinema Mod` : Watch the video without visual distractions.
-
-### conversion
-
-- ![Difficulty Adjust Icon](mod-icon/difficulty-adjust-mod.png) Difficulty Adjust
-  - Override a beatmap's difficulty settings.
-  - You can override *Circle Size*, *HP Drain*, *Accuracy*, *Approach Rate* and *Extended Limits*
 
 ### fun
 
@@ -88,8 +96,8 @@ Player can use left click or keyboard key to hit planets on a line.
 
 # settings
 
-Player can change `Show planet orbit` via a toggle button.
+A slider is present to adjust the playfield dim.
 
 # preview
 
-{{< youtube id="qYxaI8SnNyA" >}}
+{{< youtube id="5VbSgDhFYMc" >}}

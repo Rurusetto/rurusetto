@@ -1,5 +1,6 @@
 ---
 title: "touhosu"
+img: "touhosu-logo.png"
 date: 2021-05-13T04:00:00+07:00
 summary: "A custom osu! ruleset based on Touhou Project games."
 ---

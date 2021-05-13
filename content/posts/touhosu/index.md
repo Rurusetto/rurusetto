@@ -1,6 +1,6 @@
 ---
 title: "touhosu"
-date: 2021-04-17T16:57:00+07:00
+date: 2021-05-13T04:00:00+07:00
 summary: "A custom osu! ruleset based on Touhou Project games."
 ---
 
@@ -15,8 +15,10 @@ summary: "A custom osu! ruleset based on Touhou Project games."
 # overview
 
 - Creator : [Evast](https://github.com/EVAST9919)
-- Availability : Available on Evast's supporter on Patroen
-- Patreon : [EVAST](https://www.patreon.com/evast/posts)
+- Availability : Available Publicly
+- GitHub Repositories : [EVAST9919/bosu](https://github.com/EVAST9919/bosu)
+- Discord : [Evast's Server](https://discord.com/invite/7Y8GXAa)
+- Support : [Patreon](https://patreon.com/evast)
 
 Touhosu is a custom osu! ruleset based on [Touhou Project games](https://en.wikipedia.org/wiki/Touhou_Project#Games). The ruleset is developed by Evast and is only available at Evast's Patreon page
 

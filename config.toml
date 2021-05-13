@@ -1,4 +1,4 @@
-baseURL = "https://dev.rulesets.info/"
+baseURL = "https://dev.rulesets.info"
 languageCode = "en-us"
 title = "rūrusetto"
 theme = "hugo-cards"

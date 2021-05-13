@@ -1,9 +1,10 @@
 # Rūrusetto (ルールセット)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/94d928c5-5fde-4a3c-b7b6-549b17676dab/deploy-status)](https://app.netlify.com/sites/dev-rurusetto/deploys)
- [![Discord Shield](https://discordapp.com/api/guilds/700619421466624050/widget.png?style=shield)](https://discord.gg/CQPNADu)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](code_of_conduct.md)
+[![Discord Shield](https://discordapp.com/api/guilds/700619421466624050/widget.png?style=shield)](https://discord.gg/CQPNADu)
 
- A wiki that contain all osu! rulesets
+A wiki that contain all osu! rulesets
 
 ## Domain
 
@@ -59,6 +60,8 @@ hugo
 ## Contributing
 
 Please see [the "contributing" file](CONTRIBUTING.md) if you are interested in helping out with the project!
+
+We have [code of conduct](code_of_conduct.md) here.
 
 ## Disclaimer
 

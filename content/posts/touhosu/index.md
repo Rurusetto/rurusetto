@@ -17,7 +17,7 @@ summary: "A custom osu! ruleset based on Touhou Project games."
 
 - Creator : [Evast](https://github.com/EVAST9919)
 - Availability : Available Publicly
-- GitHub Repositories : [EVAST9919/bosu](https://github.com/EVAST9919/bosu)
+- GitHub Repositories : [EVAST9919/touhosu](https://github.com/EVAST9919/touhosu)
 - Discord : [Evast's Server](https://discord.com/invite/7Y8GXAa)
 - Support : [Patreon](https://patreon.com/evast)
 

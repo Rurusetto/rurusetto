@@ -1,7 +1,7 @@
 ---
 title: "hitokori"
 img: "hitokori-logo.png"
-date: 2021-04-15
+date: 2021-05-15
 summary: "A custom osu! ruleset based on a dance of fire and ice"
 ---
 

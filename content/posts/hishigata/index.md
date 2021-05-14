@@ -1,14 +1,14 @@
 ---
 title: "hishigata"
 img: "hishigata-logo.png"
-date: 2021-03-12
+date: 2021-03-14
 summary: "A ruleset based on Project Rhombus."
 ---
 
 # status
 
 - Status : Active Development
-- Last Update : 2021.311.0
+- Last Update : 2021.514.0
 - Can import and play without error : Yes
 
 # overview

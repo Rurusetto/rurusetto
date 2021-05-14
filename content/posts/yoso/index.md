@@ -1,14 +1,14 @@
 ---
 title: "Yoso"
 img: "yoso-logo.png"
-date: 2021-05-02T15:54:00+07:00
+date: 2021-05-13
 summary: "A custom osu! ruleset based on A Dance of Fire and Ice."
 ---
 
 # status
 
 - Status : Active development
-- Last Update : 2021.502.0
+- Last Update : 2021.513.0
 - Can import and play without error : Yes
 
 # overview

@@ -57,6 +57,10 @@ Run this command inside the Rūrusetto directory, complete build will be availab
 hugo
 ```
 
+## Build source code
+
+About a completely build source code with API fetching that you see on https://rulesets.info/. A code is in [this repositories](https://github.com/Rurusetto/rurusetto-build)
+
 ## Contributing
 
 Please see [the "contributing" file](CONTRIBUTING.md) if you are interested in helping out with the project!

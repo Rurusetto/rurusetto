@@ -1,16 +1,14 @@
 ---
 title: "touhosu"
 img: "touhosu-logo.png"
-date: 2021-05-13T04:00:00+07:00
+date: 2021-05-14
 summary: "A custom osu! ruleset based on Touhou Project games."
 ---
 
-<!-- Wait for logo -->
-
 # status
 
-- Status : Active development
-- Last Update : 2021.502.0
+- Status : Active development (WIP)
+- Last Update : 2021.417.0
 - Can import and play without error : Yes
 
 # overview

@@ -59,7 +59,7 @@ hugo
 
 ## Build source code
 
-About a completely build source code with API fetching that you see on https://rulesets.info/. A code is in [this repositories](https://github.com/Rurusetto/rurusetto-build)
+About a completely build source code with API fetching that you see on https://rulesets.info/. A code is in [this repositories](https://github.com/Rurusetto/rurusetto-build). If you want to contribute a codebase that is deeper than this repositories, you can contribute that repositories too.
 
 ## Contributing
 

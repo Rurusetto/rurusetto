@@ -8,7 +8,7 @@ summary: "A custom visual game mode for osu!lazer project."
 # status
 
 - Status : basic implementation with no optimisation
-- Last Update : 2021.508.0
+- Last Update : 2021.514.0
 - Can import and play without error : Yes
 
 # overview

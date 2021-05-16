@@ -1,14 +1,14 @@
 ---
 title: "tau"
 img: "tau-logo.png"
-date: 2021-05-02
+date: 2021-05-14
 summary: "A customize osu! ruleset with a circle surrounding a paddle and some notes."
 ---
 
 # status
 
 - Status : Active development
-- Last Update : 2021.502.0
+- Last Update : 2021.514.0
 - Can import and play without error : Yes
 
 # overview

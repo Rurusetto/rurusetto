@@ -1,7 +1,7 @@
 ---
 title: "rush!"
 img: "rush-logo.png"
-date: 2021-04-11
+date: 2021-04-14
 summary: "Custom ruleset for osu!lazer, based loosely on Muse Dash."
 ---
 

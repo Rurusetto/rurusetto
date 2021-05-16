@@ -1,14 +1,14 @@
 ---
 title: "hitokori"
 img: "hitokori-logo.png"
-date: 2021-04-26
+date: 2021-05-15
 summary: "A custom osu! ruleset based on a dance of fire and ice"
 ---
 
 # status
 
 - Status : On Hold
-- Last Update : 0.18.5
+- Last Update : 0.18.6
 - Can import and play without error : Yes
 
 # overview

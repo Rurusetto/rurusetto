@@ -8,13 +8,15 @@ summary: "Instruction to install and update rulesets to osu!lazer."
 
 # download rulesets file
 
-Go to the GitHub release page of the desired ruleset. A table of rulesets and their download links can be found here [rulesets status page](https://rulesets.info/pages/status).
+Ruleset files can be obtained at [rulesets status page](https://rulesets.info/pages/status) and then clicking on the `detail & download` button on the desired ruleset.
 
 ![status page](img/status-download.png)
 
-Then download the ruleset by selecting the `.dll` file in the release list and downloading that file only.
+A dialog will appear with a changelog. Click the `Download` button at the bottom-right corner to initiate the download.
 
 ![sentakki release download](img/sentakki-release-download.png)
+
+The changelog and download link will automatically update when a ruleset is updated.
 
 # import rulesets to osu!lazer
 

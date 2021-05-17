@@ -25,7 +25,7 @@ Player can install gameboy or gameboy color ROM files and play it on this rulese
 
 # controls
 
-A control is based on gameboy and player can only play on keyboard now.
+Controls are based on gameboy and player can only play using keyboard at the moment.
 
 ### default controls
 

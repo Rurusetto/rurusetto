@@ -1,4 +1,4 @@
-![logo](rurusetto-readme-logo.png)
+![logo](rurusetto-readme-logo.svg)
 
 # Rūrusetto (ルールセット)
 

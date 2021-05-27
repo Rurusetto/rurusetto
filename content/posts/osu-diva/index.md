@@ -29,10 +29,10 @@ Only playable using a keyboard.
 
 ### default controls
 
-- Square - `X`
-- Triangle - `Z`
-- Cross - `A`
-- Circle - `S`
+- Square - `X` `J`
+- Triangle - `Z` `I`
+- Cross - `A` `K`
+- Circle - `S` `L`
 
 # mods
 

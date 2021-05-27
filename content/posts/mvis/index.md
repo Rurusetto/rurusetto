@@ -46,7 +46,7 @@ No control required
   - Click the icon again for `Nightcore Mod` : Uguuuuuuuu...
     - Increases speed by 1.50x and raises audio pitch.
 
-# mvis music player
+# music player
 
 You can open mvis music player without selecting a song in a song list and play just one song by going to mvis rulesets setting and click `Open Main Screen` button and mvis player will be appear. You can drag your mouse cursor to the right of a game screen to toggle rulesets setting and music player there.
 

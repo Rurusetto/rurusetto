@@ -77,9 +77,9 @@ Only playable using a keyboard.
 - ![One Button Icon](mod-icon/one-button-mod.png) One Button
   - Play with one button.
     - Change the number of main button types can be changed.
-  - Click the icon again for `Two Button Mod` : Play with two button.
-  - Click the icon again for `Three Button Mod` : Play with three button.
-  - Click the icon again for `Four Button Mod` : Play with four button.
+  - Click the icon again for `Two Button Mod` : Play with two buttons.
+  - Click the icon again for `Three Button Mod` : Play with three buttons.
+  - Click the icon again for `Four Button Mod` : Play with four buttons.
 
 - ![No Doubles Icon](mod-icon/no-doubles-mod.png) No Doubles
   - Only one button at a time.

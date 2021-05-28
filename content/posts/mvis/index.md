@@ -48,13 +48,13 @@ No control required
 
 # music player
 
-You can open mvis music player without selecting a song in a song list and play just one song by going to mvis rulesets setting and click `Open Main Screen` button and mvis player will be appear. You can drag your mouse cursor to the right of a game screen to toggle rulesets setting and music player there.
+You can use the mvis player with the currently playing track in osu! by clicking the `Open Main Screen` button within the mvis ruleset settings. Within the player, moving the cursor to the right side of the screen will reveal a panel containing adjustable visualizer settings, along with the track player.
 
 {{< youtube id="I0tl4Ira-v0" >}}
 
 # settings
 
-Open mvis music player by clicking `Open Main Screen` in mvis settings.
+`Open Main Screen` - Reveals the visualizer which can be used with the osu! track player.
 
 Player can adjust
 

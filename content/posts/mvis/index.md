@@ -46,7 +46,15 @@ No control required
   - Click the icon again for `Nightcore Mod` : Uguuuuuuuu...
     - Increases speed by 1.50x and raises audio pitch.
 
+# music player
+
+You can use the mvis player with the currently playing track in osu! by clicking the `Open Main Screen` button within the mvis ruleset settings. Within the player, moving the cursor to the right side of the screen will reveal a panel containing adjustable visualizer settings, along with the track player.
+
+{{< youtube id="I0tl4Ira-v0" >}}
+
 # settings
+
+`Open Main Screen` - Reveals the visualizer which can be used with the osu! track player.
 
 Player can adjust
 
@@ -63,7 +71,7 @@ Player can adjust
 - `Radius` by a slider
 - `X Position` by a slider
 - `Y Position` by a slider
-- `Use custom accent colour` by a toggle button
+- `Use custom accent colour` by a toggle button and change an accent color by red, green and blue sliders
 
 # preview
 

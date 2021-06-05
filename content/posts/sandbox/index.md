@@ -1,8 +1,9 @@
 ---
 title: "Sandbox"
 img: "sandbox-logo.png"
-date: 2021-06-06
-summary: "A ruleset that make fun with osu!framework."
+date: 2021-06-01
+wiki_last_update: 2021-06-06
+summary: "Custom ruleset for osu!lazer, based loosely on Muse Dash."
 ---
 
 # status
@@ -21,7 +22,7 @@ Sandbox is a playground that Evast make for make something fun with osu!framewor
 
 # gameplay
 
-This rulesets don't have gameplay on `Play` menu. You can access sandbox by go to osu!lazer main menu, open in-game settings and go to ruleset's setting (type `Sandbox` in search box if you can't find it) and click on `Open Main Screen` button.
+This rulesets don't have gameplay on `Play` menu. You can access Sandbox by go to osu!lazer main menu, open in-game settings and go to ruleset's setting (type `Sandbox` in search box if you can't find it) and click on `Open Main Screen` button.
 
 ### list of sandbox game
 

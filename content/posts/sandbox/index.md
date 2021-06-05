@@ -3,7 +3,7 @@ title: "Sandbox"
 img: "sandbox-logo.png"
 date: 2021-06-01
 wiki_last_update: 2021-06-06
-summary: "Custom ruleset for osu!lazer, based loosely on Muse Dash."
+summary: "A ruleset that make fun with osu!framework."
 ---
 
 # status

@@ -34,7 +34,5 @@ Last Update : May 18, 2021 17:46 UTC
 | [gamebosu](/posts/gamebosu)  | ✅ | Everything works | 2021.514.0 (May 13, 2021) | [⬇️](https://github.com/Game4all/gamebosu/releases/latest) |
 | [solosu](/posts/solosu)  | ✅ | Everything works | - (April 29, 2021) | [⬇️](https://cdn.discordapp.com/attachments/719981519007121498/837055801507708948/osu.Game.Rulesets.Solosu.dll) |
 | [yoso](/posts/yoso)  | ✅ | Everything works | 2021.502.0 (May 2, 2021) | [↗️ Patreon](https://www.patreon.com/posts/yoso-2021-502-0-50753558) |
-| [sandbox](/posts/sandbox)  | ✅ | Everything works | 2021.502.0 (May 2, 2021) | [↗️ Patreon](https://www.patreon.com/posts/yoso-2021-502-0-50753558) |
+| [sandbox](/posts/sandbox)  | ✅ | Everything works | 2021.502.0 (May 2, 2021) | [↗️ Patreon](https://www.patreon.com/posts/sandbox-2021-605-52125757) |
 {{</ table >}}
-
-<!-- TODO: Make pop up changelog -->

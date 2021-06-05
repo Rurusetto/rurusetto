@@ -2,7 +2,6 @@
 title: "Sandbox"
 img: "sandbox-logo.png"
 date: 2021-06-06
-wiki_last_update: 2021-06-06
 summary: "A ruleset that make fun with osu!framework."
 ---
 

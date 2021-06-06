@@ -14,7 +14,7 @@ summary: "A custom osu! ruleset based on A Dance of Fire and Ice."
 # overview
 
 - Creator : [Evast](https://github.com/EVAST9919)
-- Availability : Available on Evast's supporter on Patroen
+- Availability : Available to Evast's supporter on Patreon
 - Patreon : [EVAST](https://www.patreon.com/evast/posts)
 
 Yoso is a custom osu! ruleset based on [A Dance of Fire and Ice](https://7thbe.at/#adofai). The ruleset is developed by Evast and is only available at Evast's Patreon page.

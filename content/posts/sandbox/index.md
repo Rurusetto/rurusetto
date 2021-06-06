@@ -15,14 +15,14 @@ summary: "A ruleset that make fun with osu!framework."
 # overview
 
 - Creator : [Evast](https://github.com/EVAST9919)
-- Availability : Available on Evast's supporter on Patroen
+- Availability : Available to Evast's supporter on Patreon
 - Patreon : [EVAST](https://www.patreon.com/evast/posts)
 
-Sandbox is a playground that Evast make for make something fun with osu!framework inside osu!game. The ruleset is developed by Evast and is only available at Evast's Patreon page.
+Sandbox is a playground dedicated to having fun with osu!framework inside osu!lazer. The ruleset is developed by Evast and is only available at Evast's Patreon page.
 
 # gameplay
 
-This rulesets don't have gameplay on `Play` menu. You can access Sandbox by go to osu!lazer main menu, open in-game settings and go to ruleset's setting (type `Sandbox` in search box if you can't find it) and click on `Open Main Screen` button.
+This ruleset doesn't "play" in the same way as other rulesets. Instead, it is accessed via an "Open Main Screen" button within the game wide settings panel.
 
 ### list of sandbox game
 
@@ -32,7 +32,7 @@ This rulesets don't have gameplay on `Play` menu. You can access Sandbox by go t
 
 ### 2048 Game
 
-Use arrow key to move a block.
+Use arrow key to shift blocks in a certain direction.
 
 # mods
 

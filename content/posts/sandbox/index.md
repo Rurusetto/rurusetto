@@ -27,12 +27,17 @@ This ruleset doesn't "play" in the same way as other rulesets. Instead, it is ac
 ### list of sandbox game
 
 - 2048 Game
+- FlappyDon (FlappyBird but change a bird to pippidon)
 
 # controls
 
 ### 2048 Game
 
 Use arrow key to shift blocks in a certain direction.
+
+### FlappyDon
+
+Use left mouse to control pippidon to jump.
 
 # mods
 

@@ -9,16 +9,18 @@ summary: "A custom osu! ruleset based on solous"
 
 # status
 
-- Status : Abandoned
+- Status : Active development
 - Last Update : No release tag
 - Can import and play without error : Yes
 
 # overview
 
 - Creator : [Peri](https://github.com/Flutterish)
-- Availability : A ruleset file available on Discord, a repositories will available soon but you can download this ruleset in [status](https://rulesets.info/pages/status/) page.
+- Availability : Available publicly
+- GitHub Repositories : [Flutterish/Solosu](https://github.com/Flutterish/Solosu)
+- Discord : [hishikki Dev Server](https://discord.gg/CQPNADu)
 
-Solosu is a custom osu! ruleset based on [Solous](https://thc-games.itch.io/solous) and is an adoption of [another no longer developed ruleset](https://github.com/Coppertine/Solosu). The ruleset is developed by Peri. Currently this ruleset is finish but not available publicly now.
+Solosu is a custom osu! ruleset based on [Solous](https://thc-games.itch.io/solous) and is an adoption of [another no longer developed ruleset](https://github.com/Coppertine/Solosu). The ruleset is developed by Peri.
 
 # gameplay
 

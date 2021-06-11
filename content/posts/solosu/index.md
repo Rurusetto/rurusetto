@@ -10,7 +10,7 @@ summary: "A custom osu! ruleset based on solous"
 # status
 
 - Status : Active development
-- Last Update : No release tag
+- Last Update : 1.0.1
 - Can import and play without error : Yes
 
 # overview

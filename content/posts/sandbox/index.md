@@ -26,10 +26,15 @@ This ruleset doesn't "play" in the same way as other rulesets. Instead, it is ac
 
 ### list of sandbox game
 
+- Visualizer (From mvis)
 - 2048 Game
 - FlappyDon (FlappyBird but change a bird to pippidon)
 
 # controls
+
+### Visualizer
+
+No main controls but moving the cursor to the right side of the screen will reveal a panel containing adjustable visualizer settings, along with the track player.
 
 ### 2048 Game
 

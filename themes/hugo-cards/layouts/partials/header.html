@@ -171,10 +171,12 @@
         //If dark mode is selected
         if (this.classList.contains('js-toggle--checked')) {
           body.classList.add('dark-mode');
+          document.getElementsByTagName('meta')["theme-color"].content = "#2d2d2d"
           //Save user preference in storage
           localStorage.setItem('darkMode', 'true');
         } else {
           body.classList.remove('dark-mode');
+          document.getElementsByTagName('meta')["theme-color"].content = "#ffffff"
           setTimeout(function() {
             localStorage.removeItem('darkMode');
           }, 100);

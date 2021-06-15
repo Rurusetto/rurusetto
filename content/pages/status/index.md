@@ -19,7 +19,6 @@ Last Update : May 18, 2021 17:46 UTC
 {{< table "table table-striped" >}}
 | Rulesets  | Status | Description | Latest Version | Download |
 |---------|--------|--------|--------|--------|
-| [mvis](/posts/mvis)  | ✅  | Everything works | 2021.508.0 (May 8, 2021) | [⬇️](https://github.com/EVAST9919/lazer-m-vis/releases/latest) |
 | [hitokori](/posts/hitokori)  | ✅ | Everything works | 0.18.5 (April 26, 2021) | [⬇️](https://github.com/Flutterish/Hitokori/releases/latest) |
 | [bosu](/posts/bosu)  | ✅ | Everything works | 2021.502.0 (May 2, 2021) | [⬇️](https://github.com/EVAST9919/bosu/releases/latest) |
 | [cytosu](/posts/cytosu)  | ✅ | Everything works | 2021.417.0 (April 17, 2021)| [⬇️](https://github.com/GSculerlor/Cytosu/releases/latest) |

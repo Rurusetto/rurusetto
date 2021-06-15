@@ -43,3 +43,9 @@ body.dark-mode span.post-meta {
 body.dark-mode p.post-meta {
   color: #aaaaaa;
 }
+
+/* Add support for Safari 15 */
+
+footer {
+  margin-bottom: env(safe-area-inset-bottom);
+}

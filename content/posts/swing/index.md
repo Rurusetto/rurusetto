@@ -16,7 +16,7 @@ summary: "A custom game mode for osu!lazer project."
 - Creator : [Evast](https://github.com/EVAST9919)
 - Availability : Available Publicly
 - GitHub Repositories : [EVAST9919/lazer-swing](https://github.com/EVAST9919/lazer-swing)
-- Discord : [Evast's Server](https://discord.com/invite/7Y8GXAa)
+- Discord : [Evast's Server](https://discord.com/invite/HQgy3Ey)
 - Support : [Patreon](https://patreon.com/evast)
 
 Swing is a custom ruleset developed by Evast.

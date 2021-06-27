@@ -76,6 +76,11 @@ Only playable using a keyboard.
   - Click the icon again for `Nightcore Mod` : Uguuuuuuuu...
     - Increases speed 1.50x and raises audio pitch.
 
+- ![Holds Icon](mod-icon/holds-mod.png) Holds
+  - O Lord, a rhythm game!?
+    - Converts Sliders to Holds instead of Hit Circles, increasing rhythmic complexity drastically
+  - Score Multiplier: 1.09x
+
 ### automation
 
 - ![Autoplay Icon](mod-icon/autoplay-mod.png) Autoplay

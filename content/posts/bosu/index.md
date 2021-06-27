@@ -16,7 +16,7 @@ summary: "A custom game mode for osu!lazer project based on &rdquo;I wanna be th
 - Creator : [Evast](https://github.com/EVAST9919)
 - Availability : Available Publicly
 - GitHub Repositories : [EVAST9919/bosu](https://github.com/EVAST9919/bosu)
-- Discord : [Evast's Server](https://discord.com/invite/7Y8GXAa)
+- Discord : [Evast's Server](https://discord.com/invite/HQgy3Ey)
 - Support : [Patreon](https://patreon.com/evast)
 
 Tau is a custom ruleset based on [I Wanna Be the Boshy](https://grynsoft.com/old-games#:~:text=I%20Wanna%20Be%20The%20Boshy%20(2010)) game. The ruleset is developed by Evast.

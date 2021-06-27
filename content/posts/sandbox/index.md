@@ -15,10 +15,12 @@ summary: "A ruleset that make fun with osu!framework."
 # overview
 
 - Creator : [Evast](https://github.com/EVAST9919)
-- Availability : Available to Evast's supporter on Patreon
-- Patreon : [EVAST](https://www.patreon.com/evast/posts)
+- Availability : Available Publicly
+- GitHub Repositories : [EVAST9919/lazer-sandbox](https://github.com/EVAST9919/lazer-sandbox)
+- Discord : [Evast's Server](https://discord.com/invite/HQgy3Ey)
+- Support : [Patreon](https://patreon.com/evast)
 
-Sandbox is a playground dedicated to having fun with osu!framework inside osu!lazer. The ruleset is developed by Evast and is only available at Evast's Patreon page.
+Sandbox is a playground dedicated to having fun with osu!framework inside osu!lazer.
 
 # gameplay
 
@@ -26,10 +28,15 @@ This ruleset doesn't "play" in the same way as other rulesets. Instead, it is ac
 
 ### list of sandbox game
 
+- Visualizer (From mvis)
 - 2048 Game
 - FlappyDon (FlappyBird but change a bird to pippidon)
 
 # controls
+
+### Visualizer
+
+No main controls but moving the cursor to the right side of the screen will reveal a panel containing adjustable visualizer settings, along with the track player.
 
 ### 2048 Game
 

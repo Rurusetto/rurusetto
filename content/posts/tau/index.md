@@ -13,14 +13,14 @@ summary: "A customize osu! ruleset with a circle surrounding a paddle and some n
 
 # overview
 
-- Creator : [Laica](https://github.com/Altenhh)
+- Creator : [Naoei](https://github.com/naoei)
 - Availability : Available Publicly
-- GitHub Repositories : [Altenhh/tau](https://github.com/Altenhh/tau/)
+- GitHub Repositories : [Altenhh/tau](https://github.com/naoei/tau)
 - Discord : [tau](https://discord.com/invite/7Y8GXAa)
 
 Tau is a custom ruleset with a circle surrounding a paddle and some notes.
 
- *The idea is based on [pizzazip's Tau](https://deadlysprinklez.itch.io/tau). The ruleset is developed by [Laica](https://github.com/Altenhh).*
+ *The idea is based on [pizzazip's Tau](https://deadlysprinklez.itch.io/tau). The ruleset is developed by [Naoei](https://github.com/naoei).*
 
 # gameplay
 

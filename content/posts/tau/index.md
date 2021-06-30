@@ -15,7 +15,7 @@ summary: "A customize osu! ruleset with a circle surrounding a paddle and some n
 
 - Creator : [Naoei](https://github.com/naoei)
 - Availability : Available Publicly
-- GitHub Repositories : [Altenhh/tau](https://github.com/naoei/tau)
+- GitHub Repositories : [naoei/tau](https://github.com/naoei/tau)
 - Discord : [tau](https://discord.com/invite/7Y8GXAa)
 
 Tau is a custom ruleset with a circle surrounding a paddle and some notes.
@@ -54,7 +54,7 @@ This is an empty playfield, the parts it contains are:
 
 ![Gameplaymods](Images/HeaderNotes.png)
 
-> Source: [Tau note types wiki](https://github.com/Altenhh/tau/wiki/Note-types).
+> Source: [Tau note types wiki](https://github.com/naoei/tau/wiki/Note-types).
 
 ## Beats
 
@@ -130,7 +130,7 @@ Tau can be played on tablet or mouse with keyboard. Use the pointer to move the 
 
 ![Gameplaymods](Images/HeaderMods.png)
 
-> Source: [Tau gameplay mods wiki](https://github.com/Altenhh/tau/wiki/Gameplay-mods).
+> Source: [Tau gameplay mods wiki](https://github.com/naoei/tau/wiki/Gameplay-mods).
 
 ## difficulty reduction
 ![Difficulty Reduction](Images/DifficultyReduction.png)

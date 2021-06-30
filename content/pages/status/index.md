@@ -23,7 +23,7 @@ Last Update : May 18, 2021 17:46 UTC
 | [bosu](/posts/bosu)  | ✅ | Everything works | 2021.502.0 (May 2, 2021) | [⬇️](https://github.com/EVAST9919/bosu/releases/latest) |
 | [cytosu](/posts/cytosu)  | ✅ | Everything works | 2021.417.0 (April 17, 2021)| [⬇️](https://github.com/GSculerlor/Cytosu/releases/latest) |
 | [sentakki](/posts/sentakki)  | ✅ | Everything works | 2021.502.0 (May 2, 2021) | [⬇️](https://github.com/LumpBloom7/sentakki/releases/) |
-| [tau](/posts/tau)  | ✅ | Everything works | 2021.502.0 (May 2, 2021) | [⬇️](https://github.com/Altenhh/tau/releases/latest) |
+| [tau](/posts/tau)  | ✅ | Everything works | 2021.502.0 (May 2, 2021) | [⬇️](https://github.com/naoei/tau/releases/latest) |
 | [rush!](/posts/rush)  | ✅ | Everything works | 2021.411.0 (April 11, 2021) | [⬇️](https://github.com/Beamographic/rush/releases/) |
 | [swing](/posts/swing)  | ✅ | Everything works | 2021.502.0 (May 2, 2021) | [⬇️](https://github.com/EVAST9919/lazer-swing/releases/latest) |
 | [hishigata](/posts/hishigata)  | ✅ | Everything works | 2021.311.0 (March 12, 2021) | [⬇️](https://github.com/LumpBloom7/hishigata/releases/latest) |

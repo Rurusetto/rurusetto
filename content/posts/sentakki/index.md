@@ -68,7 +68,7 @@ Sentakki is primarily designed with touch screens in mind. However traditional i
   - Miss and fail.
     - If you miss, you fail.
 
-- ![Challenge Icon](mod-icon/hard-rock-mod.png) Challenge
+- ![Challenge Icon](mod-icon/challenge-mod.png) Challenge
   - You only get a small margin for error
     - Decrease max health to make a game more challenge.
   - You can select *number of lives* option from 5,10,20,50,100,200 and 300

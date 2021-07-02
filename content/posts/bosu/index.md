@@ -88,6 +88,11 @@ Use arrow keys to control the character. Can't be played on a touch screen.
     - Slowly decreases speed from 1.00x to 0.75x throughout the map and lowers the pitch alongside the speed.
   - *Initial rate*, *Final rate*, and *Adjust pitch* are customizable parameters.
 
+- ![Barrel Roll Icon](mod-icon/barrel-roll-mod.png) Barrel Roll
+  - The whole playfield is on a wheel!
+    - The playfield is slowly rotating. (Default direction is clockwise)
+  - *Roll Speed* and *Direction* are customizable parameters.
+
 # settings
 
 No settings available.

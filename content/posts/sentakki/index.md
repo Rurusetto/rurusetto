@@ -17,7 +17,7 @@ summary: "A custom ruleset based on Sega&rsquo;s arcade rhythm game maimai"
 - Availability : Available publicly
 - GitHub Repositories : [LumpBloom7/sentakki](https://github.com/LumpBloom7/sentakki)
 - Discord : [hishikki Dev Server](https://discord.gg/CQPNADu)
-- Support : [Ko-fi](https://ko-fi.com/bloom) or [PayPal](https://www.paypal.com/paypalme/DerrickTimmermans)
+- Support : [Ko-fi](https://ko-fi.com/bloom), [PayPal](https://www.paypal.com/paypalme/DerrickTimmermans) or [GitHub Sponsor](https://github.com/sponsors/LumpBloom7)
 
 Sentakki is a custom ruleset based on Sega's arcade rhythm game maimai. The ruleset is developed by Bloom.
 

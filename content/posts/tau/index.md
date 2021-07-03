@@ -28,7 +28,7 @@ Tau's gameplay revolves around a paddle which is moved around a circle. In the c
 
 The gameplay playfield looks like the following:
 
-![Playfield](Images/Playfield.png)
+{{< figure src="/posts/tau/Images/Playfield.png" height="300px" width="300px">}}
 
 This is an empty playfield, the parts it contains are:
 
@@ -58,7 +58,7 @@ This is an empty playfield, the parts it contains are:
 
 ## Beats
 
-![Beats](Images/Beats.png)
+{{< figure src="/posts/tau/Images/Beats.png" height="300px" width="300px">}}
 
 These notes will appear from the centre and move towards the ring. Move the paddle to the place they are going towards and hit them as they intersect the ring to maximize score.
 
@@ -78,7 +78,7 @@ These notes will appear from the centre and move towards the ring. Move the padd
 
 ## HardBeats
 
-![HardBeats](Images/HardBeats.png)
+{{< figure src="/posts/tau/Images/HardBeats.png" height="300px" width="300px">}}
 
 These notes will appear from the centre and move towards the ring. They look like a giant circle heading towards the outer ring. Hit them as the head intersects the ring, You can hit "HardBeats" wherever your paddle is on the ring so you do not need to aim for them however the button on the keyboard that you press to hit them with is different from all other note types.
 
@@ -98,7 +98,7 @@ These notes will appear from the centre and move towards the ring. They look lik
 
 ## Sliders
 
-![Sliders](Images/Sliders.png)
+{{< figure src="/posts/tau/Images/Sliders.png" height="300px" width="300px">}}
 
 These notes will appear from the centre and move towards the ring. They look like a long line that you will have to follow it wherever it goes. Tap them as the head intersects the ring, then follow the body with your paddle and release the note when the tail reaches the ring.
 

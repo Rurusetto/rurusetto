@@ -17,7 +17,7 @@ summary: "A custom ruleset based on Sega&rsquo;s arcade rhythm game maimai"
 - Availability : Available publicly
 - GitHub Repositories : [LumpBloom7/sentakki](https://github.com/LumpBloom7/sentakki)
 - Discord : [hishikki Dev Server](https://discord.gg/CQPNADu)
-- Support : [Ko-fi](https://ko-fi.com/bloom) or [PayPal](https://www.paypal.com/paypalme/DerrickTimmermans)
+- Support : [GitHub Sponsor](https://github.com/sponsors/LumpBloom7), [Ko-fi](https://ko-fi.com/bloom) or [PayPal](https://www.paypal.com/paypalme/DerrickTimmermans)
 
 Sentakki is a custom ruleset based on Sega's arcade rhythm game maimai. The ruleset is developed by Bloom.
 
@@ -68,7 +68,7 @@ Sentakki is primarily designed with touch screens in mind. However traditional i
   - Miss and fail.
     - If you miss, you fail.
 
-- ![Challenge Icon](mod-icon/hard-rock-mod.png) Challenge
+- ![Challenge Icon](mod-icon/challenge-mod.png) Challenge
   - You only get a small margin for error
     - Decrease max health to make a game more challenge.
   - You can select *number of lives* option from 5,10,20,50,100,200 and 300

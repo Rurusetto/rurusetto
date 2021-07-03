@@ -17,7 +17,7 @@ summary: "A ruleset based on Project Rhombus."
 - Availability : Available publicly
 - GitHub Repositories : [LumpBloom7/hishigata](https://github.com/LumpBloom7/hishigata)
 - Discord : [hishikki Dev Server](https://discord.gg/CQPNADu)
-- Support : [Ko-fi](https://ko-fi.com/bloom) or [PayPal](https://www.paypal.com/paypalme/DerrickTimmermans)
+- Support : [GitHub Sponsor](https://github.com/sponsors/LumpBloom7), [Ko-fi](https://ko-fi.com/bloom) or [PayPal](https://www.paypal.com/paypalme/DerrickTimmermans)
 
 Sentakki is a custom ruleset based on [Project Rhombus](https://www.pcgamingwiki.com/wiki/Project_Rhombus) and [Undertale's Shield Mode](https://undertale.fandom.com/wiki/SOUL_Modes#Green). The ruleset is developed by Bloom.
 

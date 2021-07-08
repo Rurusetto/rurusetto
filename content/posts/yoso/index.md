@@ -65,6 +65,14 @@ Player can use left click or keyboard key to hit planets on a line.
   - Click the icon again for `Nightcore Mod` : Uguuuuuuuu...
     - Increases speed 1.50x and raises audio pitch.
 
+- ![Hidden Icon](mod-icon/hidden-mod.png) Hidden
+  - Play with fading path.
+  - Score Multiplier: 1.06x
+
+- ![Flashlight Icon](mod-icon/flashlight-mod.png) Flashlight
+  - Restricted view area.
+  - Score Multiplier: 1.12x
+
 ### automation
 
 - ![Autoplay Icon](mod-icon/autoplay-mod.png) Autoplay

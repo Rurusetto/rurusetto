@@ -30,6 +30,7 @@
           <li><a id="nav-install" href="#" class="nav-link px-2 nav-text round-font-bold hvr-underline-from-center">Install</a></li>
         </ul>
 
+        {% if user.is_authenticated %}
         <div class="dropdown text-end">
           <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle dropdown-pfp" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
             <img id="profile-picture" src="https://github.com/HelloYeew.png" alt="HelloYeew" height="48" class="rounded-circle hvr-grow">
@@ -41,6 +42,16 @@
             <li><a class="dropdown-item spacing-hover" href="#">Sign out</a></li>
           </ul>
         </div>
+        {% else %}
+        <div class="dropdown text-end">
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle dropdown-pfp" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img id="profile-picture" src="{% static 'img/123252.png' %}" alt="HelloYeew" height="48" class="rounded-circle hvr-grow">
+          </a>
+          <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item spacing-hover" href="#">Sign in</a></li>
+          </ul>
+        </div>
+        {% endif %}
       </div>
     </div>
   </header>
@@ -82,7 +93,7 @@
   <div class="container">
     <div class="row mb-3">
       <div class="alert alert-danger" role="alert">
-        This website is under heavy development and under test phase. Some function will not finish and not open.
+        This website is under heavy development and under test phase. Some function will not finish or not working properly.
       </div>
     </div>
   </div>

@@ -48,7 +48,7 @@
             <img id="profile-picture" src="{% static 'img/123252.png' %}" alt="HelloYeew" height="48" class="rounded-circle hvr-grow">
           </a>
           <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-            <li><a class="dropdown-item spacing-hover" href="#">Sign in</a></li>
+            <li><a class="dropdown-item spacing-hover" href="{% url 'login' %}">Sign in</a></li>
           </ul>
         </div>
         {% endif %}

@@ -70,13 +70,13 @@ function onResize() {
     if (document.documentElement.clientWidth >= 1010) {
         document.getElementById("header").classList.add('show')
         document.getElementById("header").classList.remove('hidden')
-        document.getElementById("header").style.zIndex = "2"
+        document.getElementById("header").style.zIndex = "3"
         document.getElementById("mobile-header").style.zIndex = "0"
     } else {
         document.getElementById("header").classList.add('hidden')
         document.getElementById("header").classList.remove('show')
         document.getElementById("header").style.zIndex = "0"
-        document.getElementById("mobile-header").style.zIndex = "2"
+        document.getElementById("mobile-header").style.zIndex = "3"
     }
 
     if (document.documentElement.clientWidth > 1010 && document.getElementById("header").classList.contains('hidden')) {

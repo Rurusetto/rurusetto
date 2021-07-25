@@ -35,7 +35,8 @@
           <form method="POST">
               {% csrf_token %}
               {{ form|crispy }}
-              <button type="submit" class="btn btn-rurusetto">Submit</button>
+              <p></p>
+              <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right">Submit</button>
           </form>
           <div style="line-height: 5">
             <p>Need an account? <a href="{% url 'register' %}" class="text-decoration-none spacing-hover">Register</a></p>

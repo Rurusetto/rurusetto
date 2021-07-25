@@ -56,31 +56,52 @@
     </div>
   </header>
 
-  <nav id="mobile-header" class="navbar p-3 mb-3 navbar-dark fixed-top">
-    <div class="container-fluid">
-      <a href="{% url 'home' %}" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none hvr-bounce-in">
-        <img id="mobile-logo" src="{% static 'logo/rurusetto-logo.svg' %}" height="50" alt="logo">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" style="margin-top: -10px;">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-  </nav>
-  <div class="collapse fixed-top" id="navbarToggleExternalContent">
-      <div class="list-group border-0">
-        <a href="#" class="list-group-item list-group-item-action text-white">Listing</a>
-        <a href="#" class="list-group-item list-group-item-action text-white">Status</a>
-        <a href="#" class="list-group-item list-group-item-action text-white">Install</a>
-        <a href="#collapseProfileMenu" class="list-group-item list-group-item-action text-white profile-menu" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapseProfileMenu" onclick="rotateArrowMenu()"  style="background-color: rgba(74, 74, 74, .8);" id="profile-menu"><img id="profile-picture-mobile" src="https://github.com/HelloYeew.png" alt="HelloYeew" height="32" class="rounded-circle"> HelloYeew <i class="fas fa-chevron-down" id="arrow-profile-menu"></i></a>
-        <div class="collapse" id="collapseProfileMenu">
-          <div class="list-group border-0">
-            <a href="#" class="list-group-item list-group-item-action text-white">Settings</a>
-            <a href="#" class="list-group-item list-group-item-action text-white">Profile</a>
-            <a href="#" class="list-group-item list-group-item-action text-white">Sign out</a>
-          </div>
+  {% if user.is_authenticated %}
+      <nav id="mobile-header" class="navbar p-3 mb-3 navbar-dark fixed-top">
+        <div class="container-fluid">
+          <a href="{% url 'home' %}" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none hvr-bounce-in">
+            <img id="mobile-logo" src="{% static 'logo/rurusetto-logo.svg' %}" height="50" alt="logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" style="margin-top: -10px;">
+            <span class="navbar-toggler-icon"></span>
+          </button>
         </div>
+      </nav>
+      <div class="collapse fixed-top" id="navbarToggleExternalContent">
+          <div class="list-group border-0">
+            <a href="#" class="list-group-item list-group-item-action text-white">Listing</a>
+            <a href="#" class="list-group-item list-group-item-action text-white">Status</a>
+            <a href="#" class="list-group-item list-group-item-action text-white">Install</a>
+            <a href="#collapseProfileMenu" class="list-group-item list-group-item-action text-white profile-menu" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapseProfileMenu" onclick="rotateArrowMenu()"  style="background-color: rgba(74, 74, 74, .8);" id="profile-menu"><img id="profile-picture-mobile" src="{{ user.profile.image.url }}" alt="{{ user.username }}" height="32" class="rounded-circle"> {{ user.username }} <i class="fas fa-chevron-down" id="arrow-profile-menu"></i></a>
+            <div class="collapse" id="collapseProfileMenu">
+              <div class="list-group border-0">
+                <a href="#" class="list-group-item list-group-item-action text-white">Settings</a>
+                <a href="{% url 'profile' %}" class="list-group-item list-group-item-action text-white">Profile</a>
+                <a href="{% url 'logout' %}" class="list-group-item list-group-item-action text-white">Sign out</a>
+              </div>
+            </div>
+          </div>
       </div>
-  </div>
+  {% else %}
+      <nav id="mobile-header" class="navbar p-3 mb-3 navbar-dark fixed-top">
+        <div class="container-fluid">
+          <a href="{% url 'home' %}" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none hvr-bounce-in">
+            <img id="mobile-logo" src="{% static 'logo/rurusetto-logo.svg' %}" height="50" alt="logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" style="margin-top: -10px;">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+      <div class="collapse fixed-top" id="navbarToggleExternalContent">
+          <div class="list-group border-0">
+            <a href="#" class="list-group-item list-group-item-action text-white">Listing</a>
+            <a href="#" class="list-group-item list-group-item-action text-white">Status</a>
+            <a href="#" class="list-group-item list-group-item-action text-white">Install</a>
+            <a href="{% url 'login' %}" class="list-group-item list-group-item-action text-white">Sign In</a>
+            </div>
+          </div>
+  {% endif %}
 
   {% block content %}{% endblock %}
 

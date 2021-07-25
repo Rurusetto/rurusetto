@@ -1,0 +1,17 @@
+html,
+body {
+    height: 100%!important;
+}
+
+.right-bg {
+    background-image: url("../img/789194.jpeg");
+    background-size: cover;
+}
+
+.form {
+    line-height: 10;
+}
+
+.login-form {
+    line-height: 1;
+}

@@ -1,0 +1,92 @@
+{% extends "wiki/base.html" %}
+{% load static %}
+{% block content %}
+  <div class="px-4 py-4 my-4 text-center align-middle hero" style="background-image: linear-gradient(to bottom, transparent, #2d2d2d), url({% static 'img/701370.png' %});">
+    <img class="d-block mx-auto mb-4" src="{% static 'logo/rurusetto-logo-white.svg' %}" alt="Rurusetto Logo" height="65">
+    <h1 class="display-5 fw-bold text-white">Welcome to rūrusetto!</h1>
+    <div class="col-lg-4 mx-auto">
+      <p class="lead mb-4 text-white">A wiki that contain all osu! rulesets.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row mb-3">
+      <h1>Latest added rulesets</h1>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-lg-4">
+        <img src="https://raw.githubusercontent.com/LumpBloom7/sentakki/eca1d8d8d1716454a708241f56718035221e3738/assets/icon.svg" width="140px" height="140px">
+
+        <h2>Sentakki</h2>
+        <p class="text-muted"><img src="https://github.com/LumpBloom7.png" alt="Bloom" width="32" height="32" class="rounded-circle"> Bloom</p>
+        <p>A custom ruleset based on Sega’s arcade rhythm game maimai</p>
+        <p><a class="btn btn-secondary btn-rurusetto hvr-sweep-to-right" href="wiki.html">Read &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img src="https://github.com/goodtrailer/soyokaze/blob/main/assets/logo.png?raw=true" width="140px" height="140px" style="filter:invert(1)">
+
+        <h2>Soyokaze</h2>
+        <p class="text-muted"><img src="https://github.com/goodtrailer.png" alt="Alden Wu" width="32" height="32" class="rounded-circle"> Alden Wu</p>
+        <p>An osu! ruleset mimicking Genshin Impact’s Ballads of Breeze mini-game.</p>
+        <p><a class="btn btn-secondary btn-rurusetto hvr-sweep-to-right" href="wiki.html">Read &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img src="https://github.com/EVAST9919/bosu/blob/master/osu.Game.Rulesets.Bosu/Resources/Textures/logo.png?raw=true" width="140px" height="140px">
+
+        <h2>Bosu</h2>
+        <p class="text-muted"><img src="https://github.com/EVAST9919.png" alt="EVAST9919" width="32" height="32" class="rounded-circle"> Evast</p>
+        <p>A custom game mode for osu!lazer project based on ”I wanna be the Boshy” game</p>
+        <p><a class="btn btn-secondary btn-rurusetto hvr-sweep-to-right" href="wiki.html">Read &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+  </div>
+
+  <div class="container">
+    <div class="row mb-3">
+      <h1>I don't know what to add next</h1>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-lg-4">
+        <img src="https://raw.githubusercontent.com/LumpBloom7/sentakki/eca1d8d8d1716454a708241f56718035221e3738/assets/icon.svg" width="140px" height="140px">
+
+        <h2>Awesome Rulesets</h2>
+        <p class="text-muted"><img src="https://ta-assistant-draft.netlify.app/assets/img/profile/dead-inside.jpeg" alt="maker" width="32" height="32" class="rounded-circle"> maker</p>
+        <p>How awesome is it!</p>
+        <p><a class="btn btn-secondary btn-rurusetto hvr-sweep-to-right" href="wiki.html">Read &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img src="https://raw.githubusercontent.com/LumpBloom7/sentakki/eca1d8d8d1716454a708241f56718035221e3738/assets/icon.svg" width="140px" height="140px">
+
+        <h2>Second Rulesets</h2>
+        <p class="text-muted"><img src="https://ta-assistant-draft.netlify.app/assets/img/profile/dead-inside.jpeg" alt="maker" width="32" height="32" class="rounded-circle"> maker</p>
+        <p>Good rulesets!</p>
+        <p><a class="btn btn-secondary btn-rurusetto hvr-sweep-to-right" href="wiki.html">Read &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img src="https://raw.githubusercontent.com/LumpBloom7/sentakki/eca1d8d8d1716454a708241f56718035221e3738/assets/icon.svg" width="140px" height="140px">
+
+        <h2>Third Rulesets</h2>
+        <p class="text-muted"><img src="https://ta-assistant-draft.netlify.app/assets/img/profile/dead-inside.jpeg" alt="maker" width="32" height="32" class="rounded-circle"> maker</p>
+        <p>Peppy</p>
+        <p><a class="btn btn-secondary btn-rurusetto hvr-sweep-to-right" href="wiki.html">Read &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+  </div>
+
+  <br>
+
+  <footer class="footer mt-auto py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p>Made with ❤️ by <a class="text-decoration-none hvr-underline-from-center made-by-footer" target="_blank" href="https://github.com/Rurusetto">HelloYeew</a> and <a class="text-decoration-none hvr-underline-from-center made-by-footer" target="_blank" href="https://github.com/Rurusetto">Rūrusetto team</a></p>
+        </div>
+        <div class="col text-end github-footer">
+          <a target="_blank" href="https://github.com/Rurusetto/rurusetto-new-draft"><i class="fab fa-github hvr-grow github-footer"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+{% endblock content %}

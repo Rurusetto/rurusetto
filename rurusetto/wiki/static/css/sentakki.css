@@ -1,0 +1,20 @@
+a{
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+a:hover {
+    letter-spacing: 2px;
+}
+
+.wiki-menu {
+    color: #ffb3d4;
+}
+
+.verified-circle {
+    color: #ffb3d4
+}
+
+.info-box {
+    background-color: #4a4a4a;
+}

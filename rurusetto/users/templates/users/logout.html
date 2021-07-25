@@ -30,19 +30,16 @@
               </div>
             {% endfor %}
           {% endif %}
-          <h1>Log In</h1>
+          <h1>Log Out</h1>
           <p></p>
-          <form method="POST">
-              {% csrf_token %}
-              {{ form|crispy }}
-              <button type="submit" class="btn btn-rurusetto">Submit</button>
-          </form>
-          <div style="line-height: 5">
-            <p>Need an account? <a href="{% url 'register' %}" class="text-decoration-none spacing-hover">Register</a></p>
-          </div>
+          You have been logged out.
+          <p></p>
+          <a href="{% url 'login' %}" class="text-decoration-none spacing-hover">Login Back</a>
+          <p></p>
+          <a href="{% url 'home' %}" class="text-decoration-none spacing-hover">Return to homepage</a>
         </div>
       </div>
-      <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8" style="background-image: url('{% static "img/685481.jpeg" %}')"></div>
+      <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8" style="background-image: url('{% static "img/243007.jpeg" %}')"></div>
     </div>
   </div>
 </body>

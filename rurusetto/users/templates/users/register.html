@@ -23,26 +23,19 @@
         <div class="container position-absolute top-50 start-50 translate-middle col-8">
           <img src="https://rulesets.info/rurusetto-logo.svg">
            <p></p>
-            {% if messages %}
-            {% for message in messages %}
-              <div class="alert alert-{{ message.tags }}">
-                <i class="fas fa-check"></i> {{ message }}
-              </div>
-            {% endfor %}
-          {% endif %}
-          <h1>Log In</h1>
+          <h1>Register</h1>
           <p></p>
-          <form method="POST">
-              {% csrf_token %}
-              {{ form|crispy }}
-              <button type="submit" class="btn btn-rurusetto">Submit</button>
-          </form>
+            <form method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-rurusetto">Submit</button>
+            </form>
           <div style="line-height: 5">
-            <p>Need an account? <a href="{% url 'register' %}" class="text-decoration-none spacing-hover">Register</a></p>
+            <p>Have an account? <a href="{% url 'login' %}" class="text-decoration-none spacing-hover">Login</a></p>
           </div>
         </div>
       </div>
-      <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8" style="background-image: url('{% static "img/685481.jpeg" %}')"></div>
+      <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8" style="background-image: url('{% static "img/714226.png" %}')"></div>
     </div>
   </div>
 </body>

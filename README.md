@@ -22,7 +22,7 @@ The website finish and stable now.
 
 Due to the old codebase of Rūrusetto cannot add a new function. We think about this long time ago since we make night mode and dark mode, auto-update rulesets version from GitHub API. This codebase cannot contain or add a new function that we think or planned to add it. That's why we decided to rewrite the entire codebase and revamp the old UI to a new UI that's design for a better user experience and a new function like wiki infobox, add a new rulesets in website editor instead of pull request, etc. If you interested in a new UI, we have [a draft repositories](https://github.com/Rurusetto/rurusetto-new-draft) and [a live website](https://rurusetto-new-design.netlify.app/). More development plan will be announced in the future.
 
-![Rūrusetto new design](rurusetto-new-ui.png)]
+![Rūrusetto new design](rurusetto-new-ui.png)
 
 ## Developing Rūrusetto codebase
 

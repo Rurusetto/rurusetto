@@ -93,6 +93,12 @@ footer {
     border-color: #ff66aa!important;
 }
 
+.bg-rurusetto-alert {
+    background-color: #ff8bc5 !important;
+    color: #fff!important;
+    border-color: #ff66aa!important;
+}
+
 .github-footer {
     color: #fff;
 }

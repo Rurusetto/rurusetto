@@ -1,13 +1,6 @@
 {% extends "wiki/base.html" %}
 {% load static %}
 {% block content %}
-  <div class="px-4 py-4 my-4 text-center align-middle hero" style="background-image: linear-gradient(to bottom, transparent, #2d2d2d), url({% static 'img/701370.png' %});">
-    <img class="d-block mx-auto mb-4" src="{% static 'logo/rurusetto-logo-white.svg' %}" alt="Rurusetto Logo" height="65">
-    <h1 class="display-5 fw-bold text-white">Welcome to rūrusetto!</h1>
-    <div class="col-lg-4 mx-auto">
-      <p class="lead mb-4 text-white">A wiki that contain all osu! rulesets.</p>
-    </div>
-  </div>
 
   <div class="container">
     <div class="row mb-3">
@@ -76,17 +69,4 @@
   </div>
 
   <br>
-
-  <footer class="footer mt-auto py-3">
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <p>Made with ❤️ by <a class="text-decoration-none hvr-underline-from-center made-by-footer" target="_blank" href="https://github.com/Rurusetto">HelloYeew</a> and <a class="text-decoration-none hvr-underline-from-center made-by-footer" target="_blank" href="https://github.com/Rurusetto">Rūrusetto team</a></p>
-        </div>
-        <div class="col text-end github-footer">
-          <a target="_blank" href="https://github.com/Rurusetto/rurusetto-new-draft"><i class="fab fa-github hvr-grow github-footer"></i></a>
-        </div>
-      </div>
-    </div>
-  </footer>
 {% endblock content %}

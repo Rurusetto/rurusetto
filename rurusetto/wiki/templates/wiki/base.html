@@ -71,10 +71,39 @@
       </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <script src="{% static 'js/custom.js' %}"></script>
+  <div class="px-4 py-4 my-4 text-center align-middle hero" style="background-image: linear-gradient(to bottom, transparent, #2d2d2d), url({% static 'img/701370.png' %});">
+    <img class="d-block mx-auto mb-4" src="{% static 'logo/rurusetto-logo-white.svg' %}" alt="Rurusetto Logo" height="65">
+    <h1 class="display-5 fw-bold text-white">Welcome to rūrusetto!</h1>
+    <div class="col-lg-4 mx-auto">
+      <p class="lead mb-4 text-white">A wiki that contain all osu! rulesets.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row mb-3">
+      <div class="alert alert-danger" role="alert">
+        This website is under heavy development and under test phase. Some function will not finish and not open.
+      </div>
+    </div>
+  </div>
 
   {% block content %}{% endblock %}
+
+  <footer class="footer mt-auto py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p>Made with ❤️ by <a class="text-decoration-none hvr-underline-from-center made-by-footer" target="_blank" href="https://github.com/HelloYeew">HelloYeew</a> and <a class="text-decoration-none hvr-underline-from-center made-by-footer" target="_blank" href="https://github.com/Rurusetto">Rūrusetto team</a></p>
+        </div>
+        <div class="col text-end github-footer">
+          <a target="_blank" href="https://github.com/Rurusetto/rurusetto"><i class="fab fa-github hvr-grow github-footer"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
 
 </body>
 </html>

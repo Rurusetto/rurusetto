@@ -1,0 +1,60 @@
+{% extends "wiki/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+
+<div class="px-4 py-4 my-4 text-center align-middle hero-profile" style="background-image: linear-gradient(to bottom, transparent, #2d2d2d), url('{% static "img/748076.png" %}');"></div>
+
+<div class="container px-4 py-4 my-4 d-grid gap-4">
+  <div class="row" style="margin-top: -11%; width: 1280px;">
+    <div class="col col-2">
+      <img src="{{ user.profile.image.url }}" alt="{{ user.username }}" height="160" class="rounded-circle" >
+    </div>
+    <div class="col col-10" style="margin-left: -2%;">
+      <h1>{{ user.username }}</h1>
+      <p><span class="badge rounded-pill bg-rurusetto">Beta Tester</span></p>
+      <p>{{ user.profile.about_me }}</p>
+    </div>
+  </div>
+
+  <div class="row text-white rounded d-flex p-3">
+    <div class="col">
+      <i class="fas fa-envelope-square"></i> {{ user.email }}
+    </div>
+  </div>
+
+    <div class="container">
+    {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">
+            <i class="fas fa-check"></i> {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+
+  <div class="row mb-3">
+      <h1>Temporary test forms</h1>
+  </div>
+  <div class="container">
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <fieldset class="form-group">
+          {{ u_form|crispy }}
+          {{ p_form|crispy }}
+      </fieldset>
+      <p></p>
+      <div class="form-group">
+          <button class="btn btn-primary bg-rurusetto" type="submit"><i class="fas fa-user-edit"></i> Update</button>
+      </div>
+    </form>
+  </div>
+
+
+</div>
+
+<br>
+
+{% endblock %}

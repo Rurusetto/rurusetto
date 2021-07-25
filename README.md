@@ -16,7 +16,7 @@ A wiki that contain all osu! rulesets
 
 ## Development Status
 
-The website structure is almost finished. Currently adding more ruleset pages to the website and improving on the pages currently in place.
+The website finish and stable now.
 
 ## Developing Rūrusetto codebase
 

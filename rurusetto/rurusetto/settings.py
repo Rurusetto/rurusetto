@@ -136,3 +136,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
+
+# More enum configuration on website
+
+MAX_PROFILE_PICTURE_SIZE = 5242880
+

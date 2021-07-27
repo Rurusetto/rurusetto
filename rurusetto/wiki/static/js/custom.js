@@ -7,6 +7,7 @@ function scrollFunction() {
     if (document.documentElement.clientWidth >= 1010) {
         if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
             document.getElementById("profile-picture").style.height = "32px";
+            document.getElementById("profile-picture").style.width = "32px";
             document.getElementById("header-logo").style.height = "50px";
             document.getElementById("header").style.backgroundColor = "rgba(74,74,74,.8)"
             document.getElementById("header").classList.add('blur-bg')
@@ -15,6 +16,7 @@ function scrollFunction() {
             document.getElementById("nav-status").style.fontSize = "18px"
         } else {
             document.getElementById("profile-picture").style.height = "48px";
+            document.getElementById("profile-picture").style.width = "48px";
             document.getElementById("header-logo").style.height = "65px";
             document.getElementById("header").style.backgroundColor = "rgba(74,74,74,0)"
             document.getElementById("header").classList.remove('blur-bg')

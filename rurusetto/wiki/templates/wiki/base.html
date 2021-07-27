@@ -49,6 +49,7 @@
           </a>
           <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
             <li><a class="dropdown-item spacing-hover" href="{% url 'login' %}">Sign in</a></li>
+            <li><a class="dropdown-item spacing-hover" href="{% url 'register' %}">Sign Up</a></li>
           </ul>
         </div>
         {% endif %}
@@ -99,6 +100,7 @@
             <a href="#" class="list-group-item list-group-item-action text-white">Status</a>
             <a href="#" class="list-group-item list-group-item-action text-white">Install</a>
             <a href="{% url 'login' %}" class="list-group-item list-group-item-action text-white">Sign In</a>
+            <a href="{% url 'register' %}" class="list-group-item list-group-item-action text-white">Sign Up</a>
             </div>
           </div>
   {% endif %}

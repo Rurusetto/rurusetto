@@ -5,7 +5,7 @@
 
 <link rel="stylesheet" href="{% static 'css/profile.css' %}">
 
-<div class="px-4 py-4 my-4 text-center align-middle hero-profile" style="background-image: linear-gradient(to bottom, transparent, #2d2d2d), url('{% static "img/748076.png" %}');"></div>
+<div class="px-4 py-4 my-4 text-center align-middle hero-profile" style="background-image: linear-gradient(to bottom, transparent, #2d2d2d), url('{{ user.profile.cover.url }}');"></div>
 
 <div class="container px-4 py-4 my-4 d-grid gap-4">
   <div class="row" style="margin-top: -11%; width: 1280px;">

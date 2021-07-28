@@ -28,9 +28,16 @@
     <div class="container">
     {% if messages %}
         {% for message in messages %}
-          <div class="alert alert-{{ message.tags }}">
-            <i class="fas fa-check"></i> {{ message }}
-          </div>
+            {% if message.tags == "success"%}
+                <div class="alert alert-success">
+                    <i class="fas fa-check"></i> {{ message }}
+                </div>
+            {% endif %}
+            {% if message.tags == "error"%}
+                <div class="alert alert-danger">
+                    <i class="fas fa-times"></i> {{ message }}
+                </div>
+            {% endif %}
         {% endfor %}
       {% endif %}
     </div>

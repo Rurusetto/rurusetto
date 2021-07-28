@@ -2,7 +2,14 @@
     height:30vh;
     min-height:400px;
     background-size: cover;
-    background-image: linear-gradient(to bottom, transparent, #2d2d2d), url('../img/748076.png');
     margin:0!important;
     padding:12vh!important;
+}
+
+.fa-times {
+    color: #842029;
+}
+
+.fa-check {
+    color: #0f5132;
 }

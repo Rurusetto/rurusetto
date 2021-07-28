@@ -63,6 +63,8 @@ function onResize() {
         document.getElementById("header").classList.remove('hidden')
         document.getElementById("header").style.zIndex = "2"
         document.getElementById("mobile-header").style.zIndex = "0"
+        document.getElementById("profile-picture").style.zIndex = "2"
+        document.getElementById("header-logo").style.zIndex = "2"
         document.getElementById("nav-listing").classList.remove('disabled')
         document.getElementById("nav-install").classList.remove('disabled')
         document.getElementById("nav-status").classList.remove('disabled')
@@ -73,6 +75,8 @@ function onResize() {
         document.getElementById("header").classList.remove('show')
         document.getElementById("header").style.zIndex = "0"
         document.getElementById("mobile-header").style.zIndex = "2"
+        document.getElementById("profile-picture").style.zIndex = "0"
+        document.getElementById("header-logo").style.zIndex = "0"
         document.getElementById("nav-listing").classList.add('disabled')
         document.getElementById("nav-install").classList.add('disabled')
         document.getElementById("nav-status").classList.add('disabled')

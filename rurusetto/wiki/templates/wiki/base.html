@@ -75,7 +75,7 @@
             <a href="#" class="list-group-item list-group-item-action text-white">Status</a>
             <a href="#" class="list-group-item list-group-item-action text-white">Install</a>
             <a href="{% url 'changelog' %}" class="list-group-item list-group-item-action text-white">Changelog</a>
-            <a href="#collapseProfileMenu" class="list-group-item list-group-item-action text-white profile-menu" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapseProfileMenu" onclick="rotateArrowMenu()"  style="background-color: rgba(74, 74, 74, .8);" id="profile-menu"><img id="profile-picture-mobile" src="{{ user.profile.image.url }}" alt="{{ user.username }}" height="32" class="rounded-circle"> {{ user.username }} <i class="fas fa-chevron-down" id="arrow-profile-menu"></i></a>
+            <a href="#collapseProfileMenu" class="list-group-item list-group-item-action text-white profile-menu" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapseProfileMenu" onclick="rotateArrowMenu()"  style="background-color: rgba(74, 74, 74, .8);" id="profile-menu"><img id="profile-picture-mobile" src="{{ user.profile.image.url }}" alt="{{ user.username }}" height="32" width="32" class="rounded-circle"> {{ user.username }} <i class="fas fa-chevron-down" id="arrow-profile-menu"></i></a>
             <div class="collapse" id="collapseProfileMenu">
               <div class="list-group border-0">
                 <a href="#" class="list-group-item list-group-item-action text-white">Settings</a>

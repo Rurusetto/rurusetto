@@ -10,6 +10,6 @@ def home(request):
 
 def changelog(request):
     context = {
-        'changelog_list': Changelog.objects.all()
+        'changelog_list': Changelog.objects.all().order_by('-time')
     }
     return render(request, 'wiki/changelog.html', context)

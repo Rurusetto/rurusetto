@@ -14,6 +14,7 @@ function scrollFunction() {
             document.getElementById("nav-listing").style.fontSize = "18px"
             document.getElementById("nav-install").style.fontSize = "18px"
             document.getElementById("nav-status").style.fontSize = "18px"
+            document.getElementById("nav-changelog").style.fontSize = "18px"
         } else {
             document.getElementById("profile-picture").style.height = "48px";
             document.getElementById("profile-picture").style.width = "48px";
@@ -23,6 +24,7 @@ function scrollFunction() {
             document.getElementById("nav-listing").style.fontSize = "20px"
             document.getElementById("nav-install").style.fontSize = "20px"
             document.getElementById("nav-status").style.fontSize = "20px"
+            document.getElementById("nav-changelog").style.fontSize = "20px"
         }
     } else {
         if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
@@ -68,6 +70,7 @@ function onResize() {
         document.getElementById("nav-listing").classList.remove('disabled')
         document.getElementById("nav-install").classList.remove('disabled')
         document.getElementById("nav-status").classList.remove('disabled')
+        document.getElementById("nav-changelog").classList.remove('disabled')
         document.getElementById("profile-picture").classList.remove('disabled')
         document.getElementById("header-logo").classList.remove('disabled')
     } else {
@@ -80,6 +83,7 @@ function onResize() {
         document.getElementById("nav-listing").classList.add('disabled')
         document.getElementById("nav-install").classList.add('disabled')
         document.getElementById("nav-status").classList.add('disabled')
+        document.getElementById("nav-changelog").classList.add('disabled')
         document.getElementById("profile-picture").classList.add('disabled')
         document.getElementById("header-logo").classList.add('disabled')
     }

@@ -1,5 +1,6 @@
 {% extends "wiki/base.html" %}
 {% load static %}
+{% load markdownify %}
 {% block content %}
 
     <div class="px-4 py-4 my-4 text-center align-middle hero" style="background-image: linear-gradient(to bottom, transparent, #2d2d2d), url({% static 'img/701370.png' %});">
@@ -24,9 +25,9 @@
                   <h1>{{ changelog.version }} <span class="badge rounded-pill bg-success fs-5">{{ changelog.type }}</span></h1>
               {% endif %}
 
-              <p class="text-muted">Release at {{ changelog.time|date:"M j, Y h:i A" }}</p>
+              <p class="text-muted">Release at {{ changelog.time|date:"M j, Y" }}</p>
 
-              <p>{{ changelog.note }}</p>
+              <p>{{ changelog.note | markdownify }}</p>
 
           </div>
       {% endfor %}

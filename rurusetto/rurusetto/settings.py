@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'wiki.apps.WikiConfig',
     'crispy_forms',
+    'markdownify',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -140,4 +141,23 @@ LOGIN_URL = 'login'
 # More enum configuration on website
 
 MAX_PROFILE_PICTURE_SIZE = 5242880
+
+# Markdownify settings (Document : https://django-markdownify.readthedocs.io/en/latest/index.html)
+
+MARKDOWNIFY = {
+   "default": {
+        "STRIP": False,
+        "WHITELIST_TAGS": ["a", "p", "h1", 'h2', 'h3', 'h4', 'h5', 'h6', 'ul', 'li', 'span', 'i', 'code'],
+        "MARKDOWN_EXTENSIONS": ["markdown.extensions.fenced_code", ],
+        "LINKIFY_TEXT": {
+            "PARSE_URLS": True,
+            "PARSE_EMAIL": True,
+        }
+   },
+
+   "alternative": {
+      "WHITELIST_TAGS": ["a", "p", ],
+      "MARKDOWN_EXTENSIONS": ["markdown.extensions.fenced_code", ]
+   }
+}
 

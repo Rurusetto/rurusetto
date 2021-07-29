@@ -1,0 +1,39 @@
+{% extends "wiki/base.html" %}
+{% load static %}
+{% block content %}
+
+    <div class="px-4 py-4 my-4 text-center align-middle hero" style="background-image: linear-gradient(to bottom, transparent, #2d2d2d), url({% static 'img/701370.png' %});">
+    <img class="d-block mx-auto mb-4" src="{% static 'logo/rurusetto-logo-white.svg' %}" alt="Rurusetto Logo" height="65">
+    <h1 class="display-5 fw-bold text-white">Welcome to rūrusetto!</h1>
+    <div class="col-lg-4 mx-auto">
+      <p class="lead mb-4 text-white">A wiki that contain all osu! rulesets.</p>
+    </div>
+  </div>
+
+  <div class="container">
+
+{#  TODO: Add 'add changelog' button#}
+
+    <div class="row mb-3">
+      {% for changelog in changelog_list %}
+          <div class="row mb-3">
+              {% if changelog.type == "pre-release" %}
+                  <h1>{{ changelog.version }} <span class="badge rounded-pill bg-warning text-dark fs-5">{{ changelog.type }}</span></h1>
+              {% endif %}
+              {% if changelog.type == "stable" %}
+                  <h1>{{ changelog.version }} <span class="badge rounded-pill bg-success fs-5">{{ changelog.type }}</span></h1>
+              {% endif %}
+
+              <p class="text-muted">Release at {{ changelog.time|date:"M j, Y h:i A" }}</p>
+
+              <p>{{ changelog.note }}</p>
+
+          </div>
+      {% endfor %}
+    </div>
+
+
+  </div>
+
+  <br>
+{% endblock content %}

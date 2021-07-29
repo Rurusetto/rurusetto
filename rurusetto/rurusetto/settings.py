@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'wiki.apps.WikiConfig',
     'crispy_forms',
-    'markdownify',
+    'markdownify.apps.MarkdownifyConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

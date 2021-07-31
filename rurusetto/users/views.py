@@ -1,8 +1,9 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from django.conf import settings
+from .models import Profile
 import os
 
 
@@ -28,7 +29,8 @@ def profile(request):
         p_form = ProfileUpdateForm(request.POST,
                                    request.FILES,
                                    instance=request.user.profile)
-        if u_form.is_valid() and p_form.is_valid() and p_form.cleaned_data.get('image').size < settings.MAX_PROFILE_PICTURE_SIZE:
+        if u_form.is_valid() and p_form.is_valid() and \
+                p_form.cleaned_data.get('image').size < settings.MAX_PROFILE_PICTURE_SIZE:
             u_form.save()
             p_form.save()
             messages.success(request, f'Your account has been updated!')
@@ -41,8 +43,6 @@ def profile(request):
             user.save()
             return redirect('profile')
 
-
-
     else:
         u_form = UserUpdateForm(instance=request.user)
         p_form = ProfileUpdateForm(instance=request.user.profile)
@@ -52,4 +52,13 @@ def profile(request):
         'p_form': p_form,
     }
 
+    return render(request, 'users/profile.html', context)
+
+
+def profile_detail(request, pk):
+    profile_object = get_object_or_404(Profile, pk=pk)
+
+    context = {
+        'profile_object': profile_object,
+    }
     return render(request, 'users/profile.html', context)

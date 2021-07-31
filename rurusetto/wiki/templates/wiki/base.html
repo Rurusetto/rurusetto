@@ -38,7 +38,7 @@
           </a>
           <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
             <li><a class="dropdown-item spacing-hover" href="#">Settings</a></li>
-            <li><a class="dropdown-item spacing-hover" href="{% url "profile" %}">Profile</a></li>
+            <li><a class="dropdown-item spacing-hover" href="{% url "profile" user.id %}">Profile</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item spacing-hover" href="{% url "logout" %}">Sign out</a></li>
           </ul>
@@ -79,7 +79,7 @@
             <div class="collapse" id="collapseProfileMenu">
               <div class="list-group border-0">
                 <a href="#" class="list-group-item list-group-item-action text-white">Settings</a>
-                <a href="{% url 'profile' %}" class="list-group-item list-group-item-action text-white">Profile</a>
+                <a href="{% url 'profile' user.id %}" class="list-group-item list-group-item-action text-white">Profile</a>
                 <a href="{% url 'logout' %}" class="list-group-item list-group-item-action text-white">Sign out</a>
               </div>
             </div>

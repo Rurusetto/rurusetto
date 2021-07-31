@@ -5,23 +5,24 @@
 
 <link rel="stylesheet" href="{% static 'css/profile.css' %}">
 
-<div class="px-4 py-4 my-4 text-center align-middle hero-profile" style="background-image: linear-gradient(to bottom, transparent, #2d2d2d), url('{{ user.profile.cover.url }}');"></div>
+<div class="px-4 py-4 my-4 text-center align-middle hero-profile" style="background-image: linear-gradient(to bottom, transparent, #2d2d2d), url('{{ profile_object.cover.url }}');"></div>
 
 <div class="container px-4 py-4 my-4 d-grid gap-4">
   <div class="row" style="margin-top: -11%; width: 1280px;">
     <div class="col col-2">
-      <img src="{{ user.profile.image.url }}" alt="{{ user.username }}" height="160" width="160" class="rounded-circle" >
+      <img src="{{ profile_object.image.url }}" alt="{{ profile_object.user.username }}" height="160" width="160" class="rounded-circle" >
     </div>
     <div class="col col-10" style="margin-left: -2%;">
-      <h1>{{ user.username }}</h1>
-      <p><span class="badge rounded-pill bg-rurusetto">Beta Tester</span></p>
-      <p>{{ user.profile.about_me }}</p>
+      <h1>{{ profile_object.user.username }}</h1>
+{#      <p><span class="badge rounded-pill bg-rurusetto">Beta Tester</span> User ID : {{ profile_object.user.id }}</p>#}
+      <p class="text-muted">User ID : {{ profile_object.user.id }}</p>
+      <p>{{ profile_object.about_me }}</p>
     </div>
   </div>
 
   <div class="row text-white rounded d-flex p-3">
     <div class="col">
-      <i class="fas fa-envelope-square"></i> {{ user.email }}
+      <i class="fas fa-envelope-square"></i> {{ profile_object.user.email }}
     </div>
   </div>
 
@@ -42,22 +43,22 @@
       {% endif %}
     </div>
 
-  <div class="row mb-3">
-      <h1>Temporary test forms</h1>
-  </div>
-  <div class="container">
-    <form method="POST" enctype="multipart/form-data">
-      {% csrf_token %}
-      <fieldset class="form-group">
-          {{ u_form|crispy }}
-          {{ p_form|crispy }}
-      </fieldset>
-      <p></p>
-      <div class="form-group">
-          <button class="btn btn-primary bg-rurusetto" type="submit"><i class="fas fa-user-edit"></i> Update</button>
-      </div>
-    </form>
-  </div>
+{#  <div class="row mb-3">#}
+{#      <h1>Temporary test forms</h1>#}
+{#  </div>#}
+{#  <div class="container">#}
+{#    <form method="POST" enctype="multipart/form-data">#}
+{#      {% csrf_token %}#}
+{#      <fieldset class="form-group">#}
+{#          {{ u_form|crispy }}#}
+{#          {{ p_form|crispy }}#}
+{#      </fieldset>#}
+{#      <p></p>#}
+{#      <div class="form-group">#}
+{#          <button class="btn btn-primary bg-rurusetto" type="submit"><i class="fas fa-user-edit"></i> Update</button>#}
+{#      </div>#}
+{#    </form>#}
+{#  </div>#}
 
 
 </div>

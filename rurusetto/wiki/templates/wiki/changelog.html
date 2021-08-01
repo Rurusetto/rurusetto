@@ -1,6 +1,6 @@
 {% extends "wiki/base.html" %}
 {% load static %}
-{% load markdownify %}
+{% load markdown_converter %}
 {% block content %}
 
     <div class="px-4 py-4 my-4 align-middle hero" style="background-image: linear-gradient(to bottom, transparent, #2d2d2d), url({% static 'img/684477.png' %});">
@@ -32,7 +32,7 @@
 
               <p class="text-muted">Release at {{ changelog.time|date:"M j, Y" }}</p>
 
-              <p>{{ changelog.note | markdownify }}</p>
+              {{ changelog.note | convert_markdown | safe }}
 
           </div>
       {% endfor %}

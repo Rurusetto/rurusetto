@@ -32,8 +32,10 @@ class Ruleset(models.Model):
 
     open_source = models.BooleanField(default=True)
     github_link = models.URLField(default="")
+
     last_edited_by = models.CharField(default="0", max_length=10)
     last_edited_at = models.DateTimeField(auto_now=True, editable=True)
+    verified = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

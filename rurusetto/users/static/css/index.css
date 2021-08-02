@@ -226,6 +226,10 @@ a.disabled {
     cursor: default;
 }
 
+.icon-menu {
+    color: #ffb3d4;
+}
+
 
 /*#navbar-expand {*/
 /*    margin-top: 5%;*/

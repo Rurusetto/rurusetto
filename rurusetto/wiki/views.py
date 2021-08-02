@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Changelog
+from .models import Changelog, Ruleset
 
 # Create your views here.
 
@@ -16,4 +16,7 @@ def changelog(request):
 
 
 def listing(request):
-    return render(request, 'wiki/listing.html')
+    context = {
+        'rulesets': Ruleset.objects.all()
+    }
+    return render(request, 'wiki/listing.html', context)

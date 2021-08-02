@@ -25,7 +25,7 @@
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a id="nav-listing" href="#" class="nav-link px-2 nav-text round-font-bold hvr-underline-from-center">Listing</a></li>
+          <li><a id="nav-listing" href="{% url 'listing' %}" class="nav-link px-2 nav-text round-font-bold hvr-underline-from-center">Listing</a></li>
           <li><a id="nav-status" href="#" class="nav-link px-2 nav-text round-font-bold hvr-underline-from-center">Status</a></li>
           <li><a id="nav-install" href="#" class="nav-link px-2 nav-text round-font-bold hvr-underline-from-center">Install</a></li>
           <li><a id="nav-changelog" href="{% url 'changelog' %}" class="nav-link px-2 nav-text round-font-bold hvr-underline-from-center">Changelog</a></li>
@@ -71,7 +71,7 @@
       </nav>
       <div class="collapse fixed-top" id="navbarToggleExternalContent">
           <div class="list-group border-0">
-            <a href="#" class="list-group-item list-group-item-action text-white">Listing</a>
+            <a href="{% url 'listing' %}" class="list-group-item list-group-item-action text-white">Listing</a>
             <a href="#" class="list-group-item list-group-item-action text-white">Status</a>
             <a href="#" class="list-group-item list-group-item-action text-white">Install</a>
             <a href="{% url 'changelog' %}" class="list-group-item list-group-item-action text-white">Changelog</a>
@@ -98,7 +98,7 @@
       </nav>
       <div class="collapse fixed-top" id="navbarToggleExternalContent">
           <div class="list-group border-0">
-            <a href="#" class="list-group-item list-group-item-action text-white">Listing</a>
+            <a href="{% url 'listing' %}" class="list-group-item list-group-item-action text-white">Listing</a>
             <a href="#" class="list-group-item list-group-item-action text-white">Status</a>
             <a href="#" class="list-group-item list-group-item-action text-white">Install</a>
             <a href="{% url 'changelog' %}" class="list-group-item list-group-item-action text-white">Changelog</a>

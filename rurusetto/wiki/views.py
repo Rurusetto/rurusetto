@@ -13,3 +13,7 @@ def changelog(request):
         'changelog_list': Changelog.objects.all().order_by('-time')
     }
     return render(request, 'wiki/changelog.html', context)
+
+
+def listing(request):
+    return render(request, 'wiki/listing.html')

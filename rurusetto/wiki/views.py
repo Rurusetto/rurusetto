@@ -1,9 +1,11 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Changelog, Ruleset
 from .forms import RulesetCreateForm
-from .function import make_listing_view
+from .function import make_listing_view, make_wiki_view
+from unidecode import unidecode
+from django.template.defaultfilters import slugify
 
 # Create your views here.
 
@@ -34,6 +36,7 @@ def create_ruleset(request):
             form.instance.creator = request.user.id
             form.instance.owner = request.user.id
             form.instance.last_edited_by = request.user.id
+            form.instance.slug = slugify(unidecode(form.cleaned_data.get('name')))
             form.save()
             name = form.cleaned_data.get('name')
             messages.success(request, f'Ruleset name {name} has added to the list!')

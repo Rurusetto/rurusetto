@@ -19,8 +19,8 @@ class Changelog(models.Model):
 
 
 class Ruleset(models.Model):
-    creator = models.OneToOneField(User, on_delete=models.PROTECT, related_name='%(class)s_page_creator')
-    owner = models.OneToOneField(User, on_delete=models.PROTECT, related_name='%(class)s_ruleset_owner')
+    creator = models.CharField(default="0", max_length=10)
+    owner = models.CharField(default="0", max_length=10)
 
     name = models.CharField(default="", max_length=20)
     description = models.CharField(default="", max_length=150)
@@ -32,9 +32,9 @@ class Ruleset(models.Model):
 
     open_source = models.BooleanField(default=True)
     github_link = models.URLField(default="")
-    last_edited_by = models.OneToOneField(User, on_delete=models.PROTECT, related_name='%(class)s_last_edited_by')
-    last_edited_at = models.DateTimeField(auto_now_add=True)
+    last_edited_by = models.CharField(default="0", max_length=10)
+    last_edited_at = models.DateTimeField(auto_now=True, editable=True)
 
     def __str__(self):
-        return f'{self.name} by {self.owner.username}'
+        return self.name
 

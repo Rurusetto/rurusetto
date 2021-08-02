@@ -17,7 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from users import views as user_views
-from wiki import views as wiki_views
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -28,8 +27,6 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
     path('profile/<int:pk>', user_views.profile_detail, name='profile'),
-    path('changelog/', wiki_views.changelog, name='changelog'),
-    path('listing/', wiki_views.listing, name='listing')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,30 @@
+{% extends "wiki/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="px-4 py-4 my-4 align-middle hero" style="background-image: linear-gradient(to bottom, transparent, #2d2d2d), url('{% static "img/杉８７ - lonely (72683486) .jpg" %}');">
+    <div class="container align-middle">
+        <div class="row">
+            <p></p>
+            <div><h1 class="display-5 fw-bold">Listing</h1></div>
+            <p>List of available rulesets</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <form method="POST" enctype='multipart/form-data'>
+                {% csrf_token %}
+              {{ form|crispy }}
+              <p></p>
+              <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right">Create</button>
+          </form>
+    </div>
+</div>
+
+    <p></p>
+
+<br>
+{% endblock content %}

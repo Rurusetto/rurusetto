@@ -16,7 +16,7 @@
     <div class="row">
         {% if user.is_authenticated %}
         <div class="col-sm-2 hvr-icon-bounce">
-            <p><a class="text-decoration-none text-center spacing-hover-short" href="#"><i class="fas fa-plus icon-menu hvr-icon"></i> Make a new page</a></p>
+            <p><a class="text-decoration-none text-center spacing-hover-short" href="{% url 'create_ruleset' %}"><i class="fas fa-plus icon-menu hvr-icon"></i> Make a new page</a></p>
         </div>
         {% else %}
             <p></p>
@@ -30,11 +30,11 @@
     <div class="row row-cols-3 text-center gy-4">
         {% for detail in rulesets %}
         <div class="col-lg-4">
-            <img src="{{ detail.icon.url }}" alt="{{ detail.name }}" width="140px" height="140px">
+            <img src="{{ detail.0.icon.url }}" alt="{{ detail.0.name }}" width="140px" height="140px" class="rounded-circle">
 
-            <h2>{{ detail.name }}</h2>
-            <p class="text-muted"><img src="{{ detail.owner.profile.image.url }}" alt="{{ detail.owner.username }}" width="32" height="32" class="rounded-circle"> {{ detail.owner.username }}</p>
-            <p>{{ detail.description }}</p>
+            <h2>{{ detail.0.name }}</h2>
+            <p class="text-muted"><img src="{{ detail.1.profile.image.url }}" alt="{{ detail.1.username }}" width="32" height="32" class="rounded-circle"> {{ detail.1.username }}</p>
+            <p>{{ detail.0.description }}</p>
             <p><a class="btn btn-secondary btn-rurusetto hvr-sweep-to-right" href="#">Read &raquo;</a></p>
         </div>
         {% endfor %}

@@ -1,5 +1,9 @@
-from django.shortcuts import render
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
 from .models import Changelog, Ruleset
+from .forms import RulesetCreateForm
+from .function import make_listing_view
 
 # Create your views here.
 
@@ -17,6 +21,23 @@ def changelog(request):
 
 def listing(request):
     context = {
-        'rulesets': Ruleset.objects.all()
+        'rulesets': make_listing_view(Ruleset.objects.all()),
     }
     return render(request, 'wiki/listing.html', context)
+
+
+@login_required
+def create_ruleset(request):
+    if request.method == 'POST':
+        form = RulesetCreateForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.instance.creator = request.user.id
+            form.instance.owner = request.user.id
+            form.instance.last_edited_by = request.user.id
+            form.save()
+            name = form.cleaned_data.get('name')
+            messages.success(request, f'Ruleset name {name} has added to the list!')
+            return redirect('listing')
+    else:
+        form = RulesetCreateForm()
+    return render(request, 'wiki/create_ruleset.html', {'form': form})

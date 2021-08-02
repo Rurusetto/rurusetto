@@ -23,6 +23,7 @@ class Ruleset(models.Model):
     owner = models.CharField(default="0", max_length=10)
 
     name = models.CharField(default="", max_length=20)
+    slug = models.SlugField(default="", max_length=20)
     description = models.CharField(default="", max_length=150)
     icon = models.ImageField(default='default_icon.png', upload_to='rulesets_icon', validators=[
         FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg'])])

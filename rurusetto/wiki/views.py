@@ -41,3 +41,12 @@ def create_ruleset(request):
     else:
         form = RulesetCreateForm()
     return render(request, 'wiki/create_ruleset.html', {'form': form})
+
+
+def wiki_page(request, slug):
+    ruleset = get_object_or_404(Ruleset, slug=slug)
+    context = {
+        'content': ruleset,
+        'user_detail': make_wiki_view(ruleset)
+    }
+    return render(request, 'wiki/wiki_page.html', context)

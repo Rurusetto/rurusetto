@@ -68,4 +68,8 @@ def edit_ruleset_wiki(request, slug):
             return redirect('wiki', slug=changed_slug)
     else:
         form = RulesetForm(instance=Ruleset.objects.get(slug=slug))
-    return render(request, 'wiki/create_ruleset.html', {'form': form})
+    content = {
+        'form': form,
+        'name': Ruleset.objects.get(slug=slug).name
+    }
+    return render(request, 'wiki/edit_ruleset_wiki.html', content)

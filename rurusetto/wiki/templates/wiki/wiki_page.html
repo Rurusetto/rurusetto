@@ -2,6 +2,7 @@
 {% load static %}
 {% load markdown_converter %}
 {% block content %}
+    <link rel="stylesheet" href="{% static 'css/wiki-page.css' %}">
     <div class="px-4 py-4 my-4 align-middle hero" style="background-image: linear-gradient(to bottom, transparent, #2d2d2d), url('{{ content.cover_image.url }}');">
         <div class="container align-middle">
             <div class="row">
@@ -54,32 +55,24 @@
                 {{ content.content | convert_markdown | safe }}
                 <p></p>
             </div>
-            <style>
-                .info-box {
-                    background-color: #4a4a4a;
-                }
-            </style>
             <div class="col-sm-3 gap-3" id="infobox">
                 <div class="row rounded info-box">
-                    <img src="https://github.com/LumpBloom7/sentakki/blob/master/assets/logov3.png?raw=true">
-                    <h2 class="text-center">Sentakki</h2>
+{#                    <img src="https://github.com/LumpBloom7/sentakki/blob/master/assets/logov3.png?raw=true">#}
+                    <h2 class="text-center">{{ content.name }}</h2>
                     <dl class="row">
                         <dt class="col-sm-5">Creator</dt>
-                        <dd class="col-sm-7"><a href="#" class="hvr-picture-bounce"><img src="https://github.com/LumpBloom7.png" alt="Bloom" width="32" height="32" class="rounded-circle hvr-bounce-in hvr-icon"> Bloom</a></dd>
-
-                        <dt class="col-sm-5">Status</dt>
-                        <dd class="col-sm-7">Active Development</dd>
-
-                        <dt class="col-sm-5">Availability</dt>
-                        <dd class="col-sm-7">Available publicly</dd>
+                        <dd class="col-sm-7">
+                            {% if content.verified %}
+                                <a href="{% url "profile" user_detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><img src="{{ user_detail.1.profile.image.url }}" alt="{{ user_detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ user_detail.1.username }} <i class="fas hvr-icon fa-check-circle icon-menu"></i></a>
+                            {% else %}
+                                <a href="{% url "profile" user_detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><img src="{{ user_detail.1.profile.image.url }}" alt="{{ user_detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ user_detail.1.username }}</a>
+                            {% endif %}</dd>
                     </dl>
                 </div>
                 <p></p>
                 <div class="row">
 <!--                    TODO: Pop up box for support creator-->
-                    <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" target="_blank" href="https://github.com/LumpBloom7/sentakki"><i class="fa fa-github icon-menu hvr-icon"></i> GitHub Repositories</a></p>
-                    <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" target="_blank" href="https://discord.gg/CQPNADu"><i class="fab fa-discord icon-menu hvr-icon"></i> Discord</a></p>
-                    <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" target="_blank" href="https://discord.gg/CQPNADu"><i class="fas fa-heart icon-menu hvr-icon"></i> Support the creator</a></p>
+                    <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" target="_blank" href="{{ content.github_link }}"><i class="fa fa-github icon-menu hvr-icon"></i> GitHub Repositories</a></p>
                 </div>
             </div>
         </div>

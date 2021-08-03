@@ -9,9 +9,8 @@ class RulesetForm(forms.ModelForm):
     name = forms.CharField(required=True)
     description = forms.CharField(required=True, widget=forms.Textarea)
     content = forms.CharField(required=True, widget=forms.Textarea)
-    open_source = forms.BooleanField(required=True)
     github_link = forms.URLField
 
     class Meta:
         model = Ruleset
-        fields = ['name', 'description', 'icon', 'cover_image', 'content', 'open_source', 'github_link']
+        fields = ['name', 'description', 'icon', 'cover_image', 'content', 'github_link']

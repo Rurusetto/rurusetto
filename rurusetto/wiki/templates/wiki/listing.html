@@ -27,8 +27,7 @@
     <p></p>
 
 <div class="container">
-    <div class="row row-cols-3 text-center gy-4">
-        {% if messages %}
+    {% if messages %}
         {% for message in messages %}
             {% if message.tags == "success"%}
                 <div class="alert alert-success">
@@ -42,6 +41,7 @@
             {% endif %}
         {% endfor %}
       {% endif %}
+    <div class="row row-cols-3 text-center gy-4">
         {% for detail in rulesets %}
         <div class="col-lg-4">
             <img src="{{ detail.0.icon.url }}" alt="{{ detail.0.name }}" width="140px" height="140px" class="rounded-circle">

@@ -7,7 +7,12 @@
             <div class="row">
 <!--                TODO: Add popper-->
                 <p></p>
-                <a href="{% url "profile" user_detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><p class="text-muted"><img src="{{ user_detail.1.profile.image.url }}" alt="{{ user_detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon" style="transition: 0.2s"> {{ user_detail.1.username }} <i class="fas hvr-icon fa-check-circle icon-menu"></i></p></a>
+                {% if content.verified %}
+                    <a href="{% url "profile" user_detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><p class="text-muted"><img src="{{ user_detail.1.profile.image.url }}" alt="{{ user_detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon" style="transition: 0.2s"> {{ user_detail.1.username }} <i class="fas hvr-icon fa-check-circle icon-menu"></i></p></a>
+                {% else %}
+                    <a href="{% url "profile" user_detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><p class="text-muted"><img src="{{ user_detail.1.profile.image.url }}" alt="{{ user_detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon" style="transition: 0.2s"> {{ user_detail.1.username }}</p></a>
+                {% endif %}
+
                 <div><h1 class="display-5 fw-bold">{{ content.name }}</h1></div>
                 <p>{{ content.description }}</p>
             </div>
@@ -16,9 +21,11 @@
 
     <div class="container">
         <div class="row">
+            {% if user.is_authenticated %}
             <div class="col-sm-2 hvr-icon-bounce">
                 <p><a class="text-decoration-none text-center spacing-hover-short" target="_blank" href="{% url "edit_wiki" content.slug %}"><i class="fas fa-edit icon-menu hvr-icon"></i> Edit This Page</a></p>
             </div>
+            {% endif %}
             <div class="col-sm-2 hvr-icon-bounce">
                 <p><a class="text-decoration-none text-center spacing-hover-short" target="_blank" href="#"><i class="fas fa-download icon-menu hvr-icon"></i> Download</a></p>
             </div>

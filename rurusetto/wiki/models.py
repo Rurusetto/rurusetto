@@ -31,7 +31,6 @@ class Ruleset(models.Model):
         FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg'])])
     content = models.TextField(default="and awesome content!")
 
-    open_source = models.BooleanField(default=True)
     github_link = models.URLField(default="")
 
     last_edited_by = models.CharField(default="0", max_length=10)

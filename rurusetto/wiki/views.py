@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Changelog, Ruleset
-from .forms import RulesetCreateForm
+from .forms import RulesetForm
 from .function import make_listing_view, make_wiki_view
 from unidecode import unidecode
 from django.template.defaultfilters import slugify
@@ -31,7 +31,7 @@ def listing(request):
 @login_required
 def create_ruleset(request):
     if request.method == 'POST':
-        form = RulesetCreateForm(request.POST, request.FILES)
+        form = RulesetForm(request.POST, request.FILES)
         if form.is_valid():
             form.instance.creator = request.user.id
             form.instance.owner = request.user.id
@@ -42,7 +42,7 @@ def create_ruleset(request):
             messages.success(request, f'Ruleset name {name} has added to the list!')
             return redirect('listing')
     else:
-        form = RulesetCreateForm()
+        form = RulesetForm()
     return render(request, 'wiki/create_ruleset.html', {'form': form})
 
 
@@ -53,3 +53,19 @@ def wiki_page(request, slug):
         'user_detail': make_wiki_view(ruleset)
     }
     return render(request, 'wiki/wiki_page.html', context)
+
+
+@login_required
+def edit_ruleset_wiki(request, slug):
+    if request.method == 'POST':
+        form = RulesetForm(request.POST, request.FILES, instance=Ruleset.objects.get(slug=slug))
+        if form.is_valid():
+            form.instance.last_edited_by = request.user.id
+            form.instance.slug = slugify(unidecode(form.cleaned_data.get('name')))
+            form.save()
+            changed_slug = form.instance.slug
+            messages.success(request, f'Edit wiki successfully!')
+            return redirect('wiki', slug=changed_slug)
+    else:
+        form = RulesetForm(instance=Ruleset.objects.get(slug=slug))
+    return render(request, 'wiki/create_ruleset.html', {'form': form})

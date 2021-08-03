@@ -5,7 +5,7 @@ from django.core.validators import FileExtensionValidator
 from .models import Ruleset
 
 
-class RulesetCreateForm(forms.ModelForm):
+class RulesetForm(forms.ModelForm):
     name = forms.CharField(required=True)
     description = forms.CharField(required=True, widget=forms.Textarea)
     content = forms.CharField(required=True, widget=forms.Textarea)

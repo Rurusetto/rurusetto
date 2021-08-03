@@ -13,4 +13,4 @@ class RulesetForm(forms.ModelForm):
 
     class Meta:
         model = Ruleset
-        fields = ['name', 'description', 'icon', 'cover_image', 'content', 'github_link']
+        fields = ['name', 'description', 'icon', 'logo', 'cover_image', 'content', 'github_link']

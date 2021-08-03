@@ -48,6 +48,7 @@
               {% endif %}
         </div>
         <div class="row" id="last-edit">
+            <p class="text-muted">This page is created by <a href="{% url "profile" user_detail.0.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><img src="{{ user_detail.0.profile.image.url }}" alt="{{ user_detail.0.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ user_detail.0.username }}</a></p>
             <p class="text-muted">Last edited by <a href="{% url "profile" user_detail.2.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><img src="{{ user_detail.2.profile.image.url }}" alt="{{ user_detail.2.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ user_detail.2.username }}</a> at {{ content.last_edited_at|date:"F j, Y h:i A" }} UTC</p>
         </div>
         <div class="row">
@@ -57,7 +58,7 @@
             </div>
             <div class="col-sm-3 gap-3" id="infobox">
                 <div class="row rounded info-box">
-{#                    <img src="https://github.com/LumpBloom7/sentakki/blob/master/assets/logov3.png?raw=true">#}
+                    <img src="{{ content.logo.url }}" alt="{{ content.name }} logo">
                     <h2 class="text-center">{{ content.name }}</h2>
                     <dl class="row">
                         <dt class="col-sm-5">Creator</dt>

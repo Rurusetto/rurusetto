@@ -27,6 +27,8 @@ class Ruleset(models.Model):
     description = models.CharField(default="", max_length=150)
     icon = models.ImageField(default='default_icon.png', upload_to='rulesets_icon', validators=[
         FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg'])])
+    logo = models.ImageField(default='default_logo.jpeg', upload_to='rulesets_logo', validators=[
+        FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg'])])
     cover_image = models.ImageField(default='default_wiki_cover.jpeg', upload_to='wiki_cover', validators=[
         FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg'])])
     content = models.TextField(default="and awesome content!")

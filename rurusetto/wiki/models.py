@@ -1,6 +1,7 @@
 from django.core.validators import FileExtensionValidator
 from django.db import models
 from django.contrib.auth.models import User
+from mdeditor.fields import MDTextField
 
 RELEASE_TYPE = (
     ('pre-release', 'Pre-release'),
@@ -26,12 +27,12 @@ class Ruleset(models.Model):
     slug = models.SlugField(default="", max_length=20)
     description = models.CharField(default="", max_length=150)
     icon = models.ImageField(default='default_icon.png', upload_to='rulesets_icon', validators=[
-        FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg'])])
+        FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
     logo = models.ImageField(default='default_logo.jpeg', upload_to='rulesets_logo', validators=[
-        FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg'])])
+        FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
     cover_image = models.ImageField(default='default_wiki_cover.jpeg', upload_to='wiki_cover', validators=[
-        FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg'])])
-    content = models.TextField(default="and awesome content!")
+        FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
+    content = MDTextField()
 
     github_link = models.URLField(default="")
 

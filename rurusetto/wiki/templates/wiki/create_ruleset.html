@@ -1,4 +1,4 @@
-{% extends "wiki/base.html" %}
+{% extends "wiki/base-form.html" %}
 {% load static %}
 {% load crispy_forms_tags %}
 {% block content %}
@@ -8,7 +8,7 @@
         <div class="row">
             <p></p>
             <div><h1 class="display-5 fw-bold">Add a new ruleset</h1></div>
-            <p>Let's add a new ruleset! Is it yours? Don't worry! You can add it although you don't make that ruleset.</p>
+            <p class="text-white">Let's add a new ruleset! Is it yours? Don't worry! You can add it although you don't make that ruleset.</p>
         </div>
     </div>
 </div>
@@ -52,7 +52,9 @@
                   </div>
             </div>
             <h1>Wiki Content</h1>
-            <textarea name="content" cols="40" rows="10" required class="form-control" id="id_content"></textarea>
+{#            <textarea name="content" cols="40" rows="10" required class="form-control" id="id_content"></textarea>#}
+            {{ form.media }}
+            {{ form.content }}
             <h1>Wiki Styling</h1>
             <div class="fieldWrapper">
                  <div class="mb-3 row">

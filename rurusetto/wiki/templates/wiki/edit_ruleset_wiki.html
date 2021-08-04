@@ -1,4 +1,4 @@
-{% extends "wiki/base.html" %}
+{% extends "wiki/base-form.html" %}
 {% load static %}
 {% load crispy_forms_tags %}
 {% block content %}
@@ -8,7 +8,7 @@
         <div class="row">
             <p></p>
             <div><h1 class="display-5 fw-bold">Edit</h1></div>
-            <p>You are currently edit content on ruleset name "{{ name }}".</p>
+            <p class="text-white">You are currently edit content on ruleset name "{{ name }}".</p>
         </div>
     </div>
 </div>
@@ -54,7 +54,8 @@
                   </div>
             </div>
             <h1>Wiki Content</h1>
-            <textarea name="content" cols="40" rows="10" required class="form-control" id="id_content">{{ form.content.value }}</textarea>
+            {{ form.media }}
+            {{ form.content }}
             <h1>Wiki Styling</h1>
             <div class="fieldWrapper">
                  <div class="mb-3 row">

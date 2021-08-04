@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/cebbc7821d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.typekit.net/cnm5kka.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/index-with-form.css' %}">
+  <link rel="stylesheet" href="{% static 'css/hover.css' %}">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+  <title>rūrusetto</title>
+</head>
+<body>
+  <header id="header" class="p-3 mb-3 fixed-top">
+    <div id="desktop-header" class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="{% url 'home' %}" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none hvr-bounce-in">
+          <img id="header-logo" src="{% static 'logo/rurusetto-logo.svg' %}" height="65" alt="logo">
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a id="nav-listing" href="{% url 'listing' %}" class="nav-link px-2 nav-text round-font-bold hvr-underline-from-center">Listing</a></li>
+          <li><a id="nav-status" href="#" class="nav-link px-2 nav-text round-font-bold hvr-underline-from-center">Status</a></li>
+          <li><a id="nav-install" href="#" class="nav-link px-2 nav-text round-font-bold hvr-underline-from-center">Install</a></li>
+          <li><a id="nav-changelog" href="{% url 'changelog' %}" class="nav-link px-2 nav-text round-font-bold hvr-underline-from-center">Changelog</a></li>
+        </ul>
+
+        {% if user.is_authenticated %}
+        <div class="dropdown text-end">
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle dropdown-pfp" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img id="profile-picture" src="{{ user.profile.image.url }}" alt="{{ user.username }}" height="48" width="48" class="rounded-circle hvr-grow">
+          </a>
+          <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item spacing-hover" href="#">Settings</a></li>
+            <li><a class="dropdown-item spacing-hover" href="{% url "profile" user.id %}">Profile</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item spacing-hover" href="{% url "logout" %}">Sign out</a></li>
+          </ul>
+        </div>
+        {% else %}
+        <div class="dropdown text-end">
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle dropdown-pfp" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img id="profile-picture" src="{% static 'img/123252.png' %}" alt="Guest" height="48" width="48" class="rounded-circle hvr-grow">
+          </a>
+          <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item spacing-hover" href="{% url 'login' %}">Sign in</a></li>
+            <li><a class="dropdown-item spacing-hover" href="{% url 'register' %}">Sign Up</a></li>
+          </ul>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </header>
+
+  {% if user.is_authenticated %}
+      <nav id="mobile-header" class="navbar p-3 mb-3 navbar-dark fixed-top">
+        <div class="container-fluid">
+          <a href="{% url 'home' %}" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none hvr-bounce-in">
+            <img id="mobile-logo" src="{% static 'logo/rurusetto-logo.svg' %}" height="50" alt="logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" style="margin-top: -10px;">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+      <div class="collapse fixed-top" id="navbarToggleExternalContent">
+          <div class="list-group border-0">
+            <a href="{% url 'listing' %}" class="list-group-item list-group-item-action text-white">Listing</a>
+            <a href="#" class="list-group-item list-group-item-action text-white">Status</a>
+            <a href="#" class="list-group-item list-group-item-action text-white">Install</a>
+            <a href="{% url 'changelog' %}" class="list-group-item list-group-item-action text-white">Changelog</a>
+            <a href="#collapseProfileMenu" class="list-group-item list-group-item-action text-white profile-menu" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapseProfileMenu" onclick="rotateArrowMenu()"  style="background-color: rgba(74, 74, 74, .8);" id="profile-menu"><img id="profile-picture-mobile" src="{{ user.profile.image.url }}" alt="{{ user.username }}" height="32" width="32" class="rounded-circle"> {{ user.username }} <i class="fas fa-chevron-down" id="arrow-profile-menu"></i></a>
+            <div class="collapse" id="collapseProfileMenu">
+              <div class="list-group border-0">
+                <a href="#" class="list-group-item list-group-item-action text-white">Settings</a>
+                <a href="{% url 'profile' user.id %}" class="list-group-item list-group-item-action text-white">Profile</a>
+                <a href="{% url 'logout' %}" class="list-group-item list-group-item-action text-white">Sign out</a>
+              </div>
+            </div>
+          </div>
+      </div>
+  {% else %}
+      <nav id="mobile-header" class="navbar p-3 mb-3 navbar-dark fixed-top">
+        <div class="container-fluid">
+          <a href="{% url 'home' %}" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none hvr-bounce-in">
+            <img id="mobile-logo" src="{% static 'logo/rurusetto-logo.svg' %}" height="50" width="50" alt="logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" style="margin-top: -10px;">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+      <div class="collapse fixed-top" id="navbarToggleExternalContent">
+          <div class="list-group border-0">
+            <a href="{% url 'listing' %}" class="list-group-item list-group-item-action text-white">Listing</a>
+            <a href="#" class="list-group-item list-group-item-action text-white">Status</a>
+            <a href="#" class="list-group-item list-group-item-action text-white">Install</a>
+            <a href="{% url 'changelog' %}" class="list-group-item list-group-item-action text-white">Changelog</a>
+            <a href="{% url 'login' %}" class="list-group-item list-group-item-action text-white">Sign In</a>
+            <a href="{% url 'register' %}" class="list-group-item list-group-item-action text-white">Sign Up</a>
+            </div>
+          </div>
+  {% endif %}
+
+  {% block content %}{% endblock %}
+
+  <footer class="footer mt-auto py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p>Made with ❤️ by <a class="text-decoration-none hvr-underline-from-center made-by-footer" target="_blank" href="https://github.com/HelloYeew">HelloYeew</a> and <a class="text-decoration-none hvr-underline-from-center made-by-footer" target="_blank" href="https://github.com/Rurusetto">Rūrusetto</a></p>
+        </div>
+        <div class="col text-end github-footer">
+          <a target="_blank" href="https://github.com/Rurusetto/rurusetto"><i class="fab fa-github hvr-grow github-footer"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
+
+</body>
+</html>

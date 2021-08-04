@@ -4,7 +4,6 @@ from django.contrib import messages
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from django.conf import settings
 from .models import Profile
-import os
 
 
 def register(request):

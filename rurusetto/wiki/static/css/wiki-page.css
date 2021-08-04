@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
 .info-box {
     background-color: #4a4a4a;
 }
@@ -8,4 +10,25 @@
 
 #wiki a:hover {
     letter-spacing: 2px;
+}
+
+#wiki img {
+    width: 100%;
+}
+
+#wiki span {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+table {
+    border-collapse:  collapse; /* セルの線を重ねる */
+}
+th,td {
+    border: solid 1px;  /* 枠線指定 */
+    padding: 10px;      /* 余白指定 */
+}
+th {
+    font-family: all-round-gothic, sans-serif;
+    font-weight: 600;
+    font-style: normal;
 }

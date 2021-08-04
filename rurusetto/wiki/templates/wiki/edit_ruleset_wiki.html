@@ -8,7 +8,7 @@
         <div class="row">
             <p></p>
             <div><h1 class="display-5 fw-bold">Edit</h1></div>
-            <p class="text-white">You are currently edit content on ruleset name "{{ name }}".</p>
+            <p class="text-white" id="hero-description">You are currently edit content on ruleset name "{{ name }}".</p>
         </div>
     </div>
 </div>
@@ -20,62 +20,69 @@
             <h1>Header</h1>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label">{{ form.name.label_tag }}</label>
+                    <label class="col-sm-2 col-form-label text-white">{{ form.name.label_tag }}</label>
                     <div class="col-sm-10">
                       <input type="text" name="name" class="form-control" required id="id_name" value="{{ form.name.value }}">
+                       <p class="text-white raleway-font">{{ form.name.errors }}</p>
                     </div>
                   </div>
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label">{{ form.description.label_tag }}</label>
+                    <label class="col-sm-2 col-form-label text-white">{{ form.description.label_tag }}</label>
                     <div class="col-sm-10">
                       <textarea name="description" cols="40" rows="10" class="form-control" required id="id_description">{{ form.description.value }}</textarea>
+                       <p class="text-white raleway-font">{{ form.description.errors }}</p>
                     </div>
                   </div>
             </div>
             <h1>Icon & Logo</h1>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label">{{ form.icon.label_tag }}</label>
+                    <label class="col-sm-2 col-form-label text-white">{{ form.icon.label_tag }}</label>
                     <div class="col-sm-10">
-                      Current Icon : <a href="{{ form.icon.value.url }}">{{ form.icon.value }}</a>
+                        <div class="text-white raleway-font">Current Icon : <a href="{{ form.icon.value.url }}">{{ form.icon.value }}</a></div>
                       <input type="file" name="icon" accept="image/*" id="id_icon" class="form-control">
+                        <p class="text-white raleway-font">{{ form.icon.errors }}</p>
                     </div>
                   </div>
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label">{{ form.logo.label_tag }}</label>
+                    <label class="col-sm-2 col-form-label text-white">{{ form.logo.label_tag }}</label>
                     <div class="col-sm-10">
-                        Current Logo : <a href="{{ form.logo.value.url }}">{{ form.logo.value }}</a>
+                        <div class="text-white raleway-font">Current Logo : <a href="{{ form.logo.value.url }}">{{ form.logo.value }}</a></div>
                         <input type="file" name="logo" accept="image/*" id="id_logo" class="form-control">
+                        <p class="text-white raleway-font">{{ form.logo.errors }}</p>
                     </div>
                   </div>
             </div>
             <h1>Wiki Content</h1>
             {{ form.media }}
             {{ form.content }}
+            {{ form.content.errors }}
             <h1>Wiki Styling</h1>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label">{{ form.cover_image.label_tag }}</label>
+                    <label class="col-sm-2 col-form-label text-white">{{ form.cover_image.label_tag }}</label>
                     <div class="col-sm-10">
-                        Current Cover Image : <a href="{{ form.cover_image.value.url }}">{{ form.cover_image.value }}</a>
+                       <div class="text-white raleway-font"> Current Cover Image : <a href="{{ form.cover_image.value.url }}">{{ form.cover_image.value }}</a></div>
                       <input type="file" name="cover_image" accept="image/*" id="id_cover_image" class="form-control">
+                        <p class="text-white raleway-font">{{ form.cover_image.errors }}</p>
                     </div>
                   </div>
             </div>
             <h1>Source</h1>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label">{{ form.github_link.label_tag }}</label>
+                    <label class="col-sm-2 col-form-label text-white">GitHub Link:</label>
                     <div class="col-sm-10">
                       <input type="url" name="github_link" maxlength="200" required id="id_github_link" class="form-control" value="{{ form.github_link.value }}">
+                        <p class="text-white raleway-font">{{ form.github_link.errors }}</p>
                     </div>
                   </div>
             </div>
-            <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right">Edit</button>
+            <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right raleway-font">Edit</button>
         </form>
     </div>
 </div>

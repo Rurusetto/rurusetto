@@ -39,7 +39,7 @@ label {
     font-family: 'Raleway', sans-serif;
 }
 
-input {
+input, textarea {
     font-family: 'Raleway', sans-serif;
 }
 
@@ -221,4 +221,12 @@ a.disabled {
 
 .icon-menu {
     color: #ffb3d4;
+}
+
+#hero-description {
+    font-family: 'Raleway', sans-serif;
+}
+
+.raleway-font {
+    font-family: 'Raleway', sans-serif;
 }

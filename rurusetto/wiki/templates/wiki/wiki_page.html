@@ -35,12 +35,12 @@
              {% if messages %}
                 {% for message in messages %}
                     {% if message.tags == "success"%}
-                        <div class="alert alert-success">
+                        <div class="alert alert-success raleway-font">
                             <i class="fas fa-check"></i> {{ message }}
                         </div>
                     {% endif %}
                     {% if message.tags == "error"%}
-                        <div class="alert alert-danger">
+                        <div class="alert alert-danger raleway-font">
                             <i class="fas fa-times"></i> {{ message }}
                         </div>
                     {% endif %}

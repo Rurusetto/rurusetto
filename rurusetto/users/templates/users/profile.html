@@ -27,38 +27,14 @@
   </div>
 
     <div class="container">
-    {% if messages %}
-        {% for message in messages %}
-            {% if message.tags == "success"%}
-                <div class="alert alert-success">
-                    <i class="fas fa-check"></i> {{ message }}
-                </div>
+        <div class="row">
+             {% if user.id == profile_object.user.id %}
+            <div class="col-sm-2 hvr-icon-bounce">
+                <p><a class="text-decoration-none text-center spacing-hover-short" href="{% url "settings" %}"><i class="fas fa-user-edit icon-menu hvr-icon"></i> Edit Profile</a></p>
+            </div>
             {% endif %}
-            {% if message.tags == "error"%}
-                <div class="alert alert-danger">
-                    <i class="fas fa-times"></i> {{ message }}
-                </div>
-            {% endif %}
-        {% endfor %}
-      {% endif %}
+        </div>
     </div>
-
-{#  <div class="row mb-3">#}
-{#      <h1>Temporary test forms</h1>#}
-{#  </div>#}
-{#  <div class="container">#}
-{#    <form method="POST" enctype="multipart/form-data">#}
-{#      {% csrf_token %}#}
-{#      <fieldset class="form-group">#}
-{#          {{ u_form|crispy }}#}
-{#          {{ p_form|crispy }}#}
-{#      </fieldset>#}
-{#      <p></p>#}
-{#      <div class="form-group">#}
-{#          <button class="btn btn-primary bg-rurusetto" type="submit"><i class="fas fa-user-edit"></i> Update</button>#}
-{#      </div>#}
-{#    </form>#}
-{#  </div>#}
 
 
 </div>

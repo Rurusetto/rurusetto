@@ -230,3 +230,7 @@ a.disabled {
 .raleway-font {
     font-family: 'Raleway', sans-serif;
 }
+
+#id_content-wmd-wrapper {
+    z-index: 1!important;
+}

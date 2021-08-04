@@ -25,27 +25,17 @@ def register(request):
 
 
 @login_required
-def profile(request):
+def settings(request):
     if request.method == 'POST':
-        user = request.user
-        old_user_image = user.profile.image
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST,
                                    request.FILES,
                                    instance=request.user.profile)
-        if u_form.is_valid() and p_form.is_valid() and \
-                p_form.cleaned_data.get('image').size < settings.MAX_PROFILE_PICTURE_SIZE:
+        if u_form.is_valid() and p_form.is_valid():
             u_form.save()
             p_form.save()
             messages.success(request, f'Your account has been updated!')
-            return redirect('profile')
-        else:
-            u_form.save()
-            os.remove(f"media/profile_pics/{p_form.cleaned_data.get('image')}")
-            messages.error(request, f'Your picture is too large (exceed 5 MB)')
-            user.profile.image = old_user_image
-            user.save()
-            return redirect('profile')
+            return redirect('settings')
 
     else:
         u_form = UserUpdateForm(instance=request.user)
@@ -54,9 +44,10 @@ def profile(request):
     context = {
         'u_form': u_form,
         'p_form': p_form,
+        'title': 'settings'
     }
 
-    return render(request, 'users/profile.html', context)
+    return render(request, 'users/settings.html', context)
 
 
 def profile_detail(request, pk):

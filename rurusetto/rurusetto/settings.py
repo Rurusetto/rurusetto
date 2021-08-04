@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'wiki.apps.WikiConfig',
     'crispy_forms',
     'mdeditor',
-    'markdownify.apps.MarkdownifyConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -63,7 +62,7 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -145,6 +144,8 @@ LOGIN_URL = 'login'
 # More enum configuration on website
 
 MAX_PROFILE_PICTURE_SIZE = 5242880
+
+# Markdown Editor Configuration
 
 MDEDITOR_CONFIGS = {
     'default': {

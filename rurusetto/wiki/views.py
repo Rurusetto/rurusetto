@@ -11,12 +11,16 @@ from django.template.defaultfilters import slugify
 
 
 def home(request):
-    return render(request, 'wiki/home.html')
+    context = {
+        'title': 'home'
+    }
+    return render(request, 'wiki/home.html', context)
 
 
 def changelog(request):
     context = {
-        'changelog_list': Changelog.objects.all().order_by('-time')
+        'changelog_list': Changelog.objects.all().order_by('-time'),
+        'title': 'changelog'
     }
     return render(request, 'wiki/changelog.html', context)
 
@@ -24,6 +28,7 @@ def changelog(request):
 def listing(request):
     context = {
         'rulesets': make_listing_view(Ruleset.objects.all()),
+        'title': 'listing'
     }
     return render(request, 'wiki/listing.html', context)
 
@@ -43,22 +48,28 @@ def create_ruleset(request):
             return redirect('listing')
     else:
         form = RulesetForm()
-    return render(request, 'wiki/create_ruleset.html', {'form': form})
+    context = {
+        'form': form,
+        'title': 'add a new ruleset'
+    }
+    return render(request, 'wiki/create_ruleset.html', context)
 
 
 def wiki_page(request, slug):
     ruleset = get_object_or_404(Ruleset, slug=slug)
     context = {
         'content': ruleset,
-        'user_detail': make_wiki_view(ruleset)
+        'user_detail': make_wiki_view(ruleset),
+        'title': ruleset.name
     }
     return render(request, 'wiki/wiki_page.html', context)
 
 
 @login_required
 def edit_ruleset_wiki(request, slug):
+    ruleset = Ruleset.objects.get(slug=slug)
     if request.method == 'POST':
-        form = RulesetForm(request.POST, request.FILES, instance=Ruleset.objects.get(slug=slug))
+        form = RulesetForm(request.POST, request.FILES, instance=ruleset)
         if form.is_valid():
             form.instance.last_edited_by = request.user.id
             form.instance.slug = slugify(unidecode(form.cleaned_data.get('name')))
@@ -67,9 +78,10 @@ def edit_ruleset_wiki(request, slug):
             messages.success(request, f'Edit wiki successfully!')
             return redirect('wiki', slug=changed_slug)
     else:
-        form = RulesetForm(instance=Ruleset.objects.get(slug=slug))
-    content = {
+        form = RulesetForm(instance=ruleset)
+    context = {
         'form': form,
-        'name': Ruleset.objects.get(slug=slug).name
+        'name': Ruleset.objects.get(slug=slug).name,
+        'title': f'edit {ruleset.name}'
     }
-    return render(request, 'wiki/edit_ruleset_wiki.html', content)
+    return render(request, 'wiki/edit_ruleset_wiki.html', context)

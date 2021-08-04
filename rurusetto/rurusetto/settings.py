@@ -156,7 +156,7 @@ MDEDITOR_CONFIGS = {
                     "list-ul", "list-ol", "hr", "|",
                     "link", "reference-link", "image", "code", "preformatted-text", "code-block", "table", "datetime",
                     "html-entities", "pagebreak", "goto-line", "|",
-                    "help", "info",
+                    "help",
                     "||", "preview", "watch"],  # custom edit box toolbar
         'upload_image_formats': ["jpg", "jpeg", "gif", "png", "bmp", "webp", "svg"],  # image upload format type
         'image_folder': 'wiki_images',  # image save the folder name

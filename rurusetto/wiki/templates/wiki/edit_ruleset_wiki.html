@@ -23,6 +23,7 @@
                     <div class="col-sm-10">
                       <input type="text" name="name" class="form-control" required id="id_name" value="{{ form.name.value }}">
                        <p class="text-white raleway-font">{{ form.name.errors }}</p>
+                        <p class="text-muted raleway-font">The ruleset name.</p>
                     </div>
                   </div>
             </div>
@@ -32,6 +33,7 @@
                     <div class="col-sm-10">
                       <textarea name="description" cols="40" rows="10" class="form-control" required id="id_description">{{ form.description.value }}</textarea>
                        <p class="text-white raleway-font">{{ form.description.errors }}</p>
+                        <p class="text-muted raleway-font">The description of ruleset. Will show under ruleset name and at the header of wiki page.</p>
                     </div>
                   </div>
             </div>
@@ -43,6 +45,7 @@
                         <div class="text-white raleway-font">Current Icon : <a href="{{ form.icon.value.url }}">{{ form.icon.value }}</a></div>
                       <input type="file" name="icon" accept="image/*" id="id_icon" class="form-control">
                         <p class="text-white raleway-font">{{ form.icon.errors }}</p>
+                        <p class="text-muted raleway-font">An icon that show at in-game header. Recommend shape is circle.</p>
                     </div>
                   </div>
             </div>
@@ -53,6 +56,7 @@
                         <div class="text-white raleway-font">Current Logo : <a href="{{ form.logo.value.url }}">{{ form.logo.value }}</a></div>
                         <input type="file" name="logo" accept="image/*" id="id_logo" class="form-control">
                         <p class="text-white raleway-font">{{ form.logo.errors }}</p>
+                        <p class="text-muted raleway-font">A logo will show in wiki's infobox. It can be not same to an icon.</p>
                     </div>
                   </div>
             </div>
@@ -68,6 +72,7 @@
                        <div class="text-white raleway-font"> Current Cover Image : <a href="{{ form.cover_image.value.url }}">{{ form.cover_image.value }}</a></div>
                       <input type="file" name="cover_image" accept="image/*" id="id_cover_image" class="form-control">
                         <p class="text-white raleway-font">{{ form.cover_image.errors }}</p>
+                        <p class="text-muted raleway-font">A picture at the header of the wiki page.</p>
                     </div>
                   </div>
             </div>
@@ -78,6 +83,9 @@
                     <div class="col-sm-10">
                       <input type="url" name="source" maxlength="200" required id="id_source" class="form-control" value="{{ form.source.value }}">
                         <p class="text-white raleway-font">{{ form.source.errors }}</p>
+                        <p class="text-muted raleway-font">A source of the ruleset (or where the player can download this ruleset.) </p>
+                        <p class="text-muted raleway-font">If this ruleset is available on GitHub please set this link as link to the repository (Ex. https://github.com/LumpBloom7/sentakki)</p>
+                        <p class="text-muted raleway-font">If you get it from patreon, please set this link as the patreon page of the creator. (Ex. https://www.patreon.com/evast/)</p>
                     </div>
                   </div>
             </div>

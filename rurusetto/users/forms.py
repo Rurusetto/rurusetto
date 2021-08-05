@@ -5,6 +5,8 @@ from .models import Profile
 
 
 class UserRegisterForm(UserCreationForm):
+    username = forms.CharField(max_length=15, help_text="Required. 15 characters or fewer. Letters, digits and "
+                                                        "@/./+/-/_ only.")
     email = forms.EmailField()
 
     class Meta:
@@ -13,7 +15,6 @@ class UserRegisterForm(UserCreationForm):
 
 
 class ProfileUpdateForm(forms.ModelForm):
-
     class Meta:
         model = Profile
         fields = ['about_me', 'cover', 'image']

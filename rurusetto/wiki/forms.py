@@ -10,7 +10,7 @@ class RulesetForm(forms.ModelForm):
     name = forms.CharField(required=True)
     description = forms.CharField(required=True, widget=forms.Textarea)
     content = MDTextFormField()
-    github_link = forms.URLField
+    github_link = forms.URLField(label="GitHub Link")
 
     class Meta:
         model = Ruleset

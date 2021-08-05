@@ -73,7 +73,13 @@
                 <p></p>
                 <div class="row">
 <!--                    TODO: Pop up box for support creator-->
-                    <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" target="_blank" href="{{ content.github_link }}"><i class="fa fa-github icon-menu hvr-icon"></i> GitHub Repositories</a></p>
+                    {% if source_type == "github" %}
+                        <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" target="_blank" href="{{ content.source }}"><i class="fa fa-github icon-menu hvr-icon"></i> GitHub Repositories</a></p>
+                    {% elif source_type == "patreon"%}
+                        <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" target="_blank" href="{{ content.source }}"><i class="fab fa-patreon icon-menu hvr-icon"></i> Get from Patreon</a></p>
+                    {% else %}
+                        <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" target="_blank" href="{{ content.source }}"><i class="fas fa-external-link-square-alt icon-menu hvr-icon"></i> Ruleset Source</a></p>
+                    {% endif %}
                 </div>
             </div>
         </div>

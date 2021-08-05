@@ -10,8 +10,8 @@ class RulesetForm(forms.ModelForm):
     name = forms.CharField(required=True)
     description = forms.CharField(required=True, widget=forms.Textarea)
     content = MDTextFormField()
-    github_link = forms.URLField(label="GitHub Link")
+    source = forms.URLField(label="Source")
 
     class Meta:
         model = Ruleset
-        fields = ['name', 'description', 'icon', 'logo', 'cover_image', 'content', 'github_link']
+        fields = ['name', 'description', 'icon', 'logo', 'cover_image', 'content', 'source']

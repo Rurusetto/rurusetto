@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Changelog, Ruleset
 from .forms import RulesetForm
-from .function import make_listing_view, make_wiki_view
+from .function import make_listing_view, make_wiki_view, source_link_type
 from unidecode import unidecode
 from django.template.defaultfilters import slugify
 
@@ -59,6 +59,7 @@ def wiki_page(request, slug):
     ruleset = get_object_or_404(Ruleset, slug=slug)
     context = {
         'content': ruleset,
+        'source_type': source_link_type(ruleset.source),
         'user_detail': make_wiki_view(ruleset),
         'title': ruleset.name
     }

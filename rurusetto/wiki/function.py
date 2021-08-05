@@ -14,3 +14,13 @@ def make_wiki_view(ruleset_object):
     owner = User.objects.get(id=ruleset_object.owner)
     last_edited_by = User.objects.get(id=ruleset_object.last_edited_by)
     return [creator, owner, last_edited_by]
+
+
+def source_link_type(url):
+    if ("github.com" or "www.github.com") in url:
+        result = "github"
+    elif ("patreon.com" or "www.patreon.com") in url:
+        result = "patreon"
+    else:
+        result = "unknown"
+    return result

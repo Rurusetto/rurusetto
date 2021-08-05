@@ -234,3 +234,8 @@ a.disabled {
 #id_content-wmd-wrapper {
     z-index: 1!important;
 }
+
+ul.errorlist {
+    font-family: 'Raleway', sans-serif!important;
+    color: white!important;
+}

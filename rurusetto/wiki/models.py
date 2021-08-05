@@ -34,7 +34,7 @@ class Ruleset(models.Model):
         FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
     content = MDTextField()
 
-    github_link = models.URLField(default="")
+    source = models.URLField(default="")
 
     last_edited_by = models.CharField(default="0", max_length=10)
     last_edited_at = models.DateTimeField(auto_now=True, editable=True)

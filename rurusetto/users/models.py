@@ -10,6 +10,7 @@ class Profile(models.Model):
     image = models.ImageField(default='default.jpeg', upload_to='profile_pics', validators=[FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
     cover = models.ImageField(default='default_cover.png', upload_to='cover_pics', validators=[FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
     about_me = models.TextField(default='Hello there!', max_length=120)
+    oauth_first_migrate = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.user.username} Profile'

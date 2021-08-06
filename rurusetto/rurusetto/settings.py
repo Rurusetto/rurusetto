@@ -43,7 +43,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.osu',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -70,6 +77,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.request',
             ],
         },
     },
@@ -87,6 +95,11 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
 
 
 # Password validation
@@ -145,6 +158,11 @@ LOGIN_URL = 'login'
 
 MAX_PROFILE_PICTURE_SIZE = 5242880
 
+# API key and API configuration
+
+OSU_OAUTH_CLIENT_ID = ''
+OSU_OAUTH_CLIENT_SECRET = ''
+
 # Markdown Editor Configuration
 
 MDEDITOR_CONFIGS = {
@@ -175,6 +193,17 @@ MDEDITOR_CONFIGS = {
         'lineNumbers': False,  # lineNumbers
         'language': 'en'  # zh / en / es
     }
+}
 
+SOCIALACCOUNT_PROVIDERS = {
+    'osu': {
+        'SCOPE': [
+            'identify'
+        ],
+        'APP': {
+            'client_id': OSU_OAUTH_CLIENT_ID,
+            'secret': OSU_OAUTH_CLIENT_SECRET,
+        }
+    }
 }
 

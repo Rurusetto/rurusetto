@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="{% static 'css/hover.css' %}">
   <link rel="stylesheet" href="{% static 'css/login.css' %}">
 
-    <title>login - rūrusetto</title>
+    <title>login cancelled - rūrusetto</title>
 </head>
 <body>
   <div class="container-fluid h-100">
@@ -32,20 +32,13 @@
               </div>
             {% endfor %}
           {% endif %}
-          <h1>Log In</h1>
+          <h1>Log In Cancelled</h1>
           <p></p>
-          <form method="POST">
-              {% csrf_token %}
-              {{ form|crispy }}
-              <p></p>
-              <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right">Submit</button>
-          </form>
-          <div style="line-height: 5">
-            <p>Need an account? <a href="{% url 'account_signup' %}" class="text-decoration-none spacing-hover">Register</a></p>
-          </div>
+          {% url 'account_login' as login_url %}
+            <p>You decided to cancel logging in to our site using one of your existing accounts. If this was a mistake, please proceed to <a class="text-decoration-none spacing-hover" href="{{login_url}}">sign in</a>.</p>
         </div>
       </div>
-      <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8" style="background-image: url('{% static "img/685481.jpeg" %}')"></div>
+      <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8" style="background-image: url('{% static "img/243010.jpeg" %}')"></div>
     </div>
   </div>
 </body>

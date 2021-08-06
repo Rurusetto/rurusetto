@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="{% static 'css/hover.css' %}">
   <link rel="stylesheet" href="{% static 'css/login.css' %}">
 
-    <title>login - rūrusetto</title>
+    <title>logout - rūrusetto</title>
 </head>
 <body>
   <div class="container-fluid h-100">
@@ -32,20 +32,20 @@
               </div>
             {% endfor %}
           {% endif %}
-          <h1>Log In</h1>
+          <h1>Log Out</h1>
           <p></p>
-          <form method="POST">
+          Are you sure you want to sign out?
+          <p></p>
+          <form method="post" action="{% url 'account_logout' %}">
               {% csrf_token %}
-              {{ form|crispy }}
-              <p></p>
-              <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right">Submit</button>
-          </form>
-          <div style="line-height: 5">
-            <p>Need an account? <a href="{% url 'account_signup' %}" class="text-decoration-none spacing-hover">Register</a></p>
-          </div>
+              {% if redirect_field_value %}
+              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+              {% endif %}
+              <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right">Sign Out</button>
+            </form>
         </div>
       </div>
-      <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8" style="background-image: url('{% static "img/685481.jpeg" %}')"></div>
+      <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8" style="background-image: url('{% static "img/243007.jpeg" %}')"></div>
     </div>
   </div>
 </body>

@@ -13,6 +13,25 @@
   <div class="container">
 
   <div class="container">
+      <div class="row">
+         {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == "success"%}
+                    <div class="alert alert-success">
+                        <i class="fas fa-check"></i> {{ message }}
+                    </div>
+                {% endif %}
+                {% if message.tags == "error"%}
+                    <div class="alert alert-danger">
+                        <i class="fas fa-times"></i> {{ message }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+          {% endif %}
+    </div>
+  </div>
+
+  <div class="container">
     <div class="row mb-3">
       <div class="alert alert-danger" role="alert">
         This website is under heavy development and under test phase. Some function will not finish or not working properly and all picture that is using in the current version is not final.

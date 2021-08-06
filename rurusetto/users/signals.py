@@ -26,20 +26,24 @@ def save_profile(sender, instance, **kwargs):
 def user_first_logged_in_allauth(request, user, **kwargs):
     profile = Profile.objects.get(user=request.user)
     if not profile.oauth_first_migrate:
-        data = SocialAccount.objects.get(user=request.user).extra_data
+        try :
+            data = SocialAccount.objects.get(user=request.user).extra_data
 
-        avatar_pic = requests.get(data["avatar_url"])
-        avatar_temp = NamedTemporaryFile(delete=True)
-        avatar_temp.write(avatar_pic.content)
-        avatar_temp.flush()
-        profile.image.save(data["avatar_url"].split('?')[-1], File(avatar_temp), save=True)
+            avatar_pic = requests.get(data["avatar_url"])
+            avatar_temp = NamedTemporaryFile(delete=True)
+            avatar_temp.write(avatar_pic.content)
+            avatar_temp.flush()
+            profile.image.save(data["avatar_url"].split('?')[-1], File(avatar_temp), save=True)
 
-        cover_pic = requests.get(data["cover_url"])
-        cover_temp = NamedTemporaryFile(delete=True)
-        cover_temp.write(cover_pic.content)
-        cover_temp.flush()
-        profile.cover.save(data["cover_url"].split('/')[-1], File(cover_temp), save=True)
+            cover_pic = requests.get(data["cover_url"])
+            cover_temp = NamedTemporaryFile(delete=True)
+            cover_temp.write(cover_pic.content)
+            cover_temp.flush()
+            profile.cover.save(data["cover_url"].split('/')[-1], File(cover_temp), save=True)
 
-        profile.oauth_first_migrate = True
-        profile.save()
+            profile.oauth_first_migrate = True
+            profile.save()
+        except :
+            profile.oauth_first_migrate = True
+            profile.save()
 

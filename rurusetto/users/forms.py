@@ -21,7 +21,6 @@ class ProfileUpdateForm(forms.ModelForm):
 
 
 class UserUpdateForm(forms.ModelForm):
-    username = forms.CharField()
 
     class Meta:
         model = User
@@ -29,6 +28,7 @@ class UserUpdateForm(forms.ModelForm):
 
 
 class UserConfigForm(forms.ModelForm):
+    update_profile_every_login = forms.BooleanField(required=False)
 
     class Meta:
         model = Config

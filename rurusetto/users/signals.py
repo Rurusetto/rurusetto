@@ -1,6 +1,5 @@
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
-from django.dispatch import receiver
 from .models import Profile, Config
 from django.core.files import File
 from django.core.files.temp import NamedTemporaryFile
@@ -23,7 +22,7 @@ def save_profile(sender, instance, **kwargs):
 
 
 @receiver(user_logged_in, dispatch_uid="unique")
-def user_first_logged_in_allauth(request, user, **kwargs):
+def user_update_information_in_allauth(request, user, **kwargs):
     profile = Profile.objects.get(user=request.user)
     if (not profile.oauth_first_migrate) or request.user.config.update_profile_every_login:
         try:

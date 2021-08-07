@@ -3,6 +3,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm, UserConfigForm
 from .models import Profile
+import random
+import string
 
 
 def register(request):
@@ -30,7 +32,11 @@ def settings(request):
                                    request.FILES,
                                    instance=request.user.profile)
         c_form = UserConfigForm(request.POST, instance=request.user.config)
-        if u_form.is_valid() and p_form.is_valid() and c_form.is_valid():
+        if c_form.is_valid():
+            c_form.save()
+            messages.success(request, f'Your settings has been updated!')
+            return redirect('settings')
+        else:
             u_form.save()
             p_form.save()
             c_form.save()
@@ -42,12 +48,17 @@ def settings(request):
         p_form = ProfileUpdateForm(instance=request.user.profile)
         c_form = UserConfigForm(instance=request.user.config)
 
+    if (not request.user.profile.social_account) or (request.user.profile.social_account and (not request.user.config.update_profile_every_login)):
+        can_edit_profile = True
+    else:
+        can_edit_profile = False
+
     context = {
         'u_form': u_form,
         'p_form': p_form,
         'c_form': c_form,
         'title': 'settings',
-        'can_edit_profile': True if request.user.profile.social_account and (not request.user.config.update_profile_every_login) else False,
+        'can_edit_profile': can_edit_profile,
     }
 
     return render(request, 'users/settings.html', context)

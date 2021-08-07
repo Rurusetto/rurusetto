@@ -26,7 +26,7 @@ def save_profile(sender, instance, **kwargs):
 def user_first_logged_in_allauth(request, user, **kwargs):
     profile = Profile.objects.get(user=request.user)
     if not profile.oauth_first_migrate:
-        try :
+        try:
             data = SocialAccount.objects.get(user=request.user).extra_data
 
             avatar_pic = requests.get(data["avatar_url"])
@@ -41,9 +41,16 @@ def user_first_logged_in_allauth(request, user, **kwargs):
             cover_temp.flush()
             profile.cover.save(data["cover_url"].split('/')[-1], File(cover_temp), save=True)
 
+            profile.location = data["location"] if data["location"] is not None else ""
+            profile.interests = data["interests"] if data["interests"] is not None else ""
+            profile.occupation = data["occupation"] if data["occupation"] is not None else ""
+            profile.twitter = data["twitter"] if data["twitter"] is not None else ""
+            profile.discord = data["discord"] if data["discord"] is not None else ""
+            profile.website = data["website"] if data["website"] is not None else ""
+
             profile.oauth_first_migrate = True
             profile.save()
-        except :
+        except:
             profile.oauth_first_migrate = True
             profile.save()
 

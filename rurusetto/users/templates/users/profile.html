@@ -48,19 +48,19 @@
 
 <div class="container">
     <div class="row">
-        {% if profile_object.osu_username != '' and profile_object.osu_id != 0 %}
+        {% if profile_object.osu_username != '' %}
         <div class="col-sm-2 hvr-icon-bounce">
-            <a class="text-decoration-none text-center spacing-hover-short" target="_blank" href="{{ osu_link }}"><img src="{% static 'logo/osu-logo-pink.png' %}" alt="osu! logo" width="20px" height="20px" class="icon-menu hvr-icon"> {{ profile_object.osu_username }}</a>
+            <a class="text-decoration-none text-center spacing-hover-short" target="_blank" href="https://osu.ppy.sh/users/{{profile_object.osu_username}}"><img src="{% static 'logo/osu-logo-pink.png' %}" alt="osu! logo" width="20px" height="20px" class="icon-menu hvr-icon"> {{ profile_object.osu_username }}</a>
         </div>
         {% endif %}
         {% if profile_object.twitter != '' %}
         <div class="col-sm-2 hvr-icon-bounce">
-            <a class="text-decoration-none text-center spacing-hover-short" target="_blank" href="{{ twitter_link }}"><i class="fab fa-twitter icon-menu hvr-icon"></i> @{{ profile_object.twitter }}</a>
+            <a class="text-decoration-none text-center spacing-hover-short" target="_blank" href="https://twitter.com/{{profile_object.twitter}}"><i class="fab fa-twitter icon-menu hvr-icon"></i> @{{ profile_object.twitter }}</a>
         </div>
         {% endif %}
         {% if profile_object.discord != '' %}
         <div class="col-sm-2 hvr-icon-bounce discord-hover">
-            <a class="text-decoration-none text-center spacing-hover-short" id="discord" target="_blank" onclick="copyToClipboard('{{ profile_object.discord }}')"><i class="fab fa-discord icon-menu hvr-icon"></i> {{ profile_object.discord }}</a>
+            <a class="text-decoration-none text-center spacing-hover-short" id="discord" onclick="copyToClipboard('{{ profile_object.discord }}')"><i class="fab fa-discord icon-menu hvr-icon"></i> {{ profile_object.discord }}</a>
         </div>
         {% endif %}
         {% if profile_object.website != '' %}

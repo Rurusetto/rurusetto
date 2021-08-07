@@ -8,6 +8,8 @@ class Profile(models.Model):
     image = models.ImageField(default='default.jpeg', upload_to='profile_pics', validators=[FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
     cover = models.ImageField(default='default_cover.png', upload_to='cover_pics', validators=[FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
     about_me = models.TextField(default='Hello there!', max_length=120)
+    osu_username = models.CharField(default='', max_length=20)
+    osu_id = models.IntegerField
     location = models.CharField(default='', max_length=20)
     interests = models.CharField(default='', max_length=20)
     occupation = models.CharField(default='', max_length=20)

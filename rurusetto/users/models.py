@@ -9,7 +9,7 @@ class Profile(models.Model):
     cover = models.ImageField(default='default_cover.png', upload_to='cover_pics', validators=[FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
     about_me = models.TextField(default='Hello there!', max_length=120)
     osu_username = models.CharField(default='', max_length=20)
-    osu_id = models.IntegerField(default=0)
+    osu_id = models.IntegerField(default='')
     location = models.CharField(default='', max_length=20)
     interests = models.CharField(default='', max_length=20)
     occupation = models.CharField(default='', max_length=20)
@@ -17,6 +17,7 @@ class Profile(models.Model):
     discord = models.CharField(default='', max_length=20)
     website = models.URLField(default='')
     oauth_first_migrate = models.BooleanField(default=False)
+    social_account = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.user.username} Profile'

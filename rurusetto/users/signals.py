@@ -51,8 +51,10 @@ def user_first_logged_in_allauth(request, user, **kwargs):
             profile.website = data["website"] if data["website"] is not None else ""
 
             profile.oauth_first_migrate = True
+            profile.social_account = True
             profile.save()
         except:
             profile.oauth_first_migrate = True
+            profile.social_account = False
             profile.save()
 

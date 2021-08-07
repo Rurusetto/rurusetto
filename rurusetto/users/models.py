@@ -27,6 +27,7 @@ class Profile(models.Model):
 
 class Config(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    update_profile_every_login = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.user.username} Config'

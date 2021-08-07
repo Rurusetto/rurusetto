@@ -2,7 +2,6 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
-from django.conf import settings
 from .models import Profile
 
 
@@ -54,6 +53,9 @@ def profile_detail(request, pk):
 
     context = {
         'profile_object': profile_object,
-        'title': f'{profile_object.user.username}'
+        'title': f"{profile_object.user.username}'s profile",
+        'twitter_link': f"https://twitter.com/{profile_object.twitter}",
+        'osu_link': f"https://osu.ppy.sh/users/{profile_object.osu_id}",
+        'website_show': profile_object.website.replace("https://", "")
     }
     return render(request, 'users/profile.html', context)

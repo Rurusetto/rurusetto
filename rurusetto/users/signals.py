@@ -41,6 +41,8 @@ def user_first_logged_in_allauth(request, user, **kwargs):
             cover_temp.flush()
             profile.cover.save(data["cover_url"].split('/')[-1], File(cover_temp), save=True)
 
+            profile.osu_username = data["username"]
+            profile.osu_id = data["id"]
             profile.location = data["location"] if data["location"] is not None else ""
             profile.interests = data["interests"] if data["interests"] is not None else ""
             profile.occupation = data["occupation"] if data["occupation"] is not None else ""

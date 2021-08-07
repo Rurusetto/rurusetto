@@ -114,3 +114,13 @@ function rotateArrowMenu() {
 }
 
 window.addEventListener("load", function(){onResize()})
+
+function copyToClipboard(text) {
+    let input = document.body.appendChild(document.createElement("input"));
+    input.value = text;
+    input.focus();
+    input.select();
+    document.execCommand('copy');
+    input.parentNode.removeChild(input);
+    window.alert("Copied!")
+}

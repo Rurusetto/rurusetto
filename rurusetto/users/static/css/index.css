@@ -230,6 +230,9 @@ a.disabled {
     color: #ffb3d4;
 }
 
+.discord-hover:hover {
+    cursor: pointer;
+}
 
 /*#navbar-expand {*/
 /*    margin-top: 5%;*/

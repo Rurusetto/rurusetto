@@ -25,7 +25,7 @@ def save_profile(sender, instance, **kwargs):
 @receiver(user_logged_in, dispatch_uid="unique")
 def user_first_logged_in_allauth(request, user, **kwargs):
     profile = Profile.objects.get(user=request.user)
-    if not profile.oauth_first_migrate:
+    if (not profile.oauth_first_migrate) or request.user.config.update_profile_every_login:
         try:
             data = SocialAccount.objects.get(user=request.user).extra_data
 

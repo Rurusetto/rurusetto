@@ -28,7 +28,7 @@ class UserUpdateForm(forms.ModelForm):
 
 
 class UserConfigForm(forms.ModelForm):
-    update_profile_every_login = forms.BooleanField(required=False)
+    update_profile_every_login = forms.BooleanField(required=False, widget=forms.CheckboxInput(attrs={'class': "form-check-input"}))
 
     class Meta:
         model = Config

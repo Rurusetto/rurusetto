@@ -3,8 +3,6 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm, UpdateProfileEveryLoginConfigForm
 from .models import Profile
-import random
-import string
 
 
 def register(request):
@@ -32,19 +30,8 @@ def settings(request):
                                          request.FILES,
                                          instance=request.user.profile)
         profile_sync_form = UpdateProfileEveryLoginConfigForm(request.POST, instance=request.user.config)
-        # if profile_sync_form.is_valid():
-        #     profile_sync_form.save()
-        #     messages.success(request, f'Your settings has been updated!')
-        #     return redirect('settings')
-        # else:
-        #     user_form.save()
-        #     profile_form.save()
-        #     messages.success(request, f'Your settings has been updated!')
-        #     return redirect('settings')
         if request.user.profile.social_account:
             # User that send request are login by social account, must check on profile sync field
-            print(profile_sync_form['update_profile_every_login'].value())
-            print(request.user.config.update_profile_every_login)
             if profile_sync_form['update_profile_every_login'].value() == request.user.config.update_profile_every_login:
                 # If value from the form and the value in database is the same, user doesn't change this config
                 if not profile_sync_form['update_profile_every_login'].value():
@@ -58,8 +45,6 @@ def settings(request):
                     messages.success(request, f'Your settings has been updated!')
                     return redirect('settings')
             else:
-                print(profile_sync_form['update_profile_every_login'].value())
-                print(request.user.config.update_profile_every_login)
                 if not profile_sync_form['update_profile_every_login'].value() and request.user.config.update_profile_every_login:
                     # User want to change sync config from True to False, save only sync config value
                     profile_sync_form.save()

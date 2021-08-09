@@ -30,10 +30,11 @@ class ProfileUpdateForm(forms.ModelForm):
 
 
 class UserUpdateForm(forms.ModelForm):
+    email = forms.EmailField(required=False)
 
     class Meta:
         model = User
-        fields = ['username']
+        fields = ['username', 'email']
 
 
 class UpdateProfileEveryLoginConfigForm(forms.ModelForm):

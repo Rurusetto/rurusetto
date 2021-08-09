@@ -46,12 +46,12 @@
             <h2>Profile Sync</h2>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label text-white">Update Profile Every Login Session:</label>
+                    <label class="col-sm-2 col-form-label text-white">Update profile every login session:</label>
                     <div class="col-sm-10">
                         <div class="form-check form-switch">
-                            {{ c_form.update_profile_every_login }}
+                            {{ profile_sync_form.update_profile_every_login }}
                         </div>
-                        <p class="text-white raleway-font">{{ c_form.update_profile_every_login.errors }}</p>
+                        <p class="text-white raleway-font">{{ profile_sync_form.update_profile_every_login.errors }}</p>
                         <p class="text-muted raleway-font">If this checked, everytime time you login the system will update all of your profile to make it same as your osu! profile but your profile setting will be disabled.</p>
                     </div>
                   </div>
@@ -61,35 +61,35 @@
             {% if can_edit_profile %}
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label text-white">{{ u_form.username.label_tag }}</label>
+                    <label class="col-sm-2 col-form-label text-white">{{ user_form.username.label_tag }}</label>
                     <div class="col-sm-10">
-                      <input name="username" class="form-control" required id="id_username" maxlength="15" value="{{ u_form.username.value }}">
-                       <p class="text-white raleway-font">{{ u_form.username.errors }}</p>
+                      <input name="username" class="form-control" required id="id_username" maxlength="15" value="{{ user_form.username.value }}">
+                       <p class="text-white raleway-font">{{ user_form.username.errors }}</p>
                     </div>
                   </div>
             </div>
             {% else %}
             <p class="text-white raleway-font">The user information is handled by system. If you want to custom your profile, please remove the <i>Update Profile Every Login Session</i> setting.</p>
             {% endif %}
-            <h2>Profile Page</h2>
+            <h2>Profile Page Detail</h2>
             {% if can_edit_profile %}
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label text-white">Profile Picture:</label>
+                    <label class="col-sm-2 col-form-label text-white">Profile picture:</label>
                     <div class="col-sm-10">
-                      <div class="text-white raleway-font">Current Profile : <a href="{{ p_form.image.value.url }}">{{ p_form.image.value }}</a></div>
+                      <div class="text-white raleway-font">Current Profile : <a href="{{ profile_form.image.value.url }}">{{ profile_form.image.value }}</a></div>
                       <input type="file" name="image" accept="image/*" id="id_image" class="form-control">
-                        <p class="text-white raleway-font">{{ p_form.image.errors }}</p>
+                        <p class="text-white raleway-font">{{ profile_form.image.errors }}</p>
                     </div>
                   </div>
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label text-white">Profile Page Cover Image:</label>
+                    <label class="col-sm-2 col-form-label text-white">Profile page cover image:</label>
                     <div class="col-sm-10">
-                      <div class="text-white raleway-font">Current Cover : <a href="{{ p_form.cover.value.url }}">{{ p_form.cover.value }}</a></div>
+                      <div class="text-white raleway-font">Current Cover : <a href="{{ profile_form.cover.value.url }}">{{ profile_form.cover.value }}</a></div>
                       <input type="file" name="cover" accept="image/*" id="id_cover" class="form-control">
-                        <p class="text-white raleway-font">{{ p_form.cover.errors }}</p>
+                        <p class="text-white raleway-font">{{ profile_form.cover.errors }}</p>
                     </div>
                   </div>
             </div>
@@ -97,8 +97,77 @@
                  <div class="mb-3 row">
                     <label class="col-sm-2 col-form-label text-white">About Me:</label>
                     <div class="col-sm-10">
-                        <textarea name="about_me" cols="40" rows="10" class="form-control" required id="id_about_me" maxlength="120">{{ p_form.about_me.value }}</textarea>
-                        <p class="text-white raleway-font">{{ p_form.about_me.errors }}</p>
+                        <textarea name="about_me" cols="40" rows="10" class="form-control" required id="id_about_me" maxlength="120">{{ profile_form.about_me.value }}</textarea>
+                        <p class="text-white raleway-font">{{ profile_form.about_me.errors }}</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="fieldWrapper">
+                 <div class="mb-3 row">
+                    <label class="col-sm-2 col-form-label text-white">osu! username:</label>
+                    <div class="col-sm-10">
+                        <input name="osu_username" class="form-control" id="id_osu_username" maxlength="20" value="{{ profile_form.osu_username.value }}">
+                        <p class="text-white raleway-font">{{ profile_form.osu_username.errors }}</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="fieldWrapper">
+                 <div class="mb-3 row">
+                    <label class="col-sm-2 col-form-label text-white">Location:</label>
+                    <div class="col-sm-10">
+                        <input name="location" class="form-control" id="id_location" maxlength="20" value="{{ profile_form.location.value }}">
+                        <p class="text-white raleway-font">{{ profile_form.location.errors }}</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="fieldWrapper">
+                 <div class="mb-3 row">
+                    <label class="col-sm-2 col-form-label text-white">Interests:</label>
+                    <div class="col-sm-10">
+                        <input name="interests" class="form-control" id="id_interests" maxlength="20" value="{{ profile_form.interests.value }}">
+                        <p class="text-white raleway-font">{{ profile_form.interests.errors }}</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="fieldWrapper">
+                 <div class="mb-3 row">
+                    <label class="col-sm-2 col-form-label text-white">Occupation:</label>
+                    <div class="col-sm-10">
+                        <input name="occupation" class="form-control" id="id_occupation" maxlength="20" value="{{ profile_form.occupation.value }}">
+                        <p class="text-white raleway-font">{{ profile_form.occupation.errors }}</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="fieldWrapper">
+                 <div class="mb-3 row">
+                    <label class="col-sm-2 col-form-label text-white">Twitter username:</label>
+                    <div class="col-sm-10">
+                        <input name="twitter" class="form-control" id="id_twitter" maxlength="20" value="{{ profile_form.twitter.value }}">
+                        <p class="text-white raleway-font">{{ profile_form.twitter.errors }}</p>
+                        <p class="text-muted raleway-font">Please fill your twitter username without @ sign so the link on the profile will be link to a correct twitter account.</p>
+                        <p class="text-muted raleway-font">Example : If your username is @nonggummud please fill "nonggummud"
+                    </div>
+                  </div>
+            </div>
+            <div class="fieldWrapper">
+                 <div class="mb-3 row">
+                    <label class="col-sm-2 col-form-label text-white">Discord:</label>
+                    <div class="col-sm-10">
+                        <input name="discord" class="form-control" id="id_discord" maxlength="20" value="{{ profile_form.discord.value }}">
+                        <p class="text-white raleway-font">{{ profile_form.discord.errors }}</p>
+                        <p class="text-muted raleway-font">Please fill your discord username with # and the 4 digits number.</p>
+                        <p class="text-muted raleway-font">Example : HelloYeew#2740
+                    </div>
+                  </div>
+            </div>
+            <div class="fieldWrapper">
+                 <div class="mb-3 row">
+                    <label class="col-sm-2 col-form-label text-white">Website:</label>
+                    <div class="col-sm-10">
+                        <input name="website" class="form-control" id="id_website" maxlength="20" value="{{ profile_form.website.value }}">
+                        <p class="text-white raleway-font">{{ profile_form.website.errors }}</p>
+                        <p class="text-muted raleway-font">Please fill your website with https://</p>
+                        <p class="text-muted raleway-font">Example : https://helloyeew.dev/
                     </div>
                   </div>
             </div>

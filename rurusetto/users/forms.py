@@ -15,9 +15,18 @@ class UserRegisterForm(UserCreationForm):
 
 
 class ProfileUpdateForm(forms.ModelForm):
+    osu_username = forms.CharField(max_length=20, required=False)
+    location = forms.CharField(max_length=20, required=False)
+    interests = forms.CharField(max_length=20, required=False)
+    occupation = forms.CharField(max_length=20, required=False)
+    twitter = forms.CharField(max_length=20, required=False)
+    discord = forms.CharField(max_length=20, required=False)
+    website = forms.URLField(required=False)
+
     class Meta:
         model = Profile
-        fields = ['about_me', 'cover', 'image']
+        fields = ['about_me', 'cover', 'image', 'osu_username', 'location', 'interests', 'occupation', 'twitter',
+                  'discord', 'website']
 
 
 class UserUpdateForm(forms.ModelForm):
@@ -27,7 +36,7 @@ class UserUpdateForm(forms.ModelForm):
         fields = ['username']
 
 
-class UserConfigForm(forms.ModelForm):
+class UpdateProfileEveryLoginConfigForm(forms.ModelForm):
     update_profile_every_login = forms.BooleanField(required=False, widget=forms.CheckboxInput(attrs={'class': "form-check-input"}))
 
     class Meta:

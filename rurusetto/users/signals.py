@@ -1,9 +1,10 @@
+import os
+import requests
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
 from .models import Profile, Config
 from django.core.files import File
 from django.core.files.temp import NamedTemporaryFile
-import requests
 from django.dispatch.dispatcher import receiver
 from allauth.account.signals import user_logged_in
 from allauth.socialaccount.models import SocialAccount
@@ -26,6 +27,9 @@ def user_update_information_in_allauth(request, user, **kwargs):
     profile = Profile.objects.get(user=request.user)
     if (not profile.oauth_first_migrate) or request.user.config.update_profile_every_login:
         try:
+            if request.user.config.update_profile_every_login:
+                os.remove(f"media/{request.user.profile.image}")
+                os.remove(f"media/{request.user.profile.cover}")
             data = SocialAccount.objects.get(user=request.user).extra_data
 
             avatar_pic = requests.get(data["avatar_url"])

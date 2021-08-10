@@ -14,15 +14,50 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.contrib.sitemaps import Sitemap
+from django.contrib.sitemaps.views import sitemap
+from django.shortcuts import resolve_url
 from django.urls import path, include
-from django.contrib.auth import views as auth_views
 from users import views as user_views
 from django.conf import settings
 from django.conf.urls.static import static
+from wiki.models import Ruleset
+
+
+class WikiSitemap(Sitemap):
+    changefreq = "always"
+    priority = 0.5
+
+    def items(self):
+        return Ruleset.objects.all()
+
+    def location(self, obj):
+        return resolve_url('wiki:detail', pk=obj.pk)
+
+    def lastmod(self, obj):
+        return obj.last_edited_at
+
+
+class StaticSitemap(Sitemap):
+    changefreq = "always"
+    priority = 0.5
+
+    def items(self):
+        return ['wiki:listing', 'wiki:home', 'wiki:changelog', 'users:profile']
+
+    def location(self, obj):
+        return resolve_url(obj)
+
+
+sitemaps = {
+    'wiki': WikiSitemap,
+    'static': StaticSitemap,
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('wiki.urls')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
     path('mdeditor/', include('mdeditor.urls')),
     path('accounts/', include('allauth.urls')),
     path('register/', user_views.register, name='register'),

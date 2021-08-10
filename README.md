@@ -2,6 +2,7 @@
 
 # Rūrusetto (ルールセット)
 
+[![CodeFactor](https://www.codefactor.io/repository/github/rurusetto/rurusetto/badge)](https://www.codefactor.io/repository/github/rurusetto/rurusetto)
 [![Discord Shield](https://discordapp.com/api/guilds/700619421466624050/widget.png?style=shield)](https://discord.gg/CQPNADu)
 
 A wiki that contain all osu! rulesets

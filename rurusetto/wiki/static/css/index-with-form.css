@@ -186,6 +186,12 @@ a.dropdown-item {
     }
 }
 
+#navbarToggleExternalContent {
+    margin-top: 77px;
+    background-color: rgba(74, 74, 74, .8);
+    backdrop-filter: blur(5px);
+}
+
 .list-group-item {
     border: 0;
     background-color: rgba(74, 74, 74, .8);
@@ -198,6 +204,10 @@ a.dropdown-item {
 .list-group-item:hover {
     border: 0;
     background-color: rgba(74, 74, 74, .3);
+}
+
+#arrow-profile-menu {
+    transition: 0.2s
 }
 
 /*Class use in JS*/

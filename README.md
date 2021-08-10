@@ -6,6 +6,8 @@
 
 A wiki that contain all osu! rulesets
 
+The new era of Rūrusetto is beginning!
+
 ## About the new website
 
 The new website is target to revamp all UI of the website and make Rūrusetto not a static website anymore with a lot of new function that cannot add in old website source code.

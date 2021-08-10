@@ -19,7 +19,10 @@ def home(request):
         'hero_image': hero_image,
         'opengraph_description': 'A page that contain all osu! ruleset',
         'opengraph_url': resolve_url('home'),
-        'opengraph_image': static(hero_image)
+        'opengraph_image': static(hero_image),
+        'latest_add_rulesets': make_listing_view([Ruleset.objects.all().order_by('-created_at')[0],
+                                                  Ruleset.objects.all().order_by('-created_at')[1],
+                                                  Ruleset.objects.all().order_by('-created_at')[2]])
     }
     return render(request, 'wiki/home.html', context)
 

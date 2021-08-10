@@ -46,6 +46,7 @@ class Ruleset(models.Model):
 
     last_edited_by = models.CharField(default="0", max_length=10)
     last_edited_at = models.DateTimeField(auto_now=True, editable=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     verified = models.BooleanField(default=False)
 
     def __str__(self):

@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User
+from django.contrib.sitemaps import ping_google
 from django.core.validators import FileExtensionValidator
 from django.db import models
 
@@ -21,6 +22,13 @@ class Profile(models.Model):
 
     def __str__(self):
         return f'{self.user.username} Profile'
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        try:
+            ping_google()
+        except Exception:
+            pass
 
 # TODO: Make auto resize picture system
 

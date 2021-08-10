@@ -1,4 +1,8 @@
+![Rūrusetto logo](rurusetto-readme-logo.svg)
+
 # Rūrusetto (ルールセット)
+
+[![Discord Shield](https://discordapp.com/api/guilds/700619421466624050/widget.png?style=shield)](https://discord.gg/CQPNADu)
 
 A wiki that contain all osu! rulesets
 
@@ -6,7 +10,7 @@ A wiki that contain all osu! rulesets
 
 The new website is target to revamp all UI of the website and make Rūrusetto not a static website anymore with a lot of new function that cannot add in old website source code.
 
-You can test on the new website [here](https://beta.rulesets.info) and you can see changelog in website or GitHub release.
+You can test on the new website [here](https://beta.rulesets.info) and you can check on the changelog in website or GitHub release.
 
 ## Old website source code
 

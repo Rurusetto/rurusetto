@@ -2,17 +2,19 @@ window.onscroll = function() {scrollFunction()};
 window.onresize = function() {onResize()};
 window.addEventListener('load', function() {scrollFunction()})
 
-header = document.getElementById("header")
-profilePicture = document.getElementById("profile-picture")
-headerLogo = document.getElementById("header-logo")
-navListing = document.getElementById("nav-listing")
-navInstall = document.getElementById("nav-install")
-navStatus = document.getElementById("nav-status")
-navChangelog = document.getElementById("nav-changelog")
+let header = document.getElementById("header")
+let profilePicture = document.getElementById("profile-picture")
+let headerLogo = document.getElementById("header-logo")
+let navListing = document.getElementById("nav-listing")
+let navInstall = document.getElementById("nav-install")
+let navStatus = document.getElementById("nav-status")
+let navChangelog = document.getElementById("nav-changelog")
 
-mobileHeader = document.getElementById("mobile-header")
-mobileLogo = document.getElementById("mobile-logo")
-arrowProfileMenu = document.getElementById("arrow-profile-menu")
+let mobileHeader = document.getElementById("mobile-header")
+let mobileLogo = document.getElementById("mobile-logo")
+let arrowProfileMenu = document.getElementById("arrow-profile-menu")
+
+let resizeOnOpenMobileMenu = false;
 
 function scrollFunction() {
     if (document.documentElement.clientWidth >= 1010) {
@@ -101,6 +103,16 @@ function onResize() {
         header.classList.add('hidden');
     }
     scrollFunction()
+
+    if (document.getElementById("navbarToggleExternalContent").classList.contains('show') && document.documentElement.clientWidth >= 1010) {
+        document.getElementById("navbarToggleExternalContent").classList.remove('show');
+        resizeOnOpenMobileMenu = true;
+    }
+
+    if (document.documentElement.clientWidth < 1010 && resizeOnOpenMobileMenu) {
+        document.getElementById("navbarToggleExternalContent").classList.add('show');
+        resizeOnOpenMobileMenu = false;
+    }
 }
 
 function rotateArrowMenu() {

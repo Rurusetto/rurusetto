@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.contrib.auth.models import User
 from django.contrib.sitemaps import Sitemap
 from django.contrib.sitemaps.views import sitemap
 from django.shortcuts import resolve_url
@@ -32,10 +33,24 @@ class WikiSitemap(Sitemap):
         return Ruleset.objects.all()
 
     def location(self, obj):
-        return resolve_url('wiki:detail', pk=obj.pk)
+        return resolve_url('wiki', slug=obj.slug)
 
     def lastmod(self, obj):
         return obj.last_edited_at
+
+
+class ProfileSitemap(Sitemap):
+    changefreq = "always"
+    priority = 0.5
+
+    def items(self):
+        return User.objects.all()
+
+    def location(self, obj):
+        return resolve_url('profile', pk=obj.id)
+
+    def lastmod(self, obj):
+        return obj.date_joined
 
 
 class StaticSitemap(Sitemap):
@@ -43,7 +58,7 @@ class StaticSitemap(Sitemap):
     priority = 0.5
 
     def items(self):
-        return ['wiki:listing', 'wiki:home', 'wiki:changelog', 'users:profile']
+        return ['listing', 'home', 'changelog']
 
     def location(self, obj):
         return resolve_url(obj)
@@ -51,6 +66,7 @@ class StaticSitemap(Sitemap):
 
 sitemaps = {
     'wiki': WikiSitemap,
+    'profile': ProfileSitemap,
     'static': StaticSitemap,
 }
 

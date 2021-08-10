@@ -2,6 +2,7 @@ from django.core.validators import FileExtensionValidator
 from django.db import models
 from django.contrib.auth.models import User
 from mdeditor.fields import MDTextField
+from django.contrib.sitemaps import ping_google
 
 RELEASE_TYPE = (
     ('pre-release', 'Pre-release'),
@@ -17,6 +18,13 @@ class Changelog(models.Model):
 
     def __str__(self):
         return f'{self.version} changelog ({self.type})'
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        try:
+            ping_google()
+        except Exception:
+            pass
 
 
 class Ruleset(models.Model):
@@ -42,4 +50,11 @@ class Ruleset(models.Model):
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        try:
+            ping_google()
+        except Exception:
+            pass
 

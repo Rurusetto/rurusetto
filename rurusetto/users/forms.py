@@ -15,6 +15,7 @@ class UserRegisterForm(UserCreationForm):
 
 
 class ProfileUpdateForm(forms.ModelForm):
+    about_me = forms.CharField(required=False)
     osu_username = forms.CharField(max_length=20, required=False)
     location = forms.CharField(max_length=20, required=False)
     interests = forms.CharField(max_length=20, required=False)

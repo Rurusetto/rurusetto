@@ -15,7 +15,31 @@
   <link rel="stylesheet" href="{% static 'css/hover.css' %}">
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
-  <title>{{ title }} - rūrusetto</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+  <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
+  <meta name="msapplication-TileColor" content="#ff66aa">
+  <meta name="theme-color" content="#ff66aa">
+
+    <!-- HTML Meta Tags -->
+    <title>{{ title }} - rūrusetto</title>
+    <meta name="description" content="{{ opengraph_description }}">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="{{ opengraph_url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ title }} - rūrusetto">
+    <meta property="og:description" content="{{ opengraph_description }}">
+    <meta property="og:image" content="{{ opengraph_image }}">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="rūrusetto">
+    <meta property="twitter:url" content="{{ opengraph_url }}">
+    <meta name="twitter:title" content="{{ title }} - rūrusetto">
+    <meta name="twitter:description" content="{{ description }}">
+    <meta name="twitter:image" content="{{ opengraph_image }}">
 </head>
 <body>
   <header id="header" class="p-3 mb-3 fixed-top">

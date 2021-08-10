@@ -76,7 +76,6 @@ urlpatterns = [
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
     path('mdeditor/', include('mdeditor.urls')),
     path('accounts/', include('allauth.urls')),
-    path('register/', user_views.register, name='register'),
     path('profile/<int:pk>', user_views.profile_detail, name='profile'),
     path('settings/', user_views.settings, name='settings'),
 ]

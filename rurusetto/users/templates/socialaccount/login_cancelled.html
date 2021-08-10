@@ -16,7 +16,9 @@
   <link rel="stylesheet" href="{% static 'css/hover.css' %}">
   <link rel="stylesheet" href="{% static 'css/login.css' %}">
 
+    <!-- HTML Meta Tags -->
     <title>login cancelled - rūrusetto</title>
+    <meta name="description" content="login cancelled by user">
 </head>
 <body>
   <div class="container-fluid h-100">
@@ -35,7 +37,7 @@
           <h1>Log In Cancelled</h1>
           <p></p>
           {% url 'account_login' as login_url %}
-            <p>You decided to cancel logging in to our site using one of your existing accounts. If this was a mistake, please proceed to <a class="text-decoration-none spacing-hover" href="{{login_url}}">sign in</a>.</p>
+            <p>You decided to cancel logging in to rūrusetto using your osu! account. If this was a mistake, please proceed to <a class="text-decoration-none spacing-hover" href="{{login_url}}">sign in</a>.</p>
         </div>
       </div>
       <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8" style="background-image: url('{% static "img/243010.jpeg" %}')"></div>

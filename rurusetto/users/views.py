@@ -1,29 +1,14 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, resolve_url
 from django.contrib import messages
+from django.templatetags.static import static
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm, UpdateProfileEveryLoginConfigForm
 from .models import Profile
 
 
-def register(request):
-    if request.method == 'POST':
-        form = UserRegisterForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            messages.success(request, f'Account created for {username}! You can log in now!')
-            return redirect('login')
-    else:
-        form = UserRegisterForm()
-    context = {
-        'form': form,
-        'title': 'register'
-    }
-    return render(request, 'users/register.html', context)
-
-
 @login_required
 def settings(request):
+    hero_image = "img/737403.png"
     if request.method == 'POST':
         user_form = UserUpdateForm(request.POST, instance=request.user)
         profile_form = ProfileUpdateForm(request.POST,
@@ -82,6 +67,10 @@ def settings(request):
         'profile_sync_form': profile_sync_form,
         'title': 'settings',
         'can_edit_profile': can_edit_profile,
+        'hero_image': hero_image,
+        'opengraph_description': 'All profile and website settings are here!',
+        'opengraph_url': resolve_url('settings'),
+        'opengraph_image': static(hero_image)
     }
 
     return render(request, 'users/settings.html', context)
@@ -98,6 +87,10 @@ def profile_detail(request, pk):
     context = {
         'profile_object': profile_object,
         'title': f"{profile_object.user.username}'s profile",
-        'website_show': website_show
+        'website_show': website_show,
+        'hero_image': profile_object.cover.url,
+        'opengraph_description': f"{profile_object.user.username}'s profile page",
+        'opengraph_url': resolve_url('profile', pk=profile_object.user.id),
+        'opengraph_image': profile_object.cover.url
     }
     return render(request, 'users/profile.html', context)

@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, resolve_url
+from django.templatetags.static import static
 from .models import Changelog, Ruleset
 from .forms import RulesetForm
 from .function import make_listing_view, make_wiki_view, source_link_type
@@ -11,30 +12,49 @@ from django.template.defaultfilters import slugify
 
 
 def home(request):
+    hero_image = 'img/701370.png'
+
     context = {
-        'title': 'home'
+        'title': 'home',
+        'hero_image': hero_image,
+        'opengraph_description': 'A page that contain all osu! ruleset',
+        'opengraph_url': resolve_url('home'),
+        'opengraph_image': static(hero_image)
     }
     return render(request, 'wiki/home.html', context)
 
 
 def changelog(request):
+    hero_image = 'img/684477.png'
+
     context = {
         'changelog_list': Changelog.objects.all().order_by('-time'),
-        'title': 'changelog'
+        'title': 'changelog',
+        'hero_image': hero_image,
+        'opengraph_description': 'All update history of website are here.',
+        'opengraph_url': resolve_url('changelog'),
+        'opengraph_image': static(hero_image)
     }
     return render(request, 'wiki/changelog.html', context)
 
 
 def listing(request):
+    hero_image = "img/杉８７ - lonely (72683486) .jpg"
+
     context = {
         'rulesets': make_listing_view(Ruleset.objects.all()),
-        'title': 'listing'
+        'title': 'listing',
+        'hero_image': hero_image,
+        'opengraph_description': 'List of available rulesets.',
+        'opengraph_url': resolve_url('listing'),
+        'opengraph_image': static(hero_image)
     }
     return render(request, 'wiki/listing.html', context)
 
 
 @login_required
 def create_ruleset(request):
+    hero_image = "img/743487.jpeg"
     if request.method == 'POST':
         form = RulesetForm(request.POST, request.FILES)
         if form.is_valid():
@@ -50,7 +70,11 @@ def create_ruleset(request):
         form = RulesetForm()
     context = {
         'form': form,
-        'title': 'add a new ruleset'
+        'title': 'add a new ruleset',
+        'hero_image': hero_image,
+        'opengraph_description': "Let's add a new ruleset! Is it yours? Don't worry! You can add it although you don't make that ruleset.",
+        'opengraph_url': resolve_url('create_ruleset'),
+        'opengraph_image': static(hero_image)
     }
     return render(request, 'wiki/create_ruleset.html', context)
 
@@ -61,13 +85,17 @@ def wiki_page(request, slug):
         'content': ruleset,
         'source_type': source_link_type(ruleset.source),
         'user_detail': make_wiki_view(ruleset),
-        'title': ruleset.name
+        'title': ruleset.name,
+        'opengraph_description': ruleset.description,
+        'opengraph_url': resolve_url('wiki', slug=ruleset.slug),
+        'opengraph_image': ruleset.cover_image.url
     }
     return render(request, 'wiki/wiki_page.html', context)
 
 
 @login_required
 def edit_ruleset_wiki(request, slug):
+    hero_image = "img/737403.png"
     ruleset = Ruleset.objects.get(slug=slug)
     if request.method == 'POST':
         form = RulesetForm(request.POST, request.FILES, instance=ruleset)
@@ -83,6 +111,10 @@ def edit_ruleset_wiki(request, slug):
     context = {
         'form': form,
         'name': Ruleset.objects.get(slug=slug).name,
-        'title': f'edit {ruleset.name}'
+        'title': f'edit {ruleset.name}',
+        'hero_image': hero_image,
+        'opengraph_description': f'You are currently edit content on ruleset name "{Ruleset.objects.get(slug=slug).name}".',
+        'opengraph_url': resolve_url('edit_wiki', slug=slug),
+        'opengraph_image': static(hero_image)
     }
     return render(request, 'wiki/edit_ruleset_wiki.html', context)

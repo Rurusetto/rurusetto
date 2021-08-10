@@ -8,6 +8,32 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+  <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
+  <meta name="msapplication-TileColor" content="#ff66aa">
+  <meta name="theme-color" content="#ff66aa">
+
+    <!-- HTML Meta Tags -->
+    <title>login - rūrusetto</title>
+    <meta name="description" content="login to rūrusetto">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="{% url 'account_login' %}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="login - rūrusetto">
+    <meta property="og:description" content="login to rūrusetto">
+    <meta property="og:image" content="{% static "img/685481.jpeg" %}">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="rūrusetto">
+    <meta property="twitter:url" content="{% url 'account_login' %}">
+    <meta name="twitter:title" content="login - rūrusetto">
+    <meta name="twitter:description" content="login to rūrusetto">
+    <meta name="twitter:image" content="{% static "img/685481.jpeg" %}">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/cebbc7821d.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://use.typekit.net/cnm5kka.css">
@@ -18,7 +44,6 @@
   <link rel="stylesheet" href="{% static 'css/hover.css' %}">
   <link rel="stylesheet" href="{% static 'css/login.css' %}">
 
-    <title>login - rūrusetto</title>
 </head>
 <body>
   <div class="container-fluid h-100">

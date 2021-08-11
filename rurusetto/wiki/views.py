@@ -91,7 +91,7 @@ def wiki_page(request, slug):
         'title': ruleset.name,
         'opengraph_description': ruleset.description,
         'opengraph_url': resolve_url('wiki', slug=ruleset.slug),
-        'opengraph_image': ruleset.cover_image.url
+        'opengraph_image': ruleset.opengraph_image.url
     }
     return render(request, 'wiki/wiki_page.html', context)
 

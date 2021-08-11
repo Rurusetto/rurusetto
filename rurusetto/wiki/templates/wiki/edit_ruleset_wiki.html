@@ -76,6 +76,17 @@
                     </div>
                   </div>
             </div>
+            <div class="fieldWrapper">
+                 <div class="mb-3 row">
+                    <label class="col-sm-2 col-form-label text-white">Opengraph Preview Image:</label>
+                    <div class="col-sm-10">
+                       <div class="text-white raleway-font"> Current Opengraph Preview Image : <a href="{{ form.opengraph_image.value.url }}">{{ form.opengraph_image.value }}</a></div>
+                      <input type="file" name="opengraph_image" accept="image/*" id="id_opengraph_image" class="form-control">
+                        <p class="text-white raleway-font">{{ form.opengraph_image.errors }}</p>
+                        <p class="text-muted raleway-font">A picture that will show on when someone share the link and the social network app will show this picture as a preview image.</p>
+                    </div>
+                  </div>
+            </div>
             <h1>Source</h1>
             <div class="fieldWrapper">
                  <div class="mb-3 row">

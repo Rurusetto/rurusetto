@@ -10,15 +10,7 @@ class Profile(models.Model):
     cover = models.ImageField(default='default_cover.png', upload_to='cover_pics', validators=[FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
     about_me = models.TextField(default='Hello there!', max_length=120, blank=True)
     osu_username = models.CharField(default='', max_length=50, blank=True)
-    osu_id = models.IntegerField(default=0, blank=True)
-    location = models.CharField(default='', max_length=50, blank=True)
-    interests = models.CharField(default='', max_length=50, blank=True)
-    occupation = models.CharField(default='', max_length=50, blank=True)
-    twitter = models.CharField(default='', max_length=50, blank=True)
-    discord = models.CharField(default='', max_length=50, blank=True)
-    website = models.URLField(default='', blank=True)
     oauth_first_migrate = models.BooleanField(default=False)
-    social_account = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.user.username} Profile'

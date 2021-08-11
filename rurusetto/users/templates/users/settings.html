@@ -120,66 +120,6 @@
                     </div>
                   </div>
             </div>
-            <div class="fieldWrapper">
-                 <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label text-white">Location:</label>
-                    <div class="col-sm-10">
-                        <input name="location" class="form-control" id="id_location" maxlength="20" value="{{ profile_form.location.value }}">
-                        <p class="text-white raleway-font">{{ profile_form.location.errors }}</p>
-                    </div>
-                  </div>
-            </div>
-            <div class="fieldWrapper">
-                 <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label text-white">Interests:</label>
-                    <div class="col-sm-10">
-                        <input name="interests" class="form-control" id="id_interests" maxlength="20" value="{{ profile_form.interests.value }}">
-                        <p class="text-white raleway-font">{{ profile_form.interests.errors }}</p>
-                    </div>
-                  </div>
-            </div>
-            <div class="fieldWrapper">
-                 <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label text-white">Occupation:</label>
-                    <div class="col-sm-10">
-                        <input name="occupation" class="form-control" id="id_occupation" maxlength="20" value="{{ profile_form.occupation.value }}">
-                        <p class="text-white raleway-font">{{ profile_form.occupation.errors }}</p>
-                    </div>
-                  </div>
-            </div>
-            <div class="fieldWrapper">
-                 <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label text-white">Twitter username:</label>
-                    <div class="col-sm-10">
-                        <input name="twitter" class="form-control" id="id_twitter" maxlength="20" value="{{ profile_form.twitter.value }}">
-                        <p class="text-white raleway-font">{{ profile_form.twitter.errors }}</p>
-                        <p class="text-muted raleway-font">Please fill your twitter username without @ sign so the link on the profile will be link to a correct twitter account.</p>
-                        <p class="text-muted raleway-font">Example : If your username is @nonggummud please fill "nonggummud"
-                    </div>
-                  </div>
-            </div>
-            <div class="fieldWrapper">
-                 <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label text-white">Discord:</label>
-                    <div class="col-sm-10">
-                        <input name="discord" class="form-control" id="id_discord" maxlength="20" value="{{ profile_form.discord.value }}">
-                        <p class="text-white raleway-font">{{ profile_form.discord.errors }}</p>
-                        <p class="text-muted raleway-font">Please fill your discord username with # and the 4 digits number.</p>
-                        <p class="text-muted raleway-font">Example : HelloYeew#2740
-                    </div>
-                  </div>
-            </div>
-            <div class="fieldWrapper">
-                 <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label text-white">Website:</label>
-                    <div class="col-sm-10">
-                        <input type="url" name="website" class="form-control" id="id_website" maxlength="20" value="{{ profile_form.website.value }}">
-                        <p class="text-white raleway-font">{{ profile_form.website.errors }}</p>
-                        <p class="text-muted raleway-font">Please fill your website with https://</p>
-                        <p class="text-muted raleway-font">Example : https://helloyeew.dev/
-                    </div>
-                  </div>
-            </div>
             {% else %}
             <p class="text-white raleway-font">The profile page detail is handled by system. If you want to custom your profile, please remove the <i>Update Profile Every Login Session</i> setting.</p>
             {% endif %}

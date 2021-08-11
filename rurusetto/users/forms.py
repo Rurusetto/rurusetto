@@ -17,17 +17,10 @@ class UserRegisterForm(UserCreationForm):
 class ProfileUpdateForm(forms.ModelForm):
     about_me = forms.CharField(required=False)
     osu_username = forms.CharField(max_length=20, required=False)
-    location = forms.CharField(max_length=20, required=False)
-    interests = forms.CharField(max_length=20, required=False)
-    occupation = forms.CharField(max_length=20, required=False)
-    twitter = forms.CharField(max_length=20, required=False)
-    discord = forms.CharField(max_length=20, required=False)
-    website = forms.URLField(required=False)
 
     class Meta:
         model = Profile
-        fields = ['about_me', 'cover', 'image', 'osu_username', 'location', 'interests', 'occupation', 'twitter',
-                  'discord', 'website']
+        fields = ['about_me', 'cover', 'image', 'osu_username']
 
 
 class UserUpdateForm(forms.ModelForm):

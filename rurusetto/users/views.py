@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.templatetags.static import static
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm, UpdateProfileEveryLoginConfigForm
 from .models import Profile
+from allauth.socialaccount.models import SocialAccount
 
 
 @login_required
@@ -15,7 +16,7 @@ def settings(request):
                                          request.FILES,
                                          instance=request.user.profile)
         profile_sync_form = UpdateProfileEveryLoginConfigForm(request.POST, instance=request.user.config)
-        if request.user.profile.social_account:
+        if SocialAccount.objects.filter(user=request.user).exists():
             # User that send request are login by social account, must check on profile sync field
             if profile_sync_form['update_profile_every_login'].value() == request.user.config.update_profile_every_login:
                 # If value from the form and the value in database is the same, user doesn't change this config
@@ -55,8 +56,8 @@ def settings(request):
         profile_form = ProfileUpdateForm(instance=request.user.profile)
         profile_sync_form = UpdateProfileEveryLoginConfigForm(instance=request.user.config)
 
-    if (not request.user.profile.social_account) or (
-            request.user.profile.social_account and (not request.user.config.update_profile_every_login)):
+    if (not SocialAccount.objects.filter(user=request.user).exists()) or (
+            SocialAccount.objects.filter(user=request.user).exists() and (not request.user.config.update_profile_every_login)):
         can_edit_profile = True
     else:
         can_edit_profile = False
@@ -79,15 +80,9 @@ def settings(request):
 def profile_detail(request, pk):
     profile_object = get_object_or_404(Profile, pk=pk)
 
-    if "http://" in profile_object.website:
-        website_show = profile_object.website.replace("http://", "")
-    else:
-        website_show = profile_object.website.replace("https://", "")
-
     context = {
         'profile_object': profile_object,
         'title': f"{profile_object.user.username}'s profile",
-        'website_show': website_show,
         'hero_image': profile_object.cover.url,
         'opengraph_description': f"{profile_object.user.username}'s profile page",
         'opengraph_url': resolve_url('profile', pk=profile_object.user.id),

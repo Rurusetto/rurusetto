@@ -23,20 +23,10 @@
 
 <div class="container">
   <div class="row">
-    {% if profile_object.location != '' %}
-    <div class="col-sm-2">
-        <i class="fas fa-map-marker-alt"></i> {{ profile_object.location }}
-    </div>
-    {% endif %}
-    {% if profile_object.interests != '' %}
-    <div class="col-sm-2">
-        <i class="far fa-heart"></i> {{ profile_object.interests }}
-    </div>
-    {% endif %}
-    {% if profile_object.occupation != '' %}
-    <div class="col-sm-2">
-        <i class="fas fa-suitcase"></i> {{ profile_object.occupation }}
-    </div>
+    {% if profile_object.osu_username != '' %}
+        <div class="col-sm-2 hvr-icon-bounce">
+            <a class="text-decoration-none text-center spacing-hover-short" target="_blank" href="https://osu.ppy.sh/users/{{profile_object.osu_username}}"><img src="{% static 'logo/osu-logo-pink.png' %}" alt="osu! logo" width="20px" height="20px" class="icon-menu hvr-icon"> {{ profile_object.osu_username }}</a>
+        </div>
     {% endif %}
     {% if profile_object.user.email != '' %}
     <div class="col-sm-2">
@@ -48,26 +38,7 @@
 
 <div class="container">
     <div class="row">
-        {% if profile_object.osu_username != '' %}
-        <div class="col-sm-2 hvr-icon-bounce">
-            <a class="text-decoration-none text-center spacing-hover-short" target="_blank" href="https://osu.ppy.sh/users/{{profile_object.osu_username}}"><img src="{% static 'logo/osu-logo-pink.png' %}" alt="osu! logo" width="20px" height="20px" class="icon-menu hvr-icon"> {{ profile_object.osu_username }}</a>
-        </div>
-        {% endif %}
-        {% if profile_object.twitter != '' %}
-        <div class="col-sm-2 hvr-icon-bounce">
-            <a class="text-decoration-none text-center spacing-hover-short" target="_blank" href="https://twitter.com/{{profile_object.twitter}}"><i class="fab fa-twitter icon-menu hvr-icon"></i> @{{ profile_object.twitter }}</a>
-        </div>
-        {% endif %}
-        {% if profile_object.discord != '' %}
-        <div class="col-sm-2 hvr-icon-bounce discord-hover">
-            <a class="text-decoration-none text-center spacing-hover-short" id="discord" onclick="copyToClipboard('{{ profile_object.discord }}')"><i class="fab fa-discord icon-menu hvr-icon"></i> {{ profile_object.discord }}</a>
-        </div>
-        {% endif %}
-        {% if profile_object.website != '' %}
-        <div class="col-sm-2 hvr-icon-bounce">
-            <a class="text-decoration-none text-center spacing-hover-short" target="_blank" href="{{ profile_object.website }}"><i class="fas fa-link icon-menu hvr-icon"></i> {{ website_show }}</a>
-        </div>
-        {% endif %}
+
     </div>
 </div>
 

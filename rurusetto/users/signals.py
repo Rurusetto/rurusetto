@@ -25,15 +25,15 @@ def save_profile(sender, instance, **kwargs):
 @receiver(user_logged_in, dispatch_uid="unique")
 def user_update_information_in_allauth(request, user, **kwargs):
     profile = Profile.objects.get(user=request.user)
-    if (not profile.oauth_first_migrate) or request.user.config.update_profile_every_login:
-        try:
+    try:
+        if (not profile.oauth_first_migrate) or request.user.config.update_profile_every_login:
             data = SocialAccount.objects.get(user=request.user).extra_data
 
-            # If extra data from user detail from osu! API is not None (null in JSON) and
-            if request.user.config.update_profile_every_login and (profile.picture != "default.jpeg") and (data["avatar_url"] is not None):
+            # If extra data from user detail from osu! API is not None (null in JSON) and it's not default image, can delete
+            if request.user.config.update_profile_every_login and (request.user.profile.image != "default.jpeg") and (data["avatar_url"] is not None):
                 os.remove(f"media/{request.user.profile.image}")
 
-            if request.user.config.update_profile_every_login and (profile.cover != "default_cover.png") and (data["cover_url"] is not None):
+            if request.user.config.update_profile_every_login and (request.user.profile.cover != "default_cover.png") and (data["cover_url"] is not None):
                 os.remove(f"media/{request.user.profile.cover}")
 
             if data["avatar_url"] is not None:
@@ -53,18 +53,41 @@ def user_update_information_in_allauth(request, user, **kwargs):
             profile.osu_username = data["username"]
             profile.osu_id = data["id"]
 
-            profile.location = data["location"] if data["location"] is not None else ""
-            profile.interests = data["interests"] if data["interests"] is not None else ""
-            profile.occupation = data["occupation"] if data["occupation"] is not None else ""
-            profile.twitter = data["twitter"] if data["twitter"] is not None else ""
-            profile.discord = data["discord"] if data["discord"] is not None else ""
-            profile.website = data["website"] if data["website"] is not None else ""
+            if data["location"] is None:
+                profile.location = ""
+            else:
+                profile.location = data["location"]
+
+            if data["interests"] is None:
+                profile.interests = ""
+            else:
+                profile.interests = data["interests"]
+
+            if data["occupation"] is None:
+                profile.occupation = ""
+            else:
+                profile.occupation = data["occupation"]
+
+            if data["twitter"] is None:
+                profile.twitter = ""
+            else:
+                profile.twitter = data["twitter"]
+
+            if data["discord"] is None:
+                profile.discord = ""
+            else:
+                profile.discord = data["discord"]
+
+            if data["website"] is None:
+                profile.website = ""
+            else:
+                profile.website = data["website"]
 
             profile.oauth_first_migrate = True
             profile.social_account = True
             profile.save()
-        except:
-            profile.oauth_first_migrate = True
-            profile.social_account = False
-            profile.save()
+    except:
+        profile.oauth_first_migrate = True
+        profile.social_account = False
+        profile.save()
 

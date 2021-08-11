@@ -42,7 +42,7 @@
         <form class="form" method="POST" enctype='multipart/form-data'>
             {% csrf_token %}
             <a id="profile"><h1>Profile</h1></a>
-            {% if user.profile.social_account %}
+            {% if social_account %}
             <h2>Profile Sync</h2>
             <div class="fieldWrapper">
                  <div class="mb-3 row">

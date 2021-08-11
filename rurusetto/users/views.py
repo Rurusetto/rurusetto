@@ -67,6 +67,7 @@ def settings(request):
         'profile_form': profile_form,
         'profile_sync_form': profile_sync_form,
         'title': 'settings',
+        'social_account': SocialAccount.objects.filter(user=request.user).exists(),
         'can_edit_profile': can_edit_profile,
         'hero_image': hero_image,
         'opengraph_description': 'All profile and website settings are here!',

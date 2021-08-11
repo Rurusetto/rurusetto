@@ -50,8 +50,11 @@ def user_update_information_in_allauth(request, user, **kwargs):
                 cover_temp.flush()
                 profile.cover.save(data["cover_url"].split('/')[-1], File(cover_temp), save=True)
 
+            profile.save()
+
             profile.osu_username = data["username"]
             profile.osu_id = data["id"]
+            profile.save()
 
             if data["location"] is None:
                 profile.location = ""

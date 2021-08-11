@@ -37,6 +37,9 @@
         <div class="col-sm-2 hvr-icon-bounce raleway-font">
             <p><a class="text-decoration-none text-center spacing-hover-short" href="#profile"><i class="fas fa-user icon-menu hvr-icon"></i> Profile</a></p>
         </div>
+        <div class="col-sm-2 hvr-icon-bounce raleway-font">
+            <p><a class="text-decoration-none text-center spacing-hover-short" href="#account"><i class="fas fa-user-cog icon-menu hvr-icon"></i> Account</a></p>
+        </div>
     </div>
     <div class="row">
         <form class="form" method="POST" enctype='multipart/form-data'>
@@ -128,6 +131,29 @@
             <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right raleway-font">Submit</button>
         </form>
     </div>
+</div>
+
+    <p></p>
+
+<div class="container">
+    <a id="account"><h1>Account</h1></a>
+    <h2>Account Connection</h2>
+    <p class="text-white raleway-font">You can connect your account with your osu! account so you can login by using your osu! account instead of username and password.</p>
+
+    {% if social_account %}
+
+        <p class="raleway-font" style="color:#ff66aa"><i class="fas fa-check icon-menu"></i> This account is connected to osu! account username : {{ osu_confirm_username }}</p>
+
+    {% else %}
+
+        <ul class="socialaccount_providers">
+        {% include "socialaccount/snippets/provider_list.html" with process="connect" %}
+        </ul>
+
+        {% include "socialaccount/snippets/login_extra.html" %}
+
+    {% endif %}
+
 </div>
 
     <p></p>

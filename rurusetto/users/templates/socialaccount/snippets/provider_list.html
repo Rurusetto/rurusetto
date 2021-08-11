@@ -1,0 +1,21 @@
+{% load socialaccount %}
+{% load static %}
+
+{% get_providers as socialaccount_providers %}
+
+{% for provider in socialaccount_providers %}
+{% if provider.id == "openid" %}
+{% for brand in provider.get_brands %}
+<li>
+  <a title="{{brand.name}}" 
+     class="socialaccount_provider {{provider.id}} {{brand.id}}" 
+     href="{% provider_login_url provider.id openid=brand.openid_url process=process %}"
+     >{{brand.name}}</a>
+</li>
+{% endfor %}
+{% endif %}
+<div class="hvr-icon-bounce">
+  <p><a title="{{provider.name}}" class="socialaccount_provider {{provider.id}} text-decoration-none text-center spacing-hover raleway-font"
+     href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}"><img src="{% static 'logo/osu-logo-pink.png' %}" alt="osu! logo" width="20px" height="20px" class="icon-menu hvr-icon"> Connect to {{provider.name}}</a></p>
+</div>
+{% endfor %}

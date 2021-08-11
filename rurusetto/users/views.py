@@ -62,6 +62,11 @@ def settings(request):
     else:
         can_edit_profile = False
 
+    if SocialAccount.objects.filter(user=request.user).exists():
+        osu_confirm_username = SocialAccount.objects.get(user=request.user).extra_data['username']
+    else:
+        osu_confirm_username = None
+
     context = {
         'user_form': user_form,
         'profile_form': profile_form,
@@ -69,6 +74,7 @@ def settings(request):
         'title': 'settings',
         'social_account': SocialAccount.objects.filter(user=request.user).exists(),
         'can_edit_profile': can_edit_profile,
+        'osu_confirm_username': osu_confirm_username,
         'hero_image': hero_image,
         'opengraph_description': 'All profile and website settings are here!',
         'opengraph_url': resolve_url('settings'),

@@ -30,10 +30,12 @@ def user_update_information_in_allauth(request, user, **kwargs):
             data = SocialAccount.objects.get(user=request.user).extra_data
 
             # If extra data from user detail from osu! API is not None (null in JSON) and it's not default image, can delete
-            if request.user.config.update_profile_every_login and (request.user.profile.image != "default.jpeg") and (data["avatar_url"] is not None):
+            if request.user.config.update_profile_every_login and (request.user.profile.image != "default.jpeg") and (
+                    data["avatar_url"] is not None):
                 os.remove(f"media/{request.user.profile.image}")
 
-            if request.user.config.update_profile_every_login and (request.user.profile.cover != "default_cover.png") and (data["cover_url"] is not None):
+            if request.user.config.update_profile_every_login and (
+                    request.user.profile.cover != "default_cover.png") and (data["cover_url"] is not None):
                 os.remove(f"media/{request.user.profile.cover}")
 
             if data["avatar_url"] is not None:
@@ -93,4 +95,3 @@ def user_update_information_in_allauth(request, user, **kwargs):
         profile.oauth_first_migrate = True
         profile.social_account = False
         profile.save()
-

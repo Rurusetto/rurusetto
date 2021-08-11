@@ -27,25 +27,32 @@ def user_update_information_in_allauth(request, user, **kwargs):
     profile = Profile.objects.get(user=request.user)
     if (not profile.oauth_first_migrate) or request.user.config.update_profile_every_login:
         try:
-            if request.user.config.update_profile_every_login:
-                os.remove(f"media/{request.user.profile.image}")
-                os.remove(f"media/{request.user.profile.cover}")
             data = SocialAccount.objects.get(user=request.user).extra_data
 
-            avatar_pic = requests.get(data["avatar_url"])
-            avatar_temp = NamedTemporaryFile(delete=True)
-            avatar_temp.write(avatar_pic.content)
-            avatar_temp.flush()
-            profile.image.save(data["avatar_url"].split('?')[-1], File(avatar_temp), save=True)
+            # If extra data from user detail from osu! API is not None (null in JSON) and
+            if request.user.config.update_profile_every_login and (profile.picture != "default.jpeg") and (data["avatar_url"] is not None):
+                os.remove(f"media/{request.user.profile.image}")
 
-            cover_pic = requests.get(data["cover_url"])
-            cover_temp = NamedTemporaryFile(delete=True)
-            cover_temp.write(cover_pic.content)
-            cover_temp.flush()
-            profile.cover.save(data["cover_url"].split('/')[-1], File(cover_temp), save=True)
+            if request.user.config.update_profile_every_login and (profile.cover != "default_cover.png") and (data["cover_url"] is not None):
+                os.remove(f"media/{request.user.profile.cover}")
+
+            if data["avatar_url"] is not None:
+                avatar_pic = requests.get(data["avatar_url"])
+                avatar_temp = NamedTemporaryFile(delete=True)
+                avatar_temp.write(avatar_pic.content)
+                avatar_temp.flush()
+                profile.image.save(data["avatar_url"].split('?')[-1], File(avatar_temp), save=True)
+
+            if data["cover_url"] is not None:
+                cover_pic = requests.get(data["cover_url"])
+                cover_temp = NamedTemporaryFile(delete=True)
+                cover_temp.write(cover_pic.content)
+                cover_temp.flush()
+                profile.cover.save(data["cover_url"].split('/')[-1], File(cover_temp), save=True)
 
             profile.osu_username = data["username"]
             profile.osu_id = data["id"]
+
             profile.location = data["location"] if data["location"] is not None else ""
             profile.interests = data["interests"] if data["interests"] is not None else ""
             profile.occupation = data["occupation"] if data["occupation"] is not None else ""

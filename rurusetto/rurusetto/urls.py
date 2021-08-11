@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.contrib.auth.models import User
+from django.contrib.auth import views as auth_views
 from django.contrib.sitemaps import Sitemap
 from django.contrib.sitemaps.views import sitemap
 from django.shortcuts import resolve_url
@@ -78,6 +79,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('profile/<int:pk>', user_views.profile_detail, name='profile'),
     path('settings/', user_views.settings, name='settings'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
 ]
 
 if settings.DEBUG:

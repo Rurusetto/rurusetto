@@ -207,6 +207,24 @@ a.dropdown-item {
     transition: 0.2s
 }
 
+.modal-header,
+.modal-body,
+.modal-footer {
+    background-color: #2d2d2d;
+}
+
+.discord-hover:hover {
+    cursor: pointer;
+}
+
+#signout-button:hover {
+    cursor: pointer;
+}
+
+button.btn-close {
+    filter: invert(1);
+}
+
 /*Class use in JS*/
 
 .hidden {
@@ -230,9 +248,7 @@ a.disabled {
     color: #ffb3d4;
 }
 
-.discord-hover:hover {
-    cursor: pointer;
-}
+
 
 /*#navbar-expand {*/
 /*    margin-top: 5%;*/

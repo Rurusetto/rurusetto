@@ -65,7 +65,7 @@
             <li><a class="dropdown-item spacing-hover" href="{% url "settings" %}">Settings</a></li>
             <li><a class="dropdown-item spacing-hover" href="{% url "profile" user.id %}">Profile</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item spacing-hover" href="{% url 'account_logout' %}">Sign out</a></li>
+            <li><a class="dropdown-item spacing-hover" id="signout-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Sign out</a></li>
           </ul>
         </div>
         {% else %}
@@ -105,7 +105,7 @@
               <div class="list-group border-0">
                 <a href="{% url "settings" %}" class="list-group-item list-group-item-action text-white">Settings</a>
                 <a href="{% url 'profile' user.id %}" class="list-group-item list-group-item-action text-white">Profile</a>
-                <a href="{% url 'account_logout' %}" class="list-group-item list-group-item-action text-white">Sign out</a>
+                <a class="list-group-item list-group-item-action text-white" id="signout-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Sign out</a>
               </div>
             </div>
           </div>
@@ -132,6 +132,29 @@
             </div>
           </div>
   {% endif %}
+
+  <div class="modal fade" id="staticBackdrop" tabindex="-1" aria-labelledby="staticBackdrop" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Alert</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-white raleway-font">
+          Are you sure you want to sign out :(
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary raleway-font" data-bs-dismiss="modal">No, Let me back!</button>
+{#          <a role="button" href="{% url 'logout' %}" class="btn btn-primary">Yes</a>#}
+            <form method="post" action="{% url 'account_logout' %}">
+              {% csrf_token %}
+              <button class="btn btn-secondary btn-rurusetto raleway-font" type="submit">Sign Out</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   {% block content %}{% endblock %}
 

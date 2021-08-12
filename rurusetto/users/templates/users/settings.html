@@ -153,6 +153,12 @@
         {% include "socialaccount/snippets/login_extra.html" %}
 
     {% endif %}
+    <h2>Delete Account</h2>
+    <form class="form" method="POST" enctype='multipart/form-data'>
+        {% csrf_token %}
+        {{ account_delete_form | crispy }}
+        <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right raleway-font">Submit</button>
+    </form>
 
 </div>
 

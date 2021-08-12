@@ -37,3 +37,10 @@ class UpdateProfileEveryLoginConfigForm(forms.ModelForm):
     class Meta:
         model = Config
         fields = ['update_profile_every_login']
+
+
+class UserDeleteForm(forms.Form):
+    """
+    Simple form that provides a checkbox that signals deletion.
+    """
+    delete = forms.BooleanField(required=True)

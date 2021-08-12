@@ -2,7 +2,10 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404, resolve_url
 from django.contrib import messages
 from django.templatetags.static import static
-from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm, UpdateProfileEveryLoginConfigForm
+from django.contrib.auth import logout
+from django.urls import reverse
+
+from .forms import UserUpdateForm, ProfileUpdateForm, UpdateProfileEveryLoginConfigForm, UserDeleteForm
 from .models import Profile
 from allauth.socialaccount.models import SocialAccount
 
@@ -16,6 +19,17 @@ def settings(request):
                                          request.FILES,
                                          instance=request.user.profile)
         profile_sync_form = UpdateProfileEveryLoginConfigForm(request.POST, instance=request.user.config)
+        account_delete_form = UserDeleteForm(request.POST)
+        if account_delete_form.is_valid():
+            user = request.user
+            # Logout before we delete. This will make request.user
+            # unavailable (or actually, it points to AnonymousUser).
+            logout(request)
+            # Delete user (and any associated ForeignKeys, according to
+            # on_delete parameters).
+            user.delete()
+            messages.success(request, 'Account successfully deleted')
+            return redirect('home')
         if SocialAccount.objects.filter(user=request.user).exists():
             # User that send request are login by social account, must check on profile sync field
             if profile_sync_form['update_profile_every_login'].value() == request.user.config.update_profile_every_login:
@@ -55,6 +69,7 @@ def settings(request):
         user_form = UserUpdateForm(instance=request.user)
         profile_form = ProfileUpdateForm(instance=request.user.profile)
         profile_sync_form = UpdateProfileEveryLoginConfigForm(instance=request.user.config)
+        account_delete_form = UserDeleteForm(request.POST)
 
     if (not SocialAccount.objects.filter(user=request.user).exists()) or (
             SocialAccount.objects.filter(user=request.user).exists() and (not request.user.config.update_profile_every_login)):
@@ -71,6 +86,7 @@ def settings(request):
         'user_form': user_form,
         'profile_form': profile_form,
         'profile_sync_form': profile_sync_form,
+        'account_delete_form': account_delete_form,
         'title': 'settings',
         'social_account': SocialAccount.objects.filter(user=request.user).exists(),
         'can_edit_profile': can_edit_profile,

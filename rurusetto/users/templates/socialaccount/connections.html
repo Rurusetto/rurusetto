@@ -36,17 +36,16 @@
             <a href="{% url "home" %}"><img src="{% static "logo/rurusetto-logo-with-name.svg" %}"></a>
            <p></p>
             {% if messages %}
-            <h1>Connection Successful</h1>
-            <p></p>
             {% for message in messages %}
+                <h1>Connection status</h1>
+                <p></p>
                 <p>{{ message }}</p>
             {% endfor %}
             {% else %}
-            <h1>Connection Error</h1>
-            <p></p>
-            <p>This osu! account is already connected to a different account.</p>
-            <p></p>
-          {% endif %}
+                <h1>Unknown status</h1>
+                <p></p>
+                <p>No status provided</p>
+            {% endif %}
           <a href="{% url 'settings' %}" class="text-decoration-none spacing-hover">Back to setting page</a>
           <p></p>
         </div>

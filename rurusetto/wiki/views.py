@@ -13,6 +13,12 @@ from django.template.defaultfilters import slugify
 
 def home(request):
     hero_image = 'img/701370.png'
+    latest_add_rulesets = []
+    for i in range(3):
+        try:
+            latest_add_rulesets.append(Ruleset.objects.all().order_by('-created_at')[i])
+        except:
+            continue
 
     context = {
         'title': 'home',
@@ -20,9 +26,7 @@ def home(request):
         'opengraph_description': 'A page that contain all osu! ruleset',
         'opengraph_url': resolve_url('home'),
         'opengraph_image': static(hero_image),
-        'latest_add_rulesets': make_listing_view([Ruleset.objects.all().order_by('-created_at')[0],
-                                                  Ruleset.objects.all().order_by('-created_at')[1],
-                                                  Ruleset.objects.all().order_by('-created_at')[2]])
+        'latest_add_rulesets': make_listing_view(latest_add_rulesets)
     }
     return render(request, 'wiki/home.html', context)
 

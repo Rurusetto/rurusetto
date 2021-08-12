@@ -153,14 +153,31 @@
         {% include "socialaccount/snippets/login_extra.html" %}
 
     {% endif %}
-    <h2>Delete Account</h2>
-    <form class="form" method="POST" enctype='multipart/form-data'>
-        {% csrf_token %}
-        {{ account_delete_form | crispy }}
-        <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right raleway-font">Submit</button>
-    </form>
+    <h3 class="text-danger">Delete Account</h3>
+    <button type="button" class="btn btn-danger hvr-sweep-to-right-danger raleway-font" data-bs-toggle="modal" data-bs-target="#deleteAccountBackdrop">Delete Account</button>
 
 </div>
+
+<div class="modal fade" id="deleteAccountBackdrop" tabindex="-1" aria-labelledby="deleteAccountBackdrop" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-danger" id="exampleModalLabel">Delete Account</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-danger raleway-font">
+          Are you sure you want to delete account? All of your info will be delete. This is the action that cannot undo!
+        <form method="post" action="{% url 'account_logout' %}">
+          {% csrf_token %}
+            <div class="form-check">
+            {{ account_delete_form.delete }} Delete Confirmation
+            </div>
+          <button class="btn btn-secondary btn-danger hvr-sweep-to-right-danger" type="submit">Confirm</button>
+        </form>
+            </div>
+        </div>
+      </div>
+    </div>
 
     <p></p>
 

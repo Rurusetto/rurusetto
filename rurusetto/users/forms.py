@@ -43,4 +43,4 @@ class UserDeleteForm(forms.Form):
     """
     Simple form that provides a checkbox that signals deletion.
     """
-    delete = forms.BooleanField(required=True)
+    delete = forms.BooleanField(required=False, label="Delete Confirmation", widget=forms.CheckboxInput(attrs={'class': "form-check-input delete-account-checkbox"}))

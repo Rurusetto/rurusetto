@@ -271,3 +271,8 @@ ul.errorlist {
 .alert {
     font-family: 'Raleway', sans-serif!important;
 }
+
+.delete-account-checkbox .delete-account-input:checked ~ .delete-account-label::before {
+  border-color: #DC3545;
+  background-color: #DC3545;
+}

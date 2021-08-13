@@ -159,6 +159,8 @@ LOGIN_URL = 'account_login'
 
 MAX_PROFILE_PICTURE_SIZE = 5242880
 
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
 # API key and API configuration
 
 OSU_OAUTH_CLIENT_ID = ''

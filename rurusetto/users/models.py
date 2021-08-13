@@ -3,6 +3,13 @@ from django.contrib.sitemaps import ping_google
 from django.core.validators import FileExtensionValidator
 from django.db import models
 
+THEME = (
+    # In-system value - Show value
+    ('', 'Dark Mode (Default)'),
+    ('light', 'Light Mode'),
+    ('sync', 'Sync With System Settings')
+)
+
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -28,6 +35,7 @@ class Profile(models.Model):
 class Config(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     update_profile_every_login = models.BooleanField(default=False)
+    theme = models.TextField(choices=THEME, default='')
 
     def __str__(self):
         return f'{self.user.username} Config'

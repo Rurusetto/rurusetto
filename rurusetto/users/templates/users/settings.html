@@ -127,6 +127,22 @@
             <p class="text-white raleway-font">The profile page detail is handled by system. If you want to custom your profile, please remove the <i>Update Profile Every Login Session</i> setting.</p>
             {% endif %}
 
+            <h1>Website Configuration</h1>
+            <h2>Theme</h2>
+            <div class="fieldWrapper">
+                 <div class="mb-3 row">
+                    <label for="id_theme" class="col-sm-2 col-form-label text-white">Appearance:</label>
+                    <div class="col-sm-10">
+                        <select name="theme" class="select form-control" required id="id_theme">
+                            <option value="" selected="">Dark Mode (Default)</option>
+                            <option value="light">Light Mode</option>
+                            <option value="sync">Sync With System Settings</option>
+                        </select>
+                        <p class="text-white raleway-font">{{ website_config_form.theme.errors }}</p>
+                    </div>
+                  </div>
+            </div>
+
 {#            <a id="website"><h1>Website Settings</h1></a>#}
             <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right raleway-font">Submit</button>
         </form>

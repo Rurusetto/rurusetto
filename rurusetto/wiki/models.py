@@ -5,6 +5,7 @@ from mdeditor.fields import MDTextField
 from django.contrib.sitemaps import ping_google
 
 RELEASE_TYPE = (
+    # In-system value - Show value
     ('pre-release', 'Pre-release'),
     ('stable', 'Stable')
 )

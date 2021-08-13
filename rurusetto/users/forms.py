@@ -39,6 +39,14 @@ class UpdateProfileEveryLoginConfigForm(forms.ModelForm):
         fields = ['update_profile_every_login']
 
 
+class UserConfigForm(forms.ModelForm):
+    theme = forms.CharField
+
+    class Meta:
+        model = Config
+        fields = ['theme']
+
+
 class UserDeleteAccountForm(forms.ModelForm):
     confirm_username = forms.CharField()
     confirm_password = forms.CharField(widget=forms.PasswordInput)

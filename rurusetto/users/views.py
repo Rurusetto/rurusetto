@@ -1,11 +1,10 @@
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.hashers import check_password
 from django.shortcuts import render, redirect, get_object_or_404, resolve_url
 from django.contrib import messages
 from django.templatetags.static import static
 from django.contrib.auth import logout
-from django.urls import reverse
-
-from .forms import UserUpdateForm, ProfileUpdateForm, UpdateProfileEveryLoginConfigForm, UserDeleteForm
+from .forms import UserUpdateForm, ProfileUpdateForm, UpdateProfileEveryLoginConfigForm, UserDeleteAccountForm
 from .models import Profile
 from allauth.socialaccount.models import SocialAccount
 
@@ -19,17 +18,6 @@ def settings(request):
                                          request.FILES,
                                          instance=request.user.profile)
         profile_sync_form = UpdateProfileEveryLoginConfigForm(request.POST, instance=request.user.config)
-        account_delete_form = UserDeleteForm(request.POST)
-        if account_delete_form.is_valid():
-            user = request.user
-            # Logout before we delete. This will make request.user
-            # unavailable (or actually, it points to AnonymousUser).
-            logout(request)
-            # Delete user (and any associated ForeignKeys, according to
-            # on_delete parameters).
-            user.delete()
-            messages.success(request, 'Account successfully deleted')
-            return redirect('home')
         if SocialAccount.objects.filter(user=request.user).exists():
             # User that send request are login by social account, must check on profile sync field
             if profile_sync_form['update_profile_every_login'].value() == request.user.config.update_profile_every_login:
@@ -69,7 +57,6 @@ def settings(request):
         user_form = UserUpdateForm(instance=request.user)
         profile_form = ProfileUpdateForm(instance=request.user.profile)
         profile_sync_form = UpdateProfileEveryLoginConfigForm(instance=request.user.config)
-        account_delete_form = UserDeleteForm(request.POST)
 
     if (not SocialAccount.objects.filter(user=request.user).exists()) or (
             SocialAccount.objects.filter(user=request.user).exists() and (not request.user.config.update_profile_every_login)):
@@ -86,7 +73,6 @@ def settings(request):
         'user_form': user_form,
         'profile_form': profile_form,
         'profile_sync_form': profile_sync_form,
-        'account_delete_form': account_delete_form,
         'title': 'settings',
         'social_account': SocialAccount.objects.filter(user=request.user).exists(),
         'can_edit_profile': can_edit_profile,
@@ -112,3 +98,29 @@ def profile_detail(request, pk):
         'opengraph_image': profile_object.cover.url
     }
     return render(request, 'users/profile.html', context)
+
+
+@login_required
+def delete_account(request):
+    if request.method == 'POST':
+        account_delete_form = UserDeleteAccountForm(request.POST)
+        if request.user.username == account_delete_form['confirm_username'].value() and request.user.check_password(account_delete_form['confirm_password'].value()):
+            user = request.user
+            # Logout before we delete. This will make request.user
+            # unavailable (or actually, it points to AnonymousUser).
+            logout(request)
+            # Delete user (and any associated ForeignKeys, according to
+            # on_delete parameters).
+            user.delete()
+            messages.success(request, 'Account successfully deleted.')
+            return redirect('home')
+        else:
+            messages.error(request, f'Delete Account failed. Please check your username and password.')
+            return redirect('settings')
+    else:
+        account_delete_form = UserDeleteAccountForm()
+
+    context = {
+        'form': account_delete_form
+    }
+    return render(request, 'users/delete_account.html', context)

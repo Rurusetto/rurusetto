@@ -79,6 +79,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('profile/<int:pk>', user_views.profile_detail, name='profile'),
     path('settings/', user_views.settings, name='settings'),
+    path('settings/delete-account', user_views.delete_account, name='delete_account'),
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
 ]
 

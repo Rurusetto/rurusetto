@@ -64,7 +64,7 @@
             {% if can_edit_profile %}
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label text-white">{{ user_form.username.label_tag }}</label>
+                    <label for="id_username" class="col-sm-2 col-form-label text-white">{{ user_form.username.label_tag }}</label>
                     <div class="col-sm-10">
                       <input name="username" class="form-control" required id="id_username" maxlength="15" value="{{ user_form.username.value }}">
                        <p class="text-white raleway-font">{{ user_form.username.errors }}</p>
@@ -73,7 +73,7 @@
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label text-white">Email:</label>
+                    <label for="id_email" class="col-sm-2 col-form-label text-white">Email:</label>
                     <div class="col-sm-10">
                       <input name="email" class="form-control" id="id_email" value="{{ user_form.email.value }}">
                        <p class="text-white raleway-font">{{ user_form.email.errors }}</p>
@@ -87,7 +87,7 @@
             {% if can_edit_profile %}
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label text-white">Profile picture:</label>
+                    <label for="id_image" class="col-sm-2 col-form-label text-white">Profile picture:</label>
                     <div class="col-sm-10">
                       <div class="text-white raleway-font">Current Profile : <a href="{{ profile_form.image.value.url }}">{{ profile_form.image.value }}</a></div>
                       <input type="file" name="image" accept="image/*" id="id_image" class="form-control">
@@ -97,7 +97,7 @@
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label text-white">Profile page cover image:</label>
+                    <label for="id_cover" class="col-sm-2 col-form-label text-white">Profile page cover image:</label>
                     <div class="col-sm-10">
                       <div class="text-white raleway-font">Current Cover : <a href="{{ profile_form.cover.value.url }}">{{ profile_form.cover.value }}</a></div>
                       <input type="file" name="cover" accept="image/*" id="id_cover" class="form-control">
@@ -107,7 +107,7 @@
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label text-white">About Me:</label>
+                    <label for="id_about_me" class="col-sm-2 col-form-label text-white">About Me:</label>
                     <div class="col-sm-10">
                         <textarea name="about_me" cols="40" rows="10" class="form-control" id="id_about_me" maxlength="120">{{ profile_form.about_me.value }}</textarea>
                         <p class="text-white raleway-font">{{ profile_form.about_me.errors }}</p>
@@ -116,7 +116,7 @@
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label text-white">osu! username:</label>
+                    <label for="id_osu_username" class="col-sm-2 col-form-label text-white">osu! username:</label>
                     <div class="col-sm-10">
                         <input name="osu_username" class="form-control" id="id_osu_username" maxlength="20" value="{{ profile_form.osu_username.value }}">
                         <p class="text-white raleway-font">{{ profile_form.osu_username.errors }}</p>
@@ -133,7 +133,7 @@
                  <div class="mb-3 row">
                     <label for="id_theme" class="col-sm-2 col-form-label text-white">Appearance:</label>
                     <div class="col-sm-10">
-                        <select name="theme" class="select form-control" required id="id_theme">
+                        <select name="theme" class="form-control" required id="id_theme">
                             <option value="" selected="">Dark Mode (Default)</option>
                             <option value="light">Light Mode</option>
                             <option value="sync">Sync With System Settings</option>

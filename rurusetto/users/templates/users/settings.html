@@ -132,12 +132,8 @@
             <div class="fieldWrapper">
                  <div class="mb-3 row">
                     <label for="id_theme" class="col-sm-2 col-form-label text-white">Appearance:</label>
-                    <div class="col-sm-10">
-                        <select name="theme" class="form-control" required id="id_theme">
-                            <option value="" selected="">Dark Mode (Default)</option>
-                            <option value="light">Light Mode</option>
-                            <option value="sync">Sync With System Settings</option>
-                        </select>
+                    <div class="col-sm-10 raleway-font">
+                        {{ website_config_form | crispy }}
                         <p class="text-white raleway-font">{{ website_config_form.theme.errors }}</p>
                     </div>
                   </div>

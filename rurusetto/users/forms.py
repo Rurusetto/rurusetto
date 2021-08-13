@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import Profile, Config
+from .models import Profile, Config, THEME
 
 
 class UserRegisterForm(UserCreationForm):
@@ -40,7 +40,7 @@ class UpdateProfileEveryLoginConfigForm(forms.ModelForm):
 
 
 class UserConfigForm(forms.ModelForm):
-    theme = forms.CharField
+    theme = forms.ChoiceField(label="", choices=THEME, required=False)
 
     class Meta:
         model = Config

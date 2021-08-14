@@ -7,6 +7,7 @@ from django.contrib.auth import logout
 from .forms import UserUpdateForm, ProfileUpdateForm, UpdateProfileEveryLoginConfigForm, UserDeleteAccountForm, UserConfigForm
 from .models import Profile
 from allauth.socialaccount.models import SocialAccount
+from wiki.function import fetch_created_ruleset
 
 
 @login_required
@@ -97,6 +98,7 @@ def profile_detail(request, pk):
 
     context = {
         'profile_object': profile_object,
+        'created_ruleset': fetch_created_ruleset(profile_object.id),
         'title': f"{profile_object.user.username}'s profile",
         'hero_image': profile_object.cover.url,
         'opengraph_description': f"{profile_object.user.username}'s profile page",

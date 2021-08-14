@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User
+from .models import Ruleset
 
 
 def make_listing_view(model_list):
@@ -36,3 +37,14 @@ def source_link_type(url):
     else:
         result = "unknown"
     return result
+
+
+def fetch_created_ruleset(id):
+    created_ruleset = []
+    for ruleset in Ruleset.objects.filter(owner=str(id)):
+        try:
+            ruleset_owner = User.objects.get(id=ruleset.owner)
+            created_ruleset.append([ruleset, ruleset_owner])
+        except:
+            created_ruleset.append([ruleset, None])
+    return created_ruleset

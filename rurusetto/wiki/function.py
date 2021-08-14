@@ -25,7 +25,6 @@ def make_wiki_view(ruleset_object):
         last_edited_by = User.objects.get(id=ruleset_object.last_edited_by)
     except:
         last_edited_by = None
-    print([creator, owner, last_edited_by])
     return [creator, owner, last_edited_by]
 
 

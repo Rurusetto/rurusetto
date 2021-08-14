@@ -8,10 +8,18 @@
             <div class="row">
 <!--                TODO: Add popper-->
                 <p></p>
-                {% if content.verified %}
-                    <a href="{% url "profile" user_detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><p class="text-muted"><img src="{{ user_detail.1.profile.image.url }}" alt="{{ user_detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon" style="transition: 0.2s"> {{ user_detail.1.username }} <i class="fas hvr-icon fa-check-circle icon-menu"></i></p></a>
+                {% if user_detail.1 == None %}
+                    {% if content.verified %}
+                        <p class="text-muted"><img src="{% static 'img/default.jpeg' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User <i class="fas fa-check-circle verified-circle icon-menu hvr-icon"></i></p>
+                    {% else %}
+                        <p class="text-muted"><img src="{% static 'img/default.jpeg' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User </p>
+                    {% endif %}
                 {% else %}
-                    <a href="{% url "profile" user_detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><p class="text-muted"><img src="{{ user_detail.1.profile.image.url }}" alt="{{ user_detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon" style="transition: 0.2s"> {{ user_detail.1.username }}</p></a>
+                    {% if content.verified %}
+                        <a href="{% url "profile" user_detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><p class="text-muted"><img src="{{ user_detail.1.profile.image.url }}" alt="{{ user_detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon" style="transition: 0.2s"> {{ user_detail.1.username }} <i class="fas hvr-icon fa-check-circle icon-menu"></i></p></a>
+                    {% else %}
+                        <a href="{% url "profile" user_detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><p class="text-muted"><img src="{{ user_detail.1.profile.image.url }}" alt="{{ user_detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon" style="transition: 0.2s"> {{ user_detail.1.username }}</p></a>
+                    {% endif %}
                 {% endif %}
 
                 <div><h1 class="display-5 fw-bold">{{ content.name }}</h1></div>
@@ -48,8 +56,16 @@
               {% endif %}
         </div>
         <div class="row" id="last-edit">
+            {% if user_detail.0 == None %}
+            <p class="text-muted">This page is created by <img src="{% static 'img/default.jpeg'%}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User</p>
+            {% else %}
             <p class="text-muted">This page is created by <a href="{% url "profile" user_detail.0.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><img src="{{ user_detail.0.profile.image.url }}" alt="{{ user_detail.0.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ user_detail.0.username }}</a></p>
+            {% endif %}
+            {% if user_detail.2 == None %}
+            <p class="text-muted">Last edited by <img src="{% static 'img/default.jpeg'%}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User at {{ content.last_edited_at|date:"F j, Y h:i A" }} UTC</p>
+            {% else %}
             <p class="text-muted">Last edited by <a href="{% url "profile" user_detail.2.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><img src="{{ user_detail.2.profile.image.url }}" alt="{{ user_detail.2.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ user_detail.2.username }}</a> at {{ content.last_edited_at|date:"F j, Y h:i A" }} UTC</p>
+            {% endif %}
         </div>
         <div class="row">
             <div class="col-sm-9" id="wiki">
@@ -63,11 +79,19 @@
                     <dl class="row">
                         <dt class="col-sm-5">Creator</dt>
                         <dd class="col-sm-7">
+                            {% if user_detail.1 == None %}
                             {% if content.verified %}
-                                <a href="{% url "profile" user_detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><img src="{{ user_detail.1.profile.image.url }}" alt="{{ user_detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ user_detail.1.username }} <i class="fas hvr-icon fa-check-circle icon-menu"></i></a>
+                                <p class="text-muted"><img src="{% static 'img/default.jpeg' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User <i class="fas fa-check-circle verified-circle icon-menu hvr-icon"></i></p>
                             {% else %}
-                                <a href="{% url "profile" user_detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><img src="{{ user_detail.1.profile.image.url }}" alt="{{ user_detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ user_detail.1.username }}</a>
-                            {% endif %}</dd>
+                                <p class="text-muted"><img src="{% static 'img/default.jpeg' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User </p>
+                            {% endif %}
+                            {% else %}
+                            {% if content.verified %}
+                                <a href="{% url "profile" user_detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><p class="text-muted"><img src="{{ user_detail.1.profile.image.url }}" alt="{{ user_detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon" style="transition: 0.2s"> {{ user_detail.1.username }} <i class="fas hvr-icon fa-check-circle icon-menu"></i></p></a>
+                            {% else %}
+                                <a href="{% url "profile" user_detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><p class="text-muted"><img src="{{ user_detail.1.profile.image.url }}" alt="{{ user_detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon" style="transition: 0.2s"> {{ user_detail.1.username }}</p></a>
+                            {% endif %}
+                            {% endif %}
                     </dl>
                 </div>
                 <p></p>

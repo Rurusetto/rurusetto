@@ -49,11 +49,7 @@
 {% if created_ruleset.len != 0 %}
 <div class="container">
     <div class="row-mb-3">
-        {% if created_ruleset.len == 1 %}
-            <h1>created ruleset <span class="badge rounded-pill bg-rurusetto round-font-bold">{{ created_ruleset.len }}</span></h1>
-        {% else %}
-            <h1>created rulesets <span class="badge rounded-pill bg-rurusetto round-font-bold">{{ created_ruleset.len }}</span></h1>
-        {% endif %}
+        <h1>created rulesets <span class="badge rounded-pill bg-rurusetto round-font-bold">{{ created_ruleset.len }}</span></h1>
     </div>
     <div class="row-mb-3">
         <div class="row text-center gy-4">

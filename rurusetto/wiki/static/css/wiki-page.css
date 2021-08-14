@@ -21,11 +21,11 @@
 }
 
 table {
-    border-collapse:  collapse; /* セルの線を重ねる */
+    border-collapse:  collapse;
 }
 th,td {
-    border: solid 1px;  /* 枠線指定 */
-    padding: 10px;      /* 余白指定 */
+    border: solid 1px;
+    padding: 10px;
 }
 th {
     font-family: all-round-gothic, sans-serif;

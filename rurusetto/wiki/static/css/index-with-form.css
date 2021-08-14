@@ -25,6 +25,10 @@ a.list-group-item {
     font-family: 'Raleway', sans-serif;
 }
 
+code {
+    font-family: 'JetBrains Mono', monospace;
+}
+
 #profile-picture, #header-logo{
     transition: 0.2s;
 }

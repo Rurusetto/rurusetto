@@ -29,8 +29,10 @@
               {% if changelog.type == "stable" %}
                   <h1>{{ changelog.version }} <span class="badge rounded-pill bg-success fs-5">{{ changelog.type }}</span></h1>
               {% endif %}
+                <div class="changelog">
+                    <p class="text-muted">Release at {{ changelog.time|date:"F j, Y h:i A" }} UTC</p>
+                </div>
 
-              <p class="text-muted">Release at {{ changelog.time|date:"F j, Y h:i A" }} UTC</p>
 
               {{ changelog.note | convert_markdown | safe }}
 

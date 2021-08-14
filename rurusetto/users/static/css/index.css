@@ -15,6 +15,10 @@ h1, h2, h3, h4, h5, h6 {
     font-style: normal;
 }
 
+code {
+    font-family: 'JetBrains Mono', monospace;
+}
+
 a {
     color: #ff66aa;
 }
@@ -22,15 +26,6 @@ a {
 a:hover {
     color: #ff268c;
 }
-
-/*header {*/
-/*    height:10vh;*/
-/*    background-size: cover;*/
-/*    !*background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,0)), url(https://osu.ppy.sh/assets/images/button.16de7c2c.svg);*!*/
-/*    !*background-position: bottom;*!*/
-/*    !*background-repeat: repeat-x;*!*/
-/*    !*filter: hue-rotate(255deg);*!*/
-/*}*/
 
 #profile-picture, #header-logo{
     transition: 0.2s;
@@ -223,6 +218,10 @@ a.dropdown-item {
 
 button.btn-close {
     filter: invert(1);
+}
+
+.changelog span {
+    font-family: 'JetBrains Mono', monospace;
 }
 
 /*Class use in JS*/

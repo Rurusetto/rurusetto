@@ -65,19 +65,19 @@ def source_link_type(url):
     return result
 
 
-def fetch_created_ruleset(id):
+def fetch_created_ruleset(creator_id):
     """
     Get a user ID that want to filter the ruleset that this user make and return a list of ruleset
     with the User object of that ruleset.
     
     If the program cannot find the User object,it will append `None` to the return value.
 
-    :param id: A user id
-    :type id: int
+    :param creator_id: A user id
+    :type creator_id: int
     :return: A list of ruleset with the User object of that ruleset.
     """
     created_ruleset = []
-    for ruleset in Ruleset.objects.filter(owner=str(id)):
+    for ruleset in Ruleset.objects.filter(owner=str(creator_id)):
         try:
             ruleset_owner = User.objects.get(id=ruleset.owner)
             created_ruleset.append([ruleset, ruleset_owner])

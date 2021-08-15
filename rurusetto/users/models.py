@@ -29,8 +29,6 @@ class Profile(models.Model):
         except Exception:
             pass
 
-# TODO: Make auto resize picture system
-
 
 class Config(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)

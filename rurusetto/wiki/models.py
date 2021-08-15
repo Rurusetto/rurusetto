@@ -61,4 +61,3 @@ class Ruleset(models.Model):
             ping_google()
         except Exception:
             pass
-

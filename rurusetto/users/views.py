@@ -64,12 +64,6 @@ def settings(request):
         profile_sync_form = UpdateProfileEveryLoginConfigForm(instance=request.user.config)
         website_config_form = UserConfigForm(instance=request.user.config)
 
-    if (not SocialAccount.objects.filter(user=request.user).exists()) or (
-            SocialAccount.objects.filter(user=request.user).exists() and (not request.user.config.update_profile_every_login)):
-        can_edit_profile = True
-    else:
-        can_edit_profile = False
-
     if SocialAccount.objects.filter(user=request.user).exists():
         osu_confirm_username = SocialAccount.objects.get(user=request.user).extra_data['username']
     else:
@@ -82,7 +76,7 @@ def settings(request):
         'website_config_form': website_config_form,
         'title': 'settings',
         'social_account': SocialAccount.objects.filter(user=request.user).exists(),
-        'can_edit_profile': can_edit_profile,
+        'can_edit_profile': (not SocialAccount.objects.filter(user=request.user).exists()) or (SocialAccount.objects.filter(user=request.user).exists() and (not request.user.config.update_profile_every_login)),
         'osu_confirm_username': osu_confirm_username,
         'hero_image': hero_image,
         'opengraph_description': 'All profile and website settings are here!',

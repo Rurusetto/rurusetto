@@ -40,6 +40,16 @@
   <link rel="stylesheet" href="{% static 'css/index.css' %}">
   <link rel="stylesheet" href="{% static 'css/hover.css' %}">
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <style>
+        .hero {
+            background-image: linear-gradient(to bottom, transparent, #2d2d2d), url({% static hero_image %});
+        }
+
+        body.light .hero {
+            background-image: linear-gradient(to bottom, transparent, #fff), url({% static hero_image %});
+        }
+    </style>
 </head>
 <body class="{{ user.config.theme }}">
   <header id="header" class="p-3 mb-3 fixed-top">

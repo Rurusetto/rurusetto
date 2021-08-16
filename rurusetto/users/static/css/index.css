@@ -228,6 +228,20 @@ button.btn-close {
     font-family: 'JetBrains Mono', monospace;
 }
 
+/*Light Mode CSS override*/
+
+body.light {
+    background-color: #fff;
+}
+
+body.light h1, h2, h3, h4, h5, h6 {
+    color: black;
+}
+
+body.light p, label, li {
+    color: black;
+}
+
 /*Class use in JS*/
 
 .hidden {

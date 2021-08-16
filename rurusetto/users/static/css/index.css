@@ -1,7 +1,6 @@
 * {
-    color: white;
+    transition: 0.2s;
     font-family: 'Raleway', sans-serif;
-    transition: 0.2s
 }
 
 body {
@@ -25,6 +24,11 @@ a {
 
 a:hover {
     color: #ff268c;
+}
+
+p, label, li {
+    color: white;
+    font-family: 'Raleway', sans-serif;
 }
 
 #profile-picture, #header-logo{
@@ -247,8 +251,3 @@ a.disabled {
     color: #ffb3d4;
 }
 
-
-
-/*#navbar-expand {*/
-/*    margin-top: 5%;*/
-/*}*/

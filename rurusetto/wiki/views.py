@@ -13,6 +13,7 @@ from django.template.defaultfilters import slugify
 
 def home(request):
     hero_image = 'img/701370.png'
+    hero_image_light = 'img/899806.png'
     latest_add_rulesets = []
     for i in range(3):
         try:
@@ -23,6 +24,7 @@ def home(request):
     context = {
         'title': 'home',
         'hero_image': hero_image,
+        'hero_image_light': hero_image_light,
         'opengraph_description': 'A page that contain all osu! ruleset',
         'opengraph_url': resolve_url('home'),
         'opengraph_image': static(hero_image),

@@ -3,6 +3,33 @@
     font-family: 'Raleway', sans-serif;
 }
 
+/*Light Mode CSS override*/
+
+body.light {
+    background-color: #fff;
+}
+
+body.light h1, h2, h3, h4, h5, h6 {
+    color: black;
+}
+
+body.light p, label, li {
+    color: black;
+}
+
+body.light #home-logo {
+    filter: invert(1);
+}
+
+body.light #home-welcome,
+body.light #home-description,
+body.light .rulesets-description,
+body.light .rulesets-name {
+    color: black!important;
+}
+
+/*Default theme CSS*/
+
 body {
     background-color: #2d2d2d;
 }
@@ -27,7 +54,7 @@ a:hover {
 }
 
 p, label, li {
-    color: white;
+    color: white!important;
     font-family: 'Raleway', sans-serif;
 }
 
@@ -228,18 +255,12 @@ button.btn-close {
     font-family: 'JetBrains Mono', monospace;
 }
 
-/*Light Mode CSS override*/
-
-body.light {
-    background-color: #fff;
+#home-welcome, #home-description {
+    color: white;
 }
 
-body.light h1, h2, h3, h4, h5, h6 {
-    color: black;
-}
-
-body.light p, label, li {
-    color: black;
+.rulesets-description, .rulesets-name {
+    color: white;
 }
 
 /*Class use in JS*/

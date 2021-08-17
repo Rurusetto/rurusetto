@@ -47,8 +47,10 @@
         }
 
         body.light .hero {
-            background-image: linear-gradient(to bottom, transparent, #fff), url({% static hero_image %});
+            background-image: linear-gradient(to bottom, transparent, #fff), url({% static hero_image_light %});
         }
+
+        {% block css %}{% endblock %}
     </style>
 </head>
 <body class="{{ user.config.theme }}">

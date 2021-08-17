@@ -28,6 +28,37 @@ body.light .rulesets-name {
     color: black!important;
 }
 
+body.light .modal-header,
+body.light .modal-body,
+body.light .modal-footer {
+    background-color: white;
+}
+
+body.light footer {
+    background-color: white;
+}
+
+body.light .github-footer {
+    color: black;
+}
+
+body.light .github-footer:hover {
+    color: #ff66aa;
+}
+
+body.light a.dropdown-item {
+    font-family: 'Raleway', sans-serif;
+    color: black;
+}
+
+body.light .dropdown-menu {
+    background-color: white;
+}
+
+body.light .dropdown-item:hover {
+    background-color: #e3e7ec;
+}
+
 /*Default theme CSS*/
 
 body {
@@ -54,7 +85,7 @@ a:hover {
 }
 
 p, label, li {
-    color: white!important;
+    color: white;
     font-family: 'Raleway', sans-serif;
 }
 

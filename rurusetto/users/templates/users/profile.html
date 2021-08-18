@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<div class="px-4 py-4 my-4 text-center align-middle hero-profile"></div>
+<div class="px-4 py-4 my-4 text-center align-middle hero"></div>
 
 <div class="container px-4 py-4 my-4 d-grid gap-4">
   <div class="row" style="margin-top: -11%; width: 1280px;">
@@ -79,16 +79,5 @@
 {% endif %}
 
 <br>
-
-{% endblock %}
-
-{% block css %}
-    .hero-profile {
-        background-image: linear-gradient(to bottom, transparent, #2d2d2d), url({{ hero_image }});
-    }
-
-    body.light .hero-profile {
-        background-image: linear-gradient(to bottom, transparent, #fff), url({{ hero_image_light }});
-    }
 
 {% endblock %}

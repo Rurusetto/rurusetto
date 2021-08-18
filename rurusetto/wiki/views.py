@@ -52,8 +52,8 @@ def listing(request):
     context = {
         'rulesets': make_listing_view(Ruleset.objects.all()),
         'title': 'listing',
-        'hero_image': hero_image,
-        'hero_image_light': hero_image_light,
+        'hero_image': static(hero_image),
+        'hero_image_light': static(hero_image_light),
         'opengraph_description': 'List of available rulesets.',
         'opengraph_url': resolve_url('listing'),
         'opengraph_image': static(hero_image)

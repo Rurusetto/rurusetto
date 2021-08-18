@@ -43,11 +43,11 @@
 
     <style>
         .hero {
-            background-image: linear-gradient(to bottom, transparent, #2d2d2d), url({% static hero_image %});
+            background-image: linear-gradient(to bottom, transparent, #2d2d2d), url({{ hero_image }});
         }
 
         body.light .hero {
-            background-image: linear-gradient(to bottom, transparent, #fff), url({% static hero_image_light %});
+            background-image: linear-gradient(to bottom, transparent, #fff), url({{ hero_image_light }});
         }
 
         {% block css %}{% endblock %}

@@ -5,7 +5,7 @@
 
 <link rel="stylesheet" href="{% static 'css/profile.css' %}">
 
-<div class="px-4 py-4 my-4 text-center align-middle hero-profile" style="background-image: linear-gradient(to bottom, transparent, #2d2d2d), url('{{ profile_object.cover.url }}');"></div>
+<div class="px-4 py-4 my-4 text-center align-middle hero-profile"></div>
 
 <div class="container px-4 py-4 my-4 d-grid gap-4">
   <div class="row" style="margin-top: -11%; width: 1280px;">
@@ -49,7 +49,7 @@
 {% if created_ruleset.len != 0 %}
 <div class="container">
     <div class="row-mb-3">
-        <h1>created rulesets <span class="badge rounded-pill bg-rurusetto round-font-bold">{{ created_ruleset.len }}</span></h1>
+        <h1>created rulesets <span class="badge rounded-pill bg-rurusetto round-font-bold ">{{ created_ruleset.len }}</span></h1>
     </div>
     <div class="row-mb-3">
         <div class="row text-center gy-4">
@@ -57,7 +57,7 @@
             <div class="col-lg-4">
             <img src="{{ detail.0.icon.url }}" alt="{{ detail.0.name }}" width="140px" height="140px" class="rounded-circle">
 
-            <h2>{{ detail.0.name }}</h2>
+            <h2 class="rulesets-name">{{ detail.0.name }}</h2>
             {% if detail.1 == None %}
                 {% if detail.0.verified %}
                     <p class="text-muted"><img src="{% static 'img/default.jpeg' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User <i class="fas fa-check-circle verified-circle icon-menu hvr-icon"></i></p>
@@ -71,7 +71,7 @@
                     <a href="{% url "profile" detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><p class="text-muted"><img src="{{ detail.1.profile.image.url }}" alt="{{ detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ detail.1.username }} </p></a>
                 {% endif %}
             {% endif %}
-            <p>{{ detail.0.description }}</p>
+            <p class="rulesets-description">{{ detail.0.description }}</p>
             <p><a class="btn btn-secondary btn-rurusetto hvr-sweep-to-right" href="{% url "wiki" detail.0.slug %}">Read &raquo;</a></p>
         </div>
             {% endfor %}
@@ -81,5 +81,16 @@
 {% endif %}
 
 <br>
+
+{% endblock %}
+
+{% block css %}
+    .hero-profile {
+        background-image: linear-gradient(to bottom, transparent, #2d2d2d), url({{ hero_image }});
+    }
+
+    body.light .hero-profile {
+        background-image: linear-gradient(to bottom, transparent, #fff), url({{ hero_image_light }});
+    }
 
 {% endblock %}

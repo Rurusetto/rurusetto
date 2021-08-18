@@ -48,12 +48,14 @@ def changelog(request):
 
 
 def listing(request):
-    hero_image = "img/杉８７ - lonely (72683486) .jpg"
+    hero_image = "img/765703.png"
+    hero_image_light = 'img/765112.png'
 
     context = {
         'rulesets': make_listing_view(Ruleset.objects.all()),
         'title': 'listing',
         'hero_image': hero_image,
+        'hero_image_light': hero_image_light,
         'opengraph_description': 'List of available rulesets.',
         'opengraph_url': resolve_url('listing'),
         'opengraph_image': static(hero_image)

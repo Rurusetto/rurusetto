@@ -145,3 +145,13 @@ function copyToClipboard(text) {
     input.parentNode.removeChild(input);
     window.alert("Copied!")
 }
+
+var elem = document.body;
+var lastClassName = elem.className;
+window.setInterval( function() {   
+    var className = elem.className;
+    if (className !== lastClassName) {
+        scrollFunction()
+        lastClassName = className;
+    }
+},10);

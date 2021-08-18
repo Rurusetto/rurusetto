@@ -17,6 +17,21 @@ body.light p, label, li {
     color: black;
 }
 
+body.light .changelog h1,
+body.light .changelog h2,
+body.light .changelog h3,
+body.light .changelog h4,
+body.light .changelog h5,
+body.light .changelog h6 {
+    color: black;
+}
+
+body.light .changelog p,
+body.light .changelog label,
+body.light .changelog li {
+    color: black;
+}
+
 body.light #home-logo {
     filter: invert(1);
 }
@@ -327,6 +342,14 @@ button.btn-close {
 }
 
 .profile-email {
+    color: white;
+}
+
+.changelog h1, h2, h3, h4, h5, h6 {
+    color: white;
+}
+
+.changelog p, label, li {
     color: white;
 }
 

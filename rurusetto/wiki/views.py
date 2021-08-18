@@ -32,12 +32,14 @@ def home(request):
 
 
 def changelog(request):
-    hero_image = 'img/684477.png'
+    hero_image = 'img/changelog-cover-night.jpeg'
+    hero_image_light = 'img/changelog-cover-light.png'
 
     context = {
         'changelog_list': Changelog.objects.all().order_by('-time'),
         'title': 'changelog',
-        'hero_image': hero_image,
+        'hero_image': static(hero_image),
+        'hero_image_light': static(hero_image_light),
         'opengraph_description': 'All update history of website are here.',
         'opengraph_url': resolve_url('changelog'),
         'opengraph_image': static(hero_image)
@@ -46,8 +48,8 @@ def changelog(request):
 
 
 def listing(request):
-    hero_image = "img/765703.png"
-    hero_image_light = 'img/765112.png'
+    hero_image = "img/listing-cover-night.png"
+    hero_image_light = 'img/listing-cover-light.png'
 
     context = {
         'rulesets': make_listing_view(Ruleset.objects.all()),

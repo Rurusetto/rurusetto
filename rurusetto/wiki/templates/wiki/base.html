@@ -109,16 +109,16 @@
       </nav>
       <div class="collapse fixed-top" id="navbarToggleExternalContent">
           <div class="list-group border-0">
-            <a href="{% url 'listing' %}" class="list-group-item list-group-item-action text-white">Listing</a>
-            <a href="#" class="list-group-item list-group-item-action text-white">Status</a>
-            <a href="#" class="list-group-item list-group-item-action text-white">Install</a>
-            <a href="{% url 'changelog' %}" class="list-group-item list-group-item-action text-white">Changelog</a>
-            <a href="#collapseProfileMenu" class="list-group-item list-group-item-action text-white profile-menu" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapseProfileMenu" onclick="rotateArrowMenu()"  style="background-color: rgba(74, 74, 74, .8);" id="profile-menu"><img id="profile-picture-mobile" src="{{ user.profile.image.url }}" alt="{{ user.username }}" height="32" width="32" class="rounded-circle"> {{ user.username }} <i class="fas fa-chevron-down" id="arrow-profile-menu"></i></a>
+            <a href="{% url 'listing' %}" class="list-group-item list-group-item-action mobile-header-text">Listing</a>
+            <a href="#" class="list-group-item list-group-item-action mobile-header-text">Status</a>
+            <a href="#" class="list-group-item list-group-item-action mobile-header-text">Install</a>
+            <a href="{% url 'changelog' %}" class="list-group-item list-group-item-action mobile-header-text">Changelog</a>
+            <a href="#collapseProfileMenu" class="list-group-item list-group-item-action mobile-header-text profile-menu" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapseProfileMenu" onclick="rotateArrowMenu()"  style="background-color: rgba(74, 74, 74, .8);" id="profile-menu"><img id="profile-picture-mobile" src="{{ user.profile.image.url }}" alt="{{ user.username }}" height="32" width="32" class="rounded-circle"> {{ user.username }} <i class="fas fa-chevron-down" id="arrow-profile-menu"></i></a>
             <div class="collapse" id="collapseProfileMenu">
               <div class="list-group border-0">
-                <a href="{% url "settings" %}" class="list-group-item list-group-item-action text-white">Settings</a>
-                <a href="{% url 'profile' user.id %}" class="list-group-item list-group-item-action text-white">Profile</a>
-                <a class="list-group-item list-group-item-action text-white" id="signout-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Sign out</a>
+                <a href="{% url "settings" %}" class="list-group-item list-group-item-action mobile-header-text">Settings</a>
+                <a href="{% url 'profile' user.id %}" class="list-group-item list-group-item-action mobile-header-text">Profile</a>
+                <a class="list-group-item list-group-item-action mobile-header-text" id="signout-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Sign out</a>
               </div>
             </div>
           </div>
@@ -136,12 +136,12 @@
       </nav>
       <div class="collapse fixed-top" id="navbarToggleExternalContent">
           <div class="list-group border-0">
-            <a href="{% url 'listing' %}" class="list-group-item list-group-item-action text-white">Listing</a>
-            <a href="#" class="list-group-item list-group-item-action text-white">Status</a>
-            <a href="#" class="list-group-item list-group-item-action text-white">Install</a>
-            <a href="{% url 'changelog' %}" class="list-group-item list-group-item-action text-white">Changelog</a>
-            <a href="{% url 'account_login' %}" class="list-group-item list-group-item-action text-white">Sign In</a>
-            <a href="{% url 'account_signup' %}" class="list-group-item list-group-item-action text-white">Sign Up</a>
+            <a href="{% url 'listing' %}" class="list-group-item list-group-item-action mobile-header-text">Listing</a>
+            <a href="#" class="list-group-item list-group-item-action mobile-header-text">Status</a>
+            <a href="#" class="list-group-item list-group-item-action mobile-header-text">Install</a>
+            <a href="{% url 'changelog' %}" class="list-group-item list-group-item-action mobile-header-text">Changelog</a>
+            <a href="{% url 'account_login' %}" class="list-group-item list-group-item-action mobile-header-text">Sign In</a>
+            <a href="{% url 'account_signup' %}" class="list-group-item list-group-item-action mobile-header-text">Sign Up</a>
             </div>
           </div>
   {% endif %}

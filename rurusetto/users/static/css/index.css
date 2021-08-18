@@ -63,6 +63,22 @@ body.light .profile-email {
     color: black;
 }
 
+body.light .list-group-item {
+    background-color: rgba(255, 255, 255, .8);
+}
+
+body.light .list-group {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+body.light .list-group-item:hover {
+    background-color: rgba(255, 255, 255, .3);
+}
+
+body.light .mobile-header-text {
+    color: black;
+}
+
 /*Default theme CSS*/
 
 body {
@@ -262,6 +278,10 @@ a.dropdown-item {
 .list-group-item:hover {
     border: 0;
     background-color: rgba(74, 74, 74, .3);
+}
+
+.mobile-header-text {
+    color: white;
 }
 
 #arrow-profile-menu {

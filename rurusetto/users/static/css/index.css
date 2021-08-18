@@ -59,6 +59,10 @@ body.light .dropdown-item:hover {
     background-color: #e3e7ec;
 }
 
+body.light .profile-email {
+    color: black;
+}
+
 /*Default theme CSS*/
 
 body {
@@ -291,6 +295,18 @@ button.btn-close {
 }
 
 .rulesets-description, .rulesets-name {
+    color: white;
+}
+
+.fa-times {
+    color: #842029;
+}
+
+.fa-check {
+    color: #0f5132;
+}
+
+.profile-email {
     color: white;
 }
 

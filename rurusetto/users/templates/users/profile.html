@@ -3,8 +3,6 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<link rel="stylesheet" href="{% static 'css/profile.css' %}">
-
 <div class="px-4 py-4 my-4 text-center align-middle hero-profile"></div>
 
 <div class="container px-4 py-4 my-4 d-grid gap-4">
@@ -29,7 +27,7 @@
         </div>
     {% endif %}
     {% if profile_object.user.email != '' %}
-    <div class="col-sm-2">
+    <div class="col-sm-2 profile-email">
     <i class="fas fa-envelope-square"></i> {{ profile_object.user.email }}
     </div>
     {% endif %}
@@ -46,10 +44,10 @@
         </div>
     </div>
 
-{% if created_ruleset.len != 0 %}
+{% if created_ruleset %}
 <div class="container">
     <div class="row-mb-3">
-        <h1>created rulesets <span class="badge rounded-pill bg-rurusetto round-font-bold ">{{ created_ruleset.len }}</span></h1>
+        <h1>created rulesets <span class="badge rounded-pill bg-rurusetto round-font-bold ">{{ created_ruleset| length }}</span></h1>
     </div>
     <div class="row-mb-3">
         <div class="row text-center gy-4">

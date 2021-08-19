@@ -3,12 +3,12 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<div class="px-4 py-4 my-4 align-middle hero" style="background-image: linear-gradient(to bottom, transparent, #2d2d2d), url('{% static "img/737403.png" %}');">
+<div class="px-4 py-4 my-4 align-middle hero">
     <div class="container align-middle">
         <div class="row">
             <p></p>
             <div><h1 class="display-5 fw-bold">Settings</h1></div>
-            <p class="text-white" id="hero-description">All profile and website settings are here!</p>
+            <p id="hero-description">All profile and website settings are here!</p>
         </div>
     </div>
 </div>
@@ -49,12 +49,12 @@
             <h2>Profile Sync</h2>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label text-white">Update profile every login session:</label>
+                    <label class="col-sm-2 col-form-label form-label">Update profile every login session:</label>
                     <div class="col-sm-10">
                         <div class="form-check form-switch">
                             {{ profile_sync_form.update_profile_every_login }}
                         </div>
-                        <p class="text-white raleway-font">{{ profile_sync_form.update_profile_every_login.errors }}</p>
+                        <p class="form-error raleway-font">{{ profile_sync_form.update_profile_every_login.errors }}</p>
                         <p class="text-muted raleway-font">If this checked, everytime time you login the system will update all of your profile to make it same as your osu! profile but your profile setting will be disabled.</p>
                     </div>
                   </div>
@@ -64,62 +64,62 @@
             {% if can_edit_profile %}
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label for="id_username" class="col-sm-2 col-form-label text-white">{{ user_form.username.label_tag }}</label>
+                    <label for="id_username" class="col-sm-2 col-form-label form-label">{{ user_form.username.label_tag }}</label>
                     <div class="col-sm-10">
                       <input name="username" class="form-control" required id="id_username" maxlength="15" value="{{ user_form.username.value }}">
-                       <p class="text-white raleway-font">{{ user_form.username.errors }}</p>
+                       <p class="form-error raleway-font">{{ user_form.username.errors }}</p>
                     </div>
                   </div>
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label for="id_email" class="col-sm-2 col-form-label text-white">Email:</label>
+                    <label for="id_email" class="col-sm-2 col-form-label form-label">Email:</label>
                     <div class="col-sm-10">
                       <input name="email" class="form-control" id="id_email" value="{{ user_form.email.value }}">
-                       <p class="text-white raleway-font">{{ user_form.email.errors }}</p>
+                       <p class="form-error raleway-font">{{ user_form.email.errors }}</p>
                     </div>
                   </div>
             </div>
             {% else %}
-            <p class="text-white raleway-font">The user information is handled by system. If you want to custom your profile, please remove the <i>Update Profile Every Login Session</i> setting.</p>
+            <p class="raleway-font">The user information is handled by system. If you want to custom your profile, please remove the <i>Update Profile Every Login Session</i> setting.</p>
             {% endif %}
             <h2>Profile Page Detail</h2>
             {% if can_edit_profile %}
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label for="id_image" class="col-sm-2 col-form-label text-white">Profile picture:</label>
+                    <label for="id_image" class="col-sm-2 col-form-label form-label">Profile picture:</label>
                     <div class="col-sm-10">
-                      <div class="text-white raleway-font">Current Profile : <a href="{{ profile_form.image.value.url }}">{{ profile_form.image.value }}</a></div>
+                      <div class="raleway-font">Current Profile : <a href="{{ profile_form.image.value.url }}">{{ profile_form.image.value }}</a></div>
                       <input type="file" name="image" accept="image/*" id="id_image" class="form-control">
-                        <p class="text-white raleway-font">{{ profile_form.image.errors }}</p>
+                        <p class="form-error raleway-font">{{ profile_form.image.errors }}</p>
                     </div>
                   </div>
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label for="id_cover" class="col-sm-2 col-form-label text-white">Profile page cover image:</label>
+                    <label for="id_cover" class="col-sm-2 col-form-label form-label">Profile page cover image:</label>
                     <div class="col-sm-10">
-                      <div class="text-white raleway-font">Current Cover : <a href="{{ profile_form.cover.value.url }}">{{ profile_form.cover.value }}</a></div>
+                      <div class="raleway-font">Current Cover : <a href="{{ profile_form.cover.value.url }}">{{ profile_form.cover.value }}</a></div>
                       <input type="file" name="cover" accept="image/*" id="id_cover" class="form-control">
-                        <p class="text-white raleway-font">{{ profile_form.cover.errors }}</p>
+                        <p class="form-error raleway-font">{{ profile_form.cover.errors }}</p>
                     </div>
                   </div>
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label for="id_about_me" class="col-sm-2 col-form-label text-white">About Me:</label>
+                    <label for="id_about_me" class="col-sm-2 col-form-label form-label">About Me:</label>
                     <div class="col-sm-10">
                         <textarea name="about_me" cols="40" rows="10" class="form-control" id="id_about_me" maxlength="120">{{ profile_form.about_me.value }}</textarea>
-                        <p class="text-white raleway-font">{{ profile_form.about_me.errors }}</p>
+                        <p class="form-error raleway-font">{{ profile_form.about_me.errors }}</p>
                     </div>
                   </div>
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label for="id_osu_username" class="col-sm-2 col-form-label text-white">osu! username:</label>
+                    <label for="id_osu_username" class="col-sm-2 col-form-label form-label">osu! username:</label>
                     <div class="col-sm-10">
                         <input name="osu_username" class="form-control" id="id_osu_username" maxlength="20" value="{{ profile_form.osu_username.value }}">
-                        <p class="text-white raleway-font">{{ profile_form.osu_username.errors }}</p>
+                        <p class="form-error raleway-font">{{ profile_form.osu_username.errors }}</p>
                     </div>
                   </div>
             </div>
@@ -131,10 +131,10 @@
             <h2>Theme</h2>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label for="id_theme" class="col-sm-2 col-form-label text-white">Appearance:</label>
+                    <label for="id_theme" class="col-sm-2 col-form-label form-label">Appearance:</label>
                     <div class="col-sm-10 raleway-font">
                         {{ website_config_form | crispy }}
-                        <p class="text-white raleway-font">{{ website_config_form.theme.errors }}</p>
+                        <p class="form-error raleway-font">{{ website_config_form.theme.errors }}</p>
                     </div>
                   </div>
             </div>
@@ -150,7 +150,7 @@
 <div class="container">
     <a id="account"><h1>Account</h1></a>
     <h2>Account Connection</h2>
-    <p class="text-white raleway-font">You can connect your account with your osu! account so you can login by using your osu! account instead of username and password.</p>
+    <p class="raleway-font">You can connect your account with your osu! account so you can login by using your osu! account instead of username and password.</p>
 
     {% if social_account %}
 

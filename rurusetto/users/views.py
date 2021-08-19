@@ -12,7 +12,8 @@ from wiki.function import fetch_created_ruleset
 
 @login_required
 def settings(request):
-    hero_image = "img/737403.png"
+    hero_image = "img/settings-cover-night.jpeg"
+    hero_image_light = 'img/settings-cover-light.png'
     if request.method == 'POST':
         user_form = UserUpdateForm(request.POST, instance=request.user)
         profile_form = ProfileUpdateForm(request.POST,
@@ -78,7 +79,8 @@ def settings(request):
         'social_account': SocialAccount.objects.filter(user=request.user).exists(),
         'can_edit_profile': (not SocialAccount.objects.filter(user=request.user).exists()) or (SocialAccount.objects.filter(user=request.user).exists() and (not request.user.config.update_profile_every_login)),
         'osu_confirm_username': osu_confirm_username,
-        'hero_image': hero_image,
+        'hero_image': static(hero_image),
+        'hero_image_light': static(hero_image_light),
         'opengraph_description': 'All profile and website settings are here!',
         'opengraph_url': resolve_url('settings'),
         'opengraph_image': static(hero_image)

@@ -20,6 +20,13 @@
     font-family: 'JetBrains Mono', monospace;
 }
 
+body.light #wiki li,
+body.light #wiki th,
+body.light #wiki td,
+body.light #wiki hr {
+    color: black;
+}
+
 #wiki li, th, td, hr {
     color: white;
 }

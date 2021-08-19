@@ -94,11 +94,15 @@ def create_ruleset(request):
 
 def wiki_page(request, slug):
     ruleset = get_object_or_404(Ruleset, slug=slug)
+    hero_image = ruleset.cover_image.url
+    hero_image_light = ruleset.cover_image.url
     context = {
         'content': ruleset,
         'source_type': source_link_type(ruleset.source),
         'user_detail': make_wiki_view(ruleset),
         'title': ruleset.name,
+        'hero_image': hero_image,
+        'hero_image_light': hero_image_light,
         'opengraph_description': ruleset.description,
         'opengraph_url': resolve_url('wiki', slug=ruleset.slug),
         'opengraph_image': ruleset.opengraph_image.url

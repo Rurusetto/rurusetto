@@ -398,6 +398,13 @@ button.btn-close {
     color: white;
 }
 
+#nav-listing:focus,
+#nav-status:focus,
+#nav-install:focus,
+#nav-changelog:focus {
+    color: #ff2a87;
+}
+
 /*Class use in JS*/
 
 .hidden {

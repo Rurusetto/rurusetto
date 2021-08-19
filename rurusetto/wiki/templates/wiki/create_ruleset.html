@@ -7,7 +7,7 @@
         <div class="row">
             <p></p>
             <div><h1 class="display-5 fw-bold">Add a new ruleset</h1></div>
-            <p class="text-white" id="hero-description">Let's add a new ruleset! Is it yours? Don't worry! You can add it although you don't make that ruleset.</p>
+            <p id="hero-description">Let's add a new ruleset! Is it yours? Don't worry! You can add it although you don't make that ruleset.</p>
         </div>
     </div>
 </div>
@@ -19,20 +19,20 @@
             <h1>Header</h1>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label text-white">{{ form.name.label_tag }}</label>
+                    <label class="col-sm-2 col-form-label form-label">{{ form.name.label_tag }}</label>
                     <div class="col-sm-10">
                       <input type="text" name="name" class="form-control" required id="id_name">
-                        <p class="text-white raleway-font">{{ form.name.errors }}</p>
+                        <p class="form-error raleway-font">{{ form.name.errors }}</p>
                         <p class="text-muted raleway-font">The ruleset name.</p>
                     </div>
                   </div>
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label text-white">{{ form.description.label_tag }}</label>
+                    <label class="col-sm-2 col-form-label form-label">{{ form.description.label_tag }}</label>
                     <div class="col-sm-10">
                       <textarea name="description" cols="40" rows="10" class="form-control" required id="id_description"></textarea>
-                        <p class="text-white raleway-font">{{ form.description.errors }}</p>
+                        <p class="form-error raleway-font">{{ form.description.errors }}</p>
                         <p class="text-muted raleway-font">The description of ruleset. Will show under ruleset name and at the header of wiki page.</p>
                     </div>
                   </div>
@@ -40,20 +40,20 @@
             <h1>Icon & Logo</h1>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label text-white">{{ form.icon.label_tag }}</label>
+                    <label class="col-sm-2 col-form-label form-label">{{ form.icon.label_tag }}</label>
                     <div class="col-sm-10">
                       <input type="file" name="icon" accept="image/*" id="id_icon" class="form-control" required>
-                        <p class="text-white raleway-font">{{ form.icon.errors }}</p>
+                        <p class="form-error raleway-font">{{ form.icon.errors }}</p>
                         <p class="text-muted raleway-font">An icon that show at in-game header. Recommend shape is circle.</p>
                     </div>
                   </div>
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label text-white">{{ form.logo.label_tag }}</label>
+                    <label class="col-sm-2 col-form-label form-label">{{ form.logo.label_tag }}</label>
                     <div class="col-sm-10">
                         <input type="file" name="logo" accept="image/*" id="id_logo" class="form-control" required>
-                        <p class="text-white raleway-font">{{ form.logo.errors }}</p>
+                        <p class="form-error raleway-font">{{ form.logo.errors }}</p>
                         <p class="text-muted raleway-font">A logo will show in wiki's infobox. It can be not same to an icon.</p>
                     </div>
                   </div>
@@ -64,10 +64,10 @@
             <h1>Wiki Styling</h1>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label text-white">{{ form.cover_image.label_tag }}</label>
+                    <label class="col-sm-2 col-form-label form-label">{{ form.cover_image.label_tag }}</label>
                     <div class="col-sm-10">
                       <input type="file" name="cover_image" accept="image/*" id="id_cover_image" class="form-control">
-                        <p class="text-white raleway-font">{{ form.cover_image.errors }}</p>
+                        <p class="form-error raleway-font">{{ form.cover_image.errors }}</p>
                         <p class="text-muted raleway-font">A picture at the header of the wiki page.</p>
                     </div>
                   </div>
@@ -75,10 +75,10 @@
             <h1>Source</h1>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label text-white">{{ form.source.label_tag }}</label>
+                    <label class="col-sm-2 col-form-label form-label">{{ form.source.label_tag }}</label>
                     <div class="col-sm-10">
                       <input type="url" name="source" maxlength="200" required id="id_source" class="form-control">
-                        <p class="text-white raleway-font">{{ form.source.errors }}</p>
+                        <p class="form-error raleway-font">{{ form.source.errors }}</p>
                         <p class="text-muted raleway-font">A source of the ruleset (or where the player can download this ruleset.) </p>
                         <p class="text-muted raleway-font">If this ruleset is available on GitHub please set this link as link to the repository (Ex. https://github.com/LumpBloom7/sentakki)</p>
                         <p class="text-muted raleway-font">If you get it from patreon, please set this link as the patreon page of the creator. (Ex. https://www.patreon.com/evast/)</p>

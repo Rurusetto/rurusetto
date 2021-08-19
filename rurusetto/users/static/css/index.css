@@ -94,6 +94,10 @@ body.light .mobile-header-text {
     color: black;
 }
 
+body.light .form-label label {
+    color: black;
+}
+
 /*Default theme CSS*/
 
 body {
@@ -351,6 +355,14 @@ button.btn-close {
 
 .changelog p, label, li {
     color: white;
+}
+
+.form-label label{
+    color: white;
+}
+
+.form-error {
+    color: red;
 }
 
 /*Class use in JS*/

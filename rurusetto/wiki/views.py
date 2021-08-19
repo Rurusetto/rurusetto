@@ -32,8 +32,8 @@ def home(request):
 
 
 def changelog(request):
-    hero_image = 'img/changelog-cover-night.jpeg'
-    hero_image_light = 'img/changelog-cover-light.png'
+    hero_image = 'img/changelog-cover-night2.png'
+    hero_image_light = 'img/changelog-cover-light3.png'
 
     context = {
         'changelog_list': Changelog.objects.all().order_by('-time'),

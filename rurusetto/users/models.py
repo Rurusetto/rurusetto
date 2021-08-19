@@ -7,7 +7,7 @@ THEME = (
     # In-system value - Show value
     ('', 'Dark Mode (Default)'),
     ('light', 'Light Mode'),
-    ('sync', 'Sync With System Settings')
+    # ('sync', 'Sync With System Settings')
 )
 
 

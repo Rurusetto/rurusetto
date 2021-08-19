@@ -65,7 +65,8 @@ def listing(request):
 
 @login_required
 def create_ruleset(request):
-    hero_image = "img/743487.jpeg"
+    hero_image = 'img/create-rulesets-cover-night.png'
+    hero_image_light = 'img/create-rulesets-cover-light.png'
     if request.method == 'POST':
         form = RulesetForm(request.POST, request.FILES)
         if form.is_valid():
@@ -82,7 +83,8 @@ def create_ruleset(request):
     context = {
         'form': form,
         'title': 'add a new ruleset',
-        'hero_image': hero_image,
+        'hero_image': static(hero_image),
+        'hero_image_light': static(hero_image_light),
         'opengraph_description': "Let's add a new ruleset! Is it yours? Don't worry! You can add it although you don't make that ruleset.",
         'opengraph_url': resolve_url('create_ruleset'),
         'opengraph_image': static(hero_image)

@@ -122,6 +122,14 @@ body.light #profile-menu {
     color: black;
 }
 
+body.light .modal-body {
+    color: black;
+}
+
+body.light button.btn-close {
+    filter: invert(0);
+}
+
 /*Default theme CSS*/
 
 body {
@@ -335,6 +343,10 @@ a.dropdown-item {
 .modal-body,
 .modal-footer {
     background-color: #4a4a4a;
+}
+
+.modal-body {
+    color: white;
 }
 
 .discord-hover:hover {

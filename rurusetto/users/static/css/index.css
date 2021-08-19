@@ -18,8 +18,14 @@ body.light h6 {
     color: black;
 }
 
-body.light p, label, li {
+body.light p,
+body.light label,
+body.light li {
     color: black;
+}
+
+body.light .text-muted {
+    color: #7b7b7b!important;
 }
 
 body.light .changelog h1,
@@ -105,6 +111,10 @@ body.light .form-label label {
 
 body.light .form-label {
     color: black;
+}
+
+body.light .icon-menu {
+    color: #ff539f;
 }
 
 /*Default theme CSS*/

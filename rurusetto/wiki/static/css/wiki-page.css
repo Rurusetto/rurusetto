@@ -4,6 +4,10 @@
     background-color: #4a4a4a;
 }
 
+body.light .info-box {
+    background-color: #fadce5;
+}
+
 #wiki a {
     text-decoration: unset;
 }
@@ -33,6 +37,10 @@ body.light #wiki hr {
 
 .info-box-head {
     color: white
+}
+
+body.light .info-box-head {
+    color: black;
 }
 
 table {

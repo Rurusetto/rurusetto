@@ -112,7 +112,8 @@ def wiki_page(request, slug):
 
 @login_required
 def edit_ruleset_wiki(request, slug):
-    hero_image = "img/737403.png"
+    hero_image = 'img/edit-wiki-cover-night.jpeg'
+    hero_image_light = 'img/edit-wiki-cover-light.png'
     ruleset = Ruleset.objects.get(slug=slug)
     if request.method == 'POST':
         form = RulesetForm(request.POST, request.FILES, instance=ruleset)
@@ -129,7 +130,8 @@ def edit_ruleset_wiki(request, slug):
         'form': form,
         'name': Ruleset.objects.get(slug=slug).name,
         'title': f'edit {ruleset.name}',
-        'hero_image': hero_image,
+        'hero_image': static(hero_image),
+        'hero_image_light': static(hero_image_light),
         'opengraph_description': f'You are currently edit content on ruleset name "{Ruleset.objects.get(slug=slug).name}".',
         'opengraph_url': resolve_url('edit_wiki', slug=slug),
         'opengraph_image': static(hero_image)

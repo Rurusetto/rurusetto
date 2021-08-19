@@ -117,6 +117,11 @@ body.light .icon-menu {
     color: #ff539f;
 }
 
+body.light #profile-menu {
+    background-color: rgba(255, 255, 255, .8);
+    color: black;
+}
+
 /*Default theme CSS*/
 
 body {
@@ -386,6 +391,11 @@ button.btn-close {
 
 .form-error {
     color: red;
+}
+
+#profile-menu {
+    background-color: rgba(74, 74, 74, .8);
+    color: white;
 }
 
 /*Class use in JS*/

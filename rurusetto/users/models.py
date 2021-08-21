@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.contrib.sitemaps import ping_google
 from django.core.validators import FileExtensionValidator
 from django.db import models
+from PIL import Image
 
 THEME = (
     # In-system value - Show value
@@ -28,6 +29,15 @@ class Profile(models.Model):
             ping_google()
         except Exception:
             pass
+        # Use pillow to resize profile image and cover image
+        img = Image.open(self.image.path)
+        if img.height > 300 or img.width > 300:
+            img.thumbnail((300, 300))
+            img.save(self.image.path)
+        cover = Image.open(self.cover.path)
+        if cover.height > 1080 or cover.width > 1920:
+            cover.thumbnail((1920, 1080))
+            cover.save(self.cover.path)
 
 
 class Config(models.Model):

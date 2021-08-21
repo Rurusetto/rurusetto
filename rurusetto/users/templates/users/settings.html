@@ -89,7 +89,7 @@
                  <div class="mb-3 row">
                     <label for="id_image" class="col-sm-2 col-form-label form-label">Profile picture:</label>
                     <div class="col-sm-10">
-                      <div class="raleway-font">Current Profile : <a href="{{ profile_form.image.value.url }}">{{ profile_form.image.value }}</a></div>
+                      <div class="raleway-font form-current">Current Profile : <a href="{{ profile_form.image.value.url }}">{{ profile_form.image.value }}</a></div>
                       <input type="file" name="image" accept="image/*" id="id_image" class="form-control">
                         <p class="form-error raleway-font">{{ profile_form.image.errors }}</p>
                     </div>
@@ -99,7 +99,7 @@
                  <div class="mb-3 row">
                     <label for="id_cover" class="col-sm-2 col-form-label form-label">Profile page cover image:</label>
                     <div class="col-sm-10">
-                      <div class="raleway-font">Current Cover : <a href="{{ profile_form.cover.value.url }}">{{ profile_form.cover.value }}</a></div>
+                      <div class="raleway-font form-current">Current Cover : <a href="{{ profile_form.cover.value.url }}">{{ profile_form.cover.value }}</a></div>
                       <input type="file" name="cover" accept="image/*" id="id_cover" class="form-control">
                         <p class="form-error raleway-font">{{ profile_form.cover.errors }}</p>
                     </div>

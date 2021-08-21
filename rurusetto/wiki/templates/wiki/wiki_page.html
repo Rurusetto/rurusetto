@@ -32,7 +32,7 @@
         <div class="row">
             {% if user.is_authenticated %}
             <div class="col-sm-2 hvr-icon-bounce">
-                <p><a class="text-decoration-none text-center spacing-hover-short" target="_blank" href="{% url "edit_wiki" content.slug %}"><i class="fas fa-edit icon-menu hvr-icon"></i> Edit This Page</a></p>
+                <p><a class="text-decoration-none text-center spacing-hover-short" href="{% url "edit_wiki" content.slug %}"><i class="fas fa-edit icon-menu hvr-icon"></i> Edit This Page</a></p>
             </div>
             {% endif %}
             <div class="col-sm-2 hvr-icon-bounce">

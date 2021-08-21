@@ -42,7 +42,7 @@
                  <div class="mb-3 row">
                     <label class="col-sm-2 col-form-label form-label" for="id_icon">{{ form.icon.label_tag }}</label>
                     <div class="col-sm-10">
-                        <div class="raleway-font">Current Icon : <a href="{{ form.icon.value.url }}">{{ form.icon.value }}</a></div>
+                        <div class="raleway-font form-current">Current Icon : <a href="{{ form.icon.value.url }}">{{ form.icon.value }}</a></div>
                       <input type="file" name="icon" accept="image/*" id="id_icon" class="form-control">
                         <p class="form-error raleway-font">{{ form.icon.errors }}</p>
                         <p class="text-muted raleway-font">An icon that show at in-game header. Recommend shape is circle.</p>
@@ -53,7 +53,7 @@
                  <div class="mb-3 row">
                     <label class="col-sm-2 col-form-label form-label" for="id_logo">{{ form.logo.label_tag }}</label>
                     <div class="col-sm-10">
-                        <div class="raleway-font">Current Logo : <a href="{{ form.logo.value.url }}">{{ form.logo.value }}</a></div>
+                        <div class="raleway-font form-current">Current Logo : <a href="{{ form.logo.value.url }}">{{ form.logo.value }}</a></div>
                         <input type="file" name="logo" accept="image/*" id="id_logo" class="form-control">
                         <p class="form-error raleway-font">{{ form.logo.errors }}</p>
                         <p class="text-muted raleway-font">A logo will show in wiki's infobox. It can be not same to an icon.</p>
@@ -69,7 +69,7 @@
                  <div class="mb-3 row">
                     <label class="col-sm-2 col-form-label form-label" for="id_cover_image">{{ form.cover_image.label_tag }}</label>
                     <div class="col-sm-10">
-                       <div class="raleway-font"> Current Cover Image : <a href="{{ form.cover_image.value.url }}">{{ form.cover_image.value }}</a></div>
+                       <div class="raleway-font form-current"> Current Cover Image : <a href="{{ form.cover_image.value.url }}">{{ form.cover_image.value }}</a></div>
                       <input type="file" name="cover_image" accept="image/*" id="id_cover_image" class="form-control">
                         <p class="form-error raleway-font">{{ form.cover_image.errors }}</p>
                         <p class="text-muted raleway-font">A picture at the header of the wiki page.</p>
@@ -80,7 +80,7 @@
                  <div class="mb-3 row">
                     <label class="col-sm-2 col-form-label form-label" for="id_opengraph_image">Opengraph Preview Image:</label>
                     <div class="col-sm-10">
-                       <div class="raleway-font"> Current Opengraph Preview Image : <a href="{{ form.opengraph_image.value.url }}">{{ form.opengraph_image.value }}</a></div>
+                       <div class="raleway-font form-current"> Current Opengraph Preview Image : <a href="{{ form.opengraph_image.value.url }}">{{ form.opengraph_image.value }}</a></div>
                       <input type="file" name="opengraph_image" accept="image/*" id="id_opengraph_image" class="form-control">
                         <p class="form-error raleway-font">{{ form.opengraph_image.errors }}</p>
                         <p class="text-muted raleway-font">A picture that will show on when someone share the link and the social network app will show this picture as a preview image.</p>

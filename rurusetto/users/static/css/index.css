@@ -130,6 +130,10 @@ body.light button.btn-close {
     filter: invert(0);
 }
 
+body.light .form-current {
+    color: black;
+}
+
 /*Default theme CSS*/
 
 body {
@@ -415,6 +419,10 @@ button.btn-close {
 #nav-install:focus,
 #nav-changelog:focus {
     color: #ff2a87;
+}
+
+.form-current {
+    color: white;
 }
 
 /*Class use in JS*/

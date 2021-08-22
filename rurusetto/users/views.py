@@ -33,13 +33,15 @@ def settings(request):
                     messages.success(request, f'Your settings has been updated!')
                     return redirect('settings')
                 else:
-                    # Nothing changed here
+                    # Nothing changed here except website config that must be save
+                    website_config_form.save()
                     messages.success(request, f'Your settings has been updated!')
                     return redirect('settings')
             else:
                 if not profile_sync_form['update_profile_every_login'].value() and request.user.config.update_profile_every_login:
                     # User want to change sync config from True to False, save only sync config value
                     profile_sync_form.save()
+                    website_config_form.save()
                     messages.success(request, f'Your settings has been updated!')
                     return redirect('settings')
                 else:

@@ -56,7 +56,7 @@ class ProfileSitemap(Sitemap):
 
 
 class StaticSitemap(Sitemap):
-    changefreq = "always"
+    changefreq = "daily"
     priority = 0.5
 
     def items(self):

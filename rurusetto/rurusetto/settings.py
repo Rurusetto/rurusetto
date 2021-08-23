@@ -206,3 +206,14 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 
 USE_X_FORWARDED_HOST = True
+
+REST_FRAMEWORK = {
+    'DEFAULT_THROTTLE_CLASSES': [
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle'
+    ],
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '500/minute',
+        'user': '500/minute'
+    }
+}

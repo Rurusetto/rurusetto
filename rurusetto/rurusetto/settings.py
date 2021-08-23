@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.osu',
+    'rest_framework',
 ]
 
 SITE_ID = 1
@@ -203,3 +204,5 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
+
+USE_X_FORWARDED_HOST = True

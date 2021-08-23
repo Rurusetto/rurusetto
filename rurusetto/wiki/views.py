@@ -2,6 +2,10 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404, resolve_url
 from django.templatetags.static import static
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse, JsonResponse
+from rest_framework.parsers import JSONParser
+from .serializers import RulesetSerializer
 from .models import Changelog, Ruleset
 from .forms import RulesetForm
 from .function import make_listing_view, make_wiki_view, source_link_type
@@ -137,3 +141,24 @@ def edit_ruleset_wiki(request, slug):
         'opengraph_image': static(hero_image)
     }
     return render(request, 'wiki/edit_ruleset_wiki.html', context)
+
+
+@csrf_exempt
+def ruleset_list(request):
+    if request.method == 'GET':
+        rulesets = Ruleset.objects.all()
+        serializer = RulesetSerializer(rulesets, many=True)
+        return JsonResponse(serializer.data, safe=False)
+
+
+@csrf_exempt
+def ruleset_detail(request, slug):
+    # try to fetch ruleset from database
+    try:
+        ruleset = Ruleset.objects.get(slug=slug)
+    except Ruleset.DoesNotExist:
+        return HttpResponse(status=404)
+
+    if request.method == 'GET':
+        serializer = RulesetSerializer(ruleset)
+        return JsonResponse(serializer.data)

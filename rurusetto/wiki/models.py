@@ -61,3 +61,23 @@ class Ruleset(models.Model):
             ping_google()
         except Exception:
             pass
+
+
+class CustomWiki(models.Model):
+    time = models.DateTimeField(auto_now_add=True)
+    last_edited_at = models.DateTimeField(auto_now=True, editable=True)
+
+    creator = models.CharField(default="0", max_length=10)
+    last_edited_by = models.CharField(default="0", max_length=10)
+
+    content = MDTextField()
+
+    def __str__(self):
+        return f'{self.version} changelog ({self.type})'
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        try:
+            ping_google()
+        except Exception:
+            pass

@@ -64,6 +64,8 @@ class Ruleset(models.Model):
 
 
 class CustomWiki(models.Model):
+    title = models.CharField(default="", max_length=100)
+
     time = models.DateTimeField(auto_now_add=True)
     last_edited_at = models.DateTimeField(auto_now=True, editable=True)
 

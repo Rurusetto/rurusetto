@@ -143,8 +143,6 @@ def edit_ruleset_wiki(request, slug):
     return render(request, 'wiki/edit_ruleset_wiki.html', context)
 
 
-# def how_to_install(request):
-
 def install(request):
     hero_image = 'img/install-cover-night.jpeg'
     hero_image_light = 'img/install-cover-light.png'
@@ -159,6 +157,7 @@ def install(request):
     return render(request, 'wiki/install.html', context)
 
 # Views for API
+
 
 @csrf_exempt
 def ruleset_list(request):

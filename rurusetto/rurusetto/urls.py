@@ -28,7 +28,7 @@ from wiki.models import Ruleset
 
 
 class WikiSitemap(Sitemap):
-    changefreq = "always"
+    changefreq = "daily"
     priority = 0.5
 
     def items(self):
@@ -42,7 +42,7 @@ class WikiSitemap(Sitemap):
 
 
 class ProfileSitemap(Sitemap):
-    changefreq = "always"
+    changefreq = "daily"
     priority = 0.5
 
     def items(self):

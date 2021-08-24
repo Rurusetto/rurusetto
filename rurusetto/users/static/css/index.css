@@ -134,6 +134,10 @@ body.light .form-current {
     color: black;
 }
 
+body.light #install-logo {
+    color: black;
+}
+
 /*Default theme CSS*/
 
 body {
@@ -422,6 +426,23 @@ button.btn-close {
 }
 
 .form-current {
+    color: white;
+}
+
+.install-text {
+    font-size: 20px;
+}
+
+.install-header {
+    font-size: 50px;
+}
+
+.install-img {
+    max-width: 80%;
+    border-radius: 10px;
+}
+
+#install-logo {
     color: white;
 }
 

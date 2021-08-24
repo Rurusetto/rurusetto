@@ -144,8 +144,8 @@ def edit_ruleset_wiki(request, slug):
 
 
 def install(request):
-    hero_image = 'img/install-cover-night.jpeg'
-    hero_image_light = 'img/install-cover-light.png'
+    hero_image = 'img/install-cover-night.png'
+    hero_image_light = 'img/install-cover-light.jpeg'
     context = {
         'title': 'install and update rulesets',
         'hero_image': static(hero_image),

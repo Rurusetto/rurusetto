@@ -145,9 +145,9 @@ def edit_ruleset_wiki(request, slug):
 
 @login_required
 def add_subpage(request, slug):
-    hero_image = 'img/add_subpage-cover-night.png'
-    hero_image_light = 'img/add_subpage-cover-light.png'
     target_ruleset = Ruleset.objects.get(slug=slug)
+    hero_image = 'img/add-subpage-cover-night.jpeg'
+    hero_image_light = 'img/add-subpage-cover-light.png'
     if request.method == 'POST':
         form = SubpageForm(request.POST, request.FILES)
         if form.is_valid():
@@ -156,8 +156,8 @@ def add_subpage(request, slug):
             form.instance.slug = slugify(unidecode(form.cleaned_data.get('title')))
             form.save()
             title = form.cleaned_data.get('title')
-            messages.success(request, f'Subpage "{title}" for {target_ruleset.name} has created! ')
-            return redirect('listing')
+            messages.success(request, f'Subpage "{title}" for {target_ruleset.name} has been created! ')
+            return redirect('wiki', slug=slug)
     else:
         form = SubpageForm()
     context = {

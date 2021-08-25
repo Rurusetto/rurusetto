@@ -63,6 +63,19 @@ class Ruleset(models.Model):
             pass
 
 
+class Subpage(models.Model):
+    ruleset_id = models.CharField(default="", max_length=10)
+
+    title = models.CharField(default="", max_length=50)
+    slug = models.SlugField(default="", max_length=20)
+
+    content = MDTextField()
+
+    last_edited_by = models.CharField(default="0", max_length=10)
+    last_edited_at = models.DateTimeField(auto_now=True, editable=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+
 class CustomWiki(models.Model):
     title = models.CharField(default="", max_length=100)
 

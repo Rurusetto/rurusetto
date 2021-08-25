@@ -64,10 +64,10 @@ class Ruleset(models.Model):
 
 
 class Subpage(models.Model):
-    ruleset_id = models.CharField(default="", max_length=10)
+    ruleset_id = models.CharField(default="0", max_length=10)
 
     title = models.CharField(default="", max_length=50)
-    slug = models.SlugField(default="", max_length=20)
+    slug = models.SlugField(default="", max_length=50)
 
     content = MDTextField()
 

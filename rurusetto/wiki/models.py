@@ -71,9 +71,13 @@ class Subpage(models.Model):
 
     content = MDTextField()
 
+    creator = models.CharField(default="0", max_length=10)
     last_edited_by = models.CharField(default="0", max_length=10)
     last_edited_at = models.DateTimeField(auto_now=True, editable=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.title} (Subpage of {Ruleset.objects.get(id=int(self.ruleset_id)).name})'
 
 
 class CustomWiki(models.Model):

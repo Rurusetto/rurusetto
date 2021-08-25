@@ -7,7 +7,7 @@ from django.http import HttpResponse, JsonResponse
 from rest_framework.parsers import JSONParser
 from .serializers import RulesetSerializer
 from .models import Changelog, Ruleset
-from .forms import RulesetForm
+from .forms import RulesetForm, SubpageForm
 from .function import make_listing_view, make_wiki_view, source_link_type
 from unidecode import unidecode
 from django.template.defaultfilters import slugify
@@ -143,6 +143,35 @@ def edit_ruleset_wiki(request, slug):
     return render(request, 'wiki/edit_ruleset_wiki.html', context)
 
 
+@login_required
+def add_subpage(request, slug):
+    hero_image = 'img/add_subpage-cover-night.png'
+    hero_image_light = 'img/add_subpage-cover-light.png'
+    target_ruleset = Ruleset.objects.get(slug=slug)
+    if request.method == 'POST':
+        form = SubpageForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.instance.creator = request.user.id
+            form.instance.last_edited_by = request.user.id
+            form.instance.slug = slugify(unidecode(form.cleaned_data.get('title')))
+            form.save()
+            title = form.cleaned_data.get('title')
+            messages.success(request, f'Subpage "{title}" for {target_ruleset.name} has created! ')
+            return redirect('listing')
+    else:
+        form = SubpageForm()
+    context = {
+        'form': form,
+        'title': f'add a new subpage for {target_ruleset.name}',
+        'hero_image': static(hero_image),
+        'hero_image_light': static(hero_image_light),
+        'opengraph_description': f'You are currently add a subpage for ruleset name "{target_ruleset.name}".',
+        'opengraph_url': resolve_url('add_subpage', slug=slug),
+        'opengraph_image': static(hero_image)
+    }
+    return render(request, 'wiki/add_subpage.html', context)
+
+
 def install(request):
     hero_image = 'img/install-cover-night.png'
     hero_image_light = 'img/install-cover-light.jpeg'
@@ -155,6 +184,7 @@ def install(request):
         'opengraph_image': static(hero_image)
     }
     return render(request, 'wiki/install.html', context)
+
 
 # Views for API
 

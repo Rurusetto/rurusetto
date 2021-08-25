@@ -86,7 +86,6 @@
             <li><a class="dropdown-item spacing-hover" href="{% url "settings" %}">Settings</a></li>
             <li><a class="dropdown-item spacing-hover" href="{% url "profile" user.id %}">Profile</a></li>
             <li><hr class="dropdown-divider"></li>
-{#            <li><a class="dropdown-item spacing-hover" href="{% url 'account_logout' %}">Sign out</a></li>#}
             <li><a class="dropdown-item spacing-hover" id="signout-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Sign out</a></li>
           </ul>
         </div>
@@ -120,7 +119,7 @@
           <div class="list-group border-0">
             <a href="{% url 'listing' %}" class="list-group-item list-group-item-action mobile-header-text">Listing</a>
             <a href="#" class="list-group-item list-group-item-action mobile-header-text">Status</a>
-            <a href="#" class="list-group-item list-group-item-action mobile-header-text">Install</a>
+            <a href="{% url 'install' %}" class="list-group-item list-group-item-action mobile-header-text">Install</a>
             <a href="{% url 'changelog' %}" class="list-group-item list-group-item-action mobile-header-text">Changelog</a>
             <a href="#collapseProfileMenu" class="list-group-item list-group-item-action mobile-header-text profile-menu" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapseProfileMenu" onclick="rotateArrowMenu()" id="profile-menu"><img id="profile-picture-mobile" src="{{ user.profile.image.url }}" alt="{{ user.username }}" height="32" width="32" class="rounded-circle"> {{ user.username }} <i class="fas fa-chevron-down" id="arrow-profile-menu"></i></a>
             <div class="collapse" id="collapseProfileMenu">
@@ -147,7 +146,7 @@
           <div class="list-group border-0">
             <a href="{% url 'listing' %}" class="list-group-item list-group-item-action mobile-header-text">Listing</a>
             <a href="#" class="list-group-item list-group-item-action mobile-header-text">Status</a>
-            <a href="#" class="list-group-item list-group-item-action mobile-header-text">Install</a>
+            <a href="{% url 'install' %}" class="list-group-item list-group-item-action mobile-header-text">Install</a>
             <a href="{% url 'changelog' %}" class="list-group-item list-group-item-action mobile-header-text">Changelog</a>
             <a href="{% url 'account_login' %}" class="list-group-item list-group-item-action mobile-header-text">Sign In</a>
             <a href="{% url 'account_signup' %}" class="list-group-item list-group-item-action mobile-header-text">Sign Up</a>

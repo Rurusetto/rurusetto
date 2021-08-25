@@ -24,10 +24,10 @@
       {% for changelog in changelog_list %}
           <div class="row mb-3">
               {% if changelog.type == "pre-release" %}
-                  <h1>{{ changelog.version }} <span class="badge rounded-pill bg-warning text-dark fs-5">{{ changelog.type }}</span></h1>
+                  <h1 id="{{ changelog.version }}">{{ changelog.version }} <span class="badge rounded-pill bg-warning text-dark fs-5">{{ changelog.type }}</span></h1>
               {% endif %}
               {% if changelog.type == "stable" %}
-                  <h1>{{ changelog.version }} <span class="badge rounded-pill bg-success fs-5">{{ changelog.type }}</span></h1>
+                  <h1 id="{{ changelog.version }}">{{ changelog.version }} <span class="badge rounded-pill bg-success fs-5">{{ changelog.type }}</span></h1>
               {% endif %}
                     <p class="text-muted">Release at {{ changelog.time|date:"F j, Y h:i A" }} UTC</p>
 

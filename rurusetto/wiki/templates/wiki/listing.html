@@ -6,8 +6,8 @@
     <div class="container align-middle">
         <div class="row">
             <p></p>
-            <div><h1 class="display-5 fw-bold">Listing</h1></div>
-            <p>List of available rulesets.</p>
+            <div data-aos="fade-up" data-aos-duration="600"><h1 class="display-5 fw-bold">Listing</h1></div>
+            <p data-aos="fade-up" data-aos-duration="700">List of available rulesets.</p>
         </div>
     </div>
 </div>
@@ -16,7 +16,7 @@
     <div class="row">
         {% if user.is_authenticated %}
         <div class="col-sm-2 hvr-icon-bounce">
-            <p><a class="text-decoration-none text-center spacing-hover-short" href="{% url 'create_ruleset' %}"><i class="fas fa-plus icon-menu hvr-icon"></i> Add a new ruleset</a></p>
+            <p data-aos="fade-up" data-aos-duration="800"><a class="text-decoration-none text-center spacing-hover-short" href="{% url 'create_ruleset' %}"><i class="fas fa-plus icon-menu hvr-icon"></i> Add a new ruleset</a></p>
         </div>
         {% else %}
             <p></p>

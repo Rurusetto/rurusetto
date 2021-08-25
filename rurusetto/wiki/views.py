@@ -151,6 +151,7 @@ def add_subpage(request, slug):
     if request.method == 'POST':
         form = SubpageForm(request.POST, request.FILES)
         if form.is_valid():
+            form.instance.ruleset_id = target_ruleset.id
             form.instance.creator = request.user.id
             form.instance.last_edited_by = request.user.id
             form.instance.slug = slugify(unidecode(form.cleaned_data.get('title')))

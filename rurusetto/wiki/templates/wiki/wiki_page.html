@@ -65,6 +65,25 @@
             {% endif %}
         </div>
         <div class="row">
+            <div class="accordion" id="subpage-index">
+                <div class="accordion-item">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="subpage-heading">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#subpageCollapse" aria-expanded="false" aria-controls="subpageCollapse">
+                            <i class="fas fa-file-alt"></i> Subpage Index
+                          </button>
+                        </h2>
+                        <div id="subpageCollapse" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            
+                          </div>
+                        </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+        <p></p>
+        <div class="row">
             <div class="col-sm-9" id="wiki">
                 {{ content.content | convert_markdown | safe }}
                 <p></p>

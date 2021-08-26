@@ -138,6 +138,32 @@ body.light #install-logo {
     color: black;
 }
 
+body.light button.accordion-button,
+body.light button.accordion-button:focus,
+body.light button.accordion-button:not(.collapsed) {
+    color: black;
+}
+
+body.light button.accordion-button.collapsed,
+body.light button.accordion-button:not(.collapsed) {
+    background-color: #fadce5;
+    border-color: black;
+}
+
+body.light button.accordion-button:focus {
+    background-color: #fadce5;
+    border-color: white;
+}
+
+body.light .accordion-body {
+    background-color: white;
+}
+
+body.light .accordion-button::after,
+body.light .accordion-button:not(.collapsed)::after {
+    filter: invert(0);
+}
+
 /*Default theme CSS*/
 
 body {
@@ -444,6 +470,35 @@ button.btn-close {
 
 #install-logo {
     color: white;
+}
+
+button.accordion-button,
+button.accordion-button:focus,
+button.accordion-button:not(.collapsed) {
+    color: white;
+}
+
+button.accordion-button.collapsed,
+button.accordion-button:not(.collapsed) {
+    background-color: #4a4a4a;
+    border-color: white;
+}
+
+button.accordion-button:focus {
+    background-color: #6f6f6f;
+    border-color: #6f6f6f;
+}
+
+.accordion-body {
+    background-color: #4a4a4a;
+}
+
+.accordion-button::after {
+    filter: invert(1);
+}
+
+.accordion-button:not(.collapsed)::after {
+    filter: invert(0.4);
 }
 
 /*Class use in JS*/

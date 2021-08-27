@@ -65,15 +65,7 @@
             {% endif %}
         </div>
         {% if subpage %}
-        {% if user.config.subpage_index == "button" %}
-        <div class="row" data-aos="fade-up" data-aos-duration="1000">
-            <div class="col-md-12">
-                {% for subpage_item in subpage %}
-                <a class="btn btn-subpage" href="{% url 'subpage' content.slug subpage_item.slug %}" role="button">{{ subpage_item.title }}</a>
-                {% endfor %}
-            </div>
-        </div>
-        {% else %}
+        {% if user.config.subpage_index == "list" %}
         <div class="row">
             <div class="accordion" id="subpage-index" data-aos="fade-up" data-aos-duration="1000">
                 <div class="accordion-item">
@@ -92,6 +84,14 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="row" data-aos="fade-up" data-aos-duration="1000">
+            <div class="col-md-12">
+                {% for subpage_item in subpage %}
+                <a class="btn btn-subpage" href="{% url 'subpage' content.slug subpage_item.slug %}" role="button">{{ subpage_item.title }}</a>
+                {% endfor %}
             </div>
         </div>
         {% endif %}

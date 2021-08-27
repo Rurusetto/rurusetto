@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import Profile, Config, THEME
+from .models import Profile, Config, THEME, SUBPAGE_INDEX
 
 
 class UserRegisterForm(UserCreationForm):
@@ -41,10 +41,11 @@ class UpdateProfileEveryLoginConfigForm(forms.ModelForm):
 
 class UserConfigForm(forms.ModelForm):
     theme = forms.ChoiceField(label="", choices=THEME, required=False)
+    subpage_index = forms.ChoiceField(label="", choices=SUBPAGE_INDEX, required=False)
 
     class Meta:
         model = Config
-        fields = ['theme']
+        fields = ['theme', 'subpage_index']
 
 
 class UserDeleteAccountForm(forms.ModelForm):

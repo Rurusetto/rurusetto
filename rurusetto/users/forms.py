@@ -41,11 +41,18 @@ class UpdateProfileEveryLoginConfigForm(forms.ModelForm):
 
 class UserConfigForm(forms.ModelForm):
     theme = forms.ChoiceField(label="", choices=THEME, required=False)
+
+    class Meta:
+        model = Config
+        fields = ['theme']
+
+
+class UserSubpageConfigForm(forms.ModelForm):
     subpage_index = forms.ChoiceField(label="", choices=SUBPAGE_INDEX, required=False)
 
     class Meta:
         model = Config
-        fields = ['theme', 'subpage_index']
+        fields = ['subpage_index']
 
 
 class UserDeleteAccountForm(forms.ModelForm):

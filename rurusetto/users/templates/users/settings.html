@@ -141,6 +141,16 @@
                     </div>
                   </div>
             </div>
+            <div class="fieldWrapper">
+                 <div class="mb-3 row">
+                    <label for="id_subpage_index" class="col-sm-2 col-form-label form-label">Subpage Index:</label>
+                    <div class="col-sm-10 raleway-font">
+                        {{ website_subpage_config_form | crispy }}
+                        <p class="form-error raleway-font">{{ website_config_form.theme.errors }}</p>
+                        <p class="text-muted raleway-font">Setting of the appearance on the subpage menu at the top of the rulesets page.</p>
+                    </div>
+                  </div>
+            </div>
 
 {#            <a id="website"><h1>Website Settings</h1></a>#}
             <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right raleway-font">Submit</button>

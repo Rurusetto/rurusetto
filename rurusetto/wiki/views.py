@@ -209,7 +209,7 @@ def subpage(request, rulesets_slug, subpage_slug):
 
 @login_required
 def edit_subpage(request, rulesets_slug, subpage_slug):
-    hero_image = 'img/edit-subpage-cover-night.jpeg'
+    hero_image = 'img/edit-subpage-cover-night.png'
     hero_image_light = 'img/edit-subpage-cover-light.png'
     ruleset = Ruleset.objects.get(slug=rulesets_slug)
     subpage = Subpage.objects.get(slug=subpage_slug)

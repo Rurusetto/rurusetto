@@ -15,13 +15,13 @@
                     {% endif %}
                 {% else %}
                     {% if content.verified %}
-                        <div data-aos="fade-up" data-aos-duration="700"><a href="{% url "profile" user_detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><p class="text-muted"><img src="{{ user_detail.1.profile.image.url }}" alt="{{ user_detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon" style="transition: 0.2s"> {{ user_detail.1.username }} <i class="fas hvr-icon fa-check-circle icon-menu"></i></p></a></div>
+                        <div data-aos="fade-up" data-aos-duration="600"><a href="{% url "profile" user_detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><p class="text-muted"><img src="{{ user_detail.1.profile.image.url }}" alt="{{ user_detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon" style="transition: 0.2s"> {{ user_detail.1.username }} <i class="fas hvr-icon fa-check-circle icon-menu"></i></p></a></div>
                     {% else %}
-                        <div data-aos="fade-up" data-aos-duration="700"><a href="{% url "profile" user_detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><p class="text-muted"><img src="{{ user_detail.1.profile.image.url }}" alt="{{ user_detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon" style="transition: 0.2s"> {{ user_detail.1.username }}</p></a></div>
+                        <div data-aos="fade-up" data-aos-duration="600"><a href="{% url "profile" user_detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><p class="text-muted"><img src="{{ user_detail.1.profile.image.url }}" alt="{{ user_detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon" style="transition: 0.2s"> {{ user_detail.1.username }}</p></a></div>
                     {% endif %}
                 {% endif %}
 
-                <div data-aos="fade-up" data-aos-duration="800"><h1 class="display-5 fw-bold">{{ content.name }}</h1></div>
+                <div data-aos="fade-up" data-aos-duration="700"><h1 class="display-5 fw-bold">{{ content.name }}</h1></div>
                 <p data-aos="fade-up" data-aos-duration="800">{{ content.description }}</p>
             </div>
         </div>
@@ -66,7 +66,7 @@
         </div>
         {% if subpage %}
         {% if user.config.subpage_index == "button" %}
-        <div class="row">
+        <div class="row" data-aos="fade-up" data-aos-duration="1000">
             <div class="col-md-12">
                 {% for subpage_item in subpage %}
                 <button type="button" class="btn btn-subpage">{{ subpage_item.title }}</button>

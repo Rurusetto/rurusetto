@@ -69,7 +69,7 @@
         <div class="row" data-aos="fade-up" data-aos-duration="1000">
             <div class="col-md-12">
                 {% for subpage_item in subpage %}
-                <button type="button" class="btn btn-subpage">{{ subpage_item.title }}</button>
+                <a class="btn btn-subpage" href="{% url 'subpage' content.slug subpage_item.slug %}" role="button">{{ subpage_item.title }}</a>
                 {% endfor %}
             </div>
         </div>
@@ -86,7 +86,7 @@
                         <div id="subpageCollapse" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                           <div class="accordion-body">
                               {% for subpage_item in subpage %}
-                                  <li>{{ subpage_item.title }}</li>
+                                  <li><a href="{% url 'subpage' content.slug subpage_item.slug %}" class="text-decoration-none spacing-hover">{{ subpage_item.title }}</a></li>
                               {% endfor %}
                           </div>
                         </div>

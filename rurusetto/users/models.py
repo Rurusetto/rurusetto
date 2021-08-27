@@ -12,8 +12,8 @@ THEME = (
 )
 
 SUBPAGE_INDEX = (
+    ('button', 'Button (Default)'),
     ('list', 'List with expandable accordance'),
-    ('button', 'Button')
 )
 
 

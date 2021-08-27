@@ -1,0 +1,62 @@
+{% extends "wiki/base.html" %}
+{% load static %}
+{% load markdown_converter %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/wiki-page.css' %}">
+    <div class="px-4 py-4 my-4 align-middle hero">
+        <div class="container align-middle">
+            <div class="row">
+                <p></p>
+                <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" data-aos="fade-up" data-aos-duration="600">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item hvr-picture-bounce"><img src="{{ ruleset.icon.url }}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> <a href="#" class="text-decoration-none spacing-hover">{{ ruleset.name }}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ content.title }}</li>
+                  </ol>
+                </nav>
+                <div data-aos="fade-up" data-aos-duration="700"><h1 class="display-5 fw-bold">{{ content.title }}</h1></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2 hvr-icon-bounce">
+                <p data-aos="fade-up" data-aos-duration="900"><a class="text-decoration-none text-center spacing-hover-short" href="{% url "wiki" ruleset.slug %}"><i class="fas fa-chevron-circle-left icon-menu hvr-icon"></i> Back to main page</a></p>
+            </div>
+            {% if user.is_authenticated %}
+            <div class="col-sm-2 hvr-icon-bounce">
+                <p data-aos="fade-up" data-aos-duration="950"><a class="text-decoration-none text-center spacing-hover-short" href="{% url "edit_wiki" content.slug %}"><i class="fas fa-edit icon-menu hvr-icon"></i> Edit This Subpage</a></p>
+            </div>
+            {% endif %}
+        </div>
+        <div class="row">
+             {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags == "success"%}
+                        <div class="alert alert-success raleway-font">
+                            <i class="fas fa-check"></i> {{ message }}
+                        </div>
+                    {% endif %}
+                    {% if message.tags == "error"%}
+                        <div class="alert alert-danger raleway-font">
+                            <i class="fas fa-times"></i> {{ message }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+              {% endif %}
+        </div>
+        <div class="row" id="last-edit">
+            {% if user_detail == None %}
+            <p class="text-muted" data-aos="fade-up" data-aos-duration="800">Last edited by <img src="{% static 'img/default.jpeg'%}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User at {{ content.last_edited_at|date:"F j, Y h:i A" }} UTC</p>
+            {% else %}
+            <p class="text-muted" data-aos="fade-up" data-aos-duration="800">Last edited by <a href="{% url "profile" user_detail.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><img src="{{ user_detail.profile.image.url }}" alt="{{ user_detail.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ user_detail.username }}</a> at {{ content.last_edited_at|date:"F j, Y h:i A" }} UTC</p>
+            {% endif %}
+        </div>
+        <div class="row">
+            <div class="col-sm-9" id="wiki">
+                {{ content.content | convert_markdown | safe }}
+                <p></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

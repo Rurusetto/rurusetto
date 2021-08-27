@@ -8,7 +8,7 @@ from rest_framework.parsers import JSONParser
 from .serializers import RulesetSerializer
 from .models import Changelog, Ruleset, Subpage
 from .forms import RulesetForm, SubpageForm
-from .function import make_listing_view, make_wiki_view, source_link_type
+from .function import make_listing_view, make_wiki_view, source_link_type, get_user_by_id
 from unidecode import unidecode
 from django.template.defaultfilters import slugify
 
@@ -186,6 +186,25 @@ def install(request):
         'opengraph_image': static(hero_image)
     }
     return render(request, 'wiki/install.html', context)
+
+
+def subpage(request, rulesets_slug, subpage_slug):
+    subpage = get_object_or_404(Subpage, slug=subpage_slug)
+    ruleset = get_object_or_404(Ruleset, slug=rulesets_slug)
+    hero_image = ruleset.cover_image.url
+    hero_image_light = ruleset.cover_image.url
+    context = {
+        'content': subpage,
+        'ruleset': ruleset,
+        'user_detail': get_user_by_id(int(subpage.last_edited_by)),
+        'title': f"{ruleset.name} > {subpage.title}",
+        'hero_image': hero_image,
+        'hero_image_light': hero_image_light,
+        'opengraph_description': ruleset.description,
+        'opengraph_url': resolve_url('subpage', rulesets_slug=ruleset.slug, subpage_slug=subpage.slug),
+        'opengraph_image': ruleset.opengraph_image.url
+    }
+    return render(request, 'wiki/subpage.html', context)
 
 
 # Views for API

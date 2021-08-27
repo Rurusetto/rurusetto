@@ -64,6 +64,7 @@
             <p class="text-muted" data-aos="fade-up" data-aos-duration="1000">Last edited by <a href="{% url "profile" user_detail.2.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><img src="{{ user_detail.2.profile.image.url }}" alt="{{ user_detail.2.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ user_detail.2.username }}</a> at {{ content.last_edited_at|date:"F j, Y h:i A" }} UTC</p>
             {% endif %}
         </div>
+        {% if subpage %}
         <div class="row">
             <div class="accordion" id="subpage-index" data-aos="fade-up" data-aos-duration="1000">
                 <div class="accordion-item">
@@ -80,10 +81,11 @@
                               {% endfor %}
                           </div>
                         </div>
-                  </div>
-              </div>
+                    </div>
+                </div>
             </div>
         </div>
+        {% endif %}
         <p></p>
         <div class="row">
             <div class="col-sm-9" id="wiki">

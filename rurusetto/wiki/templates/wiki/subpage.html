@@ -25,7 +25,7 @@
             </div>
             {% if user.is_authenticated %}
             <div class="col-sm-2 hvr-icon-bounce">
-                <p data-aos="fade-up" data-aos-duration="950"><a class="text-decoration-none text-center spacing-hover-short" href="{% url "edit_wiki" content.slug %}"><i class="fas fa-edit icon-menu hvr-icon"></i> Edit This Subpage</a></p>
+                <p data-aos="fade-up" data-aos-duration="950"><a class="text-decoration-none text-center spacing-hover-short" href="{% url "edit_subpage" ruleset.slug content.slug %}"><i class="fas fa-edit icon-menu hvr-icon"></i> Edit This Subpage</a></p>
             </div>
             {% endif %}
         </div>

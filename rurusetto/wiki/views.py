@@ -207,6 +207,37 @@ def subpage(request, rulesets_slug, subpage_slug):
     return render(request, 'wiki/subpage.html', context)
 
 
+@login_required
+def edit_subpage(request, rulesets_slug, subpage_slug):
+    hero_image = 'img/edit-subpage-cover-night.jpeg'
+    hero_image_light = 'img/edit-subpage-cover-light.png'
+    ruleset = Ruleset.objects.get(slug=rulesets_slug)
+    subpage = Subpage.objects.get(slug=subpage_slug)
+    if request.method == 'POST':
+        form = SubpageForm(request.POST, request.FILES, instance=subpage)
+        if form.is_valid():
+            form.instance.last_edited_by = request.user.id
+            form.instance.slug = slugify(unidecode(form.cleaned_data.get('title')))
+            form.save()
+            changed_slug = form.instance.slug
+            messages.success(request, f'Edit subpage successfully!')
+            return redirect('wiki', slug=changed_slug)
+    else:
+        form = SubpageForm(instance=subpage)
+    context = {
+        'form': form,
+        'ruleset_name': Ruleset.objects.get(slug=rulesets_slug).name,
+        'subpage_name': Subpage.objects.get(slug=subpage_slug).title,
+        'title': f'edit {ruleset.name}',
+        'hero_image': static(hero_image),
+        'hero_image_light': static(hero_image_light),
+        'opengraph_description': f'You are currently edit subpage "{Subpage.objects.get(slug=subpage_slug).title}" on ruleset name "{Ruleset.objects.get(slug=rulesets_slug).name}".',
+        'opengraph_url': resolve_url('edit_subpage', rulesets_slug=ruleset.slug, subpage_slug=subpage.slug),
+        'opengraph_image': static(hero_image)
+    }
+    return render(request, 'wiki/edit_subpage.html', context)
+
+
 # Views for API
 
 

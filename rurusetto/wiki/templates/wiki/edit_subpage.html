@@ -1,0 +1,55 @@
+{% extends "wiki/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="px-4 py-4 my-4 align-middle hero">
+    <div class="container align-middle">
+        <div class="row">
+            <p></p>
+            <div><h1 class="display-5 fw-bold">Edit Subpage</h1></div>
+            <p id="hero-description">You are currently edit subpage "{{ subpage_name }}" on ruleset name "{{ ruleset_name }}".</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+             {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags == "success"%}
+                        <div class="alert alert-success raleway-font">
+                            <i class="fas fa-check"></i> {{ message }}
+                        </div>
+                    {% endif %}
+                    {% if message.tags == "error"%}
+                        <div class="alert alert-danger raleway-font">
+                            <i class="fas fa-times"></i> {{ message }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+              {% endif %}
+        </div>
+    <div class="row">
+        <form class="form" method="POST" enctype='multipart/form-data'>
+            {% csrf_token %}
+            <div class="fieldWrapper">
+                 <div class="mb-3 row">
+                    <label class="col-sm-2 col-form-label form-label">Title:</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="title" class="form-control" required id="id_title" value="{{ form.title.value }}">
+                        <p class="form-error raleway-font">{{ form.title.errors }}</p>
+                        <p class="text-muted raleway-font">The subpage name.</p>
+                    </div>
+                  </div>
+            </div>
+            <h1>Subpage Content</h1>
+            {{ form.media }}
+            {{ form.content }}
+            <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right raleway-font">Submit</button>
+        </form>
+    </div>
+</div>
+
+    <p></p>
+
+{% endblock %}

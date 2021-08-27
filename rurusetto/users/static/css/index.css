@@ -164,6 +164,12 @@ body.light .accordion-button:not(.collapsed)::after {
     filter: invert(0);
 }
 
+body.light .btn-subpage {
+    color: #ff66aa;
+    background-color: #fadce5;
+    border-radius: 25px;
+}
+
 /*Default theme CSS*/
 
 body {
@@ -505,6 +511,12 @@ button.accordion-button:focus {
 .editormd-preview label,
 .editormd-preview li {
     color: inherit;
+}
+
+.btn-subpage {
+    color: #ff66aa;
+    background-color: #4a4a4a;
+    border-radius: 25px;
 }
 
 /*Class use in JS*/

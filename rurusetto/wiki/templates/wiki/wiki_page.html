@@ -65,6 +65,15 @@
             {% endif %}
         </div>
         {% if subpage %}
+        {% if user.config.subpage_index == "button" %}
+        <div class="row">
+            <div class="col-md-12">
+                {% for subpage_item in subpage %}
+                <button type="button" class="btn btn-subpage">{{ subpage_item.title }}</button>
+                {% endfor %}
+            </div>
+        </div>
+        {% else %}
         <div class="row">
             <div class="accordion" id="subpage-index" data-aos="fade-up" data-aos-duration="1000">
                 <div class="accordion-item">
@@ -85,6 +94,7 @@
                 </div>
             </div>
         </div>
+        {% endif %}
         {% endif %}
         <p></p>
         <div class="row">

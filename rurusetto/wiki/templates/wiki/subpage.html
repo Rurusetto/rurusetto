@@ -9,7 +9,7 @@
                 <p></p>
                 <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" data-aos="fade-up" data-aos-duration="600">
                   <ol class="breadcrumb">
-                    <li class="breadcrumb-item hvr-picture-bounce"><img src="{{ ruleset.icon.url }}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> <a href="#" class="text-decoration-none spacing-hover">{{ ruleset.name }}</a></li>
+                    <li class="breadcrumb-item hvr-picture-bounce"><img src="{{ ruleset.icon.url }}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> <a href="{% url 'wiki' ruleset.slug %}" class="text-decoration-none spacing-hover">{{ ruleset.name }}</a></li>
                     <li class="breadcrumb-item active" aria-current="page">{{ content.title }}</li>
                   </ol>
                 </nav>

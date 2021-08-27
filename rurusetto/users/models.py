@@ -11,6 +11,11 @@ THEME = (
     # ('sync', 'Sync With System Settings')
 )
 
+SUBPAGE_INDEX = (
+    ('list', 'List with expandable accordance'),
+    ('button', 'Button')
+)
+
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -44,6 +49,7 @@ class Config(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     update_profile_every_login = models.BooleanField(default=False)
     theme = models.TextField(choices=THEME, default='')
+    subpage_index = models.TextField(choices=SUBPAGE_INDEX, default='button')
 
     def __str__(self):
         return f'{self.user.username} Config'

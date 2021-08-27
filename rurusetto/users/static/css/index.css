@@ -501,6 +501,10 @@ button.accordion-button:focus {
     filter: invert(0.4);
 }
 
+.markdown-body p, label, li {
+    color: inherit;
+}
+
 /*Class use in JS*/
 
 .hidden {

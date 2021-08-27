@@ -501,7 +501,9 @@ button.accordion-button:focus {
     filter: invert(0.4);
 }
 
-.markdown-body p, label, li {
+.editormd-preview p,
+.editormd-preview label,
+.editormd-preview li {
     color: inherit;
 }
 

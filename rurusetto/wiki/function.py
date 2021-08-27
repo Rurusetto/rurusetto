@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User
+from django.core import exceptions
 from .models import Ruleset
 
 
@@ -72,7 +73,7 @@ def fetch_created_ruleset(creator_id):
     
     If the program cannot find the User object,it will append `None` to the return value.
 
-    :param creator_id: A user id
+    :param creator_id: A user ID
     :type creator_id: int
     :return: A list of ruleset with the User object of that ruleset.
     """
@@ -84,3 +85,18 @@ def fetch_created_ruleset(creator_id):
         except:
             created_ruleset.append([ruleset, None])
     return created_ruleset
+
+
+def get_user_by_id(user_id):
+    """
+    Get a user ID and return the User object of that given user ID. If user ID is not found, return None.
+
+    :param user_id: A user ID
+    :type user_id: int
+    :return: User object. If not found return None.
+    """
+    try:
+        return User.objects.get(id=user_id)
+    except exceptions.ObjectDoesNotExist:
+        return None
+

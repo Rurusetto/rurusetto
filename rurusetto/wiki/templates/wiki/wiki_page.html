@@ -65,7 +65,7 @@
             {% endif %}
         </div>
         <div class="row">
-            <div class="accordion" id="subpage-index">
+            <div class="accordion" id="subpage-index" data-aos="fade-up" data-aos-duration="1000">
                 <div class="accordion-item">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="subpage-heading">
@@ -75,7 +75,9 @@
                         </h2>
                         <div id="subpageCollapse" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                           <div class="accordion-body">
-
+                              {% for subpage_item in subpage %}
+                                  <li>{{ subpage_item.title }}</li>
+                              {% endfor %}
                           </div>
                         </div>
                   </div>

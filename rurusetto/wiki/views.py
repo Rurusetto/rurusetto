@@ -6,7 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, JsonResponse
 from rest_framework.parsers import JSONParser
 from .serializers import RulesetSerializer
-from .models import Changelog, Ruleset
+from .models import Changelog, Ruleset, Subpage
 from .forms import RulesetForm, SubpageForm
 from .function import make_listing_view, make_wiki_view, source_link_type
 from unidecode import unidecode
@@ -102,6 +102,7 @@ def wiki_page(request, slug):
     hero_image_light = ruleset.cover_image.url
     context = {
         'content': ruleset,
+        'subpage': Subpage.objects.filter(ruleset_id=ruleset.id),
         'source_type': source_link_type(ruleset.source),
         'user_detail': make_wiki_view(ruleset),
         'title': ruleset.name,

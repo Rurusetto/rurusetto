@@ -519,6 +519,11 @@ button.accordion-button:focus {
     border-radius: 25px;
 }
 
+.beatmap-card {
+    background-color: rgba(45, 45, 45, .8);
+    backdrop-filter: blur(5px);
+}
+
 /*Class use in JS*/
 
 .hidden {

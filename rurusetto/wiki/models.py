@@ -96,6 +96,8 @@ class RecommendBeatmap(models.Model):
     beatmap_cover = models.ImageField(default='default_cover.png', upload_to='beatmap_cover', validators=[
         FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
 
+    comment = models.CharField(default=None, max_length=150)
+
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

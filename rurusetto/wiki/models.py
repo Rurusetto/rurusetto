@@ -85,6 +85,7 @@ class RecommendBeatmap(models.Model):
     user_id = models.CharField(default="0", max_length=10)
 
     beatmap_id = models.IntegerField(default=75)
+    beatmapset_id = models.IntegerField(default=1)
 
     title = models.CharField(default="DISCO PRINCE", max_length=100)
     artist = models.CharField(default="Kenji Ninuma", max_length=100)
@@ -93,6 +94,8 @@ class RecommendBeatmap(models.Model):
     difficultyrating = models.CharField(default="2.39774", max_length=10)
     bpm = models.CharField(default="119.999", max_length=10)
     version = models.CharField(default="Normal", max_length=50)
+
+    url = models.URLField(default="https://osu.ppy.sh/beatmapsets/1#osu/75")
 
     beatmap_cover = models.ImageField(default='default_cover.png', upload_to='beatmap_cover', validators=[
         FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])

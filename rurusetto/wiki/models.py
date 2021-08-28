@@ -92,6 +92,7 @@ class RecommendBeatmap(models.Model):
     approved = models.CharField(default="1", max_length=10)
     difficultyrating = models.CharField(default="2.39774", max_length=10)
     bpm = models.CharField(default="119.999", max_length=10)
+    version = models.CharField(default="Normal", max_length=50)
 
     beatmap_cover = models.ImageField(default='default_cover.png', upload_to='beatmap_cover', validators=[
         FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
@@ -101,7 +102,7 @@ class RecommendBeatmap(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'{self.title} (Recommend of {Ruleset.objects.get(id=int(self.ruleset_id)).name})'
+        return f'{self.title} [{self.version}] (Recommend of {Ruleset.objects.get(id=int(self.ruleset_id)).name})'
 
 
 class CustomWiki(models.Model):

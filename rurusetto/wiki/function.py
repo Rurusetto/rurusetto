@@ -122,13 +122,13 @@ def make_recommend_beatmap_view(ruleset_id):
     except User.DoesNotExist:
         owner = None
     recommend_by_owner = []
-    if len(RecommendBeatmap.objects.filter(user_id=ruleset.creator)) != 0:
-        for beatmap in RecommendBeatmap.objects.filter(user_id=ruleset.creator, ruleset_id=ruleset.id):
+    if len(RecommendBeatmap.objects.filter(user_id=ruleset.owner)) != 0:
+        for beatmap in RecommendBeatmap.objects.filter(user_id=ruleset.owner, ruleset_id=ruleset.id):
             recommend_by_owner.append([beatmap, owner])
     # Create a list of recommend beatmaps that is recommend by other player
     recommend_by_other = []
-    if len(RecommendBeatmap.objects.exclude(user_id=ruleset.creator)) != 0:
-        for beatmap in RecommendBeatmap.objects.exclude(user_id=ruleset.creator).filter(ruleset_id=ruleset.id):
+    if len(RecommendBeatmap.objects.exclude(user_id=ruleset.owner).filter(ruleset_id=ruleset.id)) != 0:
+        for beatmap in RecommendBeatmap.objects.exclude(user_id=ruleset.owner).filter(ruleset_id=ruleset.id):
             try:
                 user_detail = User.objects.get(id=beatmap.user_id)
                 recommend_by_other.append([beatmap, user_detail])

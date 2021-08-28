@@ -253,7 +253,7 @@ def add_recommend_beatmap(request, slug):
             # Fetch beatmap detail from osu! API
             parameter = {'b': int(form.instance.beatmap_id), 'm': 0, 'k': OSU_API_V1_KEY}
             request_data = requests.get("https://osu.ppy.sh/api/get_beatmaps", params=parameter)
-            if (request_data.status_code == 200) and (request_data.json() != []):
+            if (request_data.status_code == 200) and (request_data.json() != []) and (not RecommendBeatmap.objects.filter(beatmap_id=form.instance.beatmap_id, ruleset_id=ruleset.id).exists()):
                 # Download beatmap cover from osu! server and save it to the media storage and put the address in the
                 # RecommendBeatmap model that user want to add.
                 beatmap_json_data = request_data.json()[0]
@@ -283,6 +283,8 @@ def add_recommend_beatmap(request, slug):
             else:
                 messages.error(request, f'Added beatmap failed! Please check beatmap ID and your beatmap must be from osu! mode only.')
                 return redirect('wiki', slug=ruleset.slug)
+                messages.error(request, f'Added beatmap failed! Please check beatmap ID and your beatmap must be from osu! mode only. (Or other player already recommend this map?)')
+                return redirect('recommend_beatmap', slug=ruleset.slug)
     else:
         form = RecommendBeatmapForm()
     context = {

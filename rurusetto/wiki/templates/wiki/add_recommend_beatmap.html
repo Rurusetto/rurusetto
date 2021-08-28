@@ -1,0 +1,66 @@
+{% extends "wiki/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="px-4 py-4 my-4 align-middle hero">
+    <div class="container align-middle">
+        <div class="row">
+            <p></p>
+            <div><h1 class="display-5 fw-bold">Add a new recommend beatmap</h1></div>
+            <p id="hero-description">{{ opengraph_description }}</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+             {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags == "success"%}
+                        <div class="alert alert-success raleway-font">
+                            <i class="fas fa-check"></i> {{ message }}
+                        </div>
+                    {% endif %}
+                    {% if message.tags == "error"%}
+                        <div class="alert alert-danger raleway-font">
+                            <i class="fas fa-times"></i> {{ message }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+              {% endif %}
+        </div>
+    <div class="row">
+        <form class="form" method="POST" enctype='multipart/form-data'>
+            {% csrf_token %}
+            <div class="fieldWrapper">
+                 <div class="mb-3 row">
+                    <label class="col-sm-2 col-form-label form-label">Beatmap ID:</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="beatmap_id" class="form-control" required id="id_beatmap_id">
+                        <p class="form-error raleway-font">{{ form.beatmap_id.errors }}</p>
+                        <p class="text-muted raleway-font">Put a beatmap ID that you want to add it. You can find a beatmap ID from the URL of that beatmap.</p>
+                        <p class="text-muted raleway-font">Note that your beatmap must be from osu! mode only.</p>
+                        <p class="text-muted raleway-font">Example : You want to add "Harumachi Clover (Swing Arrangement) [Dictate Edit]" diffuculty "Oh no!" by Sotarks.</p>
+                        <img src="{% static "img/get-beatmap-id.png" %}" alt="How to get a beatmap ID" style="max-width: 100%;">
+                    </div>
+                  </div>
+            </div>
+            <div class="fieldWrapper">
+                 <div class="mb-3 row">
+                    <label class="col-sm-2 col-form-label form-label">Comment:</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="comment" class="form-control" required id="id_comment">
+                        <p class="form-error raleway-font">{{ form.comment.errors }}</p>
+                        <p class="text-muted raleway-font">Write a short comment that why you think that you recommend to play this beatmap with this ruleset.</p>
+                    </div>
+                  </div>
+            </div>
+            <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right raleway-font">Add</button>
+        </form>
+    </div>
+</div>
+
+    <p></p>
+
+<br>
+{% endblock content %}

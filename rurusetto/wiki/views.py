@@ -7,10 +7,14 @@ from django.http import HttpResponse, JsonResponse
 from rest_framework.parsers import JSONParser
 from .serializers import RulesetSerializer
 from .models import Changelog, Ruleset, Subpage
-from .forms import RulesetForm, SubpageForm
+from .forms import RulesetForm, SubpageForm, RecommendBeatmapForm
 from .function import make_listing_view, make_wiki_view, source_link_type, get_user_by_id
 from unidecode import unidecode
 from django.template.defaultfilters import slugify
+from rurusetto.settings import OSU_API_V1_KEY
+import requests
+from django.core.files import File
+from django.core.files.temp import NamedTemporaryFile
 
 
 def home(request):
@@ -236,6 +240,57 @@ def edit_subpage(request, rulesets_slug, subpage_slug):
         'opengraph_image': static(hero_image)
     }
     return render(request, 'wiki/edit_subpage.html', context)
+
+
+@login_required
+def add_recommend_beatmap(request, slug):
+    hero_image = 'img/add-recommend-beatmap-cover-night.png'
+    hero_image_light = 'img/add-recommend-beatmap-light.png'
+    ruleset = Ruleset.objects.get(slug=slug)
+    if request.method == 'POST':
+        form = RecommendBeatmapForm(request.POST)
+        if form.is_valid():
+            # Fetch beatmap detail from osu! API
+            parameter = {'b': int(form.instance.beatmap_id), 'm': 0, 'k': OSU_API_V1_KEY}
+            request_data = requests.get("https://osu.ppy.sh/api/get_beatmaps", params=parameter)
+            if (request_data.status_code == 200) and (request_data.json() != []):
+                # Download beatmap cover from osu! server and save it to the media storage and put the address in the
+                # RecommendBeatmap model that user want to add.
+                beatmap_json_data = request_data.json()[0]
+                cover_pic = requests.get(f"https://assets.ppy.sh/beatmaps/{beatmap_json_data['beatmapset_id']}/covers/cover.jpg")
+                cover_temp = NamedTemporaryFile(delete=True)
+                cover_temp.write(cover_pic.content)
+                cover_temp.flush()
+                print(f"{beatmap_json_data['title']} - {beatmap_json_data['artist']} ({form.instance.id})")
+                form.instance.beatmap_cover.save(f"{beatmap_json_data['title']} - {beatmap_json_data['artist']} ({form.instance.id}).jpg", File(cover_temp), save=True)
+                # Put the beatmap detail from osu! to the RecommendBeatmap object.
+                form.instance.title = beatmap_json_data['title']
+                form.instance.artist = beatmap_json_data['artist']
+                form.instance.source = beatmap_json_data['source']
+                form.instance.approved = beatmap_json_data['approved']
+                form.instance.difficultyrating = beatmap_json_data['difficultyrating']
+                form.instance.bpm = beatmap_json_data['bpm']
+                # Save the ruleset and user ID to the RecommendBeatmap object.
+                form.instance.ruleset_id = ruleset.id
+                form.instance.user_id = request.user.id
+                form.save()
+                messages.success(request, f"Added {beatmap_json_data['title']} as a recommend beatmap successfully!")
+                return redirect('wiki', slug=ruleset.slug)
+            else:
+                messages.error(request, f'Added beatmap failed! Please check beatmap ID and your beatmap must be from osu! mode only.')
+                return redirect('wiki', slug=ruleset.slug)
+    else:
+        form = RecommendBeatmapForm()
+    context = {
+        'form': form,
+        'title': f'add a new recommend beatmap for {ruleset.name}',
+        'hero_image': static(hero_image),
+        'hero_image_light': static(hero_image_light),
+        'opengraph_description': f'You are currently add a new recommend beatmap for {ruleset.name}.',
+        'opengraph_url': resolve_url('add_recommend_beatmap', slug=ruleset.slug),
+        'opengraph_image': static(hero_image)
+    }
+    return render(request, 'wiki/add_recommend_beatmap.html', context)
 
 
 # Views for API

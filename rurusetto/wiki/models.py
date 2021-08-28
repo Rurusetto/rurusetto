@@ -80,6 +80,28 @@ class Subpage(models.Model):
         return f'{self.title} (Subpage of {Ruleset.objects.get(id=int(self.ruleset_id)).name})'
 
 
+class RecommendBeatmap(models.Model):
+    ruleset_id = models.CharField(default="0", max_length=10)
+    user_id = models.CharField(default="0", max_length=10)
+
+    beatmap_id = models.IntegerField(default=75)
+
+    title = models.CharField(default="DISCO PRINCE", max_length=100)
+    artist = models.CharField(default="Kenji Ninuma", max_length=100)
+    source = models.CharField(default="", max_length=100)
+    approved = models.CharField(default="1", max_length=10)
+    difficultyrating = models.CharField(default="2.39774", max_length=10)
+    bpm = models.CharField(default="119.999", max_length=10)
+
+    beatmap_cover = models.ImageField(default='default_cover.png', upload_to='beatmap_cover', validators=[
+        FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.title} (Recommend on {Ruleset.objects.get(id=int(self.ruleset_id)).name} by {User.objects.get(id=self.user_id).username})'
+
+
 class CustomWiki(models.Model):
     title = models.CharField(default="", max_length=100)
 

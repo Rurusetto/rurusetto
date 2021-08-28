@@ -196,8 +196,7 @@ MDEDITOR_CONFIGS = {
 SOCIALACCOUNT_PROVIDERS = {
     'osu': {
         'SCOPE': [
-            'identify',
-            'public'
+            'identify'
         ],
         'APP': {
             'client_id': OSU_OAUTH_CLIENT_ID,

@@ -301,6 +301,19 @@ def recommend_beatmap(request, slug):
     ruleset = get_object_or_404(Ruleset, slug=slug)
     hero_image = ruleset.cover_image.url
     hero_image_light = ruleset.cover_image.url
+    beatmap_list_owner, beatmap_list_other = make_recommend_beatmap_view(ruleset.id)
+    context = {
+        'title': f'recommend beatmaps for {ruleset.name}',
+        'ruleset': ruleset,
+        'beatmap_owner': beatmap_list_owner,
+        'beatmap_other': beatmap_list_other,
+        'hero_image': hero_image,
+        'hero_image_light': hero_image_light,
+        'opengraph_description': f'Recommend beatmaps for playing with {ruleset.name} from ruleset creator and other player.',
+        'opengraph_url': resolve_url('recommend_beatmap', slug=ruleset.slug),
+        'opengraph_image': static(hero_image)
+    }
+    return render(request, 'wiki/recommend_beatmap.html', context)
 
 
 # Views for API

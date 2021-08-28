@@ -1,0 +1,237 @@
+{% extends "wiki/base.html" %}
+{% load static %}
+{% load convert_star_rating %}
+{% block content %}
+
+<div class="px-4 py-4 my-4 align-middle hero">
+    <div class="container align-middle">
+        <div class="row">
+            <p></p>
+            <div data-aos="fade-up" data-aos-duration="600"><h1 class="display-5 fw-bold">{{ ruleset.name }} recommend beatmaps</h1></div>
+            <p data-aos="fade-up" data-aos-duration="700">{{ opengraph_description }}</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        {% if user.is_authenticated %}
+        <div class="col-sm-4 hvr-icon-bounce">
+            <p data-aos="fade-up" data-aos-duration="800"><a class="text-decoration-none text-center spacing-hover-short" href="{% url 'add_recommend_beatmap' ruleset.slug %}"><i class="fas fa-plus icon-menu hvr-icon"></i> Add your recommend beatmaps</a></p>
+        </div>
+        {% else %}
+            <p></p>
+        {% endif %}
+    </div>
+</div>
+
+<div class="container">
+    {% if beatmap_owner %}
+    <h1>Recommend by {{ ruleset.name }} creator</h1>
+    <div class="row">
+        {% for beatmap in beatmap_owner %}
+        <div class="col-sm-6">
+            <div class="card mb-3" style="max-width: 100%">
+              <div class="row g-0 rounded" style="background-image: url({{ beatmap.0.beatmap_cover.url }}); background-size: cover;">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-8 beatmap-card">
+                  <div class="card-body">
+                    <a href="{{ beatmap.0.url }}"><h5 class="card-title">{{ beatmap.0.title }}</h5></a>
+                    <p class="card-text">by {{ beatmap.0.artist }}</p>
+                    <p class="card-text text-muted">{{ beatmap.0.source }}</p>
+                    <p class="card-text">
+                      {% if beatmap.0.difficultyrating <= 1.5 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(65, 184, 255);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 1.5 and beatmap.0.difficultyrating <= 2.0 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(65, 215, 235);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 2.0 and beatmap.0.difficultyrating <= 2.25 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(77, 252, 186);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 2.25 and beatmap.0.difficultyrating <= 2.50 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(123, 251, 70);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 2.50 and beatmap.0.difficultyrating <= 2.75 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(160, 246, 73);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 2.75 and beatmap.0.difficultyrating <= 3.0 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(197, 242, 80);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 3.0 and beatmap.0.difficultyrating <= 3.25 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(241, 236, 83);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 3.25 and beatmap.0.difficultyrating <= 3.50 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(248, 211, 84);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 3.50 and beatmap.0.difficultyrating <= 3.75 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(248, 187, 87);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 3.75 and beatmap.0.difficultyrating <= 4.0 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(254, 161, 90);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 4.0 and beatmap.0.difficultyrating <= 4.25 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(255, 138, 92);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 4.25 and beatmap.0.difficultyrating <= 4.5 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(255, 117, 90);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 4.5 and beatmap.0.difficultyrating <= 4.75 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(255, 103, 97);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 4.75 and beatmap.0.difficultyrating <= 5 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(255, 95, 95);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 5 and beatmap.0.difficultyrating <= 5.25 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(255, 83, 102);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 5.25 and beatmap.0.difficultyrating <= 5.5 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(255, 72, 102);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 5.5 and beatmap.0.difficultyrating <= 5.75 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(255, 62, 101);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 5.75 and beatmap.0.difficultyrating <= 6 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(253, 54, 103);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 6 and beatmap.0.difficultyrating <= 6.25 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(209, 64, 132);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 6.25 and beatmap.0.difficultyrating <= 6.49 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(166, 73, 157);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 6.49 and beatmap.0.difficultyrating <= 6.5 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(166, 73, 157); color: rgb(255, 215, 93);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 6.5 and beatmap.0.difficultyrating <= 6.75 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(122, 83, 192); color: rgb(255, 215, 93);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 6.75 and beatmap.0.difficultyrating <= 7 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(87, 92, 213); color: rgb(255, 215, 93);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 7 and beatmap.0.difficultyrating <= 7.25 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(66, 73, 190); color: rgb(255, 215, 93);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 7.25 and beatmap.0.difficultyrating <= 7.5 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(50, 55, 168); color: rgb(255, 215, 93);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 7.5 and beatmap.0.difficultyrating <= 7.75 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(36, 39, 150); color: rgb(255, 215, 93);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 7.75 and beatmap.0.difficultyrating <= 7.99 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(22, 25, 144); color: rgb(255, 215, 93);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% else %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(0, 0, 0); color: rgb(255, 215, 93);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% endif %}
+
+                    {% if beatmap.0.approved == "4" %}
+                        <span class="badge rounded-pill round-font-bold" style="background-color: rgb(241, 101, 160); color: rgb(51, 58, 61);">LOVED</span>
+                    {% elif beatmap.0.approved == "3" %}
+                        <span class="badge rounded-pill round-font-bold" style="background-color: rgb(106, 196, 254); color: rgb(51, 58, 61);">QUALIFIED</span>
+                    {% elif beatmap.0.approved == "2" %}
+                        <span class="badge rounded-pill round-font-bold" style="background-color: rgb(210, 208, 85); color: rgb(51, 58, 61);">APPROVED</span>
+                    {% elif beatmap.0.approved == "1" %}
+                        <span class="badge rounded-pill round-font-bold" style="background-color: rgb(185, 251, 98); color: rgb(51, 58, 61);">RANKED</span>
+                    {% elif beatmap.0.approved == "0" %}
+                        <span class="badge rounded-pill round-font-bold" style="background-color: rgb(252, 212, 96); color: rgb(51, 58, 61);">PENDING</span>
+                    {% elif beatmap.0.approved == "-1" %}
+                        <span class="badge rounded-pill round-font-bold" style="background-color: rgb(245, 146, 93); color: rgb(51, 58, 61);">WIP</span>
+                    {% elif beatmap.0.approved == "-2" %}
+                        <span class="badge rounded-pill round-font-bold" style="background-color: rgb(0, 0, 0); color: rgb(83, 94, 101);">GRAVEYARD</span>
+                    {% endif %}
+
+                    </p>
+                    <p class="card-text text-muted">{{ beatmap.0.comment }}</p>
+                      <p class="card-text"><a href="{% url "profile" beatmap.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><img src="{{ beatmap.1.profile.image.url }}" alt="{{ beatmap.1.username }}" width="32" height="32" class="rounded-circle hvr-icon" style="transition: 0.2s"> {{ beatmap.1.username }}</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if beatmap_other %}
+    <h1>Recommend by other player</h1>
+    <div class="row">
+        {% for beatmap in beatmap_other %}
+        <div class="col-sm-6">
+            <div class="card mb-3" style="max-width: 100%">
+              <div class="row g-0 rounded" style="background-image: url({{ beatmap.0.beatmap_cover.url }}); background-size: cover;">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-8 beatmap-card">
+                  <div class="card-body">
+                    <a href="{{ beatmap.0.url }}"><h5 class="card-title">{{ beatmap.0.title }}</h5></a>
+                    <p class="card-text">by {{ beatmap.0.artist }}</p>
+                    <p class="card-text text-muted">{{ beatmap.0.source }}</p>
+                    <p class="card-text">
+                      {% if beatmap.0.difficultyrating <= 1.5 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(65, 184, 255);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 1.5 and beatmap.0.difficultyrating <= 2.0 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(65, 215, 235);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 2.0 and beatmap.0.difficultyrating <= 2.25 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(77, 252, 186);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 2.25 and beatmap.0.difficultyrating <= 2.50 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(123, 251, 70);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 2.50 and beatmap.0.difficultyrating <= 2.75 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(160, 246, 73);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 2.75 and beatmap.0.difficultyrating <= 3.0 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(197, 242, 80);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 3.0 and beatmap.0.difficultyrating <= 3.25 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(241, 236, 83);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 3.25 and beatmap.0.difficultyrating <= 3.50 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(248, 211, 84);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 3.50 and beatmap.0.difficultyrating <= 3.75 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(248, 187, 87);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 3.75 and beatmap.0.difficultyrating <= 4.0 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(254, 161, 90);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 4.0 and beatmap.0.difficultyrating <= 4.25 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(255, 138, 92);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 4.25 and beatmap.0.difficultyrating <= 4.5 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(255, 117, 90);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 4.5 and beatmap.0.difficultyrating <= 4.75 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(255, 103, 97);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 4.75 and beatmap.0.difficultyrating <= 5 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(255, 95, 95);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 5 and beatmap.0.difficultyrating <= 5.25 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(255, 83, 102);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 5.25 and beatmap.0.difficultyrating <= 5.5 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(255, 72, 102);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 5.5 and beatmap.0.difficultyrating <= 5.75 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(255, 62, 101);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 5.75 and beatmap.0.difficultyrating <= 6 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(253, 54, 103);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 6 and beatmap.0.difficultyrating <= 6.25 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(209, 64, 132);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 6.25 and beatmap.0.difficultyrating <= 6.49 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(166, 73, 157);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 6.49 and beatmap.0.difficultyrating <= 6.5 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(166, 73, 157); color: rgb(255, 215, 93);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 6.5 and beatmap.0.difficultyrating <= 6.75 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(122, 83, 192); color: rgb(255, 215, 93);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 6.75 and beatmap.0.difficultyrating <= 7 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(87, 92, 213); color: rgb(255, 215, 93);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 7 and beatmap.0.difficultyrating <= 7.25 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(66, 73, 190); color: rgb(255, 215, 93);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 7.25 and beatmap.0.difficultyrating <= 7.5 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(50, 55, 168); color: rgb(255, 215, 93);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 7.5 and beatmap.0.difficultyrating <= 7.75 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(36, 39, 150); color: rgb(255, 215, 93);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% elif beatmap.0.difficultyrating > 7.75 and beatmap.0.difficultyrating <= 7.99 %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(22, 25, 144); color: rgb(255, 215, 93);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% else %}
+                      <span class="badge rounded-pill round-font-bold" style="background-color: rgb(0, 0, 0); color: rgb(255, 215, 93);"><i class="fas fa-star"></i> {{ beatmap.0.difficultyrating | convert_star_rating }}</span>
+                      {% endif %}
+
+                    {% if beatmap.0.approved == "4" %}
+                        <span class="badge rounded-pill round-font-bold" style="background-color: rgb(241, 101, 160); color: rgb(51, 58, 61);">LOVED</span>
+                    {% elif beatmap.0.approved == "3" %}
+                        <span class="badge rounded-pill round-font-bold" style="background-color: rgb(106, 196, 254); color: rgb(51, 58, 61);">QUALIFIED</span>
+                    {% elif beatmap.0.approved == "2" %}
+                        <span class="badge rounded-pill round-font-bold" style="background-color: rgb(210, 208, 85); color: rgb(51, 58, 61);">APPROVED</span>
+                    {% elif beatmap.0.approved == "1" %}
+                        <span class="badge rounded-pill round-font-bold" style="background-color: rgb(185, 251, 98); color: rgb(51, 58, 61);">RANKED</span>
+                    {% elif beatmap.0.approved == "0" %}
+                        <span class="badge rounded-pill round-font-bold" style="background-color: rgb(252, 212, 96); color: rgb(51, 58, 61);">PENDING</span>
+                    {% elif beatmap.0.approved == "-1" %}
+                        <span class="badge rounded-pill round-font-bold" style="background-color: rgb(245, 146, 93); color: rgb(51, 58, 61);">WIP</span>
+                    {% elif beatmap.0.approved == "-2" %}
+                        <span class="badge rounded-pill round-font-bold" style="background-color: rgb(0, 0, 0); color: rgb(83, 94, 101);">GRAVEYARD</span>
+                    {% endif %}
+
+                    </p>
+                    <p class="card-text text-muted">{{ beatmap.0.comment }}</p>
+                      <p class="card-text"><a href="{% url "profile" beatmap.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><img src="{{ beatmap.1.profile.image.url }}" alt="{{ beatmap.1.username }}" width="32" height="32" class="rounded-circle hvr-icon" style="transition: 0.2s"> {{ beatmap.1.username }}</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% if beatmap_owner.len == 0 and beatmap_other.len == 0 %}
+    <h1 class="text-center">\ (•◡•) /</h1>
+    <h3 class="text-center">No recommend beatmaps added in this rulesets.</h3>
+    <h3 class="text-center">Let's add it first!</h3>
+    {% endif %}
+</div>
+
+{% endblock content %}

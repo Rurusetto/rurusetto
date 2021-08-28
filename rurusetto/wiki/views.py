@@ -7,8 +7,9 @@ from django.http import HttpResponse, JsonResponse
 from rest_framework.parsers import JSONParser
 from .serializers import RulesetSerializer
 from .models import Changelog, Ruleset, Subpage
+from .models import Changelog, Ruleset, Subpage, RecommendBeatmap
 from .forms import RulesetForm, SubpageForm, RecommendBeatmapForm
-from .function import make_listing_view, make_wiki_view, source_link_type, get_user_by_id
+from .function import make_listing_view, make_wiki_view, source_link_type, get_user_by_id, make_recommend_beatmap_view
 from unidecode import unidecode
 from django.template.defaultfilters import slugify
 from rurusetto.settings import OSU_API_V1_KEY
@@ -279,10 +280,8 @@ def add_recommend_beatmap(request, slug):
                 form.instance.url = f"https://osu.ppy.sh/beatmapsets/{beatmap_json_data['beatmapset_id']}#osu/{form.instance.beatmap_id}"
                 form.save()
                 messages.success(request, f"Added {beatmap_json_data['title']} [{beatmap_json_data['version']}] as a recommend beatmap successfully!")
-                return redirect('wiki', slug=ruleset.slug)
+                return redirect('recommend_beatmap', slug=ruleset.slug)
             else:
-                messages.error(request, f'Added beatmap failed! Please check beatmap ID and your beatmap must be from osu! mode only.')
-                return redirect('wiki', slug=ruleset.slug)
                 messages.error(request, f'Added beatmap failed! Please check beatmap ID and your beatmap must be from osu! mode only. (Or other player already recommend this map?)')
                 return redirect('recommend_beatmap', slug=ruleset.slug)
     else:

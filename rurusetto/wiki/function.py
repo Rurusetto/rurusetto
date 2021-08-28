@@ -1,5 +1,4 @@
 from django.contrib.auth.models import User
-from django.core import exceptions
 from .models import Ruleset
 
 
@@ -18,7 +17,7 @@ def make_listing_view(model_list):
         try:
             ruleset_owner = User.objects.get(id=item.owner)
             export_list.append([item, ruleset_owner])
-        except:
+        except User.DoesNotExist:
             export_list.append([item, None])
     return export_list
 
@@ -36,15 +35,15 @@ def make_wiki_view(ruleset_object):
     """
     try:
         creator = User.objects.get(id=ruleset_object.owner)
-    except:
+    except User.DoesNotExist:
         creator = None
     try:
         owner = User.objects.get(id=ruleset_object.owner)
-    except:
+    except User.DoesNotExist:
         owner = None
     try:
         last_edited_by = User.objects.get(id=ruleset_object.last_edited_by)
-    except:
+    except User.DoesNotExist:
         last_edited_by = None
     return [creator, owner, last_edited_by]
 
@@ -82,7 +81,7 @@ def fetch_created_ruleset(creator_id):
         try:
             ruleset_owner = User.objects.get(id=ruleset.owner)
             created_ruleset.append([ruleset, ruleset_owner])
-        except:
+        except User.DoesNotExist:
             created_ruleset.append([ruleset, None])
     return created_ruleset
 
@@ -97,6 +96,5 @@ def get_user_by_id(user_id):
     """
     try:
         return User.objects.get(id=user_id)
-    except exceptions.ObjectDoesNotExist:
+    except User.DoesNotExist:
         return None
-

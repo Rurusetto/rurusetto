@@ -170,6 +170,15 @@ body.light .btn-subpage {
     border-radius: 25px;
 }
 
+body.light .beatmap-card {
+    background-color: rgba(224, 224, 224, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+body.light .beatmap-title {
+    color: #ff66aa;
+}
+
 /*Default theme CSS*/
 
 body {
@@ -522,6 +531,10 @@ button.accordion-button:focus {
 .beatmap-card {
     background-color: rgba(45, 45, 45, .8);
     backdrop-filter: blur(5px);
+}
+
+.beatmap-title {
+    color: #ff66aa;
 }
 
 /*Class use in JS*/

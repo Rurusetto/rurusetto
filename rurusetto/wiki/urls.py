@@ -11,6 +11,7 @@ urlpatterns = [
     path('rulesets/<slug:slug>/new/subpage', views.add_subpage, name='add_subpage'),
     path('rulesets/<slug:rulesets_slug>/<slug:subpage_slug>', views.subpage, name='subpage'),
     path('rulesets/<slug:rulesets_slug>/<slug:subpage_slug>/edit', views.edit_subpage, name='edit_subpage'),
+    path('rulesets/<slug:slug>/new/beatmaps', views.add_recommend_beatmap, name='add_recommend_beatmap'),
     path('install', views.install, name='install'),
     # URL path for API
     path('api/rulesets', views.ruleset_list),

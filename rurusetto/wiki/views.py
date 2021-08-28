@@ -262,7 +262,7 @@ def add_recommend_beatmap(request, slug):
                 cover_temp.write(cover_pic.content)
                 cover_temp.flush()
                 print(f"{beatmap_json_data['title']} - {beatmap_json_data['artist']} ({form.instance.id})")
-                form.instance.beatmap_cover.save(f"{beatmap_json_data['title']} - {beatmap_json_data['artist']} ({form.instance.id}).jpg", File(cover_temp), save=True)
+                form.instance.beatmap_cover.save(f"{beatmap_json_data['title']} - {beatmap_json_data['artist']}).jpg", File(cover_temp), save=True)
                 # Put the beatmap detail from osu! to the RecommendBeatmap object.
                 form.instance.title = beatmap_json_data['title']
                 form.instance.artist = beatmap_json_data['artist']
@@ -270,11 +270,12 @@ def add_recommend_beatmap(request, slug):
                 form.instance.approved = beatmap_json_data['approved']
                 form.instance.difficultyrating = beatmap_json_data['difficultyrating']
                 form.instance.bpm = beatmap_json_data['bpm']
+                form.instance.version = beatmap_json_data['version']
                 # Save the ruleset and user ID to the RecommendBeatmap object.
                 form.instance.ruleset_id = ruleset.id
                 form.instance.user_id = request.user.id
                 form.save()
-                messages.success(request, f"Added {beatmap_json_data['title']} as a recommend beatmap successfully!")
+                messages.success(request, f"Added {beatmap_json_data['title']} [{beatmap_json_data['version']}] as a recommend beatmap successfully!")
                 return redirect('wiki', slug=ruleset.slug)
             else:
                 messages.error(request, f'Added beatmap failed! Please check beatmap ID and your beatmap must be from osu! mode only.')

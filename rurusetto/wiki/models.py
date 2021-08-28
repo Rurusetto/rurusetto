@@ -91,7 +91,7 @@ class RecommendBeatmap(models.Model):
     artist = models.CharField(default="Kenji Ninuma", max_length=100)
     source = models.CharField(default="", max_length=100)
     approved = models.CharField(default="1", max_length=10)
-    difficultyrating = models.CharField(default="2.39774", max_length=10)
+    difficultyrating = models.FloatField(default="2.39774")
     bpm = models.CharField(default="119.999", max_length=10)
     version = models.CharField(default="Normal", max_length=50)
 

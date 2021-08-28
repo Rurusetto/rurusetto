@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.core.validators import FileExtensionValidator
 from mdeditor.fields import MDTextFormField
 
-from .models import Ruleset, Subpage
+from .models import Ruleset, Subpage, RecommendBeatmap
 
 
 class RulesetForm(forms.ModelForm):
@@ -24,3 +24,12 @@ class SubpageForm(forms.ModelForm):
     class Meta:
         model = Subpage
         fields = ['title', 'content']
+
+
+class RecommendBeatmapForm(forms.ModelForm):
+    beatmap_id = forms.CharField(required=True)
+    comment = forms.CharField(required=True)
+
+    class Meta:
+        model = RecommendBeatmap
+        fields = ['beatmap_id', 'comment']

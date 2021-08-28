@@ -6,7 +6,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, JsonResponse
 from rest_framework.parsers import JSONParser
 from .serializers import RulesetSerializer
-from .models import Changelog, Ruleset, Subpage
 from .models import Changelog, Ruleset, Subpage, RecommendBeatmap
 from .forms import RulesetForm, SubpageForm, RecommendBeatmapForm
 from .function import make_listing_view, make_wiki_view, source_link_type, get_user_by_id, make_recommend_beatmap_view

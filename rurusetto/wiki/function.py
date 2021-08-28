@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from .models import Ruleset
+from .models import Ruleset, RecommendBeatmap
 
 
 def make_listing_view(model_list):
@@ -98,3 +98,41 @@ def get_user_by_id(user_id):
         return User.objects.get(id=user_id)
     except User.DoesNotExist:
         return None
+
+
+def make_recommend_beatmap_view(ruleset_id):
+    """
+    Get ruleset ID that want to generate a recommend beatmaps view and return a list of
+
+    1. A list of recommend beatmaps that is recommend by ruleset creator
+    2. A list of recommend beatmaps that is recommend by other player
+
+    In both list 1 and list 2 inside will be include user objects and RecommendBeatmap object
+
+    If the program cannot find the User object,it will append `None` to the return value.
+
+    :param ruleset_id: A ruleset ID that want to generate a recommend beatmaps view.
+    :type ruleset_id: int
+    :return: Two list from description
+    """
+    ruleset = Ruleset.objects.get(id=ruleset_id)
+    # Create a list of recommend beatmaps that is recommend by ruleset creator
+    try:
+        owner = User.objects.get(id=ruleset.creator)
+    except User.DoesNotExist:
+        owner = None
+    recommend_by_owner = []
+    if len(RecommendBeatmap.objects.filter(user_id=ruleset.creator)) != 0:
+        for beatmap in RecommendBeatmap.objects.filter(user_id=ruleset.creator, ruleset_id=ruleset.id):
+            recommend_by_owner.append([beatmap, owner])
+    # Create a list of recommend beatmaps that is recommend by other player
+    recommend_by_other = []
+    if len(RecommendBeatmap.objects.exclude(user_id=ruleset.creator)) != 0:
+        for beatmap in RecommendBeatmap.objects.exclude(user_id=ruleset.creator).filter(ruleset_id=ruleset.id):
+            try:
+                user_detail = User.objects.get(id=beatmap.user_id)
+                recommend_by_other.append([beatmap, user_detail])
+            except User.DoesNotExist:
+                recommend_by_other.append([beatmap, None])
+    return recommend_by_owner, recommend_by_other
+

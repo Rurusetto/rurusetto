@@ -264,6 +264,7 @@ def add_recommend_beatmap(request, slug):
                 print(f"{beatmap_json_data['title']} - {beatmap_json_data['artist']} ({form.instance.id})")
                 form.instance.beatmap_cover.save(f"{beatmap_json_data['title']} - {beatmap_json_data['artist']}).jpg", File(cover_temp), save=True)
                 # Put the beatmap detail from osu! to the RecommendBeatmap object.
+                form.instance.beatmapset_id = beatmap_json_data['beatmapset_id']
                 form.instance.title = beatmap_json_data['title']
                 form.instance.artist = beatmap_json_data['artist']
                 form.instance.source = beatmap_json_data['source']
@@ -274,6 +275,8 @@ def add_recommend_beatmap(request, slug):
                 # Save the ruleset and user ID to the RecommendBeatmap object.
                 form.instance.ruleset_id = ruleset.id
                 form.instance.user_id = request.user.id
+                # Generate the URL to the osu! web from beatmap ID and beatmapset ID.
+                form.instance.url = f"https://osu.ppy.sh/beatmapsets/{beatmap_json_data['beatmapset_id']}#osu/{form.instance.beatmap_id}"
                 form.save()
                 messages.success(request, f"Added {beatmap_json_data['title']} [{beatmap_json_data['version']}] as a recommend beatmap successfully!")
                 return redirect('wiki', slug=ruleset.slug)
@@ -292,6 +295,12 @@ def add_recommend_beatmap(request, slug):
         'opengraph_image': static(hero_image)
     }
     return render(request, 'wiki/add_recommend_beatmap.html', context)
+
+
+def recommend_beatmap(request, slug):
+    ruleset = get_object_or_404(Ruleset, slug=slug)
+    hero_image = ruleset.cover_image.url
+    hero_image_light = ruleset.cover_image.url
 
 
 # Views for API

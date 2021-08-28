@@ -101,7 +101,7 @@ class RecommendBeatmap(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'{self.title} (Recommend on {Ruleset.objects.get(id=int(self.ruleset_id)).name} by {User.objects.get(id=self.user_id).username})'
+        return f'{self.title} (Recommend of {Ruleset.objects.get(id=int(self.ruleset_id)).name})'
 
 
 class CustomWiki(models.Model):

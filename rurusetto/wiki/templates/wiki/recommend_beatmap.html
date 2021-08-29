@@ -43,7 +43,7 @@
               {% endif %}
         </div>
     {% if beatmap_owner %}
-    <h1>Recommend by {{ ruleset.name }} creator</h1>
+    <h1 data-aos="fade-up" data-aos-duration="700">Recommend by {{ ruleset.name }} creator</h1>
     <div class="row">
         {% for beatmap in beatmap_owner %}
         {% include "wiki/snippets/beatmap_card.html" %}
@@ -52,7 +52,7 @@
     {% endif %}
 
     {% if beatmap_other %}
-    <h1>Recommend by other player</h1>
+    <h1 data-aos="fade-up" data-aos-duration="700">Recommend by other player</h1>
     <div class="row">
         {% for beatmap in beatmap_other %}
         {% include "wiki/snippets/beatmap_card.html" %}
@@ -60,10 +60,14 @@
     </div>
     {% endif %}
     {% if no_beatmap %}
-    <h1 class="text-center">\ (•◡•) /</h1>
-    <h3 class="text-center">No recommend beatmaps added in this rulesets.</h3>
-    <h3 class="text-center">Let's add it first!</h3>
+    <div data-aos="fade-up" data-aos-duration="700">
+        <h1 class="text-center">\ (•◡•) /</h1>
+        <h3 class="text-center">No recommend beatmaps added in this rulesets.</h3>
+        <h3 class="text-center">Let's add it first!</h3>
+    </div>
     {% endif %}
 </div>
+
+<p></p>
 
 {% endblock content %}

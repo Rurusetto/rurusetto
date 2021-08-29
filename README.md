@@ -108,7 +108,9 @@ Note : Before you can start the development server you must fill the API key to 
 
 ## License
 
-The majority of content in this repository is licensed under MIT license. Please see [the license file](LICENSE) for more information. tl;dr you can do whatever you want as long as you include the original copyright and license notice in any copy of the software/source.
+The code in this repository is licensed under MIT license. Please see [the license file](LICENSE) for more information. tl;dr you can do whatever you want as long as you include the original copyright and license notice in any copy of the software/source.
+
+The image and the content that upload by user and community is cover on DMCA. If you are the work and owner and want to request to remove your work please email the team at contact@rulesets.info.
 
 Each rulesets has its own license.
 

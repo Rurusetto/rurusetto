@@ -87,6 +87,17 @@
                     </div>
                   </div>
             </div>
+            <div class="fieldWrapper">
+                 <div class="mb-3 row">
+                    <label class="col-sm-2 col-form-label form-label" for="id_opengraph_image">Recommend Beatmaps Cover Image:</label>
+                    <div class="col-sm-10">
+                       <div class="raleway-font form-current"> Current Recommend Beatmaps Cover Image : <a href="{{ form.recommend_beatmap_cover.value.url }}">{{ form.recommend_beatmap_cover.value }}</a></div>
+                      <input type="file" name="recommend_beatmap_cover" accept="image/*" id="id_recommend_beatmap_cover" class="form-control">
+                        <p class="form-error raleway-font">{{ form.recommend_beatmap_cover.errors }}</p>
+                        <p class="text-muted raleway-font">A cover image of ruleset's recommend beatmaps page.</p>
+                    </div>
+                  </div>
+            </div>
             <h1>Source</h1>
             <div class="fieldWrapper">
                  <div class="mb-3 row">

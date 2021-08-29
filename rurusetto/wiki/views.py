@@ -307,8 +307,8 @@ def add_recommend_beatmap(request, slug):
 
 def recommend_beatmap(request, slug):
     ruleset = get_object_or_404(Ruleset, slug=slug)
-    hero_image = ruleset.cover_image.url
-    hero_image_light = ruleset.cover_image.url
+    hero_image = ruleset.recommend_beatmap_cover.url
+    hero_image_light = ruleset.recommend_beatmap_cover.url
     beatmap_list_owner, beatmap_list_other = make_recommend_beatmap_view(ruleset.id)
     if (len(beatmap_list_owner) == 0) and (len(beatmap_list_other) == 0):
         no_beatmap = True

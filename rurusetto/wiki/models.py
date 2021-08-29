@@ -3,6 +3,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from mdeditor.fields import MDTextField
 from django.contrib.sitemaps import ping_google
+from PIL import Image
 
 RELEASE_TYPE = (
     # In-system value - Show value
@@ -64,6 +65,19 @@ class Ruleset(models.Model):
             ping_google()
         except Exception:
             pass
+        # Use pillow to resize profile image and cover image
+        img = Image.open(self.cover_image.path)
+        if img.height > 1080 or img.width > 1920:
+            img.thumbnail((1920, 1080))
+            img.save(self.cover_image.path)
+        opengraph = Image.open(self.opengraph_image.path)
+        if opengraph.height > 1080 or opengraph.width > 1920:
+            opengraph.thumbnail((1920, 1080))
+            opengraph.save(self.opengraph_image.path)
+        recommend_beatmap = Image.open(self.recommend_beatmap_cover.path)
+        if recommend_beatmap.height > 1080 or recommend_beatmap.width > 1920:
+            recommend_beatmap.thumbnail((1920, 1080))
+            recommend_beatmap.save(self.recommend_beatmap_cover.path)
 
 
 class Subpage(models.Model):

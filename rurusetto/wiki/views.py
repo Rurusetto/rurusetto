@@ -324,7 +324,7 @@ def recommend_beatmap(request, slug):
         'hero_image_light': hero_image_light,
         'opengraph_description': f'Recommend beatmaps for playing with {ruleset.name} from ruleset creator and other player.',
         'opengraph_url': resolve_url('recommend_beatmap', slug=ruleset.slug),
-        'opengraph_image': static(hero_image)
+        'opengraph_image': ruleset.opengraph_image.url
     }
     return render(request, 'wiki/recommend_beatmap.html', context)
 

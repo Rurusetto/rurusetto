@@ -2,7 +2,7 @@
 
 <div class="col-sm-6">
     <div class="card mb-3" style="max-width: 100%">
-      <div class="row g-0 rounded" style="background-image: url({{ beatmap.0.beatmap_cover.url }}); background-size: cover;">
+      <div class="row g-0 rounded" style="background-image: url({{ beatmap.0.beatmap_cover.url }}); background-size: cover; background-position: center">
         <div class="col-md-4">
         </div>
         <div class="col-md-8 beatmap-card">
@@ -86,8 +86,9 @@
             {% endif %}
 
             </p>
-            <p class="card-text text-muted">{{ beatmap.0.comment }}</p>
-            <p class="card-text"><a href="{% url "profile" beatmap.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><img src="{{ beatmap.1.profile.image.url }}" alt="{{ beatmap.1.username }}" width="32" height="32" class="rounded-circle hvr-icon" style="transition: 0.2s"> {{ beatmap.1.username }}</a></p>
+              <p class="card-text text-muted"><small>mapped by <a href="https://osu.ppy.sh/u/{{ beatmap.0.creator }}" class="text-decoration-none spacing-hover-short">{{ beatmap.0.creator }}</a></small></p>
+              <p class="card-text"><small>{{ beatmap.0.comment }}</small></p>
+            <p class="card-text text-muted"><small>Recommend by <a href="{% url "profile" beatmap.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><img src="{{ beatmap.1.profile.image.url }}" alt="{{ beatmap.1.username }}" width="32" height="32" class="rounded-circle hvr-icon" style="transition: 0.2s"> {{ beatmap.1.username }}</a></small></p>
           </div>
         </div>
       </div>

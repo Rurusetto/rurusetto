@@ -8,18 +8,18 @@
 <div class="container px-4 py-4 my-4 d-grid gap-4">
   <div class="row" style="margin-top: -11%; width: 1280px;">
     <div class="col col-2">
-      <img src="{{ profile_object.image.url }}" alt="{{ profile_object.user.username }}" height="160" width="160" class="rounded-circle" >
+      <img data-aos="zoom-in" data-aos-duration="600" src="{{ profile_object.image.url }}" alt="{{ profile_object.user.username }}" height="160" width="160" class="rounded-circle" >
     </div>
     <div class="col col-10" style="margin-left: -2%;">
-      <h1>{{ profile_object.user.username }}</h1>
-      <p><span class="badge rounded-pill bg-rurusetto">Beta Tester</span></p>
+      <h1 data-aos="fade-up" data-aos-duration="700">{{ profile_object.user.username }}</h1>
+      <p data-aos="fade-up" data-aos-duration="750"><span class="badge rounded-pill bg-rurusetto">Beta Tester</span></p>
 {#      <p class="text-muted">User ID : {{ profile_object.user.id }}</p>#}
-      <p>{{ profile_object.about_me }}</p>
+      <p data-aos="fade-up" data-aos-duration="800">{{ profile_object.about_me }}</p>
     </div>
   </div>
 </div>
 
-<div class="container">
+<div class="container" data-aos="fade-up" data-aos-duration="850">
   <div class="row">
     {% if profile_object.osu_username != '' %}
         <div class="col-sm-2 hvr-icon-bounce">
@@ -34,25 +34,25 @@
     </div>
 </div>
 
-    <div class="container">
-        <div class="row">
-             {% if user.id == profile_object.user.id %}
-            <div class="col-sm-2 hvr-icon-bounce">
-                <p><a class="text-decoration-none text-center spacing-hover-short" href="{% url "settings" %}"><i class="fas fa-user-edit icon-menu hvr-icon"></i> Edit Profile</a></p>
-            </div>
-            {% endif %}
+<div class="container" data-aos="fade-up" data-aos-duration="850">
+    <div class="row">
+         {% if user.id == profile_object.user.id %}
+        <div class="col-sm-2 hvr-icon-bounce">
+            <p><a class="text-decoration-none text-center spacing-hover-short" href="{% url "settings" %}"><i class="fas fa-user-edit icon-menu hvr-icon"></i> Edit Profile</a></p>
         </div>
+        {% endif %}
     </div>
+</div>
 
 {% if created_ruleset %}
 <div class="container">
-    <div class="row-mb-3">
+    <div class="row-mb-3" data-aos="fade-up" data-aos-duration="900">
         <h1>created rulesets <span class="badge rounded-pill bg-rurusetto round-font-bold ">{{ created_ruleset| length }}</span></h1>
     </div>
     <div class="row-mb-3">
         <div class="row text-center gy-4">
             {% for detail in created_ruleset %}
-            <div class="col-lg-4">
+            <div class="col-lg-4" data-aos="fade-up" data-aos-duration="900">
             <img src="{{ detail.0.icon.url }}" alt="{{ detail.0.name }}" width="140px" height="140px" class="rounded-circle">
 
             <h2 class="rulesets-name">{{ detail.0.name }}</h2>

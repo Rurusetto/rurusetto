@@ -254,15 +254,22 @@ def add_recommend_beatmap(request, slug):
             parameter = {'b': int(form.instance.beatmap_id), 'm': 0, 'k': OSU_API_V1_KEY}
             request_data = requests.get("https://osu.ppy.sh/api/get_beatmaps", params=parameter)
             if (request_data.status_code == 200) and (request_data.json() != []) and (not RecommendBeatmap.objects.filter(beatmap_id=form.instance.beatmap_id, ruleset_id=ruleset.id).exists()):
+                beatmap_json_data = request_data.json()[0]
                 # Download beatmap cover from osu! server and save it to the media storage and put the address in the
                 # RecommendBeatmap model that user want to add.
-                beatmap_json_data = request_data.json()[0]
                 cover_pic = requests.get(f"https://assets.ppy.sh/beatmaps/{beatmap_json_data['beatmapset_id']}/covers/cover.jpg")
                 cover_temp = NamedTemporaryFile(delete=True)
                 cover_temp.write(cover_pic.content)
                 cover_temp.flush()
-                print(f"{beatmap_json_data['title']} - {beatmap_json_data['artist']} ({form.instance.id})")
-                form.instance.beatmap_cover.save(f"{beatmap_json_data['title']} - {beatmap_json_data['artist']}).jpg", File(cover_temp), save=True)
+                form.instance.beatmap_cover.save(f"{beatmap_json_data['title']}-{beatmap_json_data['artist']}.jpg", File(cover_temp), save=True)
+                # Download beatmap thumbnail
+                thumbnail_pic = requests.get(
+                    f"https://b.ppy.sh/thumb/{beatmap_json_data['beatmapset_id']}l.jpg")
+                thumbnail_temp = NamedTemporaryFile(delete=True)
+                thumbnail_temp.write(thumbnail_pic.content)
+                thumbnail_temp.flush()
+                form.instance.beatmap_cover.save(f"{beatmap_json_data['title']}-{beatmap_json_data['artist']}.jpg",
+                                                 File(thumbnail_temp), save=True)
                 # Put the beatmap detail from osu! to the RecommendBeatmap object.
                 form.instance.beatmapset_id = beatmap_json_data['beatmapset_id']
                 form.instance.title = beatmap_json_data['title']
@@ -302,11 +309,16 @@ def recommend_beatmap(request, slug):
     hero_image = ruleset.cover_image.url
     hero_image_light = ruleset.cover_image.url
     beatmap_list_owner, beatmap_list_other = make_recommend_beatmap_view(ruleset.id)
+    if (len(beatmap_list_owner) == 0) and (len(beatmap_list_other) == 0):
+        no_beatmap = True
+    else:
+        no_beatmap = False
     context = {
         'title': f'recommend beatmaps for {ruleset.name}',
         'ruleset': ruleset,
         'beatmap_owner': beatmap_list_owner,
         'beatmap_other': beatmap_list_other,
+        'no_beatmap': no_beatmap,
         'hero_image': hero_image,
         'hero_image_light': hero_image_light,
         'opengraph_description': f'Recommend beatmaps for playing with {ruleset.name} from ruleset creator and other player.',

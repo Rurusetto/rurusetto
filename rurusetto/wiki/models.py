@@ -6,6 +6,7 @@ from django.contrib.sitemaps import ping_google
 from PIL import Image
 
 RELEASE_TYPE = (
+    # Choice in Changelog model
     # In-system value - Show value
     ('pre-release', 'Pre-release'),
     ('stable', 'Stable')

@@ -14,13 +14,12 @@ RELEASE_TYPE = (
 
 class Changelog(models.Model):
     """
-    A model to collect an update changelog in changelog page consist of
+    A model to collect an update changelog in changelog page.
 
     - version: A version name of that changelog version
     - time: The time that changelog added. Will add automatically on save.
     - type: Type of that version (pre-release or stable). Select by choice.
     - note: Changelog detail
-
     """
     version = models.CharField(default='', max_length=30)
     time = models.DateTimeField(auto_now_add=True)
@@ -59,7 +58,7 @@ class Ruleset(models.Model):
     - source: A source of the ruleset (or where the player can download this ruleset.)
     - last_edited_by: A user ID of who is the latest edit this ruleset.
     - last_edited_at: A time that this ruleset is latest edit. Will auto assign when it's save.
-    - created_at: A time that this ruleset is created.
+    - created_at: A time that this ruleset was created.
     - verified: A boolean that will change to True by the wiki maintainer when the wiki maintainer is already
     verified that the owner is right. When this value is True, on the ruleset owner name will have a pink tick at
     the creator's username on that page. The default value is False.
@@ -99,7 +98,7 @@ class Ruleset(models.Model):
             ping_google()
         except Exception:
             pass
-        # Use pillow to resize profile image and cover image
+        # Use pillow to resize cover_image, opengraph_image, recommend_beatmap
         img = Image.open(self.cover_image.path)
         if img.height > 1080 or img.width > 1920:
             img.thumbnail((1920, 1080))
@@ -115,6 +114,19 @@ class Ruleset(models.Model):
 
 
 class Subpage(models.Model):
+    """
+    A model to contain the subpage of the main ruleset wiki.
+
+    - ruleset_id: The ID of ruleset model that this subpage is bind to.
+    - title: Title of subpage
+    - slug: Slug of subpage title. This value will always regenerate when the subpage title is saved and
+    it will use as a URL to this subpage page.
+    - content: Content of the subpage page.
+    - creator: A user ID of subpage creator or who create this subpage.
+    - last_edited_by: A user ID of who is the latest edit this subpage.
+    - last_edited_at: A time that this subpage is latest edit. Will auto assign when it's save.
+    - created_at: A time that this subpage was created.
+    """
     ruleset_id = models.CharField(default="0", max_length=10)
 
     title = models.CharField(default="", max_length=50)
@@ -132,6 +144,34 @@ class Subpage(models.Model):
 
 
 class RecommendBeatmap(models.Model):
+    """
+    A model to contain the beatmap in recommend beatmaps section in each ruleset.
+
+    In this model user mainly fill only 2 fields from recommend beatmap form:
+
+    - beatmap_id: Beatmap ID that user fill in when user add a recommend beatmap form.
+    - comment: Short comment why this user recommend this beatmap.
+
+    Other fields are auto-import by the form view and the data of these field are from osu! API.
+    The default value come from beatmap name DISCO PRINCE by peppy.
+    These field name are set to make it same as osu! API field name.
+
+    - ruleset_id: ID of ruleset model that this beatmap is bind to.
+    - user_id: A user ID who create this object.
+    - beatmapset_id: ID of set of beatmap that this beatmap is in.
+    - title: Beatmap name. (Or beatmapset name)
+    - artist: Song artist of the beatmap.
+    - source: Source of song in beatmap.
+    - creator: A creator osu! username who make this beatmap.
+    - approved: A status of beatmap. (4 = Loved, 3 = Qualified, 2 = Approved, 1 = Ranked, 0 = Pending, -1 = WIP, -2 = Graveyard)
+    - difficultyrating: A star rating or SR of the beatmap.
+    - bpm: BPM of the song in beatmap. The data from osu! is mainly come in 6-digits float.
+    - version: A beatmap name of this beatmap.
+    - URL: An URL to open this beatmap in osu! website.
+    - beatmap_cover: An image of the beatmap cover image.
+    - beatmap_thumbnail: An image of beatmap thumbnail.
+    - created_at: A time that this beatmap was created.
+    """
     ruleset_id = models.CharField(default="0", max_length=10)
     user_id = models.CharField(default="0", max_length=10)
 

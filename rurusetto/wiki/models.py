@@ -203,6 +203,16 @@ class RecommendBeatmap(models.Model):
 
 
 class CustomWiki(models.Model):
+    """
+    A model for a wiki page that is not in the ruleset part.
+
+    - title: Title on the header of the page.
+    - time: The time when this page is created.
+    - last_edited_at: A time that this page is latest edit. Will auto assign when it's save.
+    - creator: The user ID who created this page.
+    - last_edited_by: A user ID of who is the latest edit this page.
+    - content: Content in the page.
+    """
     title = models.CharField(default="", max_length=100)
 
     time = models.DateTimeField(auto_now_add=True)

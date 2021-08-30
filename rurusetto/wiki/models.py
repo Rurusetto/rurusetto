@@ -13,6 +13,15 @@ RELEASE_TYPE = (
 
 
 class Changelog(models.Model):
+    """
+    A model to collect an update changelog in changelog page consist of
+
+    - version: A version name of that changelog version
+    - time: The time that changelog added. Will add automatically on save.
+    - type: Type of that version (pre-release or stable). Select by choice.
+    - note: Changelog detail
+
+    """
     version = models.CharField(default='', max_length=30)
     time = models.DateTimeField(auto_now_add=True)
     type = models.TextField(choices=RELEASE_TYPE, default='stable')
@@ -30,6 +39,31 @@ class Changelog(models.Model):
 
 
 class Ruleset(models.Model):
+    """
+    A model of a ruleset and the front page of each ruleset wiki.
+
+    - creator: A user ID who create this page (This field is based on the case that the ruleset owner
+    is not add a ruleset themselves.
+    - owner: A user ID of the ruleset owner. This field when create the ruleset
+    it will assign the creator user ID but the wiki maintainer will change it to a real owner later.
+    - name: A ruleset name
+    - slug: A slug of ruleset name. This value will always regenerate when the ruleset name is saved and
+    it will use as a URL to ruleset page.
+    - description: A ruleset description that is show on the listing page.
+    - icon: An icon is a circle image that is show at in-game header. Recommend shape is circle.
+    - logo: A logo will show in wiki's infobox. It can be not same to an icon.
+    - cover_image: A picture at the header of the wiki page.
+    - opengraph_image: An image that is show on the the opengraph when link to the ruleset URL
+    - recommend_beatmap_cover: An image that use on a header of recommend beatmap page of that ruleset.
+    - content: A content of an index page.
+    - source: A source of the ruleset (or where the player can download this ruleset.)
+    - last_edited_by: A user ID of who is the latest edit this ruleset.
+    - last_edited_at: A time that this ruleset is latest edit. Will auto assign when it's save.
+    - created_at: A time that this ruleset is created.
+    - verified: A boolean that will change to True by the wiki maintainer when the wiki maintainer is already
+    verified that the owner is right. When this value is True, on the ruleset owner name will have a pink tick at
+    the creator's username on that page. The default value is False.
+    """
     creator = models.CharField(default="0", max_length=10)
     owner = models.CharField(default="0", max_length=10)
 

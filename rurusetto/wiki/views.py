@@ -16,8 +16,16 @@ import requests
 from django.core.files import File
 from django.core.files.temp import NamedTemporaryFile
 
+"""View for all page in wiki"""
+
 
 def home(request):
+    """
+    View for homepage.
+
+    :param request: Request from user
+    :return: Render the wiki page and pass the value from context to the template (home.html)
+    """
     hero_image = 'img/home-cover-night.png'
     hero_image_light = 'img/home-cover-light.jpeg'
     latest_add_rulesets = []
@@ -34,12 +42,18 @@ def home(request):
         'opengraph_description': 'A page that contain all osu! ruleset',
         'opengraph_url': resolve_url('home'),
         'opengraph_image': static(hero_image),
-        'latest_add_rulesets': make_listing_view(latest_add_rulesets)
+        'latest_add_rulesets': make_listing_view(latest_add_rulesets)  # Use make_listing_view function to get the User object from database and pass to template
     }
     return render(request, 'wiki/home.html', context)
 
 
 def changelog(request):
+    """
+    View for changelog page.
+
+    :param request: Request from user
+    :return: Render the changelog page and pass the value from context to the template (changelog.html)
+    """
     hero_image = 'img/changelog-cover-night2.png'
     hero_image_light = 'img/changelog-cover-light3.png'
 
@@ -56,6 +70,12 @@ def changelog(request):
 
 
 def listing(request):
+    """
+    View for listing page
+
+    :param request: Request from user
+    :return: Render the listing page and pass the value from context to the template (changelog.html)
+    """
     hero_image = "img/listing-cover-night.png"
     hero_image_light = 'img/listing-cover-light.png'
 
@@ -73,11 +93,20 @@ def listing(request):
 
 @login_required
 def create_ruleset(request):
+    """
+    View for create ruleset form. User must be logged in before access this page.
+
+    This view has a function to pass the auto assign value to the Ruleset object that user has created.
+
+    :param request: Request from user
+    :return: Render the create ruleset and pass the value from context to the template (create_ruleset.html)
+    """
     hero_image = 'img/create-rulesets-cover-night.png'
     hero_image_light = 'img/create-rulesets-cover-light.png'
     if request.method == 'POST':
         form = RulesetForm(request.POST, request.FILES)
         if form.is_valid():
+            # Save who make the ruleset and auto generate the slug to make the ruleset main wiki page.
             form.instance.creator = request.user.id
             form.instance.owner = request.user.id
             form.instance.last_edited_by = request.user.id
@@ -101,6 +130,14 @@ def create_ruleset(request):
 
 
 def wiki_page(request, slug):
+    """
+    View for wiki page. This page is the main page of each ruleset.
+
+    :param request: Request from user
+    :param slug: Ruleset slug (slug in Ruleset model)
+    :type slug: str
+    :return: Render the wiki page and pass the value from context to the template (wiki_page.html)
+    """
     ruleset = get_object_or_404(Ruleset, slug=slug)
     hero_image = ruleset.cover_image.url
     hero_image_light = ruleset.cover_image.url
@@ -121,6 +158,19 @@ def wiki_page(request, slug):
 
 @login_required
 def edit_ruleset_wiki(request, slug):
+    """
+    View for editing the main ruleset page and main configuration form of the ruleset.
+
+    User must be logged in before access this page.
+
+    This view include the migration to the new name like changing the slug to make the ruleset
+    successfully transfer to the new name with new URL.
+
+    :param request: Request from user
+    :param slug: Ruleset slug (slug in Ruleset model)
+    :type slug: str
+    :return: Render the wiki page and pass the value from context to the template (edit_ruleset_wiki.html)
+    """
     hero_image = 'img/edit-wiki-cover-night.jpeg'
     hero_image_light = 'img/edit-wiki-cover-light.png'
     ruleset = Ruleset.objects.get(slug=slug)
@@ -150,6 +200,18 @@ def edit_ruleset_wiki(request, slug):
 
 @login_required
 def add_subpage(request, slug):
+    """
+    View for adding subpage form. User must be logged in before access this page.
+
+    This view can mainly access from the URL or the ruleset main page.
+
+    This view has a function to bind a Subpage object with a ruleset and create slug for the subpage URL too.
+
+    :param request: Request from user
+    :param slug: Ruleset slug (slug in Ruleset model)
+    :type slug: str
+    :return: Render the wiki page and pass the value from context to the template (add_subpage.html)
+    """
     target_ruleset = Ruleset.objects.get(slug=slug)
     hero_image = 'img/add-subpage-cover-night.jpeg'
     hero_image_light = 'img/add-subpage-cover-light.png'

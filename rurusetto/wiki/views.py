@@ -23,7 +23,7 @@ def home(request):
     """
     View for homepage.
 
-    :param request: Request from user
+    :param request: WSGI request from user
     :return: Render the wiki page and pass the value from context to the template (home.html)
     """
     hero_image = 'img/home-cover-night.png'
@@ -51,7 +51,7 @@ def changelog(request):
     """
     View for changelog page.
 
-    :param request: Request from user
+    :param request: WSGI request from user
     :return: Render the changelog page and pass the value from context to the template (changelog.html)
     """
     hero_image = 'img/changelog-cover-night2.png'
@@ -73,7 +73,7 @@ def listing(request):
     """
     View for listing page
 
-    :param request: Request from user
+    :param request: WSGI request from user
     :return: Render the listing page and pass the value from context to the template (changelog.html)
     """
     hero_image = "img/listing-cover-night.png"
@@ -96,9 +96,9 @@ def create_ruleset(request):
     """
     View for create ruleset form. User must be logged in before access this page.
 
-    This view has a function to pass the auto assign value to the Ruleset object that user has created.
+    This view has a function to pass the automatically assign value to the Ruleset object that user has created.
 
-    :param request: Request from user
+    :param request: WSGI request from user
     :return: Render the create ruleset and pass the value from context to the template (create_ruleset.html)
     """
     hero_image = 'img/create-rulesets-cover-night.png'
@@ -133,7 +133,7 @@ def wiki_page(request, slug):
     """
     View for wiki page. This page is the main page of each ruleset.
 
-    :param request: Request from user
+    :param request: WSGI request from user
     :param slug: Ruleset slug (slug in Ruleset model)
     :type slug: str
     :return: Render the wiki page and pass the value from context to the template (wiki_page.html)
@@ -166,10 +166,10 @@ def edit_ruleset_wiki(request, slug):
     This view include the migration to the new name like changing the slug to make the ruleset
     successfully transfer to the new name with new URL.
 
-    :param request: Request from user
+    :param request: WSGI request from user
     :param slug: Ruleset slug (slug in Ruleset model)
     :type slug: str
-    :return: Render the wiki page and pass the value from context to the template (edit_ruleset_wiki.html)
+    :return: Render the edit ruleset page with the form and pass the value from context to the template (edit_ruleset_wiki.html)
     """
     hero_image = 'img/edit-wiki-cover-night.jpeg'
     hero_image_light = 'img/edit-wiki-cover-light.png'
@@ -207,10 +207,10 @@ def add_subpage(request, slug):
 
     This view has a function to bind a Subpage object with a ruleset and create slug for the subpage URL too.
 
-    :param request: Request from user
+    :param request: WSGI request from user
     :param slug: Ruleset slug (slug in Ruleset model)
     :type slug: str
-    :return: Render the wiki page and pass the value from context to the template (add_subpage.html)
+    :return: Render the add ruleset page with the form and pass the value from context to the template (add_subpage.html)
     """
     target_ruleset = Ruleset.objects.get(slug=slug)
     hero_image = 'img/add-subpage-cover-night.jpeg'
@@ -241,6 +241,12 @@ def add_subpage(request, slug):
 
 
 def install(request):
+    """
+    View for install page. This page is static so nothing much here.
+    
+    :param request: WSGI request from user.
+    :return: Render the install page and pass the value from context to the template (install.html)
+    """
     hero_image = 'img/install-cover-night.png'
     hero_image_light = 'img/install-cover-light.jpeg'
     context = {
@@ -255,6 +261,16 @@ def install(request):
 
 
 def subpage(request, rulesets_slug, subpage_slug):
+    """
+    View for subpage.
+    
+    :param request: WSGI request from user.
+    :param rulesets_slug: Ruleset slug (slug in Ruleset model)
+    :type rulesets_slug: str
+    :param subpage_slug: Subpage slug (slug in Subpage model)
+    :type subpage_slug: str
+    :return: Render the subpage and pass the value from context to the template (subpage.html)
+    """
     subpage = get_object_or_404(Subpage, slug=subpage_slug)
     ruleset = get_object_or_404(Ruleset, slug=rulesets_slug)
     hero_image = ruleset.cover_image.url
@@ -275,6 +291,19 @@ def subpage(request, rulesets_slug, subpage_slug):
 
 @login_required
 def edit_subpage(request, rulesets_slug, subpage_slug):
+    """
+    View for edit subpage form. User must be logged in before access this page.
+
+    This view include the function to change the slug and redirect to the new slug when user change the subpage title
+    with assign some value that must be automatically assign to the Subpage model.
+
+    :param request: WSGI request from user.
+    :param rulesets_slug: Ruleset slug (slug in Ruleset model)
+    :type rulesets_slug: str
+    :param subpage_slug: Subpage slug (slug in Subpage model)
+    :type subpage_slug: str
+    :return: Render the edit subpage page with the edit subpage form and pass the value from context to the template (edit_subpage.html)
+    """
     hero_image = 'img/edit-subpage-cover-night.png'
     hero_image_light = 'img/edit-subpage-cover-light.png'
     ruleset = Ruleset.objects.get(slug=rulesets_slug)
@@ -306,6 +335,17 @@ def edit_subpage(request, rulesets_slug, subpage_slug):
 
 @login_required
 def add_recommend_beatmap(request, slug):
+    """
+    View for add a recommend beatmap to the target ruleset that include in the slug. User must be logged in before access this page.
+
+    This view include the function to find the beatmap ID that user put in the form, get the data from osu! API and
+    assign the beatmap metadata to the RecommendBeatmap object.
+
+    :param request: WSGI request from user.
+    :param slug: Ruleset slug (slug in Ruleset model)
+    :type slug: str
+    :return: Render the recommend beatmap page with the recommend beatmap form and pass the value from context to the template (add_recommend_beatmap.html)
+    """
     hero_image = 'img/add-recommend-beatmap-cover-night.png'
     hero_image_light = 'img/add-recommend-beatmap-light.png'
     ruleset = Ruleset.objects.get(slug=slug)
@@ -324,7 +364,7 @@ def add_recommend_beatmap(request, slug):
                 cover_temp.write(cover_pic.content)
                 cover_temp.flush()
                 form.instance.beatmap_cover.save(f"{form.instance.beatmap_id}.jpg", File(cover_temp), save=True)
-                # Download beatmap thumbnail
+                # Download beatmap thumbnail to beatmap_thumbnail field
                 thumbnail_pic = requests.get(
                     f"https://b.ppy.sh/thumb/{beatmap_json_data['beatmapset_id']}l.jpg")
                 thumbnail_temp = NamedTemporaryFile(delete=True)
@@ -368,6 +408,14 @@ def add_recommend_beatmap(request, slug):
 
 
 def recommend_beatmap(request, slug):
+    """
+    View for recommend beatmap listing page in the ruleset that include in the slug.
+
+    :param request: WSGI request from user.
+    :param slug: Ruleset slug (slug in Ruleset model)
+    :type slug: str
+    :return: Render the recommend beatmap page and pass the value from context to the template (recommend_beatmap.html)
+    """
     ruleset = get_object_or_404(Ruleset, slug=slug)
     hero_image = ruleset.recommend_beatmap_cover.url
     hero_image_light = ruleset.recommend_beatmap_cover.url
@@ -396,6 +444,12 @@ def recommend_beatmap(request, slug):
 
 @csrf_exempt
 def ruleset_list(request):
+    """
+    View for return the ruleset in JSON format.
+
+    :param request: WSGI request from user
+    :return: All ruleset in website with its metadata in JSON format.
+    """
     if request.method == 'GET':
         rulesets = Ruleset.objects.all()
         serializer = RulesetSerializer(rulesets, many=True)
@@ -404,6 +458,12 @@ def ruleset_list(request):
 
 @csrf_exempt
 def ruleset_detail(request, slug):
+    """
+    View for return the specific ruleset that user pass by using its slug in JSON format.
+
+    :param request: WSGI request from user
+    :return: Specific ruleset metadata in JSON format.
+    """
     # try to fetch ruleset from database
     try:
         ruleset = Ruleset.objects.get(slug=slug)

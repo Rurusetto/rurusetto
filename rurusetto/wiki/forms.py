@@ -7,6 +7,7 @@ from .models import Ruleset, Subpage, RecommendBeatmap
 
 
 class RulesetForm(forms.ModelForm):
+    """Form on create and edit the Ruleset object."""
     name = forms.CharField(required=True)
     description = forms.CharField(required=True, widget=forms.Textarea)
     content = MDTextFormField()
@@ -18,6 +19,7 @@ class RulesetForm(forms.ModelForm):
 
 
 class SubpageForm(forms.ModelForm):
+    """Form on create and edit the Subpage object."""
     title = forms.CharField(required=True)
     content = MDTextFormField()
 
@@ -27,6 +29,7 @@ class SubpageForm(forms.ModelForm):
 
 
 class RecommendBeatmapForm(forms.ModelForm):
+    """Form on create RecommendBeatmap object or adding a recommend beatmap."""
     beatmap_id = forms.CharField(required=True)
     comment = forms.CharField(required=True)
 

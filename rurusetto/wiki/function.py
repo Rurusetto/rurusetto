@@ -2,9 +2,6 @@ from django.contrib.auth.models import User
 from .models import Ruleset, RecommendBeatmap
 
 
-"""Function for getting the data object from database and pass it to the ready-to-use to render in template by using views function"""
-
-
 def make_listing_view(model_list):
     """
     Get a list of Ruleset model and return a list of Ruleset model with the User object.

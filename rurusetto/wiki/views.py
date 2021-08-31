@@ -16,8 +16,6 @@ import requests
 from django.core.files import File
 from django.core.files.temp import NamedTemporaryFile
 
-"""View for all page in wiki"""
-
 
 def home(request):
     """

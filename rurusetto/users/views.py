@@ -11,6 +11,15 @@ from wiki.function import fetch_created_ruleset
 
 @login_required
 def settings(request):
+    """
+    View for setting form and related user setting like website configuration that is from Account and Config model.
+    User must be logged in before access this page.
+
+    This view has many condition due to the UpdateProfileEveryLogin setting that need more condition requirement on save.
+
+    :param request: WSGI request from user.
+    :return: Render the settings page with the many account related form and pass the value from context to the template (settings.html)
+    """
     hero_image = "img/settings-cover-night.jpeg"
     hero_image_light = 'img/settings-cover-light.png'
     if request.method == 'POST':
@@ -99,6 +108,15 @@ def settings(request):
 
 
 def profile_detail(request, pk):
+    """
+    View for user detail page or user profile page. Can access publicly but if user open your own profile page it
+    will have 'Edit profile' button that navigate to setting page.
+
+    :param request: WSGI request from user
+    :param pk: User ID
+    :type pk: int
+    :return: Render the profile detail page and pass the value from context to the template (profile.html)
+    """
     profile_object = get_object_or_404(Profile, pk=pk)
 
     context = {
@@ -116,6 +134,13 @@ def profile_detail(request, pk):
 
 @login_required
 def delete_account(request):
+    """
+    View for delete account page. User must be logged in before access this page.
+    This view has function for verification when the condition is met it will logout the user before delete the User, Profile and Config objects.
+
+    :param request: WSGI request from user
+    :return: Render the delete account page with delete account form and pass the value from context to the template (delete_account.html)
+    """
     if request.method == 'POST':
         account_delete_form = UserDeleteAccountForm(request.POST)
         if request.user.username == account_delete_form['confirm_username'].value() and request.user.check_password(account_delete_form['confirm_password'].value()):

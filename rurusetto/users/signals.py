@@ -12,6 +12,7 @@ from allauth.socialaccount.models import SocialAccount
 
 @receiver(post_save, sender=User)
 def create_profile(sender, instance, created, **kwargs):
+    """When receive that has user signed up, it will create Profile and Config object that is bind with User object."""
     if created:
         Profile.objects.create(user=instance)
         Config.objects.create(user=instance)
@@ -19,6 +20,7 @@ def create_profile(sender, instance, created, **kwargs):
 
 @receiver(post_save, sender=User)
 def save_profile(sender, instance, **kwargs):
+    """Signal when user change something in profile, it will save."""
     instance.profile.save()
 
 

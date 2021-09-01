@@ -80,12 +80,6 @@ When you start the virtual environment, you need to install the requirement that
 pip install -r requirements.txt
 ```
 
-And install the [rurusetto-django-allauth](https://github.com/Rurusetto/rurusetto-django-allauth), the `django-allauth` library that add support for osu! OAuth system and some code to use with the Rūrusetto login system.
-
-```shell
-pip install git+https://github.com/Rurusetto/rurusetto-django-allauth.git
-```
-
 ### Make the database
 
 Before we can start the server, we must make a database for the website by migrate the database from the code. Run this command in Rūrusetto directory to make the database.

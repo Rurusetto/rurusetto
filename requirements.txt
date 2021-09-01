@@ -7,3 +7,4 @@ Pygments>=2.9.0
 django-mdeditor>=0.1.18
 requests>=2.26.0
 djangorestframework>=3.12.4
+git+https://github.com/Rurusetto/rurusetto-django-allauth.git

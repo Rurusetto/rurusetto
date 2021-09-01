@@ -1,20 +1,10 @@
 from django import forms
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
 from .models import Profile, Config, THEME, SUBPAGE_INDEX
 
 
-class UserRegisterForm(UserCreationForm):
-    username = forms.CharField(max_length=15, help_text="Required. 15 characters or fewer. Letters, digits and "
-                                                        "@/./+/-/_ only.")
-    email = forms.EmailField()
-
-    class Meta:
-        model = User
-        fields = ['username', 'email', 'password1', 'password2']
-
-
 class ProfileUpdateForm(forms.ModelForm):
+    """Form in user settings page to update the user's Profile object."""
     about_me = forms.CharField(required=False)
     osu_username = forms.CharField(max_length=20, required=False)
 
@@ -24,6 +14,7 @@ class ProfileUpdateForm(forms.ModelForm):
 
 
 class UserUpdateForm(forms.ModelForm):
+    """Form in user's settings page to update value in default Django User model."""
     email = forms.EmailField(required=False)
 
     class Meta:
@@ -32,6 +23,7 @@ class UserUpdateForm(forms.ModelForm):
 
 
 class UpdateProfileEveryLoginConfigForm(forms.ModelForm):
+    """Form to update update_profile_every_login in user's config model specifically."""
     update_profile_every_login = forms.BooleanField(required=False, widget=forms.CheckboxInput(attrs={'class': "form-check-input"}))
 
     class Meta:
@@ -40,6 +32,7 @@ class UpdateProfileEveryLoginConfigForm(forms.ModelForm):
 
 
 class UserConfigForm(forms.ModelForm):
+    """Form to update website theme in user's setting model."""
     theme = forms.ChoiceField(label="", choices=THEME, required=False)
 
     class Meta:
@@ -48,6 +41,7 @@ class UserConfigForm(forms.ModelForm):
 
 
 class UserSubpageConfigForm(forms.ModelForm):
+    """Form to update subpage index design in user's setting model."""
     subpage_index = forms.ChoiceField(label="", choices=SUBPAGE_INDEX, required=False)
 
     class Meta:
@@ -56,6 +50,7 @@ class UserSubpageConfigForm(forms.ModelForm):
 
 
 class UserDeleteAccountForm(forms.ModelForm):
+    """Form that show in delete account page. Use to pass the value for verification in delete account views."""
     confirm_username = forms.CharField()
     confirm_password = forms.CharField(widget=forms.PasswordInput)
 

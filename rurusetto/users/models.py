@@ -5,6 +5,9 @@ from django.db import models
 from PIL import Image
 
 THEME = (
+    # Setting choice for changing theme in website.
+    # The in-system value will use as the class name in <body> tag in render template
+    # to indicate that what theme user set. (Default is dark mode)
     # In-system value - Show value
     ('', 'Dark Mode (Default)'),
     ('light', 'Light Mode'),
@@ -12,12 +15,24 @@ THEME = (
 )
 
 SUBPAGE_INDEX = (
+    # Setting for subpage design
+    # In-system value - Show value
     ('button', 'Button (Default)'),
     ('list', 'List with expandable accordance'),
 )
 
 
 class Profile(models.Model):
+    """
+    A model to collect all user's profile related that cannot save in default Django user account model.
+
+    - user: A user that is bind or own this Profile object.
+    - image: User's profile picture
+    - cover: Cover image in user's profile page.
+    - about_me: A text field to introduce yourself or something. It's show at profile page below the username
+    - osu_username: User's osu! account username. If this user is signed up with osu! account this field will automatically set from osu! API in user_update_information_in_allauth signal.
+    - oauth_first_migrate: This field will tell system that is this user's profile is migrated from osu! account? This value will changed by the system.
+    """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(default='default.jpeg', upload_to='profile_pics', validators=[FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
     cover = models.ImageField(default='default_cover.png', upload_to='cover_pics', validators=[FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
@@ -46,6 +61,14 @@ class Profile(models.Model):
 
 
 class Config(models.Model):
+    """
+    A model to collect all user's website config for personalization.
+
+    - user: A user that is bind or own this Profile object.
+    - update_profile_every_login: This setting will set by user. If this is True, when user login the system will be update user's profile every user's login session by user_update_information_in_allauth signal.
+    - theme: Theme of website that user choose. Will choose from THEME variable choice.
+    - subpage_index: Design of subpage index in wiki page. WIll choose from SUBPAGE_INDEX variable choice.
+    """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     update_profile_every_login = models.BooleanField(default=False)
     theme = models.TextField(choices=THEME, default='')

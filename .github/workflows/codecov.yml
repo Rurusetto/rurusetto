@@ -3,20 +3,18 @@ on: [push, pull_request]
 jobs:
   run:
     runs-on: ubuntu-latest
-    env:
-      OS: ubuntu-latest
-      PYTHON: '3.9'
     steps:
-    - name: Checkout
+      - name: Checkout
         uses: actions/checkout@v2
-    - name: Set up Python 3.9
+      - name: Set up Python 3.9
         uses: actions/setup-python@v2
         with:
           python-version: 3.9
-    - name: Generate Report
-      run: |
-        pip install -r requirements.txt
-        pip install coverage
-        coverage run -m unittest
-    - name: Upload Coverage to Codecov
-      uses: codecov/codecov-action@v2
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run tests and collect coverage
+        run: |
+          coverage run rurusetto/wiki/tests.py
+          coverage xml
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2

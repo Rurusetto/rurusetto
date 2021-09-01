@@ -93,4 +93,3 @@ class RulesetModelTest(TestCase):
         self.assertEqual(blank_ruleset.source, '')
         self.assertEqual(blank_ruleset.last_edited_by, '0')
         self.assertEqual(blank_ruleset.verified, False)
-

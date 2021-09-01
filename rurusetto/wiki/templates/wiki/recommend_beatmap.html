@@ -17,7 +17,7 @@
     <div class="row">
         {% if user.is_authenticated %}
         <div class="col-sm-4 hvr-icon-bounce">
-            <p data-aos="fade-up" data-aos-duration="800"><a class="text-decoration-none text-center spacing-hover-short" href="{% url 'add_recommend_beatmap' ruleset.slug %}"><i class="fas fa-plus icon-menu hvr-icon"></i> Add your recommend beatmaps</a></p>
+            <p data-aos="fade-up" data-aos-duration="700"><a class="text-decoration-none text-center spacing-hover-short" href="{% url 'add_recommend_beatmap' ruleset.slug %}"><i class="fas fa-plus icon-menu hvr-icon"></i> Add your recommend beatmaps</a></p>
         </div>
         {% else %}
             <p></p>
@@ -43,7 +43,7 @@
               {% endif %}
         </div>
     {% if beatmap_owner %}
-    <h1 data-aos="fade-up" data-aos-duration="700">Recommend by {{ ruleset.name }} creator</h1>
+    <h1 data-aos="fade-up" data-aos-duration="500">Recommend by {{ ruleset.name }} creator</h1>
     <div class="row">
         {% for beatmap in beatmap_owner %}
         {% include "wiki/snippets/beatmap_card.html" %}
@@ -52,7 +52,7 @@
     {% endif %}
 
     {% if beatmap_other %}
-    <h1 data-aos="fade-up" data-aos-duration="700">Recommend by other player</h1>
+    <h1 data-aos="fade-up" data-aos-duration="500">Recommend by other player</h1>
     <div class="row">
         {% for beatmap in beatmap_other %}
         {% include "wiki/snippets/beatmap_card.html" %}
@@ -60,7 +60,7 @@
     </div>
     {% endif %}
     {% if no_beatmap %}
-    <div data-aos="fade-up" data-aos-duration="700">
+    <div data-aos="fade-up" data-aos-duration="500">
         <h1 class="text-center">\ (•◡•) /</h1>
         <h3 class="text-center">No recommend beatmaps added in this rulesets.</h3>
         <h3 class="text-center">Let's add it first!</h3>

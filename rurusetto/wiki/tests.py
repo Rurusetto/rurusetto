@@ -59,7 +59,6 @@ class RulesetModelTest(TestCase):
                                source='https://www.github.com/ppy/osu', last_edited_by='5', verified=False)
         test_ruleset = Ruleset.objects.get(name='Awesome Ruleset')
         # Test that the value in Ruleset object that just create is equal.
-        # TODO: Add test image
         self.assertEqual(test_ruleset.creator, '5')
         self.assertEqual(test_ruleset.owner, '5')
         self.assertEqual(test_ruleset.name, 'Awesome Ruleset')

@@ -1,4 +1,4 @@
-name: Django Continuous Integration Test
+name: Django CI Unit Test
 
 on:
   push:

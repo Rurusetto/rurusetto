@@ -120,12 +120,15 @@ def profile_detail(request, pk):
     profile_object = get_object_or_404(Profile, pk=pk)
     tag_list = profile_object.tag.split(',')
     tag_object_list = []
-    for tag_id in tag_list:
-        tag_id = int(tag_id)
-        try:
-            tag_object_list.append(Tag.objects.get(id=tag_id))
-        except Tag.DoesNotExist:
-            pass
+    try:
+        for tag_id in tag_list:
+            try:
+                tag_id = int(tag_id)
+                tag_object_list.append(Tag.objects.get(id=tag_id))
+            except Tag.DoesNotExist:
+                pass
+    except ValueError:
+        pass
 
     context = {
         'profile_object': profile_object,

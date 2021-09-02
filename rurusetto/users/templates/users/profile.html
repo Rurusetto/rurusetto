@@ -12,8 +12,11 @@
     </div>
     <div class="col col-10" style="margin-left: -2%;">
       <h1 data-aos="fade-up" data-aos-duration="700">{{ profile_object.user.username }}</h1>
-      <p data-aos="fade-up" data-aos-duration="750"><span class="badge rounded-pill bg-rurusetto">Beta Tester</span></p>
-{#      <p class="text-muted">User ID : {{ profile_object.user.id }}</p>#}
+      <p data-aos="fade-up" data-aos-duration="750">
+          {% for tag in tag_list %}
+            <span class="badge rounded-pill" style='background-color:{{ tag.pills_color }}; color:{{ tag.font_color }};' data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ tag.description }}">{{ tag.name }}</span>
+          {% endfor %}
+      </p>
       <p data-aos="fade-up" data-aos-duration="800">{{ profile_object.about_me }}</p>
     </div>
   </div>

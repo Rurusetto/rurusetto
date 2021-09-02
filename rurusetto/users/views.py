@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.templatetags.static import static
 from django.contrib.auth import logout
 from .forms import UserUpdateForm, ProfileUpdateForm, UpdateProfileEveryLoginConfigForm, UserDeleteAccountForm, UserConfigForm, UserSubpageConfigForm
-from .models import Profile
+from .models import Profile, Tag
 from allauth.socialaccount.models import SocialAccount
 from wiki.function import fetch_created_ruleset
 
@@ -118,9 +118,21 @@ def profile_detail(request, pk):
     :return: Render the profile detail page and pass the value from context to the template (profile.html)
     """
     profile_object = get_object_or_404(Profile, pk=pk)
+    tag_list = profile_object.tag.split(',')
+    tag_object_list = []
+    try:
+        for tag_id in tag_list:
+            try:
+                tag_id = int(tag_id)
+                tag_object_list.append(Tag.objects.get(id=tag_id))
+            except Tag.DoesNotExist:
+                pass
+    except ValueError:
+        pass
 
     context = {
         'profile_object': profile_object,
+        'tag_list': tag_object_list,
         'created_ruleset': fetch_created_ruleset(profile_object.id),
         'title': f"{profile_object.user.username}'s profile",
         'hero_image': profile_object.cover.url,

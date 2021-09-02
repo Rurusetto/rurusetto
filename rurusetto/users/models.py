@@ -35,6 +35,7 @@ class Profile(models.Model):
     - oauth_first_migrate: This field will tell system that is this user's profile is migrated from osu! account? This value will changed by the system.
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    tag = models.CharField(default='', max_length=100, blank=True)
     image = models.ImageField(default='default.jpeg', upload_to='profile_pics', validators=[FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
     cover = models.ImageField(default='default_cover.png', upload_to='cover_pics', validators=[FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
     about_me = models.TextField(default='Hello there!', max_length=120, blank=True)

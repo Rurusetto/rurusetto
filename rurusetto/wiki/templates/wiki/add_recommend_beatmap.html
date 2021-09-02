@@ -6,7 +6,7 @@
     <div class="container align-middle">
         <div class="row">
             <p></p>
-            <div data-aos="fade-up" data-aos-duration="600"><h1 class="display-5 fw-bold">Add a new recommend beatmap</h1></div>
+            <div data-aos="fade-up" data-aos-duration="600"><h1 class="display-5 fw-bold">Recommend a new beatmap</h1></div>
             <p id="hero-description" data-aos="fade-up" data-aos-duration="700">{{ opengraph_description }}</p>
         </div>
     </div>
@@ -38,9 +38,9 @@
                     <div class="col-sm-10">
                       <input type="text" name="beatmap_id" class="form-control" required id="id_beatmap_id">
                         <p class="form-error raleway-font">{{ form.beatmap_id.errors }}</p>
-                        <p class="text-muted raleway-font">Put a beatmap ID that you want to add it. You can find a beatmap ID from the URL of that beatmap.</p>
-                        <p class="text-muted raleway-font">Note that your beatmap must be from osu! mode only.</p>
-                        <p class="text-muted raleway-font">Example : You want to add "Harumachi Clover (Swing Arrangement) [Dictate Edit]" diffuculty "Oh no!" by Sotarks.</p>
+                        <p class="text-muted raleway-font">Put the beatmap ID of the beatmap you want to recommend. You can find the beatmap ID from the URL of that beatmap.</p>
+                        <p class="text-muted raleway-font">Note that your beatmap must be for osu! mode only.</p>
+                        <p class="text-muted raleway-font">Example : Beatmap ID of "Harumachi Clover (Swing Arrangement) [Dictate Edit]" diffuculty "Oh no!" by Sotarks.</p>
                         <img src="{% static "img/get-beatmap-id.png" %}" alt="How to get a beatmap ID" style="max-width: 100%;">
                     </div>
                   </div>
@@ -51,7 +51,7 @@
                     <div class="col-sm-10">
                       <input type="text" name="comment" class="form-control" required id="id_comment">
                         <p class="form-error raleway-font">{{ form.comment.errors }}</p>
-                        <p class="text-muted raleway-font">Write a short comment that why you think that you recommend to play this beatmap with this ruleset.</p>
+                        <p class="text-muted raleway-font">Write a short comment about why you recommend this beatmap for this ruleset.</p>
                     </div>
                   </div>
             </div>

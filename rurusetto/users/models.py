@@ -85,7 +85,9 @@ class Tag(models.Model):
     A model to collect a tag that use to make a tag for showing in profile page.
 
     - name: A tag name to display on tag panel of profile page.
-    - color: Color of tag when display on profile page
+    - pills_color: Color of tag's background color when display on profile page
+    - font_color: Color of tag's font color when display on profile page
+    - description: Description about this tag.
     """
     name = models.CharField(default="Default tag", max_length=25)
     pills_color = ColorField(default="#FF66AA")

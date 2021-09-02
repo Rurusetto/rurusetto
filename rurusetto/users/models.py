@@ -90,5 +90,8 @@ class Tag(models.Model):
     name = models.CharField(default="Default tag", max_length=25)
     pills_color = ColorField(default="#FF66AA")
     font_color = ColorField(default="#FFFFFF")
-    description = models.CharField(default="", max_length=200)
+    description = models.CharField(default="", max_length=500)
+
+    def __str__(self):
+        return self.name
 

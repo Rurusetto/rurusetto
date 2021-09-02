@@ -14,7 +14,7 @@
       <h1 data-aos="fade-up" data-aos-duration="700">{{ profile_object.user.username }}</h1>
       <p data-aos="fade-up" data-aos-duration="750">
           {% for tag in tag_list %}
-            <span class="badge rounded-pill" style='background-color:{{ tag.pills_color }}; color:{{ tag.font_color }};'>{{ tag.name }}</span>
+            <span class="badge rounded-pill" style='background-color:{{ tag.pills_color }}; color:{{ tag.font_color }};' data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ tag.description }}">{{ tag.name }}</span>
           {% endfor %}
       </p>
       <p data-aos="fade-up" data-aos-duration="800">{{ profile_object.about_me }}</p>

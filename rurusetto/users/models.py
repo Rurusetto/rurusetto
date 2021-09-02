@@ -3,6 +3,7 @@ from django.contrib.sitemaps import ping_google
 from django.core.validators import FileExtensionValidator
 from django.db import models
 from PIL import Image
+from colorfield.fields import ColorField
 
 THEME = (
     # Setting choice for changing theme in website.
@@ -76,3 +77,17 @@ class Config(models.Model):
 
     def __str__(self):
         return f'{self.user.username} Config'
+
+
+class Tag(models.Model):
+    """
+    A model to collect a tag that use to make a tag for showing in profile page.
+
+    - name: A tag name to display on tag panel of profile page.
+    - color: Color of tag when display on profile page
+    """
+    name = models.CharField(default="Default tag", max_length=25)
+    pills_color = ColorField(default="#FF66AA")
+    font_color = ColorField(default="#FFFFFF")
+    description = models.CharField(default="", max_length=200)
+

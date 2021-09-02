@@ -387,10 +387,16 @@ def add_recommend_beatmap(request, slug):
                 form.instance.url = f"https://osu.ppy.sh/beatmapsets/{beatmap_json_data['beatmapset_id']}#osu/{form.instance.beatmap_id}"
                 form.save()
                 messages.success(request, f"Added {beatmap_json_data['title']} [{beatmap_json_data['version']}] as a recommended beatmap successfully!")
-                return redirect('recommend_beatmap', slug=ruleset.slug)
             else:
-                messages.error(request, f'Adding beatmap failed! Please check beatmap ID and your beatmap must be from osu! mode only. (Or other players has already recommended this map?)')
-                return redirect('recommend_beatmap', slug=ruleset.slug)
+                if request_data.status_code != 200:
+                    messages.error(request, f"Adding beatmap failed! (Cannot connect to osu! API)")
+                elif not request_data.json():
+                    messages.error(request, f"Adding beatmap failed! (Beatmap ID not found in osu! mode.)")
+                elif RecommendBeatmap.objects.filter(beatmap_id=form.instance.beatmap_id, ruleset_id=ruleset.id).exists():
+                    messages.error(request, f"Adding beatmap failed! (This beatmap is already recommended by other user in this ruleset.)")
+                else:
+                    messages.error(request, f"Adding beatmap failed! (Unknown error.)")
+            return redirect('recommend_beatmap', slug=ruleset.slug)
     else:
         form = RecommendBeatmapForm()
     context = {

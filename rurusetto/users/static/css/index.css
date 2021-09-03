@@ -537,6 +537,22 @@ button.accordion-button:focus {
     color: #ff66aa;
 }
 
+@media (max-width: 1009px) {
+    #profile-pic {
+        flex: 0 0 auto;
+        width: 25%;
+    }
+
+    #profile-detail {
+        flex: 0 0 auto;
+        width: 75%;
+    }
+
+    #profie-container {
+        margin-top: -120px;
+    }
+}
+
 /*Class use in JS*/
 
 .hidden {

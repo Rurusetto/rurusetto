@@ -6,11 +6,11 @@
 <div class="px-4 py-4 my-4 text-center align-middle hero"></div>
 
 <div class="container px-4 py-4 my-4 d-grid gap-4">
-  <div class="row" style="margin-top: -11%; width: 1280px;">
-    <div class="col col-2">
-      <img data-aos="zoom-in" data-aos-duration="600" src="{{ profile_object.image.url }}" alt="{{ profile_object.user.username }}" height="160" width="160" class="rounded-circle" >
+  <div class="row profile-container" style="margin-top: -150px;">
+    <div class="col col-2" id="profile-pic">
+      <img data-aos="zoom-in" data-aos-duration="600" src="{{ profile_object.image.url }}" alt="{{ profile_object.user.username }}" width="100%" class="rounded-circle profile-page-pic">
     </div>
-    <div class="col col-10" style="margin-left: -2%;">
+    <div class="col col-10" id="profile-detail">
       <h1 data-aos="fade-up" data-aos-duration="700">{{ profile_object.user.username }}</h1>
       <p data-aos="fade-up" data-aos-duration="750">
           {% for tag in tag_list %}

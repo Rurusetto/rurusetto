@@ -152,7 +152,7 @@ def make_beatmap_aapproval_view(ruleset_id):
     """
     ruleset = Ruleset.objects.get(id=ruleset_id)
     beatmap_list = []
-    beatmap_not_approved = RecommendBeatmap.objects.filter(ruleset_id=ruleset.id, owner_approved=False)
+    beatmap_not_approved = RecommendBeatmap.objects.filter(ruleset_id=ruleset.id, owner_seen=False)
     if len(beatmap_not_approved) != 0:
         for beatmap in beatmap_not_approved:
             try:

@@ -385,8 +385,14 @@ def add_recommend_beatmap(request, slug):
                 form.instance.user_id = request.user.id
                 # Generate the URL to the osu! web from beatmap ID and beatmapset ID.
                 form.instance.url = f"https://osu.ppy.sh/beatmapsets/{beatmap_json_data['beatmapset_id']}#osu/{form.instance.beatmap_id}"
+                if request.user.id == int(ruleset.owner):
+                    form.instance.owner_approved = True;
+                    form.instance.owner_seen = True;
                 form.save()
-                messages.success(request, f"Added {beatmap_json_data['title']} [{beatmap_json_data['version']}] as a recommended beatmap successfully!")
+                if request.user.id == int(ruleset.owner):
+                    messages.success(request, f"Added {beatmap_json_data['title']} [{beatmap_json_data['version']}] as a recommended beatmap successfully!")
+                else:
+                    messages.success(request, f"Added {beatmap_json_data['title']} [{beatmap_json_data['version']}] to a waiting list! Please wait for the ruleset owner to approve your beatmap!")
             else:
                 if request_data.status_code != 200:
                     messages.error(request, f"Adding beatmap failed! (Cannot connect to osu! API)")

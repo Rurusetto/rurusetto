@@ -14,6 +14,8 @@ urlpatterns = [
     path('rulesets/<slug:rulesets_slug>/<slug:subpage_slug>/edit', views.edit_subpage, name='edit_subpage'),
     path('rulesets/<slug:slug>/new/beatmaps', views.add_recommend_beatmap, name='add_recommend_beatmap'),
     path('rulesets/<slug:rulesets_slug>/manage/beatmaps', views.recommend_beatmap_approval, name='recommend_beatmap_approval'),
+    path('rulesets/<slug:rulesets_slug>/manage/beatmaps/approve/<int:beatmap_id>', views.approve_recommend_beatmap, name='approve_recommend_beatmap'),
+    path('rulesets/<slug:rulesets_slug>/manage/beatmaps/deny/<int:beatmap_id>', views.deny_recommend_beatmap, name='deny_recommend_beatmap'),
     path('install', views.install, name='install'),
     # URL path for API
     path('api/rulesets', views.ruleset_list),

@@ -503,9 +503,7 @@ def deny_recommend_beatmap(request, rulesets_slug, beatmap_id):
         if beatmap.owner_seen:
             messages.error(request, f"You already qualified this beatmap!")
         else:
-            beatmap.owner_approved = False
-            beatmap.save()
-            beatmap.owner_seen = True
+            beatmap.delete()
             messages.success(request, f"Deny beatmap successfully!")
         return redirect('recommend_beatmap_approval', rulesets_slug)
 

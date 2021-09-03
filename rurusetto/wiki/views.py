@@ -7,13 +7,14 @@ from django.http import HttpResponse, JsonResponse
 from .serializers import RulesetSerializer
 from .models import Changelog, Ruleset, Subpage, RecommendBeatmap
 from .forms import RulesetForm, SubpageForm, RecommendBeatmapForm
-from .function import make_listing_view, make_wiki_view, source_link_type, get_user_by_id, make_recommend_beatmap_view
+from .function import make_listing_view, make_wiki_view, source_link_type, get_user_by_id, make_recommend_beatmap_view, make_beatmap_aapproval_view
 from unidecode import unidecode
 from django.template.defaultfilters import slugify
 from rurusetto.settings import OSU_API_V1_KEY
 import requests
 from django.core.files import File
 from django.core.files.temp import NamedTemporaryFile
+from django.core.exceptions import PermissionDenied
 
 
 def home(request):
@@ -432,6 +433,7 @@ def recommend_beatmap(request, slug):
         'ruleset': ruleset,
         'beatmap_owner': beatmap_list_owner,
         'beatmap_other': beatmap_list_other,
+        'is_owner': int(ruleset.owner) == request.user.id,
         'no_beatmap': no_beatmap,
         'hero_image': hero_image,
         'hero_image_light': hero_image_light,
@@ -444,14 +446,21 @@ def recommend_beatmap(request, slug):
 
 @login_required
 def recommend_beatmap_approval(request, rulesets_slug):
-    hero_image = 'img/add-recommend-beatmap-cover-night.png'
-    hero_image_light = 'img/add-recommend-beatmap-light.png'
     ruleset = get_object_or_404(Ruleset, slug=rulesets_slug)
-    if request.user.id != ruleset.owner:
+    hero_image = ruleset.recommend_beatmap_cover.url
+    hero_image_light = ruleset.recommend_beatmap_cover.url
+    if request.user.id != int(ruleset.owner):
         raise PermissionDenied()
     else:
+        beatmap_list = make_beatmap_aapproval_view(ruleset.id)
+        if len(beatmap_list) == 0:
+            no_beatmap = True
+        else:
+            no_beatmap = False
         context = {
-            'beatmap_list': RecommendBeatmap.objects.filter(ruleset_id=ruleset.id,owner_approved=False),
+            'ruleset': ruleset,
+            'beatmap_list': beatmap_list,
+            'no_beatmap': no_beatmap,
             'hero_image': hero_image,
             'hero_image_light': hero_image_light,
             'opengraph_description': f'Recommend beatmaps for playing with {ruleset.name} from ruleset creator and other player.',
@@ -459,6 +468,40 @@ def recommend_beatmap_approval(request, rulesets_slug):
             'opengraph_image': ruleset.opengraph_image.url
         }
         return render(request, 'wiki/recommend_beatmap_approval.html', context)
+
+
+@login_required
+def approve_recommend_beatmap(request, rulesets_slug, beatmap_id):
+    beatmap = RecommendBeatmap.objects.get(id=beatmap_id)
+    ruleset = Ruleset.objects.get(id=beatmap.ruleset_id)
+    if request.user.id != int(ruleset.owner):
+        raise PermissionDenied()
+    else:
+        if beatmap.owner_seen:
+            messages.error(request, f"You already qualified this beatmap!")
+        else:
+            beatmap.owner_approved = True
+            beatmap.owner_seen = True
+            beatmap.save()
+            messages.success(request, f"Approve beatmap successfully!")
+        return redirect('recommend_beatmap_approval', rulesets_slug)
+
+
+@login_required
+def deny_recommend_beatmap(request, rulesets_slug, beatmap_id):
+    beatmap = RecommendBeatmap.objects.get(id=beatmap_id)
+    ruleset = Ruleset.objects.get(id=beatmap.ruleset_id)
+    if request.user.id != int(ruleset.owner):
+        raise PermissionDenied()
+    else:
+        if beatmap.owner_seen:
+            messages.error(request, f"You already qualified this beatmap!")
+        else:
+            beatmap.owner_approved = False
+            beatmap.save()
+            beatmap.owner_seen = True
+            messages.success(request, f"Deny beatmap successfully!")
+        return redirect('recommend_beatmap_approval', rulesets_slug)
 
 
 # Views for API

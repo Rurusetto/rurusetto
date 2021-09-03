@@ -48,7 +48,7 @@
               {% endif %}
         </div>
     {% if beatmap_owner %}
-    <h1 data-aos="fade-up" data-aos-duration="500">Recommended by {{ ruleset.name }} creator</h1>
+    <h1 data-aos="fade-up" data-aos-duration="500" data-aos-once="true">Recommended by {{ ruleset.name }} creator</h1>
     <div class="row">
         {% for beatmap in beatmap_owner %}
         {% include "wiki/snippets/beatmap_card.html" %}
@@ -57,7 +57,7 @@
     {% endif %}
 
     {% if beatmap_other %}
-    <h1 data-aos="fade-up" data-aos-duration="500">Recommended by players</h1>
+    <h1 data-aos="fade-up" data-aos-duration="500" data-aos-once="true">Recommended by players</h1>
     <div class="row">
         {% for beatmap in beatmap_other %}
         {% include "wiki/snippets/beatmap_card.html" %}

@@ -353,7 +353,8 @@ def add_recommend_beatmap(request, slug):
             # Fetch beatmap detail from osu! API
             parameter = {'b': int(form.instance.beatmap_id), 'm': 0, 'k': OSU_API_V1_KEY}
             request_data = requests.get("https://osu.ppy.sh/api/get_beatmaps", params=parameter)
-            if (request_data.status_code == 200) and (request_data.json() != []) and (not RecommendBeatmap.objects.filter(beatmap_id=form.instance.beatmap_id, ruleset_id=ruleset.id).exists()):
+            if (request_data.status_code == 200) and (request_data.json() != []) and (
+                    not RecommendBeatmap.objects.filter(beatmap_id=form.instance.beatmap_id, ruleset_id=ruleset.id, owner_approved=True, owner_seen=True).exclude(user_id=str(request.user.id)).exists) and (not RecommendBeatmap.objects.filter(user_id=str(request.user.id), owner_seen=False, beatmap_id=form.instance.beatmap_id).exists()):
                 beatmap_json_data = request_data.json()[0]
                 # Download beatmap cover from osu! server and save it to the media storage and put the address in the
                 # RecommendBeatmap model that user want to add.
@@ -398,7 +399,9 @@ def add_recommend_beatmap(request, slug):
                     messages.error(request, f"Adding beatmap failed! (Cannot connect to osu! API)")
                 elif not request_data.json():
                     messages.error(request, f"Adding beatmap failed! (Beatmap ID not found in osu! mode.)")
-                elif RecommendBeatmap.objects.filter(beatmap_id=form.instance.beatmap_id, ruleset_id=ruleset.id).exists():
+                elif RecommendBeatmap.objects.filter(user_id=str(request.user.id), owner_seen=False, beatmap_id=form.instance.beatmap_id).exists():
+                    messages.error(request,f"Adding beatmap failed! (You are already recommend this beatmap.)")
+                elif RecommendBeatmap.objects.filter(beatmap_id=form.instance.beatmap_id, ruleset_id=ruleset.id, owner_approved=True, owner_seen=True).exclude(user_id=str(request.user.id)).exists:
                     messages.error(request, f"Adding beatmap failed! (This beatmap is already recommended by other user in this ruleset.)")
                 else:
                     messages.error(request, f"Adding beatmap failed! (Unknown error.)")

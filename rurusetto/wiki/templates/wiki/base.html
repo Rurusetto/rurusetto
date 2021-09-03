@@ -45,10 +45,12 @@
     <style>
         .hero {
             background-image: linear-gradient(to bottom, transparent, #2d2d2d), url({{ hero_image }});
+            background-position: top center;
         }
 
         body.light .hero {
             background-image: linear-gradient(to bottom, transparent, #fff), url({{ hero_image_light }});
+            background-position: top center;
         }
 
         {% block css %}{% endblock %}

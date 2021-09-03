@@ -4,7 +4,6 @@ from django.shortcuts import render, redirect, get_object_or_404, resolve_url
 from django.templatetags.static import static
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, JsonResponse
-from rest_framework.parsers import JSONParser
 from .serializers import RulesetSerializer
 from .models import Changelog, Ruleset, Subpage, RecommendBeatmap
 from .forms import RulesetForm, SubpageForm, RecommendBeatmapForm
@@ -443,6 +442,25 @@ def recommend_beatmap(request, slug):
     return render(request, 'wiki/recommend_beatmap.html', context)
 
 
+@login_required
+def recommend_beatmap_approval(request, rulesets_slug):
+    hero_image = 'img/add-recommend-beatmap-cover-night.png'
+    hero_image_light = 'img/add-recommend-beatmap-light.png'
+    ruleset = get_object_or_404(Ruleset, slug=rulesets_slug)
+    if request.user.id != ruleset.owner:
+        raise PermissionDenied()
+    else:
+        context = {
+            'beatmap_list': RecommendBeatmap.objects.filter(ruleset_id=ruleset.id,owner_approved=False),
+            'hero_image': hero_image,
+            'hero_image_light': hero_image_light,
+            'opengraph_description': f'Recommend beatmaps for playing with {ruleset.name} from ruleset creator and other player.',
+            'opengraph_url': resolve_url('recommend_beatmap', slug=ruleset.slug),
+            'opengraph_image': ruleset.opengraph_image.url
+        }
+        return render(request, 'wiki/recommend_beatmap_approval.html', context)
+
+
 # Views for API
 
 
@@ -454,6 +472,8 @@ def ruleset_list(request):
     :param request: WSGI request from user
     :return: All ruleset in website with its metadata in JSON format.
     """
+    hero_image = 'img/add-recommend-beatmap-cover-night.png'
+    hero_image_light = 'img/add-recommend-beatmap-light.png'
     if request.method == 'GET':
         rulesets = Ruleset.objects.all()
         serializer = RulesetSerializer(rulesets, many=True)

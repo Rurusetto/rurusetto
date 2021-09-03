@@ -172,6 +172,8 @@ class RecommendBeatmap(models.Model):
     - beatmap_cover: An image of the beatmap cover image.
     - beatmap_thumbnail: An image of beatmap thumbnail.
     - created_at: A time that this beatmap was created.
+    - owner_approved: Boolean of value that is this beatmap approved by ruleset owner or not.
+    - owner_seen: Boolean of value that is this beatmap accept or denied by ruleset owner or not.
     """
     ruleset_id = models.CharField(default="0", max_length=10)
     user_id = models.CharField(default="0", max_length=10)
@@ -199,6 +201,7 @@ class RecommendBeatmap(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
     owner_approved = models.BooleanField(default=False)
+    owner_seen = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.title} [{self.version}] (Recommend of {Ruleset.objects.get(id=int(self.ruleset_id)).name}) [Approved : {self.owner_approved}]'

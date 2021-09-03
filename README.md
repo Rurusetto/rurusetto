@@ -99,7 +99,7 @@ cd rurusetto # get in the Rūrusetto project config folder
 python manage.py runserver
 ```
 
-Note : Before you can start the development server you must fill the API key to enable osu! OAuth system in `settings.py` file and the callback URL of the OAuth on the development server is http://127.0.0.1:8000/accounts/osu/login/callback/.
+Note : If you want to work on the osu! OAuth system or some program part that required the osu! API you must fill the osu! API key and OAuth app number in `settings.py` to start development on this function. But if you are not testing on this function it's ok to leave the key blank. (The development OAuth server callback is http://127.0.0.1:8000/accounts/osu/login/callback/.)
 
 ## License
 

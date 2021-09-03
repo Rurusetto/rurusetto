@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'wiki.apps.WikiConfig',
     'crispy_forms',
     'mdeditor',
+    'colorfield',
+    'admin_interface',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,7 +50,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.osu',
     'rest_framework',
-    'colorfield',
 ]
 
 SITE_ID = 1
@@ -66,6 +67,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'rurusetto.urls'
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+SILENCED_SYSTEM_CHECKS = ['security.W019']
 
 TEMPLATES = [
     {

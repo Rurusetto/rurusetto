@@ -198,9 +198,10 @@ class RecommendBeatmap(models.Model):
     comment = models.CharField(default=None, max_length=150)
 
     created_at = models.DateTimeField(auto_now_add=True)
+    owner_approved = models.BooleanField(default=False)
 
     def __str__(self):
-        return f'{self.title} [{self.version}] (Recommend of {Ruleset.objects.get(id=int(self.ruleset_id)).name})'
+        return f'{self.title} [{self.version}] (Recommend of {Ruleset.objects.get(id=int(self.ruleset_id)).name}) [Approved : {self.owner_approved}]'
 
 
 class CustomWiki(models.Model):

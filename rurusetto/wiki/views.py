@@ -15,6 +15,7 @@ import requests
 from django.core.files import File
 from django.core.files.temp import NamedTemporaryFile
 from django.core.exceptions import PermissionDenied
+import os
 
 
 def home(request):
@@ -506,6 +507,8 @@ def deny_recommend_beatmap(request, rulesets_slug, beatmap_id):
         if beatmap.owner_seen:
             messages.error(request, f"You already qualified this beatmap!")
         else:
+            os.remove(f"media/{beatmap.beatmap_cover}")
+            os.remove(f"media/{beatmap.beatmap_thumbnail}")
             beatmap.delete()
             messages.success(request, f"Deny beatmap successfully!")
         return redirect('recommend_beatmap_approval', rulesets_slug)

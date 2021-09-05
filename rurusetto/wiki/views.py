@@ -4,17 +4,18 @@ from django.shortcuts import render, redirect, get_object_or_404, resolve_url
 from django.templatetags.static import static
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, JsonResponse
-from rest_framework.parsers import JSONParser
 from .serializers import RulesetSerializer
 from .models import Changelog, Ruleset, Subpage, RecommendBeatmap
 from .forms import RulesetForm, SubpageForm, RecommendBeatmapForm
-from .function import make_listing_view, make_wiki_view, source_link_type, get_user_by_id, make_recommend_beatmap_view
+from .function import make_listing_view, make_wiki_view, source_link_type, get_user_by_id, make_recommend_beatmap_view, make_beatmap_aapproval_view
 from unidecode import unidecode
 from django.template.defaultfilters import slugify
 from rurusetto.settings import OSU_API_V1_KEY
 import requests
 from django.core.files import File
 from django.core.files.temp import NamedTemporaryFile
+from django.core.exceptions import PermissionDenied
+import os
 
 
 def home(request):
@@ -353,7 +354,8 @@ def add_recommend_beatmap(request, slug):
             # Fetch beatmap detail from osu! API
             parameter = {'b': int(form.instance.beatmap_id), 'm': 0, 'k': OSU_API_V1_KEY}
             request_data = requests.get("https://osu.ppy.sh/api/get_beatmaps", params=parameter)
-            if (request_data.status_code == 200) and (request_data.json() != []) and (not RecommendBeatmap.objects.filter(beatmap_id=form.instance.beatmap_id, ruleset_id=ruleset.id).exists()):
+            if (request_data.status_code == 200) and (request_data.json() != []) and (
+                    not RecommendBeatmap.objects.filter(beatmap_id=form.instance.beatmap_id, ruleset_id=ruleset.id, owner_approved=True, owner_seen=True).exists()) and (not RecommendBeatmap.objects.filter(user_id=str(request.user.id), owner_seen=False, beatmap_id=form.instance.beatmap_id).exists()):
                 beatmap_json_data = request_data.json()[0]
                 # Download beatmap cover from osu! server and save it to the media storage and put the address in the
                 # RecommendBeatmap model that user want to add.
@@ -385,14 +387,22 @@ def add_recommend_beatmap(request, slug):
                 form.instance.user_id = request.user.id
                 # Generate the URL to the osu! web from beatmap ID and beatmapset ID.
                 form.instance.url = f"https://osu.ppy.sh/beatmapsets/{beatmap_json_data['beatmapset_id']}#osu/{form.instance.beatmap_id}"
+                if request.user.id == int(ruleset.owner):
+                    form.instance.owner_approved = True;
+                    form.instance.owner_seen = True;
                 form.save()
-                messages.success(request, f"Added {beatmap_json_data['title']} [{beatmap_json_data['version']}] as a recommended beatmap successfully!")
+                if request.user.id == int(ruleset.owner):
+                    messages.success(request, f"Added {beatmap_json_data['title']} [{beatmap_json_data['version']}] as a recommended beatmap successfully!")
+                else:
+                    messages.success(request, f"Added {beatmap_json_data['title']} [{beatmap_json_data['version']}] to a waiting list! Please wait for the ruleset owner to approve your beatmap!")
             else:
                 if request_data.status_code != 200:
                     messages.error(request, f"Adding beatmap failed! (Cannot connect to osu! API)")
                 elif not request_data.json():
                     messages.error(request, f"Adding beatmap failed! (Beatmap ID not found in osu! mode.)")
-                elif RecommendBeatmap.objects.filter(beatmap_id=form.instance.beatmap_id, ruleset_id=ruleset.id).exists():
+                elif RecommendBeatmap.objects.filter(user_id=str(request.user.id), owner_seen=False, beatmap_id=form.instance.beatmap_id).exists():
+                    messages.error(request,f"Adding beatmap failed! (You are already recommend this beatmap.)")
+                elif RecommendBeatmap.objects.filter(beatmap_id=form.instance.beatmap_id, ruleset_id=ruleset.id, owner_approved=True, owner_seen=True).exclude(user_id=str(request.user.id)).exists:
                     messages.error(request, f"Adding beatmap failed! (This beatmap is already recommended by other user in this ruleset.)")
                 else:
                     messages.error(request, f"Adding beatmap failed! (Unknown error.)")
@@ -433,6 +443,7 @@ def recommend_beatmap(request, slug):
         'ruleset': ruleset,
         'beatmap_owner': beatmap_list_owner,
         'beatmap_other': beatmap_list_other,
+        'is_owner': int(ruleset.owner) == request.user.id,
         'no_beatmap': no_beatmap,
         'hero_image': hero_image,
         'hero_image_light': hero_image_light,
@@ -441,6 +452,100 @@ def recommend_beatmap(request, slug):
         'opengraph_image': ruleset.opengraph_image.url
     }
     return render(request, 'wiki/recommend_beatmap.html', context)
+
+
+@login_required
+def recommend_beatmap_approval(request, rulesets_slug):
+    """
+    View for recommend beatmap approval for the ruleset owner.
+
+    If other user that are not ruleset owner try to access this link, a server will reply 302 page.
+
+    :param request: WSGI request from user.
+    :param rulesets_slug: Ruleset slug (slug in Ruleset model)
+    :type rulesets_slug: str
+    :return: Render the recommend beatmap approval page and pass the value from context to the template (recommend_beatmap_approval.html)
+    """
+    ruleset = get_object_or_404(Ruleset, slug=rulesets_slug)
+    hero_image = ruleset.recommend_beatmap_cover.url
+    hero_image_light = ruleset.recommend_beatmap_cover.url
+    if request.user.id == int(ruleset.owner):
+        beatmap_list = make_beatmap_aapproval_view(ruleset.id)
+        if len(beatmap_list) == 0:
+            no_beatmap = True
+        else:
+            no_beatmap = False
+        context = {
+            'ruleset': ruleset,
+            'beatmap_list': beatmap_list,
+            'no_beatmap': no_beatmap,
+            'hero_image': hero_image,
+            'hero_image_light': hero_image_light,
+            'title': f'approve a recommend beatmap for {ruleset.name}',
+            'opengraph_description': f"Let's see how is the recommendation from other player.",
+            'opengraph_url': resolve_url('recommend_beatmap', slug=ruleset.slug),
+            'opengraph_image': ruleset.opengraph_image.url
+        }
+        return render(request, 'wiki/recommend_beatmap_approval.html', context)
+    else:
+        raise PermissionDenied()
+
+
+@login_required
+def approve_recommend_beatmap(request, rulesets_slug, beatmap_id):
+    """
+    View that are approve the target beatmap.
+
+    If other user that are not ruleset owner try to access this link, a server will reply 302 page.
+
+    :param request: WSGI request from user.
+    :param rulesets_slug: Ruleset slug (slug in Ruleset model)
+    :type rulesets_slug: str
+    :param beatmap_id: Beatmap ID of that RecommendBeatmap objects
+    :type beatmap_id: int
+    :return: Redirect to recommend beatmap approval page.
+    """
+    beatmap = RecommendBeatmap.objects.get(id=beatmap_id)
+    ruleset = Ruleset.objects.get(id=beatmap.ruleset_id)
+    if request.user.id == int(ruleset.owner):
+        if beatmap.owner_seen:
+            messages.error(request, f"You already qualified this beatmap!")
+        else:
+            beatmap.owner_approved = True
+            beatmap.owner_seen = True
+            beatmap.save()
+            messages.success(request, f"Approve beatmap successfully!")
+        return redirect('recommend_beatmap_approval', rulesets_slug)
+    else:
+        raise PermissionDenied()
+
+
+@login_required
+def deny_recommend_beatmap(request, rulesets_slug, beatmap_id):
+    """
+    View that are deny the target beatmap and delete it from the database.
+
+    :param request: WSGI request from user.
+    :param rulesets_slug: Ruleset slug (slug in Ruleset model)
+    :type rulesets_slug: str
+    :param beatmap_id: Beatmap ID of that RecommendBeatmap objects
+    :type beatmap_id: int
+    :return: Redirect to recommend beatmap approval page.
+    """
+    beatmap = RecommendBeatmap.objects.get(id=beatmap_id)
+    ruleset = Ruleset.objects.get(id=beatmap.ruleset_id)
+    if request.user.id == int(ruleset.owner):
+        if beatmap.owner_seen:
+            messages.error(request, f"You already qualified this beatmap!")
+        else:
+            # Delete beatmap cover and thumbnail before delete the object out
+            os.remove(f"media/{beatmap.beatmap_cover}")
+            os.remove(f"media/{beatmap.beatmap_thumbnail}")
+            beatmap.delete()
+            messages.success(request, f"Deny beatmap successfully!")
+        return redirect('recommend_beatmap_approval', rulesets_slug)
+    else:
+        raise PermissionDenied()
 
 
 # Views for API

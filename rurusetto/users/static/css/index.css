@@ -553,6 +553,10 @@ button.accordion-button:focus {
     }
 }
 
+.color-white {
+    color: white;
+}
+
 /*Class use in JS*/
 
 .hidden {

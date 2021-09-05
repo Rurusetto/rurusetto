@@ -128,11 +128,38 @@ def make_recommend_beatmap_view(ruleset_id):
     # Create a list of recommend beatmaps that is recommend by other player
     recommend_by_other = []
     if len(RecommendBeatmap.objects.exclude(user_id=ruleset.owner).filter(ruleset_id=ruleset.id)) != 0:
-        for beatmap in RecommendBeatmap.objects.exclude(user_id=ruleset.owner).filter(ruleset_id=ruleset.id):
+        for beatmap in RecommendBeatmap.objects.exclude(user_id=ruleset.owner).filter(ruleset_id=ruleset.id, owner_approved=True, owner_seen=True):
             try:
                 user_detail = User.objects.get(id=beatmap.user_id)
                 recommend_by_other.append([beatmap, user_detail])
             except User.DoesNotExist:
                 recommend_by_other.append([beatmap, None])
     return recommend_by_owner, recommend_by_other
+
+
+def make_beatmap_aapproval_view(ruleset_id):
+    """
+    Get ruleset ID that want to generate a recommend beatmap approval view and return a list of
+    recommend beatmap that is not approved.
+
+    In the sublist include RecommendBeatmap object and User object who recommend this beatmap.
+
+    If the program cannot find the User object,it will append `None` to the return value.
+
+    :param ruleset_id: A ruleset ID that want to generate a recommend beatmap approval view.
+    :type ruleset_id: int
+    :return: A list from description
+    """
+    ruleset = Ruleset.objects.get(id=ruleset_id)
+    beatmap_list = []
+    beatmap_not_approved = RecommendBeatmap.objects.filter(ruleset_id=ruleset.id, owner_seen=False).exclude(user_id=ruleset.owner)
+    if len(beatmap_not_approved) != 0:
+        for beatmap in beatmap_not_approved:
+            try:
+                user_detail = User.objects.get(id=beatmap.user_id)
+                beatmap_list.append([beatmap, user_detail])
+            except User.DoesNotExist:
+                beatmap_list.append([beatmap, None])
+    return beatmap_list
+
 

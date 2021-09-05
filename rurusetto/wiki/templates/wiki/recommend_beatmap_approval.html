@@ -1,0 +1,65 @@
+{% extends "wiki/base.html" %}
+{% load static %}
+{% load convert_star_rating %}
+{% block content %}
+
+<div class="px-4 py-4 my-4 align-middle hero">
+    <div class="container align-middle">
+        <div class="row">
+            <p></p>
+            <div data-aos="fade-up" data-aos-duration="600"><h1 class="display-5 fw-bold">{{ ruleset.name }} recommended beatmaps approval</h1></div>
+            <p data-aos="fade-up" data-aos-duration="700">{{ opengraph_description }}</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        {% if user.is_authenticated %}
+        <div class="col-sm-4 hvr-icon-bounce">
+            <p data-aos="fade-up" data-aos-duration="700"><a class="text-decoration-none text-center spacing-hover-short" href="{% url 'recommend_beatmap' ruleset.slug %}"><i class="fas fa-chevron-circle-left icon-menu hvr-icon"></i> Back to recommend beatmaps</a></p>
+        </div>
+        {% else %}
+            <p></p>
+        {% endif %}
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+             {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags == "success"%}
+                        <div class="alert alert-success raleway-font">
+                            <i class="fas fa-check"></i> {{ message }}
+                        </div>
+                    {% endif %}
+                    {% if message.tags == "error"%}
+                        <div class="alert alert-danger raleway-font">
+                            <i class="fas fa-times"></i> {{ message }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+              {% endif %}
+        </div>
+
+    {% if beatmap_list %}
+    <div class="row">
+        {% for beatmap in beatmap_list %}
+        {% include "wiki/snippets/beatmap_approval_card.html" %}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if no_beatmap %}
+    <div data-aos="fade-up" data-aos-duration="500">
+        <h1 class="text-center">\ (•◡•) /</h1>
+        <h3 class="text-center">You are already response to all beatmaps.</h3>
+        <h3 class="text-center">Congrats!</h3>
+    </div>
+    {% endif %}
+</div>
+
+<p></p>
+
+{% endblock content %}

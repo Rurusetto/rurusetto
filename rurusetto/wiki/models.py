@@ -204,7 +204,7 @@ class RecommendBeatmap(models.Model):
     owner_seen = models.BooleanField(default=False)
 
     def __str__(self):
-        return f'{self.title} [{self.version}] (Recommend of {Ruleset.objects.get(id=int(self.ruleset_id)).name}) [Approved : {self.owner_approved}]'
+        return f'{self.title} [{self.version}] (Recommend of {Ruleset.objects.get(id=int(self.ruleset_id)).name}) [Approved : {self.owner_approved}] [Owner Seen : {self.owner_seen}]'
 
 
 class CustomWiki(models.Model):

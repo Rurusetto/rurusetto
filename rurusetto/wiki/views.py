@@ -456,6 +456,16 @@ def recommend_beatmap(request, slug):
 
 @login_required
 def recommend_beatmap_approval(request, rulesets_slug):
+    """
+    View for recommend beatmap approval for the ruleset owner.
+
+    If other user that are not ruleset owner try to access this link, a server will reply 302 page.
+
+    :param request: WSGI request from user.
+    :param rulesets_slug: Ruleset slug (slug in Ruleset model)
+    :type rulesets_slug: str
+    :return: Render the recommend beatmap approval page and pass the value from context to the template (recommend_beatmap_approval.html)
+    """
     ruleset = get_object_or_404(Ruleset, slug=rulesets_slug)
     hero_image = ruleset.recommend_beatmap_cover.url
     hero_image_light = ruleset.recommend_beatmap_cover.url
@@ -482,6 +492,18 @@ def recommend_beatmap_approval(request, rulesets_slug):
 
 @login_required
 def approve_recommend_beatmap(request, rulesets_slug, beatmap_id):
+    """
+    View that are approve the target beatmap.
+
+    If other user that are not ruleset owner try to access this link, a server will reply 302 page.
+
+    :param request: WSGI request from user.
+    :param rulesets_slug: Ruleset slug (slug in Ruleset model)
+    :type rulesets_slug: str
+    :param beatmap_id: Beatmap ID of that RecommendBeatmap objects
+    :type beatmap_id: int
+    :return: Redirect to recommend beatmap approval page.
+    """
     beatmap = RecommendBeatmap.objects.get(id=beatmap_id)
     ruleset = Ruleset.objects.get(id=beatmap.ruleset_id)
     if request.user.id != int(ruleset.owner):
@@ -499,6 +521,16 @@ def approve_recommend_beatmap(request, rulesets_slug, beatmap_id):
 
 @login_required
 def deny_recommend_beatmap(request, rulesets_slug, beatmap_id):
+    """
+    View that are deny the target beatmap and delete it from the database.
+
+    :param request: WSGI request from user.
+    :param rulesets_slug: Ruleset slug (slug in Ruleset model)
+    :type rulesets_slug: str
+    :param beatmap_id: Beatmap ID of that RecommendBeatmap objects
+    :type beatmap_id: int
+    :return: Redirect to recommend beatmap approval page.
+    """
     beatmap = RecommendBeatmap.objects.get(id=beatmap_id)
     ruleset = Ruleset.objects.get(id=beatmap.ruleset_id)
     if request.user.id != int(ruleset.owner):
@@ -507,6 +539,7 @@ def deny_recommend_beatmap(request, rulesets_slug, beatmap_id):
         if beatmap.owner_seen:
             messages.error(request, f"You already qualified this beatmap!")
         else:
+            # Delete beatmap cover and thumbnail before delete the object out
             os.remove(f"media/{beatmap.beatmap_cover}")
             os.remove(f"media/{beatmap.beatmap_thumbnail}")
             beatmap.delete()
@@ -525,8 +558,6 @@ def ruleset_list(request):
     :param request: WSGI request from user
     :return: All ruleset in website with its metadata in JSON format.
     """
-    hero_image = 'img/add-recommend-beatmap-cover-night.png'
-    hero_image_light = 'img/add-recommend-beatmap-light.png'
     if request.method == 'GET':
         rulesets = Ruleset.objects.all()
         serializer = RulesetSerializer(rulesets, many=True)

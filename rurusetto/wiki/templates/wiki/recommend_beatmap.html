@@ -16,7 +16,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-2 hvr-icon-bounce">
-            <p data-aos="fade-up" data-aos-duration="900"><a class="text-decoration-none text-center spacing-hover-short" href="{% url "wiki" ruleset.slug %}"><i class="fas fa-chevron-circle-left icon-menu hvr-icon"></i> Back to main page</a></p>
+            <p data-aos="fade-up" data-aos-duration="700"><a class="text-decoration-none text-center spacing-hover-short" href="{% url "wiki" ruleset.slug %}"><i class="fas fa-chevron-circle-left icon-menu hvr-icon"></i> Back to main page</a></p>
         </div>
         {% if user.is_authenticated and is_owner %}
             <div class="col-sm-3 hvr-icon-bounce">

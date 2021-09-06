@@ -55,9 +55,9 @@
                 {% endif %}
             {% else %}
                 {% if detail.0.verified %}
-                    <a href="{% url "profile" detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><p class="text-muted"><img src="{{ detail.1.profile.image.url }}" alt="{{ detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ detail.1.username }} <i class="fas fa-check-circle verified-circle icon-menu hvr-icon"></i></p></a>
+                    <a href="{% url "profile" detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover profile-link"><p class="text-muted"><img src="{{ detail.1.profile.image.url }}" alt="{{ detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ detail.1.username }} <i class="fas fa-check-circle verified-circle icon-menu hvr-icon"></i></p></a>
                 {% else %}
-                    <a href="{% url "profile" detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><p class="text-muted"><img src="{{ detail.1.profile.image.url }}" alt="{{ detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ detail.1.username }} </p></a>
+                    <a href="{% url "profile" detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover profile-link"><p class="text-muted"><img src="{{ detail.1.profile.image.url }}" alt="{{ detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ detail.1.username }} </p></a>
                 {% endif %}
             {% endif %}
             <p class="rulesets-description">{{ detail.0.description }}</p>

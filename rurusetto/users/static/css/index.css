@@ -556,10 +556,22 @@ button.accordion-button:focus {
     #profie-container {
         margin-top: -120px;
     }
+
+    #recommend-beatmap-link {
+        width: 100%!important;
+    }
 }
 
 .color-white {
     color: white;
+}
+
+.profile-link {
+    transition: 0.05s!important;
+}
+
+#recommend-beatmap-link {
+    width: 20%
 }
 
 /*Class use in JS*/

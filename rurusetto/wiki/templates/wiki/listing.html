@@ -15,8 +15,8 @@
 <div class="container">
     <div class="row">
         {% if user.is_authenticated %}
-        <div class="col-sm-2 hvr-icon-bounce">
-            <p data-aos="fade-up" data-aos-duration="800"><a class="text-decoration-none text-center spacing-hover-short" href="{% url 'create_ruleset' %}"><i class="fas fa-plus icon-menu hvr-icon"></i> Add a new ruleset</a></p>
+        <div class="col-sm-2">
+            <p data-aos="fade-up" data-aos-duration="800"><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'create_ruleset' %}"><i class="fas fa-plus icon-menu hvr-icon"></i> Add a new ruleset</a></p>
         </div>
         {% else %}
             <p></p>
@@ -55,9 +55,9 @@
                 {% endif %}
             {% else %}
                 {% if detail.0.verified %}
-                    <a href="{% url "profile" detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><p class="text-muted"><img src="{{ detail.1.profile.image.url }}" alt="{{ detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ detail.1.username }} <i class="fas fa-check-circle verified-circle icon-menu hvr-icon"></i></p></a>
+                    <a href="{% url "profile" detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover profile-link"><p class="text-muted"><img src="{{ detail.1.profile.image.url }}" alt="{{ detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ detail.1.username }} <i class="fas fa-check-circle verified-circle icon-menu hvr-icon"></i></p></a>
                 {% else %}
-                    <a href="{% url "profile" detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><p class="text-muted"><img src="{{ detail.1.profile.image.url }}" alt="{{ detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ detail.1.username }} </p></a>
+                    <a href="{% url "profile" detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover profile-link"><p class="text-muted"><img src="{{ detail.1.profile.image.url }}" alt="{{ detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ detail.1.username }} </p></a>
                 {% endif %}
             {% endif %}
             <p class="rulesets-description">{{ detail.0.description }}</p>

@@ -16,8 +16,8 @@
 <div class="container">
     <div class="row">
         {% if user.is_authenticated %}
-        <div class="col-sm-4 hvr-icon-bounce">
-            <p data-aos="fade-up" data-aos-duration="700"><a class="text-decoration-none text-center spacing-hover-short" href="{% url 'recommend_beatmap' ruleset.slug %}"><i class="fas fa-chevron-circle-left icon-menu hvr-icon"></i> Back to recommend beatmaps</a></p>
+        <div class="col-sm-4">
+            <p data-aos="fade-up" data-aos-duration="700"><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'recommend_beatmap' ruleset.slug %}"><i class="fas fa-chevron-circle-left icon-menu hvr-icon"></i> Back to recommend beatmaps</a></p>
         </div>
         {% else %}
             <p></p>

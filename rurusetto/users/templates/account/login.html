@@ -62,12 +62,10 @@
           <h1>Log In</h1>
           <p></p>
         {% for provider in socialaccount_providers %}
-            <div class="hvr-icon-bounce">
-                <p>
-                  <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}} text-decoration-none text-center spacing-hover-short"
-                     href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}"><img src="{% static 'logo/osu-logo-pink.png' %}" alt="osu! logo" width="20px" height="20px" class="icon-menu hvr-icon"> Log in with {{provider.name}}</a>
-                </p>
-            </div>
+            <p>
+              <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}} text-decoration-none text-center spacing-hover-short hvr-icon-bounce"
+                 href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}"><img src="{% static 'logo/osu-logo-pink.png' %}" alt="osu! logo" width="20px" height="20px" class="icon-menu hvr-icon"> Log in with {{provider.name}}</a>
+            </p>
         {% endfor %}
           <form method="POST">
               {% csrf_token %}

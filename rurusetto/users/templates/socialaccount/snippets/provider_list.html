@@ -14,8 +14,6 @@
 </li>
 {% endfor %}
 {% endif %}
-<div class="hvr-icon-bounce">
-  <p><a title="{{provider.name}}" class="socialaccount_provider {{provider.id}} text-decoration-none text-center spacing-hover raleway-font"
+  <p><a title="{{provider.name}}" class="socialaccount_provider {{provider.id}} text-decoration-none text-center spacing-hover raleway-font hvr-icon-bounce"
      href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}"><img src="{% static 'logo/osu-logo-pink.png' %}" alt="osu! logo" width="20px" height="20px" class="icon-menu hvr-icon"> Connect to {{provider.name}}</a></p>
-</div>
 {% endfor %}

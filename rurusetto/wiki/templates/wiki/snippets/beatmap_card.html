@@ -88,8 +88,9 @@
             </p>
               <p class="card-text text-muted"><small>mapped by <a href="https://osu.ppy.sh/u/{{ beatmap.0.creator }}" class="text-decoration-none spacing-hover-short">{{ beatmap.0.creator }}</a></small></p>
               <p class="card-text"><small>{{ beatmap.0.comment }}</small></p>
-            <p class="card-text hvr-icon-bounce"><a class="text-decoration-none text-center spacing-hover-short" href="osu://b/{{ beatmap.0.beatmap_id }}"><i class="fas fa-download icon-menu hvr-icon"></i> osu!direct</a></p>
+{#            <p class="card-text hvr-icon-bounce"><a class="text-decoration-none text-center spacing-hover-short" href="osu://b/{{ beatmap.0.beatmap_id }}"><i class="fas fa-download icon-menu hvr-icon"></i> osu!direct</a></p>#}
             <p class="card-text text-muted"><small>Recommend by <a href="{% url "profile" beatmap.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><img src="{{ beatmap.1.profile.image.url }}" alt="{{ beatmap.1.username }}" width="32" height="32" class="rounded-circle hvr-icon" style="transition: 0.2s"> {{ beatmap.1.username }}</a></small></p>
+          <a class="btn btn-rurusetto" href="osu://b/{{ beatmap.0.beatmap_id }}" role="button"><i class="fas fa-download color-white"></i> osu!direct</a>
           </div>
         </div>
       </div>

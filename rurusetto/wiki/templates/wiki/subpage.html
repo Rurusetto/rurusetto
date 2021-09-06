@@ -20,12 +20,12 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-sm-2 hvr-icon-bounce">
-                <p data-aos="fade-up" data-aos-duration="900"><a class="text-decoration-none text-center spacing-hover-short" href="{% url "wiki" ruleset.slug %}"><i class="fas fa-chevron-circle-left icon-menu hvr-icon"></i> Back to main page</a></p>
+            <div class="col-sm-2">
+                <p data-aos="fade-up" data-aos-duration="900"><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url "wiki" ruleset.slug %}"><i class="fas fa-chevron-circle-left icon-menu hvr-icon"></i> Back to main page</a></p>
             </div>
             {% if user.is_authenticated %}
-            <div class="col-sm-2 hvr-icon-bounce">
-                <p data-aos="fade-up" data-aos-duration="950"><a class="text-decoration-none text-center spacing-hover-short" href="{% url "edit_subpage" ruleset.slug content.slug %}"><i class="fas fa-edit icon-menu hvr-icon"></i> Edit This Subpage</a></p>
+            <div class="col-sm-2">
+                <p data-aos="fade-up" data-aos-duration="950"><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url "edit_subpage" ruleset.slug content.slug %}"><i class="fas fa-edit icon-menu hvr-icon"></i> Edit This Subpage</a></p>
             </div>
             {% endif %}
         </div>

@@ -15,8 +15,8 @@
 <div class="container">
     <div class="row">
         {% if user.is_authenticated %}
-        <div class="col-sm-2 hvr-icon-bounce">
-            <p data-aos="fade-up" data-aos-duration="800"><a class="text-decoration-none text-center spacing-hover-short" href="{% url 'create_ruleset' %}"><i class="fas fa-plus icon-menu hvr-icon"></i> Add a new ruleset</a></p>
+        <div class="col-sm-2">
+            <p data-aos="fade-up" data-aos-duration="800"><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'create_ruleset' %}"><i class="fas fa-plus icon-menu hvr-icon"></i> Add a new ruleset</a></p>
         </div>
         {% else %}
             <p></p>

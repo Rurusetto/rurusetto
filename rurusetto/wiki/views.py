@@ -304,7 +304,7 @@ def edit_subpage(request, rulesets_slug, subpage_slug):
     :return: Render the edit subpage page with the edit subpage form and pass the value from context to the template (edit_subpage.html)
     """
     hero_image = 'img/edit-subpage-cover-night.png'
-    hero_image_light = 'img/edit-subpage-cover-light.png'
+    hero_image_light = 'img/edit-subpage-cover-light.jpg'
     ruleset = Ruleset.objects.get(slug=rulesets_slug)
     subpage = Subpage.objects.get(slug=subpage_slug)
     if request.method == 'POST':
@@ -346,7 +346,7 @@ def add_recommend_beatmap(request, slug):
     :return: Render the recommend beatmap page with the recommend beatmap form and pass the value from context to the template (add_recommend_beatmap.html)
     """
     hero_image = 'img/add-recommend-beatmap-cover-night.png'
-    hero_image_light = 'img/add-recommend-beatmap-light.png'
+    hero_image_light = 'img/add-recommend-beatmap-cover-light.jpg'
     ruleset = Ruleset.objects.get(slug=slug)
     if request.method == 'POST':
         form = RecommendBeatmapForm(request.POST)

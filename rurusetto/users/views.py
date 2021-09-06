@@ -101,7 +101,6 @@ def settings(request):
         'hero_image_light': static(hero_image_light),
         'opengraph_description': 'All profile and website settings are here!',
         'opengraph_url': resolve_url('settings'),
-        'opengraph_image': static(hero_image)
     }
 
     return render(request, 'users/settings.html', context)

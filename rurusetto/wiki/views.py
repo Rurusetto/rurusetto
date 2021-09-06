@@ -40,7 +40,6 @@ def home(request):
         'hero_image_light': static(hero_image_light),
         'opengraph_description': 'A page that contain all osu! ruleset',
         'opengraph_url': resolve_url('home'),
-        'opengraph_image': static(hero_image),
         'latest_add_rulesets': make_listing_view(latest_add_rulesets)  # Use make_listing_view function to get the User object from database and pass to template
     }
     return render(request, 'wiki/home.html', context)
@@ -63,7 +62,6 @@ def changelog(request):
         'hero_image_light': static(hero_image_light),
         'opengraph_description': 'All update history of website are here.',
         'opengraph_url': resolve_url('changelog'),
-        'opengraph_image': static(hero_image)
     }
     return render(request, 'wiki/changelog.html', context)
 
@@ -85,7 +83,6 @@ def listing(request):
         'hero_image_light': static(hero_image_light),
         'opengraph_description': 'List of available rulesets.',
         'opengraph_url': resolve_url('listing'),
-        'opengraph_image': static(hero_image)
     }
     return render(request, 'wiki/listing.html', context)
 
@@ -123,7 +120,6 @@ def create_ruleset(request):
         'hero_image_light': static(hero_image_light),
         'opengraph_description': "Let's add a new ruleset! Is it yours? Don't worry! You can add it although you don't make that ruleset.",
         'opengraph_url': resolve_url('create_ruleset'),
-        'opengraph_image': static(hero_image)
     }
     return render(request, 'wiki/create_ruleset.html', context)
 
@@ -192,7 +188,6 @@ def edit_ruleset_wiki(request, slug):
         'hero_image_light': static(hero_image_light),
         'opengraph_description': f'You are currently edit content on ruleset name "{Ruleset.objects.get(slug=slug).name}".',
         'opengraph_url': resolve_url('edit_wiki', slug=slug),
-        'opengraph_image': static(hero_image)
     }
     return render(request, 'wiki/edit_ruleset_wiki.html', context)
 
@@ -234,7 +229,6 @@ def add_subpage(request, slug):
         'hero_image_light': static(hero_image_light),
         'opengraph_description': f'You are currently add a subpage for ruleset name "{target_ruleset.name}".',
         'opengraph_url': resolve_url('add_subpage', slug=slug),
-        'opengraph_image': static(hero_image)
     }
     return render(request, 'wiki/add_subpage.html', context)
 
@@ -254,7 +248,6 @@ def install(request):
         'hero_image_light': static(hero_image_light),
         'opengraph_description': 'How to install and update rulesets by using Rūrusetto.',
         'opengraph_url': resolve_url('install'),
-        'opengraph_image': static(hero_image)
     }
     return render(request, 'wiki/install.html', context)
 
@@ -327,7 +320,6 @@ def edit_subpage(request, rulesets_slug, subpage_slug):
         'hero_image_light': static(hero_image_light),
         'opengraph_description': f'You are currently edit subpage "{Subpage.objects.get(slug=subpage_slug).title}" on ruleset name "{Ruleset.objects.get(slug=rulesets_slug).name}".',
         'opengraph_url': resolve_url('edit_subpage', rulesets_slug=ruleset.slug, subpage_slug=subpage.slug),
-        'opengraph_image': static(hero_image)
     }
     return render(request, 'wiki/edit_subpage.html', context)
 
@@ -416,7 +408,6 @@ def add_recommend_beatmap(request, slug):
         'hero_image_light': static(hero_image_light),
         'opengraph_description': f'You are currently add a new recommend beatmap for {ruleset.name}.',
         'opengraph_url': resolve_url('add_recommend_beatmap', slug=ruleset.slug),
-        'opengraph_image': static(hero_image)
     }
     return render(request, 'wiki/add_recommend_beatmap.html', context)
 

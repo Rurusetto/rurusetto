@@ -3,6 +3,11 @@
     font-family: 'Raleway', sans-serif;
 }
 
+*::selection {
+    background-color: #ff66aa;
+    color: white;
+}
+
 /*Light Mode CSS override*/
 
 body.light {

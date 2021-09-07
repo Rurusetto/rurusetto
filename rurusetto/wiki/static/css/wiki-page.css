@@ -17,7 +17,7 @@ body.light .info-box {
 }
 
 #wiki img {
-    width: 100%;
+    max-width: 100%;
 }
 
 #wiki span {

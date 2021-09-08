@@ -139,11 +139,30 @@
                     {% endif %}
                 </div>
                 <div class="row">
-                    <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" target="_blank" href="#"><i class="fa fa-gratipay icon-menu hvr-icon"></i> Support the creator</a></p>
+                    <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" data-bs-toggle="modal" data-bs-target="#supportBackdrop"><i class="fa fa-gratipay icon-menu hvr-icon"></i> Support the creator</a></p>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="supportBackdrop" data-bs-backdrop="static" tabindex="-1" aria-labelledby="supportBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="supportBackdropLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Understood</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 {% endblock content %}
 
 {% block js %}

@@ -42,7 +42,7 @@ class Profile(models.Model):
     osu_username = models.CharField(default='', max_length=50, blank=True)
     oauth_first_migrate = models.BooleanField(default=False)
 
-    support_message = models.TextField(default='', max_length=500, blank=True)
+    support_message = models.TextField(default='', blank=True)
     support_patreon = models.URLField(blank=True)
     support_kofi = models.URLField(blank=True)
     support_github_sponsors = models.URLField(blank=True)

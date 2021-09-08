@@ -43,6 +43,11 @@
         <div class="col-sm-2 raleway-font">
             <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="#account"><i class="fas fa-user-cog icon-menu hvr-icon"></i> Account</a></p>
         </div>
+        {% if ruleset_creator %}
+        <div class="col-sm-2 raleway-font">
+            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="#creator"><i class="fas fa-user-cog icon-menu hvr-icon"></i> Creator</a></p>
+        </div>
+        {% endif %}
     </div>
     <div class="row">
         <form class="form" method="POST" enctype='multipart/form-data'>
@@ -152,6 +157,53 @@
                     </div>
                   </div>
             </div>
+
+            {% if ruleset_creator %}
+            <h1 id="creator">Rulesets Creator Settings</h1>
+            <p>This settings are only appear when you are a one of the rulesets creator in the wiki.</p>
+            <h2>Support</h2>
+            <p>This is the setting of the detail in the <code>Support the creator</code> modal so other player who love your ruleset can support you. If you don't want to use this function please leave all fields as blank.</p>
+            <div class="fieldWrapper">
+                 <div class="mb-3 row">
+                    <label for="id_support_message" class="col-sm-2 col-form-label form-label">Support Message:</label>
+                    <div class="col-sm-10">
+                        <textarea name="support_message" cols="40" rows="10" class="form-control" id="id_support_message">{{ support_form.support_message.value }}</textarea>
+                        <p class="form-error raleway-font">{{ support_form.support_message.errors }}</p>
+                        <p class="text-muted raleway-font">Your message to the visitor.</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="fieldWrapper">
+                 <div class="mb-3 row">
+                    <label class="col-sm-2 col-form-label form-label" for="id_support_patreon">Patreon Link:</label>
+                    <div class="col-sm-10">
+                      <input type="url" name="support_patreon" id="id_support_patreon" class="form-control" value="{{ support_form.support_patreon.value }}">
+                        <p class="form-error raleway-font">{{ support_form.support_patreon.errors }}</p>
+                        <p class="text-muted raleway-font">Link to your Patreon page. (If you don't have this donation way just leave it blank.)</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="fieldWrapper">
+                 <div class="mb-3 row">
+                    <label class="col-sm-2 col-form-label form-label" for="id_support_kofi">Ko-fi Link:</label>
+                    <div class="col-sm-10">
+                      <input type="url" name="support_kofi" id="id_support_kofi" class="form-control" value="{{ support_form.support_kofi.value }}">
+                        <p class="form-error raleway-font">{{ form.source.errors }}</p>
+                        <p class="text-muted raleway-font">Link to your Ko-fi page so user can buy you some coffee! (If you don't have this donation way just leave it blank.)</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="fieldWrapper">
+                 <div class="mb-3 row">
+                    <label class="col-sm-2 col-form-label form-label" for="id_support_github_sponsors">GitHub Sponsors Link:</label>
+                    <div class="col-sm-10">
+                      <input type="url" name="support_github_sponsors" id="id_support_github_sponsors" class="form-control" value="{{ support_form.support_github_sponsors.value }}">
+                        <p class="form-error raleway-font">{{ support_form.support_github_sponsors.errors }}</p>
+                        <p class="text-muted raleway-font">Link to your GitHub Sponsors page. (If you don't have this donation way just leave it blank.)</p>
+                    </div>
+                  </div>
+            </div>
+            {% endif %}
 
 {#            <a id="website"><h1>Website Settings</h1></a>#}
             <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right raleway-font">Submit</button>

@@ -139,7 +139,7 @@
                     {% endif %}
                 </div>
                 <div class="row">
-                    <p id="support-text"><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" data-bs-toggle="modal" data-bs-target="#supportModal"><i class="fa fa-gratipay icon-menu hvr-icon"></i> Support the creator</a></p>
+                    <p id="support-text"><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" data-bs-toggle="modal" data-bs-target="#supportModal"><i class="fas fa-heart icon-menu hvr-icon"></i> Support the creator</a></p>
                 </div>
                 <div class="modal fade" id="supportModal" tabindex="-1" aria-labelledby="supportModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered">
@@ -149,7 +149,17 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                        ...
+                        <h3>Message from {{ user_detail.1.username }}</h3>
+                          <p>{{ user_detail.1.profile.support_message }}</p>
+                          {% if user_detail.1.profile.support_patreon != "" %}
+                          <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" target="_blank" href="{{ user_detail.1.profile.suppoer_patreon }}"><i class="fab fa-patreon icon-menu hvr-icon"></i> Patreon</a></p>
+                          {% endif %}
+                          {% if user_detail.1.profile.support_kofi != "" %}
+                          <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" target="_blank" href="{{ user_detail.1.profile.suppoer_kofi }}"><i class="fas fa-coffee icon-menu hvr-icon"></i> Buy a Coffee</a></p>
+                          {% endif %}
+                          {% if user_detail.1.profile.support_github_sponsors != "" %}
+                          <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" target="_blank" href="{{ user_detail.1.profile.suppoer_github_sponsors }}"><i class="fab fa-github icon-menu hvr-icon"></i> GitHub Sponsors</a></p>
+                          {% endif %}
                       </div>
                     </div>
                   </div>

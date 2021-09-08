@@ -136,7 +136,12 @@ def wiki_page(request, slug):
     :return: Render the wiki page and pass the value from context to the template (wiki_page.html)
     """
     ruleset = get_object_or_404(Ruleset, slug=slug)
-    ruleset_owner_profile = Profile.objects.get(user=User.objects.get(id=int(ruleset.owner)))
+    try:
+        ruleset_owner_profile = Profile.objects.get(user=User.objects.get(id=int(ruleset.owner)))
+        if (ruleset_owner_profile.support_message != '') and (ruleset_owner_profile.support_patreon or ruleset_owner_profile.support_kofi or ruleset_owner_profile.support_github_sponsors):
+            can_support = True
+    except User.DoesNotExist:
+        can_support = False
     hero_image = ruleset.cover_image.url
     hero_image_light = ruleset.cover_image.url
     context = {
@@ -144,7 +149,7 @@ def wiki_page(request, slug):
         'subpage': Subpage.objects.filter(ruleset_id=ruleset.id),
         'source_type': source_link_type(ruleset.source),
         'user_detail': make_wiki_view(ruleset),
-        'can_support': (ruleset_owner_profile.support_message != '') and (ruleset_owner_profile.support_patreon or ruleset_owner_profile.support_kofi or ruleset_owner_profile.support_github_sponsors),
+        'can_support': can_support,
         'title': ruleset.name,
         'hero_image': hero_image,
         'hero_image_light': hero_image_light,

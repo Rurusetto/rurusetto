@@ -3,8 +3,9 @@ from django.shortcuts import render, redirect, get_object_or_404, resolve_url
 from django.contrib import messages
 from django.templatetags.static import static
 from django.contrib.auth import logout
-from .forms import UserUpdateForm, ProfileUpdateForm, UpdateProfileEveryLoginConfigForm, UserDeleteAccountForm, UserConfigForm, UserSubpageConfigForm
+from .forms import UserUpdateForm, ProfileUpdateForm, UpdateProfileEveryLoginConfigForm, UserDeleteAccountForm, UserConfigForm, UserSubpageConfigForm, UserSupportCreatorForm
 from .models import Profile, Tag
+from wiki.models import Ruleset
 from allauth.socialaccount.models import SocialAccount
 from wiki.function import fetch_created_ruleset
 
@@ -30,6 +31,7 @@ def settings(request):
         profile_sync_form = UpdateProfileEveryLoginConfigForm(request.POST, instance=request.user.config)
         website_config_form = UserConfigForm(request.POST, instance=request.user.config)
         subpage_config_form = UserSubpageConfigForm(request.POST, instance=request.user.config)
+        support_form = UserSupportCreatorForm(request.POST, instance=request.user.profile)
         if SocialAccount.objects.filter(user=request.user).exists():
             # User that send request are login by social account, must check on profile sync field
             if profile_sync_form['update_profile_every_login'].value() == request.user.config.update_profile_every_login:
@@ -40,12 +42,14 @@ def settings(request):
                     profile_form.save()
                     website_config_form.save()
                     subpage_config_form.save()
+                    support_form.save()
                     messages.success(request, f'Your settings has been updated!')
                     return redirect('settings')
                 else:
                     # Nothing changed here except website config that must be save
                     website_config_form.save()
                     subpage_config_form.save()
+                    support_form.save()
                     messages.success(request, f'Your settings has been updated!')
                     return redirect('settings')
             else:
@@ -54,6 +58,7 @@ def settings(request):
                     profile_sync_form.save()
                     website_config_form.save()
                     subpage_config_form.save()
+                    support_form.save()
                     messages.success(request, f'Your settings has been updated!')
                     return redirect('settings')
                 else:
@@ -63,6 +68,7 @@ def settings(request):
                     profile_sync_form.save()
                     website_config_form.save()
                     subpage_config_form.save()
+                    support_form.save()
                     messages.success(request, f'Your settings has been updated!')
                     return redirect('settings')
         else:
@@ -72,6 +78,7 @@ def settings(request):
             profile_form.save()
             website_config_form.save()
             subpage_config_form.save()
+            support_form.save()
             messages.success(request, f'Your settings has been updated!')
             return redirect('settings')
 
@@ -81,6 +88,7 @@ def settings(request):
         profile_sync_form = UpdateProfileEveryLoginConfigForm(instance=request.user.config)
         website_config_form = UserConfigForm(instance=request.user.config)
         subpage_config_form = UserSubpageConfigForm(instance=request.user.config)
+        support_form = UserSupportCreatorForm(instance=request.user.profile)
 
     if SocialAccount.objects.filter(user=request.user).exists():
         osu_confirm_username = SocialAccount.objects.get(user=request.user).extra_data['username']
@@ -93,9 +101,11 @@ def settings(request):
         'profile_sync_form': profile_sync_form,
         'website_config_form': website_config_form,
         'website_subpage_config_form': subpage_config_form,
+        'support_form': support_form,
         'title': 'settings',
         'social_account': SocialAccount.objects.filter(user=request.user).exists(),
         'can_edit_profile': (not SocialAccount.objects.filter(user=request.user).exists()) or (SocialAccount.objects.filter(user=request.user).exists() and (not request.user.config.update_profile_every_login)),
+        'ruleset_creator': Ruleset.objects.filter(owner=str(request.user.id)).exists(),
         'osu_confirm_username': osu_confirm_username,
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),

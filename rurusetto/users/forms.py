@@ -57,3 +57,11 @@ class UserDeleteAccountForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['confirm_username', 'confirm_password']
+
+
+class UserSupportCreatorForm(forms.ModelForm):
+    """Form to add support message and how to support the creator."""
+
+    class Meta:
+        model = Profile
+        fields = ['support_message', 'support_patreon', 'support_kofi', 'support_github_sponsors']

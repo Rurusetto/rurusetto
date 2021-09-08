@@ -6,6 +6,8 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, JsonResponse
 from .serializers import RulesetSerializer
 from .models import Changelog, Ruleset, Subpage, RecommendBeatmap
+from users.models import Profile
+from django.contrib.auth.models import User
 from .forms import RulesetForm, SubpageForm, RecommendBeatmapForm
 from .function import make_listing_view, make_wiki_view, source_link_type, get_user_by_id, make_recommend_beatmap_view, make_beatmap_aapproval_view
 from unidecode import unidecode
@@ -134,6 +136,12 @@ def wiki_page(request, slug):
     :return: Render the wiki page and pass the value from context to the template (wiki_page.html)
     """
     ruleset = get_object_or_404(Ruleset, slug=slug)
+    try:
+        ruleset_owner_profile = Profile.objects.get(user=User.objects.get(id=int(ruleset.owner)))
+        if (ruleset_owner_profile.support_message != '') and (ruleset_owner_profile.support_patreon or ruleset_owner_profile.support_kofi or ruleset_owner_profile.support_github_sponsors):
+            can_support = True
+    except User.DoesNotExist:
+        can_support = False
     hero_image = ruleset.cover_image.url
     hero_image_light = ruleset.cover_image.url
     context = {
@@ -141,6 +149,7 @@ def wiki_page(request, slug):
         'subpage': Subpage.objects.filter(ruleset_id=ruleset.id),
         'source_type': source_link_type(ruleset.source),
         'user_detail': make_wiki_view(ruleset),
+        'can_support': can_support,
         'title': ruleset.name,
         'hero_image': hero_image,
         'hero_image_light': hero_image_light,

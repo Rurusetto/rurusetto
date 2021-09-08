@@ -574,6 +574,10 @@ button.accordion-button:focus {
     width: 20%
 }
 
+#support-text:hover {
+    cursor: pointer;
+}
+
 /*Class use in JS*/
 
 .hidden {

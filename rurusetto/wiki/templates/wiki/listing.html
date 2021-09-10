@@ -49,13 +49,13 @@
             <h2 class="rulesets-name">{{ detail.0.name }}</h2>
             {% if detail.1 == None %}
                 {% if detail.0.verified %}
-                    <p class="text-muted"><img src="{% static 'img/default.jpeg' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User <i class="fas fa-check-circle verified-circle icon-menu hvr-icon"></i></p>
+                    <p class="text-muted"><img src="{% static 'img/default.jpeg' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User <i class="fas fa-check-circle verified-circle icon-menu hvr-icon" data-bs-toggle="tooltip" data-bs-placement="right" title="Verified rulesets creator"></i></p>
                 {% else %}
                     <p class="text-muted"><img src="{% static 'img/default.jpeg' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User </p>
                 {% endif %}
             {% else %}
                 {% if detail.0.verified %}
-                    <a href="{% url "profile" detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover profile-link"><p class="text-muted"><img src="{{ detail.1.profile.image.url }}" alt="{{ detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ detail.1.username }} <i class="fas fa-check-circle verified-circle icon-menu hvr-icon"></i></p></a>
+                    <a href="{% url "profile" detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover profile-link"><p class="text-muted"><img src="{{ detail.1.profile.image.url }}" alt="{{ detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ detail.1.username }} <i class="fas fa-check-circle verified-circle icon-menu hvr-icon" data-bs-toggle="tooltip" data-bs-placement="right" title="Verified rulesets creator"></i></p></a>
                 {% else %}
                     <a href="{% url "profile" detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover profile-link"><p class="text-muted"><img src="{{ detail.1.profile.image.url }}" alt="{{ detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ detail.1.username }} </p></a>
                 {% endif %}

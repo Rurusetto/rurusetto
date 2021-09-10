@@ -3,7 +3,10 @@
 <div class="col-sm-6" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">
     <div class="card mb-3" style="max-width: 100%">
       <div class="row g-0 rounded" style="background-image: url({{ beatmap.0.beatmap_cover.url }}); background-size: cover; background-position: center">
-        <div class="col-md-4">
+        <div class="col-md-4 position-relative" style="min-height: 200px;">
+            <div class="mediPlayer position-absolute top-50 start-50 translate-middle">
+                <audio class="listen" preload="none" data-size="80" src="//b.ppy.sh/preview/{{ beatmap.0.beatmapset_id }}.mp3"></audio>
+            </div>
         </div>
         <div class="col-md-8 beatmap-card rounded-start" style="line-height: 0.9;">
           <div class="card-body">

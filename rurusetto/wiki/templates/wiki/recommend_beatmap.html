@@ -79,3 +79,11 @@
 <p></p>
 
 {% endblock content %}
+
+{% block js %}
+    <script>
+    $(document).ready(function () {
+        $('.mediPlayer').mediaPlayer();
+    });
+</script>
+{% endblock %}

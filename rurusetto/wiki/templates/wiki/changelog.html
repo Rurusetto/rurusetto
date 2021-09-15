@@ -3,6 +3,8 @@
 {% load markdown_converter %}
 {% block content %}
 
+    <link rel="stylesheet" href="{% static 'css/wiki-page.css' %}">
+
     <div class="px-4 py-4 my-4 align-middle hero">
         <div class="container align-middle">
             <div class="row">
@@ -31,7 +33,7 @@
               {% endif %}
                     <p class="text-muted">Release at {{ changelog.time|date:"F j, Y h:i A" }} UTC</p>
 
-                <div class="changelog">
+                <div class="changelog" id="wiki">
                     {{ changelog.note | convert_markdown | safe }}
                 </div>
 

@@ -3,7 +3,8 @@ from django.shortcuts import render, redirect, get_object_or_404, resolve_url
 from django.contrib import messages
 from django.templatetags.static import static
 from django.contrib.auth import logout
-from .forms import UserUpdateForm, ProfileUpdateForm, UpdateProfileEveryLoginConfigForm, UserDeleteAccountForm, UserConfigForm, UserSubpageConfigForm, UserSupportCreatorForm
+from .forms import UserUpdateForm, ProfileUpdateForm, UpdateProfileEveryLoginConfigForm, UserDeleteAccountForm, \
+    UserThemeConfigForm, UserSubpageConfigForm, UserSupportCreatorForm, UserHideEmailConfigForm
 from .models import Profile, Tag
 from wiki.models import Ruleset
 from allauth.socialaccount.models import SocialAccount
@@ -29,8 +30,9 @@ def settings(request):
                                          request.FILES,
                                          instance=request.user.profile)
         profile_sync_form = UpdateProfileEveryLoginConfigForm(request.POST, instance=request.user.config)
-        website_config_form = UserConfigForm(request.POST, instance=request.user.config)
+        website_config_form = UserThemeConfigForm(request.POST, instance=request.user.config)
         subpage_config_form = UserSubpageConfigForm(request.POST, instance=request.user.config)
+        hide_email_config_form = UserHideEmailConfigForm(request.POST, instance=request.user.config)
         support_form = UserSupportCreatorForm(request.POST, instance=request.user.profile)
         if SocialAccount.objects.filter(user=request.user).exists():
             # User that send request are login by social account, must check on profile sync field
@@ -43,6 +45,7 @@ def settings(request):
                     website_config_form.save()
                     subpage_config_form.save()
                     support_form.save()
+                    hide_email_config_form.save()
                     messages.success(request, f'Your settings has been updated!')
                     return redirect('settings')
                 else:
@@ -50,6 +53,7 @@ def settings(request):
                     website_config_form.save()
                     subpage_config_form.save()
                     support_form.save()
+                    hide_email_config_form.save()
                     messages.success(request, f'Your settings has been updated!')
                     return redirect('settings')
             else:
@@ -59,6 +63,7 @@ def settings(request):
                     website_config_form.save()
                     subpage_config_form.save()
                     support_form.save()
+                    hide_email_config_form.save()
                     messages.success(request, f'Your settings has been updated!')
                     return redirect('settings')
                 else:
@@ -69,6 +74,7 @@ def settings(request):
                     website_config_form.save()
                     subpage_config_form.save()
                     support_form.save()
+                    hide_email_config_form.save()
                     messages.success(request, f'Your settings has been updated!')
                     return redirect('settings')
         else:
@@ -79,6 +85,7 @@ def settings(request):
             website_config_form.save()
             subpage_config_form.save()
             support_form.save()
+            hide_email_config_form.save()
             messages.success(request, f'Your settings has been updated!')
             return redirect('settings')
 
@@ -86,9 +93,10 @@ def settings(request):
         user_form = UserUpdateForm(instance=request.user)
         profile_form = ProfileUpdateForm(instance=request.user.profile)
         profile_sync_form = UpdateProfileEveryLoginConfigForm(instance=request.user.config)
-        website_config_form = UserConfigForm(instance=request.user.config)
+        website_config_form = UserThemeConfigForm(instance=request.user.config)
         subpage_config_form = UserSubpageConfigForm(instance=request.user.config)
         support_form = UserSupportCreatorForm(instance=request.user.profile)
+        hide_email_config_form = UserHideEmailConfigForm(instance=request.user.config)
 
     if SocialAccount.objects.filter(user=request.user).exists():
         osu_confirm_username = SocialAccount.objects.get(user=request.user).extra_data['username']
@@ -102,6 +110,7 @@ def settings(request):
         'website_config_form': website_config_form,
         'website_subpage_config_form': subpage_config_form,
         'support_form': support_form,
+        'hide_email': hide_email_config_form,
         'title': 'settings',
         'social_account': SocialAccount.objects.filter(user=request.user).exists(),
         'can_edit_profile': (not SocialAccount.objects.filter(user=request.user).exists()) or (SocialAccount.objects.filter(user=request.user).exists() and (not request.user.config.update_profile_every_login)),

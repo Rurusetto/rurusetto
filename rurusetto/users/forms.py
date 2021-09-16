@@ -51,6 +51,7 @@ class UserSubpageConfigForm(forms.ModelForm):
 
 class UserHideEmailConfigForm(forms.ModelForm):
     """Form to update hide email on profile setting in user's config model."""
+    hide_email = forms.BooleanField(required=False, widget=forms.CheckboxInput(attrs={'class': "form-check-input"}))
 
     class Meta:
         model = Config

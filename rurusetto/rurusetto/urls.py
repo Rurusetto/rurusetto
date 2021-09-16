@@ -18,6 +18,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import views as auth_views
 from django.contrib.sitemaps import Sitemap
 from django.contrib.sitemaps.views import sitemap
+from django.conf.urls.i18n import i18n_patterns
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.shortcuts import resolve_url
 from django.urls import path, include
@@ -82,7 +83,10 @@ urlpatterns = [
     path('settings/', user_views.settings, name='settings'),
     path('settings/delete-account', user_views.delete_account, name='delete_account'),
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
+    path("i18n/", include("django.conf.urls.i18n")),
 ]
+
+urlpatterns += i18n_patterns(path("admin/", admin.site.urls))
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

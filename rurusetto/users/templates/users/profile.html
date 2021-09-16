@@ -29,7 +29,7 @@
             <a class="text-decoration-none text-center spacing-hover-short" target="_blank" href="https://osu.ppy.sh/users/{{profile_object.osu_username}}"><img src="{% static 'logo/osu-logo-pink.png' %}" alt="osu! logo" width="20px" height="20px" class="icon-menu hvr-icon"> {{ profile_object.osu_username }}</a>
         </div>
     {% endif %}
-    {% if profile_object.user.email != '' %}
+    {% if profile_object.user.email != '' and not hide_email %}
     <div class="col-sm-2 profile-email">
     <i class="fas fa-envelope-square"></i> {{ profile_object.user.email }}
     </div>

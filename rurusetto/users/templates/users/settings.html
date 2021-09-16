@@ -134,6 +134,19 @@
             {% else %}
             <p class="raleway-font">The profile page detail is handled by system. If you want to custom your profile, please remove the <i>Update Profile Every Login Session</i> setting.</p>
             {% endif %}
+            <h2>Profile Page Display Settings</h2>
+            <div class="fieldWrapper">
+                 <div class="mb-3 row">
+                    <label class="col-sm-2 col-form-label form-label">Hide Email:</label>
+                    <div class="col-sm-10">
+                        <div class="form-check form-switch">
+                            {{ hide_email.hide_email }}
+                        </div>
+                        <p class="form-error raleway-font">{{ hide_email.hide_email.errors }}</p>
+                        <p class="text-muted raleway-font">If this checked, your email will not be show on your profile page.</p>
+                    </div>
+                  </div>
+            </div>
 
             <h1 id="config">Website Configuration</h1>
             <h2>Website Theme</h2>

@@ -5,7 +5,7 @@ from django.templatetags.static import static
 from django.contrib.auth import logout
 from .forms import UserUpdateForm, ProfileUpdateForm, UpdateProfileEveryLoginConfigForm, UserDeleteAccountForm, \
     UserThemeConfigForm, UserSubpageConfigForm, UserSupportCreatorForm, UserHideEmailConfigForm
-from .models import Profile, Tag
+from .models import Profile, Tag, Config
 from wiki.models import Ruleset
 from allauth.socialaccount.models import SocialAccount
 from wiki.function import fetch_created_ruleset
@@ -136,6 +136,7 @@ def profile_detail(request, pk):
     :return: Render the profile detail page and pass the value from context to the template (profile.html)
     """
     profile_object = get_object_or_404(Profile, pk=pk)
+    config_object = get_object_or_404(Config, pk=pk)
     tag_list = profile_object.tag.split(',')
     tag_object_list = []
     try:
@@ -151,6 +152,7 @@ def profile_detail(request, pk):
     context = {
         'profile_object': profile_object,
         'tag_list': tag_object_list,
+        'hide_email': config_object.hide_email,
         'created_ruleset': fetch_created_ruleset(profile_object.id),
         'title': f"{profile_object.user.username}'s profile",
         'hero_image': profile_object.cover.url,

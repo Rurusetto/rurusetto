@@ -80,6 +80,7 @@ class Config(models.Model):
     update_profile_every_login = models.BooleanField(default=False)
     theme = models.TextField(choices=THEME, default='')
     subpage_index = models.TextField(choices=SUBPAGE_INDEX, default='button')
+    hide_email = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.user.username} Config'

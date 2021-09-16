@@ -31,8 +31,8 @@ class UpdateProfileEveryLoginConfigForm(forms.ModelForm):
         fields = ['update_profile_every_login']
 
 
-class UserConfigForm(forms.ModelForm):
-    """Form to update website theme in user's setting model."""
+class UserThemeConfigForm(forms.ModelForm):
+    """Form to update website theme in user's config model."""
     theme = forms.ChoiceField(label="", choices=THEME, required=False)
 
     class Meta:
@@ -41,12 +41,20 @@ class UserConfigForm(forms.ModelForm):
 
 
 class UserSubpageConfigForm(forms.ModelForm):
-    """Form to update subpage index design in user's setting model."""
+    """Form to update subpage index design in user's config model."""
     subpage_index = forms.ChoiceField(label="", choices=SUBPAGE_INDEX, required=False)
 
     class Meta:
         model = Config
         fields = ['subpage_index']
+
+
+class UserHideEmailConfigForm(forms.ModelForm):
+    """Form to update hide email on profile setting in user's config model."""
+
+    class Meta:
+        model = Config
+        fields = ['hide_email']
 
 
 class UserDeleteAccountForm(forms.ModelForm):

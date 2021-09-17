@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'mdeditor',
     'colorfield',
-    'jazzmin',
+    'admin_interface',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

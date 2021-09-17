@@ -4,21 +4,24 @@ from os import listdir
 from os.path import isfile, join
 import pathlib
 
-"""Code to resize image to make the website performance better"""
+"""Code to resize image to make the website performance better. Just out this file in image folder and run."""
 
+# Get current path to the current folder
 current_path = pathlib.Path().resolve()
 print(f"Current path : {current_path}")
 
-os.mkdir()
-
+# Get a list of file in the folder
 picture_file_list = [f for f in listdir(current_path) if isfile(join(current_path, f))]
+# Remove its own
+# If you have more file that is not image just add it here.
 picture_file_list.remove("resize_image.py")
 print(f"Picture list to resize : {picture_file_list}")
 
 print()
 
-converted = 0
+converted = 0  # Count the image that converted
 
+# Resize image process
 for image in picture_file_list:
     print(f"Start resize {image}")
     file_path = os.path.abspath(image)

@@ -118,7 +118,7 @@ def make_recommend_beatmap_view(ruleset_id):
     ruleset = Ruleset.objects.get(id=ruleset_id)
     # Create a list of recommend beatmaps that is recommend by ruleset creator
     try:
-        owner = User.objects.get(id=ruleset.creator)
+        owner = User.objects.get(id=ruleset.owner)
     except User.DoesNotExist:
         owner = None
     recommend_by_owner = []

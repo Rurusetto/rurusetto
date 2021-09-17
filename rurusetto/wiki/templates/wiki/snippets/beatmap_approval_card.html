@@ -91,7 +91,11 @@
             </p>
               <p class="card-text text-muted"><small>mapped by <a href="https://osu.ppy.sh/u/{{ beatmap.0.creator }}" class="text-decoration-none spacing-hover-short">{{ beatmap.0.creator }}</a></small></p>
               <p class="card-text"><small>{{ beatmap.0.comment }}</small></p>
-            <p class="card-text text-muted"><small>Recommend by <a href="{% url "profile" beatmap.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><img src="{{ beatmap.1.profile.image.url }}" alt="{{ beatmap.1.username }}" width="32" height="32" class="rounded-circle hvr-icon" style="transition: 0.2s"> {{ beatmap.1.username }}</a></small></p>
+          {% if beatmap.1 == None %}
+              <p class="card-text text-muted"><small>Recommend by <img src="{% static 'img/default.jpeg' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User </small></p>
+          {% else %}
+              <p class="card-text text-muted"><small>Recommend by <a href="{% url "profile" beatmap.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><img src="{{ beatmap.1.profile.image.url }}" alt="{{ beatmap.1.username }}" width="32" height="32" class="rounded-circle hvr-icon" style="transition: 0.2s"> {{ beatmap.1.username }}</a></small></p>
+          {% endif %}
             <p class="card-text"><a class="btn btn-success" href="{% url 'approve_recommend_beatmap' ruleset.slug beatmap.0.id %}" role="button"><i class="fas fa-check color-white"></i> Approve</a> <a class="btn btn-danger" href="{% url 'deny_recommend_beatmap' ruleset.slug beatmap.0.id %}" role="button"><i class="fas fa-times color-white"></i> Deny</a></p>
           </div>
         </div>

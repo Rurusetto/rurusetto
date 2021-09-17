@@ -4,7 +4,7 @@ from os import listdir
 from os.path import isfile, join
 import pathlib
 
-"""Code to resize image to make the website performance better. Just out this file in image folder and run."""
+# Code to resize image to make the website performance better. Just out this file in image folder and run.
 
 # Get current path to the current folder
 current_path = pathlib.Path().resolve()

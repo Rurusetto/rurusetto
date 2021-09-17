@@ -3,6 +3,8 @@
 {% load convert_star_rating %}
 {% block content %}
 
+<link rel="stylesheet" href="{% static "css/progres-bar.css" %}">
+
 <div class="px-4 py-4 my-4 align-middle hero">
     <div class="container align-middle">
         <div class="row">
@@ -65,9 +67,12 @@
 {% endblock content %}
 
 {% block js %}
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+  <script src="{% static "js/player.js" %}"></script>
     <script>
     $(document).ready(function () {
         $('.mediPlayer').mediaPlayer();
     });
-</script>
+    </script>
 {% endblock %}
+

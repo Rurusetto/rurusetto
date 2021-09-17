@@ -28,4 +28,5 @@ jobs:
     - name: Run Tests
       run: |
         cd rurusetto
+        python manage.py migrate
         python manage.py test

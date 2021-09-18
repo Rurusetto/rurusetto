@@ -8,5 +8,5 @@ django-mdeditor~=0.1.18
 requests~=2.26.0
 djangorestframework~=3.12.4
 git+https://github.com/Rurusetto/rurusetto-django-allauth.git
-django-colorfield~=0.4.2
+django-colorfield~=0.4.3
 django-admin-interface~=0.17.0

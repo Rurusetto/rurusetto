@@ -18,6 +18,7 @@ from django.core.files import File
 from django.core.files.temp import NamedTemporaryFile
 from django.core.exceptions import PermissionDenied
 import os
+from django import forms
 
 
 def home(request):
@@ -182,6 +183,16 @@ def edit_ruleset_wiki(request, slug):
     if request.method == 'POST':
         form = RulesetForm(request.POST, request.FILES, instance=ruleset)
         if form.is_valid():
+            if source_link_type(form.instance.source) == "github":
+                if form.instance.source[-1] != "/":
+                    download_url = f"{form.instance.source}/releases/latest/download/{form.instance.github_download_filename}"
+                else:
+                    download_url = f"{form.instance.source}releases/latest/download/{form.instance.github_download_filename}"
+                html_status = requests.head(download_url)
+                if (html_status.status_code != 200) and (html_status.status_code != 302):
+                    error_message = f"The response of {download_url} is not success ({html_status.status_code}). Please check your filename or ruleset source link!"
+                    messages.error(request, error_message)
+                    return redirect('edit_wiki', slug=ruleset.slug)
             form.instance.last_edited_by = request.user.id
             form.instance.slug = slugify(unidecode(form.cleaned_data.get('name')))
             form.save()

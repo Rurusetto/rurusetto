@@ -390,8 +390,8 @@ def add_recommend_beatmap(request, slug):
                 # Generate the URL to the osu! web from beatmap ID and beatmapset ID.
                 form.instance.url = f"https://osu.ppy.sh/beatmapsets/{beatmap_json_data['beatmapset_id']}#osu/{form.instance.beatmap_id}"
                 if request.user.id == int(ruleset.owner):
-                    form.instance.owner_approved = True;
-                    form.instance.owner_seen = True;
+                    form.instance.owner_approved = True
+                    form.instance.owner_seen = True
                 form.save()
                 if request.user.id == int(ruleset.owner):
                     messages.success(request, f"Added {beatmap_json_data['title']} [{beatmap_json_data['version']}] as a recommended beatmap successfully!")

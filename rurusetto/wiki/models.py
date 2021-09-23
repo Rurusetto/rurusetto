@@ -84,6 +84,7 @@ class Ruleset(models.Model):
     content = MDTextField()
 
     source = models.URLField(default="")
+    github_download_filename = models.CharField(default="", blank=True, max_length=100)
 
     last_edited_by = models.CharField(default="0", max_length=10)
     last_edited_at = models.DateTimeField(auto_now=True, editable=True)

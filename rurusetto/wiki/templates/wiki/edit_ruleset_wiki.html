@@ -111,6 +111,22 @@
                     </div>
                   </div>
             </div>
+            {% if source_type == "github" %}
+            <h1>Download</h1>
+            <div class="fieldWrapper">
+                 <div class="mb-3 row">
+                    <label class="col-sm-2 col-form-label form-label" for="id_github_download_filename">Ruleset Filename:</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="github_download_filename" maxlength="100" id="id_github_download_filename" class="form-control" value="{{ form.github_download_filename.value }}">
+                        <p class="form-error raleway-font">{{ form.github_download_filename.errors }}</p>
+                        <p class="text-muted raleway-font">The Rūrusetto-chan detect from the source link that this ruleset is available on GitHub.</p>
+                        <p class="text-muted raleway-font">Just put your ruleset full filename that is available in the release on GitHub and the other operation like update download link the Rūrusetto-chan will do it for you!</p>
+                        <p class="text-muted raleway-font">Ex. From <a href="https://github.com/naoei/tau">tau</a> : osu.Game.Rulesets.Tau.dll</p>
+                        <p class="text-muted raleway-font">(If you don't want to use this function just leave this field blank.)</p>
+                    </div>
+                  </div>
+            </div>
+            {% endif %}
             <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right raleway-font">Edit</button>
         </form>
     </div>

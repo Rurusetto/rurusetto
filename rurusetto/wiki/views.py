@@ -146,12 +146,24 @@ def wiki_page(request, slug):
         can_support = False
     hero_image = ruleset.cover_image.url
     hero_image_light = ruleset.cover_image.url
+    if (ruleset.github_download_filename != "") and (source_link_type(ruleset.source) == "github"):
+        # Currently support for GitHub so let's generate link by this method
+        can_download = True
+        if ruleset.source[-1] != "/":
+            download_link = f"{ruleset.source}/releases/latest/download/{ruleset.github_download_filename}"
+        else:
+            download_link = f"{ruleset.source}releases/latest/download/{ruleset.github_download_filename}"
+    else:
+        can_download = False
+        download_link = "/#"
     context = {
         'content': ruleset,
         'subpage': Subpage.objects.filter(ruleset_id=ruleset.id),
         'source_type': source_link_type(ruleset.source),
         'user_detail': make_wiki_view(ruleset),
         'can_support': can_support,
+        'can_download': can_download,
+        'download_link': download_link,
         'title': ruleset.name,
         'hero_image': hero_image,
         'hero_image_light': hero_image_light,
@@ -184,6 +196,7 @@ def edit_ruleset_wiki(request, slug):
         form = RulesetForm(request.POST, request.FILES, instance=ruleset)
         if form.is_valid():
             if source_link_type(form.instance.source) == "github":
+                # Check that the download link when render is valid
                 if form.instance.source[-1] != "/":
                     download_url = f"{form.instance.source}/releases/latest/download/{form.instance.github_download_filename}"
                 else:

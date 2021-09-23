@@ -193,6 +193,7 @@ def edit_ruleset_wiki(request, slug):
     context = {
         'form': form,
         'name': Ruleset.objects.get(slug=slug).name,
+        'source_type': source_link_type(ruleset.source),
         'title': f'edit {ruleset.name}',
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),

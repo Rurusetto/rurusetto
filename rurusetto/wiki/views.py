@@ -139,7 +139,7 @@ def wiki_page(request, slug):
     can_support = False
     try:
         ruleset_owner_profile = Profile.objects.get(user=User.objects.get(id=int(ruleset.owner)))
-        if (ruleset_owner_profile.support_message != '') and (ruleset_owner_profile.support_patreon or ruleset_owner_profile.support_kofi or ruleset_owner_profile.support_github_sponsors):
+        if ruleset_owner_profile.support_message != '':
             can_support = True
     except User.DoesNotExist:
         can_support = False

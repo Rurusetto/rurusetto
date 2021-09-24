@@ -5,7 +5,7 @@ register = template.Library()
 
 
 def convert_markdown(value):
-    return markdown.markdown(value, extensions=['fenced_code', 'codehilite', 'tables', 'nl2br', 'toc', 'wikilinks', 
+    return markdown.markdown(value, extensions=['fenced_code', 'codehilite', 'tables', 'nl2br', 'toc',
                                                 'attr_list'])
 
 

@@ -18,7 +18,6 @@ from django.core.files import File
 from django.core.files.temp import NamedTemporaryFile
 from django.core.exceptions import PermissionDenied
 import os
-from django import forms
 
 
 def home(request):

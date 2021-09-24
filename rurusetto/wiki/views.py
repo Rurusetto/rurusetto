@@ -146,7 +146,7 @@ def wiki_page(request, slug):
         can_support = False
     hero_image = ruleset.cover_image.url
     hero_image_light = ruleset.cover_image.url
-    if (ruleset.github_download_filename != "") and (source_link_type(ruleset.source) == "github"):
+    if (ruleset.source != "") and (ruleset.github_download_filename != "") and (source_link_type(ruleset.source) == "github"):
         # Currently support for GitHub so let's generate link by this method
         can_download = True
         if ruleset.source[-1] != "/":
@@ -216,6 +216,7 @@ def edit_ruleset_wiki(request, slug):
         form = RulesetForm(instance=ruleset)
     context = {
         'form': form,
+        'ruleset': ruleset,
         'name': Ruleset.objects.get(slug=slug).name,
         'source_type': source_link_type(ruleset.source),
         'title': f'edit {ruleset.name}',

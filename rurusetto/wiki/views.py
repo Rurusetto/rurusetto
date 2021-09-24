@@ -145,12 +145,24 @@ def wiki_page(request, slug):
         can_support = False
     hero_image = ruleset.cover_image.url
     hero_image_light = ruleset.cover_image.url
+    if (ruleset.source != "") and (ruleset.github_download_filename != "") and (source_link_type(ruleset.source) == "github"):
+        # Currently support for GitHub so let's generate link by this method
+        can_download = True
+        if ruleset.source[-1] != "/":
+            download_link = f"{ruleset.source}/releases/latest/download/{ruleset.github_download_filename}"
+        else:
+            download_link = f"{ruleset.source}releases/latest/download/{ruleset.github_download_filename}"
+    else:
+        can_download = False
+        download_link = "/#"
     context = {
         'content': ruleset,
         'subpage': Subpage.objects.filter(ruleset_id=ruleset.id),
         'source_type': source_link_type(ruleset.source),
         'user_detail': make_wiki_view(ruleset),
         'can_support': can_support,
+        'can_download': can_download,
+        'download_link': download_link,
         'title': ruleset.name,
         'hero_image': hero_image,
         'hero_image_light': hero_image_light,
@@ -182,6 +194,17 @@ def edit_ruleset_wiki(request, slug):
     if request.method == 'POST':
         form = RulesetForm(request.POST, request.FILES, instance=ruleset)
         if form.is_valid():
+            if source_link_type(form.instance.source) == "github":
+                # Check that the download link when render is valid
+                if form.instance.source[-1] != "/":
+                    download_url = f"{form.instance.source}/releases/latest/download/{form.instance.github_download_filename}"
+                else:
+                    download_url = f"{form.instance.source}releases/latest/download/{form.instance.github_download_filename}"
+                html_status = requests.head(download_url)
+                if (html_status.status_code != 200) and (html_status.status_code != 302):
+                    error_message = f"The response of {download_url} is not success ({html_status.status_code}). Please check your filename or ruleset source link!"
+                    messages.error(request, error_message)
+                    return redirect('edit_wiki', slug=ruleset.slug)
             form.instance.last_edited_by = request.user.id
             form.instance.slug = slugify(unidecode(form.cleaned_data.get('name')))
             form.save()
@@ -192,7 +215,9 @@ def edit_ruleset_wiki(request, slug):
         form = RulesetForm(instance=ruleset)
     context = {
         'form': form,
+        'ruleset': ruleset,
         'name': Ruleset.objects.get(slug=slug).name,
+        'source_type': source_link_type(ruleset.source),
         'title': f'edit {ruleset.name}',
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
@@ -390,8 +415,8 @@ def add_recommend_beatmap(request, slug):
                 # Generate the URL to the osu! web from beatmap ID and beatmapset ID.
                 form.instance.url = f"https://osu.ppy.sh/beatmapsets/{beatmap_json_data['beatmapset_id']}#osu/{form.instance.beatmap_id}"
                 if request.user.id == int(ruleset.owner):
-                    form.instance.owner_approved = True;
-                    form.instance.owner_seen = True;
+                    form.instance.owner_approved = True
+                    form.instance.owner_seen = True
                 form.save()
                 if request.user.id == int(ruleset.owner):
                     messages.success(request, f"Added {beatmap_json_data['title']} [{beatmap_json_data['version']}] as a recommended beatmap successfully!")

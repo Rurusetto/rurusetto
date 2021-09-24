@@ -601,3 +601,11 @@ a.disabled {
     color: #ffb3d4;
 }
 
+form.form a {
+    text-decoration: unset;
+}
+
+form.form a:hover {
+    letter-spacing: 1px;
+}
+

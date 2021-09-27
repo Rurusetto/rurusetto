@@ -4,6 +4,7 @@
 
 [![Continuous Integration](https://github.com/Rurusetto/rurusetto/actions/workflows/django.yml/badge.svg)](https://github.com/Rurusetto/rurusetto/actions/workflows/django.yml)
 [![CodeFactor](https://www.codefactor.io/repository/github/rurusetto/rurusetto/badge)](https://www.codefactor.io/repository/github/rurusetto/rurusetto)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](code_of_conduct.md)
 [![Discord Shield](https://discordapp.com/api/guilds/700619421466624050/widget.png?style=shield)](https://discord.gg/CQPNADu)
 
 A wiki that contain all osu! rulesets

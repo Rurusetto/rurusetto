@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 from django.core.management.utils import get_random_secret_key
+from decouple import config, Csv
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -21,12 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = get_random_secret_key()
+# SECRET_KEY = get_random_secret_key()
+SECRET_KEY = config('SECRET_KEY', default="an_awesome_secret_key_here")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv(), default='localhost')
 
 # Application definition
 
@@ -162,9 +164,9 @@ MAX_PROFILE_PICTURE_SIZE = 5242880
 
 # API key and API configuration
 
-OSU_OAUTH_CLIENT_ID = ''
-OSU_OAUTH_CLIENT_SECRET = ''
-OSU_API_V1_KEY = ''
+OSU_OAUTH_CLIENT_ID = config('OSU_OAUTH_CLIENT_ID', default="")
+OSU_OAUTH_CLIENT_SECRET = config('OSU_OAUTH_CLIENT_SECRET', default="")
+OSU_API_V1_KEY = config('OSU_API_V1_KEY', default="")
 
 # Markdown Editor Configuration
 

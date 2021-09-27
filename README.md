@@ -90,6 +90,21 @@ cd rurusetto # get in the Rūrusetto project config folder
 python manage.py migrate
 ```
 
+### Fill the configuration value and secret key
+
+Rūrusetto use `python-decouple` library to separate the configuration value and secret key. This library will read the configuration value from `.env` file. Let's create the `.env` file in `rurusetto` folder and below are the template for this file.
+
+```env
+SECRET_KEY = awesome_key_here
+DEBUG = True
+ALLOWED_HOSTS = 127.0.0.1
+OSU_OAUTH_CLIENT_ID = idgohere
+OSU_OAUTH_CLIENT_SECRET = keygohere
+OSU_API_V1_KEY = keygohere
+```
+
+Note : The `OSU_OAUTH_CLIENT_ID` `OSU_OAUTH_CLIENT_SECRET` and `OSU_API_V1_KEY` are required when you want to development with osu! OAuth system or some program part that required the osu! API you must fill the osu! API key and OAuth app number in `settings.py` to start development on this function. But if you are not testing on this function it's okay to leave the key blank. (The development OAuth server callback is http://127.0.0.1:8000/accounts/osu/login/callback/.)
+
 ### Start the development server
 
 Run the `runserver` command in Rūrusetto directory
@@ -98,8 +113,6 @@ Run the `runserver` command in Rūrusetto directory
 cd rurusetto # get in the Rūrusetto project config folder
 python manage.py runserver
 ```
-
-Note : If you want to work on the osu! OAuth system or some program part that required the osu! API you must fill the osu! API key and OAuth app number in `settings.py` to start development on this function. But if you are not testing on this function it's ok to leave the key blank. (The development OAuth server callback is http://127.0.0.1:8000/accounts/osu/login/callback/.)
 
 ## License
 

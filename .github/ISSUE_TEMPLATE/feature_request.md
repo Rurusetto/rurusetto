@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an idea for this project
+about: Got something you think should change or be added? Explain your idea to us!
 title: ''
 labels: ''
 assignees: ''

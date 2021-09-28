@@ -17,7 +17,7 @@ If this bug report is from the [beta website](https://beta.ruleset.info) and rel
 URL of the previous and the page that the bug is occured
 
 **Describe the bug**
-[ ] This bug lead to 500 server error.
+[] This bug lead to 500 server error.
 A clear and concise description of what the bug is here.
 
 **To Reproduce**

@@ -19,10 +19,12 @@ Bug reports and feature suggestion are welcomed!
 
 ## I would like to submit a pull request!
 
-We also welcome pull request. The [issue tracker](https://github.com/Rurusetto/rurusetto/issues) should provide an issue from the user and some function that want to implement. Before we go longer, here is some key things before getting started.
+We also welcome pull request. The [issue tracker](https://github.com/Rurusetto/rurusetto/issues) should provide an issue from the user and some function that want to implement. Before we go longer, here is some key things before getting started:
 
 * **Make sure you are comfortable with our library and your development environment.**
   This website use Django and Python as backend and HTML, Bootstrap and JavaScript as a frontend. Please make sure that you are familiar with this library and its tool.
+
+  If you contribute to the codebase for the first time and want to learn on the codebase. The issues that tag with [good first issues](https://github.com/Rurusetto/rurusetto/labels/good%20first%20issue) is the best way to contribute with learning the structure the codebase at the same time. 
 
 * **Code quality is the priority for us**
   We have `CodeFactor` to analyze the code quality and the code format. If `CodeFactor` or the maintainer need you to fix the code quality please fix it. We want to make the codebase clean as mush as we can.

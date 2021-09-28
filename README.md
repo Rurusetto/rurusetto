@@ -29,8 +29,8 @@ About question on new website I already write an explanation on [this](https://g
 
 Please make sure you have the following prerequisites:
 
-- [Python](https://www.python.org/)
-- During development on codebase, we recommend IDE with intelligent code completion and syntax highlighting if you work with a codebase. Our recommendation is [PyCharm Professional](https://www.jetbrains.com/pycharm/) or [Visual Studio Code](https://code.visualstudio.com/)
+- [Python 3.7 or better](https://www.python.org/)
+- During development on codebase, we recommend IDE with intelligent code completion and syntax highlighting if you work with a codebase. Our recommendation is [PyCharm](https://www.jetbrains.com/pycharm/) or [Visual Studio Code](https://code.visualstudio.com/)
 - [Git](https://git-scm.com/)
 
 ### Downloading the source code
@@ -115,11 +115,19 @@ cd rurusetto # get in the Rūrusetto project config folder
 python manage.py runserver
 ```
 
+## Contributing
+
+When it comes to contributing to the project, the two main things you can do to help out are reporting the issues and submitting pull requests. We have prepared a [list of contributing guidelines](CONTRIBUTING.md) that should hopefully ease you into our collaboration process.
+
+Note that the contributing guidelines is not all. Nothing is set in stone. If you have an issue with the way code is structure, with any libraries we are using, or with any processes involved with contributing, please bring up and ask us! We welcome all feedback, so we can make the contributing to this project as painless as possible.
+
+We use [code of conduct](code_of_conduct.md) from `Contributor Covenant`.
+
 ## License
 
 The code in this repository is licensed under MIT license. Please see [the license file](LICENSE) for more information. tl;dr you can do whatever you want as long as you include the original copyright and license notice in any copy of the software/source.
 
-The image and the content that upload by user and community is cover on DMCA. If you are the work and owner and want to request to remove your work please email the team at contact@rulesets.info.
+The image in this website and the content that upload by user and community is cover on DMCA. If you are the work and owner and want to request to remove your work please email the team at [contact@rulesets.info](mailto:contact@rulesets.info) or contact HelloYeew (project leader) at [me@helloyeew.dev](mailto:me@helloyeew.dev).
 
 Each rulesets has its own license.
 

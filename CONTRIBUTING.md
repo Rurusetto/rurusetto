@@ -45,9 +45,7 @@ We also welcome pull request. The [issue tracker](https://github.com/Rurusetto/r
 * **Refrain from making changes through the GitHub web interface.**
   Even GitHub provide an option to edit code or replace files in the repository using the web interface. Ee strongly discourage using it in most scenarios. Editing files this way is inefficient and likely to introduce whitespace or file encoding changes that make it more difficult to review the code.
 
-  Code written in web interface will also very likely be questioned by the reviewer or fail the continuous integration and code quality check. We strongly encourage using an IDE like [Visual Studio Code](https://code.visualstudio.com/) or [PyCharm](https://www.jetbrains.com/pycharm/)
+  Code written in web interface will also very likely be questioned by the reviewer or fail the continuous integration and code quality check. We strongly encourage using an IDE like [PyCharm](https://www.jetbrains.com/pycharm/) or [Visual Studio Code](https://code.visualstudio.com/).
 
 * **Feel free to reach us for help.**
   If you have any problem on the development process please leave the comment in your pull request or contact the maintainer in the [development server](https://discord.gg/CQPNADu). We will help you as much as we can.
-
-That's all. If you have any problem, you can leaving a comment in the relevant issue or pull requests, or use [development server](https://discord.gg/CQPNADu). We will try to help you as much as we can.

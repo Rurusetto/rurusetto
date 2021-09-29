@@ -12,9 +12,11 @@ Thank you for showing interest in the development of Rūrusetto. This guidelines
 Bug reports and feature suggestion are welcomed!
 
 * **When submitting a bug report, please try to include as much detail as possible**
+
   To make the bug that you found fix correctly please try to follow the bug report template and try to explain it (How to reproduce, bug behavior etc.) as much as you can.
 
 * **Provide more information when asked to do so.**
+
   If the bug is complicate or hard to fix. In this case we will likely ask you for additional info. Your additional info can make us track down the problem better.
 
 ## I would like to submit a pull request!
@@ -22,6 +24,7 @@ Bug reports and feature suggestion are welcomed!
 We also welcome pull request. The [issue tracker](https://github.com/Rurusetto/rurusetto/issues) should provide an issue from the user and some function that want to implement. Before we go longer, here is some key things before getting started:
 
 * **Make sure you are comfortable with our library and your development environment.**
+
   This website use Django and Python as backend and HTML, Bootstrap and JavaScript as a frontend. Please make sure that you are familiar with this library and its tool.
 
   If you contribute to the codebase for the first time and want to learn on the codebase. The issues that tag with [good first issues](https://github.com/Rurusetto/rurusetto/labels/good%20first%20issue) is the best way to contribute with learning the structure the codebase at the same time. 

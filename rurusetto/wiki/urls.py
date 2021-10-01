@@ -17,6 +17,7 @@ urlpatterns = [
     path('rulesets/<slug:rulesets_slug>/manage/beatmaps/approve/<int:beatmap_id>', views.approve_recommend_beatmap, name='approve_recommend_beatmap'),
     path('rulesets/<slug:rulesets_slug>/manage/beatmaps/deny/<int:beatmap_id>', views.deny_recommend_beatmap, name='deny_recommend_beatmap'),
     path('install', views.install, name='install'),
+    path('status', views.status, name='status'),
     # URL path for API
     path('api/rulesets', views.ruleset_list),
     path('api/rulesets/<slug:slug>', views.ruleset_detail)

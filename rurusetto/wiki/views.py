@@ -574,6 +574,18 @@ def deny_recommend_beatmap(request, rulesets_slug, beatmap_id):
         raise PermissionDenied()
 
 
+def status(request):
+    hero_image = 'img/status-cover-night.jpg'
+    hero_image_light = 'img/status-cover-light.jpg'
+    context = {
+        'title': 'status',
+        'hero_image': static(hero_image),
+        'hero_image_light': static(hero_image_light),
+        'opengraph_description': 'Status of all rulesets are here. (and you can download and update the rulesets instantly with this page!)',
+        'opengraph_url': resolve_url('status')
+    }
+    return render(request, 'wiki/status.html', context)
+
 # Views for API
 
 

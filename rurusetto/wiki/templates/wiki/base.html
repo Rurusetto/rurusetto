@@ -69,7 +69,7 @@
                 <li><a id="nav-listing" href="{% url 'listing' %}" class="nav-link px-2 nav-text round-font-bold hvr-underline-from-center">Listing</a></li>
             </div>
             <div data-aos="fade-up" data-aos-duration="700">
-                <li><a id="nav-status" data-aos-duration="700" href="#" class="nav-link px-2 nav-text round-font-bold hvr-underline-from-center">Status</a></li>
+                <li><a id="nav-status" data-aos-duration="700" href="{% url 'status' %}" class="nav-link px-2 nav-text round-font-bold hvr-underline-from-center">Status</a></li>
             </div>
             <div data-aos="fade-up" data-aos-duration="800">
                 <li><a id="nav-install" data-aos-duration="800" href="{% url 'install' %}" class="nav-link px-2 nav-text round-font-bold hvr-underline-from-center">Install</a></li>
@@ -120,7 +120,7 @@
       <div class="collapse fixed-top" id="navbarToggleExternalContent">
           <div class="list-group border-0">
             <a href="{% url 'listing' %}" class="list-group-item list-group-item-action mobile-header-text">Listing</a>
-            <a href="#" class="list-group-item list-group-item-action mobile-header-text">Status</a>
+            <a href="{% url 'status' %}" class="list-group-item list-group-item-action mobile-header-text">Status</a>
             <a href="{% url 'install' %}" class="list-group-item list-group-item-action mobile-header-text">Install</a>
             <a href="{% url 'changelog' %}" class="list-group-item list-group-item-action mobile-header-text">Changelog</a>
             <a href="#collapseProfileMenu" class="list-group-item list-group-item-action mobile-header-text profile-menu" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapseProfileMenu" onclick="rotateArrowMenu()" id="profile-menu"><img id="profile-picture-mobile" src="{{ user.profile.image.url }}" alt="{{ user.username }}" height="32" width="32" class="rounded-circle"> {{ user.username }} <i class="fas fa-chevron-down" id="arrow-profile-menu"></i></a>
@@ -147,7 +147,7 @@
       <div class="collapse fixed-top" id="navbarToggleExternalContent">
           <div class="list-group border-0">
             <a href="{% url 'listing' %}" class="list-group-item list-group-item-action mobile-header-text">Listing</a>
-            <a href="#" class="list-group-item list-group-item-action mobile-header-text">Status</a>
+            <a href="{% url 'status' %}" class="list-group-item list-group-item-action mobile-header-text">Status</a>
             <a href="{% url 'install' %}" class="list-group-item list-group-item-action mobile-header-text">Install</a>
             <a href="{% url 'changelog' %}" class="list-group-item list-group-item-action mobile-header-text">Changelog</a>
             <a href="{% url 'account_login' %}" class="list-group-item list-group-item-action mobile-header-text">Sign In</a>

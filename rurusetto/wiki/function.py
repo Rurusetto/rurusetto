@@ -163,3 +163,17 @@ def make_beatmap_aapproval_view(ruleset_id):
     return beatmap_list
 
 
+def make_status_view():
+    show_ruleset = []
+    for ruleset in Ruleset.objects.all():
+        if source_link_type(ruleset.source) == 'patreon':
+            show_ruleset.append([ruleset, 'patreon', ruleset.source])
+        elif (source_link_type(ruleset.source) == 'github') and (ruleset.github_download_filename != ""):
+            if ruleset.source[-1] != "/":
+                download_link = f"{ruleset.source}/releases/latest/download/{ruleset.github_download_filename}"
+            else:
+                download_link = f"{ruleset.source}releases/latest/download/{ruleset.github_download_filename}"
+            show_ruleset.append([ruleset, 'github', download_link])
+        else:
+            continue
+    return show_ruleset

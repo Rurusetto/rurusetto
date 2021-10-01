@@ -9,7 +9,7 @@ from .models import Changelog, Ruleset, Subpage, RecommendBeatmap
 from users.models import Profile
 from django.contrib.auth.models import User
 from .forms import RulesetForm, SubpageForm, RecommendBeatmapForm
-from .function import make_listing_view, make_wiki_view, source_link_type, get_user_by_id, make_recommend_beatmap_view, make_beatmap_aapproval_view
+from .function import make_listing_view, make_wiki_view, source_link_type, get_user_by_id, make_recommend_beatmap_view, make_beatmap_aapproval_view, make_status_view
 from unidecode import unidecode
 from django.template.defaultfilters import slugify
 from rurusetto.settings import OSU_API_V1_KEY
@@ -578,6 +578,7 @@ def status(request):
     hero_image = 'img/status-cover-night.jpg'
     hero_image_light = 'img/status-cover-light.jpg'
     context = {
+        'all_ruleset': make_status_view(),
         'title': 'status',
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
@@ -585,6 +586,7 @@ def status(request):
         'opengraph_url': resolve_url('status')
     }
     return render(request, 'wiki/status.html', context)
+
 
 # Views for API
 

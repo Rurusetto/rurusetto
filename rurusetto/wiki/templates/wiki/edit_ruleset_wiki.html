@@ -7,7 +7,7 @@
         <div class="row">
             <p></p>
             <div><h1 class="display-5 fw-bold" data-aos="fade-up" data-aos-duration="600">Edit</h1></div>
-            <p id="hero-description" data-aos="fade-up" data-aos-duration="700">You are currently edit content on ruleset name "{{ name }}".</p>
+            <p id="hero-description" data-aos="fade-up" data-aos-duration="700">You are currently editing content on ruleset named "{{ name }}".</p>
         </div>
     </div>
 </div>
@@ -52,7 +52,7 @@
                     <div class="col-sm-10">
                       <textarea name="description" cols="40" rows="10" class="form-control" required id="id_description">{{ form.description.value }}</textarea>
                        <p class="form-error raleway-font">{{ form.description.errors }}</p>
-                        <p class="text-muted raleway-font">The description of ruleset. Will show under ruleset name and at the header of wiki page.</p>
+                        <p class="text-muted raleway-font">The description of the ruleset. It will show under the ruleset name and at the header of the wiki page.</p>
                     </div>
                   </div>
             </div>
@@ -64,7 +64,7 @@
                         <div class="raleway-font form-current">Current Icon : <a href="{{ form.icon.value.url }}">{{ form.icon.value }}</a></div>
                       <input type="file" name="icon" accept="image/*" id="id_icon" class="form-control">
                         <p class="form-error raleway-font">{{ form.icon.errors }}</p>
-                        <p class="text-muted raleway-font">An icon that show at in-game header. Recommend shape is circle.</p>
+                        <p class="text-muted raleway-font">An icon that shows at in-game header. Recommend shape is a circle.</p>
                     </div>
                   </div>
             </div>
@@ -75,7 +75,7 @@
                         <div class="raleway-font form-current">Current Logo : <a href="{{ form.logo.value.url }}">{{ form.logo.value }}</a></div>
                         <input type="file" name="logo" accept="image/*" id="id_logo" class="form-control">
                         <p class="form-error raleway-font">{{ form.logo.errors }}</p>
-                        <p class="text-muted raleway-font">A logo will show in wiki's infobox. It can be not same to an icon.</p>
+                        <p class="text-muted raleway-font">A logo that will be visible in the wiki's infobox. It cannot be the same as your icon.</p>
                     </div>
                   </div>
             </div>
@@ -91,7 +91,7 @@
                        <div class="raleway-font form-current"> Current Cover Image : <a href="{{ form.cover_image.value.url }}">{{ form.cover_image.value }}</a></div>
                       <input type="file" name="cover_image" accept="image/*" id="id_cover_image" class="form-control">
                         <p class="form-error raleway-font">{{ form.cover_image.errors }}</p>
-                        <p class="text-muted raleway-font">A picture at the header of the wiki page.</p>
+                        <p class="text-muted raleway-font">A picture visible at the header of the wiki page.</p>
                     </div>
                   </div>
             </div>
@@ -102,7 +102,7 @@
                        <div class="raleway-font form-current"> Current Opengraph Preview Image : <a href="{{ form.opengraph_image.value.url }}">{{ form.opengraph_image.value }}</a></div>
                       <input type="file" name="opengraph_image" accept="image/*" id="id_opengraph_image" class="form-control">
                         <p class="form-error raleway-font">{{ form.opengraph_image.errors }}</p>
-                        <p class="text-muted raleway-font">A picture that will show on when someone share the link and the social network app will show this picture as a preview image.</p>
+                        <p class="text-muted raleway-font">A thumbnail that will be visible when someone shares the link and the social network app shows this picture as a preview image.</p>
                     </div>
                   </div>
             </div>
@@ -113,7 +113,7 @@
                        <div class="raleway-font form-current"> Current Recommend Beatmaps Cover Image : <a href="{{ form.recommend_beatmap_cover.value.url }}">{{ form.recommend_beatmap_cover.value }}</a></div>
                       <input type="file" name="recommend_beatmap_cover" accept="image/*" id="id_recommend_beatmap_cover" class="form-control">
                         <p class="form-error raleway-font">{{ form.recommend_beatmap_cover.errors }}</p>
-                        <p class="text-muted raleway-font">A cover image of ruleset's recommend beatmaps page.</p>
+                        <p class="text-muted raleway-font">A cover image of the ruleset's recommend beatmaps page.</p>
                     </div>
                   </div>
             </div>

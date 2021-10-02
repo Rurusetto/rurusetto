@@ -8,7 +8,7 @@
         <div class="row">
             <p></p>
             <div><h1 class="display-5 fw-bold" data-aos="fade-up" data-aos-duration="600">Settings</h1></div>
-            <p id="hero-description" data-aos="fade-up" data-aos-duration="700">All profile and website settings are here!</p>
+            <p id="hero-description" data-aos="fade-up" data-aos-duration="700">All profile and website settings are visible here!</p>
         </div>
     </div>
 </div>
@@ -63,7 +63,7 @@
                             {{ profile_sync_form.update_profile_every_login }}
                         </div>
                         <p class="form-error raleway-font">{{ profile_sync_form.update_profile_every_login.errors }}</p>
-                        <p class="text-muted raleway-font">If this checked, everytime time you login the system will update all of your profile to make it same as your osu! profile but your profile setting will be disabled.</p>
+                        <p class="text-muted raleway-font">If this is checked, the system will update your profile to make it the same as your osu! profile everytime time you login (Your profile setting will be disabled).</p>
                     </div>
                   </div>
             </div>
@@ -89,7 +89,7 @@
                   </div>
             </div>
             {% else %}
-            <p class="raleway-font">The user information is handled by system. If you want to custom your profile, please remove the <i>Update Profile Every Login Session</i> setting.</p>
+            <p class="raleway-font">User information is handled by the system. If you want to customize your profile, please uncheck the <i>Update Profile Every Login Session</i> setting.</p>
             {% endif %}
             <h2>Profile Page Detail</h2>
             {% if can_edit_profile %}
@@ -132,7 +132,7 @@
                   </div>
             </div>
             {% else %}
-            <p class="raleway-font">The profile page detail is handled by system. If you want to custom your profile, please remove the <i>Update Profile Every Login Session</i> setting.</p>
+            <p class="raleway-font">Profile page details are handled by the system. If you want to customize your profile, please uncheck the <i>Update Profile Every Login Session</i> setting.</p>
             {% endif %}
             <h2>Profile Page Display Settings</h2>
             <div class="fieldWrapper">
@@ -143,7 +143,7 @@
                             {{ hide_email.hide_email }}
                         </div>
                         <p class="form-error raleway-font">{{ hide_email.hide_email.errors }}</p>
-                        <p class="text-muted raleway-font">If this checked, your email will not be show on your profile page.</p>
+                        <p class="text-muted raleway-font">If checked, your email will not be visible on your profile page.</p>
                     </div>
                   </div>
             </div>
@@ -166,16 +166,16 @@
                     <div class="col-sm-10 raleway-font">
                         {{ website_subpage_config_form | crispy }}
                         <p class="form-error raleway-font">{{ website_config_form.theme.errors }}</p>
-                        <p class="text-muted raleway-font">Setting of the appearance on the subpage menu at the top of the rulesets page.</p>
+                        <p class="text-muted raleway-font">Appearance settings of the subpage menu at the top of the rulesets page.</p>
                     </div>
                   </div>
             </div>
 
             {% if ruleset_creator %}
             <h1 id="creator">Rulesets Creator Settings</h1>
-            <p>This settings are only appear when you are a one of the rulesets creator in the wiki.</p>
+            <p>These settings will only be visible when you are one of the rulesets creator in the wiki.</p>
             <h2>Support</h2>
-            <p>This is the setting of the detail in the <code>Support the creator</code> modal so other player who love your ruleset can support you. If you don't want to use this function please leave all fields as blank.</p>
+            <p>These are the settings of the detail in <code>Support the creator</code> modal so other players who love your rulesets can support you. If you don't want to use this function please leave all fields blank.</p>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
                     <label for="id_support_message" class="col-sm-2 col-form-label form-label">Support Message:</label>
@@ -192,7 +192,7 @@
                     <div class="col-sm-10">
                       <input type="url" name="support_patreon" id="id_support_patreon" class="form-control" value="{{ support_form.support_patreon.value }}">
                         <p class="form-error raleway-font">{{ support_form.support_patreon.errors }}</p>
-                        <p class="text-muted raleway-font">Link to your Patreon page. (If you don't have this donation way just leave it blank.)</p>
+                        <p class="text-muted raleway-font">Link to your Patreon page. (Leave blank if you don't have a Patreon account)</p>
                     </div>
                   </div>
             </div>
@@ -202,7 +202,7 @@
                     <div class="col-sm-10">
                       <input type="url" name="support_kofi" id="id_support_kofi" class="form-control" value="{{ support_form.support_kofi.value }}">
                         <p class="form-error raleway-font">{{ form.source.errors }}</p>
-                        <p class="text-muted raleway-font">Link to your Ko-fi page so user can buy you some coffee! (If you don't have this donation way just leave it blank.)</p>
+                        <p class="text-muted raleway-font">Link to your Ko-fi page so users can buy you coffee! (Leave blank if you don't have a Ko-Fi account)</p>
                     </div>
                   </div>
             </div>
@@ -212,7 +212,7 @@
                     <div class="col-sm-10">
                       <input type="url" name="support_github_sponsors" id="id_support_github_sponsors" class="form-control" value="{{ support_form.support_github_sponsors.value }}">
                         <p class="form-error raleway-font">{{ support_form.support_github_sponsors.errors }}</p>
-                        <p class="text-muted raleway-font">Link to your GitHub Sponsors page. (If you don't have this donation way just leave it blank.)</p>
+                        <p class="text-muted raleway-font">Link to your GitHub Sponsors page. (Leave blank if you don't have a sponsors page)</p>
                     </div>
                   </div>
             </div>
@@ -229,11 +229,11 @@
 <div class="container">
     <a id="account"><h1>Account</h1></a>
     <h2>Account Connection</h2>
-    <p class="raleway-font">You can connect your account with your osu! account so you can login by using your osu! account instead of username and password.</p>
+    <p class="raleway-font">You can connect your account with your osu! account so you can login by using your osu! account instead of Rurusetto username and password.</p>
 
     {% if social_account %}
 
-        <p class="raleway-font" style="color:#ff66aa"><i class="fas fa-check icon-menu"></i> This account is connected to osu! account username : {{ osu_confirm_username }}</p>
+        <p class="raleway-font" style="color:#ff66aa"><i class="fas fa-check icon-menu"></i> This account is connected to osu! account with username : {{ osu_confirm_username }}</p>
 
     {% else %}
 

@@ -61,4 +61,4 @@ We also welcome pull request. The [issue tracker](https://github.com/Rurusetto/r
 
 * **Feel free to reach us for help.**
 
-  If you have any problem on the development proces, please leave the comment in your pull request or contact the maintainer in the [Discord development server](https://discord.gg/CQPNADu). We will help you as much as we can.
+  If you have any problem on the development process, please leave the comment in your pull request or contact the maintainer in the [Discord development server](https://discord.gg/CQPNADu). We will help you as much as we can.

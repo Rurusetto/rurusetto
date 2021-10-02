@@ -575,6 +575,12 @@ def deny_recommend_beatmap(request, rulesets_slug, beatmap_id):
 
 
 def status(request):
+    """
+    View for status page.
+
+    :param request: WSGI request from user.
+    :return: Render the status page and pass the value from context to the template (status.html)
+    """
     hero_image = 'img/status-cover-night.jpg'
     hero_image_light = 'img/status-cover-light.jpg'
     context = {

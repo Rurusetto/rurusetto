@@ -164,11 +164,24 @@ def make_beatmap_aapproval_view(ruleset_id):
 
 
 def make_status_view():
+    """
+    Get all Ruleset object and generate the list of ruleset that show in status page
+
+    Return the list for each source type of the ruleset.
+
+    - GitHub with github_download_filename : [ruleset, 'github_with_direct', [download_link, latest_release]]
+    - GitHub without github_download_filename : [ruleset, 'github', latest_release]
+    - Patreon : [ruleset, 'patreon', ruleset.source]
+
+    :return: The list of data needed to render in status page template.
+    """
     show_ruleset = []
     for ruleset in Ruleset.objects.all():
         if source_link_type(ruleset.source) == 'patreon':
+            # Patreon source is just need to go to Patreon owner page.
             show_ruleset.append([ruleset, 'patreon', ruleset.source])
         elif (source_link_type(ruleset.source) == 'github') and (ruleset.github_download_filename != ""):
+            # When GitHub filename is not blank, we can render the direct download link.
             if ruleset.source[-1] != "/":
                 download_link = f"{ruleset.source}/releases/latest/download/{ruleset.github_download_filename}"
                 latest_release = f"{ruleset.source}/releases"
@@ -177,6 +190,7 @@ def make_status_view():
                 latest_release = f"{ruleset.source}releases"
             show_ruleset.append([ruleset, 'github_with_direct', [download_link, latest_release]])
         elif (source_link_type(ruleset.source) == 'github') and (ruleset.github_download_filename == ""):
+            # No filename, so we can render only the link to release page.
             if ruleset.source[-1] != "/":
                 latest_release = f"{ruleset.source}/releases"
             else:

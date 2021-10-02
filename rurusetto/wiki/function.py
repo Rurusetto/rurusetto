@@ -175,7 +175,13 @@ def make_status_view():
             else:
                 download_link = f"{ruleset.source}releases/latest/download/{ruleset.github_download_filename}"
                 latest_release = f"{ruleset.source}releases"
-            show_ruleset.append([ruleset, 'github', [download_link, latest_release]])
+            show_ruleset.append([ruleset, 'github_with_direct', [download_link, latest_release]])
+        elif (source_link_type(ruleset.source) == 'github') and (ruleset.github_download_filename == ""):
+            if ruleset.source[-1] != "/":
+                latest_release = f"{ruleset.source}/releases"
+            else:
+                latest_release = f"{ruleset.source}releases"
+            show_ruleset.append([ruleset, 'github', latest_release])
         else:
             continue
     return show_ruleset

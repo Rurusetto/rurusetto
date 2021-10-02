@@ -38,7 +38,7 @@
 
 <div class="container">
     {% for ruleset in all_ruleset %}
-    {% if ruleset.1 == 'github' %}
+    {% if ruleset.1 == 'github_with_direct' %}
     <div class="row">
         <h1><img src="{{ ruleset.0.icon.url }}" alt="{{ ruleset.0.name }}" width="40" height="40" class="rounded-circle hvr-icon"> {{ ruleset.0.name }}</h1>
         <div class="col-8">
@@ -49,6 +49,18 @@
         <div class="col-4">
             <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{{ ruleset.2.0 }}"><i class="fas fa-download icon-menu hvr-icon"></i> Download latest version</a></p>
             <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{{ ruleset.2.1 }}"><i class="fab fa-github icon-menu hvr-icon"></i> GitHub release page</a></p>
+        </div>
+    </div>
+    {% elif ruleset.1 == 'github' %}
+    <div class="row">
+        <h1><img src="{{ ruleset.0.icon.url }}" alt="{{ ruleset.0.name }}" width="40" height="40" class="rounded-circle hvr-icon"> {{ ruleset.0.name }}</h1>
+        <div class="col-8">
+            <div class="alert alert-light">
+                Coming Soon!
+            </div>
+        </div>
+        <div class="col-4">
+            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{{ ruleset.2 }}"><i class="fab fa-github icon-menu hvr-icon"></i> GitHub release page</a></p>
         </div>
     </div>
     {% elif ruleset.1 == 'patreon' %}

@@ -7,7 +7,7 @@
         <div class="row">
             <p></p>
             <div data-aos="fade-up" data-aos-duration="600"><h1 class="display-5 fw-bold">Add a new ruleset</h1></div>
-            <p data-aos="fade-up" data-aos-duration=700" id="hero-description">Let's add a new ruleset! Is it yours? Don't worry! You can add it although you don't make that ruleset.</p>
+            <p data-aos="fade-up" data-aos-duration=700" id="hero-description">Let's add a new ruleset! Is it yours? Don't worry! You can add it even if you didn't make the ruleset.</p>
         </div>
     </div>
 </div>
@@ -33,7 +33,7 @@
                     <div class="col-sm-10">
                       <textarea name="description" cols="40" rows="10" class="form-control" required id="id_description"></textarea>
                         <p class="form-error raleway-font">{{ form.description.errors }}</p>
-                        <p class="text-muted raleway-font">The description of ruleset. Will show under ruleset name and at the header of wiki page.</p>
+                        <p class="text-muted raleway-font">The description of the ruleset. It will be visible under ruleset name and at the header of the wiki page.</p>
                     </div>
                   </div>
             </div>
@@ -44,7 +44,7 @@
                     <div class="col-sm-10">
                       <input type="file" name="icon" accept="image/*" id="id_icon" class="form-control" required>
                         <p class="form-error raleway-font">{{ form.icon.errors }}</p>
-                        <p class="text-muted raleway-font">An icon that show at in-game header. Recommend shape is circle.</p>
+                        <p class="text-muted raleway-font">An icon that shows on the in-game header. Recommend shape is a circle.</p>
                     </div>
                   </div>
             </div>
@@ -54,7 +54,7 @@
                     <div class="col-sm-10">
                         <input type="file" name="logo" accept="image/*" id="id_logo" class="form-control" required>
                         <p class="form-error raleway-font">{{ form.logo.errors }}</p>
-                        <p class="text-muted raleway-font">A logo will show in wiki's infobox. It can be not same to an icon.</p>
+                        <p class="text-muted raleway-font">A logo that shows in the wiki's infobox. It cannot be the same as your icon.</p>
                     </div>
                   </div>
             </div>
@@ -81,8 +81,8 @@
                       <input type="url" name="source" maxlength="200" required id="id_source" class="form-control">
                         <p class="form-error raleway-font">{{ form.source.errors }}</p>
                         <p class="text-muted raleway-font">A source of the ruleset (or where the player can download this ruleset.) </p>
-                        <p class="text-muted raleway-font">If this ruleset is available on GitHub please set this link as link to the repository (Ex. https://github.com/LumpBloom7/sentakki)</p>
-                        <p class="text-muted raleway-font">If you get it from patreon, please set this link as the patreon page of the creator. (Ex. https://www.patreon.com/evast/)</p>
+                        <p class="text-muted raleway-font">If this ruleset is available on GitHub please link it to the repository (Ex. https://github.com/LumpBloom7/sentakki)</p>
+                        <p class="text-muted raleway-font">If you found it on patreon, please link this to the patreon page of the creator. (Ex. https://www.patreon.com/evast/)</p>
                     </div>
                   </div>
             </div>

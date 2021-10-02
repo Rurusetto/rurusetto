@@ -128,7 +128,7 @@ We use [code of conduct](code_of_conduct.md) from `Contributor Covenant`.
 
 The code in this repository is licensed under MIT license. Please see [the license file](LICENSE) for more information. 
 
-TL;DR** you can do whatever you want as long as you include the original copyright and license notice in any copy of the software/source.
+**TL;DR** you can do whatever you want as long as you include the original copyright and license notice in any copy of the software/source.
 
 The image in this website and the content that upload by user and community are cover by DMCA. If you are the work owner and want to request to remove your work, please email the team at [contact@rulesets.info](mailto:contact@rulesets.info) or contact HelloYeew (project leader) at [me@helloyeew.dev](mailto:me@helloyeew.dev).
 

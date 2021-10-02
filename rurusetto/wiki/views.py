@@ -9,7 +9,7 @@ from .models import Changelog, Ruleset, Subpage, RecommendBeatmap
 from users.models import Profile
 from django.contrib.auth.models import User
 from .forms import RulesetForm, SubpageForm, RecommendBeatmapForm
-from .function import make_listing_view, make_wiki_view, source_link_type, get_user_by_id, make_recommend_beatmap_view, make_beatmap_aapproval_view
+from .function import make_listing_view, make_wiki_view, source_link_type, get_user_by_id, make_recommend_beatmap_view, make_beatmap_aapproval_view, make_status_view
 from unidecode import unidecode
 from django.template.defaultfilters import slugify
 from rurusetto.settings import OSU_API_V1_KEY
@@ -572,6 +572,26 @@ def deny_recommend_beatmap(request, rulesets_slug, beatmap_id):
         return redirect('recommend_beatmap_approval', rulesets_slug)
     else:
         raise PermissionDenied()
+
+
+def status(request):
+    """
+    View for status page.
+
+    :param request: WSGI request from user.
+    :return: Render the status page and pass the value from context to the template (status.html)
+    """
+    hero_image = 'img/status-cover-night.jpg'
+    hero_image_light = 'img/status-cover-light.jpg'
+    context = {
+        'all_ruleset': make_status_view(),
+        'title': 'status',
+        'hero_image': static(hero_image),
+        'hero_image_light': static(hero_image_light),
+        'opengraph_description': 'Status of all rulesets are here. (and you can download and update the rulesets instantly with this page!)',
+        'opengraph_url': resolve_url('status')
+    }
+    return render(request, 'wiki/status.html', context)
 
 
 # Views for API

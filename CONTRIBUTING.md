@@ -1,6 +1,6 @@
 # Contributing Guidelines
 
-Thank you for showing interest in the development of Rūrusetto. This guidelines below is a guidelines. There are not "official rules" or something like that, but following them will help everyone deal with things in the most efficient manner.
+Thank you for showing interest in the development of Rūrusetto. This guidelines below is a guidelines. They are not "official rules" or something like that, but following them will help everyone deal with things in the most efficient manner.
 
 ## Table of contents
 
@@ -25,13 +25,13 @@ We also welcome pull request. The [issue tracker](https://github.com/Rurusetto/r
 
 * **Make sure you are comfortable with our library and your development environment.**
 
-  This website use Django and Python as backend and HTML, Bootstrap and JavaScript as a frontend. Please make sure that you are familiar with this library and its tool.
+  This website use Django and Python as backend and HTML, Bootstrap and JavaScript as a frontend. Please make sure that you are familiar with these libraries and tools.
 
-  If you contribute to the codebase for the first time and want to learn on the codebase. The issues that tag with [good first issues](https://github.com/Rurusetto/rurusetto/labels/good%20first%20issue) is the best way to contribute with learning the structure the codebase at the same time. 
+  If you contribute to the codebase for the first time and want to learn on the codebase. Fixing the issues that are tagged with [good first issues](https://github.com/Rurusetto/rurusetto/labels/good%20first%20issue) is the best way to contribute with learning the structure the codebase at the same time. 
 
 * **Code quality is the priority for us**
 
-  We have `CodeFactor` to analyze the code quality and the code format. If `CodeFactor` or the maintainer need you to fix the code quality please fix it. We want to make the codebase clean as mush as we can.
+  We have `CodeFactor` to analyze the code quality and the code format. If `CodeFactor` or the maintainer need you to fix the code quality, please fix it. We want to make the codebase clean as mush as we can.
 
 * **Make sure that the pull request is complete before opening it.**
 
@@ -39,7 +39,7 @@ We also welcome pull request. The [issue tracker](https://github.com/Rurusetto/r
 
 * **Only push code when it's ready.**
 
-  When pushing to already-open pull request please try to only push changes you are reasonably certain of. Push evert commit will make the continuous integration build queue grow in size, slowing down work and taking time that could be spent to verifying other changes.
+  When pushing to already-open pull request, please try to only push changes you are reasonably certain of. Pushing every commit will make the continuous integration build queue grows in size, slowing down work and taking time that could be spent to verifying other changes.
 
 * **Make sure to keep the *Allow edits from maintainers* check box checked.**
 
@@ -55,10 +55,10 @@ We also welcome pull request. The [issue tracker](https://github.com/Rurusetto/r
 
 * **Refrain from making changes through the GitHub web interface.**
 
-  Even GitHub provide an option to edit code or replace files in the repository using the web interface. Ee strongly discourage using it in most scenarios. Editing files this way is inefficient and likely to introduce whitespace or file encoding changes that make it more difficult to review the code.
+  Even GitHub provide an option to edit code or replace files in the repository using the web interface. We strongly discourage using it in most scenarios. Editing files this way is inefficient and likely to introduce whitespace or file encoding changes that make it more difficult to review the code.
 
   Code written in web interface will also very likely be questioned by the reviewer or fail the continuous integration and code quality check. We strongly encourage using an IDE like [PyCharm](https://www.jetbrains.com/pycharm/) or [Visual Studio Code](https://code.visualstudio.com/).
 
 * **Feel free to reach us for help.**
 
-  If you have any problem on the development process please leave the comment in your pull request or contact the maintainer in the [Discord development server](https://discord.gg/CQPNADu). We will help you as much as we can.
+  If you have any problem on the development process, please leave the comment in your pull request or contact the maintainer in the [Discord development server](https://discord.gg/CQPNADu). We will help you as much as we can.

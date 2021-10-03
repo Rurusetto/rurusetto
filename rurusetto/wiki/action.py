@@ -4,6 +4,7 @@ from django.core.files.temp import NamedTemporaryFile
 from django.core.files import File
 import requests
 import os
+import time
 
 
 def update_all_beatmap_action(action):
@@ -65,6 +66,7 @@ def update_all_beatmap_action(action):
                 failed += 1
         else:
             failed += 1
+        time.sleep(20)
     action.status = 2
-    action.running_text = f"Task running successfully with {success} success and {success} failed!"
+    action.running_text = f"Task running successfully with {success} success and {failed} failed!"
     action.save()

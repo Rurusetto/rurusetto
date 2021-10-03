@@ -118,7 +118,7 @@ def settings(request):
         'osu_confirm_username': osu_confirm_username,
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
-        'opengraph_description': 'All profile and website settings are here!',
+        'opengraph_description': 'All profile and website settings are visible here!',
         'opengraph_url': resolve_url('settings'),
     }
 

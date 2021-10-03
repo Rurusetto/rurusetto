@@ -85,6 +85,8 @@
             <img id="profile-picture" src="{{ user.profile.image.url }}" alt="{{ user.username }}" height="48" width="48" class="rounded-circle hvr-grow">
           </a>
           <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item spacing-hover" href="{% url "maintainer" %}">Maintainer</a></li>
+            <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item spacing-hover" href="{% url "settings" %}">Settings</a></li>
             <li><a class="dropdown-item spacing-hover" href="{% url "profile" user.id %}">Profile</a></li>
             <li><hr class="dropdown-divider"></li>
@@ -126,6 +128,7 @@
             <a href="#collapseProfileMenu" class="list-group-item list-group-item-action mobile-header-text profile-menu" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapseProfileMenu" onclick="rotateArrowMenu()" id="profile-menu"><img id="profile-picture-mobile" src="{{ user.profile.image.url }}" alt="{{ user.username }}" height="32" width="32" class="rounded-circle"> {{ user.username }} <i class="fas fa-chevron-down" id="arrow-profile-menu"></i></a>
             <div class="collapse" id="collapseProfileMenu">
               <div class="list-group border-0">
+                <a href="{% url "maintainer" %}" class="list-group-item list-group-item-action mobile-header-text">Maintainer</a>
                 <a href="{% url "settings" %}" class="list-group-item list-group-item-action mobile-header-text">Settings</a>
                 <a href="{% url 'profile' user.id %}" class="list-group-item list-group-item-action mobile-header-text">Profile</a>
                 <a class="list-group-item list-group-item-action mobile-header-text" id="signout-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Sign out</a>

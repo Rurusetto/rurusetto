@@ -20,7 +20,7 @@ from django.core.exceptions import PermissionDenied
 from django.contrib.auth.decorators import user_passes_test
 import os
 import threading
-import action
+from .action import update_all_beatmap_action
 
 
 def home(request):
@@ -601,6 +601,10 @@ def status(request):
 def maintainer_menu(request):
     hero_image = 'img/status-cover-night.jpg'
     hero_image_light = 'img/status-cover-light.jpg'
+    not_start_action = Action.objects.filter(status=0)
+    running_action = Action.objects.filter(status=1)
+    finish_action = Action.objects.filter(status=2)
+    error_action = Action.objects.filter(status=3)
     context = {
         'title': 'maintainer menu',
         'hero_image': static(hero_image),
@@ -615,11 +619,11 @@ def maintainer_menu(request):
 def update_beatmap_action(request):
     action_log = Action()
     action_log.title = "Update all beatmap metadata"
-    action.running_text = "Start working thread..."
-    action.status = 1
+    action_log.running_text = "Start working thread..."
+    action_log.status = 1
     action_log.start_user = request.id
     action_log.save()
-    thread_worker = threading.Thread(target=action.update_all_beatmap_action, args=[action_log])
+    thread_worker = threading.Thread(target=update_all_beatmap_action, args=[action_log])
     thread_worker.setDaemon(True)
     thread_worker.start()
     messages.success(request, f"Start worker successfully! (Log ID : {action_log.id})")

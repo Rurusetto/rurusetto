@@ -601,11 +601,11 @@ def status(request):
 def maintainer_menu(request):
     hero_image = 'img/status-cover-night.jpg'
     hero_image_light = 'img/status-cover-light.jpg'
-    not_start_action = Action.objects.filter(status=0)
-    running_action = Action.objects.filter(status=1)
-    finish_action = Action.objects.filter(status=2)
-    error_action = Action.objects.filter(status=3)
+    action_list = []
+    for action in Action.objects.all().reverse():
+        action_list.append([action, get_user_by_id(action.start_user)])
     context = {
+        'action_list': action_list,
         'title': 'maintainer menu',
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
@@ -619,15 +619,17 @@ def maintainer_menu(request):
 def update_beatmap_action(request):
     action_log = Action()
     action_log.title = "Update all beatmap metadata"
+    action_log.action_field = "Update all beatmap metadata to make it up-to-date"
     action_log.running_text = "Start working thread..."
     action_log.status = 1
-    action_log.start_user = request.id
+    action_log.start_user = request.user.id
     action_log.save()
     thread_worker = threading.Thread(target=update_all_beatmap_action, args=[action_log])
     thread_worker.setDaemon(True)
     thread_worker.start()
     messages.success(request, f"Start worker successfully! (Log ID : {action_log.id})")
     return redirect('maintainer')
+    # TODO : Docstring
 
 
 # Views for API

@@ -238,3 +238,20 @@ class CustomWiki(models.Model):
             ping_google()
         except Exception:
             pass
+
+
+class Action(models.Model):
+    """
+    A model for the action script history that is running on the server.
+    """
+    title = models.CharField(default="Rūrusetto action", max_length=200)
+    action_field = models.CharField(default="", blank=True, max_length=200)
+
+    status = models.IntegerField(default=0)  # 0 = not start, 1 = start and running, 2 = finished, 3 = error or not finish
+
+    time_start = models.DateTimeField(auto_now_add=True)
+    time_finish = models.DateTimeField(blank=True)
+
+    start_user = models.IntegerField(default=0)
+
+    log_file = models.FileField(upload_to="action_log")

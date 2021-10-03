@@ -58,7 +58,7 @@
             {% endfor %}
           {% endif %}
           <h1 class="text-danger">Delete Account</h1>
-          <p class="text-danger">Are you sure you want to delete account? All of your info will be delete. This is the action that cannot undo!</p>
+          <p class="text-danger">Are you sure you want to delete your account? All of your info will be deleted. You cannot undo this action!</p>
           <form method="POST">
               {% csrf_token %}
               {{ form|crispy }}

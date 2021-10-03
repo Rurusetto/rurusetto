@@ -120,7 +120,7 @@ def create_ruleset(request):
         'title': 'add a new ruleset',
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
-        'opengraph_description': "Let's add a new ruleset! Is it yours? Don't worry! You can add it although you don't make that ruleset.",
+        'opengraph_description': "Let's add a new ruleset! Is it yours? Don't worry! You can add it even if you didn't make the ruleset.",
         'opengraph_url': resolve_url('create_ruleset'),
     }
     return render(request, 'wiki/create_ruleset.html', context)
@@ -221,7 +221,7 @@ def edit_ruleset_wiki(request, slug):
         'title': f'edit {ruleset.name}',
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
-        'opengraph_description': f'You are currently edit content on ruleset name "{Ruleset.objects.get(slug=slug).name}".',
+        'opengraph_description': f'You are currently editing content on ruleset named "{Ruleset.objects.get(slug=slug).name}".',
         'opengraph_url': resolve_url('edit_wiki', slug=slug),
     }
     return render(request, 'wiki/edit_ruleset_wiki.html', context)

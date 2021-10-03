@@ -19,6 +19,7 @@ urlpatterns = [
     path('install', views.install, name='install'),
     path('status', views.status, name='status'),
     path('maintainer', views.maintainer_menu, name='maintainer'),
+    path('maintainer/action/update-beatmap', views.update_beatmap_action, name='maintainer'),
     # URL path for API
     path('api/rulesets', views.ruleset_list),
     path('api/rulesets/<slug:slug>', views.ruleset_detail)

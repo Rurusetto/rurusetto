@@ -248,10 +248,9 @@ class Action(models.Model):
     action_field = models.CharField(default="", blank=True, max_length=200)
 
     status = models.IntegerField(default=0)  # 0 = not start, 1 = start and running, 2 = finished, 3 = error or not finish
+    running_text = models.TextField(blank=True)
 
     time_start = models.DateTimeField(auto_now_add=True)
     time_finish = models.DateTimeField(blank=True)
 
     start_user = models.IntegerField(default=0)
-
-    log_file = models.FileField(upload_to="action_log")

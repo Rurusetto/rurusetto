@@ -43,12 +43,43 @@
     </div>
     <div class="row">
         <div class="col-3">
-          <a class="btn btn-rurusetto" href="#">Update all beatmap metadata</a>
+          <a class="btn btn-rurusetto" href="{% url 'update_beatmap_action' %}">Update all beatmap metadata</a>
         </div>
         <div class="col-9">
           <p>Update all beatmap metadata in the server.</p>
         </div>
     </div>
+
+    <br>
+
+    <h1>Worker log</h1>
+    {% for action in action_list %}
+    <h3>#{{ action.0.id }} {{ action.0.title }}</h3>
+
+    {% if action.1 == None %}
+        <p>Request by <img src="{% static 'img/default.jpeg' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User </p>
+    {% else %}
+        <a href="{% url "profile" action.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover profile-link"><p>Request by <img src="{{ action.1.profile.image.url }}" alt="{{ action.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ action.1.username }} </p></a>
+    {% endif %}
+
+    {% if action.0.status == 0 %}
+    <p>Idle...</p>
+    {% elif action.0.status == 1 %}
+    <div>
+    <div class="spinner-border" role="status" style="color: #ff66aa">
+      <span class="visually-hidden">Loading...</span>
+    </div> <span style="color: #ff66aa" class="text-center">Running...</span>
+    </div>
+    {% elif action.0.status == 2 %}
+    <p class="text-success"><i class="fas fa-check"></i> Successfully running</p>
+    {% elif action.0.status == 3 %}
+    <p class="text-danger"><i class="fas fa-times"></i> Run failed</p>
+    {% endif %}
+
+    <p>Running Status : {{ action.0.running_text }}</p>
+{#        TODO: Seperate successful log and other log out#}
+{#        TODO: Make the style better#}
+    {% endfor %}
 </div>
 
 <br>

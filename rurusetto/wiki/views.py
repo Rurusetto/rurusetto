@@ -5,7 +5,7 @@ from django.templatetags.static import static
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, JsonResponse
 from .serializers import RulesetSerializer
-from .models import Changelog, Ruleset, Subpage, RecommendBeatmap
+from .models import Changelog, Ruleset, Subpage, RecommendBeatmap, Action
 from users.models import Profile
 from django.contrib.auth.models import User
 from .forms import RulesetForm, SubpageForm, RecommendBeatmapForm
@@ -19,6 +19,8 @@ from django.core.files.temp import NamedTemporaryFile
 from django.core.exceptions import PermissionDenied
 from django.contrib.auth.decorators import user_passes_test
 import os
+import threading
+import action
 
 
 def home(request):
@@ -607,6 +609,21 @@ def maintainer_menu(request):
         'opengraph_url': resolve_url('maintainer')
     }
     return render(request, 'wiki/maintainer.html', context)
+
+
+@user_passes_test(lambda u: u.is_superuser or u.is_staff)
+def update_beatmap_action(request):
+    action_log = Action()
+    action_log.title = "Update all beatmap metadata"
+    action.running_text = "Start working thread..."
+    action.status = 1
+    action_log.start_user = request.id
+    action_log.save()
+    thread_worker = threading.Thread(target=action.update_all_beatmap_action, args=[action_log])
+    thread_worker.setDaemon(True)
+    thread_worker.start()
+    messages.success(request, f"Start worker successfully! (Log ID : {action_log.id})")
+    return redirect('maintainer')
 
 
 # Views for API

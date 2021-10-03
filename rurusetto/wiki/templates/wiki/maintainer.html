@@ -1,0 +1,44 @@
+{% extends "wiki/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="px-4 py-4 my-4 align-middle hero">
+    <div class="container align-middle">
+        <div class="row">
+            <p></p>
+            <p></p>
+            <div><h1 class="display-5 fw-bold" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">Maintainer</h1></div>
+            <p data-aos="fade-up" data-aos-duration="700" data-aos-once="true">Menu for maintainer only!</p>
+        </div>
+    </div>
+</div>
+
+    <p></p>
+
+<div class="container">
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == "success"%}
+                <div class="alert alert-success">
+                    <i class="fas fa-check"></i> {{ message }}
+                </div>
+            {% endif %}
+            {% if message.tags == "error"%}
+                <div class="alert alert-danger">
+                    <i class="fas fa-times"></i> {{ message }}
+                </div>
+            {% endif %}
+        {% endfor %}
+      {% endif %}
+    <div class="row text-center gy-4">
+    </div>
+</div>
+
+    <p></p>
+
+<div class="container">
+
+</div>
+
+<br>
+{% endblock content %}

@@ -17,6 +17,7 @@ import requests
 from django.core.files import File
 from django.core.files.temp import NamedTemporaryFile
 from django.core.exceptions import PermissionDenied
+from django.contrib.auth.decorators import user_passes_test
 import os
 
 
@@ -592,6 +593,20 @@ def status(request):
         'opengraph_url': resolve_url('status')
     }
     return render(request, 'wiki/status.html', context)
+
+
+@user_passes_test(lambda u: u.is_superuser or u.is_staff)
+def maintainer_menu(request):
+    hero_image = 'img/status-cover-night.jpg'
+    hero_image_light = 'img/status-cover-light.jpg'
+    context = {
+        'title': 'maintainer menu',
+        'hero_image': static(hero_image),
+        'hero_image_light': static(hero_image_light),
+        'opengraph_description': 'Menu for maintainer only!',
+        'opengraph_url': resolve_url('maintainer')
+    }
+    return render(request, 'wiki/maintainer.html', context)
 
 
 # Views for API

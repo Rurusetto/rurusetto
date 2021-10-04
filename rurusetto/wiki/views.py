@@ -648,7 +648,7 @@ def update_beatmap_action(request):
 def check_action_log(request, log_id):
     action = get_object_or_404(Action, id=log_id)
     if request.method == "GET":
-        return JsonResponse({"running_text": action.running_text}, status=200)
+        return JsonResponse({"running_text": action.running_text, "status": action.status}, status=200)
     return JsonResponse({}, status=400)
 
 

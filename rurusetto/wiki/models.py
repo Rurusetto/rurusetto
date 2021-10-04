@@ -72,6 +72,8 @@ class Ruleset(models.Model):
     description = models.CharField(default="", max_length=150)
     icon = models.ImageField(default='default_icon.png', upload_to='rulesets_icon', validators=[
         FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
+    dark_icon = models.ImageField(default='default_icon.png', upload_to='rulesets_icon_dark', validators=[
+        FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
     logo = models.ImageField(default='default_logo.jpeg', upload_to='rulesets_logo', validators=[
         FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
     cover_image = models.ImageField(default='default_wiki_cover.jpeg', upload_to='wiki_cover', validators=[

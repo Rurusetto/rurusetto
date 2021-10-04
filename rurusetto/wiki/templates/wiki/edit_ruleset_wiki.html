@@ -69,6 +69,17 @@
                   </div>
             </div>
             <div class="fieldWrapper">
+              <div class="mb-3 row">
+                 <label class="col-sm-2 col-form-label form-label" for="id_icon">{{ form.dark_icon.label_tag }}</label>
+                 <div class="col-sm-10">
+                     <div class="raleway-font form-current">Current Dark Icon : <a href="{{ form.dark_icon.value.url }}">{{ form.dark_icon.value }}</a></div>
+                   <input type="file" name="icon" accept="image/*" id="id_icon" class="form-control">
+                     <p class="form-error raleway-font">{{ form.dark_icon.errors }}</p>
+                     <p class="text-muted raleway-font">An dark icon when that shows on the in-game header in dark theme. Recommend shape is a circle.</p>
+                 </div>
+               </div>
+         </div>
+            <div class="fieldWrapper">
                  <div class="mb-3 row">
                     <label class="col-sm-2 col-form-label form-label" for="id_logo">{{ form.logo.label_tag }}</label>
                     <div class="col-sm-10">

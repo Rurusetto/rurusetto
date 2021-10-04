@@ -59,9 +59,9 @@
           <div class="col-lg-4">
 
               {% if user.config.theme == 'light' %}
-              <img src="{{ detail.0.icon.url }}" alt="{{ detail.0.name }}" width="140px" height="140px" class="rounded-circle">
+              <img src="{{ detail.0.light_icon.url }}" alt="{{ detail.0.name }}" width="140px" height="140px" class="rounded-circle">
               {% else %}
-              <img src="{{ detail.0.dark_icon.url }}" alt="{{ detail.0.name }}" width="140px" height="140px" class="rounded-circle">
+              <img src="{{ detail.0.icon.url }}" alt="{{ detail.0.name }}" width="140px" height="140px" class="rounded-circle">
               {% endif %}
 
                 <h2 class="rulesets-name">{{ detail.0.name }}</h2>

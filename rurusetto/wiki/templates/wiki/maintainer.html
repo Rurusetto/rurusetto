@@ -76,11 +76,38 @@
     <p class="text-danger"><i class="fas fa-times"></i> Run failed</p>
     {% endif %}
 
-    <p>Running Status : {{ action.0.running_text }}</p>
+    <p id="running_log_{{ action.0.id }}">Running Status : {{ action.0.running_text }}</p>
 {#        TODO: Seperate successful log and other log out#}
 {#        TODO: Make the style better#}
     {% endfor %}
-</div>
+</div> c
 
 <br>
 {% endblock content %}
+
+{% block js %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        {% for action in action_list %}
+            async function updateRunningText{{ action.0.id }}() {
+
+                // Storing response
+                const response = await fetch("{% url 'check_action_log' action.0.id %}");
+
+                // Storing data in form of JSON
+                let Data = await response.json();
+                // console.log(Data);
+                if (response) {
+                    console.log("Bosu Complete")
+                    console.log(Data)
+                    document.getElementById("running_log_{{ action.0.id }}").innerHTML = "Running Status : " + Data['running_text'];
+                }
+            }
+        {% endfor %}
+        {% for action in action_list %}
+            setInterval (() => {
+                updateRunningText{{ action.0.id }}()
+            }, 1000);
+        {% endfor %}
+    </script>
+{% endblock js %}

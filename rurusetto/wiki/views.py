@@ -9,7 +9,8 @@ from .models import Changelog, Ruleset, Subpage, RecommendBeatmap, Action
 from users.models import Profile
 from django.contrib.auth.models import User
 from .forms import RulesetForm, SubpageForm, RecommendBeatmapForm
-from .function import make_listing_view, make_wiki_view, source_link_type, get_user_by_id, make_recommend_beatmap_view, make_beatmap_aapproval_view, make_status_view
+from .function import make_listing_view, make_wiki_view, source_link_type, get_user_by_id, make_recommend_beatmap_view, \
+    make_beatmap_aapproval_view, make_status_view
 from unidecode import unidecode
 from django.template.defaultfilters import slugify
 from rurusetto.settings import OSU_API_V1_KEY
@@ -45,7 +46,8 @@ def home(request):
         'hero_image_light': static(hero_image_light),
         'opengraph_description': 'A page that contain all osu! ruleset',
         'opengraph_url': resolve_url('home'),
-        'latest_add_rulesets': make_listing_view(latest_add_rulesets)  # Use make_listing_view function to get the User object from database and pass to template
+        'latest_add_rulesets': make_listing_view(latest_add_rulesets)
+        # Use make_listing_view function to get the User object from database and pass to template
     }
     return render(request, 'wiki/home.html', context)
 
@@ -148,7 +150,8 @@ def wiki_page(request, slug):
         can_support = False
     hero_image = ruleset.cover_image.url
     hero_image_light = ruleset.cover_image.url
-    if (ruleset.source != "") and (ruleset.github_download_filename != "") and (source_link_type(ruleset.source) == "github"):
+    if (ruleset.source != "") and (ruleset.github_download_filename != "") and (
+            source_link_type(ruleset.source) == "github"):
         # Currently support for GitHub so let's generate link by this method
         can_download = True
         if ruleset.source[-1] != "/":
@@ -385,11 +388,15 @@ def add_recommend_beatmap(request, slug):
             parameter = {'b': int(form.instance.beatmap_id), 'm': 0, 'k': OSU_API_V1_KEY}
             request_data = requests.get("https://osu.ppy.sh/api/get_beatmaps", params=parameter)
             if (request_data.status_code == 200) and (request_data.json() != []) and (
-                    not RecommendBeatmap.objects.filter(beatmap_id=form.instance.beatmap_id, ruleset_id=ruleset.id, owner_approved=True, owner_seen=True).exists()) and (not RecommendBeatmap.objects.filter(user_id=str(request.user.id), owner_seen=False, beatmap_id=form.instance.beatmap_id).exists()):
+                    not RecommendBeatmap.objects.filter(beatmap_id=form.instance.beatmap_id, ruleset_id=ruleset.id,
+                                                        owner_approved=True, owner_seen=True).exists()) and (
+            not RecommendBeatmap.objects.filter(user_id=str(request.user.id), owner_seen=False,
+                                                beatmap_id=form.instance.beatmap_id).exists()):
                 beatmap_json_data = request_data.json()[0]
                 # Download beatmap cover from osu! server and save it to the media storage and put the address in the
                 # RecommendBeatmap model that user want to add.
-                cover_pic = requests.get(f"https://assets.ppy.sh/beatmaps/{beatmap_json_data['beatmapset_id']}/covers/cover.jpg")
+                cover_pic = requests.get(
+                    f"https://assets.ppy.sh/beatmaps/{beatmap_json_data['beatmapset_id']}/covers/cover.jpg")
                 cover_temp = NamedTemporaryFile(delete=True)
                 cover_temp.write(cover_pic.content)
                 cover_temp.flush()
@@ -401,7 +408,7 @@ def add_recommend_beatmap(request, slug):
                 thumbnail_temp.write(thumbnail_pic.content)
                 thumbnail_temp.flush()
                 form.instance.beatmap_thumbnail.save(f"{form.instance.beatmap_id}.jpg",
-                                                 File(thumbnail_temp), save=True)
+                                                     File(thumbnail_temp), save=True)
                 # Put the beatmap detail from osu! to the RecommendBeatmap object.
                 form.instance.beatmapset_id = beatmap_json_data['beatmapset_id']
                 form.instance.title = beatmap_json_data['title']
@@ -422,18 +429,24 @@ def add_recommend_beatmap(request, slug):
                     form.instance.owner_seen = True
                 form.save()
                 if request.user.id == int(ruleset.owner):
-                    messages.success(request, f"Added {beatmap_json_data['title']} [{beatmap_json_data['version']}] as a recommended beatmap successfully!")
+                    messages.success(request,
+                                     f"Added {beatmap_json_data['title']} [{beatmap_json_data['version']}] as a recommended beatmap successfully!")
                 else:
-                    messages.success(request, f"Added {beatmap_json_data['title']} [{beatmap_json_data['version']}] to a waiting list! Please wait for the ruleset owner to approve your beatmap!")
+                    messages.success(request,
+                                     f"Added {beatmap_json_data['title']} [{beatmap_json_data['version']}] to a waiting list! Please wait for the ruleset owner to approve your beatmap!")
             else:
                 if request_data.status_code != 200:
                     messages.error(request, f"Adding beatmap failed! (Cannot connect to osu! API)")
                 elif not request_data.json():
                     messages.error(request, f"Adding beatmap failed! (Beatmap ID not found in osu! mode.)")
-                elif RecommendBeatmap.objects.filter(user_id=str(request.user.id), owner_seen=False, beatmap_id=form.instance.beatmap_id).exists():
-                    messages.error(request,f"Adding beatmap failed! (You are already recommend this beatmap.)")
-                elif RecommendBeatmap.objects.filter(beatmap_id=form.instance.beatmap_id, ruleset_id=ruleset.id, owner_approved=True, owner_seen=True).exclude(user_id=str(request.user.id)).exists:
-                    messages.error(request, f"Adding beatmap failed! (This beatmap is already recommended by other user in this ruleset.)")
+                elif RecommendBeatmap.objects.filter(user_id=str(request.user.id), owner_seen=False,
+                                                     beatmap_id=form.instance.beatmap_id).exists():
+                    messages.error(request, f"Adding beatmap failed! (You are already recommend this beatmap.)")
+                elif RecommendBeatmap.objects.filter(beatmap_id=form.instance.beatmap_id, ruleset_id=ruleset.id,
+                                                     owner_approved=True, owner_seen=True).exclude(
+                        user_id=str(request.user.id)).exists:
+                    messages.error(request,
+                                   f"Adding beatmap failed! (This beatmap is already recommended by other user in this ruleset.)")
                 else:
                     messages.error(request, f"Adding beatmap failed! (Unknown error.)")
             return redirect('recommend_beatmap', slug=ruleset.slug)
@@ -630,6 +643,13 @@ def update_beatmap_action(request):
     messages.success(request, f"Start worker successfully! (Log ID : {action_log.id})")
     return redirect('maintainer')
     # TODO : Docstring
+
+
+def check_action_log(request, log_id):
+    action = get_object_or_404(Action, id=log_id)
+    if request.method == "GET":
+        return JsonResponse({"running_text": action.running_text}, status=200)
+    return JsonResponse({}, status=400)
 
 
 # Views for API

@@ -1,3 +1,4 @@
+from django.core.exceptions import ObjectDoesNotExist
 from .models import RecommendBeatmap
 from rurusetto.settings import OSU_API_V1_KEY
 from django.core.files.temp import NamedTemporaryFile
@@ -62,11 +63,13 @@ def update_all_beatmap_action(action):
                 beatmap.url = f"https://osu.ppy.sh/beatmapsets/{beatmap_json_data['beatmapset_id']}#osu/{beatmap.beatmap_id}"
                 beatmap.save()
                 success += 1
-            except:
+            except ObjectDoesNotExist:
                 failed += 1
         else:
             failed += 1
-        time.sleep(20)
+        # Need to add sleep to make the API fetching not to rush
+        time.sleep(5)
+        # TODO: Docstring
     action.status = 2
     action.running_text = f"Task running successfully with {success} success and {failed} failed!"
     action.save()

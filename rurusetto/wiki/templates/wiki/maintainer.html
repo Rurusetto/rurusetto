@@ -62,45 +62,61 @@
         <a href="{% url "profile" action.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover profile-link"><p class="text-muted"><img src="{{ action.1.profile.image.url }}" alt="{{ action.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ action.1.username }} </p></a>
     {% endif %}
 
-    {% if action.0.status == 0 %}
-    <p>Idle...</p>
-    {% elif action.0.status == 1 %}
-    <div>
-    <div class="spinner-border" role="status" style="color: #ff66aa">
-      <span class="visually-hidden">Loading...</span>
-    </div> <span style="color: #ff66aa" class="text-center">Running...</span>
+    <div id="status_{{ action.0.id }}">
+        {% if action.0.status == 0 %}
+        <p>Idle...</p>
+        {% elif action.0.status == 1 %}
+        <div>
+        <div class="spinner-border" role="status" style="color: #ff66aa">
+          <span class="visually-hidden">Loading...</span>
+        </div> <span style="color: #ff66aa" class="text-center">Running...</span>
+        </div>
+        {% elif action.0.status == 2 %}
+        <p class="text-success"><i class="fas fa-check"></i> Successfully running</p>
+        {% elif action.0.status == 3 %}
+        <p class="text-danger"><i class="fas fa-times"></i> Run failed</p>
+        {% endif %}
     </div>
-    {% elif action.0.status == 2 %}
-    <p class="text-success"><i class="fas fa-check"></i> Successfully running</p>
-    {% elif action.0.status == 3 %}
-    <p class="text-danger"><i class="fas fa-times"></i> Run failed</p>
-    {% endif %}
 
     <p id="running_log_{{ action.0.id }}">Running Status : {{ action.0.running_text }}</p>
 {#        TODO: Seperate successful log and other log out#}
 {#        TODO: Make the style better#}
     {% endfor %}
-</div> c
+</div>
 
 <br>
 {% endblock content %}
 
 {% block js %}
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
         {% for action in action_list %}
+            let status_before_{{ action.0.id }} = 0;
             async function updateRunningText{{ action.0.id }}() {
 
                 // Storing response
-                const response = await fetch("{% url 'check_action_log' action.0.id %}");
+                const response = await fetch("{% url 'check_action_log' action.0.id %}")
 
                 // Storing data in form of JSON
-                let Data = await response.json();
-                // console.log(Data);
+                let Data = await response.json()
                 if (response) {
-                    console.log("Bosu Complete")
-                    console.log(Data)
-                    document.getElementById("running_log_{{ action.0.id }}").innerHTML = "Running Status : " + Data['running_text'];
+                    document.getElementById("running_log_{{ action.0.id }}").innerHTML = "Running Status : " + Data['running_text']
+                    if (status_before_{{ action.0.id }} !== Data['status']) {
+                        status_before_{{ action.0.id }} = Data['status']
+                        console.log(Data['status'] === 1);
+                        if (Data['status'] === 0) {
+                            document.getElementById("status_{{ action.0.id }}").innerHTML = '<p>Idle...</p>'
+                        } else if (Data['status'] === 1) {
+                            document.getElementById("status_{{ action.0.id }}").innerHTML = '<div class="spinner-border" role="status" style="color: #ff66aa">\n' +
+                                '<span class="visually-hidden">Loading...</span>\n' +
+                                '</div> <span style="color: #ff66aa" class="text-center">Running...</span>'
+                        } else if (Data['status'] === 2) {
+                            document.getElementById("status_{{ action.0.id }}").innerHTML = '<p class="text-success"><i class="fas fa-check"></i> Successfully running</p>'
+                        } else if (Data['status'] === 3) {
+                            document.getElementById("status_{{ action.0.id }}").innerHTML = '<p class="text-danger"><i class="fas fa-times"></i> Run failed</p>'
+                        } else {
+                            document.getElementById("status_{{ action.0.id }}").innerHTML = '<p>Unknown Status</p>'
+                        }
+                    }
                 }
             }
         {% endfor %}

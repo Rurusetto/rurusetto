@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Changelog, Ruleset, CustomWiki, Subpage, RecommendBeatmap, Action
+from .models import Changelog, Ruleset, CustomWiki, Subpage, RecommendBeatmap, Action, RulesetStatus
 
 # Register your models here.
 
@@ -9,3 +9,4 @@ admin.site.register(CustomWiki)
 admin.site.register(Subpage)
 admin.site.register(RecommendBeatmap)
 admin.site.register(Action)
+admin.site.register(RulesetStatus)

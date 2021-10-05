@@ -208,7 +208,7 @@ def edit_ruleset_wiki(request, slug):
                 else:
                     download_url = f"{form.instance.source}releases/latest/download/{form.instance.github_download_filename}"
                 html_status = requests.head(download_url)
-                if (html_status.status_code != 200) and (html_status.status_code != 302):
+                if (html_status.status_code != 200) and (html_status.status_code != 302) and (html_status.status_code != 301):
                     error_message = f"The response of {download_url} is not success ({html_status.status_code}). Please check your filename or ruleset source link!"
                     messages.error(request, error_message)
                     return redirect('edit_wiki', slug=ruleset.slug)

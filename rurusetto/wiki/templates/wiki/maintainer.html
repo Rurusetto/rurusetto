@@ -64,7 +64,7 @@
     {% endif %}
 
     <p>Start at {{ action.0.time_start|date:"F j, Y h:i A" }} UTC</p>
-    <p id="duration_{{ action.0.id }}">Duration : </p>
+    <p id="duration_{{ action.0.id }}">Duration : Calculating...</p>
 
     <div id="status_{{ action.0.id }}">
         {% if action.0.status == 0 %}

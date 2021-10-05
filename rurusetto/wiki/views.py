@@ -613,8 +613,8 @@ def status(request):
 
 @user_passes_test(lambda u: u.is_superuser or u.is_staff)
 def maintainer_menu(request):
-    hero_image = 'img/status-cover-night.jpg'
-    hero_image_light = 'img/status-cover-light.jpg'
+    hero_image = 'img/maintainer-cover-night.png'
+    hero_image_light = 'img/maintainer-cover-light.jpg'
     action_list = []
     for action in Action.objects.all().order_by('-id'):
         action_list.append([action, get_user_by_id(action.start_user)])

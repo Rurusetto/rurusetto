@@ -1,3 +1,5 @@
+"""File that contain all action command that can run from web interface."""
+
 from django.core.exceptions import ObjectDoesNotExist
 from django.utils import timezone
 from .models import RecommendBeatmap
@@ -10,12 +12,21 @@ import time
 
 
 def update_all_beatmap_action(action):
+    """
+    Action to update all RecommendBeatmap object in the database by fetching and replace with new
+    data from osu! API one by one.
+
+    Action area : maintainer
+
+    :param action: Action model object that contain and update the log to the view
+    """
     # Check all beatmaps number that the worker need to run
     beatmap_number = RecommendBeatmap.objects.all().count()
     failed = 0
     success = 0
     count = 0
     action.save()
+    # Update each beatmap to new data one by one
     for beatmap in RecommendBeatmap.objects.all():
         count += 1
         action.running_text = f"Updating {beatmap.title} [{beatmap.version}] ({count}/{beatmap_number})"
@@ -79,7 +90,7 @@ def update_all_beatmap_action(action):
             failed += 1
         # Need to add sleep to make the API fetching not to rush
         time.sleep(5)
-        # TODO: Docstring
+    # After task successfully, update Action log to success and update finish time.
     action.status = 2
     action.running_text = f"Task running successfully with {success} success and {failed} failed!"
     action.time_finish = timezone.now()

@@ -1,0 +1,135 @@
+{% extends "wiki/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="px-4 py-4 my-4 align-middle hero">
+    <div class="container align-middle">
+        <div class="row">
+            <p></p>
+            <p></p>
+            <div><h1 class="display-5 fw-bold" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">Maintainer Menu</h1></div>
+            <p data-aos="fade-up" data-aos-duration="700" data-aos-once="true">Menu for maintainer only!</p>
+        </div>
+    </div>
+</div>
+
+    <p></p>
+
+<div class="container">
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == "success"%}
+                <div class="alert alert-success">
+                    <i class="fas fa-check"></i> {{ message }}
+                </div>
+            {% endif %}
+            {% if message.tags == "error"%}
+                <div class="alert alert-danger">
+                    <i class="fas fa-times"></i> {{ message }}
+                </div>
+            {% endif %}
+        {% endfor %}
+      {% endif %}
+    <div class="row text-center gy-4">
+    </div>
+</div>
+
+    <p></p>
+
+<div class="container">
+    <h1><i class="fas fa-wrench"></i> Run an action only for maintainer</h1>
+    <div class="alert alert-danger" role="alert">
+      <b>Warning :</b> This action is running in background and consume a lot of calculation power. Please use it carefully!
+    </div>
+    <div class="row">
+        <div class="col-3">
+          <a class="btn btn-rurusetto" href="{% url 'update_beatmap_action' %}">Update all beatmap metadata</a>
+        </div>
+        <div class="col-9">
+          <p>Update all beatmap metadata in the server.</p>
+        </div>
+    </div>
+
+    <br>
+
+    <h1>Worker log</h1>
+    {% for action in action_list %}
+    <div class="container rounded border border-2 p-3">
+    <h3>#{{ action.0.id }} {{ action.0.title }}</h3>
+
+    {% if action.1 == None %}
+        <p class="text-muted"><img src="{% static 'img/default.jpeg' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User </p>
+    {% else %}
+        <a href="{% url "profile" action.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover profile-link"><p class="text-muted"><img src="{{ action.1.profile.image.url }}" alt="{{ action.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ action.1.username }} </p></a>
+    {% endif %}
+
+    <p>Start at {{ action.0.time_start|date:"F j, Y h:i A" }} UTC</p>
+    <p id="duration_{{ action.0.id }}">Duration : Calculating...</p>
+
+    <div id="status_{{ action.0.id }}">
+        {% if action.0.status == 0 %}
+        <p>Idle...</p>
+        {% elif action.0.status == 1 %}
+        <div>
+        <div class="spinner-border" role="status" style="color: #ff66aa">
+          <span class="visually-hidden">Loading...</span>
+        </div> <span style="color: #ff66aa" class="text-center">Running...</span>
+        </div>
+        {% elif action.0.status == 2 %}
+        <p class="text-success"><i class="fas fa-check"></i> Successfully running</p>
+        {% elif action.0.status == 3 %}
+        <p class="text-danger"><i class="fas fa-times"></i> Run failed</p>
+        {% endif %}
+    </div>
+
+    <p id="running_log_{{ action.0.id }}">Running Status : {{ action.0.running_text }}</p>
+    </div>
+    <p></p>
+    {% endfor %}
+</div>
+
+<br>
+{% endblock content %}
+
+{% block js %}
+    <script>
+        {% for action in action_list %}
+            let status_before_{{ action.0.id }} = 0;
+            async function updateRunningText{{ action.0.id }}() {
+
+                // Storing response
+                const response = await fetch("{% url 'check_action_log' action.0.id %}")
+
+                // Storing data in form of JSON
+                let Data = await response.json()
+
+                // If response, update HTML
+                if (response) {
+                    document.getElementById("running_log_{{ action.0.id }}").innerHTML = "Running Status : " + Data['running_text']
+                    document.getElementById("duration_{{ action.0.id }}").innerHTML = "Duration : " + Data['duration']
+                    if (status_before_{{ action.0.id }} !== Data['status']) {
+                        status_before_{{ action.0.id }} = Data['status']
+                        if (Data['status'] === 0) {
+                            document.getElementById("status_{{ action.0.id }}").innerHTML = '<p>Idle...</p>'
+                        } else if (Data['status'] === 1) {
+                            document.getElementById("status_{{ action.0.id }}").innerHTML = '<div class="spinner-border" role="status" style="color: #ff66aa">\n' +
+                                '<span class="visually-hidden">Loading...</span>\n' +
+                                '</div> <span style="color: #ff66aa" class="text-center">Running...</span>'
+                        } else if (Data['status'] === 2) {
+                            document.getElementById("status_{{ action.0.id }}").innerHTML = '<p class="text-success"><i class="fas fa-check"></i> Successfully running</p>'
+                        } else if (Data['status'] === 3) {
+                            document.getElementById("status_{{ action.0.id }}").innerHTML = '<p class="text-danger"><i class="fas fa-times"></i> Run failed</p>'
+                        } else {
+                            document.getElementById("status_{{ action.0.id }}").innerHTML = '<p>Unknown Status</p>'
+                        }
+                    }
+                }
+            }
+        {% endfor %}
+        {% for action in action_list %}
+            setInterval (() => {
+                updateRunningText{{ action.0.id }}()
+            }, 1000);
+        {% endfor %}
+    </script>
+{% endblock js %}

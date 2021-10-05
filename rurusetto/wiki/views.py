@@ -2,14 +2,16 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404, resolve_url
 from django.templatetags.static import static
+from django.utils import timezone
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, JsonResponse
 from .serializers import RulesetSerializer
-from .models import Changelog, Ruleset, Subpage, RecommendBeatmap
+from .models import Changelog, Ruleset, Subpage, RecommendBeatmap, Action
 from users.models import Profile
 from django.contrib.auth.models import User
 from .forms import RulesetForm, SubpageForm, RecommendBeatmapForm
-from .function import make_listing_view, make_wiki_view, source_link_type, get_user_by_id, make_recommend_beatmap_view, make_beatmap_aapproval_view, make_status_view
+from .function import make_listing_view, make_wiki_view, source_link_type, get_user_by_id, make_recommend_beatmap_view, \
+    make_beatmap_aapproval_view, make_status_view
 from unidecode import unidecode
 from django.template.defaultfilters import slugify
 from rurusetto.settings import OSU_API_V1_KEY
@@ -17,7 +19,10 @@ import requests
 from django.core.files import File
 from django.core.files.temp import NamedTemporaryFile
 from django.core.exceptions import PermissionDenied
+from django.contrib.auth.decorators import user_passes_test
 import os
+import threading
+from .action import update_all_beatmap_action
 
 
 def home(request):
@@ -42,7 +47,8 @@ def home(request):
         'hero_image_light': static(hero_image_light),
         'opengraph_description': 'A page that contain all osu! ruleset',
         'opengraph_url': resolve_url('home'),
-        'latest_add_rulesets': make_listing_view(latest_add_rulesets)  # Use make_listing_view function to get the User object from database and pass to template
+        'latest_add_rulesets': make_listing_view(latest_add_rulesets)
+        # Use make_listing_view function to get the User object from database and pass to template
     }
     return render(request, 'wiki/home.html', context)
 
@@ -145,7 +151,8 @@ def wiki_page(request, slug):
         can_support = False
     hero_image = ruleset.cover_image.url
     hero_image_light = ruleset.cover_image.url
-    if (ruleset.source != "") and (ruleset.github_download_filename != "") and (source_link_type(ruleset.source) == "github"):
+    if (ruleset.source != "") and (ruleset.github_download_filename != "") and (
+            source_link_type(ruleset.source) == "github"):
         # Currently support for GitHub so let's generate link by this method
         can_download = True
         if ruleset.source[-1] != "/":
@@ -382,11 +389,15 @@ def add_recommend_beatmap(request, slug):
             parameter = {'b': int(form.instance.beatmap_id), 'm': 0, 'k': OSU_API_V1_KEY}
             request_data = requests.get("https://osu.ppy.sh/api/get_beatmaps", params=parameter)
             if (request_data.status_code == 200) and (request_data.json() != []) and (
-                    not RecommendBeatmap.objects.filter(beatmap_id=form.instance.beatmap_id, ruleset_id=ruleset.id, owner_approved=True, owner_seen=True).exists()) and (not RecommendBeatmap.objects.filter(user_id=str(request.user.id), owner_seen=False, beatmap_id=form.instance.beatmap_id).exists()):
+                    not RecommendBeatmap.objects.filter(beatmap_id=form.instance.beatmap_id, ruleset_id=ruleset.id,
+                                                        owner_approved=True, owner_seen=True).exists()) and (
+            not RecommendBeatmap.objects.filter(user_id=str(request.user.id), owner_seen=False,
+                                                beatmap_id=form.instance.beatmap_id).exists()):
                 beatmap_json_data = request_data.json()[0]
                 # Download beatmap cover from osu! server and save it to the media storage and put the address in the
                 # RecommendBeatmap model that user want to add.
-                cover_pic = requests.get(f"https://assets.ppy.sh/beatmaps/{beatmap_json_data['beatmapset_id']}/covers/cover.jpg")
+                cover_pic = requests.get(
+                    f"https://assets.ppy.sh/beatmaps/{beatmap_json_data['beatmapset_id']}/covers/cover.jpg")
                 cover_temp = NamedTemporaryFile(delete=True)
                 cover_temp.write(cover_pic.content)
                 cover_temp.flush()
@@ -398,7 +409,7 @@ def add_recommend_beatmap(request, slug):
                 thumbnail_temp.write(thumbnail_pic.content)
                 thumbnail_temp.flush()
                 form.instance.beatmap_thumbnail.save(f"{form.instance.beatmap_id}.jpg",
-                                                 File(thumbnail_temp), save=True)
+                                                     File(thumbnail_temp), save=True)
                 # Put the beatmap detail from osu! to the RecommendBeatmap object.
                 form.instance.beatmapset_id = beatmap_json_data['beatmapset_id']
                 form.instance.title = beatmap_json_data['title']
@@ -419,18 +430,24 @@ def add_recommend_beatmap(request, slug):
                     form.instance.owner_seen = True
                 form.save()
                 if request.user.id == int(ruleset.owner):
-                    messages.success(request, f"Added {beatmap_json_data['title']} [{beatmap_json_data['version']}] as a recommended beatmap successfully!")
+                    messages.success(request,
+                                     f"Added {beatmap_json_data['title']} [{beatmap_json_data['version']}] as a recommended beatmap successfully!")
                 else:
-                    messages.success(request, f"Added {beatmap_json_data['title']} [{beatmap_json_data['version']}] to a waiting list! Please wait for the ruleset owner to approve your beatmap!")
+                    messages.success(request,
+                                     f"Added {beatmap_json_data['title']} [{beatmap_json_data['version']}] to a waiting list! Please wait for the ruleset owner to approve your beatmap!")
             else:
                 if request_data.status_code != 200:
                     messages.error(request, f"Adding beatmap failed! (Cannot connect to osu! API)")
                 elif not request_data.json():
                     messages.error(request, f"Adding beatmap failed! (Beatmap ID not found in osu! mode.)")
-                elif RecommendBeatmap.objects.filter(user_id=str(request.user.id), owner_seen=False, beatmap_id=form.instance.beatmap_id).exists():
-                    messages.error(request,f"Adding beatmap failed! (You are already recommend this beatmap.)")
-                elif RecommendBeatmap.objects.filter(beatmap_id=form.instance.beatmap_id, ruleset_id=ruleset.id, owner_approved=True, owner_seen=True).exclude(user_id=str(request.user.id)).exists:
-                    messages.error(request, f"Adding beatmap failed! (This beatmap is already recommended by other user in this ruleset.)")
+                elif RecommendBeatmap.objects.filter(user_id=str(request.user.id), owner_seen=False,
+                                                     beatmap_id=form.instance.beatmap_id).exists():
+                    messages.error(request, f"Adding beatmap failed! (You are already recommend this beatmap.)")
+                elif RecommendBeatmap.objects.filter(beatmap_id=form.instance.beatmap_id, ruleset_id=ruleset.id,
+                                                     owner_approved=True, owner_seen=True).exclude(
+                        user_id=str(request.user.id)).exists:
+                    messages.error(request,
+                                   f"Adding beatmap failed! (This beatmap is already recommended by other user in this ruleset.)")
                 else:
                     messages.error(request, f"Adding beatmap failed! (Unknown error.)")
             return redirect('recommend_beatmap', slug=ruleset.slug)
@@ -592,6 +609,84 @@ def status(request):
         'opengraph_url': resolve_url('status')
     }
     return render(request, 'wiki/status.html', context)
+
+
+@user_passes_test(lambda u: u.is_superuser or u.is_staff)
+def maintainer_menu(request):
+    """
+    View for maintainer menu page.
+
+    This page can only access by superuser and maintainer.
+
+    :param request: WSGI request from user.
+    :return: Render the maintainer menu page and pass the value from context to the template (maintainer.html)
+    """
+    hero_image = 'img/maintainer-cover-night.png'
+    hero_image_light = 'img/maintainer-cover-light.jpg'
+    action_list = []
+    for action in Action.objects.all().order_by('-id'):
+        action_list.append([action, get_user_by_id(action.start_user)])
+    context = {
+        'action_list': action_list,
+        'title': 'maintainer menu',
+        'hero_image': static(hero_image),
+        'hero_image_light': static(hero_image_light),
+        'opengraph_description': 'Menu for maintainer only!',
+        'opengraph_url': resolve_url('maintainer')
+    }
+    return render(request, 'wiki/maintainer.html', context)
+
+
+@user_passes_test(lambda u: u.is_superuser or u.is_staff)
+def update_beatmap_action(request):
+    """
+    View for activate the new runner for running update_all_beatmap_action function.
+
+    This view can only activate by superuser and staff. Mainly activate by Maintainer menu.
+
+    :param request: WSGI request from user.
+    :return: Redirect to maintainer menu with message
+    """
+    action_log = Action()
+    action_log.title = "Update all beatmap metadata"
+    action_log.action_field = "maintainer"
+    action_log.running_text = "Start working thread..."
+    action_log.status = 1
+    action_log.start_user = request.user.id
+    action_log.save()
+    thread_worker = threading.Thread(target=update_all_beatmap_action, args=[action_log])
+    thread_worker.setDaemon(True)
+    thread_worker.start()
+    messages.success(request, f"Start worker successfully! (Log ID : {action_log.id})")
+    return redirect('maintainer')
+
+
+def check_action_log(request, log_id):
+    """
+    API that will update the action progress on the action log list.
+
+    :param request: WSGI request from user.
+    :param log_id: Action ID that want to request the progress.
+    :return: JSON contain running_text, status and duration.
+    """
+    action = get_object_or_404(Action, id=log_id)
+    if action.status == 1:
+        duration = (timezone.now() - action.time_start).seconds
+    elif action.status == 2:
+        duration = (action.time_finish - action.time_start).seconds
+    else:
+        duration = "Unknown"
+
+    if duration != "Unknown":
+        hours = duration//3600
+        duration = duration - (hours*3600)
+        minutes = duration//60
+        seconds = duration - (minutes*60)
+        duration = '{:02}:{:02}:{:02}'.format(int(hours), int(minutes), int(seconds))
+
+    if request.method == "GET":
+        return JsonResponse({"running_text": action.running_text, "status": action.status, "duration": duration}, status=200)
+    return JsonResponse({}, status=400)
 
 
 # Views for API

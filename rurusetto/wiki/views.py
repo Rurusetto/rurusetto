@@ -613,6 +613,14 @@ def status(request):
 
 @user_passes_test(lambda u: u.is_superuser or u.is_staff)
 def maintainer_menu(request):
+    """
+    View for maintainer menu page.
+
+    This page can only access by superuser and maintainer.
+
+    :param request: WSGI request from user.
+    :return: Render the maintainer menu page and pass the value from context to the template (maintainer.html)
+    """
     hero_image = 'img/maintainer-cover-night.png'
     hero_image_light = 'img/maintainer-cover-light.jpg'
     action_list = []
@@ -631,6 +639,14 @@ def maintainer_menu(request):
 
 @user_passes_test(lambda u: u.is_superuser or u.is_staff)
 def update_beatmap_action(request):
+    """
+    View for activate the new runner for running update_all_beatmap_action function.
+
+    This view can only activate by superuser and staff. Mainly activate by Maintainer menu.
+
+    :param request: WSGI request from user.
+    :return: Redirect to maintainer menu with message
+    """
     action_log = Action()
     action_log.title = "Update all beatmap metadata"
     action_log.action_field = "maintainer"
@@ -643,10 +659,16 @@ def update_beatmap_action(request):
     thread_worker.start()
     messages.success(request, f"Start worker successfully! (Log ID : {action_log.id})")
     return redirect('maintainer')
-    # TODO : Docstring
 
 
 def check_action_log(request, log_id):
+    """
+    API that will update the action progress on the action log list.
+
+    :param request: WSGI request from user.
+    :param log_id: Action ID that want to request the progress.
+    :return: JSON contain running_text, status and duration.
+    """
     action = get_object_or_404(Action, id=log_id)
     if action.status == 1:
         duration = (timezone.now() - action.time_start).seconds

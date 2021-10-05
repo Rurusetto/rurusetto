@@ -612,3 +612,7 @@ form.form a:hover {
 p.mono-font {
     font-family: 'JetBrains Mono', monospace;
 }
+
+.border {
+    border: solid #4a4a4a!important;
+}

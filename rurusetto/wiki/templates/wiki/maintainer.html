@@ -49,6 +49,15 @@
           <p>Update all beatmap metadata in the server.</p>
         </div>
     </div>
+    <p></p>
+    <div class="row">
+        <div class="col-3">
+          <a class="btn btn-rurusetto" href="{% url 'update_ruleset_version' %}">Update ruleset version</a>
+        </div>
+        <div class="col-9">
+          <p>This is a long task that must be always run. It will fetch the data from GitHub API and update the ruleset version from on status page every 3 minutes. Please check on other worker before run this due to the rate limit of GitHub API.</p>
+        </div>
+    </div>
 
     <br>
 

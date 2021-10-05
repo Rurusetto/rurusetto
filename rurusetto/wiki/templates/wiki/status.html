@@ -40,7 +40,14 @@
     {% for ruleset in all_ruleset %}
     {% if ruleset.1 == 'github_with_direct' %}
     <div class="row" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">
-        <h1><img src="{{ ruleset.0.icon.url }}" alt="{{ ruleset.0.name }}" width="40" height="40" class="rounded-circle hvr-icon"> {{ ruleset.0.name }}</h1>
+        <h1>
+            {% if user.config.theme == 'light' %}
+            <img src="{{ ruleset.0.light_icon.url }}" alt="{{ ruleset.0.name }}" width="40" height="40" class="rounded-circle hvr-icon"> 
+            {% else %}
+            <img src="{{ ruleset.0.icon.url }}" alt="{{ ruleset.0.name }}" width="40" height="40" class="rounded-circle hvr-icon"> 
+            {% endif %}
+            {{ ruleset.0.name }}
+       </h1>
         <div class="col-8">
             <div class="alert alert-light">
                 Coming Soon!
@@ -53,7 +60,14 @@
     </div>
     {% elif ruleset.1 == 'github' %}
     <div class="row" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">
-        <h1><img src="{{ ruleset.0.icon.url }}" alt="{{ ruleset.0.name }}" width="40" height="40" class="rounded-circle hvr-icon"> {{ ruleset.0.name }}</h1>
+        <h1>
+            {% if user.config.theme == 'light' %}
+            <img src="{{ ruleset.0.light_icon.url }}" alt="{{ ruleset.0.name }}" width="40" height="40" class="rounded-circle hvr-icon"> 
+            {% else %}
+            <img src="{{ ruleset.0.icon.url }}" alt="{{ ruleset.0.name }}" width="40" height="40" class="rounded-circle hvr-icon"> 
+            {% endif %}            
+            {{ ruleset.0.name }}
+        </h1>
         <div class="col-8">
             <div class="alert alert-light">
                 Coming Soon!
@@ -65,7 +79,14 @@
     </div>
     {% elif ruleset.1 == 'patreon' %}
     <div class="row" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">
-        <h1><img src="{{ ruleset.0.icon.url }}" alt="{{ ruleset.0.name }}" width="40" height="40" class="rounded-circle hvr-icon"> {{ ruleset.0.name }}</h1>
+        <h1>
+            {% if user.config.theme == 'light' %}
+            <img src="{{ ruleset.0.light_icon.url }}" alt="{{ ruleset.0.name }}" width="40" height="40" class="rounded-circle hvr-icon"> 
+            {% else %}
+            <img src="{{ ruleset.0.icon.url }}" alt="{{ ruleset.0.name }}" width="40" height="40" class="rounded-circle hvr-icon"> 
+            {% endif %}            
+            {{ ruleset.0.name }}
+        </h1>
         <div class="col-8">
             <div class="alert alert-light">
                 Coming Soon!

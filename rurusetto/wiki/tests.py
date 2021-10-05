@@ -53,7 +53,7 @@ class RulesetModelTest(TestCase):
     def test_ruleset_model(self):
         """Test that Ruleset value are correct when create."""
         Ruleset.objects.create(creator='5', owner='5', name='Awesome Ruleset', slug='awesome-ruleset',
-                               description='Best ruleset', icon='default_icon.png', logo='default_logo.jpeg',
+                               description='Best ruleset', icon='default_icon.png', light_icon='default_icon.png', logo='default_logo.jpeg',
                                cover_image='default_wiki_cover.jpeg', opengraph_image='default_wiki_cover.jpeg',
                                recommend_beatmap_cover='default_recommend_beatmap_cover.png', content='osu! and everything',
                                source='https://www.github.com/ppy/osu', last_edited_by='5', verified=False)

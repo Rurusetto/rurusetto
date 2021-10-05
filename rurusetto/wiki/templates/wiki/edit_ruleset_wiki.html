@@ -69,6 +69,17 @@
                   </div>
             </div>
             <div class="fieldWrapper">
+              <div class="mb-3 row">
+                 <label class="col-sm-2 col-form-label form-label" for="id_icon">{{ form.light_icon.label_tag }}</label>
+                 <div class="col-sm-10">
+                     <div class="raleway-font form-current">Current Light Icon : <a href="{{ form.light_icon.value.url }}">{{ form.light_icon.value }}</a></div>
+                   <input type="file" name="light_icon" accept="image/*" id="id_light_icon" class="form-control">
+                     <p class="form-error raleway-font">{{ form.light_icon.errors }}</p>
+                     <p class="text-muted raleway-font">A light theme icon when user using website in light theme. Recommend shape is a circle.</p>
+                 </div>
+               </div>
+         </div>
+            <div class="fieldWrapper">
                  <div class="mb-3 row">
                     <label class="col-sm-2 col-form-label form-label" for="id_logo">{{ form.logo.label_tag }}</label>
                     <div class="col-sm-10">

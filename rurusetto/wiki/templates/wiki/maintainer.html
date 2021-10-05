@@ -54,6 +54,7 @@
 
     <h1>Worker log</h1>
     {% for action in action_list %}
+    <div class="container rounded border border-2 p-3">
     <h3>#{{ action.0.id }} {{ action.0.title }}</h3>
 
     {% if action.1 == None %}
@@ -82,7 +83,8 @@
     </div>
 
     <p id="running_log_{{ action.0.id }}">Running Status : {{ action.0.running_text }}</p>
-{#        TODO: Make the style better#}
+    </div>
+    <p></p>
     {% endfor %}
 </div>
 

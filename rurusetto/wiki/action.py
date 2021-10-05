@@ -121,7 +121,7 @@ def update_ruleset_version_action(action):
         for ruleset_status in RulesetStatus.objects.all():
             action.running_text = f"Updating {ruleset_status.ruleset.name} (Round {progress_round}/1440)"
             action.save()
-            if source_link_type(ruleset_status.ruleset.source) == "github":
+            if source_link_type(ruleset_status.ruleset.source) == "github" and ruleset_status.ruleset.github_download_filename != "":
                 try:
                     headers = {"Authorization": f"token {GITHUB_TOKEN}"}
                     request_data = requests.get("https://api.github.com/repos/ppy/osu/releases/latest", headers=headers).json()

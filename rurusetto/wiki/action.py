@@ -113,7 +113,7 @@ def update_ruleset_version_action(action):
     update_count = 0
     progress_round = 0
     # 1440 round to make it run for full 3 days
-    for round_count in range(100):
+    for round_count in range(1440):
         progress_round += 1
         action.status = 1
         action.running_text = f"Start a new round (Round {progress_round}/1440)"
@@ -124,7 +124,12 @@ def update_ruleset_version_action(action):
             if source_link_type(ruleset_status.ruleset.source) == "github" and ruleset_status.ruleset.github_download_filename != "":
                 try:
                     headers = {"Authorization": f"token {GITHUB_TOKEN}"}
-                    request_data = requests.get("https://api.github.com/repos/ppy/osu/releases/latest", headers=headers).json()
+                    split_github_link = ruleset_status.ruleset.source.split("/")
+                    # If the GitHub link is right when split with slash it must slice to 6 pieces
+                    if len(split_github_link) == 6:
+                        request_data = requests.get(f"https://api.github.com/repos/{split_github_link[3]}/{split_github_link[4]}/releases/latest", headers=headers).json()
+                    else:
+                        continue
 
                     ruleset_status.latest_version = request_data['name']
                     ruleset_status.latest_update = timezone.localtime(parser.parse(request_data['published_at']))
@@ -134,8 +139,9 @@ def update_ruleset_version_action(action):
 
                     for assets in all_assets:
                         if assets["name"] == ruleset_status.ruleset.github_download_filename:
-                            ruleset_status.file_size = request_data['assets']
-                            continue
+                            print(assets)
+                            ruleset_status.file_size = assets['size']
+                            break
 
                     ruleset_status.save()
                     success += 1
@@ -143,6 +149,7 @@ def update_ruleset_version_action(action):
                 except KeyError:
                     failed += 1
                     update_count += 1
+                print(f"{ruleset_status.ruleset.name} success")
             else:
                 skip += 1
                 update_count += 1

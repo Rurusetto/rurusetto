@@ -87,6 +87,7 @@
           <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
               {% if user.is_superuser or user.is_staff %}
             <li><a class="dropdown-item spacing-hover" href="{% url "maintainer" %}">Maintainer</a></li>
+            <li><a class="dropdown-item spacing-hover" href="{% url "admin:index" %}">Admin</a></li>
             <li><hr class="dropdown-divider"></li>
               {% endif %}
             <li><a class="dropdown-item spacing-hover" href="{% url "settings" %}">Settings</a></li>
@@ -132,6 +133,7 @@
               <div class="list-group border-0">
                   {% if user.is_superuser or user.is_staff %}
                 <a href="{% url "maintainer" %}" class="list-group-item list-group-item-action mobile-header-text">Maintainer</a>
+                <a href="{% url "admin:index" %}" class="list-group-item list-group-item-action mobile-header-text">Admin</a>
                   {% endif %}
                 <a href="{% url "settings" %}" class="list-group-item list-group-item-action mobile-header-text">Settings</a>
                 <a href="{% url 'profile' user.id %}" class="list-group-item list-group-item-action mobile-header-text">Profile</a>

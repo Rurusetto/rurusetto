@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404, resolve_url
 from django.templatetags.static import static
+from django.utils import timezone
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, JsonResponse
 from .serializers import RulesetSerializer
@@ -632,7 +633,7 @@ def maintainer_menu(request):
 def update_beatmap_action(request):
     action_log = Action()
     action_log.title = "Update all beatmap metadata"
-    action_log.action_field = "Update all beatmap metadata to make it up-to-date"
+    action_log.action_field = "maintainer"
     action_log.running_text = "Start working thread..."
     action_log.status = 1
     action_log.start_user = request.user.id
@@ -647,8 +648,22 @@ def update_beatmap_action(request):
 
 def check_action_log(request, log_id):
     action = get_object_or_404(Action, id=log_id)
+    if action.status == 1:
+        duration = (timezone.now() - action.time_start).seconds
+    elif action.status == 2:
+        duration = (action.time_finish - action.time_start).seconds
+    else:
+        duration = "Unknown"
+
+    if duration != "Unknown":
+        hours = duration//3600
+        duration = duration - (hours*3600)
+        minutes = duration//60
+        seconds = duration - (minutes*60)
+        duration = '{:02}:{:02}:{:02}'.format(int(hours), int(minutes), int(seconds))
+
     if request.method == "GET":
-        return JsonResponse({"running_text": action.running_text, "status": action.status}, status=200)
+        return JsonResponse({"running_text": action.running_text, "status": action.status, "duration": duration}, status=200)
     return JsonResponse({}, status=400)
 
 

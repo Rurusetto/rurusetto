@@ -1,4 +1,5 @@
 from django.core.exceptions import ObjectDoesNotExist
+from django.utils import timezone
 from .models import RecommendBeatmap
 from rurusetto.settings import OSU_API_V1_KEY
 from django.core.files.temp import NamedTemporaryFile
@@ -17,13 +18,16 @@ def update_all_beatmap_action(action):
     action.save()
     for beatmap in RecommendBeatmap.objects.all():
         count += 1
-        action.running_text = f"Updating {beatmap.title}[{beatmap.version}] ({count}/{beatmap_number})"
+        action.running_text = f"Updating {beatmap.title} [{beatmap.version}] ({count}/{beatmap_number})"
         action.save()
         parameter = {'b': int(beatmap.beatmap_id), 'm': 0, 'k': OSU_API_V1_KEY}
         request_data = requests.get("https://osu.ppy.sh/api/get_beatmaps", params=parameter)
         if (request_data.status_code == 200) and (request_data.json() != []):
             try:
                 beatmap_json_data = request_data.json()[0]
+
+                action.running_text = f"Fetching the new cover of {beatmap.title} [{beatmap.version}] ({count}/{beatmap_number})"
+                action.save()
 
                 # Try to delete old cover picture, if failed just pass it.
                 try:
@@ -38,6 +42,9 @@ def update_all_beatmap_action(action):
                 cover_temp.flush()
                 beatmap.beatmap_cover.save(f"{beatmap.beatmap_id}.jpg", File(cover_temp), save=True)
 
+                action.running_text = f"Fetching the new thumbnail of {beatmap.title} [{beatmap.version}] ({count}/{beatmap_number})"
+                action.save()
+
                 # Try to delete old cover picture, if failed just pass it.
                 try:
                     os.remove(f"media/{beatmap.beatmap_thumbnail}")
@@ -50,6 +57,9 @@ def update_all_beatmap_action(action):
                 thumbnail_temp.write(thumbnail_pic.content)
                 thumbnail_temp.flush()
                 beatmap.beatmap_thumbnail.save(f"{beatmap.beatmap_id}.jpg", File(thumbnail_temp), save=True)
+
+                action.running_text = f"Updating all metadata of {beatmap.title} [{beatmap.version}] ({count}/{beatmap_number})"
+                action.save()
 
                 beatmap.beatmapset_id = beatmap_json_data['beatmapset_id']
                 beatmap.title = beatmap_json_data['title']
@@ -72,4 +82,5 @@ def update_all_beatmap_action(action):
         # TODO: Docstring
     action.status = 2
     action.running_text = f"Task running successfully with {success} success and {failed} failed!"
+    action.time_finish = timezone.now()
     action.save()

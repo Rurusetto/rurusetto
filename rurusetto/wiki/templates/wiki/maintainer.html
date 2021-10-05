@@ -62,6 +62,9 @@
         <a href="{% url "profile" action.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover profile-link"><p class="text-muted"><img src="{{ action.1.profile.image.url }}" alt="{{ action.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ action.1.username }} </p></a>
     {% endif %}
 
+    <p>Start at {{ action.0.time_start|date:"F j, Y h:i A" }} UTC</p>
+    <p id="duration_{{ action.0.id }}">Duration : </p>
+
     <div id="status_{{ action.0.id }}">
         {% if action.0.status == 0 %}
         <p>Idle...</p>
@@ -79,7 +82,6 @@
     </div>
 
     <p id="running_log_{{ action.0.id }}">Running Status : {{ action.0.running_text }}</p>
-{#        TODO: Seperate successful log and other log out#}
 {#        TODO: Make the style better#}
     {% endfor %}
 </div>
@@ -98,11 +100,13 @@
 
                 // Storing data in form of JSON
                 let Data = await response.json()
+
+                // If response, update HTML
                 if (response) {
                     document.getElementById("running_log_{{ action.0.id }}").innerHTML = "Running Status : " + Data['running_text']
+                    document.getElementById("duration_{{ action.0.id }}").innerHTML = "Duration : " + Data['duration']
                     if (status_before_{{ action.0.id }} !== Data['status']) {
                         status_before_{{ action.0.id }} = Data['status']
-                        console.log(Data['status'] === 1);
                         if (Data['status'] === 0) {
                             document.getElementById("status_{{ action.0.id }}").innerHTML = '<p>Idle...</p>'
                         } else if (Data['status'] === 1) {

@@ -20,6 +20,7 @@ urlpatterns = [
     path('status', views.status, name='status'),
     path('maintainer', views.maintainer_menu, name='maintainer'),
     path('action/maintainer/update-beatmap', views.update_beatmap_action, name='update_beatmap_action'),
+    path('action/maintainer/update-ruleset-version', views.update_ruleset_status_action, name='update_ruleset_version'),
     path('action/update/action_log/<int:log_id>', views.check_action_log, name='check_action_log'),
     # URL path for API
     path('api/rulesets', views.ruleset_list),

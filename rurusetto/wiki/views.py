@@ -22,7 +22,7 @@ from django.core.exceptions import PermissionDenied
 from django.contrib.auth.decorators import user_passes_test
 import os
 import threading
-from .action import update_all_beatmap_action
+from .action import update_all_beatmap_action, update_ruleset_version_action
 
 
 def home(request):
@@ -658,6 +658,30 @@ def update_beatmap_action(request):
     thread_worker.setDaemon(True)
     thread_worker.start()
     messages.success(request, f"Start worker successfully! (Log ID : {action_log.id})")
+    return redirect('maintainer')
+
+
+@user_passes_test(lambda u: u.is_superuser or u.is_staff)
+def update_ruleset_status_action(request):
+    """
+    View for activate the new runner for running update_ruleset_version_action function.
+
+    This view can only activate by superuser and staff. Mainly activate by Maintainer menu.
+
+    :param request: WSGI request from user.
+    :return: Redirect to maintainer menu with message
+    """
+    action = Action()
+    action.title = "Update ruleset version"
+    action.action_field = "maintainer"
+    action.running_text = "Start working thread..."
+    action.status = 1
+    action.start_user = request.user.id
+    action.save()
+    thread_worker = threading.Thread(target=update_ruleset_version_action, args=[action])
+    thread_worker.setDaemon(True)
+    thread_worker.start()
+    messages.success(request, f"Start worker successfully! (Log ID : {action.id})")
     return redirect('maintainer')
 
 

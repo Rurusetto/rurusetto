@@ -616,7 +616,7 @@ def maintainer_menu(request):
     hero_image = 'img/status-cover-night.jpg'
     hero_image_light = 'img/status-cover-light.jpg'
     action_list = []
-    for action in Action.objects.all().reverse():
+    for action in Action.objects.all().order_by('-id'):
         action_list.append([action, get_user_by_id(action.start_user)])
     context = {
         'action_list': action_list,

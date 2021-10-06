@@ -163,5 +163,3 @@ def update_ruleset_version_action(action):
     action.running_text = f"Task running successfully with {success} success ,{failed} failed, {skip} skipped with {update_count} updated and {progress_round} round"
     action.time_finish = timezone.now()
     action.save()
-
-

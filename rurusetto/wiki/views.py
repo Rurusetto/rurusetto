@@ -410,6 +410,22 @@ def add_recommend_beatmap(request, slug):
                 thumbnail_temp.flush()
                 form.instance.beatmap_thumbnail.save(f"{form.instance.beatmap_id}.jpg",
                                                      File(thumbnail_temp), save=True)
+                # Download beatmap card to beatmap_card field
+                card_pic = requests.get(
+                    f"https://assets.ppy.sh/beatmaps/{beatmap_json_data['beatmapset_id']}/covers/card.jpg")
+                card_temp = NamedTemporaryFile(delete=True)
+                card_temp.write(card_pic.content)
+                card_temp.flush()
+                form.instance.beatmap_card.save(f"{form.instance.beatmap_id}.jpg",
+                                                     File(card_temp), save=True)
+                # Download beatmap list picture to beatmap_list field
+                list_pic = requests.get(
+                    f"https://assets.ppy.sh/beatmaps/{beatmap_json_data['beatmapset_id']}/covers/list.jpg")
+                list_temp = NamedTemporaryFile(delete=True)
+                list_temp.write(list_pic.content)
+                list_temp.flush()
+                form.instance.beatmap_list.save(f"{form.instance.beatmap_id}.jpg",
+                                                File(list_temp), save=True)
                 # Put the beatmap detail from osu! to the RecommendBeatmap object.
                 form.instance.beatmapset_id = beatmap_json_data['beatmapset_id']
                 form.instance.title = beatmap_json_data['title']

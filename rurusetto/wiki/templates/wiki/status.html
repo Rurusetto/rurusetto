@@ -99,6 +99,7 @@
         </div>
         <div class="col-4">
             <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{{ ruleset.2 }}"><i class="fab fa-github icon-menu hvr-icon"></i> GitHub release page</a></p>
+            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'wiki' ruleset.0.slug %}"><i class="fas fa-location-arrow icon-menu hvr-icon"></i> Go to rulesets wiki page</a></p>
         </div>
     </div>
     {% elif ruleset.1 == 'patreon' %}
@@ -116,6 +117,7 @@
         </div>
         <div class="col-4">
             <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{{ ruleset.2 }}"><i class="fab fa-patreon icon-menu hvr-icon"></i> Get from Patreon</a></p>
+            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'wiki' ruleset.0.slug %}"><i class="fas fa-location-arrow icon-menu hvr-icon"></i> Go to rulesets wiki page</a></p>
         </div>
     </div>
     {% endif %}

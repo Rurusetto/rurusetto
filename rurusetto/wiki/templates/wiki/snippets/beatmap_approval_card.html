@@ -43,7 +43,7 @@
           {% else %}
               <p class="card-text text-muted"><small>Recommend by <a href="{% url "profile" beatmap.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><img src="{{ beatmap.1.profile.image.url }}" alt="{{ beatmap.1.username }}" width="32" height="32" class="rounded-circle hvr-icon" style="transition: 0.2s"> {{ beatmap.1.username }}</a></small></p>
           {% endif %}
-            <p class="card-text"><a class="btn btn-success btn-small" href="{% url 'approve_recommend_beatmap' ruleset.slug beatmap.0.id %}" role="button"><i class="fas fa-check color-white"></i> Approve</a> <a class="btn btn-danger btn-small" href="{% url 'deny_recommend_beatmap' ruleset.slug beatmap.0.id %}" role="button"><i class="fas fa-times color-white"></i> Deny</a></p>
+            <p class="card-text"><a class="btn btn-success btn-sm" href="{% url 'approve_recommend_beatmap' ruleset.slug beatmap.0.id %}" role="button"><i class="fas fa-check color-white"></i> Approve</a> <a class="btn btn-danger btn-sm" href="{% url 'deny_recommend_beatmap' ruleset.slug beatmap.0.id %}" role="button"><i class="fas fa-times color-white"></i> Deny</a></p>
           </div>
         </div>
       </div>

@@ -550,6 +550,7 @@ button.accordion-button:focus {
 
 .beatmap-comment {
     font-size: 90%;
+    line-height: 0.8;
 }
 
 @media (max-width: 1009px) {

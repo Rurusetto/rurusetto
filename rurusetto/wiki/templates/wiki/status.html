@@ -1,6 +1,7 @@
 {% extends "wiki/base.html" %}
 {% load static %}
 {% load markdown_converter %}
+{% load convert_file_size %}
 {% block content %}
 
 <div class="px-4 py-4 my-4 align-middle hero">
@@ -55,7 +56,7 @@
             <h4>Latest release</h4>
             <p>{{ ruleset.2.2.latest_update|date:"F j, Y h:i A" }} UTC</p>
             <h4>File Detail</h4>
-            <p class="mono-font">Size : {{ ruleset.2.2.file_size }} bytes</p>
+            <p class="mono-font">Size : {{ ruleset.2.2.file_size | convert_file_size }}</p>
             <div class="row">
             <div class="accordion" id="changelog-{{ ruleset.0.slug }}-accordian">
                 <div class="accordion-item">

@@ -200,6 +200,10 @@ class RecommendBeatmap(models.Model):
         FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
     beatmap_thumbnail = models.ImageField(default='default_beatmap_thumbnail.jpeg', upload_to='beatmap_thumbnail', validators=[
         FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
+    beatmap_card = models.ImageField(default='default_beatmap_cover.jpeg', upload_to='beatmap_card', validators=[
+        FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
+    beatmap_list = models.ImageField(default='default_beatmap_thumbnail.jpeg', upload_to='beatmap_list', validators=[
+        FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
 
     comment = models.CharField(default=None, max_length=150)
 

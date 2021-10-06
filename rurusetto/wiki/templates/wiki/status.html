@@ -1,6 +1,7 @@
 {% extends "wiki/base.html" %}
 {% load static %}
 {% load markdown_converter %}
+{% load convert_file_size %}
 {% block content %}
 
 <div class="px-4 py-4 my-4 align-middle hero">
@@ -55,17 +56,17 @@
             <h4>Latest release</h4>
             <p>{{ ruleset.2.2.latest_update|date:"F j, Y h:i A" }} UTC</p>
             <h4>File Detail</h4>
-            <p class="mono-font">Size : {{ ruleset.2.2.file_size }} bytes</p>
+            <p class="mono-font">Size : {{ ruleset.2.2.file_size | convert_file_size }}</p>
             <div class="row">
-            <div class="accordion" id="subpage-index">
+            <div class="accordion" id="changelog-{{ ruleset.0.slug }}-accordian">
                 <div class="accordion-item">
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="subpage-heading">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#subpageCollapse" aria-expanded="false" aria-controls="subpageCollapse">
-                            Changelog
+                        <h2 class="accordion-header" id="changelog-{{ ruleset.0.slug }}">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ ruleset.0.slug }}" aria-expanded="false" aria-controls="changelog-{{ ruleset.0.slug }}">
+                              <b>Latest Version Changelog</b>
                           </button>
                         </h2>
-                        <div id="subpageCollapse" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                        <div id="collapse-{{ ruleset.0.slug }}" class="accordion-collapse collapse" aria-labelledby="changelog-{{ ruleset.0.slug }}" data-bs-parent="#changelog-{{ ruleset.0.slug }}-accordian">
                           <div class="accordion-body">
                               {{ ruleset.2.2.changelog | convert_markdown | safe }}
                           </div>
@@ -98,6 +99,7 @@
         </div>
         <div class="col-4">
             <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{{ ruleset.2 }}"><i class="fab fa-github icon-menu hvr-icon"></i> GitHub release page</a></p>
+            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'wiki' ruleset.0.slug %}"><i class="fas fa-location-arrow icon-menu hvr-icon"></i> Go to rulesets wiki page</a></p>
         </div>
     </div>
     {% elif ruleset.1 == 'patreon' %}
@@ -115,6 +117,7 @@
         </div>
         <div class="col-4">
             <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{{ ruleset.2 }}"><i class="fab fa-patreon icon-menu hvr-icon"></i> Get from Patreon</a></p>
+            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'wiki' ruleset.0.slug %}"><i class="fas fa-location-arrow icon-menu hvr-icon"></i> Go to rulesets wiki page</a></p>
         </div>
     </div>
     {% endif %}

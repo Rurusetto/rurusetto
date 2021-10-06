@@ -71,6 +71,40 @@ def update_all_beatmap_action(action):
                 thumbnail_temp.flush()
                 beatmap.beatmap_thumbnail.save(f"{beatmap.beatmap_id}.jpg", File(thumbnail_temp), save=True)
 
+                action.running_text = f"Fetching the new card of {beatmap.title} [{beatmap.version}] ({count}/{beatmap_number})"
+                action.save()
+
+                # Try to delete old card picture, if failed just pass it.
+                try:
+                    os.remove(f"media/{beatmap.beatmap_card}")
+                except FileNotFoundError:
+                    pass
+
+                # Download beatmap card to beatmap_card field
+                card_pic = requests.get(
+                    f"https://assets.ppy.sh/beatmaps/{beatmap_json_data['beatmapset_id']}/covers/card.jpg")
+                card_temp = NamedTemporaryFile(delete=True)
+                card_temp.write(card_pic.content)
+                card_temp.flush()
+                beatmap.beatmap_card.save(f"{beatmap.beatmap_id}.jpg", File(card_temp), save=True)
+
+                action.running_text = f"Fetching the new thumbnail of {beatmap.title} [{beatmap.version}] ({count}/{beatmap_number})"
+                action.save()
+
+                # Try to delete old list picture, if failed just pass it.
+                try:
+                    os.remove(f"media/{beatmap.beatmap_list}")
+                except FileNotFoundError:
+                    pass
+
+                # Download beatmap list picture to beatmap_list field
+                list_pic = requests.get(
+                    f"https://assets.ppy.sh/beatmaps/{beatmap_json_data['beatmapset_id']}/covers/list.jpg")
+                list_temp = NamedTemporaryFile(delete=True)
+                list_temp.write(list_pic.content)
+                list_temp.flush()
+                beatmap.beatmap_list.save(f"{beatmap.beatmap_id}.jpg", File(list_temp), save=True)
+
                 action.running_text = f"Updating all metadata of {beatmap.title} [{beatmap.version}] ({count}/{beatmap_number})"
                 action.save()
 
@@ -139,7 +173,6 @@ def update_ruleset_version_action(action):
 
                     for assets in all_assets:
                         if assets["name"] == ruleset_status.ruleset.github_download_filename:
-                            print(assets)
                             ruleset_status.file_size = assets['size']
                             break
 
@@ -149,7 +182,6 @@ def update_ruleset_version_action(action):
                 except KeyError:
                     failed += 1
                     update_count += 1
-                print(f"{ruleset_status.ruleset.name} success")
             else:
                 skip += 1
                 update_count += 1

@@ -9,12 +9,15 @@
                 <audio class="listen" preload="none" data-size="80" src="//b.ppy.sh/preview/{{ beatmap.0.beatmapset_id }}.mp3"></audio>
             </div>
         </div>
-        <div class="col-md-8 beatmap-card rounded-start" style="line-height: 0.9;">
+        <div class="col-md-8 beatmap-card rounded-start" style="line-height: 0.3;">
           <div class="card-body">
             <a href="{{ beatmap.0.url }}" class="text-decoration-none"><h4 class="card-title spacing-hover-short beatmap-title">{{ beatmap.0.title }}</h4></a>
-            <p class="card-text">by {{ beatmap.0.artist }}</p>
-            <p class="card-text text-muted">{{ beatmap.0.source }}</p>
-            <p class="card-text">
+            <p class="card-text beatmap-artist">by {{ beatmap.0.artist }}</p>
+            {% if beatmap.0.source != "" %}
+            <p class="card-text text-muted beatmap-source">{{ beatmap.0.source }}</p>
+            {% else %}
+            <p>&zwnj;</p>
+            {% endif %}
 
             {% if beatmap.0.approved == "4" %}
                 <span class="badge rounded-pill round-font-bold" style="background-color: rgb(241, 101, 160); color: rgb(51, 58, 61);">LOVED</span>
@@ -34,7 +37,7 @@
 
             </p>
               <p class="card-text text-muted"><small>mapped by <a href="https://osu.ppy.sh/u/{{ beatmap.0.creator }}" class="text-decoration-none spacing-hover-short">{{ beatmap.0.creator }}</a></small></p>
-              <p class="card-text"><small>{{ beatmap.0.comment }}</small></p>
+              <p class="card-text beatmap-comment"><small>{{ beatmap.0.comment }}</small></p>
           {% if beatmap.1 == None %}
               <p class="card-text text-muted"><small>Recommend by <img src="{% static 'img/default.jpeg' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User </small></p>
           {% else %}

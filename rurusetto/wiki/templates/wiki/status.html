@@ -1,5 +1,6 @@
 {% extends "wiki/base.html" %}
 {% load static %}
+{% load markdown_converter %}
 {% block content %}
 
 <div class="px-4 py-4 my-4 align-middle hero">
@@ -39,7 +40,7 @@
 <div class="container">
     {% for ruleset in all_ruleset %}
     {% if ruleset.1 == 'github_with_direct' %}
-    <div class="row" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">
+    <div class="row rounded border border-1 p-2" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">
         <h1>
             {% if user.config.theme == 'light' %}
             <img src="{{ ruleset.0.light_icon.url }}" alt="{{ ruleset.0.name }}" width="40" height="40" class="rounded-circle hvr-icon"> 
@@ -49,17 +50,41 @@
             {{ ruleset.0.name }}
        </h1>
         <div class="col-8">
-            <div class="alert alert-light">
-                Coming Soon!
+            <h4>Latest version name</h4>
+            <p>{{ ruleset.2.2.latest_version }}</p>
+            <h4>Latest release</h4>
+            <p>{{ ruleset.2.2.latest_update|date:"F j, Y h:i A" }} UTC</p>
+            <h4>File Detail</h4>
+            <p class="mono-font">Size : {{ ruleset.2.2.file_size }} bytes</p>
+            <div class="row">
+            <div class="accordion" id="subpage-index">
+                <div class="accordion-item">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="subpage-heading">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#subpageCollapse" aria-expanded="false" aria-controls="subpageCollapse">
+                            Changelog
+                          </button>
+                        </h2>
+                        <div id="subpageCollapse" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                          <div class="accordion-body">
+                              {{ ruleset.2.2.changelog | convert_markdown | safe }}
+                          </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <p></p>
+        </div>
+
         </div>
         <div class="col-4">
             <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{{ ruleset.2.0 }}"><i class="fas fa-download icon-menu hvr-icon"></i> Download latest version</a></p>
             <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{{ ruleset.2.1 }}"><i class="fab fa-github icon-menu hvr-icon"></i> GitHub release page</a></p>
+            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'wiki' ruleset.0.slug %}"><i class="fas fa-location-arrow icon-menu hvr-icon"></i> Go to rulesets wiki page</a></p>
         </div>
     </div>
     {% elif ruleset.1 == 'github' %}
-    <div class="row" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">
+    <div class="row rounded border border-1 p-2" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">
         <h1>
             {% if user.config.theme == 'light' %}
             <img src="{{ ruleset.0.light_icon.url }}" alt="{{ ruleset.0.name }}" width="40" height="40" class="rounded-circle hvr-icon"> 
@@ -69,16 +94,14 @@
             {{ ruleset.0.name }}
         </h1>
         <div class="col-8">
-            <div class="alert alert-light">
-                Coming Soon!
-            </div>
+            <p><i class="fas fa-exclamation-circle"></i> Function is not available due to the rulesets source is from GitHub and <code>Ruleset Filename</code> field is missing or blank. Please fill the <code>Ruleset Filename</code> in the rulesets setting!</p>
         </div>
         <div class="col-4">
             <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{{ ruleset.2 }}"><i class="fab fa-github icon-menu hvr-icon"></i> GitHub release page</a></p>
         </div>
     </div>
     {% elif ruleset.1 == 'patreon' %}
-    <div class="row" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">
+    <div class="row rounded border border-1 p-2" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">
         <h1>
             {% if user.config.theme == 'light' %}
             <img src="{{ ruleset.0.light_icon.url }}" alt="{{ ruleset.0.name }}" width="40" height="40" class="rounded-circle hvr-icon"> 
@@ -88,15 +111,14 @@
             {{ ruleset.0.name }}
         </h1>
         <div class="col-8">
-            <div class="alert alert-light">
-                Coming Soon!
-            </div>
+            <p><i class="fas fa-exclamation-circle"></i> This function is not support in rulesets that is from Patreon. You can go to rulesets creator's Patreon at <code>Get from Patreon</code>!</p>
         </div>
         <div class="col-4">
-            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{{ ruleset.2 }}"><i class="fab fa-patreon icon-menu hvr-icon"></i> Get from patreon</a></p>
+            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{{ ruleset.2 }}"><i class="fab fa-patreon icon-menu hvr-icon"></i> Get from Patreon</a></p>
         </div>
     </div>
     {% endif %}
+    <p></p>
     {% endfor %}
 </div>
 

@@ -5,6 +5,7 @@ from mdeditor.fields import MDTextField
 from django.contrib.sitemaps import ping_google
 from PIL import Image
 
+
 RELEASE_TYPE = (
     # Choice in Changelog model
     # In-system value - Show value
@@ -269,3 +270,31 @@ class Action(models.Model):
         else:
             status_text = "Unknown"
         return f'{self.title} [{status_text}]'
+
+
+PLAYABLE = (
+    # Choice in RulesetStatus model
+    # In-system value - Show value
+    ('yes', 'Yes'),
+    ('no', 'No'),
+    ('unknown', 'Unknown')
+)
+
+
+class RulesetStatus(models.Model):
+    """
+    A model that bind with Ruleset to collect the latest version of ruleset and more info that not need to be
+    collect, edit by user or can automatically update.
+    """
+    ruleset = models.OneToOneField(Ruleset, on_delete=models.CASCADE)
+
+    latest_version = models.CharField(default="", blank=True, max_length=200)
+    latest_update = models.DateTimeField(editable=True, blank=True, null=True)
+
+    changelog = models.TextField(blank=True)
+    file_size = models.IntegerField(default=0, blank=True)
+
+    playable = models.TextField(choices=PLAYABLE, default='unknown')
+
+    def __str__(self):
+        return f"{self.ruleset.name} Status"

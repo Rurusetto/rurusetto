@@ -609,3 +609,10 @@ form.form a:hover {
     letter-spacing: 1px;
 }
 
+p.mono-font {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.border {
+    border: solid #4a4a4a!important;
+}

@@ -167,6 +167,7 @@ MAX_PROFILE_PICTURE_SIZE = 5242880
 OSU_OAUTH_CLIENT_ID = config('OSU_OAUTH_CLIENT_ID', default="")
 OSU_OAUTH_CLIENT_SECRET = config('OSU_OAUTH_CLIENT_SECRET', default="")
 OSU_API_V1_KEY = config('OSU_API_V1_KEY', default="")
+GITHUB_TOKEN = config('GITHUB_TOKEN', default="")
 
 # Markdown Editor Configuration
 

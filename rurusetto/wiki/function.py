@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from .models import Ruleset, RecommendBeatmap
+from .models import Ruleset, RecommendBeatmap, RulesetStatus
 
 
 def make_listing_view(model_list):
@@ -188,7 +188,7 @@ def make_status_view():
             else:
                 download_link = f"{ruleset.source}releases/latest/download/{ruleset.github_download_filename}"
                 latest_release = f"{ruleset.source}releases"
-            show_ruleset.append([ruleset, 'github_with_direct', [download_link, latest_release]])
+            show_ruleset.append([ruleset, 'github_with_direct', [download_link, latest_release, RulesetStatus.objects.get(ruleset=ruleset)]])
         elif (source_link_type(ruleset.source) == 'github') and (ruleset.github_download_filename == ""):
             # No filename, so we can render only the link to release page.
             if ruleset.source[-1] != "/":

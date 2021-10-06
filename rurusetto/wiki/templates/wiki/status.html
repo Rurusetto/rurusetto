@@ -57,15 +57,15 @@
             <h4>File Detail</h4>
             <p class="mono-font">Size : {{ ruleset.2.2.file_size }} bytes</p>
             <div class="row">
-            <div class="accordion" id="subpage-index">
+            <div class="accordion" id="changelog-{{ ruleset.0.slug }}-accordian">
                 <div class="accordion-item">
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="subpage-heading">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#subpageCollapse" aria-expanded="false" aria-controls="subpageCollapse">
-                            Changelog
+                        <h2 class="accordion-header" id="changelog-{{ ruleset.0.slug }}">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ ruleset.0.slug }}" aria-expanded="false" aria-controls="changelog-{{ ruleset.0.slug }}">
+                              <b>Latest Version Changelog</b>
                           </button>
                         </h2>
-                        <div id="subpageCollapse" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                        <div id="collapse-{{ ruleset.0.slug }}" class="accordion-collapse collapse" aria-labelledby="changelog-{{ ruleset.0.slug }}" data-bs-parent="#changelog-{{ ruleset.0.slug }}-accordian">
                           <div class="accordion-body">
                               {{ ruleset.2.2.changelog | convert_markdown | safe }}
                           </div>

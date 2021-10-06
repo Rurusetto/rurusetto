@@ -534,23 +534,23 @@ button.accordion-button:focus {
 }
 
 .beatmap-card {
-    background-color: rgba(45, 45, 45, .8);
-    backdrop-filter: blur(5px);
+    background-color: rgba(45, 45, 45, 0.9);
     font-size: 100%;
 }
 
 .beatmap-title {
     color: #ff66aa;
-    font-size: 145%;
+    font-size: 120%;
 }
+
 .beatmap-artist,
 .beatmap-source {
     font-size: 90%;
 }
 
 .beatmap-comment {
-    line-height: 0.8;
     font-size: 90%;
+    line-height: 0.8;
 }
 
 @media (max-width: 1009px) {

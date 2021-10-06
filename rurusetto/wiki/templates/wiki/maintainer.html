@@ -77,7 +77,11 @@
 
     <div id="status_{{ action.0.id }}">
         {% if action.0.status == 0 %}
-        <p>Idle...</p>
+        <div>
+        <div class="spinner-grow" role="status" style="color: #ff66aa">
+          <span class="visually-hidden">Idle...</span>
+        </div> <span style="color: #ff66aa" class="text-center">Idle...</span>
+        </div>
         {% elif action.0.status == 1 %}
         <div>
         <div class="spinner-border" role="status" style="color: #ff66aa">
@@ -119,7 +123,9 @@
                     if (status_before_{{ action.0.id }} !== Data['status']) {
                         status_before_{{ action.0.id }} = Data['status']
                         if (Data['status'] === 0) {
-                            document.getElementById("status_{{ action.0.id }}").innerHTML = '<p>Idle...</p>'
+                            document.getElementById("status_{{ action.0.id }}").innerHTML = '<div class="spinner-grow" role="status" style="color: #ff66aa">\n' +
+                                '<span class="visually-hidden">Idle...</span>\n' +
+                                '</div> <span style="color: #ff66aa" class="text-center">Idle...</span>'
                         } else if (Data['status'] === 1) {
                             document.getElementById("status_{{ action.0.id }}").innerHTML = '<div class="spinner-border" role="status" style="color: #ff66aa">\n' +
                                 '<span class="visually-hidden">Loading...</span>\n' +

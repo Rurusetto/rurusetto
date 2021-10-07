@@ -49,6 +49,13 @@
             <img src="{{ ruleset.0.icon.url }}" alt="{{ ruleset.0.name }}" width="40" height="40" class="rounded-circle hvr-icon"> 
             {% endif %}
             {{ ruleset.0.name }}
+            {% if ruleset.2.2.playable == "yes" %}
+                <span class="badge rounded-pill bg-success">playable</span>
+            {% elif ruleset.2.2.playable == "no" %}
+                <span class="badge rounded-pill bg-danger">borked</span>
+            {% else %}
+                <span class="badge rounded-pill bg-secondary">unknown</span>
+            {% endif %}
        </h1>
         <div class="col-8">
             <h4>Latest version name</h4>

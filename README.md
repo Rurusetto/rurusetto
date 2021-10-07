@@ -135,3 +135,6 @@ The image in this website and the content that upload by user and community are 
 Each rulesets has its own license.
 
 The licensing here does not directly apply to `osu!` and `ppy`, as it is bound to its own licensing.
+
+# Thanking you
+

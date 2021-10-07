@@ -536,7 +536,7 @@ button.accordion-button:focus {
 .beatmap-card {
     background-color: rgba(45, 45, 45, 0.9);
     backdrop-filter: blur(4px);
-    font-size: 92%;
+    font-size: 95%;
 }
 
 .beatmap-title {

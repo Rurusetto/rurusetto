@@ -99,10 +99,12 @@ Rūrusetto use `python-decouple` library to separate the configuration value and
 ```env
 SECRET_KEY = awesome_key_here
 DEBUG = True
+TEST_SERVER = True
 ALLOWED_HOSTS = 127.0.0.1
 OSU_OAUTH_CLIENT_ID = idgohere
 OSU_OAUTH_CLIENT_SECRET = keygohere
 OSU_API_V1_KEY = keygohere
+GITHUB_TOKEN = githubtokengohere
 ```
 
 **Note** : The `OSU_OAUTH_CLIENT_ID` `OSU_OAUTH_CLIENT_SECRET` and `OSU_API_V1_KEY` are required when you want to development with osu! OAuth system or some program part that required the osu! API you must fill the osu! API key and OAuth app number in `settings.py` to start development on this function. But if you are not testing on this function it's okay to leave the key blank. (The development OAuth server callback is http://127.0.0.1:8000/accounts/osu/login/callback/.)

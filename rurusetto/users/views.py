@@ -156,7 +156,7 @@ def profile_detail(request, pk):
         'created_ruleset': fetch_created_ruleset(profile_object.id),
         'title': f"{profile_object.user.username}'s profile",
         'hero_image': profile_object.cover.url,
-        'hero_image_light': profile_object.cover.url,
+        'hero_image_light': profile_object.cover_light.url,
         'opengraph_description': f"{profile_object.user.username}'s profile page",
         'opengraph_url': resolve_url('profile', pk=profile_object.user.id),
         'opengraph_image': profile_object.cover.url

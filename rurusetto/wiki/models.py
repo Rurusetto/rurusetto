@@ -85,6 +85,8 @@ class Ruleset(models.Model):
         FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
     recommend_beatmap_cover = models.ImageField(default='default_recommend_beatmap_cover.png', upload_to='recommend_beatmap_cover', validators=[
         FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
+    custom_css = models.FileField(default='default.css', upload_to='custom_css', validators=[
+            FileExtensionValidator(allowed_extensions=['css'])], blank=True)
 
     content = MDTextField()
 

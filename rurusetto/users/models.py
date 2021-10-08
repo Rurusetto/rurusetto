@@ -38,6 +38,7 @@ class Profile(models.Model):
     tag = models.CharField(default='', max_length=100, blank=True)
     image = models.ImageField(default='default.jpeg', upload_to='profile_pics', validators=[FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
     cover = models.ImageField(default='default_cover.png', upload_to='cover_pics', validators=[FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
+    cover_light = models.ImageField(default='default_cover.png', upload_to='cover_pics_light', validators=[FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
     about_me = models.TextField(default='Hello there!', max_length=120, blank=True)
     osu_username = models.CharField(default='', max_length=50, blank=True)
     oauth_first_migrate = models.BooleanField(default=False)
@@ -65,6 +66,10 @@ class Profile(models.Model):
         if cover.height > 1080 or cover.width > 1920:
             cover.thumbnail((1920, 1080))
             cover.save(self.cover.path)
+        cover_light = Image.open(self.cover_light.path)
+        if cover_light.height > 1080 or cover_light.width > 1920:
+            cover_light.thumbnail((1920, 1080))
+            cover_light.save(self.cover.path)
 
 
 class Config(models.Model):

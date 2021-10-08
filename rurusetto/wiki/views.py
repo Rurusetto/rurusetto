@@ -14,7 +14,7 @@ from .function import make_listing_view, make_wiki_view, source_link_type, get_u
     make_beatmap_aapproval_view, make_status_view
 from unidecode import unidecode
 from django.template.defaultfilters import slugify
-from rurusetto.settings import OSU_API_V1_KEY
+from rurusetto.settings import OSU_API_V1_KEY, TEST_SERVER
 import requests
 from django.core.files import File
 from django.core.files.temp import NamedTemporaryFile
@@ -47,8 +47,9 @@ def home(request):
         'hero_image_light': static(hero_image_light),
         'opengraph_description': 'A page that contain all osu! ruleset',
         'opengraph_url': resolve_url('home'),
-        'latest_add_rulesets': make_listing_view(latest_add_rulesets)
         # Use make_listing_view function to get the User object from database and pass to template
+        'latest_add_rulesets': make_listing_view(latest_add_rulesets),
+        'test_server': TEST_SERVER
     }
     return render(request, 'wiki/home.html', context)
 

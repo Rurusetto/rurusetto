@@ -535,7 +535,8 @@ button.accordion-button:focus {
 
 .beatmap-card {
     background-color: rgba(45, 45, 45, 0.9);
-    font-size: 100%;
+    backdrop-filter: blur(4px);
+    font-size: 95%;
 }
 
 .beatmap-title {
@@ -549,8 +550,7 @@ button.accordion-button:focus {
 }
 
 .beatmap-comment {
-    font-size: 90%;
-    line-height: 0.8;
+    line-height: 1.0;
 }
 
 @media (max-width: 1009px) {

@@ -20,30 +20,30 @@
             {% endif %}
 
             {% if beatmap.0.approved == "4" %}
-                <span class="badge rounded-pill round-font-bold" style="background-color: rgb(241, 101, 160); color: rgb(51, 58, 61);">LOVED</span>
+                <span class="badge rounded-pill round-font-bold" style="background-color: rgb(241, 101, 160); color: rgb(51, 58, 61); margin-top: -2px">LOVED</span>
             {% elif beatmap.0.approved == "3" %}
-                <span class="badge rounded-pill round-font-bold" style="background-color: rgb(106, 196, 254); color: rgb(51, 58, 61);">QUALIFIED</span>
+                <span class="badge rounded-pill round-font-bold" style="background-color: rgb(106, 196, 254); color: rgb(51, 58, 61); margin-top: -2px">QUALIFIED</span>
             {% elif beatmap.0.approved == "2" %}
-                <span class="badge rounded-pill round-font-bold" style="background-color: rgb(210, 208, 85); color: rgb(51, 58, 61);">APPROVED</span>
+                <span class="badge rounded-pill round-font-bold" style="background-color: rgb(210, 208, 85); color: rgb(51, 58, 61); margin-top: -2px">APPROVED</span>
             {% elif beatmap.0.approved == "1" %}
-                <span class="badge rounded-pill round-font-bold" style="background-color: rgb(185, 251, 98); color: rgb(51, 58, 61);">RANKED</span>
+                <span class="badge rounded-pill round-font-bold" style="background-color: rgb(185, 251, 98); color: rgb(51, 58, 61); margin-top: -2px">RANKED</span>
             {% elif beatmap.0.approved == "0" %}
-                <span class="badge rounded-pill round-font-bold" style="background-color: rgb(252, 212, 96); color: rgb(51, 58, 61);">PENDING</span>
+                <span class="badge rounded-pill round-font-bold" style="background-color: rgb(252, 212, 96); color: rgb(51, 58, 61); margin-top: -2px">PENDING</span>
             {% elif beatmap.0.approved == "-1" %}
-                <span class="badge rounded-pill round-font-bold" style="background-color: rgb(245, 146, 93); color: rgb(51, 58, 61);">WIP</span>
+                <span class="badge rounded-pill round-font-bold" style="background-color: rgb(245, 146, 93); color: rgb(51, 58, 61); margin-top: -2px">WIP</span>
             {% elif beatmap.0.approved == "-2" %}
-                <span class="badge rounded-pill round-font-bold" style="background-color: rgb(0, 0, 0); color: rgb(83, 94, 101);">GRAVEYARD</span>
+                <span class="badge rounded-pill round-font-bold" style="background-color: rgb(0, 0, 0); color: rgb(83, 94, 101); margin-top: -2px">GRAVEYARD</span>
             {% endif %}
 
             </p>
-              <p class="card-text text-muted"><small>mapped by <a href="https://osu.ppy.sh/u/{{ beatmap.0.creator }}" class="text-decoration-none spacing-hover-short">{{ beatmap.0.creator }}</a></small></p>
-              <p class="card-text beatmap-comment"><small>{{ beatmap.0.comment }}</small></p>
+              <p class="card-text text-muted" style="margin-top: -5px"><small>mapped by <a href="https://osu.ppy.sh/u/{{ beatmap.0.creator }}" class="text-decoration-none spacing-hover-short">{{ beatmap.0.creator }}</a></small></p>
+              <p class="card-text beatmap-comment" style="margin-top: -5px"><small>{{ beatmap.0.comment }}</small></p>
           {% if beatmap.1 == None %}
-              <p class="card-text text-muted"><small>Recommend by <img src="{% static 'img/default.jpeg' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User </small></p>
+              <p class="card-text text-muted" style="margin-top: -10px"><small>Recommend by <img src="{% static 'img/default.jpeg' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User </small></p>
           {% else %}
-              <p class="card-text text-muted"><small>Recommend by <a href="{% url "profile" beatmap.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><img src="{{ beatmap.1.profile.image.url }}" alt="{{ beatmap.1.username }}" width="32" height="32" class="rounded-circle hvr-icon" style="transition: 0.2s"> {{ beatmap.1.username }}</a></small></p>
+              <p class="card-text text-muted" style="margin-top: -10px"><small>Recommend by <a href="{% url "profile" beatmap.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><img src="{{ beatmap.1.profile.image.url }}" alt="{{ beatmap.1.username }}" width="32" height="32" class="rounded-circle hvr-icon" style="transition: 0.2s"> {{ beatmap.1.username }}</a></small></p>
           {% endif %}
-            <p class="card-text"><a class="btn btn-success btn-sm" href="{% url 'approve_recommend_beatmap' ruleset.slug beatmap.0.id %}" role="button"><i class="fas fa-check color-white"></i> Approve</a> <a class="btn btn-danger btn-sm" href="{% url 'deny_recommend_beatmap' ruleset.slug beatmap.0.id %}" role="button"><i class="fas fa-times color-white"></i> Deny</a></p>
+            <p class="card-text"><a class="btn btn-success btn-sm" href="{% url 'approve_recommend_beatmap' ruleset.slug beatmap.0.id %}" role="button" style="margin-top: -10px"><i class="fas fa-check color-white"></i> Approve</a> <a class="btn btn-danger btn-sm" href="{% url 'deny_recommend_beatmap' ruleset.slug beatmap.0.id %}" role="button" style="margin-top: -10px"><i class="fas fa-times color-white"></i> Deny</a></p>
           </div>
         </div>
       </div>

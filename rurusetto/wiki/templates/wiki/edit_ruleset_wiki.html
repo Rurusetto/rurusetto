@@ -139,6 +139,17 @@
                     </div>
                   </div>
             </div>
+            <div class="fieldWrapper">
+                 <div class="mb-3 row">
+                    <label class="col-sm-2 col-form-label form-label" for="id_custom_css">Custom CSS:</label>
+                    <div class="col-sm-10">
+                       <div class="raleway-font form-current"> Current Custom CSS : <a href="{{ form.custom_css.value.url }}">{{ form.custom_css.value }}</a></div>
+                      <input type="file" name="custom_css" id="id_custom_css" class="form-control">
+                        <p class="form-error raleway-font">{{ form.custom_css.errors }}</p>
+                        <p class="text-muted raleway-font">This CSS file will be override the CSS of the website on the ruleset's main page and subpage.</p>
+                    </div>
+                  </div>
+            </div>
             <h1>Source</h1>
             <div class="fieldWrapper">
                  <div class="mb-3 row">

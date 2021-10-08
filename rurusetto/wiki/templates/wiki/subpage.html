@@ -1,6 +1,11 @@
 {% extends "wiki/base.html" %}
 {% load static %}
 {% load markdown_converter %}
+
+{% block css_link %}
+<link rel="stylesheet" href="{{ ruleset.custom_css.url }}">
+{% endblock %}
+
 {% block content %}
     <link rel="stylesheet" href="{% static 'css/wiki-page.css' %}">
     <div class="px-4 py-4 my-4 align-middle hero">

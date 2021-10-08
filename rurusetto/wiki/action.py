@@ -196,3 +196,63 @@ def update_ruleset_version_action(action):
     action.running_text = f"Task running successfully with {success} success ,{failed} failed, {skip} skipped with {update_count} updated and {progress_round} round"
     action.time_finish = timezone.now()
     action.save()
+
+
+def update_ruleset_version_once_action(action):
+    """
+    Action to update the RulesetStatus of Ruleset object that has GitHub link as the source only one time.
+
+    This will run by maintainer when the update_ruleset_version_action is not working or
+    some accident happen.
+
+    Action area : maintainer
+
+    :param action: Action model object that contain and update the log to the view
+    """
+    total = RulesetStatus.objects.all().count()
+    failed = 0
+    success = 0
+    skip = 0
+    update_count = 0
+    action.status = 1
+    action.save()
+    for ruleset_status in RulesetStatus.objects.all():
+        update_count += 1
+        action.running_text = f"Updating {ruleset_status.ruleset.name} ({update_count}/{total})"
+        action.save()
+        if source_link_type(
+                ruleset_status.ruleset.source) == "github" and ruleset_status.ruleset.github_download_filename != "":
+            try:
+                headers = {"Authorization": f"token {GITHUB_TOKEN}"}
+                split_github_link = ruleset_status.ruleset.source.split("/")
+                # If the GitHub link is right when split with slash it must slice to 6 pieces (with slash
+                # at the end) or 5 (without slash at the end)
+                if len(split_github_link) == 6 or len(split_github_link) == 5:
+                    request_data = requests.get(
+                        f"https://api.github.com/repos/{split_github_link[3]}/{split_github_link[4]}/releases/latest",
+                        headers=headers).json()
+                else:
+                    continue
+
+                ruleset_status.latest_version = request_data['name']
+                ruleset_status.latest_update = timezone.localtime(parser.parse(request_data['published_at']))
+                ruleset_status.changelog = request_data['body']
+
+                all_assets = request_data['assets']
+
+                for assets in all_assets:
+                    if assets["name"] == ruleset_status.ruleset.github_download_filename:
+                        ruleset_status.file_size = assets['size']
+                        break
+
+                ruleset_status.save()
+                success += 1
+            except KeyError:
+                failed += 1
+        else:
+            skip += 1
+    # After task successfully, update Action log to success and update finish time.
+    action.status = 2
+    action.running_text = f"Task running successfully with {success} success ,{failed} failed, {skip} skipped!"
+    action.time_finish = timezone.now()
+    action.save()

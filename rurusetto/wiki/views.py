@@ -711,7 +711,7 @@ def check_action_log(request, log_id):
     :return: JSON contain running_text, status and duration.
     """
     action = get_object_or_404(Action, id=log_id)
-    if action.status == 1:
+    if action.status == 1 or action.status == 0:
         duration = (timezone.now() - action.time_start).seconds
     elif action.status == 2:
         duration = (action.time_finish - action.time_start).seconds

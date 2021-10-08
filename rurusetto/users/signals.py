@@ -35,7 +35,7 @@ def user_update_information_in_allauth(request, user, **kwargs):
 
         # If extra data from user detail from osu! API is not None (null in JSON) and it's not default image, can delete
         try:
-            if request.user.config.update_profile_every_login and (request.user.profile.image != "default.jpeg") and (
+            if request.user.config.update_profile_every_login and (request.user.profile.image != "default.png") and (
                     data["avatar_url"] is not None):
                 os.remove(f"media/{request.user.profile.image}")
         except FileNotFoundError:

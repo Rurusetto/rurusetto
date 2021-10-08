@@ -69,9 +69,9 @@
                 <h2 class="rulesets-name">{{ detail.0.name }}</h2>
                 {% if detail.1 == None %}
                     {% if detail.0.verified %}
-                        <p class="text-muted"><img src="{% static 'img/default.jpeg' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User <i class="fas fa-check-circle verified-circle icon-menu hvr-icon"></i></p>
+                        <p class="text-muted"><img src="{% static 'img/default.png' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User <i class="fas fa-check-circle verified-circle icon-menu hvr-icon"></i></p>
                     {% else %}
-                        <p class="text-muted"><img src="{% static 'img/default.jpeg' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User </p>
+                        <p class="text-muted"><img src="{% static 'img/default.png' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User </p>
                     {% endif %}
                 {% else %}
                     {% if detail.0.verified %}

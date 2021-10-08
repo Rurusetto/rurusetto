@@ -108,6 +108,17 @@
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
+                    <label class="col-sm-2 col-form-label form-label" for="id_cover_image_light">Cover Image in Light Mode:</label>
+                    <div class="col-sm-10">
+                       <div class="raleway-font form-current"> Current Cover Image in Light Mode : <a href="{{ form.cover_image_light.value.url }}">{{ form.cover_image_light.value }}</a></div>
+                      <input type="file" name="cover_image_light" accept="image/*" id="id_cover_image_light" class="form-control">
+                        <p class="form-error raleway-font">{{ form.cover_image_light.errors }}</p>
+                        <p class="text-muted raleway-font">When user use light theme this picture will show on cover image instead of normal cover image.</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="fieldWrapper">
+                 <div class="mb-3 row">
                     <label class="col-sm-2 col-form-label form-label" for="id_opengraph_image">Opengraph Preview Image:</label>
                     <div class="col-sm-10">
                        <div class="raleway-font form-current"> Current Opengraph Preview Image : <a href="{{ form.opengraph_image.value.url }}">{{ form.opengraph_image.value }}</a></div>

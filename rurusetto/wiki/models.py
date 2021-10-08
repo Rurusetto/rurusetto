@@ -112,6 +112,10 @@ class Ruleset(models.Model):
         if img.height > 1080 or img.width > 1920:
             img.thumbnail((1920, 1080))
             img.save(self.cover_image.path)
+        img_light = Image.open(self.cover_image_light.path)
+        if img_light.height > 1080 or img_light.width > 1920:
+            img_light.thumbnail((1920, 1080))
+            img_light.save(self.cover_image_light.path)
         opengraph = Image.open(self.opengraph_image.path)
         if opengraph.height > 1080 or opengraph.width > 1920:
             opengraph.thumbnail((1920, 1080))

@@ -86,7 +86,7 @@ def listing(request):
     hero_image_light = 'img/listing-cover-light.png'
 
     context = {
-        'rulesets': make_listing_view(Ruleset.objects.all()),
+        'rulesets': make_listing_view(Ruleset.objects.order_by('name')),
         'title': 'listing',
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),

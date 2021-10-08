@@ -151,7 +151,7 @@ def wiki_page(request, slug):
     except User.DoesNotExist:
         can_support = False
     hero_image = ruleset.cover_image.url
-    hero_image_light = ruleset.cover_image.url
+    hero_image_light = ruleset.cover_image_light.url
     if (ruleset.source != "") and (ruleset.github_download_filename != "") and (
             source_link_type(ruleset.source) == "github"):
         # Currently support for GitHub so let's generate link by this method
@@ -309,7 +309,7 @@ def subpage(request, rulesets_slug, subpage_slug):
     subpage = get_object_or_404(Subpage, slug=subpage_slug)
     ruleset = get_object_or_404(Ruleset, slug=rulesets_slug)
     hero_image = ruleset.cover_image.url
-    hero_image_light = ruleset.cover_image.url
+    hero_image_light = ruleset.cover_image_light.url
     context = {
         'content': subpage,
         'ruleset': ruleset,

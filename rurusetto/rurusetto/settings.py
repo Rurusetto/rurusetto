@@ -157,9 +157,6 @@ USE_TZ = True
 if config('STATIC_LOCAL', default=True, cast=bool):
     STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
     STATIC_URL = '/static/'
-
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-    MEDIA_URL = '/media/'
 else:
     AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID', default="your-spaces-access-key")
     AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY', default="your-spaces-secret-access-key")
@@ -175,17 +172,14 @@ else:
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
     if AWS_S3_CUSTOM_DOMAIN != "":
-        STATIC_URL = '{}/{}/'.format(AWS_S3_CUSTOM_DOMAIN, 'static')
+        STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
         STATIC_ROOT = 'static/'
-
-        MEDIA_URL = '{}/{}/'.format(AWS_S3_CUSTOM_DOMAIN, 'media')
-        MEDIA_ROOT = 'media/'
     else:
-        STATIC_URL = '{}/{}/'.format(AWS_S3_ENDPOINT_URL, 'static')
+        STATIC_URL = 'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, AWS_LOCATION)
         STATIC_ROOT = 'static/'
 
-        MEDIA_URL = '{}/{}/'.format(AWS_S3_ENDPOINT_URL, 'media')
-        MEDIA_ROOT = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

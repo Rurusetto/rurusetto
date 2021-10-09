@@ -14,6 +14,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='ruleset',
             name='custom_css',
-            field=models.ImageField(blank=True, default='', upload_to='custom_css', validators=[django.core.validators.FileExtensionValidator(allowed_extensions=['css'])]),
+            field=models.ImageField(blank=True, default='default.css', upload_to='custom_css', validators=[django.core.validators.FileExtensionValidator(allowed_extensions=['css'])]),
         ),
     ]

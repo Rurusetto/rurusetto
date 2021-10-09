@@ -115,6 +115,16 @@
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
+                    <label for="id_cover_light" class="col-sm-2 col-form-label form-label">Profile page cover image in light mode:</label>
+                    <div class="col-sm-10">
+                      <div class="raleway-font form-current">Current Light Mode Cover : <a href="{{ profile_form.cover_light.value.url }}">{{ profile_form.cover_light.value }}</a></div>
+                      <input type="file" name="cover_light" accept="image/*" id="id_cover_light" class="form-control">
+                        <p class="form-error raleway-font">{{ profile_form.cover_light.errors }}</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="fieldWrapper">
+                 <div class="mb-3 row">
                     <label for="id_about_me" class="col-sm-2 col-form-label form-label">About Me:</label>
                     <div class="col-sm-10">
                         <textarea name="about_me" cols="40" rows="10" class="form-control" id="id_about_me" maxlength="120">{{ profile_form.about_me.value }}</textarea>

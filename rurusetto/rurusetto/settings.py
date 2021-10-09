@@ -169,6 +169,7 @@ OSU_OAUTH_CLIENT_ID = config('OSU_OAUTH_CLIENT_ID', default="")
 OSU_OAUTH_CLIENT_SECRET = config('OSU_OAUTH_CLIENT_SECRET', default="")
 OSU_API_V1_KEY = config('OSU_API_V1_KEY', default="")
 GITHUB_TOKEN = config('GITHUB_TOKEN', default="")
+GA_TRACKING_ID = config('GA_TRACKING_ID', default="")
 
 # Markdown Editor Configuration
 

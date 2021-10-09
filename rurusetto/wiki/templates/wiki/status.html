@@ -100,6 +100,13 @@
             <img src="{{ ruleset.0.icon.url }}" alt="{{ ruleset.0.name }}" width="40" height="40" class="rounded-circle hvr-icon"> 
             {% endif %}            
             {{ ruleset.0.name }}
+            {% if ruleset.2.2.playable == "yes" %}
+                <span class="badge rounded-pill bg-success">playable</span>
+            {% elif ruleset.2.2.playable == "no" %}
+                <span class="badge rounded-pill bg-danger">borked</span>
+            {% else %}
+                <span class="badge rounded-pill bg-secondary">unknown</span>
+            {% endif %}
         </h1>
         <div class="col-8">
             <p><i class="fas fa-exclamation-circle"></i> Function is not available due to the rulesets source is from GitHub and <code>Ruleset Filename</code> field is missing or blank. Please fill the <code>Ruleset Filename</code> in the rulesets setting!</p>
@@ -118,12 +125,44 @@
             <img src="{{ ruleset.0.icon.url }}" alt="{{ ruleset.0.name }}" width="40" height="40" class="rounded-circle hvr-icon"> 
             {% endif %}            
             {{ ruleset.0.name }}
+            {% if ruleset.2.2.playable == "yes" %}
+                <span class="badge rounded-pill bg-success">playable</span>
+            {% elif ruleset.2.2.playable == "no" %}
+                <span class="badge rounded-pill bg-danger">borked</span>
+            {% else %}
+                <span class="badge rounded-pill bg-secondary">unknown</span>
+            {% endif %}
         </h1>
         <div class="col-8">
             <p><i class="fas fa-exclamation-circle"></i> This function is not support in rulesets that is from Patreon. You can go to rulesets creator's Patreon at <code>Get from Patreon</code>!</p>
         </div>
         <div class="col-4">
             <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{{ ruleset.2 }}"><i class="fab fa-patreon icon-menu hvr-icon"></i> Get from Patreon</a></p>
+            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'wiki' ruleset.0.slug %}"><i class="fas fa-location-arrow icon-menu hvr-icon"></i> Go to rulesets wiki page</a></p>
+        </div>
+    </div>
+    {% else %}
+    <div class="row rounded border border-1 p-2" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">
+        <h1>
+            {% if user.config.theme == 'light' %}
+            <img src="{{ ruleset.0.light_icon.url }}" alt="{{ ruleset.0.name }}" width="40" height="40" class="rounded-circle hvr-icon">
+            {% else %}
+            <img src="{{ ruleset.0.icon.url }}" alt="{{ ruleset.0.name }}" width="40" height="40" class="rounded-circle hvr-icon">
+            {% endif %}
+            {{ ruleset.0.name }}
+            {% if ruleset.2.2.playable == "yes" %}
+                <span class="badge rounded-pill bg-success">playable</span>
+            {% elif ruleset.2.2.playable == "no" %}
+                <span class="badge rounded-pill bg-danger">borked</span>
+            {% else %}
+                <span class="badge rounded-pill bg-secondary">unknown</span>
+            {% endif %}
+        </h1>
+        <div class="col-8">
+            <p><i class="fas fa-exclamation-circle"></i> Rūrusetto-chan don't know this link's type so you can download the ruleset from its source. </p>
+        </div>
+        <div class="col-4">
+            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{{ ruleset.2 }}"><i class="fas fa-external-link-square-alt icon-menu hvr-icon"></i> Ruleset Source</a></p>
             <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'wiki' ruleset.0.slug %}"><i class="fas fa-location-arrow icon-menu hvr-icon"></i> Go to rulesets wiki page</a></p>
         </div>
     </div>

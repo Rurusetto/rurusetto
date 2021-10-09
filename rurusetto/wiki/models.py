@@ -79,10 +79,14 @@ class Ruleset(models.Model):
         FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
     cover_image = models.ImageField(default='default_wiki_cover.jpeg', upload_to='wiki_cover', validators=[
         FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
+    cover_image_light = models.ImageField(default='default_wiki_cover.jpeg', upload_to='wiki_cover_light', validators=[
+        FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
     opengraph_image = models.ImageField(default='default_wiki_cover.jpeg', upload_to='rulesets_opengraph_image', validators=[
         FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
     recommend_beatmap_cover = models.ImageField(default='default_recommend_beatmap_cover.png', upload_to='recommend_beatmap_cover', validators=[
         FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
+    custom_css = models.FileField(default='default.css', upload_to='custom_css', validators=[
+            FileExtensionValidator(allowed_extensions=['css'])], blank=True)
 
     content = MDTextField()
 
@@ -108,6 +112,10 @@ class Ruleset(models.Model):
         if img.height > 1080 or img.width > 1920:
             img.thumbnail((1920, 1080))
             img.save(self.cover_image.path)
+        img_light = Image.open(self.cover_image_light.path)
+        if img_light.height > 1080 or img_light.width > 1920:
+            img_light.thumbnail((1920, 1080))
+            img_light.save(self.cover_image_light.path)
         opengraph = Image.open(self.opengraph_image.path)
         if opengraph.height > 1080 or opengraph.width > 1920:
             opengraph.thumbnail((1920, 1080))

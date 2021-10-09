@@ -15,8 +15,8 @@ class RulesetForm(forms.ModelForm):
 
     class Meta:
         model = Ruleset
-        fields = ['name', 'description', 'icon', 'light_icon', 'logo', 'cover_image', 'opengraph_image', 'recommend_beatmap_cover',
-                  'content', 'source', 'github_download_filename']
+        fields = ['name', 'description', 'icon', 'light_icon', 'logo', 'cover_image', 'cover_image_light',
+                  'opengraph_image', 'recommend_beatmap_cover', 'custom_css', 'content', 'source', 'github_download_filename']
 
 
 class SubpageForm(forms.ModelForm):

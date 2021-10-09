@@ -58,6 +58,14 @@
           <p>This is a long task that must be always run. It will fetch the data from GitHub API and update the ruleset version from on status page every 3 minutes. Please check on other worker before run this due to the rate limit of GitHub API.</p>
         </div>
     </div>
+    <div class="row">
+        <div class="col-3">
+          <a class="btn btn-rurusetto" href="{% url 'update_ruleset_version_once_action' %}">Update rulesets version once</a>
+        </div>
+        <div class="col-9">
+          <p>This action will be quickly update all rulesets version. This can be run when something happen or don't want to use the long task.</p>
+        </div>
+    </div>
 
     <br>
 
@@ -67,7 +75,7 @@
     <h3>#{{ action.0.id }} {{ action.0.title }}</h3>
 
     {% if action.1 == None %}
-        <p class="text-muted"><img src="{% static 'img/default.jpeg' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User </p>
+        <p class="text-muted"><img src="{% static 'img/default.png' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User </p>
     {% else %}
         <a href="{% url "profile" action.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover profile-link"><p class="text-muted"><img src="{{ action.1.profile.image.url }}" alt="{{ action.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ action.1.username }} </p></a>
     {% endif %}

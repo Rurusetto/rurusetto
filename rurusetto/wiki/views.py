@@ -22,7 +22,7 @@ from django.core.exceptions import PermissionDenied
 from django.contrib.auth.decorators import user_passes_test
 import os
 import threading
-from .action import update_all_beatmap_action, update_ruleset_version_action
+from .action import update_all_beatmap_action, update_ruleset_version_action, update_ruleset_version_once_action
 
 
 def home(request):
@@ -86,7 +86,7 @@ def listing(request):
     hero_image_light = 'img/listing-cover-light.png'
 
     context = {
-        'rulesets': make_listing_view(Ruleset.objects.all()),
+        'rulesets': make_listing_view(Ruleset.objects.order_by('name')),
         'title': 'listing',
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
@@ -151,7 +151,7 @@ def wiki_page(request, slug):
     except User.DoesNotExist:
         can_support = False
     hero_image = ruleset.cover_image.url
-    hero_image_light = ruleset.cover_image.url
+    hero_image_light = ruleset.cover_image_light.url
     if (ruleset.source != "") and (ruleset.github_download_filename != "") and (
             source_link_type(ruleset.source) == "github"):
         # Currently support for GitHub so let's generate link by this method
@@ -284,7 +284,7 @@ def install(request):
     :return: Render the install page and pass the value from context to the template (install.html)
     """
     hero_image = 'img/install-cover-night.png'
-    hero_image_light = 'img/install-cover-light.jpeg'
+    hero_image_light = 'img/install-cover-light.png'
     context = {
         'title': 'install and update rulesets',
         'hero_image': static(hero_image),
@@ -309,7 +309,7 @@ def subpage(request, rulesets_slug, subpage_slug):
     subpage = get_object_or_404(Subpage, slug=subpage_slug)
     ruleset = get_object_or_404(Ruleset, slug=rulesets_slug)
     hero_image = ruleset.cover_image.url
-    hero_image_light = ruleset.cover_image.url
+    hero_image_light = ruleset.cover_image_light.url
     context = {
         'content': subpage,
         'ruleset': ruleset,
@@ -616,7 +616,7 @@ def status(request):
     :return: Render the status page and pass the value from context to the template (status.html)
     """
     hero_image = 'img/status-cover-night.jpg'
-    hero_image_light = 'img/status-cover-light.jpg'
+    hero_image_light = 'img/status-cover-light.png'
     context = {
         'all_ruleset': make_status_view(),
         'title': 'status',
@@ -702,6 +702,30 @@ def update_ruleset_status_action(request):
     return redirect('maintainer')
 
 
+@user_passes_test(lambda u: u.is_superuser or u.is_staff)
+def update_ruleset_status_once_action(request):
+    """
+    View for activate the new runner for running update_ruleset_version_once_action function.
+
+    This view can only activate by superuser and staff. Mainly activate by Maintainer menu.
+
+    :param request: WSGI request from user.
+    :return: Redirect to maintainer menu with message
+    """
+    action = Action()
+    action.title = "Update ruleset version once"
+    action.action_field = "maintainer"
+    action.running_text = "Start working thread..."
+    action.status = 1
+    action.start_user = request.user.id
+    action.save()
+    thread_worker = threading.Thread(target=update_ruleset_version_once_action, args=[action])
+    thread_worker.setDaemon(True)
+    thread_worker.start()
+    messages.success(request, f"Start worker successfully! (Log ID : {action.id})")
+    return redirect('maintainer')
+
+
 def check_action_log(request, log_id):
     """
     API that will update the action progress on the action log list.
@@ -711,7 +735,7 @@ def check_action_log(request, log_id):
     :return: JSON contain running_text, status and duration.
     """
     action = get_object_or_404(Action, id=log_id)
-    if action.status == 1:
+    if action.status == 1 or action.status == 0:
         duration = (timezone.now() - action.time_start).seconds
     elif action.status == 2:
         duration = (action.time_finish - action.time_start).seconds

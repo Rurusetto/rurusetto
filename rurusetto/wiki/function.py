@@ -172,14 +172,18 @@ def make_status_view():
     - GitHub with github_download_filename : [ruleset, 'github_with_direct', [download_link, latest_release]]
     - GitHub without github_download_filename : [ruleset, 'github', latest_release]
     - Patreon : [ruleset, 'patreon', ruleset.source]
+    - Other link (Don't know link type) : [ruleset, 'other', ruleset.source]
 
     :return: The list of data needed to render in status page template.
     """
     show_ruleset = []
-    for ruleset in Ruleset.objects.all():
+    for ruleset in Ruleset.objects.order_by('name'):
         if source_link_type(ruleset.source) == 'patreon':
             # Patreon source is just need to go to Patreon owner page.
             show_ruleset.append([ruleset, 'patreon', ruleset.source])
+        elif source_link_type(ruleset.source) == 'unknown':
+            # Don't know what is source type, just show source instead.
+            show_ruleset.append([ruleset, 'unknown', ruleset.source])
         elif (source_link_type(ruleset.source) == 'github') and (ruleset.github_download_filename != ""):
             # When GitHub filename is not blank, we can render the direct download link.
             if ruleset.source[-1] != "/":

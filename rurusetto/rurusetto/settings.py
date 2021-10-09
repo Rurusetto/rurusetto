@@ -165,7 +165,7 @@ else:
     AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY', default="your-spaces-secret-access-key")
     AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME', default="your-storage-bucket-name")
     AWS_S3_ENDPOINT_URL = config('AWS_S3_ENDPOINT_URL', default="your-endpoint-url")
-    AWS_S3_CUSTOM_DOMAIN = config('AWS_S3_CUSTOM_DOMAIN', default="your_custom_domain_url")
+    AWS_S3_CUSTOM_DOMAIN = config('AWS_S3_CUSTOM_DOMAIN', default="")
     AWS_S3_OBJECT_PARAMETERS = {
         'CacheControl': 'max-age=86400',
     }
@@ -174,7 +174,7 @@ else:
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
-    if AWS_S3_CUSTOM_DOMAIN == "":
+    if AWS_S3_CUSTOM_DOMAIN != "":
         STATIC_URL = '{}/{}/'.format(AWS_S3_CUSTOM_DOMAIN, 'static')
         STATIC_ROOT = 'static/'
 

@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.osu',
     'rest_framework',
+    'storages'
 ]
 
 SITE_ID = 1
@@ -95,12 +96,24 @@ WSGI_APPLICATION = 'rurusetto.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if config('DATABASE_DEVELOPMENT', default=True, cast=bool):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': f"django.db.backends.{config('DATABASE_TYPE', default='postgresql')}",
+            'NAME': config('DATABASE_NAME', default='peppy-and-his-wangfiles'),
+            'USER': config('DATABASE_USER', default='peppy'),
+            'PASSWORD': config('DATABASE_PASSWORD', default='wang'),
+            'HOST': config('DATABASE_HOST', default='localhost'),
+            'PORT': config('DATABASE_PORT', default=''),
+        }
+    }
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
@@ -141,13 +154,24 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-STATIC_URL = '/static/'
+if config('STATIC_LOCAL', default=True, cast=bool):
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+    STATIC_URL = '/static/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    MEDIA_URL = '/media/'
+else:
+    AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID', default="your-spaces-access-key")
+    AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY', default="your-spaces-secret-access-key")
+    AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME', default="your-storage-bucket-name")
+    AWS_S3_ENDPOINT_URL = config('AWS_S3_ENDPOINT_URL', default="your-endpoint-url")
+    AWS_S3_OBJECT_PARAMETERS = {
+        'CacheControl': 'max-age=86400',
+    }
+    AWS_LOCATION = config('AWS_LOCATION', default="your-spaces-files-folder")
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+    STATIC_URL = 'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, AWS_LOCATION)
+    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -162,6 +186,10 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 # More enum configuration on website
 
 MAX_PROFILE_PICTURE_SIZE = 5242880
+
+# Django crispy forms settings
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # API key and API configuration
 

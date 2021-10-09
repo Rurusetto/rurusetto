@@ -616,7 +616,7 @@ def status(request):
     :return: Render the status page and pass the value from context to the template (status.html)
     """
     hero_image = 'img/status-cover-night.jpg'
-    hero_image_light = 'img/status-cover-light.jpg'
+    hero_image_light = 'img/status-cover-light.png'
     context = {
         'all_ruleset': make_status_view(),
         'title': 'status',

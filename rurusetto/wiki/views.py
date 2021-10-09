@@ -284,7 +284,7 @@ def install(request):
     :return: Render the install page and pass the value from context to the template (install.html)
     """
     hero_image = 'img/install-cover-night.png'
-    hero_image_light = 'img/install-cover-light.jpeg'
+    hero_image_light = 'img/install-cover-light.png'
     context = {
         'title': 'install and update rulesets',
         'hero_image': static(hero_image),

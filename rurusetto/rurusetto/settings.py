@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 from django.core.management.utils import get_random_secret_key
 from decouple import config, Csv
+import custom_storages
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

@@ -86,7 +86,8 @@ def listing(request):
     hero_image_light = 'img/listing-cover-light.png'
 
     context = {
-        'rulesets': make_listing_view(Ruleset.objects.order_by('name')),
+        'hidden_rulesets': make_listing_view(Ruleset.objects.filter(hidden=True, owner=str(request.user.id)).order_by('name')),
+        'rulesets': make_listing_view(Ruleset.objects.filter(hidden=False).order_by('name')),
         'title': 'listing',
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
@@ -146,7 +147,9 @@ def wiki_page(request, slug):
     can_support = False
     try:
         ruleset_owner_profile = Profile.objects.get(user=User.objects.get(id=int(ruleset.owner)))
-        if ruleset_owner_profile.support_message != '':
+        if ruleset_owner_profile.support_message == '' and ruleset_owner_profile.support_patreon == '' and ruleset_owner_profile.support_kofi == '' and ruleset_owner_profile.support_github_sponsors == '':
+            can_support = False
+        else:
             can_support = True
     except User.DoesNotExist:
         can_support = False
@@ -165,7 +168,8 @@ def wiki_page(request, slug):
         download_link = "/#"
     context = {
         'content': ruleset,
-        'subpage': Subpage.objects.filter(ruleset_id=ruleset.id),
+        'hidden_subpage': Subpage.objects.filter(ruleset_id=ruleset.id, hidden=True, creator=str(request.user.id)),
+        'subpage': Subpage.objects.filter(ruleset_id=ruleset.id, hidden=False),
         'source_type': source_link_type(ruleset.source),
         'user_detail': make_wiki_view(ruleset),
         'can_support': can_support,
@@ -226,6 +230,7 @@ def edit_ruleset_wiki(request, slug):
         'ruleset': ruleset,
         'name': Ruleset.objects.get(slug=slug).name,
         'source_type': source_link_type(ruleset.source),
+        'owner_edit': ruleset.owner == str(request.user.id),
         'title': f'edit {ruleset.name}',
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
@@ -356,6 +361,7 @@ def edit_subpage(request, rulesets_slug, subpage_slug):
         form = SubpageForm(instance=subpage)
     context = {
         'form': form,
+        'subpage_creator': request.user.id == int(subpage.creator),
         'ruleset_name': Ruleset.objects.get(slug=rulesets_slug).name,
         'subpage_name': Subpage.objects.get(slug=subpage_slug).title,
         'title': f'edit {ruleset.name}',

@@ -180,6 +180,22 @@
                   </div>
             </div>
             {% endif %}
+            {% if owner_edit %}
+            <h1>Ruleset owner settings</h1>
+            <h2>Publication</h2>
+            <div class="fieldWrapper">
+                 <div class="mb-3 row">
+                    <label class="col-sm-2 col-form-label form-label" for="id_hidden">Hidden:</label>
+                    <div class="col-sm-10">
+                        <div class="form-check form-switch">
+                            {{ form.hidden }}
+                        </div>
+                        <p class="form-error raleway-font">{{ form.hidden.errors }}</p>
+                        <p class="text-muted raleway-font">If this is checked, your ruleset will not be show in the rulesets listing on other user.</p>
+                    </div>
+                  </div>
+            </div>
+            {% endif %}
             <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right raleway-font">Edit</button>
         </form>
     </div>

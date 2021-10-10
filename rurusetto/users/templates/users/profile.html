@@ -17,7 +17,7 @@
             <span class="badge rounded-pill" style='background-color:{{ tag.pills_color }}; color:{{ tag.font_color }};' data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ tag.description }}">{{ tag.name }}</span>
           {% endfor %}
       </p>
-      <p data-aos="fade-up" data-aos-duration="800">{{ profile_object.about_me }}</p>
+      <p data-aos="fade-up" data-aos-duration="800" style="word-wrap: break-word; max-width: 22ch;">{{ profile_object.about_me }}</p>
     </div>
   </div>
 </div>

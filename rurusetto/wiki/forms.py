@@ -24,10 +24,11 @@ class SubpageForm(forms.ModelForm):
     """Form on create and edit the Subpage object."""
     title = forms.CharField(required=True)
     content = MDTextFormField()
+    hidden = forms.BooleanField(required=False, widget=forms.CheckboxInput(attrs={'class': "form-check-input"}))
 
     class Meta:
         model = Subpage
-        fields = ['title', 'content']
+        fields = ['title', 'content', 'hidden']
 
 
 class RecommendBeatmapForm(forms.ModelForm):

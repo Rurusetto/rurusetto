@@ -4,7 +4,7 @@
 
 [![Continuous Integration](https://github.com/Rurusetto/rurusetto/actions/workflows/django.yml/badge.svg)](https://github.com/Rurusetto/rurusetto/actions/workflows/django.yml)
 [![CodeFactor](https://www.codefactor.io/repository/github/rurusetto/rurusetto/badge)](https://www.codefactor.io/repository/github/rurusetto/rurusetto)
-[![Website](https://img.shields.io/website?down_color=red&down_message=offline&up_color=dark%20green&up_message=online&url=https%3A%2F%2Fbeta.rulesets.info%2F)](https://beta.rulesets.info)
+[![Website](https://img.shields.io/website?down_color=red&down_message=offline&up_color=dark%20green&up_message=online&url=https%3A%2F%2Frulesets.info%2F)](https://rulesets.info)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](code_of_conduct.md)
 [![Discord Shield](https://discordapp.com/api/guilds/700619421466624050/widget.png?style=shield)](https://discord.gg/CQPNADu)
 
@@ -16,15 +16,9 @@ The new era of Rūrusetto is beginning!
 
 The new website is targeted to revamp all the UI of the old website and make Rūrusetto a dynamic website with a lot more of new functions that cannot be added to the old website's source code.
 
-You can test on the new website [here](https://beta.rulesets.info) and you can check up on the changelog in the website or on the GitHub release.
-
 ## Old website source code
 
 The old source code of the website is in [the other branch](https://github.com/Rurusetto/rurusetto/tree/main)
-
-The main website will still use the old source code until I am sure that the new code can be used without errors.
-
-I have already written an explanation for the new website [here](https://github.com/Rurusetto/rurusetto/tree/main#a-big-update-of-r%C5%ABrusetto).
 
 ## Developing Rūrusetto
 

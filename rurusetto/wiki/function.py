@@ -77,7 +77,7 @@ def fetch_created_ruleset(creator_id):
     :return: A list of ruleset with the User object of that ruleset.
     """
     created_ruleset = []
-    for ruleset in Ruleset.objects.filter(owner=str(creator_id)):
+    for ruleset in Ruleset.objects.filter(owner=str(creator_id), hidden=False):
         try:
             ruleset_owner = User.objects.get(id=ruleset.owner)
             created_ruleset.append([ruleset, ruleset_owner])

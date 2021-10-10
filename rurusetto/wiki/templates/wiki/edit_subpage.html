@@ -45,6 +45,7 @@
             <h1>Subpage Content</h1>
             {{ form.media }}
             {{ form.content }}
+            {% if subpage_creator %}
             <h1>Publication</h1>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
@@ -58,6 +59,7 @@
                     </div>
                   </div>
             </div>
+            {% endif %}
             <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right raleway-font">Submit</button>
         </form>
     </div>

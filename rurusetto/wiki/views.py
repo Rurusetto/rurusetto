@@ -37,7 +37,7 @@ def home(request):
     latest_add_rulesets = []
     for i in range(3):
         try:
-            latest_add_rulesets.append(Ruleset.objects.all().order_by('-created_at')[i])
+            latest_add_rulesets.append(Ruleset.objects.filter(hidden=False).order_by('-created_at')[i])
         except:
             continue
 

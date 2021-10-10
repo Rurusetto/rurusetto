@@ -171,8 +171,10 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
+                        {% if user_detail.1.profile.support_message != "" %}
                         <h3>Message from {{ user_detail.1.username }}</h3>
                           <p>{{ user_detail.1.profile.support_message }}</p>
+                        {% endif %}
                           {% if user_detail.1.profile.support_patreon != "" %}
                           <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" target="_blank" href="{{ user_detail.1.profile.support_patreon }}"><i class="fab fa-patreon icon-menu hvr-icon"></i> Patreon</a></p>
                           {% endif %}

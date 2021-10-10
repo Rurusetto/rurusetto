@@ -86,7 +86,8 @@ def listing(request):
     hero_image_light = 'img/listing-cover-light.png'
 
     context = {
-        'rulesets': make_listing_view(Ruleset.objects.order_by('name')),
+        'hidden_rulesets': make_listing_view(Ruleset.objects.filter(hidden=True, owner=str(request.user.id)).order_by('name')),
+        'rulesets': make_listing_view(Ruleset.objects.filter(hidden=False).order_by('name')),
         'title': 'listing',
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
@@ -226,6 +227,7 @@ def edit_ruleset_wiki(request, slug):
         'ruleset': ruleset,
         'name': Ruleset.objects.get(slug=slug).name,
         'source_type': source_link_type(ruleset.source),
+        'owner_edit': ruleset.owner == str(request.user.id),
         'title': f'edit {ruleset.name}',
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),

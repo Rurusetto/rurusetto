@@ -166,7 +166,8 @@ def wiki_page(request, slug):
         download_link = "/#"
     context = {
         'content': ruleset,
-        'subpage': Subpage.objects.filter(ruleset_id=ruleset.id),
+        'hidden_subpage': Subpage.objects.filter(ruleset_id=ruleset.id, hidden=True, creator=str(request.user.id)),
+        'subpage': Subpage.objects.filter(ruleset_id=ruleset.id, hidden=False),
         'source_type': source_link_type(ruleset.source),
         'user_detail': make_wiki_view(ruleset),
         'can_support': can_support,

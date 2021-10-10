@@ -1,5 +1,7 @@
 {% load static %}
 {% load crispy_forms_tags %}
+{% load socialaccount %}
+{% get_providers as socialaccount_providers %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,13 +47,19 @@
            <p></p>
           <h1>Sign Up</h1>
           <p></p>
+            {% for provider in socialaccount_providers %}
+            <p>
+              <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}} text-decoration-none text-center spacing-hover-short hvr-icon-bounce"
+                 href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}"><img src="{% static 'logo/osu-logo-pink.png' %}" alt="osu! logo" width="20px" height="20px" class="icon-menu hvr-icon"> Sign up with {{provider.name}}</a>
+            </p>
+            {% endfor %}
             <form method="post">
                 {% csrf_token %}
                 {{ form|crispy }}
                 <p></p>
                 <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right">Submit</button>
             </form>
-          <div style="line-height: 5">
+          <div>
             <p>Already have an account? <a href="{% url 'account_login' %}" class="text-decoration-none spacing-hover">Login instead</a></p>
           </div>
         </div>

@@ -7,7 +7,7 @@ Pygments~=2.10.0
 django-mdeditor~=0.1.18
 requests~=2.26.0
 djangorestframework~=3.12.4
-git+https://github.com/Rurusetto/rurusetto-django-allauth.git
+rurusetto-allauth~=0.45.0
 django-colorfield~=0.4.4
 django-admin-interface~=0.17.2
 python-decouple~=3.5

@@ -9,7 +9,7 @@ requests~=2.26.0
 djangorestframework~=3.12.4
 git+https://github.com/Rurusetto/rurusetto-django-allauth.git
 django-colorfield~=0.4.4
-django-admin-interface~=0.17.2
+django-admin-interface~=0.17.3
 python-decouple~=3.5
 python-dateutil~=2.8.2
 boto3~=1.18.59

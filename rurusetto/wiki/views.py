@@ -347,6 +347,7 @@ def edit_subpage(request, rulesets_slug, subpage_slug):
     hero_image = 'img/edit-subpage-cover-night.png'
     hero_image_light = 'img/edit-subpage-cover-light.jpg'
     ruleset = Ruleset.objects.get(slug=rulesets_slug)
+    # TODO: Fix that if subpage name is the same
     subpage = Subpage.objects.get(slug=subpage_slug)
     if request.method == 'POST':
         form = SubpageForm(request.POST, request.FILES, instance=subpage)
@@ -371,6 +372,33 @@ def edit_subpage(request, rulesets_slug, subpage_slug):
         'opengraph_url': resolve_url('edit_subpage', rulesets_slug=ruleset.slug, subpage_slug=subpage.slug),
     }
     return render(request, 'wiki/edit_subpage.html', context)
+
+
+@login_required
+def delete_subpage(request, rulesets_slug, subpage_slug):
+    """
+    View for delete subpage. Mainly this link will be direct from subpage setting menu.
+
+    This link must check on user who request to delete too. If user who request is not subpage creator or owner,
+    it will be redirect to subpage with messages.
+
+    :param request: WSGI request from user.
+    :param rulesets_slug: Ruleset slug (slug in Ruleset model)
+    :type rulesets_slug: str
+    :param subpage_slug: Subpage slug (slug in Subpage model)
+    :type subpage_slug: str
+    :return: Redirect to rulesets main wiki page or if user who request is not subpage owner, redirect to that subpage
+    with wiki.
+    """
+    ruleset = Ruleset.objects.get(slug=rulesets_slug)
+    subpage = Subpage.objects.get(slug=subpage_slug)
+    if subpage.creator == str(request.user.id):
+        subpage.delete()
+        messages.success(request, "Delete subpage successfully")
+        return redirect('wiki_page', slug=rulesets_slug)
+    else:
+        messages.error(request, "You don't have permission to do this!")
+        return redirect('wiki_page', slug=rulesets_slug)
 
 
 @login_required

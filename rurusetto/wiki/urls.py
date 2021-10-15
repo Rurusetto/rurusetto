@@ -12,6 +12,7 @@ urlpatterns = [
     path('rulesets/<slug:slug>/new/subpage', views.add_subpage, name='add_subpage'),
     path('rulesets/<slug:rulesets_slug>/<slug:subpage_slug>', views.subpage, name='subpage'),
     path('rulesets/<slug:rulesets_slug>/<slug:subpage_slug>/edit', views.edit_subpage, name='edit_subpage'),
+    path('rulesets/<slug:rulesets_slug>/<slug:subpage_slug>/delete', views.delete_subpage, name='delete_subpage'),
     path('rulesets/<slug:slug>/new/beatmaps', views.add_recommend_beatmap, name='add_recommend_beatmap'),
     path('rulesets/<slug:rulesets_slug>/manage/beatmaps', views.recommend_beatmap_approval, name='recommend_beatmap_approval'),
     path('rulesets/<slug:rulesets_slug>/manage/beatmaps/approve/<int:beatmap_id>', views.approve_recommend_beatmap, name='approve_recommend_beatmap'),

@@ -362,8 +362,11 @@ def edit_subpage(request, rulesets_slug, subpage_slug):
     context = {
         'form': form,
         'subpage_creator': request.user.id == int(subpage.creator),
-        'ruleset_name': Ruleset.objects.get(slug=rulesets_slug).name,
-        'subpage_name': Subpage.objects.get(slug=subpage_slug).title,
+        'ruleset_owner': request.user.id == int(ruleset.owner),
+        'ruleset_name': ruleset.name,
+        'subpage_name': subpage.title,
+        'ruleset_slug': rulesets_slug,
+        'subpage_slug': subpage_slug,
         'title': f'edit {ruleset.name}',
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
@@ -371,6 +374,32 @@ def edit_subpage(request, rulesets_slug, subpage_slug):
         'opengraph_url': resolve_url('edit_subpage', rulesets_slug=ruleset.slug, subpage_slug=subpage.slug),
     }
     return render(request, 'wiki/edit_subpage.html', context)
+
+
+@login_required
+def delete_subpage(request, rulesets_slug, subpage_slug):
+    """
+    View for delete subpage. Mainly this link will be direct from subpage setting menu.
+
+    This link must check on user who request to delete too. If user who request is not subpage creator or owner,
+    it will be redirect to subpage with messages.
+
+    :param request: WSGI request from user.
+    :param rulesets_slug: Ruleset slug (slug in Ruleset model)
+    :type rulesets_slug: str
+    :param subpage_slug: Subpage slug (slug in Subpage model)
+    :type subpage_slug: str
+    :return: Redirect to rulesets main wiki page or if user who request is not subpage owner, redirect to that subpage
+    with wiki.
+    """
+    ruleset = Ruleset.objects.get(slug=rulesets_slug)
+    subpage = Subpage.objects.get(slug=subpage_slug)
+    if subpage.creator == str(request.user.id) or ruleset.owner == str(request.user.id):
+        subpage.delete()
+        messages.success(request, "Delete subpage successfully!")
+    else:
+        messages.error(request, "You don't have permission to do this!")
+    return redirect('wiki', slug=rulesets_slug)
 
 
 @login_required

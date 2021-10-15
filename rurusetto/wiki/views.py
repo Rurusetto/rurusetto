@@ -771,9 +771,9 @@ def check_action_log(request, log_id):
     """
     action = get_object_or_404(Action, id=log_id)
     if action.status == 1 or action.status == 0:
-        duration = (timezone.now() - action.time_start).seconds
+        duration = (timezone.now() - action.time_start).total_seconds()
     elif action.status == 2:
-        duration = (action.time_finish - action.time_start).seconds
+        duration = (action.time_finish - action.time_start).total_seconds()
     else:
         duration = "Unknown"
 

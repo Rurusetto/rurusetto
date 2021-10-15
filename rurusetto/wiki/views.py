@@ -347,7 +347,6 @@ def edit_subpage(request, rulesets_slug, subpage_slug):
     hero_image = 'img/edit-subpage-cover-night.png'
     hero_image_light = 'img/edit-subpage-cover-light.jpg'
     ruleset = Ruleset.objects.get(slug=rulesets_slug)
-    # TODO: Fix that if subpage name is the same
     subpage = Subpage.objects.get(slug=subpage_slug)
     if request.method == 'POST':
         form = SubpageForm(request.POST, request.FILES, instance=subpage)

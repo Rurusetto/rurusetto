@@ -18,7 +18,9 @@ jobs:
           cd rurusetto/rurusetto
           git pull
           source myprojectenv/bin/activate
+          cd ..
           pip install -r requirements.txt
+          cd rurusetto
           python manage.py migrate
           python manage.py collectstatic --noinput --clear
           echo ${{ secrets.PASSWORD }} | sudo -S -k systemctl restart gunicorn.socket gunicorn.service

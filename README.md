@@ -3,6 +3,7 @@
 # Rūrusetto (ルールセット)
 
 [![Continuous Integration](https://github.com/Rurusetto/rurusetto/actions/workflows/django.yml/badge.svg)](https://github.com/Rurusetto/rurusetto/actions/workflows/django.yml)
+[![Deploy Changes to Server](https://github.com/Rurusetto/rurusetto/actions/workflows/deploy.yml/badge.svg)](https://github.com/Rurusetto/rurusetto/actions/workflows/deploy.yml)
 [![CodeFactor](https://www.codefactor.io/repository/github/rurusetto/rurusetto/badge)](https://www.codefactor.io/repository/github/rurusetto/rurusetto)
 [![Website](https://img.shields.io/website?down_color=red&down_message=offline&up_color=dark%20green&up_message=online&url=https%3A%2F%2Frulesets.info%2F)](https://rulesets.info)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](code_of_conduct.md)

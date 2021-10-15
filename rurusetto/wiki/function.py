@@ -177,7 +177,7 @@ def make_status_view():
     :return: The list of data needed to render in status page template.
     """
     show_ruleset = []
-    for ruleset in Ruleset.objects.order_by('name'):
+    for ruleset in Ruleset.objects.filter(hidden=False).order_by('name'):
         if source_link_type(ruleset.source) == 'patreon':
             # Patreon source is just need to go to Patreon owner page.
             show_ruleset.append([ruleset, 'patreon', ruleset.source])

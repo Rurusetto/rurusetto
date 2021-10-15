@@ -190,7 +190,7 @@ def update_ruleset_version_action(action):
         action.status = 0
         action.running_text = f"Wait for countdown (Round {progress_round}/1440)"
         action.save()
-        time.sleep(180)
+        time.sleep(1800)
     # After task successfully, update Action log to success and update finish time.
     action.status = 2
     action.running_text = f"Task running successfully with {success} success ,{failed} failed, {skip} skipped with {update_count} updated and {progress_round} round"

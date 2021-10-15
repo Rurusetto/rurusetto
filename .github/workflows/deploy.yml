@@ -1,7 +1,7 @@
 name: Deploy Changes to Server
 on: 
   push:
-    branches: [ main ]
+    branches: [ new-website ]
 
 jobs:
   build:

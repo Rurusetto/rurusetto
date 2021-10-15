@@ -362,7 +362,7 @@ def edit_subpage(request, rulesets_slug, subpage_slug):
     context = {
         'form': form,
         'subpage_creator': request.user.id == int(subpage.creator),
-        'ruleset_owner' request.user.id == int(ruleset.owner),
+        'ruleset_owner': request.user.id == int(ruleset.owner),
         'ruleset_name': ruleset.name,
         'subpage_name': subpage.title,
         'ruleset_slug': rulesets_slug,

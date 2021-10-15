@@ -45,7 +45,7 @@
             <h1>Subpage Content</h1>
             {{ form.media }}
             {{ form.content }}
-            {% if subpage_creator or ruleset_creator %}
+            {% if subpage_creator or ruleset_owner %}
             <h1>Publication</h1>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
@@ -63,7 +63,7 @@
             <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right raleway-font">Submit</button>
         </form>
     </div>
-    {% if subpage_creator or ruleset_creator %}
+    {% if subpage_creator or ruleset_owner %}
     <p></p>
     <h1 class="text-danger">Delete Subpage</h1>
     <p class="text-danger">Click the button below to delete this subpage. Note that this action cannot be undo!</p>

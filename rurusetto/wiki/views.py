@@ -363,8 +363,10 @@ def edit_subpage(request, rulesets_slug, subpage_slug):
     context = {
         'form': form,
         'subpage_creator': request.user.id == int(subpage.creator),
-        'ruleset_name': Ruleset.objects.get(slug=rulesets_slug).name,
-        'subpage_name': Subpage.objects.get(slug=subpage_slug).title,
+        'ruleset_name': ruleset.name,
+        'subpage_name': subpage.title,
+        'ruleset_slug': rulesets_slug,
+        'subpage_slug': subpage_slug,
         'title': f'edit {ruleset.name}',
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
@@ -394,11 +396,10 @@ def delete_subpage(request, rulesets_slug, subpage_slug):
     subpage = Subpage.objects.get(slug=subpage_slug)
     if subpage.creator == str(request.user.id):
         subpage.delete()
-        messages.success(request, "Delete subpage successfully")
-        return redirect('wiki_page', slug=rulesets_slug)
+        messages.success(request, "Delete subpage successfully!")
     else:
         messages.error(request, "You don't have permission to do this!")
-        return redirect('wiki_page', slug=rulesets_slug)
+    return redirect('wiki', slug=rulesets_slug)
 
 
 @login_required

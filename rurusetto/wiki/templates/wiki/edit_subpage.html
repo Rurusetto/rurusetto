@@ -63,6 +63,12 @@
             <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right raleway-font">Submit</button>
         </form>
     </div>
+    {% if subpage_creator %}
+    <p></p>
+    <h1 class="text-danger">Delete Subpage</h1>
+    <p class="text-danger">Click the button below to delete this subpage. Note that this action cannot be undo!</p>
+    <p><a class="btn btn-danger hvr-sweep-to-right-danger raleway-font" href="{% url "delete_subpage" ruleset_slug subpage_slug %}">Delete This Subpage</a></p>
+    {% endif %}
 </div>
 
     <p></p>

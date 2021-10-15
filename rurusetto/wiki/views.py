@@ -363,6 +363,7 @@ def edit_subpage(request, rulesets_slug, subpage_slug):
     context = {
         'form': form,
         'subpage_creator': request.user.id == int(subpage.creator),
+        'ruleset_owner' request.user.id == int(ruleset.owner),
         'ruleset_name': ruleset.name,
         'subpage_name': subpage.title,
         'ruleset_slug': rulesets_slug,
@@ -394,7 +395,7 @@ def delete_subpage(request, rulesets_slug, subpage_slug):
     """
     ruleset = Ruleset.objects.get(slug=rulesets_slug)
     subpage = Subpage.objects.get(slug=subpage_slug)
-    if subpage.creator == str(request.user.id):
+    if subpage.creator == str(request.user.id) or ruleset.owner == str(request.user.id):
         subpage.delete()
         messages.success(request, "Delete subpage successfully!")
     else:

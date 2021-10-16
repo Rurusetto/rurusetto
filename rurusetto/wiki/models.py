@@ -217,7 +217,7 @@ class RecommendBeatmap(models.Model):
     beatmap_list = models.ImageField(default='default_beatmap_thumbnail.jpeg', upload_to='beatmap_list', validators=[
         FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
 
-    comment = models.CharField(default=None, max_length=150)
+    comment = models.TextField(default=None, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     owner_approved = models.BooleanField(default=False)

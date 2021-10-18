@@ -123,7 +123,7 @@ We use [code of conduct](code_of_conduct.md) from `Contributor Covenant`.
 
 ## License
 
-Icon and new color scheme is designed by @IKeepItNoodles
+Icon and new color scheme is designed by [@IKeepItNoodles](https://github.com/IKeepItNoodles)
 
 The code in this repository is licensed under the MIT license. Please see [the license file](LICENSE) for more information. 
 

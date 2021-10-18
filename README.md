@@ -123,6 +123,8 @@ We use [code of conduct](code_of_conduct.md) from `Contributor Covenant`.
 
 ## License
 
+Icon and new color scheme is designed by @IKeepItNoodles
+
 The code in this repository is licensed under the MIT license. Please see [the license file](LICENSE) for more information. 
 
 **TL;DR** you can do whatever you want as long as you include the original copyright and license notice in any copy of the software/source.

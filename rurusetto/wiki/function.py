@@ -169,10 +169,10 @@ def make_status_view():
 
     Return the list for each source type of the ruleset.
 
-    - GitHub with github_download_filename : [ruleset, 'github_with_direct', [download_link, latest_release]]
-    - GitHub without github_download_filename : [ruleset, 'github', latest_release]
-    - Patreon : [ruleset, 'patreon', ruleset.source]
-    - Other link (Don't know link type) : [ruleset, 'other', ruleset.source]
+    - GitHub with github_download_filename : [ruleset, 'github_with_direct', [download_link, latest_release, RulesetStatus]]
+    - GitHub without github_download_filename : [ruleset, 'github', [latest_release, RulesetStatus]]
+    - Patreon : [ruleset, 'patreon', [ruleset.source, RulesetStatus]]
+    - Other link (Don't know link type) : [ruleset, 'unknown', [ruleset.source, RulesetStatus]]
 
     :return: The list of data needed to render in status page template.
     """
@@ -180,10 +180,10 @@ def make_status_view():
     for ruleset in Ruleset.objects.filter(hidden=False).order_by('name'):
         if source_link_type(ruleset.source) == 'patreon':
             # Patreon source is just need to go to Patreon owner page.
-            show_ruleset.append([ruleset, 'patreon', ruleset.source])
+            show_ruleset.append([ruleset, 'patreon', [ruleset.source, RulesetStatus.objects.get(ruleset=ruleset)]])
         elif source_link_type(ruleset.source) == 'unknown':
             # Don't know what is source type, just show source instead.
-            show_ruleset.append([ruleset, 'unknown', ruleset.source])
+            show_ruleset.append([ruleset, 'unknown', [ruleset.source, RulesetStatus.objects.get(ruleset=ruleset)]])
         elif (source_link_type(ruleset.source) == 'github') and (ruleset.github_download_filename != ""):
             # When GitHub filename is not blank, we can render the direct download link.
             if ruleset.source[-1] != "/":
@@ -199,7 +199,7 @@ def make_status_view():
                 latest_release = f"{ruleset.source}/releases"
             else:
                 latest_release = f"{ruleset.source}releases"
-            show_ruleset.append([ruleset, 'github', latest_release])
+            show_ruleset.append([ruleset, 'github', [latest_release, RulesetStatus.objects.get(ruleset=ruleset)]])
         else:
             continue
     return show_ruleset

@@ -170,7 +170,7 @@ def make_status_view():
     Return the list for each source type of the ruleset.
 
     - GitHub with github_download_filename : [ruleset, 'github_with_direct', [download_link, latest_release, RulesetStatus]]
-    - GitHub without github_download_filename : [ruleset, 'github', latest_release]
+    - GitHub without github_download_filename : [ruleset, 'github', [latest_release, RulesetStatus]]
     - Patreon : [ruleset, 'patreon', [ruleset.source, RulesetStatus]]
     - Other link (Don't know link type) : [ruleset, 'unknown', [ruleset.source, RulesetStatus]]
 
@@ -199,7 +199,7 @@ def make_status_view():
                 latest_release = f"{ruleset.source}/releases"
             else:
                 latest_release = f"{ruleset.source}releases"
-            show_ruleset.append([ruleset, 'github', latest_release])
+            show_ruleset.append([ruleset, 'github', [latest_release, RulesetStatus.objects.get(ruleset=ruleset)]])
         else:
             continue
     return show_ruleset

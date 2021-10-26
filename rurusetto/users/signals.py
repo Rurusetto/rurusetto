@@ -33,21 +33,6 @@ def user_update_information_in_allauth(request, user, **kwargs):
     if (SocialAccount.objects.filter(user=request.user).exists() and not request.user.profile.oauth_first_migrate) or request.user.config.update_profile_every_login:
         data = SocialAccount.objects.get(user=request.user).extra_data
 
-        # If extra data from user detail from osu! API is not None (null in JSON) and it's not default image, can delete
-        try:
-            if request.user.config.update_profile_every_login and (request.user.profile.image != "default.png") and (
-                    data["avatar_url"] is not None):
-                os.remove(f"media/{request.user.profile.image}")
-        except FileNotFoundError:
-            pass
-
-        try:
-            if request.user.config.update_profile_every_login and (
-                    request.user.profile.cover != "default_cover.png") and (data["cover_url"] is not None):
-                os.remove(f"media/{request.user.profile.cover}")
-        except FileNotFoundError:
-            pass
-
         if data["avatar_url"] is not None:
             avatar_pic = requests.get(data["avatar_url"])
             avatar_temp = NamedTemporaryFile(delete=True)

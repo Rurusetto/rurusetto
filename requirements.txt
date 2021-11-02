@@ -1,4 +1,4 @@
-Django~=3.2.8
+Django~=3.2.9
 pillow~=8.4.0
 django-crispy-forms~=1.13.0
 Markdown~=3.3.4

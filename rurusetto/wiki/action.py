@@ -232,7 +232,6 @@ def update_ruleset_version_once_action(action):
                         request_data = requests.get(
                             f"https://api.github.com/repos/{split_github_link[3]}/{split_github_link[4]}/releases",
                             headers=headers).json()[0]
-                        print(request_data)
                     else:
                         request_data = requests.get(
                             f"https://api.github.com/repos/{split_github_link[3]}/{split_github_link[4]}/releases/latest",

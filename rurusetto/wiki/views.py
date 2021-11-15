@@ -6,10 +6,10 @@ from django.utils import timezone
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, JsonResponse
 from .serializers import RulesetSerializer
-from .models import Changelog, Ruleset, Subpage, RecommendBeatmap, Action
+from .models import Changelog, Ruleset, Subpage, RecommendBeatmap, Action, RulesetStatus
 from users.models import Profile
 from django.contrib.auth.models import User
-from .forms import RulesetForm, SubpageForm, RecommendBeatmapForm
+from .forms import RulesetForm, SubpageForm, RecommendBeatmapForm, RulesetStatusForm
 from .function import make_listing_view, make_wiki_view, source_link_type, get_user_by_id, make_recommend_beatmap_view, \
     make_beatmap_aapproval_view, make_status_view
 from unidecode import unidecode
@@ -203,9 +203,11 @@ def edit_ruleset_wiki(request, slug):
     hero_image = 'img/edit-wiki-cover-night.jpeg'
     hero_image_light = 'img/edit-wiki-cover-light.png'
     ruleset = Ruleset.objects.get(slug=slug)
+    ruleset_status = RulesetStatus.objects.get(ruleset=ruleset)
     if request.method == 'POST':
         form = RulesetForm(request.POST, request.FILES, instance=ruleset)
-        if form.is_valid():
+        status_form = RulesetStatusForm(request.POST, instance=ruleset_status)
+        if form.is_valid() and status_form.is_valid():
             if source_link_type(form.instance.source) == "github":
                 # Check that the download link when render is valid
                 if form.instance.source[-1] != "/":
@@ -220,13 +222,16 @@ def edit_ruleset_wiki(request, slug):
             form.instance.last_edited_by = request.user.id
             form.instance.slug = slugify(unidecode(form.cleaned_data.get('name')))
             form.save()
+            status_form.save()
             changed_slug = form.instance.slug
             messages.success(request, f'Edit wiki successfully!')
             return redirect('wiki', slug=changed_slug)
     else:
         form = RulesetForm(instance=ruleset)
+        status_form = RulesetStatusForm(instance=ruleset_status)
     context = {
         'form': form,
+        'status_form': status_form,
         'ruleset': ruleset,
         'name': Ruleset.objects.get(slug=slug).name,
         'source_type': source_link_type(ruleset.source),

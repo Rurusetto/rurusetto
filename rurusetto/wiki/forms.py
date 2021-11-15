@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.core.validators import FileExtensionValidator
 from mdeditor.fields import MDTextFormField
 
-from .models import Ruleset, Subpage, RecommendBeatmap
+from .models import Ruleset, Subpage, RecommendBeatmap, PLAYABLE, RulesetStatus
 
 
 class RulesetForm(forms.ModelForm):
@@ -18,6 +18,16 @@ class RulesetForm(forms.ModelForm):
         model = Ruleset
         fields = ['name', 'description', 'icon', 'light_icon', 'logo', 'cover_image', 'cover_image_light',
                   'opengraph_image', 'recommend_beatmap_cover', 'custom_css', 'content', 'source', 'github_download_filename', 'hidden']
+
+
+class RulesetStatusForm(forms.ModelForm):
+    """Form for changing value in ruleset's status object"""
+    playable = forms.ChoiceField(label="", choices=PLAYABLE, required=True, widget=forms.Select(attrs={'class': "form-select"}))
+    pre_release = forms.BooleanField(required=False, label='Pre-Release', widget=forms.CheckboxInput(attrs={'class': "form-check-input"}))
+
+    class Meta:
+        model = RulesetStatus
+        fields = ['playable', 'pre_release']
 
 
 class SubpageForm(forms.ModelForm):

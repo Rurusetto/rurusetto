@@ -208,7 +208,7 @@ def edit_ruleset_wiki(request, slug):
         form = RulesetForm(request.POST, request.FILES, instance=ruleset)
         status_form = RulesetStatusForm(request.POST, instance=ruleset_status)
         if form.is_valid() and status_form.is_valid():
-            if source_link_type(form.instance.source) == "github":
+            if source_link_type(form.instance.source) == "github" and not ruleset_status.pre_release and not status_form.cleaned_data['pre_release']:
                 # Check that the download link when render is valid
                 if form.instance.source[-1] != "/":
                     download_url = f"{form.instance.source}/releases/latest/download/{form.instance.github_download_filename}"

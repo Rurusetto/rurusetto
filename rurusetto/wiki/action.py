@@ -228,9 +228,15 @@ def update_ruleset_version_once_action(action):
                 # If the GitHub link is right when split with slash it must slice to 6 pieces (with slash
                 # at the end) or 5 (without slash at the end)
                 if len(split_github_link) == 6 or len(split_github_link) == 5:
-                    request_data = requests.get(
-                        f"https://api.github.com/repos/{split_github_link[3]}/{split_github_link[4]}/releases/latest",
-                        headers=headers).json()
+                    if ruleset_status.pre_release:
+                        request_data = requests.get(
+                            f"https://api.github.com/repos/{split_github_link[3]}/{split_github_link[4]}/releases",
+                            headers=headers).json()[0]
+                        print(request_data)
+                    else:
+                        request_data = requests.get(
+                            f"https://api.github.com/repos/{split_github_link[3]}/{split_github_link[4]}/releases/latest",
+                            headers=headers).json()
                 else:
                     continue
 

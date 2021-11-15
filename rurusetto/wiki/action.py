@@ -162,7 +162,14 @@ def update_ruleset_version_action(action):
                     # If the GitHub link is right when split with slash it must slice to 6 pieces (with slash
                     # at the end) or 5 (without slash at the end)
                     if len(split_github_link) == 6 or len(split_github_link) == 5:
-                        request_data = requests.get(f"https://api.github.com/repos/{split_github_link[3]}/{split_github_link[4]}/releases/latest", headers=headers).json()
+                        if ruleset_status.pre_release:
+                            request_data = requests.get(
+                                f"https://api.github.com/repos/{split_github_link[3]}/{split_github_link[4]}/releases",
+                                headers=headers).json()[0]
+                        else:
+                            request_data = requests.get(
+                                f"https://api.github.com/repos/{split_github_link[3]}/{split_github_link[4]}/releases/latest",
+                                headers=headers).json()
                     else:
                         continue
 
@@ -190,7 +197,7 @@ def update_ruleset_version_action(action):
         action.status = 0
         action.running_text = f"Wait for countdown (Round {progress_round}/1440)"
         action.save()
-        time.sleep(1800)
+        time.sleep(900)
     # After task successfully, update Action log to success and update finish time.
     action.status = 2
     action.running_text = f"Task running successfully with {success} success ,{failed} failed, {skip} skipped with {update_count} updated and {progress_round} round"

@@ -195,6 +195,29 @@
                     </div>
                   </div>
             </div>
+            <h2>Status</h2>
+            <div class="fieldWrapper">
+                 <div class="mb-3 row">
+                    <label class="col-sm-2 col-form-label form-label" for="id_pre_release">Pre-Release:</label>
+                    <div class="col-sm-10">
+                        <div class="form-check form-switch">
+                            {{ status_form.pre_release }}
+                        </div>
+                        <p class="form-error raleway-font">{{ status_form.pre_release.errors }}</p>
+                        <p class="text-muted raleway-font">If this is checked, the auto-update status system will fetch this ruleset as pre-release instead of normal method and on status page your rulesets will show pre-release badge too.</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="fieldWrapper">
+                 <div class="mb-3 row">
+                    <label class="col-sm-2 col-form-label form-label" for="id_pre_release">Playable:</label>
+                    <div class="col-sm-10">
+                        {{ status_form.playable }}
+                        <p class="form-error raleway-font">{{ status_form.playable.errors }}</p>
+                        <p class="text-muted raleway-font">Your rulesets playable status.  (This can change by wiki maintainer too if ruleset's playable status is not correct.)</p>
+                    </div>
+                  </div>
+            </div>
             {% endif %}
             <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right raleway-font">Edit</button>
         </form>

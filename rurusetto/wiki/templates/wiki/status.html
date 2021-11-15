@@ -56,6 +56,9 @@
             {% else %}
                 <span class="badge rounded-pill bg-secondary">unknown</span>
             {% endif %}
+            {% if ruleset.2.2.pre_release %}
+                <span class="badge rounded-pill" style="background-color: #c7a000;">pre-release</span>
+            {% endif %}
        </h1>
         <div class="col-8">
             <h4>Latest version name</h4>
@@ -107,6 +110,9 @@
             {% else %}
                 <span class="badge rounded-pill bg-secondary">unknown</span>
             {% endif %}
+            {% if ruleset.2.1.pre_release %}
+                <span class="badge rounded-pill" style="background-color: #c7a000;">pre-release</span>
+            {% endif %}
         </h1>
         <div class="col-8">
             <p><i class="fas fa-exclamation-circle"></i> Function is not available due to the rulesets source is from GitHub and <code>Ruleset Filename</code> field is missing or blank. Please fill the <code>Ruleset Filename</code> in the rulesets setting!</p>
@@ -132,6 +138,9 @@
             {% else %}
                 <span class="badge rounded-pill bg-secondary">unknown</span>
             {% endif %}
+            {% if ruleset.2.1.pre_release %}
+                <span class="badge rounded-pill" style="background-color: #c7a000;">pre-release</span>
+            {% endif %}
         </h1>
         <div class="col-8">
             <p><i class="fas fa-exclamation-circle"></i> This function is not support in rulesets that is from Patreon. You can go to rulesets creator's Patreon at <code>Get from Patreon</code>!</p>
@@ -156,6 +165,9 @@
                 <span class="badge rounded-pill bg-danger">borked</span>
             {% else %}
                 <span class="badge rounded-pill bg-secondary">unknown</span>
+            {% endif %}
+            {% if ruleset.2.1.pre_release %}
+                <span class="badge rounded-pill" style="background-color: #c7a000;">pre-release</span>
             {% endif %}
         </h1>
         <div class="col-8">

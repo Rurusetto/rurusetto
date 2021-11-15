@@ -307,6 +307,8 @@ class RulesetStatus(models.Model):
     latest_version = models.CharField(default="", blank=True, max_length=200)
     latest_update = models.DateTimeField(editable=True, blank=True, null=True)
 
+    pre_release = models.BooleanField(default=False)
+
     changelog = models.TextField(blank=True)
     file_size = models.IntegerField(default=0, blank=True)
 

@@ -14,3 +14,23 @@ body {
 .login-form {
     line-height: 1;
 }
+
+@media (max-width: 1009px) {
+    .col-sm-4 {
+        width: 100%;
+        height: 100%;
+    }
+
+    .col-sm-8 {
+        width: 0;
+        height: 0;
+    }
+
+    .login-bottom-text {
+        line-height: 2;
+    }
+
+    #signup-link {
+        line-height: 2!important;
+    }
+}

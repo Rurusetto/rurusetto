@@ -67,6 +67,13 @@
                 {% endfor %}
               {% endif %}
         </div>
+        {% if content.archive %}
+        <div class="row">
+            <div class="alert alert-warning raleway-font">
+                <i class="fas fa-archive"></i> This ruleset is marked as archived.
+            </div>
+        </div>
+        {% endif %}
         <div class="row" id="last-edit">
             {% if user_detail.2 == None %}
             <p class="text-muted" data-aos="fade-up" data-aos-duration="1000">Last edited by <img src="{% static 'img/default.png'%}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User at {{ content.last_edited_at|date:"F j, Y h:i A" }} UTC</p>

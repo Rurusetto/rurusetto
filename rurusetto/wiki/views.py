@@ -801,8 +801,8 @@ def archived_rulesets(request):
     :param request: WSGI request from user.
     :return: Render archived_rulesets.html with context
     """
-    hero_image = "https://i.imgur.com/XQQZQZL.jpg"
-    hero_image_light = "https://i.imgur.com/XQQZQZL.jpg"
+    hero_image = "img/archived-rulesets-cover-night.jpg"
+    hero_image_light = "img/archived-rulesets-cover-light.png"
     context = {
         'rulesets': make_listing_view(Ruleset.objects.filter(archive=True, hidden=False).order_by('name')),
         'title': 'archived rulesets',

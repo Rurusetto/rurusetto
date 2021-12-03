@@ -87,7 +87,7 @@ def listing(request):
 
     context = {
         'hidden_rulesets': make_listing_view(Ruleset.objects.filter(hidden=True, owner=str(request.user.id)).order_by('name')),
-        'rulesets': make_listing_view(Ruleset.objects.filter(hidden=False).order_by('name')),
+        'rulesets': make_listing_view(Ruleset.objects.filter(hidden=False, archive=False).order_by('name')),
         'title': 'listing',
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
@@ -792,6 +792,26 @@ def check_action_log(request, log_id):
     if request.method == "GET":
         return JsonResponse({"running_text": action.running_text, "status": action.status, "duration": duration}, status=200)
     return JsonResponse({}, status=400)
+
+
+def archived_rulesets(request):
+    """
+    View for show the archived rulesets.
+
+    :param request: WSGI request from user.
+    :return: Render archived_rulesets.html with context
+    """
+    hero_image = "img/archived-rulesets-cover-night.jpg"
+    hero_image_light = "img/archived-rulesets-cover-light.png"
+    context = {
+        'rulesets': make_listing_view(Ruleset.objects.filter(archive=True, hidden=False).order_by('name')),
+        'title': 'archived rulesets',
+        'hero_image': static(hero_image),
+        'hero_image_light': static(hero_image_light),
+        'opengraph_description': "The list of rulesets that's stop update or archived by rulesets creator.",
+        'opengraph_url': resolve_url('listing'),
+    }
+    return render(request, 'wiki/archived_rulesets.html', context)
 
 
 # Views for API

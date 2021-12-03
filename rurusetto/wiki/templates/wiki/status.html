@@ -60,6 +60,13 @@
                 <span class="badge rounded-pill" style="background-color: #c7a000;">pre-release</span>
             {% endif %}
        </h1>
+        {% if ruleset.0.archive %}
+        <div class="row">
+            <div class="alert alert-warning raleway-font">
+                <i class="fas fa-archive"></i> This ruleset is marked as archived and no longer update by the creator.
+            </div>
+        </div>
+        {% endif %}
         <div class="col-8">
             <h4>Latest version name</h4>
             <p>{{ ruleset.2.2.latest_version }}</p>
@@ -118,6 +125,13 @@
                 <span class="badge rounded-pill" style="background-color: #c7a000;">pre-release</span>
             {% endif %}
         </h1>
+        {% if ruleset.0.archive %}
+        <div class="row">
+            <div class="alert alert-warning raleway-font">
+                <i class="fas fa-archive"></i> This ruleset is marked as archived and no longer update by the creator.
+            </div>
+        </div>
+        {% endif %}
         <div class="col-8">
             <p><i class="fas fa-exclamation-circle"></i> Function is not available due to the rulesets source is from GitHub and <code>Ruleset Filename</code> field is missing or blank. Please fill the <code>Ruleset Filename</code> in the rulesets setting!</p>
         </div>
@@ -146,6 +160,13 @@
                 <span class="badge rounded-pill" style="background-color: #c7a000;">pre-release</span>
             {% endif %}
         </h1>
+        {% if ruleset.0.archive %}
+        <div class="row">
+            <div class="alert alert-warning raleway-font">
+                <i class="fas fa-archive"></i> This ruleset is marked as archived and no longer update by the creator.
+            </div>
+        </div>
+        {% endif %}
         <div class="col-8">
             <p><i class="fas fa-exclamation-circle"></i> This function is not support in rulesets that is from Patreon. You can go to rulesets creator's Patreon at <code>Get from Patreon</code>!</p>
         </div>
@@ -174,6 +195,13 @@
                 <span class="badge rounded-pill" style="background-color: #c7a000;">pre-release</span>
             {% endif %}
         </h1>
+        {% if ruleset.0.archive %}
+        <div class="row">
+            <div class="alert alert-warning raleway-font">
+                <i class="fas fa-archive"></i> This ruleset is marked as archived and no longer update by the creator.
+            </div>
+        </div>
+        {% endif %}
         <div class="col-8">
             <p><i class="fas fa-exclamation-circle"></i> Rūrusetto-chan don't know this link's type so you can download the ruleset from its source. </p>
         </div>

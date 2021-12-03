@@ -18,9 +18,10 @@
         <div class="col-sm-2">
             <p data-aos="fade-up" data-aos-duration="800"><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'create_ruleset' %}"><i class="fas fa-plus icon-menu hvr-icon"></i> Add a new ruleset</a></p>
         </div>
-        {% else %}
-            <p></p>
         {% endif %}
+        <div class="col-sm-2">
+            <p data-aos="fade-up" data-aos-duration="800"><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'archived_rulesets' %}"><i class="fas fa-archive icon-menu hvr-icon"></i> Archived rulesets</a></p>
+        </div>
     </div>
 </div>
 

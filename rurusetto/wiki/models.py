@@ -100,6 +100,8 @@ class Ruleset(models.Model):
 
     hidden = models.BooleanField(default=False)
 
+    archive = models.BooleanField(default=False)
+
     def __str__(self):
         return self.name
 

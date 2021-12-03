@@ -91,6 +91,8 @@
         <div class="col-4">
             {% if not ruleset.2.2.pre_release %}
             <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{{ ruleset.2.0 }}"><i class="fas fa-download icon-menu hvr-icon"></i> Download latest version</a></p>
+            {% else %}
+            <p><i class="fas fa-exclamation-circle"></i> We are not support direct download for pre-release rulesets from GitHub now. Please get it from ruleset release page instead.</p>
             {% endif %}
             <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{{ ruleset.2.1 }}"><i class="fab fa-github icon-menu hvr-icon"></i> GitHub release page</a></p>
             <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'wiki' ruleset.0.slug %}"><i class="fas fa-location-arrow icon-menu hvr-icon"></i> Go to rulesets wiki page</a></p>

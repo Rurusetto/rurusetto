@@ -11,16 +11,16 @@ assignees: ''
 Please put the exactly date and time that you find this bug and put the timezone too.
 
 **Username or your profile page link:**
-If this bug report is from the [beta website](https://beta.ruleset.info) and relate to the account area, please put your username in the site or your profile link here. If you are not login please fill this as `Guest`.
+If this bug relate to the account area, please put your username in the site or your profile link here. If you are not login please fill this as `Guest`. (If you are not comfortable to share your profile link publicly please send it to contact@rulesets.info)
 
 **Page or URL link of the previous page and the page that you found the bug:**
 URL of the previous and the page that the bug is occured
 
 **Describe the bug:**
-[] Tick this of this bug lead to 500 server error.
+[] This bug lead to 500 server error.
 A clear and concise description of what the bug is here.
 
-**To Reproduce:**
+**Reproduce:**
 Steps to reproduce the behavior
 
 **Expected behavior:**

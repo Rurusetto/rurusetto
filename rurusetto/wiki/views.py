@@ -814,6 +814,24 @@ def archived_rulesets(request):
     return render(request, 'wiki/archived_rulesets.html', context)
 
 
+# Fallback view for redirect user from old website URL to the new website's path
+
+
+def redirect_from_old_link(request, slug):
+    """
+    View for redirect the user that use the old link path (pages/<RulesetsName>) to the new path
+    that we currently use (rulesets/<RulesetsName>)
+
+    :param request: WSGI request from user
+    :param slug: Ruleset slug (slug in Ruleset model)
+    :return: Redirect the user to the cuurent wiki_page's link
+    """
+    if Ruleset.objects.filter(slug=slug).exists():
+        return redirect('wiki', slug=slug)
+    else:
+        return HttpResponse(status=404)
+
+
 # Views for API
 
 

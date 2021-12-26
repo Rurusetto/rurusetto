@@ -5,54 +5,21 @@ from django.http import HttpResponse, JsonResponse
 
 
 @csrf_exempt
-def ruleset_list_minimize(request):
+def listing(request):
     """
-    View for return the ruleset in JSON format.
+    View for return information to make listing page
 
     :param request: WSGI request from user
-    :return: All ruleset in website with its metadata in JSON format.
+    :return:
     """
     if request.method == 'GET':
-        rulesets = Ruleset.objects.all()
-        serializer = MinimizeRulesetSerializer(rulesets, many=True)
+        all_public_ruleset = Ruleset.objects.filter(hidden=False)
+        serializer = RulesetListingSerializer(all_public_ruleset, many=True)
         return JsonResponse(serializer.data, safe=False)
 
 
 @csrf_exempt
-def ruleset_list_full(request):
-    """
-    View for return the ruleset in JSON format.
-
-    :param request: WSGI request from user
-    :return: All ruleset in website with its metadata in JSON format.
-    """
-    if request.method == 'GET':
-        rulesets = Ruleset.objects.all()
-        serializer = RulesetSerializer(rulesets, many=True)
-        return JsonResponse(serializer.data, safe=False)
-
-
-@csrf_exempt
-def ruleset_detail_minimize(request, slug):
-    """
-    View for return the specific ruleset that user pass by using its slug in JSON format.
-
-    :param request: WSGI request from user
-    :return: Specific ruleset metadata in JSON format.
-    """
-    # try to fetch ruleset from database
-    try:
-        ruleset = Ruleset.objects.get(slug=slug)
-    except Ruleset.DoesNotExist:
-        return HttpResponse(status=404)
-
-    if request.method == 'GET':
-        serializer = MinimizeRulesetSerializer(ruleset)
-        return JsonResponse(serializer.data)
-
-
-@csrf_exempt
-def ruleset_detail_full(request, slug):
+def ruleset_detail(request, slug):
     """
     View for return the specific ruleset that user pass by using its slug in JSON format.
 

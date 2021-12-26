@@ -4,6 +4,12 @@ from wiki.models import Ruleset
 from django.http import HttpResponse, JsonResponse
 
 
+def make_404_json_response(message):
+    return {
+        'detail': message
+    }
+
+
 @csrf_exempt
 def listing(request):
     """
@@ -30,7 +36,11 @@ def ruleset_detail(request, slug):
     try:
         ruleset = Ruleset.objects.get(slug=slug)
     except Ruleset.DoesNotExist:
-        return HttpResponse(status=404)
+        return JsonResponse(make_404_json_response('The ruleset is not found'), status=404, content_type="application/json")
+
+    # Return 404 if that ruleset is hidden
+    if ruleset.hidden:
+        return JsonResponse(make_404_json_response('The ruleset is not found'), status=404, content_type="application/json")
 
     if request.method == 'GET':
         serializer = RulesetsDetailSerializer(ruleset)

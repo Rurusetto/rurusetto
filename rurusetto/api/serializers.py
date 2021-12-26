@@ -57,8 +57,11 @@ class RulesetListingSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'slug', 'description', 'icon', 'light_icon', 'owner_detail', 'verified']
 
     def get_owner_detail(self, obj):
-        owner = Profile.objects.get(id=obj.owner)
-        return ProfileMiniSerializer(owner).data
+        try:
+            owner = Profile.objects.get(id=obj.owner)
+            return ProfileMiniSerializer(owner).data
+        except Profile.DoesNotExist:
+            return {}
 
 
 # Serializer for rulesets detail
@@ -70,8 +73,7 @@ class RulesetsDetailSubpageSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = Subpage
-        # fields = ['title', 'slug']
-        fields = '__all__'
+        fields = ['title', 'slug']
 
 
 class RulesetsDetailSerializer(serializers.ModelSerializer):
@@ -90,18 +92,23 @@ class RulesetsDetailSerializer(serializers.ModelSerializer):
                   'github_download_filename', 'creator_detail', 'created_at', 'owner_detail',
                   'last_edited_at', 'last_edited_by_detail', 'verified', 'archive']
 
-    def get_subpage(self, obj):
-        all_subpage = Subpage.objects.filter(ruleset_id=obj.id, hidden=False)
-        return RulesetsDetailSubpageSerializer(all_subpage).data
-
     def get_creator_detail(self, obj):
-        creator = Profile.objects.get(id=obj.creator)
-        return ProfileMiniSerializer(creator).data
+        try:
+            creator = Profile.objects.get(id=obj.creator)
+            return ProfileMiniSerializer(creator).data
+        except Profile.DoesNotExist:
+            return {}
 
     def get_owner_detail(self, obj):
-        owner = Profile.objects.get(id=obj.owner)
-        return ProfileMiniSerializer(owner).data
+        try:
+            owner = Profile.objects.get(id=obj.owner)
+            return ProfileMiniSerializer(owner).data
+        except Profile.DoesNotExist:
+            return {}
 
     def get_last_edited_by_detail(self, obj):
-        last_edited_by = Profile.objects.get(id=obj.last_edited_by)
-        return ProfileMiniSerializer(last_edited_by).data
+        try:
+            last_edited_by = Profile.objects.get(id=obj.last_edited_by)
+            return ProfileMiniSerializer(last_edited_by).data
+        except Profile.DoesNotExist:
+            return {}

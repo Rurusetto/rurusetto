@@ -25,9 +25,6 @@ urlpatterns = [
     path('action/maintainer/update-ruleset-version', views.update_ruleset_status_action, name='update_ruleset_version'),
     path('action/maintainer/update-ruleset-version-once', views.update_ruleset_status_once_action, name='update_ruleset_version_once_action'),
     path('action/update/action_log/<int:log_id>', views.check_action_log, name='check_action_log'),
-    # URL path for API
-    path('api/rulesets', views.ruleset_list),
-    path('api/rulesets/<slug:slug>', views.ruleset_detail),
     # Fallback URL path for redirect user who use old website link to the new website path
     path('pages/<slug:slug>', views.redirect_from_old_link, name='redirect_from_old_link'),
     path('posts/<slug:slug>', views.redirect_from_old_link, name='redirect_from_old_link_posts')

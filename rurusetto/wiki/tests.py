@@ -93,3 +93,19 @@ class RulesetModelTest(TestCase):
         self.assertEqual(blank_ruleset.source, '')
         self.assertEqual(blank_ruleset.last_edited_by, '0')
         self.assertEqual(blank_ruleset.verified, False)
+
+
+class RedirectFromOldLinkTest(TestCase):
+    """Test for fallback URL view that will be redirect to the new URL view"""
+
+    def test_is_redirect_on_valid_rulesets(self):
+        """Test that the redirect view is redirect the link on the valid rulesets"""
+        Ruleset.objects.create(name='dummy', slug='dummy')
+        self.assertTrue(Ruleset.objects.filter(slug='dummy'))
+        response = self.client.get('/pages/dummy')
+        self.assertRedirects(response, '/rulesets/dummy')
+
+    def test_is_404_on_not_valid_rulesets(self):
+        """Test that the view will redirect to 404 id the query rulesets is not found"""
+        response = self.client.get('/pages/peeppy')
+        self.assertEqual(response.status_code, 404)

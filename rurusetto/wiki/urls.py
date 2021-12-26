@@ -30,4 +30,5 @@ urlpatterns = [
     path('api/rulesets/<slug:slug>', views.ruleset_detail),
     # Fallback URL path for redirect user who use old website link to the new website path
     path('pages/<slug:slug>', views.redirect_from_old_link, name='redirect_from_old_link')
+    path('posts/<slug:slug>', views.redirect_from_old_link, name='redirect_from_old_link_posts')
 ]

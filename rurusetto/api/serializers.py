@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Ruleset
+from wiki.models import Ruleset
 
 
 class RulesetSerializer(serializers.HyperlinkedModelSerializer):

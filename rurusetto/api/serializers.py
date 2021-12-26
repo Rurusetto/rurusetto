@@ -54,7 +54,7 @@ class RulesetListingSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Ruleset
-        fields = ['id', 'name', 'slug', 'description', 'icon', 'light_icon', 'owner_detail']
+        fields = ['id', 'name', 'slug', 'description', 'icon', 'light_icon', 'owner_detail', 'verified']
 
     def get_owner_detail(self, obj):
         owner = Profile.objects.get(id=obj.owner)
@@ -86,9 +86,9 @@ class RulesetsDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ruleset
         fields = ['id', 'name', 'slug', 'description', 'icon', 'light_icon', 'logo', 'cover_image', 'cover_image_light',
-                  'opengraph_image', 'recommend_beatmap_cover', 'custom_css', 'content', 'source',
-                  'github_download_filename', 'creator', 'creator_detail', 'created_at', 'owner', 'owner_detail',
-                  'last_edited_at', 'last_edited_by', 'last_edited_by_detail', 'verified', 'archive']
+                  'opengraph_image', 'custom_css', 'content', 'source',
+                  'github_download_filename', 'creator_detail', 'created_at', 'owner_detail',
+                  'last_edited_at', 'last_edited_by_detail', 'verified', 'archive']
 
     def get_subpage(self, obj):
         all_subpage = Subpage.objects.filter(ruleset_id=obj.id, hidden=False)

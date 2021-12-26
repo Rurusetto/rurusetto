@@ -33,5 +33,5 @@ def ruleset_detail(request, slug):
         return HttpResponse(status=404)
 
     if request.method == 'GET':
-        serializer = RulesetSerializer(ruleset)
+        serializer = RulesetsDetailSerializer(ruleset)
         return JsonResponse(serializer.data)

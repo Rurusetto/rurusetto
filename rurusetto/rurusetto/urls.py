@@ -75,6 +75,7 @@ sitemaps = {
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('wiki.urls')),
+    path('', include('api.urls')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
     path('mdeditor/', include('mdeditor.urls')),
     path('accounts/', include('allauth.urls')),

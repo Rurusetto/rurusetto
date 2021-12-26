@@ -36,6 +36,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv(), default='')
 INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'wiki.apps.WikiConfig',
+    'api.apps.ApiConfig',
     'crispy_forms',
     'mdeditor',
     'colorfield',

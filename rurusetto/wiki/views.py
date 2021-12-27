@@ -153,10 +153,6 @@ def wiki_page(request, slug):
     hero_image = ruleset.cover_image.url
     hero_image_light = ruleset.cover_image_light.url
     # Direct download link currently support for GitHub
-    if source_link_type(ruleset.source) == "github":
-        can_download = True
-    else:
-        can_download = False
     download_link = direct_download_link_generator(ruleset)
     context = {
         'content': ruleset,
@@ -165,7 +161,7 @@ def wiki_page(request, slug):
         'source_type': source_link_type(ruleset.source),
         'user_detail': make_wiki_view(ruleset),
         'can_support': can_support,
-        'can_download': can_download,
+        'can_download': ruleset.can_download,
         'download_link': download_link,
         'title': ruleset.name,
         'hero_image': hero_image,

@@ -33,7 +33,8 @@ class RulesetListingSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Ruleset
-        fields = ['id', 'name', 'slug', 'description', 'icon', 'light_icon', 'owner_detail', 'verified']
+        fields = ['id', 'name', 'slug', 'description', 'icon', 'light_icon', 'owner_detail', 'verified',
+                  'direct_download_link', 'can_download']
 
     def get_owner_detail(self, obj):
         try:
@@ -68,7 +69,7 @@ class RulesetsDetailSerializer(serializers.ModelSerializer):
         model = Ruleset
         fields = ['id', 'name', 'slug', 'description', 'icon', 'light_icon', 'logo', 'cover_image', 'cover_image_light',
                   'opengraph_image', 'custom_css', 'content', 'source',
-                  'github_download_filename', 'creator_detail', 'created_at', 'owner_detail',
+                  'github_download_filename', 'direct_download_link', 'can_download', 'creator_detail', 'created_at', 'owner_detail',
                   'last_edited_at', 'last_edited_by_detail', 'verified', 'archive']
 
     def get_creator_detail(self, obj):

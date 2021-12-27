@@ -211,6 +211,8 @@ def edit_ruleset_wiki(request, slug):
                     error_message = f"The response of {download_url} is not success ({html_status.status_code}). Please check your filename or ruleset source link!"
                     messages.error(request, error_message)
                     return redirect('edit_wiki', slug=ruleset.slug)
+                else:
+                    form.instance.direct_download_link = direct_download_link_generator(form.instance)
             form.instance.last_edited_by = request.user.id
             form.instance.slug = slugify(unidecode(form.cleaned_data.get('name')))
             form.save()

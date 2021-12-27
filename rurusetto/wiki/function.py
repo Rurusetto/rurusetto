@@ -203,3 +203,15 @@ def make_status_view():
         else:
             continue
     return show_ruleset
+
+
+def direct_download_link_generator(ruleset):
+    if (ruleset.source != "") and (ruleset.github_download_filename != "") and (
+            source_link_type(ruleset.source) == "github"):
+        if ruleset.source[-1] != "/":
+            download_link = f"{ruleset.source}/releases/latest/download/{ruleset.github_download_filename}"
+        else:
+            download_link = f"{ruleset.source}releases/latest/download/{ruleset.github_download_filename}"
+    else:
+        download_link = "/#"
+    return download_link

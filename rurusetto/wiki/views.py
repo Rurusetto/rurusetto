@@ -8,8 +8,7 @@ from .models import Changelog, Ruleset, Subpage, RecommendBeatmap, Action, Rules
 from users.models import Profile
 from django.contrib.auth.models import User
 from .forms import RulesetForm, SubpageForm, RecommendBeatmapForm, RulesetStatusForm
-from .function import make_listing_view, make_wiki_view, source_link_type, get_user_by_id, make_recommend_beatmap_view, \
-    make_beatmap_aapproval_view, make_status_view
+from .function import *
 from unidecode import unidecode
 from django.template.defaultfilters import slugify
 from rurusetto.settings import OSU_API_V1_KEY, TEST_SERVER
@@ -153,17 +152,12 @@ def wiki_page(request, slug):
         can_support = False
     hero_image = ruleset.cover_image.url
     hero_image_light = ruleset.cover_image_light.url
-    if (ruleset.source != "") and (ruleset.github_download_filename != "") and (
-            source_link_type(ruleset.source) == "github"):
-        # Currently support for GitHub so let's generate link by this method
+    # Direct download link currently support for GitHub
+    if source_link_type(ruleset.source) == "github":
         can_download = True
-        if ruleset.source[-1] != "/":
-            download_link = f"{ruleset.source}/releases/latest/download/{ruleset.github_download_filename}"
-        else:
-            download_link = f"{ruleset.source}releases/latest/download/{ruleset.github_download_filename}"
     else:
         can_download = False
-        download_link = "/#"
+    download_link = direct_download_link_generator(ruleset)
     context = {
         'content': ruleset,
         'hidden_subpage': Subpage.objects.filter(ruleset_id=ruleset.id, hidden=True, creator=str(request.user.id)),

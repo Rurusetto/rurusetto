@@ -213,6 +213,8 @@ def edit_ruleset_wiki(request, slug):
                     return redirect('edit_wiki', slug=ruleset.slug)
                 else:
                     form.instance.direct_download_link = direct_download_link_generator(form.instance)
+                    if not form.instance.can_download:
+                        form.instance.can_download = True
             form.instance.last_edited_by = request.user.id
             form.instance.slug = slugify(unidecode(form.cleaned_data.get('name')))
             form.save()

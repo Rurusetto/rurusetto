@@ -92,7 +92,7 @@ class Ruleset(models.Model):
 
     source = models.URLField(default="")
     github_download_filename = models.CharField(default="", blank=True, max_length=100)
-    direct_download_link = models.URLField(default="")
+    direct_download_link = models.URLField(default="", blank=True)
     can_download = models.BooleanField(default=False)
 
     last_edited_by = models.CharField(default="0", max_length=10)

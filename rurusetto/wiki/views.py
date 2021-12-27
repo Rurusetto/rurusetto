@@ -152,7 +152,6 @@ def wiki_page(request, slug):
         can_support = False
     hero_image = ruleset.cover_image.url
     hero_image_light = ruleset.cover_image_light.url
-    # Direct download link currently support for GitHub
     download_link = direct_download_link_generator(ruleset)
     context = {
         'content': ruleset,

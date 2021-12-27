@@ -8,8 +8,7 @@ from .models import Changelog, Ruleset, Subpage, RecommendBeatmap, Action, Rules
 from users.models import Profile
 from django.contrib.auth.models import User
 from .forms import RulesetForm, SubpageForm, RecommendBeatmapForm, RulesetStatusForm
-from .function import make_listing_view, make_wiki_view, source_link_type, get_user_by_id, make_recommend_beatmap_view, \
-    make_beatmap_aapproval_view, make_status_view
+from .function import *
 from unidecode import unidecode
 from django.template.defaultfilters import slugify
 from rurusetto.settings import OSU_API_V1_KEY, TEST_SERVER
@@ -153,17 +152,7 @@ def wiki_page(request, slug):
         can_support = False
     hero_image = ruleset.cover_image.url
     hero_image_light = ruleset.cover_image_light.url
-    if (ruleset.source != "") and (ruleset.github_download_filename != "") and (
-            source_link_type(ruleset.source) == "github"):
-        # Currently support for GitHub so let's generate link by this method
-        can_download = True
-        if ruleset.source[-1] != "/":
-            download_link = f"{ruleset.source}/releases/latest/download/{ruleset.github_download_filename}"
-        else:
-            download_link = f"{ruleset.source}releases/latest/download/{ruleset.github_download_filename}"
-    else:
-        can_download = False
-        download_link = "/#"
+    download_link = direct_download_link_generator(ruleset)
     context = {
         'content': ruleset,
         'hidden_subpage': Subpage.objects.filter(ruleset_id=ruleset.id, hidden=True, creator=str(request.user.id)),
@@ -171,7 +160,7 @@ def wiki_page(request, slug):
         'source_type': source_link_type(ruleset.source),
         'user_detail': make_wiki_view(ruleset),
         'can_support': can_support,
-        'can_download': can_download,
+        'can_download': ruleset.can_download,
         'download_link': download_link,
         'title': ruleset.name,
         'hero_image': hero_image,
@@ -217,6 +206,10 @@ def edit_ruleset_wiki(request, slug):
                     error_message = f"The response of {download_url} is not success ({html_status.status_code}). Please check your filename or ruleset source link!"
                     messages.error(request, error_message)
                     return redirect('edit_wiki', slug=ruleset.slug)
+                else:
+                    form.instance.direct_download_link = direct_download_link_generator(form.instance)
+                    if not form.instance.can_download:
+                        form.instance.can_download = True
             form.instance.last_edited_by = request.user.id
             form.instance.slug = slugify(unidecode(form.cleaned_data.get('name')))
             form.save()

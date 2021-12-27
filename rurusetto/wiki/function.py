@@ -203,3 +203,24 @@ def make_status_view():
         else:
             continue
     return show_ruleset
+
+
+def direct_download_link_generator(ruleset):
+    """
+    The function to create the direct download link if the ruleset source is GitHub and github_download_filename
+    is not blank it will create the direct download link to the latest version of that ruleset.
+
+    It will return "/#" if the ruleset is not from GitHub.
+
+    :param ruleset: Ruleset object from database
+    :return: Direct download URL or "/#" if the ruleset is not from GitHub.
+    """
+    if (ruleset.source != "") and (ruleset.github_download_filename != "") and (
+            source_link_type(ruleset.source) == "github"):
+        if ruleset.source[-1] != "/":
+            download_link = f"{ruleset.source}/releases/latest/download/{ruleset.github_download_filename}"
+        else:
+            download_link = f"{ruleset.source}releases/latest/download/{ruleset.github_download_filename}"
+    else:
+        download_link = "/#"
+    return download_link

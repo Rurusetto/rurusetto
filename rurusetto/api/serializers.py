@@ -4,27 +4,6 @@ from users.models import Profile
 from django.contrib.auth.models import User
 
 
-class FullRulesetSerializer(serializers.HyperlinkedModelSerializer):
-    """
-    Serializer for Ruleset model for passing the value to the API view
-    """
-    class Meta:
-        model = Ruleset
-        fields = ['id', 'name', 'slug', 'description', 'icon', 'light_icon', 'logo', 'cover_image', 'cover_image_light',
-                  'opengraph_image', 'recommend_beatmap_cover', 'custom_css', 'content', 'source', 'github_download_filename',
-                  'creator', 'created_at', 'owner', 'last_edited_at', 'last_edited_by', 'verified', 'archive']
-
-
-class MinimizeRulesetSerializer(serializers.HyperlinkedModelSerializer):
-    """
-    Serializer for Ruleset model for passing only main detail of the ruleset to the API view
-    """
-    class Meta:
-        model = Ruleset
-        fields = ['id', 'name', 'slug', 'description', 'icon', 'light_icon', 'source', 'github_download_filename',
-                  'owner', 'verified', 'archive']
-
-
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -54,7 +33,8 @@ class RulesetListingSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Ruleset
-        fields = ['id', 'name', 'slug', 'description', 'icon', 'light_icon', 'owner_detail', 'verified']
+        fields = ['id', 'name', 'slug', 'description', 'icon', 'light_icon', 'owner_detail', 'verified',
+                  'direct_download_link', 'can_download']
 
     def get_owner_detail(self, obj):
         try:
@@ -89,7 +69,7 @@ class RulesetsDetailSerializer(serializers.ModelSerializer):
         model = Ruleset
         fields = ['id', 'name', 'slug', 'description', 'icon', 'light_icon', 'logo', 'cover_image', 'cover_image_light',
                   'opengraph_image', 'custom_css', 'content', 'source',
-                  'github_download_filename', 'creator_detail', 'created_at', 'owner_detail',
+                  'github_download_filename', 'direct_download_link', 'can_download', 'creator_detail', 'created_at', 'owner_detail',
                   'last_edited_at', 'last_edited_by_detail', 'verified', 'archive']
 
     def get_creator_detail(self, obj):

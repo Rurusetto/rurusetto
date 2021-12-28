@@ -1,5 +1,6 @@
+from attr.filters import exclude
 from rest_framework import serializers
-from wiki.models import Ruleset, Subpage
+from wiki.models import Ruleset, Subpage, RulesetStatus
 from users.models import Profile
 from django.contrib.auth.models import User
 
@@ -56,6 +57,15 @@ class RulesetsDetailSubpageSerializer(serializers.ModelSerializer):
         fields = ['title', 'slug']
 
 
+class StatusDetailSerializer(serializers.ModelSerializer):
+    """
+    Serializer for Status model that use in RulesetsDetailSerializer
+    """
+    class Meta:
+        model = RulesetStatus
+        fields = ['latest_version', 'latest_update', 'pre_release', 'changelog', 'file_size', 'playable']
+
+
 class RulesetsDetailSerializer(serializers.ModelSerializer):
     """
     Serializer for essential information in wiki view of each rulesets
@@ -64,31 +74,35 @@ class RulesetsDetailSerializer(serializers.ModelSerializer):
     creator_detail = serializers.SerializerMethodField()
     owner_detail = serializers.SerializerMethodField()
     last_edited_by_detail = serializers.SerializerMethodField()
+    status = serializers.SerializerMethodField()
 
     class Meta:
         model = Ruleset
         fields = ['id', 'name', 'slug', 'description', 'icon', 'light_icon', 'logo', 'cover_image', 'cover_image_light',
                   'opengraph_image', 'custom_css', 'content', 'source',
                   'github_download_filename', 'direct_download_link', 'can_download', 'creator_detail', 'created_at', 'owner_detail',
-                  'last_edited_at', 'last_edited_by_detail', 'verified', 'archive']
+                  'last_edited_at', 'last_edited_by_detail', 'verified', 'archive', 'status']
 
     def get_creator_detail(self, obj):
         try:
-            creator = Profile.objects.get(id=obj.creator)
-            return ProfileMiniSerializer(creator).data
+            return ProfileMiniSerializer(Profile.objects.get(id=obj.creator)).data
         except Profile.DoesNotExist:
             return {}
 
     def get_owner_detail(self, obj):
         try:
-            owner = Profile.objects.get(id=obj.owner)
-            return ProfileMiniSerializer(owner).data
+            return ProfileMiniSerializer(Profile.objects.get(id=obj.owner)).data
         except Profile.DoesNotExist:
             return {}
 
     def get_last_edited_by_detail(self, obj):
         try:
-            last_edited_by = Profile.objects.get(id=obj.last_edited_by)
-            return ProfileMiniSerializer(last_edited_by).data
+            return ProfileMiniSerializer(Profile.objects.get(id=obj.last_edited_by)).data
         except Profile.DoesNotExist:
+            return {}
+
+    def get_status(self, obj):
+        try:
+            return StatusDetailSerializer(RulesetStatus.objects.get(ruleset=obj)).data
+        except RulesetStatus.DoesNotExist:
             return {}

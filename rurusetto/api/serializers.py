@@ -30,17 +30,24 @@ class RulesetListingSerializer(serializers.ModelSerializer):
     Serializer for essential information that is user in listing page.
     """
     owner_detail = serializers.SerializerMethodField()
+    status = serializers.SerializerMethodField()
 
     class Meta:
         model = Ruleset
         fields = ['id', 'name', 'slug', 'description', 'icon', 'light_icon', 'owner_detail', 'verified',
-                  'direct_download_link', 'can_download']
+                  'direct_download_link', 'can_download', 'status']
 
     def get_owner_detail(self, obj):
         try:
             owner = Profile.objects.get(id=obj.owner)
             return ProfileMiniSerializer(owner).data
         except Profile.DoesNotExist:
+            return {}
+
+    def get_status(self, obj):
+        try:
+            return StatusDetailSerializer(RulesetStatus.objects.get(ruleset=obj)).data
+        except RulesetStatus.DoesNotExist:
             return {}
 
 
@@ -137,3 +144,17 @@ class SubpageSerializer(serializers.ModelSerializer):
             return ProfileMiniSerializer(Profile.objects.get(id=obj.last_edited_by)).data
         except Profile.DoesNotExist:
             return {}
+
+
+# Serializer for user and profile
+
+class UserFullSerializer(serializers.ModelSerializer):
+    """
+    Serializer for full detail of users
+    """
+    user = UserSerializer()
+
+    class Meta:
+        model = Profile
+        fields = ['id', 'user', 'image', 'cover', 'cover_light', 'about_me', 'osu_username']
+        depth = 1

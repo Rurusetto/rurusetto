@@ -1,6 +1,8 @@
 from .serializers import *
 from django.views.decorators.csrf import csrf_exempt
 from wiki.models import Ruleset, Subpage
+from users.models import Profile
+from django.contrib.auth.models import User
 from django.http import HttpResponse, JsonResponse
 
 
@@ -82,4 +84,24 @@ def subpage(request, rulesets_slug, subpage_slug):
 
     if request.method == 'GET':
         serializer = SubpageSerializer(subpage)
+        return JsonResponse(serializer.data)
+
+@csrf_exempt
+def user(request, user_id):
+    """
+    View for return full detail of subpage
+
+    :param request: WSGI request from user
+    :return: full detail of requested subpage
+    """
+    try:
+        profile = Profile.objects.get(id=user_id)
+    except Profile.DoesNotExist:
+        return JsonResponse(make_404_json_response('The user is not found'), status=404, content_type="application/json")
+    except User.DoesNotExist:
+        return JsonResponse(make_404_json_response('The user is not found'), status=404,
+                            content_type="application/json")
+
+    if request.method == 'GET':
+        serializer = UserFullSerializer(profile)
         return JsonResponse(serializer.data)

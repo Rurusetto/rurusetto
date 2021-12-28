@@ -57,10 +57,29 @@ def all_ruleset_subpage(request, rulesets_slug):
     """
     try:
         all_public_subpage = Subpage.objects.filter(hidden=False, ruleset_id=str(Ruleset.objects.get(slug=rulesets_slug).id))
-        print(Subpage.objects.filter(hidden=False, ruleset_id=Ruleset.objects.get(slug=rulesets_slug)))
     except Ruleset.DoesNotExist:
         return JsonResponse(make_404_json_response('The ruleset is not found'), status=404, content_type="application/json")
 
     if request.method == 'GET':
         serializer = RulesetsSubpageSerializer(all_public_subpage, many=True)
         return JsonResponse(serializer.data, safe=False)
+
+@csrf_exempt
+def subpage(request, rulesets_slug, subpage_slug):
+    """
+    View for return full detail of subpage
+
+    :param request: WSGI request from user
+    :return: full detail of requested subpage
+    """
+    try:
+        subpage = Subpage.objects.get(slug=subpage_slug, ruleset_id=str(Ruleset.objects.get(slug=rulesets_slug).id), hidden=False)
+    except Ruleset.DoesNotExist:
+        return JsonResponse(make_404_json_response('The ruleset is not found'), status=404, content_type="application/json")
+    except Subpage.DoesNotExist:
+        return JsonResponse(make_404_json_response('The subpage is not found'), status=404,
+                            content_type="application/json")
+
+    if request.method == 'GET':
+        serializer = SubpageSerializer(subpage)
+        return JsonResponse(serializer.data)

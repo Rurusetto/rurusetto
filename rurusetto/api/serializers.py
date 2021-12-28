@@ -1,4 +1,3 @@
-from attr.filters import exclude
 from rest_framework import serializers
 from wiki.models import Ruleset, Subpage, RulesetStatus
 from users.models import Profile
@@ -101,10 +100,40 @@ class RulesetsDetailSerializer(serializers.ModelSerializer):
 
 class RulesetsSubpageSerializer(serializers.ModelSerializer):
     """
-    Serializer for Subpage model that use in RulesetsDetailSerializer
+    Serializer for Subpage model to get only detail that use in rulesets
     """
     class Meta:
         model = Subpage
         fields = ['title', 'slug']
 
-# class RulesetSubpageSerializer
+
+class SubpageSerializer(serializers.ModelSerializer):
+    """
+    Serializer for Subpage model to get full detail of subpage
+    """
+    ruleset_detail = serializers.SerializerMethodField()
+    last_edited_by_detail = serializers.SerializerMethodField()
+    creator_detail = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Subpage
+        fields = ['ruleset_detail', 'title', 'slug', 'content', 'creator_detail', 'last_edited_by_detail', 'last_edited_at',
+                  'created_at']
+
+    def get_ruleset_detail(self, obj):
+        try:
+            return RulesetListingSerializer(Ruleset.objects.get(id=obj.ruleset_id)).data
+        except Ruleset.DoesNotExist:
+            return {}
+
+    def get_creator_detail(self, obj):
+        try:
+            return ProfileMiniSerializer(Profile.objects.get(id=obj.creator)).data
+        except Profile.DoesNotExist:
+            return {}
+
+    def get_last_edited_by_detail(self, obj):
+        try:
+            return ProfileMiniSerializer(Profile.objects.get(id=obj.last_edited_by)).data
+        except Profile.DoesNotExist:
+            return {}

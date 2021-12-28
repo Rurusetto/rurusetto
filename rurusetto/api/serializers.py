@@ -48,15 +48,6 @@ class RulesetListingSerializer(serializers.ModelSerializer):
 # Serializer for rulesets detail
 
 
-class RulesetsDetailSubpageSerializer(serializers.ModelSerializer):
-    """
-    Serializer for Subpage model that use in RulesetsDetailSerializer
-    """
-    class Meta:
-        model = Subpage
-        fields = ['title', 'slug']
-
-
 class StatusDetailSerializer(serializers.ModelSerializer):
     """
     Serializer for Status model that use in RulesetsDetailSerializer
@@ -70,7 +61,6 @@ class RulesetsDetailSerializer(serializers.ModelSerializer):
     """
     Serializer for essential information in wiki view of each rulesets
     """
-    # subpage = serializers.SerializerMethodField()
     creator_detail = serializers.SerializerMethodField()
     owner_detail = serializers.SerializerMethodField()
     last_edited_by_detail = serializers.SerializerMethodField()
@@ -106,3 +96,15 @@ class RulesetsDetailSerializer(serializers.ModelSerializer):
             return StatusDetailSerializer(RulesetStatus.objects.get(ruleset=obj)).data
         except RulesetStatus.DoesNotExist:
             return {}
+
+# Serializer for subpoge
+
+class RulesetsSubpageSerializer(serializers.ModelSerializer):
+    """
+    Serializer for Subpage model that use in RulesetsDetailSerializer
+    """
+    class Meta:
+        model = Subpage
+        fields = ['title', 'slug']
+
+# class RulesetSubpageSerializer

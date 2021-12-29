@@ -21,6 +21,10 @@ The new website is targeted to revamp all the UI of the old website and make Rū
 
 The old source code of the website is in [the other branch](https://github.com/Rurusetto/rurusetto/tree/main)
 
+## API
+
+We also provide the API for developer who want to use of our rulesets information in our database for your own dream project. More info available in the [documentation](https://docs.rulesets.info/).
+
 ## Developing Rūrusetto
 
 Please make sure you have the following prerequisites:

@@ -226,7 +226,7 @@ def edit_ruleset_wiki(request, slug):
         'ruleset': ruleset,
         'name': Ruleset.objects.get(slug=slug).name,
         'source_type': source_link_type(ruleset.source),
-        'owner_edit': ruleset.owner == str(request.user.id),
+        'has_edit_permission': ruleset.owner == str(request.user.id) or request.user.is_superuser or request.user.is_staff,
         'title': f'edit {ruleset.name}',
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),

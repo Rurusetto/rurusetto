@@ -156,6 +156,7 @@ def wiki_page(request, slug):
     context = {
         'content': ruleset,
         'hidden_subpage': Subpage.objects.filter(ruleset_id=ruleset.id, hidden=True, creator=str(request.user.id)),
+        'has_edit_permission': ruleset.owner == str(request.user.id) or request.user.is_superuser or request.user.is_staff,
         'subpage': Subpage.objects.filter(ruleset_id=ruleset.id, hidden=False),
         'source_type': source_link_type(ruleset.source),
         'user_detail': make_wiki_view(ruleset),
@@ -191,7 +192,7 @@ def edit_ruleset_wiki(request, slug):
     hero_image_light = 'img/edit-wiki-cover-light.png'
     ruleset = Ruleset.objects.get(slug=slug)
     ruleset_status = RulesetStatus.objects.get(ruleset=ruleset)
-    if ruleset.owner == str(request.user.id) or request.user.is_superuser or request.user.is_staff:
+    if ruleset.owner != str(request.user.id) and not request.user.is_superuser and not request.user.is_staff:
         messages.error(request, f"You are not allowed to edit this!")
         return redirect('wiki', slug=slug)
     else:

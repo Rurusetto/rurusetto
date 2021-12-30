@@ -195,36 +195,35 @@ def edit_ruleset_wiki(request, slug):
     if ruleset.owner != str(request.user.id) and not request.user.is_superuser and not request.user.is_staff:
         messages.error(request, f"You are not allowed to edit this!")
         return redirect('wiki', slug=slug)
+    if request.method == 'POST':
+        form = RulesetForm(request.POST, request.FILES, instance=ruleset)
+        status_form = RulesetStatusForm(request.POST, instance=ruleset_status)
+        if form.is_valid() and status_form.is_valid():
+            if source_link_type(form.instance.source) == "github" and not ruleset_status.pre_release and not status_form.cleaned_data['pre_release']:
+                # Check that the download link when render is valid
+                if form.instance.source[-1] != "/":
+                    download_url = f"{form.instance.source}/releases/latest/download/{form.instance.github_download_filename}"
+                else:
+                    download_url = f"{form.instance.source}releases/latest/download/{form.instance.github_download_filename}"
+                html_status = requests.head(download_url)
+                if (html_status.status_code != 200) and (html_status.status_code != 302) and (html_status.status_code != 301):
+                    error_message = f"The response of {download_url} is not success ({html_status.status_code}). Please check your filename or ruleset source link!"
+                    messages.error(request, error_message)
+                    return redirect('edit_wiki', slug=ruleset.slug)
+                else:
+                    form.instance.direct_download_link = direct_download_link_generator(form.instance)
+                    if not form.instance.can_download:
+                        form.instance.can_download = True
+            form.instance.last_edited_by = request.user.id
+            form.instance.slug = slugify(unidecode(form.cleaned_data.get('name')))
+            form.save()
+            status_form.save()
+            changed_slug = form.instance.slug
+            messages.success(request, f'Edit wiki successfully!')
+            return redirect('wiki', slug=changed_slug)
     else:
-        if request.method == 'POST':
-            form = RulesetForm(request.POST, request.FILES, instance=ruleset)
-            status_form = RulesetStatusForm(request.POST, instance=ruleset_status)
-            if form.is_valid() and status_form.is_valid():
-                if source_link_type(form.instance.source) == "github" and not ruleset_status.pre_release and not status_form.cleaned_data['pre_release']:
-                    # Check that the download link when render is valid
-                    if form.instance.source[-1] != "/":
-                        download_url = f"{form.instance.source}/releases/latest/download/{form.instance.github_download_filename}"
-                    else:
-                        download_url = f"{form.instance.source}releases/latest/download/{form.instance.github_download_filename}"
-                    html_status = requests.head(download_url)
-                    if (html_status.status_code != 200) and (html_status.status_code != 302) and (html_status.status_code != 301):
-                        error_message = f"The response of {download_url} is not success ({html_status.status_code}). Please check your filename or ruleset source link!"
-                        messages.error(request, error_message)
-                        return redirect('edit_wiki', slug=ruleset.slug)
-                    else:
-                        form.instance.direct_download_link = direct_download_link_generator(form.instance)
-                        if not form.instance.can_download:
-                            form.instance.can_download = True
-                form.instance.last_edited_by = request.user.id
-                form.instance.slug = slugify(unidecode(form.cleaned_data.get('name')))
-                form.save()
-                status_form.save()
-                changed_slug = form.instance.slug
-                messages.success(request, f'Edit wiki successfully!')
-                return redirect('wiki', slug=changed_slug)
-        else:
-            form = RulesetForm(instance=ruleset)
-            status_form = RulesetStatusForm(instance=ruleset_status)
+        form = RulesetForm(instance=ruleset)
+        status_form = RulesetStatusForm(instance=ruleset_status)
     context = {
         'form': form,
         'status_form': status_form,

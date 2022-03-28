@@ -1,7 +1,8 @@
 name: Deploy Changes to Server
-on: 
+on:
   push:
-    branches: [ new-website ]
+    tags:
+    - '*'
 
 jobs:
   build:

@@ -133,7 +133,7 @@ The code in this repository is licensed under the MIT license. Please see [the l
 
 **TL;DR** you can do whatever you want as long as you include the original copyright and license notice in any copy of the software/source.
 
-The images in this website and the content that is upload by the users and community are covered by DMCA. If you are the work's original owner and want to request to remove your work, please email the team at [contact@rulesets.info](mailto:contact@rulesets.info) or contact HelloYeew (project leader) at [me@helloyeew.dev](mailto:me@helloyeew.dev).
+The images in this website and the content that is upload by the users and community are covered by DMCA. If you are the work's original owner and want to request to remove your work, please email the team by contact HelloYeew (project leader) at [me@helloyeew.dev](mailto:me@helloyeew.dev).
 
 Each ruleset has its own license.
 

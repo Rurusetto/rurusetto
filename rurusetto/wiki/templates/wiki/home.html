@@ -29,11 +29,21 @@
     </div>
   </div>
 
+    {% if is_in_debug %}
+  <div class="container">
+    <div class="row mb-3">
+      <div class="alert alert-warning" role="alert">
+          Currently <code>DEBUG</code> settings in site settings is True. If this is live server please turn it off!
+      </div>
+    </div>
+  </div>
+    {% endif %}
+
     {% if test_server %}
   <div class="container">
     <div class="row mb-3">
       <div class="alert alert-danger" role="alert">
-        This website is under heavy development and in the test phase. Some functions will not be processed or won't work properly. All pictures that are used in the current version have not been finalized.
+        You are currently in test server environment, please go to <a href="https://rulesets.info">live version</a> for a full experience.
       </div>
     </div>
   </div>

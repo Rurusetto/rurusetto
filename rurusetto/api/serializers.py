@@ -34,7 +34,7 @@ class RulesetListingSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Ruleset
-        fields = ['id', 'name', 'slug', 'description', 'icon', 'light_icon', 'owner_detail', 'verified',
+        fields = ['id', 'name', 'slug', 'description', 'icon', 'light_icon', 'owner_detail', 'verified', 'archive',
                   'direct_download_link', 'can_download', 'status']
 
     def get_owner_detail(self, obj):

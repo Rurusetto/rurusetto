@@ -1,5 +1,6 @@
 {% load static %}
 {% load settings_value %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,21 +81,21 @@
     <div id="desktop-header" class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="{% url 'home' %}" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none hvr-bounce-in">
-          <img id="header-logo" src="{% static 'logo/rurusetto-logo.svg' %}" height="65" alt="logo" data-aos="zoom-in">
+          <img id="header-logo" src="{% static 'logo/rurusetto-logo.svg' %}" height="65" alt="{% trans "logo" %}" data-aos="zoom-in">
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <div data-aos="fade-up" data-aos-duration="600">
-                <li><a id="nav-listing" href="{% url 'listing' %}" class="nav-link px-2 nav-text round-font-bold hvr-underline-from-center">Listing</a></li>
+                <li><a id="nav-listing" href="{% url 'listing' %}" class="nav-link px-2 nav-text round-font-bold hvr-underline-from-center">{% trans "listing" %}</a></li>
             </div>
             <div data-aos="fade-up" data-aos-duration="700">
-                <li><a id="nav-status" data-aos-duration="700" href="{% url 'status' %}" class="nav-link px-2 nav-text round-font-bold hvr-underline-from-center">Status</a></li>
+                <li><a id="nav-status" data-aos-duration="700" href="{% url 'status' %}" class="nav-link px-2 nav-text round-font-bold hvr-underline-from-center">{% trans "status" %}</a></li>
             </div>
             <div data-aos="fade-up" data-aos-duration="800">
-                <li><a id="nav-install" data-aos-duration="800" href="{% url 'install' %}" class="nav-link px-2 nav-text round-font-bold hvr-underline-from-center">Install</a></li>
+                <li><a id="nav-install" data-aos-duration="800" href="{% url 'install' %}" class="nav-link px-2 nav-text round-font-bold hvr-underline-from-center">{% trans "install" %}</a></li>
             </div>
             <div data-aos="fade-up" data-aos-duration="900">
-                <li><a id="nav-changelog" data-aos-duration="900" href="{% url 'changelog' %}" class="nav-link px-2 nav-text round-font-bold hvr-underline-from-center">Changelog</a></li>
+                <li><a id="nav-changelog" data-aos-duration="900" href="{% url 'changelog' %}" class="nav-link px-2 nav-text round-font-bold hvr-underline-from-center">{% trans "changelog" %}</a></li>
             </div>
         </ul>
 
@@ -105,14 +106,14 @@
           </a>
           <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
               {% if user.is_superuser or user.is_staff %}
-            <li><a class="dropdown-item spacing-hover" href="{% url "maintainer" %}">Maintainer</a></li>
-            <li><a class="dropdown-item spacing-hover" href="{% url "admin:index" %}">Admin</a></li>
+            <li><a class="dropdown-item spacing-hover" href="{% url "maintainer" %}">{% trans "maintainer" %}</a></li>
+            <li><a class="dropdown-item spacing-hover" href="{% url "admin:index" %}">{% trans "admin" %}</a></li>
             <li><hr class="dropdown-divider"></li>
               {% endif %}
-            <li><a class="dropdown-item spacing-hover" href="{% url "settings" %}">Settings</a></li>
-            <li><a class="dropdown-item spacing-hover" href="{% url "profile" user.id %}">Profile</a></li>
+            <li><a class="dropdown-item spacing-hover" href="{% url "settings" %}">{% trans "settings" %}</a></li>
+            <li><a class="dropdown-item spacing-hover" href="{% url "profile" user.id %}">{% trans "profile" %}</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item spacing-hover" id="signout-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Sign out</a></li>
+            <li><a class="dropdown-item spacing-hover" id="signout-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">{% trans "sign_out" %}</a></li>
           </ul>
         </div>
         {% else %}
@@ -121,8 +122,8 @@
             <img id="profile-picture" src="{% static 'img/guest-profile.png' %}" alt="Guest" height="48" width="48" class="rounded-circle hvr-grow">
           </a>
           <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-            <li><a class="dropdown-item spacing-hover" href="{% url 'account_login' %}">Sign in</a></li>
-            <li><a class="dropdown-item spacing-hover" href="{% url 'account_signup' %}">Sign Up</a></li>
+            <li><a class="dropdown-item spacing-hover" href="{% url 'account_login' %}">{% trans "sign_in" %}</a></li>
+            <li><a class="dropdown-item spacing-hover" href="{% url 'account_signup' %}">{% trans "sign_up" %}</a></li>
           </ul>
         </div>
         {% endif %}
@@ -134,29 +135,29 @@
       <nav id="mobile-header" class="navbar p-3 mb-3 navbar-dark fixed-top">
         <div class="container-fluid">
           <a href="{% url 'home' %}" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none hvr-bounce-in">
-            <img id="mobile-logo" src="{% static 'logo/rurusetto-logo.svg' %}" height="50" alt="logo">
+            <img id="mobile-logo" src="{% static 'logo/rurusetto-logo.svg' %}" height="50" alt="{% trans "logo" %}">
           </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" style="margin-top: -10px;">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="{% trans 'toggle_navigation' %}" style="margin-top: -10px;">
             <span class="navbar-toggler-icon"></span>
           </button>
         </div>
       </nav>
       <div class="collapse fixed-top" id="navbarToggleExternalContent">
           <div class="list-group border-0">
-            <a href="{% url 'listing' %}" class="list-group-item list-group-item-action mobile-header-text">Listing</a>
-            <a href="{% url 'status' %}" class="list-group-item list-group-item-action mobile-header-text">Status</a>
-            <a href="{% url 'install' %}" class="list-group-item list-group-item-action mobile-header-text">Install</a>
-            <a href="{% url 'changelog' %}" class="list-group-item list-group-item-action mobile-header-text">Changelog</a>
+            <a href="{% url 'listing' %}" class="list-group-item list-group-item-action mobile-header-text">{% trans "listing" %}</a>
+            <a href="{% url 'status' %}" class="list-group-item list-group-item-action mobile-header-text">{% trans "status" %}</a>
+            <a href="{% url 'install' %}" class="list-group-item list-group-item-action mobile-header-text">{% trans "install" %}</a>
+            <a href="{% url 'changelog' %}" class="list-group-item list-group-item-action mobile-header-text">{% trans "changelog" %}</a>
             <a href="#collapseProfileMenu" class="list-group-item list-group-item-action mobile-header-text profile-menu" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapseProfileMenu" onclick="rotateArrowMenu()" id="profile-menu"><img id="profile-picture-mobile" src="{{ user.profile.image.url }}" alt="{{ user.username }}" height="32" width="32" class="rounded-circle"> {{ user.username }} <i class="fas fa-chevron-down" id="arrow-profile-menu"></i></a>
             <div class="collapse" id="collapseProfileMenu">
               <div class="list-group border-0">
                   {% if user.is_superuser or user.is_staff %}
-                <a href="{% url "maintainer" %}" class="list-group-item list-group-item-action mobile-header-text">Maintainer</a>
-                <a href="{% url "admin:index" %}" class="list-group-item list-group-item-action mobile-header-text">Admin</a>
+                <a href="{% url "maintainer" %}" class="list-group-item list-group-item-action mobile-header-text">{% trans "maintainer" %}</a>
+                <a href="{% url "admin:index" %}" class="list-group-item list-group-item-action mobile-header-text">{% trans "admin" %}</a>
                   {% endif %}
-                <a href="{% url "settings" %}" class="list-group-item list-group-item-action mobile-header-text">Settings</a>
-                <a href="{% url 'profile' user.id %}" class="list-group-item list-group-item-action mobile-header-text">Profile</a>
-                <a class="list-group-item list-group-item-action mobile-header-text" id="signout-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Sign out</a>
+                <a href="{% url "settings" %}" class="list-group-item list-group-item-action mobile-header-text">{% trans "settings" %}</a>
+                <a href="{% url 'profile' user.id %}" class="list-group-item list-group-item-action mobile-header-text">{% trans "profile" %}</a>
+                <a class="list-group-item list-group-item-action mobile-header-text" id="signout-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">{% trans "sign_out" %}</a>
               </div>
             </div>
           </div>
@@ -165,21 +166,21 @@
       <nav id="mobile-header" class="navbar p-3 mb-3 navbar-dark fixed-top">
         <div class="container-fluid">
           <a href="{% url 'home' %}" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none hvr-bounce-in">
-            <img id="mobile-logo" src="{% static 'logo/rurusetto-logo.svg' %}" height="50" width="50" alt="logo">
+            <img id="mobile-logo" src="{% static 'logo/rurusetto-logo.svg' %}" height="50" width="50" alt="{% trans "logo" %}">
           </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" style="margin-top: -10px;">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="{% trans "toggle_navigation" %}" style="margin-top: -10px;">
             <span class="navbar-toggler-icon"></span>
           </button>
         </div>
       </nav>
       <div class="collapse fixed-top" id="navbarToggleExternalContent">
           <div class="list-group border-0">
-            <a href="{% url 'listing' %}" class="list-group-item list-group-item-action mobile-header-text">Listing</a>
-            <a href="{% url 'status' %}" class="list-group-item list-group-item-action mobile-header-text">Status</a>
-            <a href="{% url 'install' %}" class="list-group-item list-group-item-action mobile-header-text">Install</a>
-            <a href="{% url 'changelog' %}" class="list-group-item list-group-item-action mobile-header-text">Changelog</a>
-            <a href="{% url 'account_login' %}" class="list-group-item list-group-item-action mobile-header-text">Sign In</a>
-            <a href="{% url 'account_signup' %}" class="list-group-item list-group-item-action mobile-header-text">Sign Up</a>
+            <a href="{% url 'listing' %}" class="list-group-item list-group-item-action mobile-header-text">{% trans "listing" %}</a>
+            <a href="{% url 'status' %}" class="list-group-item list-group-item-action mobile-header-text">{% trans "status" %}</a>
+            <a href="{% url 'install' %}" class="list-group-item list-group-item-action mobile-header-text">{% trans "install" %}</a>
+            <a href="{% url 'changelog' %}" class="list-group-item list-group-item-action mobile-header-text">{% trans "changelog" %}</a>
+            <a href="{% url 'account_login' %}" class="list-group-item list-group-item-action mobile-header-text">{% trans "sign_in" %}</a>
+            <a href="{% url 'account_signup' %}" class="list-group-item list-group-item-action mobile-header-text">{% trans "sign_up" %}</a>
             </div>
           </div>
   {% endif %}
@@ -188,18 +189,17 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Alert</h5>
+          <h5 class="modal-title" id="exampleModalLabel">{% trans "alert" %}</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          Are you sure you want to sign out :(
+          {% trans "sign_out_notice" %}
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No,let me back!</button>
-{#          <a role="button" href="{% url 'logout' %}" class="btn btn-primary">Yes</a>#}
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{% trans "sign_out_cancel" %}</button>
             <form method="post" action="{% url 'account_logout' %}">
               {% csrf_token %}
-              <button class="btn btn-secondary btn-rurusetto hvr-sweep-to-right" type="submit">Sign Out</button>
+              <button class="btn btn-secondary btn-rurusetto hvr-sweep-to-right" type="submit">{% trans "sign_out" %}</button>
           </form>
         </div>
       </div>
@@ -212,7 +212,7 @@
     <div class="container">
       <div class="row">
         <div class="col">
-          <p>Made with ❤️ by <a class="text-decoration-none hvr-underline-from-center made-by-footer" target="_blank" href="https://github.com/HelloYeew">HelloYeew</a> and <a class="text-decoration-none hvr-underline-from-center made-by-footer" target="_blank" href="https://github.com/Rurusetto">Rūrusetto</a></p>
+          <p>{% trans "made_with_love_by" %} <a class="text-decoration-none hvr-underline-from-center made-by-footer" target="_blank" href="https://github.com/HelloYeew">HelloYeew</a> {% trans "and" %} <a class="text-decoration-none hvr-underline-from-center made-by-footer" target="_blank" href="https://github.com/Rurusetto">Rūrusetto</a></p>
         </div>
         <div class="col text-end github-footer">
             <a target="_blank" href="https://discord.gg/BTsSt8W8qh"><i class="fab fa-discord hvr-grow github-footer"></i></a>

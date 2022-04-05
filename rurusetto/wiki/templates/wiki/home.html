@@ -50,13 +50,9 @@
     {% endif %}
 
     <div class="container">
-        <div class="row mb-3">
-          <h1>Latest rulesets</h1>
-        </div>
         <div class="row text-center">
-          {% for detail in latest_add_rulesets %}
+          {% for detail in rulesets %}
           <div class="col-lg-4">
-
               {% if user.config.theme == 'light' %}
               <img src="{{ detail.0.light_icon.url }}" alt="{{ detail.0.name }}" width="140px" height="140px" class="rounded-circle">
               {% else %}

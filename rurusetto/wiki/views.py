@@ -31,12 +31,6 @@ def home(request):
     """
     hero_image = 'img/home-cover-night.png'
     hero_image_light = 'img/home-cover-light.jpeg'
-    latest_add_rulesets = []
-    for i in range(3):
-        try:
-            latest_add_rulesets.append(Ruleset.objects.filter(hidden=False).order_by('-created_at')[i])
-        except:
-            continue
 
     context = {
         'title': 'home',
@@ -45,7 +39,7 @@ def home(request):
         'opengraph_description': 'A page that contain all osu! ruleset',
         'opengraph_url': resolve_url('home'),
         # Use make_listing_view function to get the User object from database and pass to template
-        'latest_add_rulesets': make_listing_view(latest_add_rulesets),
+        'rulesets': make_listing_view(Ruleset.objects.filter(hidden=False, archive=False).order_by('name')),
         'test_server': TEST_SERVER,
         'is_in_debug': DEBUG
     }

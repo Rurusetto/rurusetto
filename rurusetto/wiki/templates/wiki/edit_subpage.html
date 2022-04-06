@@ -1,13 +1,14 @@
 {% extends "wiki/base.html" %}
 {% load static %}
+{% load i18n %}
 {% block content %}
 
 <div class="px-4 py-4 my-4 align-middle hero">
     <div class="container align-middle">
         <div class="row">
             <p></p>
-            <div><h1 class="display-5 fw-bold">Edit Subpage</h1></div>
-            <p id="hero-description">You are currently edit subpage "{{ subpage_name }}" on ruleset name "{{ ruleset_name }}".</p>
+            <div><h1 class="display-5 fw-bold">{% trans "edit_subpage" %}</h1></div>
+            <p id="hero-description">{% blocktrans with subpage_name=subpage_name ruleset_name=ruleset_name %}You are currently edit subpage "{{ subpage_name }}" on ruleset name "{{ ruleset_name }}".{% endblocktrans %}</p>
         </div>
     </div>
 </div>
@@ -34,40 +35,40 @@
             {% csrf_token %}
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label">Title:</label>
+                    <label class="col-sm-2 col-form-label form-label">{% trans "title" %}:</label>
                     <div class="col-sm-10">
                       <input type="text" name="title" class="form-control" required id="id_title" value="{{ form.title.value }}">
                         <p class="form-error raleway-font">{{ form.title.errors }}</p>
-                        <p class="text-muted raleway-font">The subpage name.</p>
+                        <p class="text-muted raleway-font">{% trans "title_description" %}</p>
                     </div>
                   </div>
             </div>
-            <h1>Subpage Content</h1>
+            <h1>{% trans "subpage_content" %}</h1>
             {{ form.media }}
             {{ form.content }}
             {% if subpage_creator or ruleset_owner %}
-            <h1>Publication</h1>
+            <h1>{% trans "publication" %}</h1>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label" for="id_hidden">Hidden:</label>
+                    <label class="col-sm-2 col-form-label form-label" for="id_hidden">{% trans "hidden" %}:</label>
                     <div class="col-sm-10">
                         <div class="form-check form-switch">
                             {{ form.hidden }}
                         </div>
                         <p class="form-error raleway-font">{{ form.hidden.errors }}</p>
-                        <p class="text-muted raleway-font">If this is checked, your subpage will not be show in the subpage listing on other user.</p>
+                        <p class="text-muted raleway-font">{% trans "subpage_hidden_note" %}</p>
                     </div>
                   </div>
             </div>
             {% endif %}
-            <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right raleway-font">Submit</button>
+            <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right raleway-font">{% trans "submit" %}</button>
         </form>
     </div>
     {% if subpage_creator or ruleset_owner %}
     <p></p>
-    <h1 class="text-danger">Delete Subpage</h1>
-    <p class="text-danger">Click the button below to delete this subpage. Note that this action cannot be undo!</p>
-    <p><a class="btn btn-danger hvr-sweep-to-right-danger raleway-font" href="{% url "delete_subpage" ruleset_slug subpage_slug %}">Delete This Subpage</a></p>
+    <h1 class="text-danger">{% trans "delete_subpage" %}</h1>
+    <p class="text-danger">{% trans "delete_subpage_description" %}</p>
+    <p><a class="btn btn-danger hvr-sweep-to-right-danger raleway-font" href="{% url "delete_subpage" ruleset_slug subpage_slug %}">{% trans "delete_this_subpage" %}</a></p>
     {% endif %}
 </div>
 

@@ -1,5 +1,6 @@
 {% extends "wiki/base.html" %}
 {% load static %}
+{% load i18n %}
 {% block content %}
 
 <div class="px-4 py-4 my-4 align-middle hero">
@@ -7,8 +8,8 @@
         <div class="row">
             <p></p>
             <p></p>
-            <div><h1 class="display-5 fw-bold" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">Maintainer Menu</h1></div>
-            <p data-aos="fade-up" data-aos-duration="700" data-aos-once="true">Menu for maintainer only!</p>
+            <div><h1 class="display-5 fw-bold" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">{% trans "maintainer_menu" %}</h1></div>
+            <p data-aos="fade-up" data-aos-duration="700" data-aos-once="true">{% trans "maintainer_menu_description" %}</p>
         </div>
     </div>
 </div>
@@ -37,33 +38,33 @@
     <p></p>
 
 <div class="container">
-    <h1><i class="fas fa-wrench"></i> Run an action only for maintainer</h1>
+    <h1><i class="fas fa-wrench"></i> {% trans "run_action_for_maintainer" %}</h1>
     <div class="alert alert-danger" role="alert">
-      <b>Warning :</b> This action is running in background and consume a lot of calculation power. Please use it carefully!
+      <b>{% trans "warning" %} :</b> {% trans "action_warning" %}
     </div>
     <div class="row">
         <div class="col-3">
-          <a class="btn btn-rurusetto" href="{% url 'update_beatmap_action' %}">Update all beatmaps metadata</a>
+          <a class="btn btn-rurusetto" href="{% url 'update_beatmap_action' %}">{% trans "update_all_beatmaps_metadata" %}</a>
         </div>
         <div class="col-9">
-          <p>Update all beatmap metadata in the server.</p>
+          <p>{% trans "update_all_beatmaps_metadata_description" %}</p>
         </div>
     </div>
     <p></p>
     <div class="row">
         <div class="col-3">
-          <a class="btn btn-rurusetto" href="{% url 'update_ruleset_version' %}">Update rulesets version</a>
+          <a class="btn btn-rurusetto" href="{% url 'update_ruleset_version' %}">{% trans "update_rulesets_version" %}</a>
         </div>
         <div class="col-9">
-          <p>This is a long task that must be always run. It will fetch the data from GitHub API and update the ruleset version from on status page every 30 minutes. Please check on other worker before run this due to the rate limit of GitHub API.</p>
+          <p>{% trans "update_rulesets_version_description" %}</p>
         </div>
     </div>
     <div class="row">
         <div class="col-3">
-          <a class="btn btn-rurusetto" href="{% url 'update_ruleset_version_once_action' %}">Update rulesets version once</a>
+          <a class="btn btn-rurusetto" href="{% url 'update_ruleset_version_once_action' %}">{% trans "update_rulesets_version_once" %}</a>
         </div>
         <div class="col-9">
-          <p>This action will be quickly update all rulesets version. This can be run when something happen or don't want to use the long task.</p>
+          <p>{% trans "update_rulesets_version_description" %}</p>
         </div>
     </div>
 
@@ -75,35 +76,35 @@
     <h3>#{{ action.0.id }} {{ action.0.title }}</h3>
 
     {% if action.1 == None %}
-        <p class="text-muted"><img src="{% static 'img/default.png' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User </p>
+        <p class="text-muted"><img src="{% static 'img/default.png' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> {% trans "deleted_user" %}</p>
     {% else %}
         <a href="{% url "profile" action.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover profile-link"><p class="text-muted"><img src="{{ action.1.profile.image.url }}" alt="{{ action.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ action.1.username }} </p></a>
     {% endif %}
 
-    <p>Start at {{ action.0.time_start|date:"F j, Y h:i A" }} UTC</p>
-    <p id="duration_{{ action.0.id }}">Duration : Calculating...</p>
+    <p>{% trans "start_at" %} {{ action.0.time_start|date:"F j, Y h:i A" }} UTC</p>
+    <p id="duration_{{ action.0.id }}">{% trans "duration" %} : {% trans "calculating" %}...</p>
 
     <div id="status_{{ action.0.id }}">
         {% if action.0.status == 0 %}
         <div>
         <div class="spinner-grow" role="status" style="color: #ff66aa">
-          <span class="visually-hidden">Idle...</span>
-        </div> <span style="color: #ff66aa" class="text-center">Idle...</span>
+          <span class="visually-hidden">{% trans "idle" %}...</span>
+        </div> <span style="color: #ff66aa" class="text-center">{% trans "idle" %}...</span>
         </div>
         {% elif action.0.status == 1 %}
         <div>
         <div class="spinner-border" role="status" style="color: #ff66aa">
-          <span class="visually-hidden">Loading...</span>
-        </div> <span style="color: #ff66aa" class="text-center">Running...</span>
+          <span class="visually-hidden">{% trans "loading" %}...</span>
+        </div> <span style="color: #ff66aa" class="text-center">{% trans "calculating" %}...</span>
         </div>
         {% elif action.0.status == 2 %}
-        <p class="text-success"><i class="fas fa-check"></i> Successfully running</p>
+        <p class="text-success"><i class="fas fa-check"></i> {% trans "successfully_running" %}</p>
         {% elif action.0.status == 3 %}
-        <p class="text-danger"><i class="fas fa-times"></i> Run failed</p>
+        <p class="text-danger"><i class="fas fa-times"></i> {% trans "run_failed" %}</p>
         {% endif %}
     </div>
 
-    <p id="running_log_{{ action.0.id }}">Running Status : {{ action.0.running_text }}</p>
+    <p id="running_log_{{ action.0.id }}">{% trans "running_status" %} : {{ action.0.running_text }}</p>
     </div>
     <p></p>
     {% endfor %}
@@ -137,18 +138,18 @@
                         let status_message = "";
                         if (Data['status'] === 0) {
                             status_message = '<div class="spinner-grow" role="status" style="color: #ff66aa">\n' +
-                                '<span class="visually-hidden">Idle...</span>\n' +
-                                '</div> <span style="color: #ff66aa" class="text-center">Idle...</span>'
+                                '<span class="visually-hidden">{% trans "idle" %}...</span>\n' +
+                                '</div> <span style="color: #ff66aa" class="text-center">{% trans "idle" %}...</span>'
                         } else if (Data['status'] === 1) {
                             status_message = '<div class="spinner-border" role="status" style="color: #ff66aa">\n' +
-                                '<span class="visually-hidden">Loading...</span>\n' +
-                                '</div> <span style="color: #ff66aa" class="text-center">Running...</span>'
+                                '<span class="visually-hidden">{% trans "loading" %}...</span>\n' +
+                                '</div> <span style="color: #ff66aa" class="text-center">{% trans "running" %}...</span>'
                         } else if (Data['status'] === 2) {
-                            status_message = '<p class="text-success"><i class="fas fa-check"></i> Successfully running</p>'
+                            status_message = '<p class="text-success"><i class="fas fa-check"></i> {% trans "successfully_running" %}</p>'
                         } else if (Data['status'] === 3) {
-                            status_message = '<p class="text-danger"><i class="fas fa-times"></i> Run failed</p>'
+                            status_message = '<p class="text-danger"><i class="fas fa-times"></i> {% trans "run_failed" %}</p>'
                         } else {
-                            status_message = '<p>Unknown Status</p>'
+                            status_message = '<p>{% trans "unknown_status" %}</p>'
                         }
 
                         status_action0id.innerHTML = status_message;

@@ -1,13 +1,14 @@
 {% extends "wiki/base.html" %}
 {% load static %}
+{% load i18n %}
 {% block content %}
 
 <div class="px-4 py-4 my-4 text-center align-middle hero">
     <i class="fas fa-download fa-4x" style="transition: 0.5s" id="install-logo"></i>
     <p></p>
-    <h1 class="display-5 fw-bold" id="home-welcome" data-aos="fade-down">install and update the rulesets</h1>
+    <h1 class="display-5 fw-bold" id="home-welcome" data-aos="fade-down">{% trans "install_and_update_rulesets" %}</h1>
     <div class="col-lg-4 mx-auto">
-      <p class="lead mb-4" id="home-description" data-aos="fade-down">install and update the rulesets in osu!lazer with rūrusetto.</p>
+      <p class="lead mb-4" id="home-description" data-aos="fade-down">{% trans "install_and_update_rulesets_description" %}</p>
     </div>
 </div>
 
@@ -36,13 +37,14 @@
 
 <div class="d-grid gap-4">
     <div class="container" data-aos="fade-up">
-        <h1 class="install-header text-center">download rulesets file</h1>
+        <h1 class="install-header text-center">{% blocktrans %}download rulesets file{% endblocktrans %}</h1>
     </div>
     <div class="container d-grid gap-4">
       <div class="row">
         <div class="col-lg-6" data-aos="fade-right">
           <h2></h2>
-            <p class="install-text">Ruleset files can be obtained at <a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" target="_blank" href="{% url 'status' %}"><i class="fas fa-info-circle icon-menu hvr-icon"></i> rulesets status page</a> and then clicking on the <code>Download latest version</code> on the desired ruleset.</p>
+            {% url 'status' as url_status %}
+            <p class="install-text">{% blocktrans %}Ruleset files can be obtained at <a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" target="_blank" href="{{ url_status }}"><i class="fas fa-info-circle icon-menu hvr-icon"></i> rulesets status page</a> and then clicking on the <code>Download latest version</code> on the desired ruleset.{% endblocktrans %}</p>
         </div>
         <div class="col-lg-6 text-center" data-aos="fade-left">
           <img src="{% static "img/download-rulesets.png" %}" alt="Download the rulesets file" class="install-img">
@@ -50,48 +52,48 @@
       </div>
     </div>
     <div class="container text-center fs-5" data-aos="fade-up">
-        <p><i class="fas fa-sync-alt"></i> The changelog and download link will automatically update when a ruleset is updated.</p>
+        <p><i class="fas fa-sync-alt"></i> {% blocktrans %}The changelog and download link will automatically update when a ruleset is updated.{% endblocktrans %}</p>
     </div>
     <p></p>
     <div class="container" data-aos="fade-up">
-        <h1 class="install-header text-center" data-aos="fade-up">import rulesets to osu!lazer</h1>
+        <h1 class="install-header text-center" data-aos="fade-up">{% blocktrans %}import rulesets to osu!lazer{% endblocktrans %}</h1>
     </div>
     <div class="container d-grid gap-4">
       <div class="row">
         <div class="col-lg-6" data-aos="fade-right">
-          <h2>step 1: navigate to osu! data directory</h2>
-            <p class="install-text">In osu!lazer’s setting panel, there is a button to <code>Open osu! folder</code> within the “General” section. On windows you could navigate to the data folder directly via Windows Explorer, by default this location is <code>%AppData%/osu!/rulesets</code>. On MacOS default this location is in application itself.</p>
+          <h2>{% blocktrans %}step 1: navigate to osu! data directory{% endblocktrans %}</h2>
+            <p class="install-text">{% blocktrans %}In osu!lazer’s setting panel, there is a button to <code>Open osu! folder</code> within the “General” section. On windows you could navigate to the data folder directly via Windows Explorer, by default this location is <code>%AppData%/osu!/rulesets</code>. On MacOS default this location is in application itself.{% endblocktrans %}</p>
         </div>
         <div class="col-lg-6 text-center" data-aos="fade-left">
-          <img src="{% static "img/open-osu-folder.png" %}" alt="Download the rulesets file" class="install-img">
+          <img src="{% static "img/open-osu-folder.png" %}" alt="{% trans "open_osu_folder" %}" class="install-img">
         </div>
       </div>
       <div class="row">
         <div class="col-lg-6 text-center" data-aos="fade-right">
-            <img src="{% static "img/installing-rulesets.png" %}" alt="Download the rulesets file" class="install-img">
+            <img src="{% static "img/installing-rulesets.png" %}" alt="{% trans "move_rulesets_file" %}" class="install-img">
         </div>
         <div class="col-lg-6" data-aos="fade-left">
-            <h2>step 2: installing the ruleset</h2>
-            <p class="install-text">Copy the ruleset file (.dll file that you just downloaded) into the rulesets directory, do make sure that duplicate copies of the ruleset are overwritten.</p>
-            <p class="install-text">Other rulesets also could share the same folder.</p>
+            <h2>{% blocktrans %}step 2: installing the ruleset{% endblocktrans %}</h2>
+            <p class="install-text">{% blocktrans %}Copy the ruleset file (.dll file that you just downloaded) into the rulesets directory, do make sure that duplicate copies of the ruleset are overwritten.{% endblocktrans %}</p>
+            <p class="install-text">{% blocktrans %}Other rulesets also could share the same folder.{% endblocktrans %}</p>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-6" data-aos="fade-right">
-          <h2>stpe 3: have fun!</h2>
-            <p class="install-text">After completing the above steps, you may need to restart osu!lazer if it is already open. Once restarted, you should see the ruleset alongside the standard rulesets.</p>
+          <h2>{% blocktrans %}stpe 3: have fun!{% endblocktrans %}</h2>
+            <p class="install-text">{% blocktrans %}After completing the above steps, you may need to restart osu!lazer if it is already open. Once restarted, you should see the ruleset alongside the standard rulesets.{% endblocktrans %}</p>
         </div>
         <div class="col-lg-6 text-center" data-aos="fade-left">
-          <img src="{% static "img/rulesets-complete.png" %}" alt="Download the rulesets file" class="install-img">
+          <img src="{% static "img/rulesets-complete.png" %}" alt="{% trans "rulesets_show_in_lazer_toolbar" %}" class="install-img">
         </div>
       </div>
     </div>
     <p></p>
     <div class="container" data-aos="fade-up">
-        <h1 class="install-header text-center">update rulesets</h1>
+        <h1 class="install-header text-center">{% blocktrans %}update rulesets{% endblocktrans %}</h1>
     </div>
     <div class="container text-center fs-5" data-aos="fade-up">
-        <p><i class="fas fa-sync-alt"></i> To update rulesets, just do the same step and overwrite the old rulesets file.</p>
+        <p><i class="fas fa-sync-alt"></i> {% blocktrans %}To update rulesets, just do the same step and overwrite the old rulesets file.{% endblocktrans %}</p>
     </div>
 </div>
 

@@ -1,4 +1,6 @@
 from django.contrib.auth.models import User
+from django.db.models.functions import Lower
+
 from .models import Ruleset, RecommendBeatmap, RulesetStatus
 
 
@@ -177,7 +179,7 @@ def make_status_view():
     :return: The list of data needed to render in status page template.
     """
     show_ruleset = []
-    for ruleset in Ruleset.objects.filter(hidden=False).order_by('name'):
+    for ruleset in Ruleset.objects.filter(hidden=False).order_by(Lower('name')):
         if source_link_type(ruleset.source) == 'patreon':
             # Patreon source is just need to go to Patreon owner page.
             show_ruleset.append([ruleset, 'patreon', [ruleset.source, RulesetStatus.objects.get(ruleset=ruleset)]])

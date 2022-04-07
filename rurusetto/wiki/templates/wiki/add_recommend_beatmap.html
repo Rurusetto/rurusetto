@@ -8,7 +8,7 @@
         <div class="row">
             <p></p>
             <div data-aos="fade-up" data-aos-duration="600"><h1 class="display-5 fw-bold">{% trans "add_recommend_beatmap_header" %}</h1></div>
-            <p id="hero-description" data-aos="fade-up" data-aos-duration="700">{{ opengraph_description }}</p>
+            <p id="hero-description" data-aos="fade-up" data-aos-duration="700">{% blocktrans with ruleset_name=ruleset.name %}You are currently add a new recommend beatmap for {{ruleset_name}}.{% endblocktrans %}</p>
         </div>
     </div>
 </div>

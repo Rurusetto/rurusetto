@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 2022.410.0\n"
-"Report-Msgid-Bugs-To: HelloYeew\n"
-"POT-Creation-Date: 2022-04-07 19:19+0700\n"
+"Report-Msgid-Bugs-To: Rūrusetto repository\n"
+"POT-Creation-Date: 2022-04-08 03:11+0700\n"
 "PO-Revision-Date: 2022-04-08 02:17+0700\n"
 "Last-Translator: Phawit Pornwattanakul <me@helloyeew.dev>\n"
 "Language-Team: Rūrusetto <me@helloyeew.dev>\n"
@@ -22,13 +22,23 @@ msgstr ""
 msgid "add_recommend_beatmap_header"
 msgstr "Recommend a new beatmap"
 
+#: .\templates\wiki\add_recommend_beatmap.html:11
+#, fuzzy, python-format
+#| msgid ""
+#| " You are currently editing content on ruleset named \"%(ruleset_name)s\"."
+msgid "You are currently add a new recommend beatmap for %(ruleset_name)s."
+msgstr ""
+"You are currently editing content on ruleset named \"%(ruleset_name)s\"."
+
 #: .\templates\wiki\add_recommend_beatmap.html:38
 msgid "beatmap_id"
 msgstr "Beatmap ID"
 
 #: .\templates\wiki\add_recommend_beatmap.html:42
 msgid "put_beatmap_id_note"
-msgstr "Put the beatmap ID of the beatmap you want to recommend. You can find the beatmap ID from the URL of that beatmap."
+msgstr ""
+"Put the beatmap ID of the beatmap you want to recommend. You can find the "
+"beatmap ID from the URL of that beatmap."
 
 #: .\templates\wiki\add_recommend_beatmap.html:43
 msgid "put_beatmap_id_note2"
@@ -36,7 +46,9 @@ msgstr "Note that your beatmap must be for osu! mode only."
 
 #: .\templates\wiki\add_recommend_beatmap.html:44
 msgid "put_beatmap_id_example"
-msgstr "Example : Beatmap ID of \"Harumachi Clover (Swing Arrangement) [Dictate Edit]\" diffuculty \"Oh no!\" by Sotarks."
+msgstr ""
+"Example : Beatmap ID of \"Harumachi Clover (Swing Arrangement) [Dictate "
+"Edit]\" diffuculty \"Oh no!\" by Sotarks."
 
 #: .\templates\wiki\add_recommend_beatmap.html:45
 msgid "put_beatmap_id_example_pic_alt"
@@ -48,7 +60,8 @@ msgstr "Comment"
 
 #: .\templates\wiki\add_recommend_beatmap.html:55
 msgid "comment_note"
-msgstr "Write a short comment about why you recommend this beatmap for this ruleset."
+msgstr ""
+"Write a short comment about why you recommend this beatmap for this ruleset."
 
 #: .\templates\wiki\add_recommend_beatmap.html:59
 msgid "add"
@@ -86,7 +99,9 @@ msgstr "Hidden"
 
 #: .\templates\wiki\add_subpage.html:58 .\templates\wiki\edit_subpage.html:59
 msgid "subpage_hidden_note"
-msgstr "If this is checked, your subpage will not be show in the subpage listing on other user."
+msgstr ""
+"If this is checked, your subpage will not be show in the subpage listing on "
+"other user."
 
 #: .\templates\wiki\add_subpage.html:62
 msgid "create"
@@ -98,7 +113,8 @@ msgstr "Archived rulesets"
 
 #: .\templates\wiki\archived_rulesets.html:11
 msgid "archived_rulesets_description"
-msgstr "The list of rulesets that's stop update or archived by rulesets creator."
+msgstr ""
+"The list of rulesets that's stop update or archived by rulesets creator."
 
 #: .\templates\wiki\archived_rulesets.html:46
 #: .\templates\wiki\archived_rulesets.html:48 .\templates\wiki\home.html:66
@@ -233,7 +249,9 @@ msgstr "Add a new ruleset"
 
 #: .\templates\wiki\create_ruleset.html:11
 msgid "add_a_new_ruleset_description"
-msgstr "Let's add a new ruleset! Is it yours? Don't worry! You can add it even if you didn't make the ruleset."
+msgstr ""
+"Let's add a new ruleset! Is it yours? Don't worry! You can add it even if "
+"you didn't make the ruleset."
 
 #: .\templates\wiki\create_ruleset.html:20
 #: .\templates\wiki\edit_ruleset_wiki.html:39
@@ -258,7 +276,9 @@ msgstr "Description"
 #: .\templates\wiki\create_ruleset.html:37
 #: .\templates\wiki\edit_ruleset_wiki.html:56
 msgid "description_description"
-msgstr "The description of the ruleset. It will be visible under ruleset name and at the header of the wiki page."
+msgstr ""
+"The description of the ruleset. It will be visible under ruleset name and at "
+"the header of the wiki page."
 
 #: .\templates\wiki\create_ruleset.html:41
 #: .\templates\wiki\edit_ruleset_wiki.html:60
@@ -283,12 +303,15 @@ msgstr "Light icon"
 #: .\templates\wiki\create_ruleset.html:58
 #: .\templates\wiki\edit_ruleset_wiki.html:79
 msgid "light_icon_description"
-msgstr "A light theme icon when user using website in light theme. Recommend shape is a circle."
+msgstr ""
+"A light theme icon when user using website in light theme. Recommend shape "
+"is a circle."
 
 #: .\templates\wiki\create_ruleset.html:68
 #: .\templates\wiki\edit_ruleset_wiki.html:90
 msgid "logo_description"
-msgstr "A logo that shows in the wiki's infobox. It cannot be the same as your icon."
+msgstr ""
+"A logo that shows in the wiki's infobox. It cannot be the same as your icon."
 
 #: .\templates\wiki\create_ruleset.html:72
 #: .\templates\wiki\edit_ruleset_wiki.html:94
@@ -321,22 +344,29 @@ msgstr "Source"
 #: .\templates\wiki\edit_ruleset_wiki.html:161
 #: .\templates\wiki\edit_ruleset_wiki.html:175
 msgid "source_description"
-msgstr "A source of the ruleset (or where the player can download this ruleset.)"
+msgstr ""
+"A source of the ruleset (or where the player can download this ruleset.)"
 
 #: .\templates\wiki\create_ruleset.html:95
 #: .\templates\wiki\edit_ruleset_wiki.html:162
 msgid "source_description_github"
-msgstr "If this ruleset is available on GitHub please link it to the repository (Ex. https://github.com/LumpBloom7/sentakki)"
+msgstr ""
+"If this ruleset is available on GitHub please link it to the repository (Ex. "
+"https://github.com/LumpBloom7/sentakki)"
 
 #: .\templates\wiki\create_ruleset.html:96
 #: .\templates\wiki\edit_ruleset_wiki.html:163
 msgid "source_description_patreon"
-msgstr "If you found it on patreon, please link this to the patreon page of the creator. (Ex. https://www.patreon.com/evast/)"
+msgstr ""
+"If you found it on patreon, please link this to the patreon page of the "
+"creator. (Ex. https://www.patreon.com/evast/)"
 
 #: .\templates\wiki\create_ruleset.html:109
 #: .\templates\wiki\edit_ruleset_wiki.html:195
 msgid "hidden_description"
-msgstr "If this is checked, your ruleset will not be show in the rulesets listing on other user."
+msgstr ""
+"If this is checked, your ruleset will not be show in the rulesets listing on "
+"other user."
 
 #: .\templates\wiki\edit_ruleset_wiki.html:10
 #: .\templates\wiki\edit_ruleset_wiki.html:223
@@ -347,7 +377,8 @@ msgstr "Edit"
 #, python-format
 msgid ""
 " You are currently editing content on ruleset named \"%(ruleset_name)s\"."
-msgstr "You are currently editing content on ruleset named \"{{ ruleset_name }}\""
+msgstr ""
+"You are currently editing content on ruleset named \"%(ruleset_name)s\"."
 
 #: .\templates\wiki\edit_ruleset_wiki.html:65
 msgid "current_icon"
@@ -375,7 +406,9 @@ msgstr "Current Cover Image in Light Mode"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:117
 msgid "cover_image_in_light_mode_description"
-msgstr "When user use light theme this picture will show on cover image instead of normal cover image."
+msgstr ""
+"When user use light theme this picture will show on cover image instead of "
+"normal cover image."
 
 #: .\templates\wiki\edit_ruleset_wiki.html:123
 msgid "opengraph_preview_image"
@@ -387,7 +420,9 @@ msgstr "Current Opengraph Preview Image"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:128
 msgid "opengraph_preview_image_description"
-msgstr "A thumbnail that will be visible when someone shares the link and the social network app shows this picture as a preview image."
+msgstr ""
+"A thumbnail that will be visible when someone shares the link and the social "
+"network app shows this picture as a preview image."
 
 #: .\templates\wiki\edit_ruleset_wiki.html:134
 msgid "recommend_beatmaps_cover_image"
@@ -411,7 +446,9 @@ msgstr "Current Custom CSS"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:150
 msgid "custom_css_description"
-msgstr "This CSS file will be override the CSS of the website on the ruleset's main page and subpage."
+msgstr ""
+"This CSS file will be override the CSS of the website on the ruleset's main "
+"page and subpage."
 
 #: .\templates\wiki\edit_ruleset_wiki.html:168
 #: .\templates\wiki\wiki_page.html:51
@@ -424,7 +461,10 @@ msgstr "Ruleset Filename"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:176
 msgid "source_description2"
-msgstr "Just put your ruleset full filename that is available in the release on GitHub and the other operation like update download link the Rūrusetto-chan will do it for you!"
+msgstr ""
+"Just put your ruleset full filename that is available in the release on "
+"GitHub and the other operation like update download link the Rūrusetto-chan "
+"will do it for you!"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:177
 msgid ""
@@ -432,11 +472,17 @@ msgid ""
 "Rulesets.Tau.dll and the link will render as <a href=\"https://github.com/"
 "naoei/tau/releases/latest/download/osu.Game.Rulesets.Tau.dll\">https://"
 "github.com/naoei/tau/releases/latest/download/osu.Game.Rulesets.Tau.dll</a>"
-msgstr "Ex. From <a href=\"https://github.com/naoei/tau\">tau</a> : osu.Game.Rulesets.Tau.dll and the link will render as <a href=\"https://github.com/naoei/tau/releases/latest/download/osu.Game.Rulesets.Tau.dll\">https://github.com/naoei/tau/releases/latest/download/osu.Game.Rulesets.Tau.dll</a>"
+msgstr ""
+"Ex. From <a href=\"https://github.com/naoei/tau\">tau</a> : osu.Game."
+"Rulesets.Tau.dll and the link will render as <a href=\"https://github.com/"
+"naoei/tau/releases/latest/download/osu.Game.Rulesets.Tau.dll\">https://"
+"github.com/naoei/tau/releases/latest/download/osu.Game.Rulesets.Tau.dll</a>"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:178
 msgid "source_description3"
-msgstr "If you put the filename then the Direct Download button will appear on the top of wiki page and in status page."
+msgstr ""
+"If you put the filename then the Direct Download button will appear on the "
+"top of wiki page and in status page."
 
 #: .\templates\wiki\edit_ruleset_wiki.html:179
 msgid "source_description4"
@@ -448,7 +494,10 @@ msgstr "Ruleset owner settings"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:208
 msgid "pre_release_description"
-msgstr "If this is checked, the auto-update status system will fetch this ruleset as pre-release instead of normal method and on status page your rulesets will show pre-release badge too."
+msgstr ""
+"If this is checked, the auto-update status system will fetch this ruleset as "
+"pre-release instead of normal method and on status page your rulesets will "
+"show pre-release badge too."
 
 #: .\templates\wiki\edit_ruleset_wiki.html:214 .\templates\wiki\status.html:54
 #: .\templates\wiki\status.html:119 .\templates\wiki\status.html:154
@@ -458,7 +507,9 @@ msgstr "Playable"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:218
 msgid "playable_description"
-msgstr "Your rulesets playable status. (This can change by wiki maintainer too if ruleset's playable status is not correct.)"
+msgstr ""
+"Your rulesets playable status. (This can change by wiki maintainer too if "
+"ruleset's playable status is not correct.)"
 
 #: .\templates\wiki\edit_subpage.html:10
 msgid "edit_subpage"
@@ -469,7 +520,9 @@ msgstr "Edit Subpage"
 msgid ""
 "You are currently edit subpage \"%(subpage_name)s\" on ruleset name "
 "\"%(ruleset_name)s\"."
-msgstr "You are currently edit subpage \"{{ subpage_name }}\" on ruleset name \"{{ ruleset_name }}\"."
+msgstr ""
+"You are currently edit subpage \"%(subpage_name)s\" on ruleset name "
+"\"%(ruleset_name)s\"."
 
 #: .\templates\wiki\edit_subpage.html:64
 msgid "submit"
@@ -481,7 +534,9 @@ msgstr "Delete Subpage"
 
 #: .\templates\wiki\edit_subpage.html:70
 msgid "delete_subpage_description"
-msgstr "Click the button below to delete this subpage. Note that this action cannot be undo!"
+msgstr ""
+"Click the button below to delete this subpage. Note that this action cannot "
+"be undo!"
 
 #: .\templates\wiki\edit_subpage.html:71
 msgid "delete_this_subpage"
@@ -505,7 +560,9 @@ msgstr ""
 msgid ""
 "You are currently in test server environment, please go to <a href=\"https://"
 "rulesets.info\">live version</a> for a full experience."
-msgstr "Currently <code>DEBUG</code> settings in site settings is True. If this is live server please turn it off!"
+msgstr ""
+"Currently <code>DEBUG</code> settings in site settings is True. If this is "
+"live server please turn it off!"
 
 #: .\templates\wiki\install.html:9
 msgid "install_and_update_rulesets"
@@ -527,13 +584,20 @@ msgid ""
 "\"><i class=\"fas fa-info-circle icon-menu hvr-icon\"></i> rulesets status "
 "page</a> and then clicking on the <code>Download latest version</code> on "
 "the desired ruleset."
-msgstr "Ruleset files can be obtained at <a class=\"text-decoration-none text-center spacing-hover-short hvr-icon-bounce\" target=\"_blank\" href=\"{{ url_status }}\"><i class=\"fas fa-info-circle icon-menu hvr-icon\"></i> rulesets status page</a> and then clicking on the <code>Download latest version</code> on the desired ruleset."
+msgstr ""
+"Ruleset files can be obtained at <a class=\"text-decoration-none text-center "
+"spacing-hover-short hvr-icon-bounce\" target=\"_blank\" href=\"%(url_status)s"
+"\"><i class=\"fas fa-info-circle icon-menu hvr-icon\"></i> rulesets status "
+"page</a> and then clicking on the <code>Download latest version</code> on "
+"the desired ruleset."
 
 #: .\templates\wiki\install.html:55
 msgid ""
 "The changelog and download link will automatically update when a ruleset is "
 "updated."
-msgstr "The changelog and download link will automatically update when a ruleset is updated."
+msgstr ""
+"The changelog and download link will automatically update when a ruleset is "
+"updated."
 
 #: .\templates\wiki\install.html:59
 msgid "import rulesets to osu!lazer"
@@ -544,14 +608,25 @@ msgid "step 1: navigate to osu! data directory"
 msgstr "step 1: navigate to osu! data directory"
 
 #: .\templates\wiki\install.html:65
-#, python-format
+#, fuzzy, python-format
+#| msgid ""
+#| "In osu!lazer’s setting panel, there is a button to <code>Open osu! "
+#| "folder</code> within the “General” section. On windows you could navigate "
+#| "to the data folder directly via Windows Explorer, by default this "
+#| "location is <code>%%AppData%%/osu!/rulesets</code>. On MacOS default this "
+#| "location is in application itself."
 msgid ""
 "In osu!lazer’s setting panel, there is a button to <code>Open osu! folder</"
 "code> within the “General” section. On windows you could navigate to the "
 "data folder directly via Windows Explorer, by default this location is <code>"
 "%%AppData%%/osu!/rulesets</code>. On MacOS default this location is in "
 "application itself."
-msgstr "In osu!lazer’s setting panel, there is a button to <code>Open osu! folder</code> within the \“General\” section. On windows you could navigate to the data folder directly via Windows Explorer, by default this location is <code>%AppData%/osu!/rulesets</code>. On MacOS default this location is in application itself."
+msgstr ""
+"In osu!lazer’s setting panel, there is a button to <code>Open osu! folder</"
+"code> within the “General” section. On windows you could navigate to the "
+"data folder directly via Windows Explorer, by default this location is <code>"
+"%AppData%/osu!/rulesets</code>. On MacOS default this location is in "
+"application itself."
 
 #: .\templates\wiki\install.html:68
 msgid "open_osu_folder"
@@ -569,7 +644,9 @@ msgstr "step 2: installing the ruleset"
 msgid ""
 "Copy the ruleset file (.dll file that you just downloaded) into the rulesets "
 "directory, do make sure that duplicate copies of the ruleset are overwritten."
-msgstr "Copy the ruleset file (.dll file that you just downloaded) into the rulesets directory, do make sure that duplicate copies of the ruleset are overwritten."
+msgstr ""
+"Copy the ruleset file (.dll file that you just downloaded) into the rulesets "
+"directory, do make sure that duplicate copies of the ruleset are overwritten."
 
 #: .\templates\wiki\install.html:78
 msgid "Other rulesets also could share the same folder."
@@ -584,7 +661,10 @@ msgid ""
 "After completing the above steps, you may need to restart osu!lazer if it is "
 "already open. Once restarted, you should see the ruleset alongside the "
 "standard rulesets."
-msgstr "After completing the above steps, you may need to restart osu!lazer if it is already open. Once restarted, you should see the ruleset alongside the standard rulesets."
+msgstr ""
+"After completing the above steps, you may need to restart osu!lazer if it is "
+"already open. Once restarted, you should see the ruleset alongside the "
+"standard rulesets."
 
 #: .\templates\wiki\install.html:87
 msgid "rulesets_show_in_lazer_toolbar"
@@ -598,7 +678,9 @@ msgstr "update rulesets"
 msgid ""
 "To update rulesets, just do the same step and overwrite the old rulesets "
 "file."
-msgstr "To update rulesets, just do the same step and overwrite the old rulesets file."
+msgstr ""
+"To update rulesets, just do the same step and overwrite the old rulesets "
+"file."
 
 #: .\templates\wiki\listing.html:11
 msgid "listing_description"
@@ -630,7 +712,9 @@ msgstr "Warning"
 
 #: .\templates\wiki\maintainer.html:43
 msgid "action_warning"
-msgstr "This action is running in background and consume a lot of calculation power. Please use it carefully!"
+msgstr ""
+"This action is running in background and consume a lot of calculation power. "
+"Please use it carefully!"
 
 #: .\templates\wiki\maintainer.html:47
 msgid "update_all_beatmaps_metadata"
@@ -644,17 +728,23 @@ msgstr "Update all beatmap metadata in the server."
 msgid "update_rulesets_version"
 msgstr "Update rulesets version"
 
-#: .\templates\wiki\maintainer.html:59 .\templates\wiki\maintainer.html:67
+#: .\templates\wiki\maintainer.html:59
 msgid "update_rulesets_version_description"
-msgstr "This is a long task that must be always run. It will fetch the data from GitHub API and update the ruleset version from on status page every 30 minutes. Please check on other worker before run this due to the rate limit of GitHub API."
+msgstr ""
+"This is a long task that must be always run. It will fetch the data from "
+"GitHub API and update the ruleset version from on status page every 30 "
+"minutes. Please check on other worker before run this due to the rate limit "
+"of GitHub API."
 
 #: .\templates\wiki\maintainer.html:64
 msgid "update_rulesets_version_once"
 msgstr "Update rulesets version once"
 
-#: .\templates\wiki\maintainer.html:64
+#: .\templates\wiki\maintainer.html:67
 msgid "update_rulesets_version_once_description"
-msgstr "This action will be quickly update all rulesets version. This can be run when something happen or don't want to use the long task."
+msgstr ""
+"This action will be quickly update all rulesets version. This can be run "
+"when something happen or don't want to use the long task."
 
 #: .\templates\wiki\maintainer.html:84
 msgid "start_at"
@@ -700,14 +790,16 @@ msgstr "Unknown status"
 #: .\templates\wiki\recommend_beatmap.html:13
 #, python-format
 msgid "%(ruleset_name)s recommended beatmaps"
-msgstr "{{ ruleset_name }} recommended beatmaps"
+msgstr "%(ruleset_name)s recommended beatmaps"
 
 #: .\templates\wiki\recommend_beatmap.html:14
 #, python-format
 msgid ""
 "Recommend beatmaps for playing with %(ruleset_name)s from ruleset creator "
 "and other player."
-msgstr "Recommend beatmaps for playing with {{ ruleset_name }} from ruleset creator and other player."
+msgstr ""
+"Recommend beatmaps for playing with %(ruleset_name)s from ruleset creator "
+"and other player."
 
 #: .\templates\wiki\recommend_beatmap.html:22 .\templates\wiki\subpage.html:30
 msgid "back_to_main_page"
@@ -728,7 +820,7 @@ msgstr "Suggest a beatmap"
 #: .\templates\wiki\recommend_beatmap.html:57
 #, python-format
 msgid "Recommended by %(ruleset_name)s creator"
-msgstr "Recommended by {{ ruleset_name }} creator"
+msgstr "Recommended by %(ruleset_name)s creator"
 
 #: .\templates\wiki\recommend_beatmap.html:66
 msgid "recommend_by_players"
@@ -745,7 +837,7 @@ msgstr "Let's add one!"
 #: .\templates\wiki\recommend_beatmap_approval.html:13
 #, python-format
 msgid "%(ruleset_name)s recommended beatmaps approval"
-msgstr "{{ ruleset_name }} recommended beatmaps approval"
+msgstr "%(ruleset_name)s recommended beatmaps approval"
 
 #: .\templates\wiki\recommend_beatmap_approval.html:14
 msgid "recommend_beatmaps_approval_description"
@@ -825,7 +917,9 @@ msgstr "Deny"
 
 #: .\templates\wiki\status.html:14
 msgid "status_description"
-msgstr "Status of all rulesets are here. (and you can download and update the rulesets instantly with this page!)"
+msgstr ""
+"Status of all rulesets are here. (and you can download and update the "
+"rulesets instantly with this page!)"
 
 #: .\templates\wiki\status.html:56 .\templates\wiki\status.html:121
 #: .\templates\wiki\status.html:156 .\templates\wiki\status.html:191
@@ -841,7 +935,8 @@ msgstr "unknown"
 #: .\templates\wiki\status.html:167 .\templates\wiki\status.html:202
 #: .\templates\wiki\wiki_page.html:74
 msgid "mark_as_archived"
-msgstr "This ruleset is marked as archived and no longer update by the creator."
+msgstr ""
+"This ruleset is marked as archived and no longer update by the creator."
 
 #: .\templates\wiki\status.html:72
 msgid "latest_version_name"
@@ -869,7 +964,9 @@ msgstr "Download latest version"
 
 #: .\templates\wiki\status.html:103
 msgid "not_support_pre_release_ruleset"
-msgstr "We are not support direct download for pre-release rulesets from GitHub now. Please get it from ruleset release page instead."
+msgstr ""
+"We are not support direct download for pre-release rulesets from GitHub now. "
+"Please get it from ruleset release page instead."
 
 #: .\templates\wiki\status.html:105 .\templates\wiki\status.html:140
 msgid "github_release_page"
@@ -891,7 +988,9 @@ msgstr ""
 msgid ""
 "This function is not support in rulesets that is from Patreon. You can go to "
 "rulesets creator's Patreon at <code>Get from Patreon</code>!"
-msgstr "This function is not support in rulesets that is from Patreon. You can go to rulesets creator's Patreon at <code>Get from Patreon</code>!"
+msgstr ""
+"This function is not support in rulesets that is from Patreon. You can go to "
+"rulesets creator's Patreon at <code>Get from Patreon</code>!"
 
 #: .\templates\wiki\status.html:175 .\templates\wiki\wiki_page.html:165
 msgid "get_from_patreon"
@@ -901,7 +1000,9 @@ msgstr "Get from Patreon"
 msgid ""
 "Rūrusetto-chan don't know this link's type so you can download the ruleset "
 "from its source."
-msgstr "Rūrusetto-chan don't know this link's type so you can download the ruleset from its source."
+msgstr ""
+"Rūrusetto-chan don't know this link's type so you can download the ruleset "
+"from its source."
 
 #: .\templates\wiki\status.html:210 .\templates\wiki\wiki_page.html:167
 msgid "ruleset_source"

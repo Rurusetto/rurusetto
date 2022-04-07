@@ -501,7 +501,7 @@ def add_recommend_beatmap(request, slug):
         'title': f'add a new recommend beatmap for {ruleset.name}',
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
-        'opengraph_description': f'You are currently add a new recommend beatmap for {ruleset.name}.',
+        'ruleset': ruleset,
         'opengraph_url': resolve_url('add_recommend_beatmap', slug=ruleset.slug),
     }
     return render(request, 'wiki/add_recommend_beatmap.html', context)

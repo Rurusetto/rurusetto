@@ -533,7 +533,6 @@ def recommend_beatmap(request, slug):
         'no_beatmap': no_beatmap,
         'hero_image': hero_image,
         'hero_image_light': hero_image_light,
-        'opengraph_description': f'Recommend beatmaps for playing with {ruleset.name} from ruleset creator and other player.',
         'opengraph_url': resolve_url('recommend_beatmap', slug=ruleset.slug),
         'opengraph_image': ruleset.opengraph_image.url
     }
@@ -568,7 +567,6 @@ def recommend_beatmap_approval(request, rulesets_slug):
             'hero_image': hero_image,
             'hero_image_light': hero_image_light,
             'title': f'approve a recommend beatmap for {ruleset.name}',
-            'opengraph_description': f"Let's see how is the recommendation from other player.",
             'opengraph_url': resolve_url('recommend_beatmap', slug=ruleset.slug),
             'opengraph_image': ruleset.opengraph_image.url
         }

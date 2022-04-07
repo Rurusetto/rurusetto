@@ -1,5 +1,6 @@
 {% extends "wiki/base.html" %}
 {% load static %}
+{% load i18n %}
 {% load convert_star_rating %}
 {% block content %}
 
@@ -9,8 +10,8 @@
     <div class="container align-middle">
         <div class="row">
             <p></p>
-            <div data-aos="fade-up" data-aos-duration="600"><h1 class="display-5 fw-bold">{{ ruleset.name }} recommended beatmaps approval</h1></div>
-            <p data-aos="fade-up" data-aos-duration="700">{{ opengraph_description }}</p>
+            <div data-aos="fade-up" data-aos-duration="600"><h1 class="display-5 fw-bold">{% blocktrans with ruleset_name=ruleset.name %}{{ ruleset_name }} recommended beatmaps approval{% endblocktrans %}</h1></div>
+            <p data-aos="fade-up" data-aos-duration="700">{% trans "recommend_beatmaps_approval_description" %}</p>
         </div>
     </div>
 </div>
@@ -19,7 +20,7 @@
     <div class="row">
         {% if user.is_authenticated %}
         <div class="col-sm-4">
-            <p data-aos="fade-up" data-aos-duration="700"><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'recommend_beatmap' ruleset.slug %}"><i class="fas fa-chevron-circle-left icon-menu hvr-icon"></i> Back to recommend beatmaps</a></p>
+            <p data-aos="fade-up" data-aos-duration="700"><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'recommend_beatmap' ruleset.slug %}"><i class="fas fa-chevron-circle-left icon-menu hvr-icon"></i> {% trans "back_to_recommend_beatmaps" %}</a></p>
         </div>
         {% else %}
             <p></p>
@@ -56,8 +57,8 @@
     {% if no_beatmap %}
     <div data-aos="fade-up" data-aos-duration="500">
         <h1 class="text-center">\ (•◡•) /</h1>
-        <h3 class="text-center">You are already response to all beatmaps.</h3>
-        <h3 class="text-center">Congrats!</h3>
+        <h3 class="text-center">{% trans "already_approve_all_beatmaps" %}</h3>
+        <h3 class="text-center">{% trans "congrats" %}</h3>
     </div>
     {% endif %}
 </div>

@@ -1,5 +1,6 @@
 {% extends "wiki/base.html" %}
 {% load static %}
+{% load i18n %}
 {% load markdown_converter %}
 {% load convert_file_size %}
 {% block content %}
@@ -9,8 +10,8 @@
         <div class="row">
             <p></p>
             <p></p>
-            <div><h1 class="display-5 fw-bold" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">Status</h1></div>
-            <p data-aos="fade-up" data-aos-duration="700" data-aos-once="true">Status of all rulesets are here. (and you can download and update the rulesets instantly with this page!)</p>
+            <div><h1 class="display-5 fw-bold" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">{% trans "status" %}</h1></div>
+            <p data-aos="fade-up" data-aos-duration="700" data-aos-once="true">{% trans "status_description" %}</p>
         </div>
     </div>
 </div>
@@ -50,37 +51,37 @@
             {% endif %}
             {{ ruleset.0.name }}
             {% if ruleset.2.2.playable == "yes" %}
-                <span class="badge rounded-pill bg-success">playable</span>
+                <span class="badge rounded-pill bg-success">{% trans "playable" %}</span>
             {% elif ruleset.2.2.playable == "no" %}
-                <span class="badge rounded-pill bg-danger">borked</span>
+                <span class="badge rounded-pill bg-danger">{% trans "borked" %}</span>
             {% else %}
-                <span class="badge rounded-pill bg-secondary">unknown</span>
+                <span class="badge rounded-pill bg-secondary">{% trans "unknown" %}</span>
             {% endif %}
             {% if ruleset.2.2.pre_release %}
-                <span class="badge rounded-pill" style="background-color: #c7a000;">pre-release</span>
+                <span class="badge rounded-pill" style="background-color: #c7a000;">{% trans "pre_release" %}</span>
             {% endif %}
        </h1>
         {% if ruleset.0.archive %}
         <div class="row">
             <div class="alert alert-warning raleway-font">
-                <i class="fas fa-archive"></i> This ruleset is marked as archived and no longer update by the creator.
+                <i class="fas fa-archive"></i> {% trans "mark_as_archived" %}
             </div>
         </div>
         {% endif %}
         <div class="col-8">
-            <h4>Latest version name</h4>
+            <h4>{% trans "latest_version_name" %}</h4>
             <p>{{ ruleset.2.2.latest_version }}</p>
-            <h4>Latest release</h4>
+            <h4>{% trans "latest_release" %}</h4>
             <p>{{ ruleset.2.2.latest_update|date:"F j, Y h:i A" }} UTC</p>
-            <h4>File Detail</h4>
-            <p class="mono-font">Size : {{ ruleset.2.2.file_size | convert_file_size }}</p>
+            <h4>{% trans "file_detail" %}</h4>
+            <p class="mono-font">{% trans "size" %} : {{ ruleset.2.2.file_size | convert_file_size }}</p>
             <div class="row">
             <div class="accordion" id="changelog-{{ ruleset.0.slug }}-accordian">
                 <div class="accordion-item">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="changelog-{{ ruleset.0.slug }}">
                           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ ruleset.0.slug }}" aria-expanded="false" aria-controls="changelog-{{ ruleset.0.slug }}">
-                              <b>Latest Version Changelog</b>
+                              <b>{% trans "latest_version_changelog" %}</b>
                           </button>
                         </h2>
                         <div id="collapse-{{ ruleset.0.slug }}" class="accordion-collapse collapse" aria-labelledby="changelog-{{ ruleset.0.slug }}" data-bs-parent="#changelog-{{ ruleset.0.slug }}-accordian">
@@ -97,12 +98,12 @@
         </div>
         <div class="col-4">
             {% if not ruleset.2.2.pre_release %}
-            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{{ ruleset.2.0 }}"><i class="fas fa-download icon-menu hvr-icon"></i> Download latest version</a></p>
+            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{{ ruleset.2.0 }}"><i class="fas fa-download icon-menu hvr-icon"></i> {% trans "download_latest_version" %}</a></p>
             {% else %}
-            <p><i class="fas fa-exclamation-circle"></i> We are not support direct download for pre-release rulesets from GitHub now. Please get it from ruleset release page instead.</p>
+            <p><i class="fas fa-exclamation-circle"></i> {% trans "not_support_pre_release_ruleset" %}.</p>
             {% endif %}
-            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{{ ruleset.2.1 }}"><i class="fab fa-github icon-menu hvr-icon"></i> GitHub release page</a></p>
-            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'wiki' ruleset.0.slug %}"><i class="fas fa-location-arrow icon-menu hvr-icon"></i> Go to rulesets wiki page</a></p>
+            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{{ ruleset.2.1 }}"><i class="fab fa-github icon-menu hvr-icon"></i> {% trans "github_release_page" %}</a></p>
+            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'wiki' ruleset.0.slug %}"><i class="fas fa-location-arrow icon-menu hvr-icon"></i> {% trans "go_to_rulesets_wiki_page" %}</a></p>
         </div>
     </div>
     {% elif ruleset.1 == 'github' %}
@@ -115,29 +116,29 @@
             {% endif %}            
             {{ ruleset.0.name }}
             {% if ruleset.2.1.playable == "yes" %}
-                <span class="badge rounded-pill bg-success">playable</span>
+                <span class="badge rounded-pill bg-success">{% trans "playable" %}</span>
             {% elif ruleset.2.1.playable == "no" %}
-                <span class="badge rounded-pill bg-danger">borked</span>
+                <span class="badge rounded-pill bg-danger">{% trans "borked" %}</span>
             {% else %}
-                <span class="badge rounded-pill bg-secondary">unknown</span>
+                <span class="badge rounded-pill bg-secondary">{% trans "unknown" %}</span>
             {% endif %}
             {% if ruleset.2.1.pre_release %}
-                <span class="badge rounded-pill" style="background-color: #c7a000;">pre-release</span>
+                <span class="badge rounded-pill" style="background-color: #c7a000;">{% trans "pre_release" %}</span>
             {% endif %}
         </h1>
         {% if ruleset.0.archive %}
         <div class="row">
             <div class="alert alert-warning raleway-font">
-                <i class="fas fa-archive"></i> This ruleset is marked as archived and no longer update by the creator.
+                <i class="fas fa-archive"></i> {% trans "mark_as_archived" %}
             </div>
         </div>
         {% endif %}
         <div class="col-8">
-            <p><i class="fas fa-exclamation-circle"></i> Function is not available due to the rulesets source is from GitHub and <code>Ruleset Filename</code> field is missing or blank. Please fill the <code>Ruleset Filename</code> in the rulesets setting!</p>
+            <p><i class="fas fa-exclamation-circle"></i> {% blocktrans %}Function is not available due to the rulesets source is from GitHub and <code>Ruleset Filename</code> field is missing or blank. Please fill the <code>Ruleset Filename</code> in the rulesets setting!{% endblocktrans %}</p>
         </div>
         <div class="col-4">
-            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{{ ruleset.2 }}"><i class="fab fa-github icon-menu hvr-icon"></i> GitHub release page</a></p>
-            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'wiki' ruleset.0.slug %}"><i class="fas fa-location-arrow icon-menu hvr-icon"></i> Go to rulesets wiki page</a></p>
+            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{{ ruleset.2 }}"><i class="fab fa-github icon-menu hvr-icon"></i> {% trans "github_release_page" %}</a></p>
+            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'wiki' ruleset.0.slug %}"><i class="fas fa-location-arrow icon-menu hvr-icon"></i> {% trans "go_to_rulesets_wiki_page" %}</a></p>
         </div>
     </div>
     {% elif ruleset.1 == 'patreon' %}
@@ -150,29 +151,29 @@
             {% endif %}            
             {{ ruleset.0.name }}
             {% if ruleset.2.1.playable == "yes" %}
-                <span class="badge rounded-pill bg-success">playable</span>
+                <span class="badge rounded-pill bg-success">{% trans "playable" %}</span>
             {% elif ruleset.2.1.playable == "no" %}
-                <span class="badge rounded-pill bg-danger">borked</span>
+                <span class="badge rounded-pill bg-danger">{% trans "borked" %}</span>
             {% else %}
-                <span class="badge rounded-pill bg-secondary">unknown</span>
+                <span class="badge rounded-pill bg-secondary">{% trans "unknown" %}</span>
             {% endif %}
             {% if ruleset.2.1.pre_release %}
-                <span class="badge rounded-pill" style="background-color: #c7a000;">pre-release</span>
+                <span class="badge rounded-pill" style="background-color: #c7a000;">{% trans "pre_release" %}</span>
             {% endif %}
         </h1>
         {% if ruleset.0.archive %}
         <div class="row">
             <div class="alert alert-warning raleway-font">
-                <i class="fas fa-archive"></i> This ruleset is marked as archived and no longer update by the creator.
+                <i class="fas fa-archive"></i> {% trans "mark_as_archived" %}
             </div>
         </div>
         {% endif %}
         <div class="col-8">
-            <p><i class="fas fa-exclamation-circle"></i> This function is not support in rulesets that is from Patreon. You can go to rulesets creator's Patreon at <code>Get from Patreon</code>!</p>
+            <p><i class="fas fa-exclamation-circle"></i> {% blocktrans %}This function is not support in rulesets that is from Patreon. You can go to rulesets creator's Patreon at <code>Get from Patreon</code>!{% endblocktrans %}</p>
         </div>
         <div class="col-4">
-            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{{ ruleset.2.0 }}"><i class="fab fa-patreon icon-menu hvr-icon"></i> Get from Patreon</a></p>
-            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'wiki' ruleset.0.slug %}"><i class="fas fa-location-arrow icon-menu hvr-icon"></i> Go to rulesets wiki page</a></p>
+            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{{ ruleset.2.0 }}"><i class="fab fa-patreon icon-menu hvr-icon"></i> {% trans "get_from_patreon" %}</a></p>
+            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'wiki' ruleset.0.slug %}"><i class="fas fa-location-arrow icon-menu hvr-icon"></i> {% trans "go_to_rulesets_wiki_page" %}</a></p>
         </div>
     </div>
     {% else %}
@@ -185,29 +186,29 @@
             {% endif %}
             {{ ruleset.0.name }}
             {% if ruleset.2.1.playable == "yes" %}
-                <span class="badge rounded-pill bg-success">playable</span>
+                <span class="badge rounded-pill bg-success">{% trans "playable" %}</span>
             {% elif ruleset.2.1.playable == "no" %}
-                <span class="badge rounded-pill bg-danger">borked</span>
+                <span class="badge rounded-pill bg-danger">{% trans "borked" %}</span>
             {% else %}
-                <span class="badge rounded-pill bg-secondary">unknown</span>
+                <span class="badge rounded-pill bg-secondary">{% trans "unknown" %}</span>
             {% endif %}
             {% if ruleset.2.1.pre_release %}
-                <span class="badge rounded-pill" style="background-color: #c7a000;">pre-release</span>
+                <span class="badge rounded-pill" style="background-color: #c7a000;">{% trans "pre_release" %}</span>
             {% endif %}
         </h1>
         {% if ruleset.0.archive %}
         <div class="row">
             <div class="alert alert-warning raleway-font">
-                <i class="fas fa-archive"></i> This ruleset is marked as archived and no longer update by the creator.
+                <i class="fas fa-archive"></i> {% trans "mark_as_archived" %}
             </div>
         </div>
         {% endif %}
         <div class="col-8">
-            <p><i class="fas fa-exclamation-circle"></i> Rūrusetto-chan don't know this link's type so you can download the ruleset from its source. </p>
+            <p><i class="fas fa-exclamation-circle"></i> {% blocktrans %}Rūrusetto-chan don't know this link's type so you can download the ruleset from its source.{% endblocktrans %}</p>
         </div>
         <div class="col-4">
-            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{{ ruleset.2.0 }}"><i class="fas fa-external-link-square-alt icon-menu hvr-icon"></i> Ruleset Source</a></p>
-            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'wiki' ruleset.0.slug %}"><i class="fas fa-location-arrow icon-menu hvr-icon"></i> Go to rulesets wiki page</a></p>
+            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{{ ruleset.2.0 }}"><i class="fas fa-external-link-square-alt icon-menu hvr-icon"></i> {% trans "ruleset_source" %}</a></p>
+            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'wiki' ruleset.0.slug %}"><i class="fas fa-location-arrow icon-menu hvr-icon"></i> {% trans "go_to_rulesets_wiki_page" %}</a></p>
         </div>
     </div>
     {% endif %}

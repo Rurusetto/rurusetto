@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.db.models.functions import Lower
 from django.shortcuts import render, redirect, get_object_or_404, resolve_url
 from django.templatetags.static import static
 from django.utils import timezone
@@ -39,7 +40,7 @@ def home(request):
         'opengraph_description': 'A page that contain all osu! ruleset',
         'opengraph_url': resolve_url('home'),
         # Use make_listing_view function to get the User object from database and pass to template
-        'rulesets': make_listing_view(Ruleset.objects.filter(hidden=False, archive=False).order_by('name')),
+        'rulesets': make_listing_view(Ruleset.objects.filter(hidden=False, archive=False).order_by(Lower('name'))),
         'test_server': TEST_SERVER,
         'is_in_debug': DEBUG
     }
@@ -78,8 +79,8 @@ def listing(request):
     hero_image_light = 'img/listing-cover-light.png'
 
     context = {
-        'hidden_rulesets': make_listing_view(Ruleset.objects.filter(hidden=True, owner=str(request.user.id)).order_by('name')),
-        'rulesets': make_listing_view(Ruleset.objects.filter(hidden=False, archive=False).order_by('name')),
+        'hidden_rulesets': make_listing_view(Ruleset.objects.filter(hidden=True, owner=str(request.user.id)).order_by(Lower('name'))),
+        'rulesets': make_listing_view(Ruleset.objects.filter(hidden=False, archive=False).order_by(Lower('name'))),
         'title': 'listing',
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
@@ -790,7 +791,7 @@ def archived_rulesets(request):
     hero_image = "img/archived-rulesets-cover-night.jpg"
     hero_image_light = "img/archived-rulesets-cover-light.png"
     context = {
-        'rulesets': make_listing_view(Ruleset.objects.filter(archive=True, hidden=False).order_by('name')),
+        'rulesets': make_listing_view(Ruleset.objects.filter(archive=True, hidden=False).order_by(Lower('name'))),
         'title': 'archived rulesets',
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),

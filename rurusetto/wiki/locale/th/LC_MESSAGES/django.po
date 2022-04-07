@@ -33,7 +33,7 @@ msgstr "ไอดีของบีทแมพ"
 
 #: .\templates\wiki\add_recommend_beatmap.html:42
 msgid "put_beatmap_id_note"
-msgstr "ใส่ไอดีของบีทแมพที่คุณต้องการแนะนำ ตุณสามารถหาไอดีของบีทแมพได้จาก URL ของบีทแมพนั้นๆ"
+msgstr "ใส่ไอดีของบีทแมพที่คุณต้องการแนะนำ คุณสามารถหาไอดีของบีทแมพได้จาก URL ของบีทแมพนั้นๆ"
 
 #: .\templates\wiki\add_recommend_beatmap.html:43
 msgid "put_beatmap_id_note2"
@@ -496,23 +496,23 @@ msgstr ""
 
 #: .\templates\wiki\home.html:8
 msgid "welcome_to_rurusetto"
-msgstr ""
+msgstr "ยินดีต้อนรับเข้าสู่ rūrusetto!"
 
 #: .\templates\wiki\home.html:10
 msgid "wiki_that_contain"
-msgstr ""
+msgstr "วิกิที่รวม rulesets ทุกอันของ osu!"
 
 #: .\templates\wiki\home.html:37
 msgid ""
 "Currently <code>DEBUG</code> settings in site settings is True. If this is "
 "live server please turn it off!"
-msgstr ""
+msgstr "ตอนนี้การตั้งค่า <code>DEBUG</code> ในการตั้งค่าเว็ปไซต์เป็น True. ถ้านี่เป็นเซิฟเวอร์จริงกรุณาปิดด้วย!"
 
 #: .\templates\wiki\home.html:47
 msgid ""
 "You are currently in test server environment, please go to <a href=\"https://"
 "rulesets.info\">live version</a> for a full experience."
-msgstr ""
+msgstr "คุณกำลังอยู่ในเซิฟเวอร์ที่ใช้ทดสอบ, กรุณาไปที่ <a href=\"https://rulesets.info\">เวอร์ชั่นทั่วไป</a> สำหรับประสบการณ์ที่เต็มที่"
 
 #: .\templates\wiki\install.html:9
 msgid "install_and_update_rulesets"

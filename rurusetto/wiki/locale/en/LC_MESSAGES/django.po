@@ -36,7 +36,7 @@ msgstr "Note that your beatmap must be for osu! mode only."
 
 #: .\templates\wiki\add_recommend_beatmap.html:44
 msgid "put_beatmap_id_example"
-msgstr 'Example : Beatmap ID of "Harumachi Clover (Swing Arrangement) [Dictate Edit]" diffuculty "Oh no!" by Sotarks.'
+msgstr "Example : Beatmap ID of \"Harumachi Clover (Swing Arrangement) [Dictate Edit]\" diffuculty \"Oh no!\" by Sotarks."
 
 #: .\templates\wiki\add_recommend_beatmap.html:45
 msgid "put_beatmap_id_example_pic_alt"
@@ -347,7 +347,7 @@ msgstr "Edit"
 #, python-format
 msgid ""
 " You are currently editing content on ruleset named \"%(ruleset_name)s\"."
-msgstr 'You are currently editing content on ruleset named "{{ ruleset_name }}"'
+msgstr "You are currently editing content on ruleset named \"{{ ruleset_name }}\""
 
 #: .\templates\wiki\edit_ruleset_wiki.html:65
 msgid "current_icon"
@@ -432,7 +432,7 @@ msgid ""
 "Rulesets.Tau.dll and the link will render as <a href=\"https://github.com/"
 "naoei/tau/releases/latest/download/osu.Game.Rulesets.Tau.dll\">https://"
 "github.com/naoei/tau/releases/latest/download/osu.Game.Rulesets.Tau.dll</a>"
-msgstr 'Ex. From <a href="https://github.com/naoei/tau">tau</a> : osu.Game.Rulesets.Tau.dll and the link will render as <a href="https://github.com/naoei/tau/releases/latest/download/osu.Game.Rulesets.Tau.dll">https://github.com/naoei/tau/releases/latest/download/osu.Game.Rulesets.Tau.dll</a>'
+msgstr "Ex. From <a href=\"https://github.com/naoei/tau\">tau</a> : osu.Game.Rulesets.Tau.dll and the link will render as <a href=\"https://github.com/naoei/tau/releases/latest/download/osu.Game.Rulesets.Tau.dll\">https://github.com/naoei/tau/releases/latest/download/osu.Game.Rulesets.Tau.dll</a>"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:178
 msgid "source_description3"
@@ -469,7 +469,7 @@ msgstr "Edit Subpage"
 msgid ""
 "You are currently edit subpage \"%(subpage_name)s\" on ruleset name "
 "\"%(ruleset_name)s\"."
-msgstr 'You are currently edit subpage "{{ subpage_name }}" on ruleset name "{{ ruleset_name }}".'
+msgstr "You are currently edit subpage \"{{ subpage_name }}\" on ruleset name \"{{ ruleset_name }}\"."
 
 #: .\templates\wiki\edit_subpage.html:64
 msgid "submit"
@@ -527,7 +527,7 @@ msgid ""
 "\"><i class=\"fas fa-info-circle icon-menu hvr-icon\"></i> rulesets status "
 "page</a> and then clicking on the <code>Download latest version</code> on "
 "the desired ruleset."
-msgstr 'Ruleset files can be obtained at <a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" target="_blank" href="{{ url_status }}"><i class="fas fa-info-circle icon-menu hvr-icon"></i> rulesets status page</a> and then clicking on the <code>Download latest version</code> on the desired ruleset.'
+msgstr "Ruleset files can be obtained at <a class=\"text-decoration-none text-center spacing-hover-short hvr-icon-bounce\" target=\"_blank\" href=\"{{ url_status }}\"><i class=\"fas fa-info-circle icon-menu hvr-icon\"></i> rulesets status page</a> and then clicking on the <code>Download latest version</code> on the desired ruleset."
 
 #: .\templates\wiki\install.html:55
 msgid ""
@@ -551,7 +551,7 @@ msgid ""
 "data folder directly via Windows Explorer, by default this location is <code>"
 "%%AppData%%/osu!/rulesets</code>. On MacOS default this location is in "
 "application itself."
-msgstr 'In osu!lazer’s setting panel, there is a button to <code>Open osu! folder</code> within the “General” section. On windows you could navigate to the data folder directly via Windows Explorer, by default this location is <code>%AppData%/osu!/rulesets</code>. On MacOS default this location is in application itself.'
+msgstr "In osu!lazer’s setting panel, there is a button to <code>Open osu! folder</code> within the \“General\” section. On windows you could navigate to the data folder directly via Windows Explorer, by default this location is <code>%AppData%/osu!/rulesets</code>. On MacOS default this location is in application itself."
 
 #: .\templates\wiki\install.html:68
 msgid "open_osu_folder"

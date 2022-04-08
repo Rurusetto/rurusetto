@@ -19,6 +19,12 @@ jobs:
           cd rurusetto/rurusetto
           git pull
           source myprojectenv/bin/activate
+          cd wiki
+          django-admin compilemessages
+          cd ..
+          cd users
+          django-admin compilemessages
+          cd ..
           cd ..
           pip install --upgrade --force-reinstall -r requirements.txt
           cd rurusetto

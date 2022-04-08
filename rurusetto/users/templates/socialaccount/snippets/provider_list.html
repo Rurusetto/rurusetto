@@ -1,4 +1,5 @@
 {% load socialaccount %}
+{% load i18n %}
 {% load static %}
 
 {% get_providers as socialaccount_providers %}
@@ -15,5 +16,5 @@
 {% endfor %}
 {% endif %}
   <p><a title="{{provider.name}}" class="socialaccount_provider {{provider.id}} text-decoration-none text-center spacing-hover raleway-font hvr-icon-bounce"
-     href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}"><img src="{% static 'logo/osu-logo-pink.png' %}" alt="osu! logo" width="20px" height="20px" class="icon-menu hvr-icon"> Connect to {{provider.name}}</a></p>
+     href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}"><img src="{% static 'logo/osu-logo-pink.png' %}" alt="osu! logo" width="20px" height="20px" class="icon-menu hvr-icon"> {% trans "connect_to" %} {{provider.name}}</a></p>
 {% endfor %}

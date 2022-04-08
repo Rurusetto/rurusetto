@@ -1,5 +1,6 @@
 {% load static %}
 {% load crispy_forms_tags %}
+{% load i18n %}
 {% load socialaccount %}
 {% get_providers as socialaccount_providers %}
 <!DOCTYPE html>
@@ -9,22 +10,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- HTML Meta Tags -->
-    <title>register - rūrusetto</title>
-    <meta name="description" content="register to rūrusetto">
+    <title>{% trans "register" %} - rūrusetto</title>
+    <meta name="description" content="{% trans "register_to_rurusetto" %}">
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="{% url 'account_signup' %}">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="register - rūrusetto">
-    <meta property="og:description" content="register to rūrusetto">
+    <meta property="og:title" content="{% trans "register" %} - rūrusetto">
+    <meta property="og:description" content="{% trans "register_to_rurusetto" %}">
     <meta property="og:image" content="{% static "img/243007.jpeg" %}">
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="rūrusetto">
     <meta property="twitter:url" content="{% url 'account_signup' %}">
-    <meta name="twitter:title" content="register - rūrusetto">
-    <meta name="twitter:description" content="register to rūrusetto">
+    <meta name="twitter:title" content="{% trans "register" %} - rūrusetto">
+    <meta name="twitter:description" content="{% trans "register_to_rurusetto" %}">
     <meta name="twitter:image" content="{% static "img/243007.jpeg" %}">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -45,22 +46,22 @@
         <div class="container position-absolute top-50 start-50 translate-middle col-8">
             <a href="{% url "home" %}"><img src="{% static "logo/rurusetto-logo-with-name.svg" %}"></a>
            <p></p>
-          <h1>Sign Up</h1>
+          <h1>{% trans "sign_up" %}</h1>
           <p></p>
             {% for provider in socialaccount_providers %}
             <p>
               <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}} text-decoration-none text-center spacing-hover-short hvr-icon-bounce"
-                 href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}"><img src="{% static 'logo/osu-logo-pink.png' %}" alt="osu! logo" width="20px" height="20px" class="icon-menu hvr-icon"> Sign up with {{provider.name}}</a>
+                 href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}"><img src="{% static 'logo/osu-logo-pink.png' %}" alt="osu! logo" width="20px" height="20px" class="icon-menu hvr-icon"> {% trans "sign_up_with" %} {{provider.name}}</a>
             </p>
             {% endfor %}
             <form method="post">
                 {% csrf_token %}
                 {{ form|crispy }}
                 <p></p>
-                <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right">Submit</button>
+                <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right">{% trans "submit" %}</button>
             </form>
           <div>
-            <p>Already have an account? <a href="{% url 'account_login' %}" class="text-decoration-none spacing-hover">Login instead</a></p>
+            <p>{% trans "already_have_account" %} <a href="{% url 'account_login' %}" class="text-decoration-none spacing-hover">{% trans "login_instead" %}</a></p>
           </div>
         </div>
       </div>

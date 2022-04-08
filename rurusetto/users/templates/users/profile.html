@@ -1,5 +1,6 @@
 {% extends "wiki/base.html" %}
 {% load static %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 {% block content %}
 
@@ -41,7 +42,7 @@
     <div class="row">
          {% if user.id == profile_object.user.id %}
         <div class="col-sm-2 hvr-icon-bounce">
-            <p><a class="text-decoration-none text-center spacing-hover-short" href="{% url "settings" %}"><i class="fas fa-user-edit icon-menu hvr-icon"></i> Edit Profile</a></p>
+            <p><a class="text-decoration-none text-center spacing-hover-short" href="{% url "settings" %}"><i class="fas fa-user-edit icon-menu hvr-icon"></i> {% trans "edit_profile" %}</a></p>
         </div>
         {% endif %}
     </div>
@@ -50,7 +51,7 @@
 {% if created_ruleset %}
 <div class="container">
     <div class="row-mb-3" data-aos="fade-up" data-aos-duration="700" data-aos-once="true">
-        <h1>created rulesets <span class="badge rounded-pill bg-rurusetto round-font-bold ">{{ created_ruleset| length }}</span></h1>
+        <h1>{% trans "created_ruleset" %}  <span class="badge rounded-pill bg-rurusetto round-font-bold ">{{ created_ruleset| length }}</span></h1>
     </div>
     <div class="row-mb-3">
         <div class="row text-center gy-4">
@@ -66,9 +67,9 @@
             <h2 class="rulesets-name">{{ detail.0.name }}</h2>
             {% if detail.1 == None %}
                 {% if detail.0.verified %}
-                    <p class="text-muted"><img src="{% static 'img/default.png' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User <i class="fas fa-check-circle verified-circle icon-menu hvr-icon"></i></p>
+                    <p class="text-muted"><img src="{% static 'img/default.png' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> {% trans "deleted_user" %}<i class="fas fa-check-circle verified-circle icon-menu hvr-icon"></i></p>
                 {% else %}
-                    <p class="text-muted"><img src="{% static 'img/default.png' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User </p>
+                    <p class="text-muted"><img src="{% static 'img/default.png' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> {% trans "deleted_user" %}</p>
                 {% endif %}
             {% else %}
                 {% if detail.0.verified %}
@@ -78,7 +79,7 @@
                 {% endif %}
             {% endif %}
             <p class="rulesets-description">{{ detail.0.description }}</p>
-            <p><a class="btn btn-secondary btn-rurusetto hvr-sweep-to-right" href="{% url "wiki" detail.0.slug %}">Read &raquo;</a></p>
+            <p><a class="btn btn-secondary btn-rurusetto hvr-sweep-to-right" href="{% url "wiki" detail.0.slug %}">{% trans "read" %} &raquo;</a></p>
         </div>
             {% endfor %}
         </div>

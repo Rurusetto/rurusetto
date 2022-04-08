@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
@@ -14,22 +15,22 @@
   <meta name="theme-color" content="#ff66aa">
 
     <!-- HTML Meta Tags -->
-    <title>delete account - rūrusetto</title>
-    <meta name="description" content="this is danger page!">
+    <title>{% trans "delete_account" %} - rūrusetto</title>
+    <meta name="description" content="{% trans "delete_account_description" %}">
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="{% url 'delete_account' %}">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="delete account - rūrusetto">
-    <meta property="og:description" content="this is danger page!">
+    <meta property="og:title" content="{% trans "delete_account" %} - rūrusetto">
+    <meta property="og:description" content="{% trans "delete_account_description" %}">
     <meta property="og:image" content="{% static "img/685481.jpeg" %}">
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="rūrusetto">
     <meta property="twitter:url" content="{% url 'delete_account' %}">
-    <meta name="twitter:title" content="delete account - rūrusetto">
-    <meta name="twitter:description" content="this is danger page!">
+    <meta name="twitter:title" content="{% trans "delete_account" %} - rūrusetto">
+    <meta name="twitter:description" content="{% trans "delete_account_description" %}">
     <meta name="twitter:image" content="{% static "img/685481.jpeg" %}">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -57,16 +58,16 @@
               </div>
             {% endfor %}
           {% endif %}
-          <h1 class="text-danger">Delete Account</h1>
-          <p class="text-danger">Are you sure you want to delete your account? All of your info will be deleted. You cannot undo this action!</p>
+          <h1 class="text-danger">{% trans "delete_account" %} </h1>
+          <p class="text-danger">{% trans "delete_account_confirmations" %} </p>
           <form method="POST">
               {% csrf_token %}
               {{ form|crispy }}
               <p></p>
-              <button type="submit" class="btn btn-danger hvr-sweep-to-right-danger">Submit</button>
+              <button type="submit" class="btn btn-danger hvr-sweep-to-right-danger">{% trans "submit" %} </button>
           </form>
           <div style="line-height: 5">
-            <p><a href="{% url 'settings' %}" class="text-decoration-none spacing-hover">Return to settings</a></p>
+            <p><a href="{% url 'settings' %}" class="text-decoration-none spacing-hover">{% trans "return_to_settings" %} </a></p>
           </div>
         </div>
       </div>

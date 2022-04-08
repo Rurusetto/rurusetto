@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 2022.410.0\n"
-"Report-Msgid-Bugs-To: Rūrusetto repository\n"
-"POT-Creation-Date: 2022-04-08 03:11+0700\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-09 03:30+0700\n"
 "PO-Revision-Date: 2022-04-08 02:17+0700\n"
 "Last-Translator: Phawit Pornwattanakul <me@helloyeew.dev>\n"
 "Language-Team: Rūrusetto <me@helloyeew.dev>\n"
@@ -342,7 +342,6 @@ msgstr "Source"
 
 #: .\templates\wiki\create_ruleset.html:94
 #: .\templates\wiki\edit_ruleset_wiki.html:161
-#: .\templates\wiki\edit_ruleset_wiki.html:175
 msgid "source_description"
 msgstr ""
 "A source of the ruleset (or where the player can download this ruleset.)"
@@ -459,12 +458,19 @@ msgstr "Download"
 msgid "ruleset_filename"
 msgstr "Ruleset Filename"
 
-#: .\templates\wiki\edit_ruleset_wiki.html:176
-msgid "source_description2"
+#: .\templates\wiki\edit_ruleset_wiki.html:175
+#, fuzzy
+#| msgid "pre_release_description"
+msgid "ruleset_filename_description"
 msgstr ""
-"Just put your ruleset full filename that is available in the release on "
-"GitHub and the other operation like update download link the Rūrusetto-chan "
-"will do it for you!"
+"The Rūrusetto-chan detect that the source link of this ruleset is GitHub."
+
+#: .\templates\wiki\edit_ruleset_wiki.html:176
+#, fuzzy
+#| msgid "pre_release_description"
+msgid "ruleset_filename_description2"
+msgstr ""
+"Just put your ruleset full filename that is available in the release on GitHub and the other operation like update download link the Rūrusetto-chan will do it for you!"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:177
 msgid ""
@@ -479,14 +485,18 @@ msgstr ""
 "github.com/naoei/tau/releases/latest/download/osu.Game.Rulesets.Tau.dll</a>"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:178
-msgid "source_description3"
+#, fuzzy
+#| msgid "pre_release_description"
+msgid "ruleset_filename_description3"
 msgstr ""
-"If you put the filename then the Direct Download button will appear on the "
-"top of wiki page and in status page."
+"If you put the filename then the Direct Download button will appear on the top of wiki page and in status page.."
 
 #: .\templates\wiki\edit_ruleset_wiki.html:179
-msgid "source_description4"
-msgstr "(If you don't want to use this function just leave this field blank.)"
+#, fuzzy
+#| msgid "pre_release_description"
+msgid "ruleset_filename_description4"
+msgstr ""
+"(If you don't want to use this function just leave this field blank.)"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:185
 msgid "ruleset_owner_settings"
@@ -1069,3 +1079,18 @@ msgstr "Buy a coffee"
 #: .\templates\wiki\wiki_page.html:193
 msgid "github_sponsors"
 msgstr "GitHub Sponsors"
+
+#~ msgid "source_description2"
+#~ msgstr ""
+#~ "Just put your ruleset full filename that is available in the release on "
+#~ "GitHub and the other operation like update download link the Rūrusetto-"
+#~ "chan will do it for you!"
+
+#~ msgid "source_description3"
+#~ msgstr ""
+#~ "If you put the filename then the Direct Download button will appear on "
+#~ "the top of wiki page and in status page."
+
+#~ msgid "source_description4"
+#~ msgstr ""
+#~ "(If you don't want to use this function just leave this field blank.)"

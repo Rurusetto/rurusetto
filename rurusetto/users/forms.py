@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from .models import Profile, Config, THEME, SUBPAGE_INDEX
+from .models import Profile, Config, THEME, SUBPAGE_INDEX, LANGUAGE
 
 
 class ProfileUpdateForm(forms.ModelForm):
@@ -47,6 +47,15 @@ class UserSubpageConfigForm(forms.ModelForm):
     class Meta:
         model = Config
         fields = ['subpage_index']
+
+
+class UserLanguageConfigForm(forms.ModelForm):
+    """Form to update language setting for user in user's config model."""
+    language = forms.ChoiceField(label="", choices=LANGUAGE, required=False)
+
+    class Meta:
+        model = Config
+        fields = ['language']
 
 
 class UserHideEmailConfigForm(forms.ModelForm):

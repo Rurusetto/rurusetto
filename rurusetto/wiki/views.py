@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower
 from django.shortcuts import render, redirect, get_object_or_404, resolve_url
 from django.templatetags.static import static
-from django.utils import timezone
+from django.utils import timezone, translation
 from django.http import HttpResponse, JsonResponse
 from .models import Changelog, Ruleset, Subpage, RecommendBeatmap, Action, RulesetStatus
 from users.models import Profile
@@ -44,6 +44,8 @@ def home(request):
         'test_server': TEST_SERVER,
         'is_in_debug': DEBUG
     }
+    if request.user.is_authenticated:
+        translation.activate(request.user.config.language)
     return render(request, 'wiki/home.html', context)
 
 
@@ -65,6 +67,8 @@ def changelog(request):
         'opengraph_description': 'All update history of website are here.',
         'opengraph_url': resolve_url('changelog'),
     }
+    if request.user.is_authenticated:
+        translation.activate(request.user.config.language)
     return render(request, 'wiki/changelog.html', context)
 
 
@@ -87,6 +91,8 @@ def listing(request):
         'opengraph_description': 'List of available rulesets.',
         'opengraph_url': resolve_url('listing'),
     }
+    if request.user.is_authenticated:
+        translation.activate(request.user.config.language)
     return render(request, 'wiki/listing.html', context)
 
 
@@ -124,6 +130,8 @@ def create_ruleset(request):
         'opengraph_description': "Let's add a new ruleset! Is it yours? Don't worry! You can add it even if you didn't make the ruleset.",
         'opengraph_url': resolve_url('create_ruleset'),
     }
+    if request.user.is_authenticated:
+        translation.activate(request.user.config.language)
     return render(request, 'wiki/create_ruleset.html', context)
 
 
@@ -165,6 +173,8 @@ def wiki_page(request, slug):
         'opengraph_url': resolve_url('wiki', slug=ruleset.slug),
         'opengraph_image': ruleset.opengraph_image.url
     }
+    if request.user.is_authenticated:
+        translation.activate(request.user.config.language)
     return render(request, 'wiki/wiki_page.html', context)
 
 
@@ -229,6 +239,8 @@ def edit_ruleset_wiki(request, slug):
         'opengraph_description': f'You are currently editing content on ruleset named "{Ruleset.objects.get(slug=slug).name}".',
         'opengraph_url': resolve_url('edit_wiki', slug=slug),
     }
+    if request.user.is_authenticated:
+        translation.activate(request.user.config.language)
     return render(request, 'wiki/edit_ruleset_wiki.html', context)
 
 
@@ -270,6 +282,8 @@ def add_subpage(request, slug):
         'opengraph_description': f'You are currently add a subpage for ruleset name "{target_ruleset.name}".',
         'opengraph_url': resolve_url('add_subpage', slug=slug),
     }
+    if request.user.is_authenticated:
+        translation.activate(request.user.config.language)
     return render(request, 'wiki/add_subpage.html', context)
 
 
@@ -289,6 +303,8 @@ def install(request):
         'opengraph_description': 'How to install and update rulesets by using Rūrusetto.',
         'opengraph_url': resolve_url('install'),
     }
+    if request.user.is_authenticated:
+        translation.activate(request.user.config.language)
     return render(request, 'wiki/install.html', context)
 
 
@@ -318,6 +334,8 @@ def subpage(request, rulesets_slug, subpage_slug):
         'opengraph_url': resolve_url('subpage', rulesets_slug=ruleset.slug, subpage_slug=subpage.slug),
         'opengraph_image': ruleset.opengraph_image.url
     }
+    if request.user.is_authenticated:
+        translation.activate(request.user.config.language)
     return render(request, 'wiki/subpage.html', context)
 
 
@@ -365,6 +383,8 @@ def edit_subpage(request, rulesets_slug, subpage_slug):
         'opengraph_description': f'You are currently edit subpage "{Subpage.objects.get(slug=subpage_slug).title}" on ruleset name "{Ruleset.objects.get(slug=rulesets_slug).name}".',
         'opengraph_url': resolve_url('edit_subpage', rulesets_slug=ruleset.slug, subpage_slug=subpage.slug),
     }
+    if request.user.is_authenticated:
+        translation.activate(request.user.config.language)
     return render(request, 'wiki/edit_subpage.html', context)
 
 
@@ -505,6 +525,8 @@ def add_recommend_beatmap(request, slug):
         'ruleset': ruleset,
         'opengraph_url': resolve_url('add_recommend_beatmap', slug=ruleset.slug),
     }
+    if request.user.is_authenticated:
+        translation.activate(request.user.config.language)
     return render(request, 'wiki/add_recommend_beatmap.html', context)
 
 
@@ -537,6 +559,8 @@ def recommend_beatmap(request, slug):
         'opengraph_url': resolve_url('recommend_beatmap', slug=ruleset.slug),
         'opengraph_image': ruleset.opengraph_image.url
     }
+    if request.user.is_authenticated:
+        translation.activate(request.user.config.language)
     return render(request, 'wiki/recommend_beatmap.html', context)
 
 
@@ -571,6 +595,8 @@ def recommend_beatmap_approval(request, rulesets_slug):
             'opengraph_url': resolve_url('recommend_beatmap', slug=ruleset.slug),
             'opengraph_image': ruleset.opengraph_image.url
         }
+        if request.user.is_authenticated:
+            translation.activate(request.user.config.language)
         return render(request, 'wiki/recommend_beatmap_approval.html', context)
     else:
         raise PermissionDenied()
@@ -650,6 +676,8 @@ def status(request):
         'opengraph_description': 'Status of all rulesets are here. (and you can download and update the rulesets instantly with this page!)',
         'opengraph_url': resolve_url('status')
     }
+    if request.user.is_authenticated:
+        translation.activate(request.user.config.language)
     return render(request, 'wiki/status.html', context)
 
 
@@ -676,6 +704,8 @@ def maintainer_menu(request):
         'opengraph_description': 'Menu for maintainer only!',
         'opengraph_url': resolve_url('maintainer')
     }
+    if request.user.is_authenticated:
+        translation.activate(request.user.config.language)
     return render(request, 'wiki/maintainer.html', context)
 
 
@@ -796,6 +826,8 @@ def archived_rulesets(request):
         'opengraph_description': "The list of rulesets that's stop update or archived by rulesets creator.",
         'opengraph_url': resolve_url('listing'),
     }
+    if request.user.is_authenticated:
+        translation.activate(request.user.config.language)
     return render(request, 'wiki/archived_rulesets.html', context)
 
 

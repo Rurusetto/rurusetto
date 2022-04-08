@@ -3,8 +3,10 @@ from django.shortcuts import render, redirect, get_object_or_404, resolve_url
 from django.contrib import messages
 from django.templatetags.static import static
 from django.contrib.auth import logout
+from django.utils import translation
+
 from .forms import UserUpdateForm, ProfileUpdateForm, UpdateProfileEveryLoginConfigForm, UserDeleteAccountForm, \
-    UserThemeConfigForm, UserSubpageConfigForm, UserSupportCreatorForm, UserHideEmailConfigForm
+    UserThemeConfigForm, UserSubpageConfigForm, UserSupportCreatorForm, UserHideEmailConfigForm, UserLanguageConfigForm
 from .models import Profile, Tag, Config
 from wiki.models import Ruleset
 from allauth.socialaccount.models import SocialAccount
@@ -32,6 +34,7 @@ def settings(request):
         profile_sync_form = UpdateProfileEveryLoginConfigForm(request.POST, instance=request.user.config)
         website_config_form = UserThemeConfigForm(request.POST, instance=request.user.config)
         subpage_config_form = UserSubpageConfigForm(request.POST, instance=request.user.config)
+        language_config_form = UserLanguageConfigForm(request.POST, instance=request.user.config)
         hide_email_config_form = UserHideEmailConfigForm(request.POST, instance=request.user.config)
         support_form = UserSupportCreatorForm(request.POST, instance=request.user.profile)
         if SocialAccount.objects.filter(user=request.user).exists():
@@ -44,6 +47,7 @@ def settings(request):
                     profile_form.save()
                     website_config_form.save()
                     subpage_config_form.save()
+                    language_config_form.save()
                     support_form.save()
                     hide_email_config_form.save()
                     messages.success(request, f'Your settings has been updated!')
@@ -52,6 +56,7 @@ def settings(request):
                     # Nothing changed here except website config that must be save
                     website_config_form.save()
                     subpage_config_form.save()
+                    language_config_form.save()
                     support_form.save()
                     hide_email_config_form.save()
                     messages.success(request, f'Your settings has been updated!')
@@ -62,6 +67,7 @@ def settings(request):
                     profile_sync_form.save()
                     website_config_form.save()
                     subpage_config_form.save()
+                    language_config_form.save()
                     support_form.save()
                     hide_email_config_form.save()
                     messages.success(request, f'Your settings has been updated!')
@@ -73,6 +79,7 @@ def settings(request):
                     profile_sync_form.save()
                     website_config_form.save()
                     subpage_config_form.save()
+                    language_config_form.save()
                     support_form.save()
                     hide_email_config_form.save()
                     messages.success(request, f'Your settings has been updated!')
@@ -84,6 +91,7 @@ def settings(request):
             profile_form.save()
             website_config_form.save()
             subpage_config_form.save()
+            language_config_form.save()
             support_form.save()
             hide_email_config_form.save()
             messages.success(request, f'Your settings has been updated!')
@@ -95,6 +103,7 @@ def settings(request):
         profile_sync_form = UpdateProfileEveryLoginConfigForm(instance=request.user.config)
         website_config_form = UserThemeConfigForm(instance=request.user.config)
         subpage_config_form = UserSubpageConfigForm(instance=request.user.config)
+        language_config_form = UserLanguageConfigForm(instance=request.user.config)
         support_form = UserSupportCreatorForm(instance=request.user.profile)
         hide_email_config_form = UserHideEmailConfigForm(instance=request.user.config)
 
@@ -109,6 +118,7 @@ def settings(request):
         'profile_sync_form': profile_sync_form,
         'website_config_form': website_config_form,
         'website_subpage_config_form': subpage_config_form,
+        'website_language_config_form': language_config_form,
         'support_form': support_form,
         'hide_email': hide_email_config_form,
         'title': 'settings',
@@ -121,7 +131,8 @@ def settings(request):
         'opengraph_description': 'All profile and website settings are visible here!',
         'opengraph_url': resolve_url('settings'),
     }
-
+    if request.user.is_authenticated:
+        translation.activate(request.user.config.language)
     return render(request, 'users/settings.html', context)
 
 
@@ -161,6 +172,8 @@ def profile_detail(request, pk):
         'opengraph_url': resolve_url('profile', pk=profile_object.user.id),
         'opengraph_image': profile_object.cover.url
     }
+    if request.user.is_authenticated:
+        translation.activate(request.user.config.language)
     return render(request, 'users/profile.html', context)
 
 
@@ -194,4 +207,6 @@ def delete_account(request):
     context = {
         'form': account_delete_form
     }
+    if request.user.is_authenticated:
+        translation.activate(request.user.config.language)
     return render(request, 'users/delete_account.html', context)

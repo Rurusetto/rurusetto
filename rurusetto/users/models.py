@@ -22,6 +22,13 @@ SUBPAGE_INDEX = (
     ('list', 'List with expandable accordance'),
 )
 
+LANGUAGE = (
+    # Current available language
+    # In-system value - Show value
+    ('en', 'English (Default)'),
+    ('th', 'Thai')
+)
+
 
 class Profile(models.Model):
     """
@@ -83,9 +90,10 @@ class Config(models.Model):
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     update_profile_every_login = models.BooleanField(default=False)
-    theme = models.TextField(choices=THEME, default='')
+    theme = models.TextField(choices=THEME, default='', blank=True)
     subpage_index = models.TextField(choices=SUBPAGE_INDEX, default='button')
     hide_email = models.BooleanField(default=False)
+    language = models.TextField(choices=LANGUAGE, default='en-EN')
 
     def __str__(self):
         return f'{self.user.username} Config'

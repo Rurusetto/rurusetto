@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 2022.410.0\n"
-"Report-Msgid-Bugs-To: Rūrusetto repository\n"
-"POT-Creation-Date: 2022-04-09 02:44+0700\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-09 03:30+0700\n"
 "PO-Revision-Date: 2022-04-09 02:44+0700\n"
 "Last-Translator: Phawit Pornwattanakul <me@helloyeew.dev>\n"
 "Language-Team: Rūrusetto <me@helloyeew.dev>\n"
@@ -63,49 +63,49 @@ msgstr "เพิ่ม"
 
 #: .\templates\wiki\add_subpage.html:10
 msgid "add_subpage_header"
-msgstr ""
+msgstr "เพิ่มหน้าย่อยใหม่"
 
 #: .\templates\wiki\add_subpage.html:38 .\templates\wiki\edit_subpage.html:38
 msgid "title"
-msgstr ""
+msgstr "หัวข้อ"
 
 #: .\templates\wiki\add_subpage.html:42 .\templates\wiki\edit_subpage.html:42
 msgid "title_description"
-msgstr ""
+msgstr "ชื่อของหน้าย่อยนี้"
 
 #: .\templates\wiki\add_subpage.html:46 .\templates\wiki\edit_subpage.html:46
 msgid "subpage_content"
-msgstr ""
+msgstr "เนื้อหาหน้าย่อย"
 
 #: .\templates\wiki\add_subpage.html:49
 #: .\templates\wiki\create_ruleset.html:100
 #: .\templates\wiki\edit_ruleset_wiki.html:186
 #: .\templates\wiki\edit_subpage.html:50
 msgid "publication"
-msgstr ""
+msgstr "การเผยเพร่"
 
 #: .\templates\wiki\add_subpage.html:52
 #: .\templates\wiki\create_ruleset.html:103
 #: .\templates\wiki\edit_ruleset_wiki.html:189
 #: .\templates\wiki\edit_subpage.html:53
 msgid "hidden"
-msgstr ""
+msgstr "ซ่อน"
 
 #: .\templates\wiki\add_subpage.html:58 .\templates\wiki\edit_subpage.html:59
 msgid "subpage_hidden_note"
-msgstr ""
+msgstr "ถ้ากล่องนี้ถูกเช็ค หน้าย่อยหน้านี้ของคุณจะไม่ถูกแสดงในรายการหน้าย่อยของคนอื่น"
 
 #: .\templates\wiki\add_subpage.html:62
 msgid "create"
-msgstr ""
+msgstr "สร้าง"
 
 #: .\templates\wiki\archived_rulesets.html:10 .\templates\wiki\listing.html:24
 msgid "archived_rulesets"
-msgstr ""
+msgstr "rulesets ที่ถูกเก็บแล้ว"
 
 #: .\templates\wiki\archived_rulesets.html:11
 msgid "archived_rulesets_description"
-msgstr ""
+msgstr "รายการของ rulesets ที่หยุดอัพเดทหรือถูกเก็บโดยผู้สร้าง rulesets"
 
 #: .\templates\wiki\archived_rulesets.html:46
 #: .\templates\wiki\archived_rulesets.html:48 .\templates\wiki\home.html:66
@@ -118,7 +118,7 @@ msgstr ""
 #: .\templates\wiki\wiki_page.html:20 .\templates\wiki\wiki_page.html:80
 #: .\templates\wiki\wiki_page.html:147 .\templates\wiki\wiki_page.html:149
 msgid "deleted_user"
-msgstr ""
+msgstr "User ที่ถูกลบ"
 
 #: .\templates\wiki\archived_rulesets.html:46
 #: .\templates\wiki\archived_rulesets.html:52 .\templates\wiki\home.html:66
@@ -128,18 +128,18 @@ msgstr ""
 #: .\templates\wiki\wiki_page.html:24 .\templates\wiki\wiki_page.html:147
 #: .\templates\wiki\wiki_page.html:153
 msgid "verified_rulesets_creator"
-msgstr ""
+msgstr "ผู้สร้าง rulesets ที่ได้รับการยืนยันแล้ว"
 
 #: .\templates\wiki\archived_rulesets.html:58 .\templates\wiki\home.html:78
 #: .\templates\wiki\listing.html:73 .\templates\wiki\listing.html:102
 msgid "read"
-msgstr ""
+msgstr "อ่าน"
 
 #: .\templates\wiki\base.html:84 .\templates\wiki\base.html:138
 #: .\templates\wiki\base.html:169 .\templates\wiki\create_ruleset.html:64
 #: .\templates\wiki\edit_ruleset_wiki.html:85
 msgid "logo"
-msgstr ""
+msgstr "โลโก้"
 
 #: .\templates\wiki\base.html:89 .\templates\wiki\base.html:147
 #: .\templates\wiki\base.html:178 .\templates\wiki\listing.html:10
@@ -164,335 +164,355 @@ msgstr "บันทึกการเปลี่ยนแปลง"
 
 #: .\templates\wiki\base.html:109 .\templates\wiki\base.html:155
 msgid "maintainer"
-msgstr ""
+msgstr "ผู้ดูแล"
 
 #: .\templates\wiki\base.html:110 .\templates\wiki\base.html:156
 msgid "admin"
-msgstr ""
+msgstr "ผู้ดูแลระบบ"
 
 #: .\templates\wiki\base.html:113 .\templates\wiki\base.html:158
 msgid "settings"
-msgstr ""
+msgstr "ตั้งค่า"
 
 #: .\templates\wiki\base.html:114 .\templates\wiki\base.html:159
 msgid "profile"
-msgstr ""
+msgstr "โปรไฟล์"
 
 #: .\templates\wiki\base.html:116 .\templates\wiki\base.html:160
 #: .\templates\wiki\base.html:202
 msgid "sign_out"
-msgstr ""
+msgstr "ออกจากระบบ"
 
 #: .\templates\wiki\base.html:125 .\templates\wiki\base.html:182
 msgid "sign_in"
-msgstr ""
+msgstr "เข้าสู่ระบบ"
 
 #: .\templates\wiki\base.html:126 .\templates\wiki\base.html:183
 msgid "sign_up"
-msgstr ""
+msgstr "สมัครบัญชี"
 
 #: .\templates\wiki\base.html:140 .\templates\wiki\base.html:171
 msgid "toggle_navigation"
-msgstr ""
+msgstr "เปิดเมนูนำทาง"
 
 #: .\templates\wiki\base.html:192
 msgid "alert"
-msgstr ""
+msgstr "แจ้งเตือน"
 
 #: .\templates\wiki\base.html:196
 msgid "sign_out_notice"
-msgstr ""
+msgstr "คุณแน่ใจนะว่าจะลงชื่อออก :("
 
 #: .\templates\wiki\base.html:199
 msgid "sign_out_cancel"
-msgstr ""
+msgstr "ไม่! นำฉันกลับไป"
 
 #: .\templates\wiki\base.html:215
 msgid "made_with_love_by"
-msgstr ""
+msgstr "สร้างด้วย ❤️ โดย"
 
 #: .\templates\wiki\base.html:215
 msgid "and"
-msgstr ""
+msgstr "และ"
 
 #: .\templates\wiki\changelog.html:15
 msgid "changelog_description"
-msgstr ""
+msgstr "ประวัติการอัพเดทของเว็ปไซต์อยู่ที่นี่"
 
 #: .\templates\wiki\changelog.html:30
 #: .\templates\wiki\edit_ruleset_wiki.html:202 .\templates\wiki\status.html:61
 #: .\templates\wiki\status.html:126 .\templates\wiki\status.html:161
 #: .\templates\wiki\status.html:196
 msgid "pre_release"
-msgstr ""
+msgstr "pre-release"
 
 #: .\templates\wiki\changelog.html:33
 msgid "stable"
-msgstr ""
+msgstr "เสถียร"
 
 #: .\templates\wiki\changelog.html:35
 msgid "release_at"
-msgstr ""
+msgstr "ปล่อยเมื่อ"
 
 #: .\templates\wiki\create_ruleset.html:10 .\templates\wiki\listing.html:20
 msgid "add_a_new_ruleset"
-msgstr ""
+msgstr "เพิ่ม ruleset ใหม่"
 
 #: .\templates\wiki\create_ruleset.html:11
 msgid "add_a_new_ruleset_description"
 msgstr ""
+"มาเพิ่ม ruleset ใหม่กัน! นี่เป็นของคุณหรือเปล่า? ไม่ต้องห่วง! "
+"คุณสามารถเพิ่มมันแม้ว่าคุณจะไม่ได้สร้าง ruleset นั้นก็ได้"
 
 #: .\templates\wiki\create_ruleset.html:20
 #: .\templates\wiki\edit_ruleset_wiki.html:39
 msgid "header"
-msgstr ""
+msgstr "หัวข้อ"
 
 #: .\templates\wiki\create_ruleset.html:23
 #: .\templates\wiki\edit_ruleset_wiki.html:42
 msgid "name"
-msgstr ""
+msgstr "ชื่อ"
 
 #: .\templates\wiki\create_ruleset.html:27
 #: .\templates\wiki\edit_ruleset_wiki.html:46
 msgid "name_description"
-msgstr ""
+msgstr "ชื่อของ ruleset"
 
 #: .\templates\wiki\create_ruleset.html:33
 #: .\templates\wiki\edit_ruleset_wiki.html:52
 msgid "description"
-msgstr ""
+msgstr "คำบรรยาย"
 
 #: .\templates\wiki\create_ruleset.html:37
 #: .\templates\wiki\edit_ruleset_wiki.html:56
 msgid "description_description"
 msgstr ""
+"คำบรรยายสั้นๆสำหรับ ruleset คำบรรยายนี้จะถูกแสดงไว้ใต้ชื่อของ ruleset และที่หัวข้อของหน้าวิกิ"
 
 #: .\templates\wiki\create_ruleset.html:41
 #: .\templates\wiki\edit_ruleset_wiki.html:60
 msgid "icon_and_logo"
-msgstr ""
+msgstr "ไอคอน & โลโก้"
 
 #: .\templates\wiki\create_ruleset.html:44
 #: .\templates\wiki\edit_ruleset_wiki.html:63
 msgid "icon"
-msgstr ""
+msgstr "ไอคอน"
 
 #: .\templates\wiki\create_ruleset.html:48
 #: .\templates\wiki\edit_ruleset_wiki.html:68
 msgid "icon_description"
-msgstr ""
+msgstr "ไอคอนที่แสดงอยู่ในแถบข้างบนของเกม แนะนำให้รูปร่างของไอคอนเป็นวงกลม"
 
 #: .\templates\wiki\create_ruleset.html:54
 #: .\templates\wiki\edit_ruleset_wiki.html:74
 msgid "light_icon"
-msgstr ""
+msgstr "ไอคอนในโหมดสว่าง"
 
 #: .\templates\wiki\create_ruleset.html:58
 #: .\templates\wiki\edit_ruleset_wiki.html:79
 msgid "light_icon_description"
-msgstr ""
+msgstr "ไอคอนสำหรับใช้ในโหมดสว่างของเว็ปไซต์ แนะนำให้รูปร่างของไอคอนเป็นวงกลม"
 
 #: .\templates\wiki\create_ruleset.html:68
 #: .\templates\wiki\edit_ruleset_wiki.html:90
 msgid "logo_description"
-msgstr ""
+msgstr "โลโก้ที่แสดงในกล่องข้อมูลของวิกิ มันไม่จำเป็นจะต้องเหมือนไอคอนก็ได้"
 
 #: .\templates\wiki\create_ruleset.html:72
 #: .\templates\wiki\edit_ruleset_wiki.html:94
 msgid "wiki_content"
-msgstr ""
+msgstr "เนื้อหาวิกิ"
 
 #: .\templates\wiki\create_ruleset.html:76
 #: .\templates\wiki\edit_ruleset_wiki.html:98
 msgid "wiki_styling"
-msgstr ""
+msgstr "ตกแต่งหน้าวิกิ"
 
 #: .\templates\wiki\create_ruleset.html:79
 #: .\templates\wiki\edit_ruleset_wiki.html:101
 msgid "cover_image"
-msgstr ""
+msgstr "รูปปก"
 
 #: .\templates\wiki\create_ruleset.html:83
 #: .\templates\wiki\edit_ruleset_wiki.html:106
 msgid "cover_image_description"
-msgstr ""
+msgstr "รูปที่แสดงอยู่หลังหัวข้อของวิกิ"
 
 #: .\templates\wiki\create_ruleset.html:87
 #: .\templates\wiki\create_ruleset.html:90
 #: .\templates\wiki\edit_ruleset_wiki.html:154
 #: .\templates\wiki\edit_ruleset_wiki.html:157
 msgid "source"
-msgstr ""
+msgstr "ที่มา"
 
 #: .\templates\wiki\create_ruleset.html:94
 #: .\templates\wiki\edit_ruleset_wiki.html:161
-#: .\templates\wiki\edit_ruleset_wiki.html:175
 msgid "source_description"
-msgstr ""
+msgstr "ที่มาของ ruleset (หรือที่ๆผู้เล่นคนอื่นๆสามารถไปโหลด ruleset นี้มาเล่นได้)"
 
 #: .\templates\wiki\create_ruleset.html:95
 #: .\templates\wiki\edit_ruleset_wiki.html:162
 msgid "source_description_github"
 msgstr ""
+"ถ้า ruleset นี้อยู่บน GitHub กรุณาใส่เป็นลิงก์ของ repository (อย่างเช่น https://github."
+"com/LumpBloom7/sentakki)"
 
 #: .\templates\wiki\create_ruleset.html:96
 #: .\templates\wiki\edit_ruleset_wiki.html:163
 msgid "source_description_patreon"
 msgstr ""
+"ถ้าคุณเจอมันบน patreon กรุณาใส่เป็นลิงก์ไปที่หน้า patreon ของผู้สร้าง (อย่างเช่น https://www."
+"patreon.com/evast/)"
 
 #: .\templates\wiki\create_ruleset.html:109
 #: .\templates\wiki\edit_ruleset_wiki.html:195
 msgid "hidden_description"
-msgstr ""
+msgstr "้ากล่องนี้ถูกเช็ค ruleset ของคุณจะไม่ถูกแสดงในรายการ ruleset ของคนอื่น"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:10
 #: .\templates\wiki\edit_ruleset_wiki.html:223
 msgid "edit"
-msgstr ""
+msgstr "แก้ไข"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:11
 #, python-format
 msgid ""
 " You are currently editing content on ruleset named \"%(ruleset_name)s\"."
-msgstr ""
+msgstr "คุณกำลังแก้ไขเนื้อหาของ ruleset ที่ชื่อ \"%(ruleset_name)s\"."
 
 #: .\templates\wiki\edit_ruleset_wiki.html:65
 msgid "current_icon"
-msgstr ""
+msgstr "ไอคอนตอนนี้"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:76
 msgid "current_light_icon"
-msgstr ""
+msgstr "ไอคอนในโหมดสว่างตอนนี้"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:87
 msgid "current_logo"
-msgstr ""
+msgstr "โลโก้ตอนนี้"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:103
 msgid "current_cover_image"
-msgstr ""
+msgstr "รูปปกตอนนี้"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:112
 msgid "cover_image_in_light_mode"
-msgstr ""
+msgstr "รูปปกในโหมดสว่าง"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:114
 msgid "current_cover_image_in_light_mode"
-msgstr ""
+msgstr "รูปปกในโหมดสว่างตอนนี้"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:117
 msgid "cover_image_in_light_mode_description"
-msgstr ""
+msgstr "เมื่อผู้ใช้ใช้โหมดสว่างรูปนี้จะถูกแสดงเป็นรูปปกแทนรูปปกปกติ"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:123
 msgid "opengraph_preview_image"
-msgstr ""
+msgstr "ภาพตัวอย่างใน Opengraph"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:125
 msgid "current_opengraph_preview_image"
-msgstr ""
+msgstr "ภาพตัวอย่างใน Opengraph ตอนนี้"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:128
 msgid "opengraph_preview_image_description"
 msgstr ""
+"รูปตัวอย่างที่จะแสดงเมื่อมีผู้ใช้แชร์ลิงก์ไปในแอป social network และ social network "
+"จะใช้รูปนี้เป็นรูปตัวอย่าง"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:134
 msgid "recommend_beatmaps_cover_image"
-msgstr ""
+msgstr "รูปปกของหน้าแนะนำบีทแมพ"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:136
 msgid "current_recommend_beatmaps_cover_image"
-msgstr ""
+msgstr "รูปปกของหน้าแนะนำบีทแมพตอนนี้"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:139
 msgid "recommend_beatmaps_cover_image_description"
-msgstr ""
+msgstr "รูปปกของหน้าแนะนำบีทแมพของ ruleset นี้"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:145
 msgid "custom_css"
-msgstr ""
+msgstr "CSS ที่กำหนดเอง"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:147
 msgid "current_custom_css"
-msgstr ""
+msgstr "CSS ที่กำหนดเองตอนนี้"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:150
 msgid "custom_css_description"
-msgstr ""
+msgstr "CSS นี้จะไปทับ CSS ของหน้าวิกิและหน้าย่อยของ ruleset นี้"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:168
 #: .\templates\wiki\wiki_page.html:51
 msgid "download"
-msgstr ""
+msgstr "ดาวน์โหลด"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:171
 msgid "ruleset_filename"
-msgstr ""
+msgstr "ชื่อไฟล์ ruleset"
+
+#: .\templates\wiki\edit_ruleset_wiki.html:175
+#, fuzzy
+#| msgid "name_description"
+msgid "ruleset_filename_description"
+msgstr "น้อน Rūrusetto จตรวจเจอมาว่าลิงก์ที่มาของ ruleset นี้มาจาก GitHub"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:176
-msgid "source_description2"
-msgstr ""
+#, fuzzy
+#| msgid "name_description"
+msgid "ruleset_filename_description2"
+msgstr "เพียงแค่ใส่ชื่อไฟล์เต็มๆของ ruleset ที่อยู่ในหน้า release บน GitHub และกระบวนการอื่นๆอย่างเช่นอัพเดทลิงก์ดาวน์โหลดน้อน Rūrusetto จะทำให้คุณเอง!"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:177
 msgid ""
-"Ex. From <a href=\"https://github.com/naoei/tau\">tau</a> : osu.Game."
-"Rulesets.Tau.dll and the link will render as <a href=\"https://github.com/"
+"ตัวอย่างจาก <a href=\"https://github.com/naoei/tau\">tau</a> : osu.Game."
+"Rulesets.Tau.dll และลิงก์จะแสดงผลเป็น <a href=\"https://github.com/"
 "naoei/tau/releases/latest/download/osu.Game.Rulesets.Tau.dll\">https://"
 "github.com/naoei/tau/releases/latest/download/osu.Game.Rulesets.Tau.dll</a>"
 msgstr ""
 
 #: .\templates\wiki\edit_ruleset_wiki.html:178
-msgid "source_description3"
-msgstr ""
+#, fuzzy
+#| msgid "name_description"
+msgid "ruleset_filename_description3"
+msgstr "ถ้าคุณใส่ชื่อไฟล์แล้วปุ่มดาวน์โหลดโดยตรงจะแสดงบนแถบข้างบนของหน้า่วิกิและในหน้าสถานะ"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:179
-msgid "source_description4"
-msgstr ""
+#, fuzzy
+#| msgid "name_description"
+msgid "ruleset_filename_description4"
+msgstr "(ถ้าคุณไม่อยากใช้ฟังก์ชันนี้กรุณาปล่อยช่องนี้ว่าง)"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:185
 msgid "ruleset_owner_settings"
-msgstr ""
+msgstr "การตั้งค่าของเจ้าของ ruleset"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:208
 msgid "pre_release_description"
-msgstr ""
+msgstr "ถ้ากล่องนี้ถูกเช็ค ระบบเช็คสถานะ ruleset อัตโนมัติจะดึงสถานะนของ ruleset นี้ในแบบ pre-release แทนการดึงปกติและในหน้าสถานะของ ruleset ป้าย pre-release จะถูกแสดงด้วย"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:214 .\templates\wiki\status.html:54
 #: .\templates\wiki\status.html:119 .\templates\wiki\status.html:154
 #: .\templates\wiki\status.html:189
 msgid "playable"
-msgstr ""
+msgstr "เล่นได้"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:218
 msgid "playable_description"
-msgstr ""
+msgstr "สถานะว่า ruleset ของคุณยังเล่นได้อยู่มั้ย (สถานะนี้สามารถเปลี่ยนโดยผู้ดูแลวิกิได้ถ้าสถานะนี้ไม่ถูกต้องตามจริง)"
 
 #: .\templates\wiki\edit_subpage.html:10
 msgid "edit_subpage"
-msgstr ""
+msgstr "แก้ไขหน้าย่อย"
 
 #: .\templates\wiki\edit_subpage.html:11
 #, python-format
 msgid ""
 "You are currently edit subpage \"%(subpage_name)s\" on ruleset name "
 "\"%(ruleset_name)s\"."
-msgstr ""
+msgstr "คุณกำลังแก้ไขหน้าย่อย \"%(subpage_name)s\" ของ ruleset ที่ชื่อ \"%(ruleset_name)s\"."
 
 #: .\templates\wiki\edit_subpage.html:64
 msgid "submit"
-msgstr ""
+msgstr "ส่ง"
 
 #: .\templates\wiki\edit_subpage.html:69
 msgid "delete_subpage"
-msgstr ""
+msgstr "ลบหน้าย่อย"
 
 #: .\templates\wiki\edit_subpage.html:70
 msgid "delete_subpage_description"
-msgstr ""
+msgstr "คลิกปุ่มข้างล่างนี้ถ้าคุณต้องการลบหน้าย่อยนี้ โปรดทราบว่าการดำเนินการนี้ไม่สามารถย่อนกลับได้นะ!"
 
 #: .\templates\wiki\edit_subpage.html:71
 msgid "delete_this_subpage"
-msgstr ""
+msgstr "ลบหน้าย่อยนี้"
 
 #: .\templates\wiki\home.html:8
 msgid "welcome_to_rurusetto"
@@ -520,15 +540,15 @@ msgstr ""
 
 #: .\templates\wiki\install.html:9
 msgid "install_and_update_rulesets"
-msgstr ""
+msgstr "ติดตั้งและอัพเดท rulesets"
 
 #: .\templates\wiki\install.html:11
 msgid "install_and_update_rulesets_description"
-msgstr ""
+msgstr "ติดตั้งและอัพเดท rulesets ใน osu!lazer ด้วย rūrusetto"
 
 #: .\templates\wiki\install.html:40
 msgid "download rulesets file"
-msgstr ""
+msgstr "ดาวน์โหลดไฟล์ rulesets"
 
 #: .\templates\wiki\install.html:47
 #, python-format
@@ -538,21 +558,24 @@ msgid ""
 "\"><i class=\"fas fa-info-circle icon-menu hvr-icon\"></i> rulesets status "
 "page</a> and then clicking on the <code>Download latest version</code> on "
 "the desired ruleset."
-msgstr ""
+msgstr "ไฟล์ ruleset สามารถหาได้จาก <a class=\"text-decoration-none text-center "
+"spacing-hover-short hvr-icon-bounce\" target=\"_blank\" href=\"%(url_status)s"
+"\"><i class=\"fas fa-info-circle icon-menu hvr-icon\"></i> หน้าสถานะของ ruleset"
+"</a> และคลิกไปที่ <code>ดาวน์โหลดเวอร์ชั่นล่าสุด</code> บน ruleset ที่ต้องการได้เลย"
 
 #: .\templates\wiki\install.html:55
 msgid ""
 "The changelog and download link will automatically update when a ruleset is "
 "updated."
-msgstr ""
+msgstr "บันทึกการเปลี่ยนแปลงและลิงก์ดาวน์โหลดจะอัพเดทอัตโนมัติเมื่่ ruleset ได้รับการอัพเดท"
 
 #: .\templates\wiki\install.html:59
 msgid "import rulesets to osu!lazer"
-msgstr ""
+msgstr "นำ rulesets เข้าใน osu!lazer"
 
 #: .\templates\wiki\install.html:64
 msgid "step 1: navigate to osu! data directory"
-msgstr ""
+msgstr "ขั้นตอนที่ 1: ไปที่โฟลเดอร์ข้อมูลของ osu!"
 
 #: .\templates\wiki\install.html:65
 #, python-format
@@ -562,420 +585,427 @@ msgid ""
 "data folder directly via Windows Explorer, by default this location is <code>"
 "%%AppData%%/osu!/rulesets</code>. On MacOS default this location is in "
 "application itself."
-msgstr ""
+msgstr "ในแผงหน้าการตั้งค่าจะมีปุ่มเพื่อไปที่ <code>Open osu! folder (เปิดโฟลเดอร์ osu!)</"
+"code> ภายในส่วน “General (ทั่วไป)” ใน windows คุณสามารถไปที่โฟล์เดอร์ข้อมูล "
+"ได้โดยตรงผ่าน Windows Explorer ปกติที่อยู่ของโฟลเดอร์นี้จะอยู่ที่ <code>"
+"%%AppData%%/osu!/rulesets</code>. ใน MacOS โฟลเดอร์นี้จะอยู่ที่ภายในแอป"
 
 #: .\templates\wiki\install.html:68
 msgid "open_osu_folder"
-msgstr ""
+msgstr "เปิดโฟลเดอร์ osu!"
 
 #: .\templates\wiki\install.html:73
 msgid "move_rulesets_file"
-msgstr ""
+msgstr "ย้ายไฟล์ rulesets"
 
 #: .\templates\wiki\install.html:76
 msgid "step 2: installing the ruleset"
-msgstr ""
+msgstr "ขั้นตอนที่ 2: ติดตั้ง ruleset"
 
 #: .\templates\wiki\install.html:77
 msgid ""
 "Copy the ruleset file (.dll file that you just downloaded) into the rulesets "
 "directory, do make sure that duplicate copies of the ruleset are overwritten."
-msgstr ""
+msgstr "คัดลอกไฟล์ ruleset (ไฟล์ .dll ที่คุณเพิ่งดาวน์โหลดมา) ไปในโฟลเดอร์ที่ชื่อว่า rulesets"
+" ตรวจสอบให้มั่นใจด้วยว่าไฟล์ ruleset ที่ซ้ำกันถูกเขียนทับแล้ว"
 
 #: .\templates\wiki\install.html:78
 msgid "Other rulesets also could share the same folder."
-msgstr ""
+msgstr "rulesets อื่นสามารถใช้โฟลเดอร์เดียวกันได้"
 
 #: .\templates\wiki\install.html:83
 msgid "step 3: have fun!"
-msgstr ""
+msgstr "ขั้นตอนที่ 3: เล่นให้สนุก!"
 
 #: .\templates\wiki\install.html:84
 msgid ""
 "After completing the above steps, you may need to restart osu!lazer if it is "
 "already open. Once restarted, you should see the ruleset alongside the "
 "standard rulesets."
-msgstr ""
+msgstr "หลังจากเสร็จทุกขั้นตอนแล้วคุณอาจจะต้องปิดและเปิด osu!lazer ใหม่ถ้ามันเปิดอยู่แล้ว"
+"หลังจากที่ปิดและเปิดใหม่แล้วคุณจะเห็น ruleset ใหม่อยู่ข้างๆ ruleset มาตรฐาน"
 
 #: .\templates\wiki\install.html:87
 msgid "rulesets_show_in_lazer_toolbar"
-msgstr ""
+msgstr "rulesets ในแถบเครื่องมือของ lazer"
 
 #: .\templates\wiki\install.html:93
 msgid "update rulesets"
-msgstr ""
+msgstr "อัพเดท rulesets"
 
 #: .\templates\wiki\install.html:96
 msgid ""
 "To update rulesets, just do the same step and overwrite the old rulesets "
 "file."
-msgstr ""
+msgstr "ในการอัพเดท rulesets เพียงแค่ทำขั้นตอนเดิมและเขียนทับไฟล์ rulesets เก่า"
 
 #: .\templates\wiki\listing.html:11
 msgid "listing_description"
-msgstr ""
+msgstr "รายการของ rulesets ที่มีอยู่"
 
 #: .\templates\wiki\listing.html:48
 msgid "your_hidden_rulesets"
-msgstr ""
+msgstr "Ruleset ที่คุณซ่อนไว้อยู่"
 
 #: .\templates\wiki\listing.html:76
 msgid "all_rulesets"
-msgstr ""
+msgstr "Ruleset ทุกอัน"
 
 #: .\templates\wiki\maintainer.html:11
 msgid "maintainer_menu"
-msgstr ""
+msgstr "เมนูผู้ดูแล"
 
 #: .\templates\wiki\maintainer.html:12
 msgid "maintainer_menu_description"
-msgstr ""
+msgstr "เมนูสำหรับผู้ดูแลเท่านั้น"
 
 #: .\templates\wiki\maintainer.html:41
 msgid "run_action_for_maintainer"
-msgstr ""
+msgstr "เริ่ม action สำหรับผู้ดูแล"
 
 #: .\templates\wiki\maintainer.html:43
 msgid "warning"
-msgstr ""
+msgstr "ระวัง"
 
 #: .\templates\wiki\maintainer.html:43
 msgid "action_warning"
-msgstr ""
+msgstr "action นี้จะวิ่งอยู่พื้นหลังและใช้พลังในการคำนวณสูงมาก กรุณาใช้อย่างระมัดระวังด้วย!"
 
 #: .\templates\wiki\maintainer.html:47
 msgid "update_all_beatmaps_metadata"
-msgstr ""
+msgstr "อัพเดทข้อมูลของบีทแมพทั้งหมด"
 
 #: .\templates\wiki\maintainer.html:50
 msgid "update_all_beatmaps_metadata_description"
-msgstr ""
+msgstr "อัพเดทข้อมูลของบีทแมพในเซิฟเวอร์ทั้งหมด"
 
 #: .\templates\wiki\maintainer.html:56
 msgid "update_rulesets_version"
-msgstr ""
+msgstr "อัพเดทเวอร์ชั่นของ rulesets"
 
 #: .\templates\wiki\maintainer.html:59
 msgid "update_rulesets_version_description"
-msgstr ""
+msgstr "นี่เป็น action ที่วิ่งยาวๆและต้องปล่อยให้มันวิ่งเสมอ มันจะดึงข้อมูลจาก GitHub API และอัพเดทเวอร์ชั่นของ ruleset บนหน้าสถานะทุกๆ 30 นาที กรุณาเช็คงานอื่นๆก่อนเริ่ม action นี้เพราะ rate limit ของ GitHub API"
 
 #: .\templates\wiki\maintainer.html:64
 msgid "update_rulesets_version_once"
-msgstr ""
+msgstr "อัพเดทเวอร์ชั่นของ rulesets ครั้งเดียว"
 
 #: .\templates\wiki\maintainer.html:67
 msgid "update_rulesets_version_once_description"
-msgstr ""
+msgstr "action นี้จะอัพเดทเวอร์ชั่นของ ruleset อย่างรวดเร็ว action นี้สามารถเริ่มได้เมื่อบางสิ่งบางอย่างผิดปกติหรือไม่อยางเริ่ม action ที่วิ่งยาวๆ"
 
 #: .\templates\wiki\maintainer.html:84
 msgid "start_at"
-msgstr ""
+msgstr "เริ่มเมื่อ"
 
 #: .\templates\wiki\maintainer.html:85
 msgid "duration"
-msgstr ""
+msgstr "ระยะเวลา"
 
 #: .\templates\wiki\maintainer.html:85 .\templates\wiki\maintainer.html:98
 msgid "calculating"
-msgstr ""
+msgstr "คำนวณอยู่"
 
 #: .\templates\wiki\maintainer.html:91 .\templates\wiki\maintainer.html:92
 #: .\templates\wiki\maintainer.html:141 .\templates\wiki\maintainer.html:142
 msgid "idle"
-msgstr ""
+msgstr "ว่าง"
 
 #: .\templates\wiki\maintainer.html:97 .\templates\wiki\maintainer.html:145
 msgid "loading"
-msgstr ""
+msgstr "กำลังโหลด"
 
 #: .\templates\wiki\maintainer.html:101 .\templates\wiki\maintainer.html:148
 msgid "successfully_running"
-msgstr ""
+msgstr "งานสำเร็จ"
 
 #: .\templates\wiki\maintainer.html:103 .\templates\wiki\maintainer.html:150
 msgid "run_failed"
-msgstr ""
+msgstr "งานล้มเหลว"
 
 #: .\templates\wiki\maintainer.html:107
 msgid "running_status"
-msgstr ""
+msgstr "สถานะงาน"
 
 #: .\templates\wiki\maintainer.html:146
 msgid "running"
-msgstr ""
+msgstr "กำลังทำงาน"
 
 #: .\templates\wiki\maintainer.html:152
 msgid "unknown_status"
-msgstr ""
+msgstr "ไม่รู้สถานะ"
 
 #: .\templates\wiki\recommend_beatmap.html:13
 #, python-format
 msgid "%(ruleset_name)s recommended beatmaps"
-msgstr ""
+msgstr "บีทแมปแนะนำของ %(ruleset_name)s"
 
 #: .\templates\wiki\recommend_beatmap.html:14
 #, python-format
 msgid ""
 "Recommend beatmaps for playing with %(ruleset_name)s from ruleset creator "
 "and other player."
-msgstr ""
+msgstr "บีทแมปแนะนำสำหรับเล่นกับ %(ruleset_name)s โดยผู้สร้าง ruleset และผู้เล่นคนอื่นๆ"
 
 #: .\templates\wiki\recommend_beatmap.html:22 .\templates\wiki\subpage.html:30
 msgid "back_to_main_page"
-msgstr ""
+msgstr "กลับไปที่หน้าหลัก"
 
 #: .\templates\wiki\recommend_beatmap.html:26
 msgid "add_a_recommend_beatmap"
-msgstr ""
+msgstr "เพิ่มบีทแมปแนะนำ"
 
 #: .\templates\wiki\recommend_beatmap.html:29
 msgid "approve_pending_beatmap"
-msgstr ""
+msgstr "อนุมัติบีทแมปที่รอการยืนยัน"
 
 #: .\templates\wiki\recommend_beatmap.html:33
 msgid "suggest_a_beatmap"
-msgstr ""
+msgstr "แนะนำบีทแมปใหม่"
 
 #: .\templates\wiki\recommend_beatmap.html:57
 #, python-format
 msgid "Recommended by %(ruleset_name)s creator"
-msgstr ""
+msgstr "แนะนำโดยผู้สร้าง %(ruleset_name)s"
 
 #: .\templates\wiki\recommend_beatmap.html:66
 msgid "recommend_by_players"
-msgstr ""
+msgstr "แนะนำโดยผู้เล่น"
 
 #: .\templates\wiki\recommend_beatmap.html:76
 msgid "no_recommend_beatmap"
-msgstr ""
+msgstr "ไม่มีบีทแมปแนะนำ"
 
 #: .\templates\wiki\recommend_beatmap.html:77
 msgid "lets_add_one"
-msgstr ""
+msgstr "มาเพิ่มกัน!"
 
 #: .\templates\wiki\recommend_beatmap_approval.html:13
 #, python-format
 msgid "%(ruleset_name)s recommended beatmaps approval"
-msgstr ""
+msgstr "อนุมัติบีทแมปที่รอการยืนยันของ %(ruleset_name)s"
 
 #: .\templates\wiki\recommend_beatmap_approval.html:14
 msgid "recommend_beatmaps_approval_description"
-msgstr ""
+msgstr "มาดูกันว่าผู้เล่นคนอื่นๆแนะนำอะไรกันมาบ้าง"
 
 #: .\templates\wiki\recommend_beatmap_approval.html:23
 msgid "back_to_recommend_beatmaps"
-msgstr ""
+msgstr "กลับไปที่บีทแมปแนะนำ"
 
 #: .\templates\wiki\recommend_beatmap_approval.html:60
 msgid "already_approve_all_beatmaps"
-msgstr ""
+msgstr "คุณได้ตอบกลับบีทแมปทุกอันแล้ว"
 
 #: .\templates\wiki\recommend_beatmap_approval.html:61
 msgid "congrats"
-msgstr ""
+msgstr "ยินดีด้วย!"
 
 #: .\templates\wiki\snippets\beatmap_approval_card.html:16
 #: .\templates\wiki\snippets\beatmap_card.html:16
 msgid "by"
-msgstr ""
+msgstr "โดย"
 
 #: .\templates\wiki\snippets\beatmap_approval_card.html:24
 #: .\templates\wiki\snippets\beatmap_card.html:24
 msgid "loved"
-msgstr ""
+msgstr "LOVED"
 
 #: .\templates\wiki\snippets\beatmap_approval_card.html:26
 #: .\templates\wiki\snippets\beatmap_card.html:26
 msgid "qualified"
-msgstr ""
+msgstr "QUALIFIED"
 
 #: .\templates\wiki\snippets\beatmap_approval_card.html:28
 #: .\templates\wiki\snippets\beatmap_card.html:28
 msgid "approved"
-msgstr ""
+msgstr "APPROVED"
 
 #: .\templates\wiki\snippets\beatmap_approval_card.html:30
 #: .\templates\wiki\snippets\beatmap_card.html:30
 msgid "ranked"
-msgstr ""
+msgstr "จัดอันดับแล้ว"
 
 #: .\templates\wiki\snippets\beatmap_approval_card.html:32
 #: .\templates\wiki\snippets\beatmap_card.html:32
 msgid "pending"
-msgstr ""
+msgstr "รอดำเนินการ"
 
 #: .\templates\wiki\snippets\beatmap_approval_card.html:34
 #: .\templates\wiki\snippets\beatmap_card.html:34
 msgid "wip"
-msgstr ""
+msgstr "WIP"
 
 #: .\templates\wiki\snippets\beatmap_approval_card.html:36
 #: .\templates\wiki\snippets\beatmap_card.html:36
 msgid "graveyard"
-msgstr ""
+msgstr "สุสาน"
 
 #: .\templates\wiki\snippets\beatmap_approval_card.html:40
 #: .\templates\wiki\snippets\beatmap_card.html:40
 msgid "mapped_by"
-msgstr ""
+msgstr "แมพโดย"
 
 #: .\templates\wiki\snippets\beatmap_approval_card.html:43
 #: .\templates\wiki\snippets\beatmap_approval_card.html:45
 #: .\templates\wiki\snippets\beatmap_card.html:43
 #: .\templates\wiki\snippets\beatmap_card.html:45
 msgid "recommend_by"
-msgstr ""
+msgstr "แนะนำโดย"
 
 #: .\templates\wiki\snippets\beatmap_approval_card.html:47
 msgid "approve"
-msgstr ""
+msgstr "อนุมัติ"
 
 #: .\templates\wiki\snippets\beatmap_approval_card.html:47
 msgid "deny"
-msgstr ""
+msgstr "ปฏิเสธ"
 
 #: .\templates\wiki\status.html:14
 msgid "status_description"
-msgstr ""
+msgstr "สถานะของ rulesets ทุกอันอยู่ที่นี่ (และคุณสามารถดาวน์โหลดและอัพเดท rulesets อย่างรวดเร็วได้ด้วยหน้านี้!)"
 
 #: .\templates\wiki\status.html:56 .\templates\wiki\status.html:121
 #: .\templates\wiki\status.html:156 .\templates\wiki\status.html:191
 msgid "borked"
-msgstr ""
+msgstr "เล่นไม่ได้"
 
 #: .\templates\wiki\status.html:58 .\templates\wiki\status.html:123
 #: .\templates\wiki\status.html:158 .\templates\wiki\status.html:193
 msgid "unknown"
-msgstr ""
+msgstr "ไม่ทราบ"
 
 #: .\templates\wiki\status.html:67 .\templates\wiki\status.html:132
 #: .\templates\wiki\status.html:167 .\templates\wiki\status.html:202
 #: .\templates\wiki\wiki_page.html:74
 msgid "mark_as_archived"
-msgstr ""
+msgstr "ruleset อันนี้ถูกตั้งว่าถูกเก็บแล้วและไม้ได้รับการอัพเดทโดยผู้สร้างอีก"
 
 #: .\templates\wiki\status.html:72
 msgid "latest_version_name"
-msgstr ""
+msgstr "ชื่อเวอร์ชั่นล่าสุด"
 
 #: .\templates\wiki\status.html:74
 msgid "latest_release"
-msgstr ""
+msgstr "ปล่อยล่าสุด"
 
 #: .\templates\wiki\status.html:76
 msgid "file_detail"
-msgstr ""
+msgstr "ข้อมูลไฟล์"
 
 #: .\templates\wiki\status.html:77
 msgid "size"
-msgstr ""
+msgstr "ขนาด"
 
 #: .\templates\wiki\status.html:84
 msgid "latest_version_changelog"
-msgstr ""
+msgstr "ประวิติการอัพเดทของเวอร์ชั่นล่าสุด"
 
 #: .\templates\wiki\status.html:101
 msgid "download_latest_version"
-msgstr ""
+msgstr "ดาวน์โหลดเวอร์ชั่นล่าสุด"
 
 #: .\templates\wiki\status.html:103
 msgid "not_support_pre_release_ruleset"
-msgstr ""
+msgstr "เรายังไม่รับรองการดาวร์โหลดโดยตรงสำหรับ ruleset ที่ pre-release มาจาก GitHub กรุณาไปโหลดในหน้า release ของ GitHub แทน"
 
 #: .\templates\wiki\status.html:105 .\templates\wiki\status.html:140
 msgid "github_release_page"
-msgstr ""
+msgstr "หน้า release ของ GitHub"
 
 #: .\templates\wiki\status.html:106 .\templates\wiki\status.html:141
 #: .\templates\wiki\status.html:176 .\templates\wiki\status.html:211
 msgid "go_to_rulesets_wiki_page"
-msgstr ""
+msgstr "ไปที่หน้าวิกิของ rulesets"
 
 #: .\templates\wiki\status.html:137
 msgid ""
 "Function is not available due to the rulesets source is from GitHub and "
 "<code>Ruleset Filename</code> field is missing or blank. Please fill the "
 "<code>Ruleset Filename</code> in the rulesets setting!"
-msgstr ""
+msgstr "ฟังก์ชั่นไม่พร้อมใช้งานเนื่องจากที่มาของ rulesets มาจาก GitHub และช่อง "
+"<code>ชื่อไฟล์ Ruleset</code> ถูกปล่อยว่าง กรุณาไปใส่ "
+"<code>ชื่อไฟล์ Ruleset</code> ในการตั้งต่า rulesets ด้วย"
 
 #: .\templates\wiki\status.html:172
 msgid ""
 "This function is not support in rulesets that is from Patreon. You can go to "
 "rulesets creator's Patreon at <code>Get from Patreon</code>!"
-msgstr ""
+msgstr "ฟังก์ชั่นนี้ไม่รองรับ rulesets ที่มาจาก Patreon คุณสามารถไปที่หน้า Patreon ของผู้สร้างได้ที่ <code>Get from Patreon</code>!"
 
 #: .\templates\wiki\status.html:175 .\templates\wiki\wiki_page.html:165
 msgid "get_from_patreon"
-msgstr ""
+msgstr "รับจาก Patreon"
 
 #: .\templates\wiki\status.html:207
 msgid ""
 "Rūrusetto-chan don't know this link's type so you can download the ruleset "
 "from its source."
-msgstr ""
+msgstr "น้อน Rūrusetto ไม่รู้ชนิดของลิงก์นี้ฉะนั้นคุณสามารถดาวน์โหลด ruleset นี้ได้จากที่มาของ ruleset นี้ได้เลย"
 
 #: .\templates\wiki\status.html:210 .\templates\wiki\wiki_page.html:167
 msgid "ruleset_source"
-msgstr ""
+msgstr "ที่มาของ ruleset"
 
 #: .\templates\wiki\subpage.html:34
 msgid "edit_this_subpage"
-msgstr ""
+msgstr "แก้ไขหน้าย่อยนี้"
 
 #: .\templates\wiki\subpage.html:56 .\templates\wiki\subpage.html:58
 #: .\templates\wiki\wiki_page.html:80 .\templates\wiki\wiki_page.html:82
 msgid "last_edited_by"
-msgstr ""
+msgstr "แก้ไขล่าสุดโดย"
 
 #: .\templates\wiki\subpage.html:56 .\templates\wiki\subpage.html:58
 #: .\templates\wiki\wiki_page.html:80 .\templates\wiki\wiki_page.html:82
 msgid "at"
-msgstr ""
+msgstr "เมื่อ"
 
 #: .\templates\wiki\wiki_page.html:40
 msgid "edit_rulesets_info"
-msgstr ""
+msgstr "แก้ไขข้อมูล rulesets"
 
 #: .\templates\wiki\wiki_page.html:43
 msgid "add_new_subpage"
-msgstr ""
+msgstr "เพิ่มหน้าย่อยใหม่"
 
 #: .\templates\wiki\wiki_page.html:47
 msgid "recommend_beatmaps"
-msgstr ""
+msgstr "บีทแมปแนะนำ"
 
 #: .\templates\wiki\wiki_page.html:93
 msgid "subpage_index"
-msgstr ""
+msgstr "สารบัญหน้าย่อย"
 
 #: .\templates\wiki\wiki_page.html:143
 msgid "creator"
-msgstr ""
+msgstr "ผู้สร้าง"
 
 #: .\templates\wiki\wiki_page.html:163
 msgid "github_repositories"
-msgstr ""
+msgstr "GitHub Repositories"
 
 #: .\templates\wiki\wiki_page.html:172
 msgid "support_the_creator"
-msgstr ""
+msgstr "สนับสนุนผู้สร้าง"
 
 #: .\templates\wiki\wiki_page.html:178
 msgid "support"
-msgstr ""
+msgstr "สนับสนุน"
 
 #: .\templates\wiki\wiki_page.html:183
 msgid "message_from"
-msgstr ""
+msgstr "ข้อความจาก"
 
 #: .\templates\wiki\wiki_page.html:187
 msgid "patreon"
-msgstr ""
+msgstr "Patreon"
 
 #: .\templates\wiki\wiki_page.html:190
 msgid "buy_a_coffee"
-msgstr ""
+msgstr "ซื้อกาแฟให้"
 
 #: .\templates\wiki\wiki_page.html:193
 msgid "github_sponsors"
-msgstr ""
+msgstr "GitHub Sponsors"

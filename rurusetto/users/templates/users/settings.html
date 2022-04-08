@@ -176,8 +176,19 @@
                     <label for="id_subpage_index" class="col-sm-2 col-form-label form-label">{% trans "subpage_index" %}:</label>
                     <div class="col-sm-10 raleway-font">
                         {{ website_subpage_config_form | crispy }}
-                        <p class="form-error raleway-font">{{ website_config_form.theme.errors }}</p>
+                        <p class="form-error raleway-font">{{ website_subpage_config_form.subpage_index.errors }}</p>
                         <p class="text-muted raleway-font">{% trans "subpage_index_description" %}</p>
+                    </div>
+                  </div>
+            </div>
+            <h2>{% trans "languages" %} <span class="badge rounded-pill bg-warning text-dark">Beta</span></h2>
+            <div class="fieldWrapper">
+                 <div class="mb-3 row">
+                    <label for="id_subpage_index" class="col-sm-2 col-form-label form-label">{% trans "site_languages" %}:</label>
+                    <div class="col-sm-10 raleway-font">
+                        {{ website_language_config_form | crispy }}
+                        <p class="form-error raleway-font">{{ website_language_config_form.language.errors }}</p>
+                        <p class="text-muted raleway-font">{% trans "site_languages_description" %}</p>
                     </div>
                   </div>
             </div>

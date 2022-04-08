@@ -1,13 +1,14 @@
 {% extends "wiki/base.html" %}
 {% load static %}
+{% load i18n %}
 {% block content %}
 
 <div class="px-4 py-4 my-4 align-middle hero">
     <div class="container align-middle">
         <div class="row">
             <p></p>
-            <div><h1 class="display-5 fw-bold" data-aos="fade-up" data-aos-duration="600">Edit</h1></div>
-            <p id="hero-description" data-aos="fade-up" data-aos-duration="700">You are currently editing content on ruleset named "{{ name }}".</p>
+            <div><h1 class="display-5 fw-bold" data-aos="fade-up" data-aos-duration="600">{% trans "edit" %}</h1></div>
+            <p id="hero-description" data-aos="fade-up" data-aos-duration="700">{% blocktrans with ruleset_name=name %} You are currently editing content on ruleset named "{{ ruleset_name }}".{% endblocktrans %}</p>
         </div>
     </div>
 </div>
@@ -35,191 +36,191 @@
     <div class="row">
         <form class="form" method="POST" enctype='multipart/form-data'>
             {% csrf_token %}
-            <h1>Header</h1>
+            <h1>{% trans "header" %}</h1>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label" for="id_name">{{ form.name.label_tag }}</label>
+                    <label class="col-sm-2 col-form-label form-label" for="id_name">{% trans "name" %}:</label>
                     <div class="col-sm-10">
                       <input type="text" name="name" class="form-control" required id="id_name" value="{{ form.name.value }}">
                        <p class="form-error raleway-font">{{ form.name.errors }}</p>
-                        <p class="text-muted raleway-font">The ruleset name.</p>
+                        <p class="text-muted raleway-font">{% trans "name_description" %}</p>
                     </div>
                   </div>
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label" for="id_description">{{ form.description.label_tag }}</label>
+                    <label class="col-sm-2 col-form-label form-label" for="id_description">{% trans "description" %}:</label>
                     <div class="col-sm-10">
                       <textarea name="description" cols="40" rows="10" class="form-control" required id="id_description">{{ form.description.value }}</textarea>
                        <p class="form-error raleway-font">{{ form.description.errors }}</p>
-                        <p class="text-muted raleway-font">The description of the ruleset. It will show under the ruleset name and at the header of the wiki page.</p>
+                        <p class="text-muted raleway-font">{% trans "description_description" %}</p>
                     </div>
                   </div>
             </div>
-            <h1>Icon & Logo</h1>
+            <h1>{% trans "icon_and_logo" %}</h1>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label" for="id_icon">{{ form.icon.label_tag }}</label>
+                    <label class="col-sm-2 col-form-label form-label" for="id_icon">{% trans "icon" %}:</label>
                     <div class="col-sm-10">
-                        <div class="raleway-font form-current">Current Icon : <a href="{{ form.icon.value.url }}">{{ form.icon.value }}</a></div>
+                        <div class="raleway-font form-current">{% trans "current_icon" %} : <a href="{{ form.icon.value.url }}">{{ form.icon.value }}</a></div>
                       <input type="file" name="icon" accept="image/*" id="id_icon" class="form-control">
                         <p class="form-error raleway-font">{{ form.icon.errors }}</p>
-                        <p class="text-muted raleway-font">An icon that shows at in-game header. Recommend shape is a circle.</p>
+                        <p class="text-muted raleway-font">{% trans "icon_description" %}</p>
                     </div>
                   </div>
             </div>
             <div class="fieldWrapper">
               <div class="mb-3 row">
-                 <label class="col-sm-2 col-form-label form-label" for="id_icon">{{ form.light_icon.label_tag }}</label>
+                 <label class="col-sm-2 col-form-label form-label" for="id_icon">{% trans "light_icon" %}:</label>
                  <div class="col-sm-10">
-                     <div class="raleway-font form-current">Current Light Icon : <a href="{{ form.light_icon.value.url }}">{{ form.light_icon.value }}</a></div>
+                     <div class="raleway-font form-current">{% trans "current_light_icon" %} : <a href="{{ form.light_icon.value.url }}">{{ form.light_icon.value }}</a></div>
                    <input type="file" name="light_icon" accept="image/*" id="id_light_icon" class="form-control">
                      <p class="form-error raleway-font">{{ form.light_icon.errors }}</p>
-                     <p class="text-muted raleway-font">A light theme icon when user using website in light theme. Recommend shape is a circle.</p>
+                     <p class="text-muted raleway-font">{% trans "light_icon_description" %}</p>
                  </div>
                </div>
          </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label" for="id_logo">{{ form.logo.label_tag }}</label>
+                    <label class="col-sm-2 col-form-label form-label" for="id_logo">{% trans "logo" %}:</label>
                     <div class="col-sm-10">
-                        <div class="raleway-font form-current">Current Logo : <a href="{{ form.logo.value.url }}">{{ form.logo.value }}</a></div>
+                        <div class="raleway-font form-current">{% trans "current_logo" %} : <a href="{{ form.logo.value.url }}">{{ form.logo.value }}</a></div>
                         <input type="file" name="logo" accept="image/*" id="id_logo" class="form-control">
                         <p class="form-error raleway-font">{{ form.logo.errors }}</p>
-                        <p class="text-muted raleway-font">A logo that will be visible in the wiki's infobox. It cannot be the same as your icon.</p>
+                        <p class="text-muted raleway-font">{% trans "logo_description" %}</p>
                     </div>
                   </div>
             </div>
-            <h1>Wiki Content</h1>
+            <h1>{% trans "wiki_content" %}</h1>
             {{ form.media }}
             {{ form.content }}
             {{ form.content.errors }}
-            <h1>Wiki Styling</h1>
+            <h1>{% trans "wiki_styling" %}</h1>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label" for="id_cover_image">{{ form.cover_image.label_tag }}</label>
+                    <label class="col-sm-2 col-form-label form-label" for="id_cover_image">{% trans "cover_image" %}:</label>
                     <div class="col-sm-10">
-                       <div class="raleway-font form-current"> Current Cover Image : <a href="{{ form.cover_image.value.url }}">{{ form.cover_image.value }}</a></div>
+                       <div class="raleway-font form-current">{% trans "current_cover_image" %} : <a href="{{ form.cover_image.value.url }}">{{ form.cover_image.value }}</a></div>
                       <input type="file" name="cover_image" accept="image/*" id="id_cover_image" class="form-control">
                         <p class="form-error raleway-font">{{ form.cover_image.errors }}</p>
-                        <p class="text-muted raleway-font">A picture visible at the header of the wiki page.</p>
+                        <p class="text-muted raleway-font">{% trans "cover_image_description" %}</p>
                     </div>
                   </div>
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label" for="id_cover_image_light">Cover Image in Light Mode:</label>
+                    <label class="col-sm-2 col-form-label form-label" for="id_cover_image_light">{% trans "cover_image_in_light_mode" %}:</label>
                     <div class="col-sm-10">
-                       <div class="raleway-font form-current"> Current Cover Image in Light Mode : <a href="{{ form.cover_image_light.value.url }}">{{ form.cover_image_light.value }}</a></div>
+                       <div class="raleway-font form-current"> {% trans "current_cover_image_in_light_mode" %} : <a href="{{ form.cover_image_light.value.url }}">{{ form.cover_image_light.value }}</a></div>
                       <input type="file" name="cover_image_light" accept="image/*" id="id_cover_image_light" class="form-control">
                         <p class="form-error raleway-font">{{ form.cover_image_light.errors }}</p>
-                        <p class="text-muted raleway-font">When user use light theme this picture will show on cover image instead of normal cover image.</p>
+                        <p class="text-muted raleway-font">{% trans "cover_image_in_light_mode_description" %}</p>
                     </div>
                   </div>
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label" for="id_opengraph_image">Opengraph Preview Image:</label>
+                    <label class="col-sm-2 col-form-label form-label" for="id_opengraph_image">{% trans "opengraph_preview_image" %}:</label>
                     <div class="col-sm-10">
-                       <div class="raleway-font form-current"> Current Opengraph Preview Image : <a href="{{ form.opengraph_image.value.url }}">{{ form.opengraph_image.value }}</a></div>
+                       <div class="raleway-font form-current">{% trans "current_opengraph_preview_image" %} : <a href="{{ form.opengraph_image.value.url }}">{{ form.opengraph_image.value }}</a></div>
                       <input type="file" name="opengraph_image" accept="image/*" id="id_opengraph_image" class="form-control">
                         <p class="form-error raleway-font">{{ form.opengraph_image.errors }}</p>
-                        <p class="text-muted raleway-font">A thumbnail that will be visible when someone shares the link and the social network app shows this picture as a preview image.</p>
+                        <p class="text-muted raleway-font">{% trans "opengraph_preview_image_description" %}</p>
                     </div>
                   </div>
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label" for="id_opengraph_image">Recommend Beatmaps Cover Image:</label>
+                    <label class="col-sm-2 col-form-label form-label" for="id_opengraph_image">{% trans "recommend_beatmaps_cover_image" %}:</label>
                     <div class="col-sm-10">
-                       <div class="raleway-font form-current"> Current Recommend Beatmaps Cover Image : <a href="{{ form.recommend_beatmap_cover.value.url }}">{{ form.recommend_beatmap_cover.value }}</a></div>
+                       <div class="raleway-font form-current">{% trans "current_recommend_beatmaps_cover_image" %} : <a href="{{ form.recommend_beatmap_cover.value.url }}">{{ form.recommend_beatmap_cover.value }}</a></div>
                       <input type="file" name="recommend_beatmap_cover" accept="image/*" id="id_recommend_beatmap_cover" class="form-control">
                         <p class="form-error raleway-font">{{ form.recommend_beatmap_cover.errors }}</p>
-                        <p class="text-muted raleway-font">A cover image of the ruleset's recommend beatmaps page.</p>
+                        <p class="text-muted raleway-font">{% trans "recommend_beatmaps_cover_image_description" %}</p>
                     </div>
                   </div>
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label" for="id_custom_css">Custom CSS:</label>
+                    <label class="col-sm-2 col-form-label form-label" for="id_custom_css">{% trans "custom_css" %}:</label>
                     <div class="col-sm-10">
-                       <div class="raleway-font form-current"> Current Custom CSS : <a href="{{ form.custom_css.value.url }}">{{ form.custom_css.value }}</a></div>
+                       <div class="raleway-font form-current">{% trans "current_custom_css" %} : <a href="{{ form.custom_css.value.url }}">{{ form.custom_css.value }}</a></div>
                       <input type="file" name="custom_css" id="id_custom_css" class="form-control">
                         <p class="form-error raleway-font">{{ form.custom_css.errors }}</p>
-                        <p class="text-muted raleway-font">This CSS file will be override the CSS of the website on the ruleset's main page and subpage.</p>
+                        <p class="text-muted raleway-font">{% trans "custom_css_description" %}</p>
                     </div>
                   </div>
             </div>
-            <h1>Source</h1>
+            <h1>{% trans "source" %}</h1>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label" for="id_source">{{ form.source.label_tag }}</label>
+                    <label class="col-sm-2 col-form-label form-label" for="id_source">{% trans "source" %}:</label>
                     <div class="col-sm-10">
                       <input type="url" name="source" maxlength="200" required id="id_source" class="form-control" value="{{ form.source.value }}">
                         <p class="form-error raleway-font">{{ form.source.errors }}</p>
-                        <p class="text-muted raleway-font">A source of the ruleset (or where the player can download this ruleset.) </p>
-                        <p class="text-muted raleway-font">If this ruleset is available on GitHub please set this link as link to the repository (Ex. https://github.com/LumpBloom7/sentakki)</p>
-                        <p class="text-muted raleway-font">If you get it from patreon, please set this link as the patreon page of the creator. (Ex. https://www.patreon.com/evast/)</p>
+                        <p class="text-muted raleway-font">{% trans "source_description" %}</p>
+                        <p class="text-muted raleway-font">{% trans "source_description_github" %}</p>
+                        <p class="text-muted raleway-font">{% trans "source_description_patreon" %}</p>
                     </div>
                   </div>
             </div>
             {% if source_type == "github" and ruleset.source != "" %}
-            <h1>Download</h1>
+            <h1>{% trans "download" %}</h1>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label" for="id_github_download_filename">Ruleset Filename:</label>
+                    <label class="col-sm-2 col-form-label form-label" for="id_github_download_filename">{% trans "ruleset_filename" %}:</label>
                     <div class="col-sm-10">
                       <input type="text" name="github_download_filename" maxlength="100" id="id_github_download_filename" class="form-control" value="{{ form.github_download_filename.value }}">
                         <p class="form-error raleway-font">{{ form.github_download_filename.errors }}</p>
-                        <p class="text-muted raleway-font">The Rūrusetto-chan detect that the source link of this ruleset is GitHub.</p>
-                        <p class="text-muted raleway-font">Just put your ruleset full filename that is available in the release on GitHub and the other operation like update download link the Rūrusetto-chan will do it for you!</p>
-                        <p class="text-muted raleway-font">Ex. From <a href="https://github.com/naoei/tau">tau</a> : osu.Game.Rulesets.Tau.dll and the link will render as <a href="https://github.com/naoei/tau/releases/latest/download/osu.Game.Rulesets.Tau.dll">https://github.com/naoei/tau/releases/latest/download/osu.Game.Rulesets.Tau.dll</a></a> </p>
-                        <p class="text-muted raleway-font">If you put the filename then the Direct Download button will appear on the top of wiki page and in status page.</p>
-                        <p class="text-muted raleway-font">(If you don't want to use this function just leave this field blank.)</p>
+                        <p class="text-muted raleway-font">{% trans "source_description" %}</p>
+                        <p class="text-muted raleway-font">{% trans "source_description2" %}</p>
+                        <p class="text-muted raleway-font">{% blocktrans %}Ex. From <a href="https://github.com/naoei/tau">tau</a> : osu.Game.Rulesets.Tau.dll and the link will render as <a href="https://github.com/naoei/tau/releases/latest/download/osu.Game.Rulesets.Tau.dll">https://github.com/naoei/tau/releases/latest/download/osu.Game.Rulesets.Tau.dll</a>{% endblocktrans %}</p>
+                        <p class="text-muted raleway-font">{% trans "source_description3" %}</p>
+                        <p class="text-muted raleway-font">{% trans "source_description4" %}</p>
                     </div>
                   </div>
             </div>
             {% endif %}
             {% if has_edit_permission %}
-            <h1>Ruleset owner settings</h1>
-            <h2>Publication</h2>
+            <h1>{% trans "ruleset_owner_settings" %}</h1>
+            <h2>{% trans "publication" %}</h2>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label" for="id_hidden">Hidden:</label>
+                    <label class="col-sm-2 col-form-label form-label" for="id_hidden">{% trans "hidden" %}:</label>
                     <div class="col-sm-10">
                         <div class="form-check form-switch">
                             {{ form.hidden }}
                         </div>
                         <p class="form-error raleway-font">{{ form.hidden.errors }}</p>
-                        <p class="text-muted raleway-font">If this is checked, your ruleset will not be show in the rulesets listing on other user.</p>
+                        <p class="text-muted raleway-font">{% trans "hidden_description" %}</p>
                     </div>
                   </div>
             </div>
-            <h2>Status</h2>
+            <h2>{% trans "status" %}</h2>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label" for="id_pre_release">Pre-Release:</label>
+                    <label class="col-sm-2 col-form-label form-label" for="id_pre_release">{% trans "pre_release" %}:</label>
                     <div class="col-sm-10">
                         <div class="form-check form-switch">
                             {{ status_form.pre_release }}
                         </div>
                         <p class="form-error raleway-font">{{ status_form.pre_release.errors }}</p>
-                        <p class="text-muted raleway-font">If this is checked, the auto-update status system will fetch this ruleset as pre-release instead of normal method and on status page your rulesets will show pre-release badge too.</p>
+                        <p class="text-muted raleway-font">{% trans "pre_release_description" %}</p>
                     </div>
                   </div>
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label" for="id_pre_release">Playable:</label>
+                    <label class="col-sm-2 col-form-label form-label" for="id_pre_release">{% trans "playable" %}:</label>
                     <div class="col-sm-10">
                         {{ status_form.playable }}
                         <p class="form-error raleway-font">{{ status_form.playable.errors }}</p>
-                        <p class="text-muted raleway-font">Your rulesets playable status.  (This can change by wiki maintainer too if ruleset's playable status is not correct.)</p>
+                        <p class="text-muted raleway-font">{% trans "playable_description" %}</p>
                     </div>
                   </div>
             </div>
             {% endif %}
-            <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right raleway-font">Edit</button>
+            <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right raleway-font">{% trans "edit" %}</button>
         </form>
     </div>
 </div>

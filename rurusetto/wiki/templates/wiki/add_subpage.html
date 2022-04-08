@@ -1,12 +1,13 @@
 {% extends "wiki/base.html" %}
 {% load static %}
+{% load i18n %}
 {% block content %}
 
 <div class="px-4 py-4 my-4 align-middle hero">
     <div class="container align-middle">
         <div class="row">
             <p></p>
-            <div data-aos="fade-up" data-aos-duration="600"><h1 class="display-5 fw-bold">Add a new subpage</h1></div>
+            <div data-aos="fade-up" data-aos-duration="600"><h1 class="display-5 fw-bold">{% trans "add_subpage_header" %}</h1></div>
             <p id="hero-description" data-aos="fade-up" data-aos-duration="700">{{ opengraph_description }}</p>
         </div>
     </div>
@@ -34,31 +35,31 @@
             {% csrf_token %}
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label">Title:</label>
+                    <label class="col-sm-2 col-form-label form-label">{% trans "title" %}:</label>
                     <div class="col-sm-10">
                       <input type="text" name="title" class="form-control" required id="id_title">
                         <p class="form-error raleway-font">{{ form.title.errors }}</p>
-                        <p class="text-muted raleway-font">The subpage name.</p>
+                        <p class="text-muted raleway-font">{% trans "title_description" %}</p>
                     </div>
                   </div>
             </div>
-            <h1>Subpage Content</h1>
+            <h1>{% trans "subpage_content" %}</h1>
             {{ form.media }}
             {{ form.content }}
-            <h1>Publication</h1>
+            <h1>{% trans "publication" %}</h1>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label" for="id_hidden">Hidden:</label>
+                    <label class="col-sm-2 col-form-label form-label" for="id_hidden">{% trans "hidden" %}:</label>
                     <div class="col-sm-10">
                         <div class="form-check form-switch">
                             {{ form.hidden }}
                         </div>
                         <p class="form-error raleway-font">{{ form.hidden.errors }}</p>
-                        <p class="text-muted raleway-font">If this is checked, your subpage will not be show in the subpage listing on other user.</p>
+                        <p class="text-muted raleway-font">{% trans "subpage_hidden_note" %}</p>
                     </div>
                   </div>
             </div>
-            <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right raleway-font">Create</button>
+            <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right raleway-font">{% trans "create" %}</button>
         </form>
     </div>
 </div>

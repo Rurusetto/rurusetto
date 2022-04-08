@@ -1,13 +1,14 @@
 {% extends "wiki/base.html" %}
 {% load static %}
+{% load i18n %}
 {% block content %}
 
 <div class="px-4 py-4 my-4 align-middle hero">
     <div class="container align-middle">
         <div class="row">
             <p></p>
-            <div data-aos="fade-up" data-aos-duration="600"><h1 class="display-5 fw-bold">Add a new ruleset</h1></div>
-            <p data-aos="fade-up" data-aos-duration=700" id="hero-description">Let's add a new ruleset! Is it yours? Don't worry! You can add it even if you didn't make the ruleset.</p>
+            <div data-aos="fade-up" data-aos-duration="600"><h1 class="display-5 fw-bold">{% trans "add_a_new_ruleset" %}</h1></div>
+            <p data-aos="fade-up" data-aos-duration=700" id="hero-description">{% trans "add_a_new_ruleset_description" %}</p>
         </div>
     </div>
 </div>
@@ -16,96 +17,96 @@
     <div class="row">
         <form class="form" method="POST" enctype='multipart/form-data'>
             {% csrf_token %}
-            <h1>Header</h1>
+            <h1>{% trans "header" %}</h1>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label">{{ form.name.label_tag }}</label>
+                    <label class="col-sm-2 col-form-label form-label">{% trans "name" %}:</label>
                     <div class="col-sm-10">
                       <input type="text" name="name" class="form-control" required id="id_name">
                         <p class="form-error raleway-font">{{ form.name.errors }}</p>
-                        <p class="text-muted raleway-font">The ruleset name.</p>
+                        <p class="text-muted raleway-font">{% trans "name_description" %}</p>
                     </div>
                   </div>
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label">{{ form.description.label_tag }}</label>
+                    <label class="col-sm-2 col-form-label form-label">{% trans "description" %}:</label>
                     <div class="col-sm-10">
                       <textarea name="description" cols="40" rows="10" class="form-control" required id="id_description"></textarea>
                         <p class="form-error raleway-font">{{ form.description.errors }}</p>
-                        <p class="text-muted raleway-font">The description of the ruleset. It will be visible under ruleset name and at the header of the wiki page.</p>
+                        <p class="text-muted raleway-font">{% trans "description_description" %}</p>
                     </div>
                   </div>
             </div>
-            <h1>Icon & Logo</h1>
+            <h1>{% trans "icon_and_logo" %}</h1>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label">{{ form.icon.label_tag }}</label>
+                    <label class="col-sm-2 col-form-label form-label">{% trans "icon" %}:</label>
                     <div class="col-sm-10">
                       <input type="file" name="icon" accept="image/*" id="id_icon" class="form-control" required>
                         <p class="form-error raleway-font">{{ form.icon.errors }}</p>
-                        <p class="text-muted raleway-font">An icon that shows on the in-game header. Recommend shape is a circle.</p>
+                        <p class="text-muted raleway-font">{% trans "icon_description" %}</p>
                     </div>
                   </div>
             </div>
             <div class="fieldWrapper">
               <div class="mb-3 row">
-                 <label class="col-sm-2 col-form-label form-label">{{ form.light_icon.label_tag }}</label>
+                 <label class="col-sm-2 col-form-label form-label">{% trans "light_icon" %}:</label>
                  <div class="col-sm-10">
                    <input type="file" name="light_icon" accept="image/*" id="id_dark_icon" class="form-control" required>
                      <p class="form-error raleway-font">{{ form.dark_icon.errors }}</p>
-                     <p class="text-muted raleway-font">A light theme icon when user using website in light theme. Recommend shape is a circle.</p>
+                     <p class="text-muted raleway-font">{% trans "light_icon_description" %}</p>
                  </div>
                </div>
          </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label">{{ form.logo.label_tag }}</label>
+                    <label class="col-sm-2 col-form-label form-label">{% trans "logo" %}:</label>
                     <div class="col-sm-10">
                         <input type="file" name="logo" accept="image/*" id="id_logo" class="form-control" required>
                         <p class="form-error raleway-font">{{ form.logo.errors }}</p>
-                        <p class="text-muted raleway-font">A logo that shows in the wiki's infobox. It cannot be the same as your icon.</p>
+                        <p class="text-muted raleway-font">{% trans "logo_description" %}</p>
                     </div>
                   </div>
             </div>
-            <h1>Wiki Content</h1>
+            <h1>{% trans "wiki_content" %}</h1>
             {{ form.media }}
             {{ form.content }}
             {{ form.content.errors }}
-            <h1>Wiki Styling</h1>
+            <h1>{% trans "wiki_styling" %}</h1>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label">{{ form.cover_image.label_tag }}</label>
+                    <label class="col-sm-2 col-form-label form-label">{% trans "cover_image" %}:</label>
                     <div class="col-sm-10">
                       <input type="file" name="cover_image" accept="image/*" id="id_cover_image" class="form-control">
                         <p class="form-error raleway-font">{{ form.cover_image.errors }}</p>
-                        <p class="text-muted raleway-font">A picture at the header of the wiki page.</p>
+                        <p class="text-muted raleway-font">{% trans "cover_image_description" %}</p>
                     </div>
                   </div>
             </div>
-            <h1>Source</h1>
+            <h1>{% trans "source" %}</h1>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label">{{ form.source.label_tag }}</label>
+                    <label class="col-sm-2 col-form-label form-label">{% trans "source" %}:</label>
                     <div class="col-sm-10">
                       <input type="url" name="source" maxlength="200" required id="id_source" class="form-control">
                         <p class="form-error raleway-font">{{ form.source.errors }}</p>
-                        <p class="text-muted raleway-font">A source of the ruleset (or where the player can download this ruleset.) </p>
-                        <p class="text-muted raleway-font">If this ruleset is available on GitHub please link it to the repository (Ex. https://github.com/LumpBloom7/sentakki)</p>
-                        <p class="text-muted raleway-font">If you found it on patreon, please link this to the patreon page of the creator. (Ex. https://www.patreon.com/evast/)</p>
+                        <p class="text-muted raleway-font">{% trans "source_description" %}</p>
+                        <p class="text-muted raleway-font">{% trans "source_description_github" %}</p>
+                        <p class="text-muted raleway-font">{% trans "source_description_patreon" %}</p>
                     </div>
                   </div>
             </div>
-            <h1>Publication</h1>
+            <h1>{% trans "publication" %}</h1>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label" for="id_hidden">Hidden:</label>
+                    <label class="col-sm-2 col-form-label form-label" for="id_hidden">{% trans "hidden" %}:</label>
                     <div class="col-sm-10">
                         <div class="form-check form-switch">
                             {{ form.hidden }}
                         </div>
                         <p class="form-error raleway-font">{{ form.hidden.errors }}</p>
-                        <p class="text-muted raleway-font">If this is checked, your ruleset will not be show in the rulesets listing on other user.</p>
+                        <p class="text-muted raleway-font">{% trans "hidden_description" %}</p>
                     </div>
                   </div>
             </div>

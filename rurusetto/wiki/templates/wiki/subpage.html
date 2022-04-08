@@ -1,5 +1,6 @@
 {% extends "wiki/base.html" %}
 {% load static %}
+{% load i18n %}
 {% load markdown_converter %}
 
 {% block css_link %}
@@ -26,11 +27,11 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-2">
-                <p data-aos="fade-up" data-aos-duration="900"><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url "wiki" ruleset.slug %}"><i class="fas fa-chevron-circle-left icon-menu hvr-icon"></i> Back to main page</a></p>
+                <p data-aos="fade-up" data-aos-duration="900"><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url "wiki" ruleset.slug %}"><i class="fas fa-chevron-circle-left icon-menu hvr-icon"></i> {% trans "back_to_main_page" %}</a></p>
             </div>
             {% if user.is_authenticated %}
             <div class="col-sm-2">
-                <p data-aos="fade-up" data-aos-duration="950"><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url "edit_subpage" ruleset.slug content.slug %}"><i class="fas fa-edit icon-menu hvr-icon"></i> Edit This Subpage</a></p>
+                <p data-aos="fade-up" data-aos-duration="950"><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url "edit_subpage" ruleset.slug content.slug %}"><i class="fas fa-edit icon-menu hvr-icon"></i> {% trans "edit_this_subpage" %}</a></p>
             </div>
             {% endif %}
         </div>
@@ -52,9 +53,9 @@
         </div>
         <div class="row" id="last-edit">
             {% if user_detail == None %}
-            <p class="text-muted" data-aos="fade-up" data-aos-duration="800">Last edited by <img src="{% static 'img/default.png'%}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User at {{ content.last_edited_at|date:"F j, Y h:i A" }} UTC</p>
+            <p class="text-muted" data-aos="fade-up" data-aos-duration="800">{% trans "last_edited_by" %} <img src="{% static 'img/default.png'%}" alt="{% trans "deleted_user" %}" width="32" height="32" class="rounded-circle hvr-icon"> {% trans "deleted_user" %} {% trans "at" %} {{ content.last_edited_at|date:"F j, Y h:i A" }} UTC</p>
             {% else %}
-            <p class="text-muted" data-aos="fade-up" data-aos-duration="800">Last edited by <a href="{% url "profile" user_detail.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><img src="{{ user_detail.profile.image.url }}" alt="{{ user_detail.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ user_detail.username }}</a> at {{ content.last_edited_at|date:"F j, Y h:i A" }} UTC</p>
+            <p class="text-muted" data-aos="fade-up" data-aos-duration="800">{% trans "last_edited_by" %} <a href="{% url "profile" user_detail.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><img src="{{ user_detail.profile.image.url }}" alt="{{ user_detail.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ user_detail.username }}</a> {% trans "at" %} {{ content.last_edited_at|date:"F j, Y h:i A" }} UTC</p>
             {% endif %}
         </div>
         <div class="row">

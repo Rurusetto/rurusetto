@@ -1,6 +1,7 @@
 {% extends "wiki/base.html" %}
 {% load static %}
 {% load markdown_converter %}
+{% load i18n %}
 {% block content %}
 
     <link rel="stylesheet" href="{% static 'css/wiki-page.css' %}">
@@ -10,8 +11,8 @@
             <div class="row">
                 <p></p>
                 <p></p>
-                <div><h1 class="display-5 fw-bold" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">Changelog</h1></div>
-                <p data-aos="fade-up" data-aos-duration="700" data-aos-once="true">All update history of website are here.</p>
+                <div><h1 class="display-5 fw-bold" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">{% trans "changelog" %}</h1></div>
+                <p data-aos="fade-up" data-aos-duration="700" data-aos-once="true">{% trans "changelog_description" %}</p>
             </div>
         </div>
   </div>
@@ -26,12 +27,12 @@
       {% for changelog in changelog_list %}
           <div class="row mb-3">
               {% if changelog.type == "pre-release" %}
-                  <h1 id="{{ changelog.version }}">{{ changelog.version }} <span class="badge rounded-pill bg-warning text-dark fs-5">{{ changelog.type }}</span></h1>
+                  <h1 id="{{ changelog.version }}">{{ changelog.version }} <span class="badge rounded-pill bg-warning text-dark fs-5">{% trans "pre_release" %}</span></h1>
               {% endif %}
               {% if changelog.type == "stable" %}
-                  <h1 id="{{ changelog.version }}">{{ changelog.version }} <span class="badge rounded-pill bg-success fs-5">{{ changelog.type }}</span></h1>
+                  <h1 id="{{ changelog.version }}">{{ changelog.version }} <span class="badge rounded-pill bg-success fs-5">{% trans "stable" %}</span></h1>
               {% endif %}
-                    <p class="text-muted">Release at {{ changelog.time|date:"F j, Y h:i A" }} UTC</p>
+                    <p class="text-muted">{% trans "release_at" %} {{ changelog.time|date:"F j, Y h:i A" }} UTC</p>
 
                 <div class="changelog" id="wiki">
                     {{ changelog.note | convert_markdown | safe }}

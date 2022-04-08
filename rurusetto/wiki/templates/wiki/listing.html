@@ -1,13 +1,14 @@
 {% extends "wiki/base.html" %}
 {% load static %}
+{% load i18n %}
 {% block content %}
 
 <div class="px-4 py-4 my-4 align-middle hero">
     <div class="container align-middle">
         <div class="row">
             <p></p>
-            <div data-aos="fade-up" data-aos-duration="600"><h1 class="display-5 fw-bold">Listing</h1></div>
-            <p data-aos="fade-up" data-aos-duration="700">List of available rulesets.</p>
+            <div data-aos="fade-up" data-aos-duration="600"><h1 class="display-5 fw-bold">{% trans "listing" %}</h1></div>
+            <p data-aos="fade-up" data-aos-duration="700">{% trans "listing_description" %}</p>
         </div>
     </div>
 </div>
@@ -16,11 +17,11 @@
     <div class="row">
         {% if user.is_authenticated %}
         <div class="col-sm-2">
-            <p data-aos="fade-up" data-aos-duration="800"><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'create_ruleset' %}"><i class="fas fa-plus icon-menu hvr-icon"></i> Add a new ruleset</a></p>
+            <p data-aos="fade-up" data-aos-duration="800"><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'create_ruleset' %}"><i class="fas fa-plus icon-menu hvr-icon"></i> {% trans "add_a_new_ruleset" %}</a></p>
         </div>
         {% endif %}
         <div class="col-sm-2">
-            <p data-aos="fade-up" data-aos-duration="800"><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'archived_rulesets' %}"><i class="fas fa-archive icon-menu hvr-icon"></i> Archived rulesets</a></p>
+            <p data-aos="fade-up" data-aos-duration="800"><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'archived_rulesets' %}"><i class="fas fa-archive icon-menu hvr-icon"></i> {% trans "archived_rulesets" %}</a></p>
         </div>
     </div>
 </div>
@@ -44,7 +45,7 @@
       {% endif %}
     <div class="row text-center gy-4">
         {% if hidden_rulesets %}
-        <h1 class="text-start" data-aos="fade-up" data-aos-duration="550" data-aos-once="true">Your hidden rulesets</h1>
+        <h1 class="text-start" data-aos="fade-up" data-aos-duration="550" data-aos-once="true">{% trans "your_hidden_rulesets" %}</h1>
         {% for detail in hidden_rulesets %}
         <div class="col-lg-4" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">
 
@@ -57,22 +58,22 @@
             <h2 class="rulesets-name">{{ detail.0.name }}</h2>
             {% if detail.1 == None %}
                 {% if detail.0.verified %}
-                    <p class="text-muted"><img src="{% static 'img/default.png' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User <i class="fas fa-check-circle verified-circle icon-menu hvr-icon" data-bs-toggle="tooltip" data-bs-placement="right" title="Verified rulesets creator"></i></p>
+                    <p class="text-muted"><img src="{% static 'img/default.png' %}" alt="{% trans "deleted_user" %}" width="32" height="32" class="rounded-circle hvr-icon"> {% trans "deleted_user" %} <i class="fas fa-check-circle verified-circle icon-menu hvr-icon" data-bs-toggle="tooltip" data-bs-placement="right" title="{% trans 'verified_rulesets_creator' %}"></i></p>
                 {% else %}
-                    <p class="text-muted"><img src="{% static 'img/default.png' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User </p>
+                    <p class="text-muted"><img src="{% static 'img/default.png' %}" alt="{% trans "deleted_user" %}" width="32" height="32" class="rounded-circle hvr-icon"> {% trans "deleted_user" %} </p>
                 {% endif %}
             {% else %}
                 {% if detail.0.verified %}
-                    <a href="{% url "profile" detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover profile-link"><p class="text-muted"><img src="{{ detail.1.profile.image.url }}" alt="{{ detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ detail.1.username }} <i class="fas fa-check-circle verified-circle icon-menu hvr-icon" data-bs-toggle="tooltip" data-bs-placement="right" title="Verified rulesets creator"></i></p></a>
+                    <a href="{% url "profile" detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover profile-link"><p class="text-muted"><img src="{{ detail.1.profile.image.url }}" alt="{{ detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ detail.1.username }} <i class="fas fa-check-circle verified-circle icon-menu hvr-icon" data-bs-toggle="tooltip" data-bs-placement="right" title="{% trans 'verified_rulesets_creator' %}"></i></p></a>
                 {% else %}
                     <a href="{% url "profile" detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover profile-link"><p class="text-muted"><img src="{{ detail.1.profile.image.url }}" alt="{{ detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ detail.1.username }} </p></a>
                 {% endif %}
             {% endif %}
             <p class="rulesets-description">{{ detail.0.description }}</p>
-            <p><a class="btn btn-secondary btn-rurusetto hvr-sweep-to-right" href="{% url "wiki" detail.0.slug %}">Read &raquo;</a></p>
+            <p><a class="btn btn-secondary btn-rurusetto hvr-sweep-to-right" href="{% url "wiki" detail.0.slug %}">{% trans "read" %} &raquo;</a></p>
         </div>
         {% endfor %}
-        <h1 class="text-start" data-aos="fade-up" data-aos-duration="550" data-aos-once="true">All rulesets</h1>
+        <h1 class="text-start" data-aos="fade-up" data-aos-duration="550" data-aos-once="true">{% trans "all_rulesets" %}</h1>
         {% endif %}
         {% for detail in rulesets %}
         <div class="col-lg-4" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">
@@ -86,19 +87,19 @@
             <h2 class="rulesets-name">{{ detail.0.name }}</h2>
             {% if detail.1 == None %}
                 {% if detail.0.verified %}
-                    <p class="text-muted"><img src="{% static 'img/default.png' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User <i class="fas fa-check-circle verified-circle icon-menu hvr-icon" data-bs-toggle="tooltip" data-bs-placement="right" title="Verified rulesets creator"></i></p>
+                    <p class="text-muted"><img src="{% static 'img/default.png' %}" alt="{% trans "deleted_user" %}" width="32" height="32" class="rounded-circle hvr-icon"> {% trans "deleted_user" %} <i class="fas fa-check-circle verified-circle icon-menu hvr-icon" data-bs-toggle="tooltip" data-bs-placement="right" title="{% trans 'verified_rulesets_creator' %}"></i></p>
                 {% else %}
-                    <p class="text-muted"><img src="{% static 'img/default.png' %}" alt="Deleted User" width="32" height="32" class="rounded-circle hvr-icon"> Deleted User </p>
+                    <p class="text-muted"><img src="{% static 'img/default.png' %}" alt="{% trans "deleted_user" %}" width="32" height="32" class="rounded-circle hvr-icon"> {% trans "deleted_user" %} </p>
                 {% endif %}
             {% else %}
                 {% if detail.0.verified %}
-                    <a href="{% url "profile" detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover profile-link"><p class="text-muted"><img src="{{ detail.1.profile.image.url }}" alt="{{ detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ detail.1.username }} <i class="fas fa-check-circle verified-circle icon-menu hvr-icon" data-bs-toggle="tooltip" data-bs-placement="right" title="Verified rulesets creator"></i></p></a>
+                    <a href="{% url "profile" detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover profile-link"><p class="text-muted"><img src="{{ detail.1.profile.image.url }}" alt="{{ detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ detail.1.username }} <i class="fas fa-check-circle verified-circle icon-menu hvr-icon" data-bs-toggle="tooltip" data-bs-placement="right" title="{% trans 'verified_rulesets_creator' %}"></i></p></a>
                 {% else %}
                     <a href="{% url "profile" detail.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover profile-link"><p class="text-muted"><img src="{{ detail.1.profile.image.url }}" alt="{{ detail.1.username }}" width="32" height="32" class="rounded-circle hvr-icon"> {{ detail.1.username }} </p></a>
                 {% endif %}
             {% endif %}
             <p class="rulesets-description">{{ detail.0.description }}</p>
-            <p><a class="btn btn-secondary btn-rurusetto hvr-sweep-to-right" href="{% url "wiki" detail.0.slug %}">Read &raquo;</a></p>
+            <p><a class="btn btn-secondary btn-rurusetto hvr-sweep-to-right" href="{% url "wiki" detail.0.slug %}">{% trans "read"%} &raquo;</a></p>
         </div>
         {% endfor %}
     </div>

@@ -7,9 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 2022.410.0\n"
-"Report-Msgid-Bugs-To: Rūrusetto repository\n"
-"POT-Creation-Date: 2022-04-09 02:45+0700\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-09 06:04+0700\n"
+"PO-Revision-Date: 2022-04-09 06:20+0700\n"
 "Last-Translator: Phawit Pornwattanakul <me@helloyeew.dev>\n"
 "Language-Team: Rūrusetto <me@helloyeew.dev>\n"
 "Language: Thai\n"
@@ -38,7 +38,7 @@ msgid "login_with"
 msgstr "เข้าสู่ระบบด้วย"
 
 #: .\templates\account\login.html:75 .\templates\account\signup.html:61
-#: .\templates\users\delete_account.html:67 .\templates\users\settings.html:232
+#: .\templates\users\delete_account.html:67 .\templates\users\settings.html:243
 msgid "submit"
 msgstr "ส่ง"
 
@@ -164,9 +164,10 @@ msgid ""
 "You decided to cancel logging in to rūrusetto using your osu! account. If "
 "this was a mistake, please <a class=\"text-decoration-none spacing-hover\" "
 "href=\"%(login_url)s\">sign in again</a>."
-msgstr "คุณตัดสินใจที่จะยกเลิกการเข้าสู้ระบบ rūrusetto ด้วยบัญชี osu! ของคุณ "
-"ถ้านี่เป็นข้อผิดพลาด กรุณา <a class=\"text-decoration-none spacing-hover\" "
-"href=\"%(login_url)s\">เข้าสู่ระบบใหม่</a>."
+msgstr ""
+"คุณตัดสินใจที่จะยกเลิกการเข้าสู้ระบบ rūrusetto ด้วยบัญชี osu! ของคุณ ถ้านี่เป็นข้อผิดพลาด กรุณา "
+"<a class=\"text-decoration-none spacing-hover\" href=\"%(login_url)s"
+"\">เข้าสู่ระบบใหม่</a>."
 
 #: .\templates\socialaccount\snippets\provider_list.html:19
 msgid "connect_to"
@@ -175,7 +176,7 @@ msgstr "เชื่อมต่อกับ"
 #: .\templates\users\delete_account.html:18
 #: .\templates\users\delete_account.html:24
 #: .\templates\users\delete_account.html:32
-#: .\templates\users\delete_account.html:61 .\templates\users\settings.html:257
+#: .\templates\users\delete_account.html:61 .\templates\users\settings.html:268
 msgid "delete_account"
 msgstr "ลบบัญชี"
 
@@ -187,7 +188,9 @@ msgstr "นี่เป็นหน้าอันตราย!"
 
 #: .\templates\users\delete_account.html:62
 msgid "delete_account_confirmations"
-msgstr "คุณมั่นใจหรือไม่ว่าจะลบบัญชีของคุณ? ข้อมูลของคุณทุกอย่างจะถูกลบ คุณไม่สามารถย้อนกลับการกระทำนี้ได้นะ!"
+msgstr ""
+"คุณมั่นใจหรือไม่ว่าจะลบบัญชีของคุณ? ข้อมูลของคุณทุกอย่างจะถูกลบ "
+"คุณไม่สามารถย้อนกลับการกระทำนี้ได้นะ!"
 
 #: .\templates\users\delete_account.html:70
 msgid "return_to_settings"
@@ -229,7 +232,7 @@ msgstr "โปรไฟล์"
 msgid "configuration"
 msgstr "การกำหนดค่า"
 
-#: .\templates\users\settings.html:45 .\templates\users\settings.html:240
+#: .\templates\users\settings.html:45 .\templates\users\settings.html:251
 msgid "account"
 msgstr "บัญชี"
 
@@ -247,7 +250,9 @@ msgstr "อัพเดทโปรไฟล์ทุกๆการเข้า
 
 #: .\templates\users\settings.html:67
 msgid "update_profile_every_login_session_description"
-msgstr "ถ้ากล่องนี้ถูกเช็ค ระบบจะอัพเดทโปรไฟล์ของคุณให้เหมือนในโปรไฟล์ osu! ทุกครั้งที่คุณเข้าสู่ระบบ (การตั้งค่าโปรไฟบ์ของคุณจะถูกปิด)"
+msgstr ""
+"ถ้ากล่องนี้ถูกเช็ค ระบบจะอัพเดทโปรไฟล์ของคุณให้เหมือนในโปรไฟล์ osu! ทุกครั้งที่คุณเข้าสู่ระบบ "
+"(การตั้งค่าโปรไฟบ์ของคุณจะถูกปิด)"
 
 #: .\templates\users\settings.html:72
 msgid "user_information"
@@ -266,8 +271,10 @@ msgid ""
 "User information is handled by the system. If you want to customize your "
 "profile, please uncheck the <i>Update Profile Every Login Session</i> "
 "setting."
-msgstr "ข้อมูลผู้ใช้ของคุณกำลังถูกจัดการโดยระบบอยู่ ถ้าคุณอยากแก้ไข้โปรไฟล์ของคุณกรุณา"
-"ไม่เช็คในกล่องการตั้งค่า <i>อัพเดทโปรไฟล์ทุกๆการเข้าสู่ระบบ</i>"
+msgstr ""
+"ข้อมูลผู้ใช้ของคุณกำลังถูกจัดการโดยระบบอยู่ "
+"ถ้าคุณอยากแก้ไข้โปรไฟล์ของคุณกรุณาไม่เช็คในกล่องการตั้งค่า <i>อัพเดทโปรไฟล์ทุกๆการเข้าสู่ระบบ</"
+"i>"
 
 #: .\templates\users\settings.html:95
 msgid "profile_page_detail"
@@ -310,8 +317,10 @@ msgid ""
 "Profile page details are handled by the system. If you want to customize "
 "your profile, please uncheck the <i>Update Profile Every Login Session</i> "
 "setting."
-msgstr "ข้อมูลหน้าโปรไฟล์ของคุณกำลังถูกจัดการโดยระบบอยู่ ถ้าคุณอยากแก้ไข้โปรไฟล์ของคุณกรุณา"
-"ไม่เช็คในกล่องการตั้งค่า <i>อัพเดทโปรไฟล์ทุกๆการเข้าสู่ระบบ</i>"
+msgstr ""
+"ข้อมูลหน้าโปรไฟล์ของคุณกำลังถูกจัดการโดยระบบอยู่ "
+"ถ้าคุณอยากแก้ไข้โปรไฟล์ของคุณกรุณาไม่เช็คในกล่องการตั้งค่า <i>อัพเดทโปรไฟล์ทุกๆการเข้าสู่ระบบ</"
+"i>"
 
 #: .\templates\users\settings.html:148
 msgid "profile_page_display_settings"
@@ -349,69 +358,86 @@ msgstr "สารบัญหน้าย่อย"
 msgid "subpage_index_description"
 msgstr "การตั้งค่าการแสดงผลของเมนูหน้าย่อยในวิกิที่แสดงผลอยู่บนสุดของหน้าวิกิ"
 
-#: .\templates\users\settings.html:186
+#: .\templates\users\settings.html:184
+msgid "languages"
+msgstr "ภาษา"
+
+#: .\templates\users\settings.html:187
+msgid "site_languages"
+msgstr "ภาษาในเว็ปไซต์"
+
+#: .\templates\users\settings.html:191
+msgid "site_languages_description"
+msgstr "การตั้งค่าภาษาในเว็ปไซต์ (ฟังก์ชันนี้กำลังได้รับการทดสอบอยู่)"
+
+#: .\templates\users\settings.html:197
 msgid "rulesets_creator_settings"
 msgstr "การตั้งค่าของผู้สร้าง rulesets"
 
-#: .\templates\users\settings.html:187
+#: .\templates\users\settings.html:198
 msgid "rulesets_creator_settings_description"
 msgstr "การตั้งค่านี้จะเห็นเมื่อคุณเป็นหนึ่งในผู้สร้าง rulesets ในวิกินี้"
 
-#: .\templates\users\settings.html:188
+#: .\templates\users\settings.html:199
 msgid "support"
 msgstr "สนับสนุน"
 
-#: .\templates\users\settings.html:189
+#: .\templates\users\settings.html:200
 msgid ""
 "These are the settings of the detail in <code>Support the creator</code> "
 "modal so other players who love your rulesets can support you. If you don't "
 "want to use this function please leave all fields blank."
-msgstr "นี่เป็นการตั้งค่าในโมดอล <code>สนับสนุนผู้สร้าง</code> ผู้เล่นที่ชื่นชอบ rulesets ของคุณจะสามารถสนับสนุนคุณได้ ถ้าคุณไม่ต้องการใช้ฟังก์ชั่นนี้กรุณาปล่อยให้ทุกช่องว่าง"
+msgstr ""
+"นี่เป็นการตั้งค่าในโมดอล <code>สนับสนุนผู้สร้าง</code> ผู้เล่นที่ชื่นชอบ rulesets "
+"ของคุณจะสามารถสนับสนุนคุณได้ ถ้าคุณไม่ต้องการใช้ฟังก์ชั่นนี้กรุณาปล่อยให้ทุกช่องว่าง"
 
-#: .\templates\users\settings.html:192
+#: .\templates\users\settings.html:203
 msgid "support_message"
 msgstr "ข้อความสนับสนุน"
 
-#: .\templates\users\settings.html:196
+#: .\templates\users\settings.html:207
 msgid "support_message_description"
 msgstr "ข้อความถึงผู้เยี่ยมชม"
 
-#: .\templates\users\settings.html:202
+#: .\templates\users\settings.html:213
 msgid "patreon_link"
 msgstr "ลิงก์ Patreon"
 
-#: .\templates\users\settings.html:206
+#: .\templates\users\settings.html:217
 msgid "patreon_link_description"
 msgstr "ลิงก์ไปที่หน้า Patreon ของคุณ (ปล่อยว่างถ้าคุณไม่มีบัญชี Patreon)"
 
-#: .\templates\users\settings.html:212
+#: .\templates\users\settings.html:223
 msgid "kofi_link"
 msgstr "ลิงก์ Ko-fi"
 
-#: .\templates\users\settings.html:216
+#: .\templates\users\settings.html:227
 msgid "kofi_link_description"
-msgstr "ลิงก์ไปที่หน้า Ko-fi ของคุณผู้ใช้คนอื่นๆจะได้ซื้อกาแฟให้คุณได้! (ปล่อยว่างถ้าคุณไม่มีบัญชี Ko-fi)"
+msgstr ""
+"ลิงก์ไปที่หน้า Ko-fi ของคุณผู้ใช้คนอื่นๆจะได้ซื้อกาแฟให้คุณได้! (ปล่อยว่างถ้าคุณไม่มีบัญชี Ko-fi)"
 
-#: .\templates\users\settings.html:222
+#: .\templates\users\settings.html:233
 msgid "github_sponsors_link"
 msgstr "ลิงก์ GitHub Sponsors"
 
-#: .\templates\users\settings.html:226
+#: .\templates\users\settings.html:237
 msgid "github_sponsors_link_description"
 msgstr "ลิงก์ไปที่หน้า GitHub Sponsors ของคุณ (ปล่อยว่างถ้าคุณไม่มีหน้า sponsors)"
 
-#: .\templates\users\settings.html:241
+#: .\templates\users\settings.html:252
 msgid "account_connection_settings"
 msgstr "การตั้งค่าการเชื่อมต่อบัญชี"
 
-#: .\templates\users\settings.html:242
+#: .\templates\users\settings.html:253
 msgid "account_connection_settings_description"
-msgstr "คุณสามารถเชื่อมต่อบัญชีของคุณกับบัญชี osu! ได้คุณจะได้เข้าสู่ระบบได้โดยใช้บัญชี osu! แทนที่จะใช้ขื่อผู้ใช้งานและรหัสผ่านของ Rūrusetto"
+msgstr ""
+"คุณสามารถเชื่อมต่อบัญชีของคุณกับบัญชี osu! ได้คุณจะได้เข้าสู่ระบบได้โดยใช้บัญชี osu! "
+"แทนที่จะใช้ขื่อผู้ใช้งานและรหัสผ่านของ Rūrusetto"
 
-#: .\templates\users\settings.html:246
+#: .\templates\users\settings.html:257
 msgid "already_connected_message"
 msgstr "บัญชีนี้ถูกเชื่อมต่อกับบัญชี osu! แล้วด้วยบัญชี"
 
-#: .\templates\users\settings.html:258
+#: .\templates\users\settings.html:269
 msgid "delete_account_process"
 msgstr "กระบวนการลบบัญชี"

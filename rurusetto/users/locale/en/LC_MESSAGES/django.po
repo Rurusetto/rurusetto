@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2022.410.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-09 02:38+0700\n"
-"PO-Revision-Date: 2022-04-09 02:44+0700\n"
+"POT-Creation-Date: 2022-04-09 06:04+0700\n"
+"PO-Revision-Date: 2022-04-09 06:20+0700\n"
 "Last-Translator: Phawit Pornwattanakul <me@helloyeew.dev>\n"
 "Language-Team: Rūrusetto <me@helloyeew.dev>\n"
 "Language: English\n"
@@ -38,7 +38,7 @@ msgid "login_with"
 msgstr "Log in with"
 
 #: .\templates\account\login.html:75 .\templates\account\signup.html:61
-#: .\templates\users\delete_account.html:67 .\templates\users\settings.html:232
+#: .\templates\users\delete_account.html:67 .\templates\users\settings.html:243
 msgid "submit"
 msgstr "Submit"
 
@@ -176,7 +176,7 @@ msgstr "Connect to"
 #: .\templates\users\delete_account.html:18
 #: .\templates\users\delete_account.html:24
 #: .\templates\users\delete_account.html:32
-#: .\templates\users\delete_account.html:61 .\templates\users\settings.html:257
+#: .\templates\users\delete_account.html:61 .\templates\users\settings.html:268
 msgid "delete_account"
 msgstr "Delete Account"
 
@@ -232,7 +232,7 @@ msgstr "Profile"
 msgid "configuration"
 msgstr "Configuration"
 
-#: .\templates\users\settings.html:45 .\templates\users\settings.html:240
+#: .\templates\users\settings.html:45 .\templates\users\settings.html:251
 msgid "account"
 msgstr "Account"
 
@@ -360,21 +360,33 @@ msgid "subpage_index_description"
 msgstr ""
 "Appearance settings of the subpage menu at the top of the rulesets page."
 
-#: .\templates\users\settings.html:186
+#: .\templates\users\settings.html:184
+msgid "languages"
+msgstr "Languages"
+
+#: .\templates\users\settings.html:187
+msgid "site_languages"
+msgstr "Site Languages"
+
+#: .\templates\users\settings.html:191
+msgid "site_languages_description"
+msgstr "Settings for global site languages. (This function is under test phase)"
+
+#: .\templates\users\settings.html:197
 msgid "rulesets_creator_settings"
 msgstr "Rulesets Creator Settings"
 
-#: .\templates\users\settings.html:187
+#: .\templates\users\settings.html:198
 msgid "rulesets_creator_settings_description"
 msgstr ""
 "These settings will only be visible when you are one of the rulesets creator "
 "in the wiki."
 
-#: .\templates\users\settings.html:188
+#: .\templates\users\settings.html:199
 msgid "support"
 msgstr "Support"
 
-#: .\templates\users\settings.html:189
+#: .\templates\users\settings.html:200
 msgid ""
 "These are the settings of the detail in <code>Support the creator</code> "
 "modal so other players who love your rulesets can support you. If you don't "
@@ -384,59 +396,57 @@ msgstr ""
 "modal so other players who love your rulesets can support you. If you don't "
 "want to use this function please leave all fields blank."
 
-#: .\templates\users\settings.html:192
+#: .\templates\users\settings.html:203
 msgid "support_message"
 msgstr "Support Message"
 
-#: .\templates\users\settings.html:196
+#: .\templates\users\settings.html:207
 msgid "support_message_description"
 msgstr "Your message to the visitor."
 
-#: .\templates\users\settings.html:202
+#: .\templates\users\settings.html:213
 msgid "patreon_link"
 msgstr "Patreon Link"
 
-#: .\templates\users\settings.html:206
+#: .\templates\users\settings.html:217
 msgid "patreon_link_description"
 msgstr ""
 "Link to your Patreon page. (Leave blank if you don't have a Patreon account)"
 
-#: .\templates\users\settings.html:212
+#: .\templates\users\settings.html:223
 msgid "kofi_link"
 msgstr "Ko-fi Link"
 
-#: .\templates\users\settings.html:216
+#: .\templates\users\settings.html:227
 msgid "kofi_link_description"
 msgstr ""
 "Link to your Ko-fi page so users can buy you coffee! (Leave blank if you "
 "don't have a Ko-Fi account)"
 
-#: .\templates\users\settings.html:222
+#: .\templates\users\settings.html:233
 msgid "github_sponsors_link"
 msgstr "GitHub Sponsors Link"
 
-#: .\templates\users\settings.html:226
+#: .\templates\users\settings.html:237
 msgid "github_sponsors_link_description"
 msgstr ""
 "Link to your GitHub Sponsors page. (Leave blank if you don't have a sponsors "
 "page)"
 
-#: .\templates\users\settings.html:241
-#, fuzzy
-#| msgid "account_connection_description"
+#: .\templates\users\settings.html:252
 msgid "account_connection_settings"
 msgstr "Account Connection"
 
-#: .\templates\users\settings.html:242
-#, fuzzy
-#| msgid "account_connection_description"
+#: .\templates\users\settings.html:253
 msgid "account_connection_settings_description"
-msgstr "You can connect your account with your osu! account so you can login by using your osu! account instead of Rūrusetto username and password."
+msgstr ""
+"You can connect your account with your osu! account so you can login by "
+"using your osu! account instead of Rūrusetto username and password."
 
-#: .\templates\users\settings.html:246
+#: .\templates\users\settings.html:257
 msgid "already_connected_message"
 msgstr "This account is connected to osu! account with username"
 
-#: .\templates\users\settings.html:258
+#: .\templates\users\settings.html:269
 msgid "delete_account_process"
 msgstr "Delete Account Process"

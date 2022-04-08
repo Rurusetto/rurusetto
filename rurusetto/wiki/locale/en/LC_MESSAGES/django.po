@@ -561,8 +561,8 @@ msgid ""
 "You are currently in test server environment, please go to <a href=\"https://"
 "rulesets.info\">live version</a> for a full experience."
 msgstr ""
-"Currently <code>DEBUG</code> settings in site settings is True. If this is "
-"live server please turn it off!"
+"You are currently in test server environment, please go to <a href=\"https://"
+"rulesets.info\">live version</a> for a full experience."
 
 #: .\templates\wiki\install.html:9
 msgid "install_and_update_rulesets"

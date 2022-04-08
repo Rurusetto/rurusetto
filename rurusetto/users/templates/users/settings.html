@@ -1,5 +1,6 @@
 {% extends "wiki/base.html" %}
 {% load static %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 {% block content %}
 
@@ -7,8 +8,8 @@
     <div class="container align-middle">
         <div class="row">
             <p></p>
-            <div><h1 class="display-5 fw-bold" data-aos="fade-up" data-aos-duration="600">Settings</h1></div>
-            <p id="hero-description" data-aos="fade-up" data-aos-duration="700">All profile and website settings are visible here!</p>
+            <div><h1 class="display-5 fw-bold" data-aos="fade-up" data-aos-duration="600">{% trans "settings" %}</h1></div>
+            <p id="hero-description" data-aos="fade-up" data-aos-duration="700">{% trans "settings_description" %}</p>
         </div>
     </div>
 </div>
@@ -31,48 +32,48 @@
           {% endif %}
     </div>
     <div class="row">
-        <h1>Main Menu</h1>
+        <h1>{% trans "main_menu" %}</h1>
     </div>
     <div class="row">
         <div class="col-sm-2 raleway-font">
-            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="#profile"><i class="fas fa-user icon-menu hvr-icon"></i> Profile</a></p>
+            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="#profile"><i class="fas fa-user icon-menu hvr-icon"></i> {% trans "profile" %}</a></p>
         </div>
         <div class="col-sm-2 raleway-font">
-            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="#config"><i class="fas fa-cog icon-menu hvr-icon"></i> Configuration</a></p>
+            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="#config"><i class="fas fa-cog icon-menu hvr-icon"></i> {% trans "configuration" %}</a></p>
         </div>
         <div class="col-sm-2 raleway-font">
-            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="#account"><i class="fas fa-user-cog icon-menu hvr-icon"></i> Account</a></p>
+            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="#account"><i class="fas fa-user-cog icon-menu hvr-icon"></i> {% trans "account" %}</a></p>
         </div>
         {% if ruleset_creator %}
         <div class="col-sm-2 raleway-font">
-            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="#creator"><i class="fas fa-smile icon-menu hvr-icon"></i> Creator</a></p>
+            <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="#creator"><i class="fas fa-smile icon-menu hvr-icon"></i> {% trans "creator" %}</a></p>
         </div>
         {% endif %}
     </div>
     <div class="row">
         <form class="form" method="POST" enctype='multipart/form-data'>
             {% csrf_token %}
-            <a id="profile"><h1>Profile</h1></a>
+            <a id="profile"><h1>{% trans "profile" %}</h1></a>
             {% if social_account %}
-            <h2>Profile Sync</h2>
+            <h2>{% trans "profile_sync" %}</h2>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label">Update profile every login session:</label>
+                    <label class="col-sm-2 col-form-label form-label">{% trans "update_profile_every_login_session" %}:</label>
                     <div class="col-sm-10">
                         <div class="form-check form-switch">
                             {{ profile_sync_form.update_profile_every_login }}
                         </div>
                         <p class="form-error raleway-font">{{ profile_sync_form.update_profile_every_login.errors }}</p>
-                        <p class="text-muted raleway-font">If this is checked, the system will update your profile to make it the same as your osu! profile everytime time you login (Your profile setting will be disabled).</p>
+                        <p class="text-muted raleway-font">{% trans "update_profile_every_login_session_description" %}</p>
                     </div>
                   </div>
             </div>
             {% endif %}
-            <h2>User Information</h2>
+            <h2>{% trans "user_information" %}</h2>
             {% if can_edit_profile %}
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label for="id_username" class="col-sm-2 col-form-label form-label">{{ user_form.username.label_tag }}</label>
+                    <label for="id_username" class="col-sm-2 col-form-label form-label">{% trans "username" %}:</label>
                     <div class="col-sm-10">
                       <input name="username" class="form-control" required id="id_username" maxlength="15" value="{{ user_form.username.value }}">
                        <p class="form-error raleway-font">{{ user_form.username.errors }}</p>
@@ -81,7 +82,7 @@
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label for="id_email" class="col-sm-2 col-form-label form-label">Email:</label>
+                    <label for="id_email" class="col-sm-2 col-form-label form-label">{% trans "email" %}:</label>
                     <div class="col-sm-10">
                       <input name="email" class="form-control" id="id_email" value="{{ user_form.email.value }}">
                        <p class="form-error raleway-font">{{ user_form.email.errors }}</p>
@@ -89,15 +90,15 @@
                   </div>
             </div>
             {% else %}
-            <p class="raleway-font">User information is handled by the system. If you want to customize your profile, please uncheck the <i>Update Profile Every Login Session</i> setting.</p>
+            <p class="raleway-font">{% blocktrans %}User information is handled by the system. If you want to customize your profile, please uncheck the <i>Update Profile Every Login Session</i> setting.{% endblocktrans %}</p>
             {% endif %}
-            <h2>Profile Page Detail</h2>
+            <h2>{% trans "profile_page_detail" %}</h2>
             {% if can_edit_profile %}
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label for="id_image" class="col-sm-2 col-form-label form-label">Profile picture:</label>
+                    <label for="id_image" class="col-sm-2 col-form-label form-label">{% trans "profile_picture" %}:</label>
                     <div class="col-sm-10">
-                      <div class="raleway-font form-current">Current Profile : <img src="{{ profile_form.image.value.url }}" alt="Current Profile Image" style="width:100%; height:auto; max-width: 150px;"></div>
+                      <div class="raleway-font form-current">{% trans "current_profile_picture" %} : <img src="{{ profile_form.image.value.url }}" alt="{% trans "current_profile_picture" %}" style="width:100%; height:auto; max-width: 150px;"></div>
                       <input type="file" name="image" accept="image/*" id="id_image" class="form-control">
                         <p class="form-error raleway-font">{{ profile_form.image.errors }}</p>
                     </div>
@@ -105,9 +106,9 @@
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label for="id_cover" class="col-sm-2 col-form-label form-label">Profile page cover image:</label>
+                    <label for="id_cover" class="col-sm-2 col-form-label form-label">{% trans "profile_page_cover_image" %}:</label>
                     <div class="col-sm-10">
-                      <div class="raleway-font form-current">Current Cover : <img src="{{ profile_form.cover.value.url }}" alt="Current Cover Image" style="width:100%; height:auto; max-width: 500px;"></div>
+                      <div class="raleway-font form-current">{% trans "current_cover_image" %} : <img src="{{ profile_form.cover.value.url }}" alt="{% trans "current_cover_image" %}" style="width:100%; height:auto; max-width: 500px;"></div>
                       <input type="file" name="cover" accept="image/*" id="id_cover" class="form-control">
                         <p class="form-error raleway-font">{{ profile_form.cover.errors }}</p>
                     </div>
@@ -115,9 +116,9 @@
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label for="id_cover_light" class="col-sm-2 col-form-label form-label">Profile page cover image in light mode:</label>
+                    <label for="id_cover_light" class="col-sm-2 col-form-label form-label">{% trans "profile_page_cover_image_light_mode" %}:</label>
                     <div class="col-sm-10">
-                      <div class="raleway-font form-current">Current Light Mode Cover : <img src="{{ profile_form.cover_light.value.url }}" alt="Current Light Mode Cover" style="width:100%; height:auto; max-width: 500px;"></div>
+                      <div class="raleway-font form-current">{% trans "current_light_mode_cover_image" %} : <img src="{{ profile_form.cover_light.value.url }}" alt="{% trans "current_light_mode_cover_image" %}" style="width:100%; height:auto; max-width: 500px;"></div>
                       <input type="file" name="cover_light" accept="image/*" id="id_cover_light" class="form-control">
                         <p class="form-error raleway-font">{{ profile_form.cover_light.errors }}</p>
                     </div>
@@ -125,7 +126,7 @@
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label for="id_about_me" class="col-sm-2 col-form-label form-label">About Me:</label>
+                    <label for="id_about_me" class="col-sm-2 col-form-label form-label">{% trans "about_me" %}:</label>
                     <div class="col-sm-10">
                         <textarea name="about_me" cols="40" rows="10" class="form-control" id="id_about_me" maxlength="120">{{ profile_form.about_me.value }}</textarea>
                         <p class="form-error raleway-font">{{ profile_form.about_me.errors }}</p>
@@ -134,7 +135,7 @@
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label for="id_osu_username" class="col-sm-2 col-form-label form-label">osu! username:</label>
+                    <label for="id_osu_username" class="col-sm-2 col-form-label form-label">{% trans "osu_username" %}:</label>
                     <div class="col-sm-10">
                         <input name="osu_username" class="form-control" id="id_osu_username" maxlength="20" value="{{ profile_form.osu_username.value }}">
                         <p class="form-error raleway-font">{{ profile_form.osu_username.errors }}</p>
@@ -142,94 +143,93 @@
                   </div>
             </div>
             {% else %}
-            <p class="raleway-font">Profile page details are handled by the system. If you want to customize your profile, please uncheck the <i>Update Profile Every Login Session</i> setting.</p>
+            <p class="raleway-font">{% blocktrans %}Profile page details are handled by the system. If you want to customize your profile, please uncheck the <i>Update Profile Every Login Session</i> setting.{% endblocktrans %}</p>
             {% endif %}
-            <h2>Profile Page Display Settings</h2>
+            <h2>{% trans "profile_page_display_settings" %}</h2>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label">Hide Email:</label>
+                    <label class="col-sm-2 col-form-label form-label">{% trans "hide_email" %}:</label>
                     <div class="col-sm-10">
                         <div class="form-check form-switch">
                             {{ hide_email.hide_email }}
                         </div>
                         <p class="form-error raleway-font">{{ hide_email.hide_email.errors }}</p>
-                        <p class="text-muted raleway-font">If checked, your email will not be visible on your profile page.</p>
+                        <p class="text-muted raleway-font">{% trans "hide_email_description" %}</p>
                     </div>
                   </div>
             </div>
 
-            <h1 id="config">Website Configuration</h1>
-            <h2>Website Theme</h2>
+            <h1 id="config">{% trans "website_configuration" %}</h1>
+            <h2>{% trans "website_theme" %}</h2>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label for="id_theme" class="col-sm-2 col-form-label form-label">Appearance:</label>
+                    <label for="id_theme" class="col-sm-2 col-form-label form-label">{% trans "appearance" %}:</label>
                     <div class="col-sm-10 raleway-font">
                         {{ website_config_form | crispy }}
                         <p class="form-error raleway-font">{{ website_config_form.theme.errors }}</p>
                     </div>
                   </div>
             </div>
-            <h2>Wiki Page Display</h2>
+            <h2>{% trans "wiki_page_display" %}</h2>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label for="id_subpage_index" class="col-sm-2 col-form-label form-label">Subpage Index:</label>
+                    <label for="id_subpage_index" class="col-sm-2 col-form-label form-label">{% trans "subpage_index" %}:</label>
                     <div class="col-sm-10 raleway-font">
                         {{ website_subpage_config_form | crispy }}
                         <p class="form-error raleway-font">{{ website_config_form.theme.errors }}</p>
-                        <p class="text-muted raleway-font">Appearance settings of the subpage menu at the top of the rulesets page.</p>
+                        <p class="text-muted raleway-font">{% trans "subpage_index_description" %}</p>
                     </div>
                   </div>
             </div>
 
             {% if ruleset_creator %}
-            <h1 id="creator">Rulesets Creator Settings</h1>
-            <p>These settings will only be visible when you are one of the rulesets creator in the wiki.</p>
-            <h2>Support</h2>
-            <p>These are the settings of the detail in <code>Support the creator</code> modal so other players who love your rulesets can support you. If you don't want to use this function please leave all fields blank.</p>
+            <h1 id="creator">{% trans "rulesets_creator_settings" %}</h1>
+            <p>{% trans "rulesets_creator_settings_description" %}</p>
+            <h2>{% trans "support" %}</h2>
+            <p>{% blocktrans %}These are the settings of the detail in <code>Support the creator</code> modal so other players who love your rulesets can support you. If you don't want to use this function please leave all fields blank.{% endblocktrans %}</p>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label for="id_support_message" class="col-sm-2 col-form-label form-label">Support Message:</label>
+                    <label for="id_support_message" class="col-sm-2 col-form-label form-label">{% trans "support_message" %}:</label>
                     <div class="col-sm-10">
                         <textarea name="support_message" cols="40" rows="10" class="form-control" id="id_support_message">{{ support_form.support_message.value }}</textarea>
                         <p class="form-error raleway-font">{{ support_form.support_message.errors }}</p>
-                        <p class="text-muted raleway-font">Your message to the visitor.</p>
+                        <p class="text-muted raleway-font">{% trans "support_message_description" %}</p>
                     </div>
                   </div>
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label" for="id_support_patreon">Patreon Link:</label>
+                    <label class="col-sm-2 col-form-label form-label" for="id_support_patreon">{% trans "patreon_link" %}:</label>
                     <div class="col-sm-10">
                       <input type="url" name="support_patreon" id="id_support_patreon" class="form-control" value="{{ support_form.support_patreon.value }}">
                         <p class="form-error raleway-font">{{ support_form.support_patreon.errors }}</p>
-                        <p class="text-muted raleway-font">Link to your Patreon page. (Leave blank if you don't have a Patreon account)</p>
+                        <p class="text-muted raleway-font">{% trans "patreon_link_description" %}</p>
                     </div>
                   </div>
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label" for="id_support_kofi">Ko-fi Link:</label>
+                    <label class="col-sm-2 col-form-label form-label" for="id_support_kofi">{% trans "kofi_link" %}:</label>
                     <div class="col-sm-10">
                       <input type="url" name="support_kofi" id="id_support_kofi" class="form-control" value="{{ support_form.support_kofi.value }}">
                         <p class="form-error raleway-font">{{ form.source.errors }}</p>
-                        <p class="text-muted raleway-font">Link to your Ko-fi page so users can buy you coffee! (Leave blank if you don't have a Ko-Fi account)</p>
+                        <p class="text-muted raleway-font">{% trans "kofi_link_description" %}</p>
                     </div>
                   </div>
             </div>
             <div class="fieldWrapper">
                  <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label form-label" for="id_support_github_sponsors">GitHub Sponsors Link:</label>
+                    <label class="col-sm-2 col-form-label form-label" for="id_support_github_sponsors">{% trans "github_sponsors_link" %}:</label>
                     <div class="col-sm-10">
                       <input type="url" name="support_github_sponsors" id="id_support_github_sponsors" class="form-control" value="{{ support_form.support_github_sponsors.value }}">
                         <p class="form-error raleway-font">{{ support_form.support_github_sponsors.errors }}</p>
-                        <p class="text-muted raleway-font">Link to your GitHub Sponsors page. (Leave blank if you don't have a sponsors page)</p>
+                        <p class="text-muted raleway-font">{% trans "github_sponsors_link_description" %}</p>
                     </div>
                   </div>
             </div>
             {% endif %}
 
-{#            <a id="website"><h1>Website Settings</h1></a>#}
-            <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right raleway-font">Submit</button>
+            <button type="submit" class="btn btn-rurusetto hvr-sweep-to-right raleway-font">{% trans "submit" %}</button>
         </form>
     </div>
 </div>
@@ -237,13 +237,13 @@
     <p></p>
 
 <div class="container">
-    <a id="account"><h1>Account</h1></a>
-    <h2>Account Connection</h2>
-    <p class="raleway-font">You can connect your account with your osu! account so you can login by using your osu! account instead of Rūrusetto username and password.</p>
+    <a id="account"><h1>{% trans "account" %}</h1></a>
+    <h2>{% trans "account_connection_settings" %}</h2>
+    <p class="raleway-font">{% trans "account_connection_settings_description" %}</p>
 
     {% if social_account %}
 
-        <p class="raleway-font" style="color:#ff66aa"><i class="fas fa-check icon-menu"></i> This account is connected to osu! account with username : {{ osu_confirm_username }}</p>
+        <p class="raleway-font" style="color:#ff66aa"><i class="fas fa-check icon-menu"></i> {% trans "already_connected_message" %} : {{ osu_confirm_username }}</p>
 
     {% else %}
 
@@ -254,8 +254,8 @@
         {% include "socialaccount/snippets/login_extra.html" %}
 
     {% endif %}
-    <h2 class="text-danger">Delete Account</h2>
-    <p><a class="btn btn-danger hvr-sweep-to-right-danger raleway-font" href="{% url "delete_account" %}">Delete Account Process</a></p>
+    <h2 class="text-danger">{% trans "delete_account" %}</h2>
+    <p><a class="btn btn-danger hvr-sweep-to-right-danger raleway-font" href="{% url "delete_account" %}">{% trans "delete_account_process" %}</a></p>
 
 </div>
 

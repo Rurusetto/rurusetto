@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
@@ -17,8 +18,8 @@
   <link rel="stylesheet" href="{% static 'css/login.css' %}">
 
     <!-- HTML Meta Tags -->
-    <title>login cancelled - rūrusetto</title>
-    <meta name="description" content="login cancelled by user">
+    <title>{% trans "login_cancelled" %} - rūrusetto</title>
+    <meta name="description" content="{% trans "login_cancelled_description" %}">
 </head>
 <body>
   <div class="container-fluid h-100">
@@ -34,10 +35,10 @@
               </div>
             {% endfor %}
           {% endif %}
-          <h1>Log In Cancelled</h1>
+          <h1>{% trans "login_cancelled" %}</h1>
           <p></p>
           {% url 'account_login' as login_url %}
-            <p>You decided to cancel logging in to rūrusetto using your osu! account. If this was a mistake, please <a class="text-decoration-none spacing-hover" href="{{login_url}}">sign in again</a>.</p>
+            <p>{% blocktrans with login_url=login_url %}You decided to cancel logging in to rūrusetto using your osu! account. If this was a mistake, please <a class="text-decoration-none spacing-hover" href="{{login_url}}">sign in again</a>.{% endblocktrans %}</p>
         </div>
       </div>
       <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8" style="background-image: url('{% static "img/243010.jpeg" %}')"></div>

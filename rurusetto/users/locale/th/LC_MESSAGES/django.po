@@ -1,0 +1,413 @@
+# Thai language translation file for Rūrusetto
+# Copyright (C) 2022 Rūrusetto
+# This file is distributed under the same license as the Rūrusetto package.
+# Phawit Pornwattanakul <me@helloyeew.dev>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 2022.410.0\n"
+"Report-Msgid-Bugs-To: Rūrusetto repository\n"
+"POT-Creation-Date: 2022-04-09 02:45+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Phawit Pornwattanakul <me@helloyeew.dev>\n"
+"Language-Team: Rūrusetto <me@helloyeew.dev>\n"
+"Language: Thai\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\templates\account\login.html:20 .\templates\account\login.html:26
+#: .\templates\account\login.html:34 .\templates\account\login.html:63
+#: .\templates\socialaccount\login.html:17
+#: .\templates\socialaccount\login.html:23
+#: .\templates\socialaccount\login.html:31
+msgid "login"
+msgstr ""
+
+#: .\templates\account\login.html:21 .\templates\account\login.html:27
+#: .\templates\account\login.html:35 .\templates\socialaccount\login.html:18
+#: .\templates\socialaccount\login.html:24
+#: .\templates\socialaccount\login.html:32
+msgid "login_to_rurusetto"
+msgstr ""
+
+#: .\templates\account\login.html:68
+msgid "login_with"
+msgstr ""
+
+#: .\templates\account\login.html:75 .\templates\account\signup.html:61
+#: .\templates\users\delete_account.html:67 .\templates\users\settings.html:232
+msgid "submit"
+msgstr ""
+
+#: .\templates\account\login.html:78
+msgid "no_account"
+msgstr ""
+
+#: .\templates\account\login.html:78 .\templates\account\signup.html:49
+msgid "sign_up"
+msgstr ""
+
+#: .\templates\account\signup.html:13 .\templates\account\signup.html:19
+#: .\templates\account\signup.html:27
+msgid "register"
+msgstr ""
+
+#: .\templates\account\signup.html:14 .\templates\account\signup.html:20
+#: .\templates\account\signup.html:28
+msgid "register_to_rurusetto"
+msgstr ""
+
+#: .\templates\account\signup.html:54
+msgid "sign_up_with"
+msgstr ""
+
+#: .\templates\account\signup.html:64
+msgid "already_have_account"
+msgstr ""
+
+#: .\templates\account\signup.html:64
+msgid "login_instead"
+msgstr ""
+
+#: .\templates\socialaccount\authentication_error.html:18
+#: .\templates\socialaccount\authentication_error.html:46
+msgid "login_failed"
+msgstr ""
+
+#: .\templates\socialaccount\authentication_error.html:19
+msgid "login_failed_description"
+msgstr ""
+
+#: .\templates\socialaccount\authentication_error.html:49
+msgid "error_while_login_osu"
+msgstr ""
+
+#: .\templates\socialaccount\authentication_error.html:51
+msgid "back_to_login"
+msgstr ""
+
+#: .\templates\socialaccount\authentication_error.html:53
+msgid "return_to_homepage"
+msgstr ""
+
+#: .\templates\socialaccount\connections.html:18
+msgid "account_connection"
+msgstr ""
+
+#: .\templates\socialaccount\connections.html:19
+msgid "account_connection_description"
+msgstr ""
+
+#: .\templates\socialaccount\connections.html:41
+msgid "connection_status"
+msgstr ""
+
+#: .\templates\socialaccount\connections.html:46
+msgid "unknown_status"
+msgstr ""
+
+#: .\templates\socialaccount\connections.html:48
+msgid "no_status_provided"
+msgstr ""
+
+#: .\templates\socialaccount\connections.html:50
+msgid "back_to_setting_page"
+msgstr ""
+
+#: .\templates\socialaccount\login.html:62
+#, python-format
+msgid "Connect %(provider)s"
+msgstr ""
+
+#: .\templates\socialaccount\login.html:64
+#, python-format
+msgid "You are about to connect a new account from %(provider)s."
+msgstr ""
+
+#: .\templates\socialaccount\login.html:66
+#, python-format
+msgid "Sign in via %(provider)s"
+msgstr ""
+
+#: .\templates\socialaccount\login.html:68
+#, python-format
+msgid "You are about to sign in using account from %(provider)s."
+msgstr ""
+
+#: .\templates\socialaccount\login.html:72
+msgid "Continue"
+msgstr ""
+
+#: .\templates\socialaccount\login.html:75
+msgid "no_dont_want"
+msgstr ""
+
+#: .\templates\socialaccount\login.html:75
+msgid "go_back"
+msgstr ""
+
+#: .\templates\socialaccount\login_cancelled.html:21
+#: .\templates\socialaccount\login_cancelled.html:38
+msgid "login_cancelled"
+msgstr ""
+
+#: .\templates\socialaccount\login_cancelled.html:22
+msgid "login_cancelled_description"
+msgstr ""
+
+#: .\templates\socialaccount\login_cancelled.html:41
+#, python-format
+msgid ""
+"You decided to cancel logging in to rūrusetto using your osu! account. If "
+"this was a mistake, please <a class=\"text-decoration-none spacing-hover\" "
+"href=\"%(login_url)s\">sign in again</a>."
+msgstr ""
+
+#: .\templates\socialaccount\snippets\provider_list.html:19
+msgid "connect_to"
+msgstr ""
+
+#: .\templates\users\delete_account.html:18
+#: .\templates\users\delete_account.html:24
+#: .\templates\users\delete_account.html:32
+#: .\templates\users\delete_account.html:61 .\templates\users\settings.html:257
+msgid "delete_account"
+msgstr ""
+
+#: .\templates\users\delete_account.html:19
+#: .\templates\users\delete_account.html:25
+#: .\templates\users\delete_account.html:33
+msgid "delete_account_description"
+msgstr ""
+
+#: .\templates\users\delete_account.html:62
+msgid "delete_account_confirmations"
+msgstr ""
+
+#: .\templates\users\delete_account.html:70
+msgid "return_to_settings"
+msgstr ""
+
+#: .\templates\users\profile.html:45
+msgid "edit_profile"
+msgstr ""
+
+#: .\templates\users\profile.html:54
+msgid "created_ruleset"
+msgstr ""
+
+#: .\templates\users\profile.html:70 .\templates\users\profile.html:72
+msgid "deleted_user"
+msgstr ""
+
+#: .\templates\users\profile.html:82
+msgid "read"
+msgstr ""
+
+#: .\templates\users\settings.html:11
+msgid "settings"
+msgstr ""
+
+#: .\templates\users\settings.html:12
+msgid "settings_description"
+msgstr ""
+
+#: .\templates\users\settings.html:35
+msgid "main_menu"
+msgstr ""
+
+#: .\templates\users\settings.html:39 .\templates\users\settings.html:56
+msgid "profile"
+msgstr ""
+
+#: .\templates\users\settings.html:42
+msgid "configuration"
+msgstr ""
+
+#: .\templates\users\settings.html:45 .\templates\users\settings.html:240
+msgid "account"
+msgstr ""
+
+#: .\templates\users\settings.html:49
+msgid "creator"
+msgstr ""
+
+#: .\templates\users\settings.html:58
+msgid "profile_sync"
+msgstr ""
+
+#: .\templates\users\settings.html:61
+msgid "update_profile_every_login_session"
+msgstr ""
+
+#: .\templates\users\settings.html:67
+msgid "update_profile_every_login_session_description"
+msgstr ""
+
+#: .\templates\users\settings.html:72
+msgid "user_information"
+msgstr ""
+
+#: .\templates\users\settings.html:76
+msgid "username"
+msgstr ""
+
+#: .\templates\users\settings.html:85
+msgid "email"
+msgstr ""
+
+#: .\templates\users\settings.html:93
+msgid ""
+"User information is handled by the system. If you want to customize your "
+"profile, please uncheck the <i>Update Profile Every Login Session</i> "
+"setting."
+msgstr ""
+
+#: .\templates\users\settings.html:95
+msgid "profile_page_detail"
+msgstr ""
+
+#: .\templates\users\settings.html:99
+msgid "profile_picture"
+msgstr ""
+
+#: .\templates\users\settings.html:101
+msgid "current_profile_picture"
+msgstr ""
+
+#: .\templates\users\settings.html:109
+msgid "profile_page_cover_image"
+msgstr ""
+
+#: .\templates\users\settings.html:111
+msgid "current_cover_image"
+msgstr ""
+
+#: .\templates\users\settings.html:119
+msgid "profile_page_cover_image_light_mode"
+msgstr ""
+
+#: .\templates\users\settings.html:121
+msgid "current_light_mode_cover_image"
+msgstr ""
+
+#: .\templates\users\settings.html:129
+msgid "about_me"
+msgstr ""
+
+#: .\templates\users\settings.html:138
+msgid "osu_username"
+msgstr ""
+
+#: .\templates\users\settings.html:146
+msgid ""
+"Profile page details are handled by the system. If you want to customize "
+"your profile, please uncheck the <i>Update Profile Every Login Session</i> "
+"setting."
+msgstr ""
+
+#: .\templates\users\settings.html:148
+msgid "profile_page_display_settings"
+msgstr ""
+
+#: .\templates\users\settings.html:151
+msgid "hide_email"
+msgstr ""
+
+#: .\templates\users\settings.html:157
+msgid "hide_email_description"
+msgstr ""
+
+#: .\templates\users\settings.html:162
+msgid "website_configuration"
+msgstr ""
+
+#: .\templates\users\settings.html:163
+msgid "website_theme"
+msgstr ""
+
+#: .\templates\users\settings.html:166
+msgid "appearance"
+msgstr ""
+
+#: .\templates\users\settings.html:173
+msgid "wiki_page_display"
+msgstr ""
+
+#: .\templates\users\settings.html:176
+msgid "subpage_index"
+msgstr ""
+
+#: .\templates\users\settings.html:180
+msgid "subpage_index_description"
+msgstr ""
+
+#: .\templates\users\settings.html:186
+msgid "rulesets_creator_settings"
+msgstr ""
+
+#: .\templates\users\settings.html:187
+msgid "rulesets_creator_settings_description"
+msgstr ""
+
+#: .\templates\users\settings.html:188
+msgid "support"
+msgstr ""
+
+#: .\templates\users\settings.html:189
+msgid ""
+"These are the settings of the detail in <code>Support the creator</code> "
+"modal so other players who love your rulesets can support you. If you don't "
+"want to use this function please leave all fields blank."
+msgstr ""
+
+#: .\templates\users\settings.html:192
+msgid "support_message"
+msgstr ""
+
+#: .\templates\users\settings.html:196
+msgid "support_message_description"
+msgstr ""
+
+#: .\templates\users\settings.html:202
+msgid "patreon_link"
+msgstr ""
+
+#: .\templates\users\settings.html:206
+msgid "patreon_link_description"
+msgstr ""
+
+#: .\templates\users\settings.html:212
+msgid "kofi_link"
+msgstr ""
+
+#: .\templates\users\settings.html:216
+msgid "kofi_link_description"
+msgstr ""
+
+#: .\templates\users\settings.html:222
+msgid "github_sponsors_link"
+msgstr ""
+
+#: .\templates\users\settings.html:226
+msgid "github_sponsors_link_description"
+msgstr ""
+
+#: .\templates\users\settings.html:241
+msgid "account_connection_settings"
+msgstr ""
+
+#: .\templates\users\settings.html:242
+msgid "account_connection_settings_description"
+msgstr ""
+
+#: .\templates\users\settings.html:246
+msgid "already_connected_message"
+msgstr ""
+
+#: .\templates\users\settings.html:258
+msgid "delete_account_process"
+msgstr ""

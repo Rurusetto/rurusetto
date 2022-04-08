@@ -24,139 +24,139 @@ msgstr ""
 #: .\templates\socialaccount\login.html:23
 #: .\templates\socialaccount\login.html:31
 msgid "login"
-msgstr ""
+msgstr "เข้าสู่ระบบ"
 
 #: .\templates\account\login.html:21 .\templates\account\login.html:27
 #: .\templates\account\login.html:35 .\templates\socialaccount\login.html:18
 #: .\templates\socialaccount\login.html:24
 #: .\templates\socialaccount\login.html:32
 msgid "login_to_rurusetto"
-msgstr ""
+msgstr "เข้าสู่ระบบ rūrusetto"
 
 #: .\templates\account\login.html:68
 msgid "login_with"
-msgstr ""
+msgstr "เข้าสู่ระบบด้วย"
 
 #: .\templates\account\login.html:75 .\templates\account\signup.html:61
 #: .\templates\users\delete_account.html:67 .\templates\users\settings.html:232
 msgid "submit"
-msgstr ""
+msgstr "ส่ง"
 
 #: .\templates\account\login.html:78
 msgid "no_account"
-msgstr ""
+msgstr "ไม่มีบัญชี?"
 
 #: .\templates\account\login.html:78 .\templates\account\signup.html:49
 msgid "sign_up"
-msgstr ""
+msgstr "สมัครบัญชี"
 
 #: .\templates\account\signup.html:13 .\templates\account\signup.html:19
 #: .\templates\account\signup.html:27
 msgid "register"
-msgstr ""
+msgstr "สมัครบัญชี"
 
 #: .\templates\account\signup.html:14 .\templates\account\signup.html:20
 #: .\templates\account\signup.html:28
 msgid "register_to_rurusetto"
-msgstr ""
+msgstr "สมัครบัญชี rūrusetto"
 
 #: .\templates\account\signup.html:54
 msgid "sign_up_with"
-msgstr ""
+msgstr "สมัครด้วย"
 
 #: .\templates\account\signup.html:64
 msgid "already_have_account"
-msgstr ""
+msgstr "มีบัญชีอยู่แล้ว?"
 
 #: .\templates\account\signup.html:64
 msgid "login_instead"
-msgstr ""
+msgstr "เข้าสู่ระบบแทน"
 
 #: .\templates\socialaccount\authentication_error.html:18
 #: .\templates\socialaccount\authentication_error.html:46
 msgid "login_failed"
-msgstr ""
+msgstr "เข้าสู่ระบบไม่สำเร็จ"
 
 #: .\templates\socialaccount\authentication_error.html:19
 msgid "login_failed_description"
-msgstr ""
+msgstr "เข้าสู่ระบบ rūrusetto ไม่สำเร็จ"
 
 #: .\templates\socialaccount\authentication_error.html:49
 msgid "error_while_login_osu"
-msgstr ""
+msgstr "เกิดข้อผิดพลาดขึ้นระหว่างกำลังเข้าสู่ระบบด้วยบัญชี osu! ของคุณ"
 
 #: .\templates\socialaccount\authentication_error.html:51
 msgid "back_to_login"
-msgstr ""
+msgstr "กลับไปที่หน้าเข้าสู่ระบบ"
 
 #: .\templates\socialaccount\authentication_error.html:53
 msgid "return_to_homepage"
-msgstr ""
+msgstr "กลับไปที่หน้าหลัก"
 
 #: .\templates\socialaccount\connections.html:18
 msgid "account_connection"
-msgstr ""
+msgstr "การเชื่อมต่อบัญชี"
 
 #: .\templates\socialaccount\connections.html:19
 msgid "account_connection_description"
-msgstr ""
+msgstr "เชื่อมต่อบัญชี rūrusetto ด้วยบัญชี osu!"
 
 #: .\templates\socialaccount\connections.html:41
 msgid "connection_status"
-msgstr ""
+msgstr "สถานะการเชื่อมต่อ"
 
 #: .\templates\socialaccount\connections.html:46
 msgid "unknown_status"
-msgstr ""
+msgstr "ไม่รู้สถานะ"
 
 #: .\templates\socialaccount\connections.html:48
 msgid "no_status_provided"
-msgstr ""
+msgstr "ไม่มีสถานะ"
 
 #: .\templates\socialaccount\connections.html:50
 msgid "back_to_setting_page"
-msgstr ""
+msgstr "กลับไปที่หน้าตั้งค่า"
 
 #: .\templates\socialaccount\login.html:62
 #, python-format
 msgid "Connect %(provider)s"
-msgstr ""
+msgstr "เชื่อมต่อ %(provider)s"
 
 #: .\templates\socialaccount\login.html:64
 #, python-format
 msgid "You are about to connect a new account from %(provider)s."
-msgstr ""
+msgstr "คุณกำลังจะเชื่อมต่อบัญชีใหม่จาก %(provider)s"
 
 #: .\templates\socialaccount\login.html:66
 #, python-format
 msgid "Sign in via %(provider)s"
-msgstr ""
+msgstr "เข้าสู่ระบบด้วย %(provider)s"
 
 #: .\templates\socialaccount\login.html:68
 #, python-format
 msgid "You are about to sign in using account from %(provider)s."
-msgstr ""
+msgstr "คุถกำลังจะเข้าสู้ระบบด้วยบัญชีจาก %(provider)s"
 
 #: .\templates\socialaccount\login.html:72
 msgid "Continue"
-msgstr ""
+msgstr "ไปต่อ"
 
 #: .\templates\socialaccount\login.html:75
 msgid "no_dont_want"
-msgstr ""
+msgstr "ไม่! ไม่ต้องการ"
 
 #: .\templates\socialaccount\login.html:75
 msgid "go_back"
-msgstr ""
+msgstr "กลับไป!"
 
 #: .\templates\socialaccount\login_cancelled.html:21
 #: .\templates\socialaccount\login_cancelled.html:38
 msgid "login_cancelled"
-msgstr ""
+msgstr "ยกเลิกการเข้าสู่ระบบ"
 
 #: .\templates\socialaccount\login_cancelled.html:22
 msgid "login_cancelled_description"
-msgstr ""
+msgstr "ยกเลิกการเข้าสู่ระบบโดยผู้ใช้"
 
 #: .\templates\socialaccount\login_cancelled.html:41
 #, python-format
@@ -164,250 +164,254 @@ msgid ""
 "You decided to cancel logging in to rūrusetto using your osu! account. If "
 "this was a mistake, please <a class=\"text-decoration-none spacing-hover\" "
 "href=\"%(login_url)s\">sign in again</a>."
-msgstr ""
+msgstr "คุณตัดสินใจที่จะยกเลิกการเข้าสู้ระบบ rūrusetto ด้วยบัญชี osu! ของคุณ "
+"ถ้านี่เป็นข้อผิดพลาด กรุณา <a class=\"text-decoration-none spacing-hover\" "
+"href=\"%(login_url)s\">เข้าสู่ระบบใหม่</a>."
 
 #: .\templates\socialaccount\snippets\provider_list.html:19
 msgid "connect_to"
-msgstr ""
+msgstr "เชื่อมต่อกับ"
 
 #: .\templates\users\delete_account.html:18
 #: .\templates\users\delete_account.html:24
 #: .\templates\users\delete_account.html:32
 #: .\templates\users\delete_account.html:61 .\templates\users\settings.html:257
 msgid "delete_account"
-msgstr ""
+msgstr "ลบบัญชี"
 
 #: .\templates\users\delete_account.html:19
 #: .\templates\users\delete_account.html:25
 #: .\templates\users\delete_account.html:33
 msgid "delete_account_description"
-msgstr ""
+msgstr "นี่เป็นหน้าอันตราย!"
 
 #: .\templates\users\delete_account.html:62
 msgid "delete_account_confirmations"
-msgstr ""
+msgstr "คุณมั่นใจหรือไม่ว่าจะลบบัญชีของคุณ? ข้อมูลของคุณทุกอย่างจะถูกลบ คุณไม่สามารถย้อนกลับการกระทำนี้ได้นะ!"
 
 #: .\templates\users\delete_account.html:70
 msgid "return_to_settings"
-msgstr ""
+msgstr "กลับไปหน้าตั้งค่า"
 
 #: .\templates\users\profile.html:45
 msgid "edit_profile"
-msgstr ""
+msgstr "แก้ไขโปรไฟล์"
 
 #: .\templates\users\profile.html:54
 msgid "created_ruleset"
-msgstr ""
+msgstr "ruleset ที่สร้าง"
 
 #: .\templates\users\profile.html:70 .\templates\users\profile.html:72
 msgid "deleted_user"
-msgstr ""
+msgstr "User ที่ถูกลบ"
 
 #: .\templates\users\profile.html:82
 msgid "read"
-msgstr ""
+msgstr "อ่าน"
 
 #: .\templates\users\settings.html:11
 msgid "settings"
-msgstr ""
+msgstr "ตั้งค่า"
 
 #: .\templates\users\settings.html:12
 msgid "settings_description"
-msgstr ""
+msgstr "การตั้งค่าโปรไฟล์และเว็ปไซต์ทั้งหมดอยู่ที่นี่!"
 
 #: .\templates\users\settings.html:35
 msgid "main_menu"
-msgstr ""
+msgstr "เมนูหลัก"
 
 #: .\templates\users\settings.html:39 .\templates\users\settings.html:56
 msgid "profile"
-msgstr ""
+msgstr "โปรไฟล์"
 
 #: .\templates\users\settings.html:42
 msgid "configuration"
-msgstr ""
+msgstr "การกำหนดค่า"
 
 #: .\templates\users\settings.html:45 .\templates\users\settings.html:240
 msgid "account"
-msgstr ""
+msgstr "บัญชี"
 
 #: .\templates\users\settings.html:49
 msgid "creator"
-msgstr ""
+msgstr "ผู้สร้าง"
 
 #: .\templates\users\settings.html:58
 msgid "profile_sync"
-msgstr ""
+msgstr "การซิงค์โปรไฟล์"
 
 #: .\templates\users\settings.html:61
 msgid "update_profile_every_login_session"
-msgstr ""
+msgstr "อัพเดทโปรไฟล์ทุกๆการเข้าสู่ระบบ"
 
 #: .\templates\users\settings.html:67
 msgid "update_profile_every_login_session_description"
-msgstr ""
+msgstr "ถ้ากล่องนี้ถูกเช็ค ระบบจะอัพเดทโปรไฟล์ของคุณให้เหมือนในโปรไฟล์ osu! ทุกครั้งที่คุณเข้าสู่ระบบ (การตั้งค่าโปรไฟบ์ของคุณจะถูกปิด)"
 
 #: .\templates\users\settings.html:72
 msgid "user_information"
-msgstr ""
+msgstr "ข้อมูลผู้ใช้"
 
 #: .\templates\users\settings.html:76
 msgid "username"
-msgstr ""
+msgstr "ชื่อผู้ใช้"
 
 #: .\templates\users\settings.html:85
 msgid "email"
-msgstr ""
+msgstr "อีเมลล์"
 
 #: .\templates\users\settings.html:93
 msgid ""
 "User information is handled by the system. If you want to customize your "
 "profile, please uncheck the <i>Update Profile Every Login Session</i> "
 "setting."
-msgstr ""
+msgstr "ข้อมูลผู้ใช้ของคุณกำลังถูกจัดการโดยระบบอยู่ ถ้าคุณอยากแก้ไข้โปรไฟล์ของคุณกรุณา"
+"ไม่เช็คในกล่องการตั้งค่า <i>อัพเดทโปรไฟล์ทุกๆการเข้าสู่ระบบ</i>"
 
 #: .\templates\users\settings.html:95
 msgid "profile_page_detail"
-msgstr ""
+msgstr "รายละเอียดหน้าโปรไฟล์"
 
 #: .\templates\users\settings.html:99
 msgid "profile_picture"
-msgstr ""
+msgstr "รูปโปรไฟล์"
 
 #: .\templates\users\settings.html:101
 msgid "current_profile_picture"
-msgstr ""
+msgstr "รูปโปรไฟล์ตอนนี้"
 
 #: .\templates\users\settings.html:109
 msgid "profile_page_cover_image"
-msgstr ""
+msgstr "รูปปกในหน้าโปรไฟล์"
 
 #: .\templates\users\settings.html:111
 msgid "current_cover_image"
-msgstr ""
+msgstr "รูปปกตอนนี้"
 
 #: .\templates\users\settings.html:119
 msgid "profile_page_cover_image_light_mode"
-msgstr ""
+msgstr "รูปปกในหน้าโปรไฟล์ในโหมดสว่าง"
 
 #: .\templates\users\settings.html:121
 msgid "current_light_mode_cover_image"
-msgstr ""
+msgstr "รูปปกในหน้าโปรไฟล์ในโหมดสว่างตอนนี้"
 
 #: .\templates\users\settings.html:129
 msgid "about_me"
-msgstr ""
+msgstr "เกี่ยวกับฉัน"
 
 #: .\templates\users\settings.html:138
 msgid "osu_username"
-msgstr ""
+msgstr "ชื่อผู้ใช้งาน osu!"
 
 #: .\templates\users\settings.html:146
 msgid ""
 "Profile page details are handled by the system. If you want to customize "
 "your profile, please uncheck the <i>Update Profile Every Login Session</i> "
 "setting."
-msgstr ""
+msgstr "ข้อมูลหน้าโปรไฟล์ของคุณกำลังถูกจัดการโดยระบบอยู่ ถ้าคุณอยากแก้ไข้โปรไฟล์ของคุณกรุณา"
+"ไม่เช็คในกล่องการตั้งค่า <i>อัพเดทโปรไฟล์ทุกๆการเข้าสู่ระบบ</i>"
 
 #: .\templates\users\settings.html:148
 msgid "profile_page_display_settings"
-msgstr ""
+msgstr "การตั้งค่าการแสดงผลหน้าโปรไฟล์"
 
 #: .\templates\users\settings.html:151
 msgid "hide_email"
-msgstr ""
+msgstr "ซ่อนอีเมลล์"
 
 #: .\templates\users\settings.html:157
 msgid "hide_email_description"
-msgstr ""
+msgstr "ถ้ากล่องนี้ถูกเช็ค อีเมลล์ของคุณจะไม่แสดงในหน้าโปรไฟล์ของคุณ"
 
 #: .\templates\users\settings.html:162
 msgid "website_configuration"
-msgstr ""
+msgstr "การกำหนดค่าเว็ปไซต์"
 
 #: .\templates\users\settings.html:163
 msgid "website_theme"
-msgstr ""
+msgstr "ธีมเว็ปไซต์"
 
 #: .\templates\users\settings.html:166
 msgid "appearance"
-msgstr ""
+msgstr "โหมด"
 
 #: .\templates\users\settings.html:173
 msgid "wiki_page_display"
-msgstr ""
+msgstr "การแสดงผลหน้าวิกิ"
 
 #: .\templates\users\settings.html:176
 msgid "subpage_index"
-msgstr ""
+msgstr "สารบัญหน้าย่อย"
 
 #: .\templates\users\settings.html:180
 msgid "subpage_index_description"
-msgstr ""
+msgstr "การตั้งค่าการแสดงผลของเมนูหน้าย่อยในวิกิที่แสดงผลอยู่บนสุดของหน้าวิกิ"
 
 #: .\templates\users\settings.html:186
 msgid "rulesets_creator_settings"
-msgstr ""
+msgstr "การตั้งค่าของผู้สร้าง rulesets"
 
 #: .\templates\users\settings.html:187
 msgid "rulesets_creator_settings_description"
-msgstr ""
+msgstr "การตั้งค่านี้จะเห็นเมื่อคุณเป็นหนึ่งในผู้สร้าง rulesets ในวิกินี้"
 
 #: .\templates\users\settings.html:188
 msgid "support"
-msgstr ""
+msgstr "สนับสนุน"
 
 #: .\templates\users\settings.html:189
 msgid ""
 "These are the settings of the detail in <code>Support the creator</code> "
 "modal so other players who love your rulesets can support you. If you don't "
 "want to use this function please leave all fields blank."
-msgstr ""
+msgstr "นี่เป็นการตั้งค่าในโมดอล <code>สนับสนุนผู้สร้าง</code> ผู้เล่นที่ชื่นชอบ rulesets ของคุณจะสามารถสนับสนุนคุณได้ ถ้าคุณไม่ต้องการใช้ฟังก์ชั่นนี้กรุณาปล่อยให้ทุกช่องว่าง"
 
 #: .\templates\users\settings.html:192
 msgid "support_message"
-msgstr ""
+msgstr "ข้อความสนับสนุน"
 
 #: .\templates\users\settings.html:196
 msgid "support_message_description"
-msgstr ""
+msgstr "ข้อความถึงผู้เยี่ยมชม"
 
 #: .\templates\users\settings.html:202
 msgid "patreon_link"
-msgstr ""
+msgstr "ลิงก์ Patreon"
 
 #: .\templates\users\settings.html:206
 msgid "patreon_link_description"
-msgstr ""
+msgstr "ลิงก์ไปที่หน้า Patreon ของคุณ (ปล่อยว่างถ้าคุณไม่มีบัญชี Patreon)"
 
 #: .\templates\users\settings.html:212
 msgid "kofi_link"
-msgstr ""
+msgstr "ลิงก์ Ko-fi"
 
 #: .\templates\users\settings.html:216
 msgid "kofi_link_description"
-msgstr ""
+msgstr "ลิงก์ไปที่หน้า Ko-fi ของคุณผู้ใช้คนอื่นๆจะได้ซื้อกาแฟให้คุณได้! (ปล่อยว่างถ้าคุณไม่มีบัญชี Ko-fi)"
 
 #: .\templates\users\settings.html:222
 msgid "github_sponsors_link"
-msgstr ""
+msgstr "ลิงก์ GitHub Sponsors"
 
 #: .\templates\users\settings.html:226
 msgid "github_sponsors_link_description"
-msgstr ""
+msgstr "ลิงก์ไปที่หน้า GitHub Sponsors ของคุณ (ปล่อยว่างถ้าคุณไม่มีหน้า sponsors)"
 
 #: .\templates\users\settings.html:241
 msgid "account_connection_settings"
-msgstr ""
+msgstr "การตั้งค่าการเชื่อมต่อบัญชี"
 
 #: .\templates\users\settings.html:242
 msgid "account_connection_settings_description"
-msgstr ""
+msgstr "คุณสามารถเชื่อมต่อบัญชีของคุณกับบัญชี osu! ได้คุณจะได้เข้าสู่ระบบได้โดยใช้บัญชี osu! แทนที่จะใช้ขื่อผู้ใช้งานและรหัสผ่านของ Rūrusetto"
 
 #: .\templates\users\settings.html:246
 msgid "already_connected_message"
-msgstr ""
+msgstr "บัญชีนี้ถูกเชื่อมต่อกับบัญชี osu! แล้วด้วยบัญชี"
 
 #: .\templates\users\settings.html:258
 msgid "delete_account_process"
-msgstr ""
+msgstr "กระบวนการลบบัญชี"

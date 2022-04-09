@@ -1,25 +1,7 @@
 from rest_framework import serializers
-from wiki.models import Ruleset, Subpage, RulesetStatus
+from wiki.models import Ruleset, Subpage, RulesetStatus, RecommendBeatmap
 from users.models import Profile
 from django.contrib.auth.models import User
-
-
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ['username', 'email']
-
-
-class ProfileMiniSerializer(serializers.ModelSerializer):
-    """
-    Serializer that will only filter the profile of owner to use in RulesetListingSerializer.
-    """
-    user = UserSerializer()
-
-    class Meta:
-        model = Profile
-        fields = ['id', 'user', 'image']
-        depth = 1
 
 
 # Serializer for listing page
@@ -146,7 +128,47 @@ class SubpageSerializer(serializers.ModelSerializer):
             return {}
 
 
+# Serializer for recommend beatmap
+
+
+class RecommendBeatmapSerializer(serializers.ModelSerializer):
+    """
+    Serializer for recommend beatmap model to get full detail of recommend beatmap.
+    """
+    user_detail = serializers.SerializerMethodField()
+
+    class Meta:
+        model = RecommendBeatmap
+        fields = ['user_detail', 'beatmap_id', 'beatmapset_id', 'title', 'artist', 'source', 'creator',
+                  'approved', 'difficultyrating', 'bpm', 'version', 'url', 'beatmap_cover', 'beatmap_thumbnail',
+                  'beatmap_card', 'beatmap_list', 'comment', 'created_at']
+
+    def get_user_detail(self, obj):
+        try:
+            return ProfileMiniSerializer(Profile.objects.get(id=obj.user_id)).data
+        except Profile.DoesNotExist:
+            return {}
+
+
 # Serializer for user and profile
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['username', 'email']
+
+
+class ProfileMiniSerializer(serializers.ModelSerializer):
+    """
+    Serializer that will only filter the profile of owner to use in RulesetListingSerializer.
+    """
+    user = UserSerializer()
+
+    class Meta:
+        model = Profile
+        fields = ['id', 'user', 'image']
+        depth = 1
+
 
 class UserFullSerializer(serializers.ModelSerializer):
     """

@@ -1,6 +1,6 @@
 from .serializers import *
 from django.views.decorators.csrf import csrf_exempt
-from wiki.models import Ruleset, Subpage
+from wiki.models import Ruleset, Subpage, RecommendBeatmap
 from users.models import Profile
 from django.contrib.auth.models import User
 from django.http import HttpResponse, JsonResponse
@@ -105,3 +105,60 @@ def user(request, user_id):
     if request.method == 'GET':
         serializer = UserFullSerializer(profile)
         return JsonResponse(serializer.data)
+
+@csrf_exempt
+def recommend_beatmap(request, rulesets_slug):
+    """
+    View for return list of all ruleset's recommend beatmap
+
+    :param request: WSGI request from user
+    :param rulesets_slug: Ruleset slug in ruleset database model
+    :return: list of ruleset's recommend beatmap
+    """
+    try:
+        ruleset = Ruleset.objects.get(slug=rulesets_slug)
+    except Ruleset.DoesNotExist:
+        return JsonResponse(make_404_json_response('The ruleset is not found'), status=404, content_type="application/json")
+
+    if request.method == 'GET':
+        all_approved_recommend_beatmap = RecommendBeatmap.objects.filter(ruleset_id=ruleset.id, owner_approved=True, owner_seen=True)
+        serializer = RecommendBeatmapSerializer(all_approved_recommend_beatmap, many=True)
+        return JsonResponse(serializer.data, safe=False)
+
+@csrf_exempt
+def recommend_beatmap_only_creator(request, rulesets_slug):
+    """
+    View for return list of ruleset's recommend beatmap but filter only the beatmap that creator recommend.
+
+    :param request: WSGI request from user
+    :param rulesets_slug: Ruleset slug in ruleset database model
+    :return: list of ruleset's recommend beatmap but filter only the beatmap that creator recommend
+    """
+    try:
+        ruleset = Ruleset.objects.get(slug=rulesets_slug)
+    except Ruleset.DoesNotExist:
+        return JsonResponse(make_404_json_response('The ruleset is not found'), status=404, content_type="application/json")
+
+    if request.method == 'GET':
+        recommend_beatmap_only_creator = RecommendBeatmap.objects.filter(user_id=ruleset.owner, ruleset_id=ruleset.id, owner_approved=True, owner_seen=True)
+        serializer = RecommendBeatmapSerializer(recommend_beatmap_only_creator, many=True)
+        return JsonResponse(serializer.data, safe=False)
+
+@csrf_exempt
+def recommend_beatmap_other_players(request, rulesets_slug):
+    """
+    View for return list of ruleset's recommend beatmap but filter only the beatmap that recommend by other user except ruleset's creator.
+
+    :param request: WSGI request from user
+    :param rulesets_slug: Ruleset slug in ruleset database model
+    :return: list of ruleset's recommend beatmap but filter only the beatmap that recommend by other user except ruleset's creator
+    """
+    try:
+        ruleset = Ruleset.objects.get(slug=rulesets_slug)
+    except Ruleset.DoesNotExist:
+        return JsonResponse(make_404_json_response('The ruleset is not found'), status=404, content_type="application/json")
+
+    if request.method == 'GET':
+        recommend_beatmap_only_users = RecommendBeatmap.objects.filter(ruleset_id=ruleset.id, owner_approved=True, owner_seen=True).exclude(user_id=ruleset.owner)
+        serializer = RecommendBeatmapSerializer(recommend_beatmap_only_users, many=True)
+        return JsonResponse(serializer.data, safe=False)

@@ -189,9 +189,14 @@ class UserFullSerializer(serializers.ModelSerializer):
         if obj.tag == '':
             return []
         tags_list = obj.tag.split(',')
-        tags_list = [Tag.objects.get(id=int(tag)) for tag in tags_list]
+        tags_list_converted = []
+        for tag in tags_list:
+            try:
+                tags_list_converted.append(Tag.objects.get(id=int(tag)))
+            except Tag.DoesNotExist:
+                pass
         try:
-            return TagSerializer(tags_list, many=True).data
+            return TagSerializer(tags_list_converted, many=True).data
         except Tag.DoesNotExist:
             return []
 

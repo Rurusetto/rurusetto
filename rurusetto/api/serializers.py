@@ -33,6 +33,24 @@ class RulesetListingSerializer(serializers.ModelSerializer):
             return {}
 
 
+class RulesetProfileSerializer(serializers.ModelSerializer):
+    """
+    Serializer for use in profile serializer that don't need owner detail.
+    """
+    status = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Ruleset
+        fields = ['id', 'name', 'slug', 'description', 'icon', 'light_icon', 'verified', 'archive',
+                  'direct_download_link', 'can_download', 'status']
+
+    def get_status(self, obj):
+        try:
+            return StatusDetailSerializer(RulesetStatus.objects.get(ruleset=obj)).data
+        except RulesetStatus.DoesNotExist:
+            return {}
+
+
 # Serializer for rulesets detail
 
 
@@ -202,7 +220,7 @@ class UserFullSerializer(serializers.ModelSerializer):
 
     def get_created_rulesets(self, obj):
         try:
-            return RulesetListingSerializer(Ruleset.objects.filter(owner=str(obj.id)), many=True).data
+            return RulesetProfileSerializer(Ruleset.objects.filter(owner=str(obj.id)), many=True).data
         except Ruleset.DoesNotExist:
             return []
 

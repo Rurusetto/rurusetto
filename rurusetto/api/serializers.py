@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from wiki.models import Ruleset, Subpage, RulesetStatus, RecommendBeatmap
-from users.models import Profile
+from users.models import Profile, Tag
 from django.contrib.auth.models import User
 
 
@@ -85,7 +85,9 @@ class RulesetsDetailSerializer(serializers.ModelSerializer):
         except RulesetStatus.DoesNotExist:
             return {}
 
+
 # Serializer for subpoge
+
 
 class RulesetsSubpageSerializer(serializers.ModelSerializer):
     """
@@ -150,7 +152,7 @@ class RecommendBeatmapSerializer(serializers.ModelSerializer):
             return {}
 
 
-# Serializer for user and profile
+# Serializer for user and profile related fields
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -175,8 +177,35 @@ class UserFullSerializer(serializers.ModelSerializer):
     Serializer for full detail of users
     """
     user = UserSerializer()
+    tags = serializers.SerializerMethodField()
+    created_rulesets = serializers.SerializerMethodField()
 
     class Meta:
         model = Profile
-        fields = ['id', 'user', 'image', 'cover', 'cover_light', 'about_me', 'osu_username']
+        fields = ['id', 'user', 'tags', 'image', 'cover', 'cover_light', 'about_me', 'osu_username', 'created_rulesets']
         depth = 1
+
+    def get_tags(self, obj):
+        if obj.tag == '':
+            return []
+        tags_list = obj.tag.split(',')
+        tags_list = [Tag.objects.get(id=int(tag)) for tag in tags_list]
+        try:
+            return TagSerializer(tags_list, many=True).data
+        except Tag.DoesNotExist:
+            return []
+
+    def get_created_rulesets(self, obj):
+        try:
+            return RulesetListingSerializer(Ruleset.objects.filter(owner=str(obj.id)), many=True).data
+        except Ruleset.DoesNotExist:
+            return []
+
+
+class TagSerializer(serializers.ModelSerializer):
+    """
+    Serializer for tag model
+    """
+    class Meta:
+        model = Tag
+        fields = ['name', 'pills_color', 'font_color', 'description']

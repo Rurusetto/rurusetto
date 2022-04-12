@@ -201,6 +201,10 @@ MAX_PROFILE_PICTURE_SIZE = 5242880
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+# Add support for trailing URL slash support
+
+APPEND_SLASH = False
+
 # API key and API configuration
 
 OSU_OAUTH_CLIENT_ID = config('OSU_OAUTH_CLIENT_ID', default="")

@@ -203,7 +203,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Add support for trailing URL slash support
 
-APPEND_SLASH = False
+APPEND_SLASH = True
 
 # API key and API configuration
 

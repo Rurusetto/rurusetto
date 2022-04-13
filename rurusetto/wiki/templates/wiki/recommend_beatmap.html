@@ -21,7 +21,7 @@
         <div class="col-sm-2">
             <p data-aos="fade-up" data-aos-duration="700"><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url "wiki" ruleset.slug %}"><i class="fas fa-chevron-circle-left icon-menu hvr-icon"></i> {% trans "back_to_main_page" %}</a></p>
         </div>
-        {% if user.is_authenticated and is_owner %}
+        {% if user.is_authenticated and is_owner and user.is_staff %}
             <div class="col-sm-3">
                 <p data-aos="fade-up" data-aos-duration="700"><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{% url 'add_recommend_beatmap' ruleset.slug %}"><i class="fas fa-plus icon-menu hvr-icon"></i> {% trans "add_a_recommend_beatmap" %}</a></p>
             </div>

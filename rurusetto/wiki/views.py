@@ -579,7 +579,7 @@ def recommend_beatmap_approval(request, rulesets_slug):
     ruleset = get_object_or_404(Ruleset, slug=rulesets_slug)
     hero_image = ruleset.recommend_beatmap_cover.url
     hero_image_light = ruleset.recommend_beatmap_cover.url
-    if request.user.id == int(ruleset.owner):
+    if request.user.id == int(ruleset.owner) or request.user.is_staff:
         beatmap_list = make_beatmap_aapproval_view(ruleset.id)
         if len(beatmap_list) == 0:
             no_beatmap = True
@@ -618,7 +618,7 @@ def approve_recommend_beatmap(request, rulesets_slug, beatmap_id):
     """
     beatmap = RecommendBeatmap.objects.get(id=beatmap_id)
     ruleset = Ruleset.objects.get(id=beatmap.ruleset_id)
-    if request.user.id == int(ruleset.owner):
+    if request.user.id == int(ruleset.owner) or request.user.is_staff:
         if beatmap.owner_seen:
             messages.error(request, f"You already qualified this beatmap!")
         else:
@@ -645,7 +645,7 @@ def deny_recommend_beatmap(request, rulesets_slug, beatmap_id):
     """
     beatmap = RecommendBeatmap.objects.get(id=beatmap_id)
     ruleset = Ruleset.objects.get(id=beatmap.ruleset_id)
-    if request.user.id == int(ruleset.owner):
+    if request.user.id == int(ruleset.owner) or request.user.is_staff:
         if beatmap.owner_seen:
             messages.error(request, f"You already qualified this beatmap!")
         else:

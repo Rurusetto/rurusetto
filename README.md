@@ -25,6 +25,11 @@ The old source code of the website is in [the other branch](https://github.com/R
 
 We also provide the API for developer who want to use of our rulesets information in our database for your own dream project. More info available in the [documentation](https://docs.rulesets.info/).
 
+## Localization
+
+We just add support for localization on website. You can help us by translate your language by go to [POEditor](https://poeditor.com/join/project/mQzxWNxFDz), add your language that you want to help us to translate and start on translation process.
+We always update localization file weekly.
+
 ## Developing Rūrusetto
 
 Please make sure you have the following prerequisites:

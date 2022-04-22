@@ -26,6 +26,7 @@ LANGUAGE = (
     # Current available language
     # In-system value - Show value
     ('en', 'English (Default)'),
+    ('fr', 'French (Not complete)'),
     ('th', 'Thai')
 )
 

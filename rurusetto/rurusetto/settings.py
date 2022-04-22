@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 from django.core.management.utils import get_random_secret_key
 from decouple import config, Csv
+from django.utils.translation import gettext_lazy as _
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -142,6 +143,12 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
+
+LANGUAGES = [
+    ('de', _('German')),
+    ('th', _('Thai')),
+    ('en', _('English')),
+]
 
 LANGUAGE_CODE = 'en'
 

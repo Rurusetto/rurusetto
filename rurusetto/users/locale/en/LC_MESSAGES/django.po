@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2022.410.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-09 06:04+0700\n"
-"PO-Revision-Date: 2022-04-09 06:20+0700\n"
+"POT-Creation-Date: 2022-04-24 00:31+0700\n"
+"PO-Revision-Date: 2022-04-24 00:31+0700\n"
 "Last-Translator: Phawit Pornwattanakul <me@helloyeew.dev>\n"
 "Language-Team: Rūrusetto <me@helloyeew.dev>\n"
 "Language: English\n"
@@ -370,7 +370,8 @@ msgstr "Site Languages"
 
 #: .\templates\users\settings.html:191
 msgid "site_languages_description"
-msgstr "Settings for global site languages. (This function is under test phase)"
+msgstr ""
+"Settings for global site languages. (This function is under test phase)"
 
 #: .\templates\users\settings.html:197
 msgid "rulesets_creator_settings"
@@ -450,3 +451,29 @@ msgstr "This account is connected to osu! account with username"
 #: .\templates\users\settings.html:269
 msgid "delete_account_process"
 msgstr "Delete Account Process"
+
+#: .\views.py:54 .\views.py:63 .\views.py:74 .\views.py:86 .\views.py:98
+msgid "Your settings has been updated!"
+msgstr "Your settings has been updated!"
+
+#: .\views.py:132
+msgid "All profile and website settings are visible here!"
+msgstr "All profile and website settings are visible here!"
+
+#: .\views.py:169
+#, python-format
+msgid "%(username)s 's profile"
+msgstr "%(username)s 's profile"
+
+#: .\views.py:172
+#, python-format
+msgid "%(username)s 's profile page"
+msgstr "%(username)s 's profile page"
+
+#: .\views.py:200
+msgid "Account successfully deleted."
+msgstr "Account successfully deleted."
+
+#: .\views.py:203
+msgid "Delete Account failed. Please check your username and password."
+msgstr "Delete Account failed. Please check your username and password."

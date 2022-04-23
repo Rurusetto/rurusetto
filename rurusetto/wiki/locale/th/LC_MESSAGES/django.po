@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2022.410.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-09 03:30+0700\n"
-"PO-Revision-Date: 2022-04-09 02:44+0700\n"
+"POT-Creation-Date: 2022-04-24 02:02+0700\n"
+"PO-Revision-Date: 2022-04-24 02:13+0700\n"
 "Last-Translator: Phawit Pornwattanakul <me@helloyeew.dev>\n"
 "Language-Team: Rūrusetto <me@helloyeew.dev>\n"
 "Language: Thai\n"
@@ -100,10 +100,11 @@ msgid "create"
 msgstr "สร้าง"
 
 #: .\templates\wiki\archived_rulesets.html:10 .\templates\wiki\listing.html:24
+#: .\views.py:832
 msgid "archived_rulesets"
 msgstr "rulesets ที่ถูกเก็บแล้ว"
 
-#: .\templates\wiki\archived_rulesets.html:11
+#: .\templates\wiki\archived_rulesets.html:11 .\views.py:835
 msgid "archived_rulesets_description"
 msgstr "รายการของ rulesets ที่หยุดอัพเดทหรือถูกเก็บโดยผู้สร้าง rulesets"
 
@@ -143,12 +144,13 @@ msgstr "โลโก้"
 
 #: .\templates\wiki\base.html:89 .\templates\wiki\base.html:147
 #: .\templates\wiki\base.html:178 .\templates\wiki\listing.html:10
+#: .\views.py:90
 msgid "listing"
 msgstr "รายการ"
 
 #: .\templates\wiki\base.html:92 .\templates\wiki\base.html:148
 #: .\templates\wiki\base.html:179 .\templates\wiki\edit_ruleset_wiki.html:199
-#: .\templates\wiki\status.html:13
+#: .\templates\wiki\status.html:13 .\views.py:681
 msgid "status"
 msgstr "สถานะ"
 
@@ -159,6 +161,7 @@ msgstr "ติดตั้ง"
 
 #: .\templates\wiki\base.html:98 .\templates\wiki\base.html:150
 #: .\templates\wiki\base.html:181 .\templates\wiki\changelog.html:14
+#: .\views.py:65
 msgid "changelog"
 msgstr "บันทึกการเปลี่ยนแปลง"
 
@@ -215,7 +218,7 @@ msgstr "สร้างด้วย ❤️ โดย"
 msgid "and"
 msgstr "และ"
 
-#: .\templates\wiki\changelog.html:15
+#: .\templates\wiki\changelog.html:15 .\views.py:68
 msgid "changelog_description"
 msgstr "ประวัติการอัพเดทของเว็ปไซต์อยู่ที่นี่"
 
@@ -235,10 +238,11 @@ msgid "release_at"
 msgstr "ปล่อยเมื่อ"
 
 #: .\templates\wiki\create_ruleset.html:10 .\templates\wiki\listing.html:20
+#: .\views.py:129
 msgid "add_a_new_ruleset"
 msgstr "เพิ่ม ruleset ใหม่"
 
-#: .\templates\wiki\create_ruleset.html:11
+#: .\templates\wiki\create_ruleset.html:11 .\views.py:132
 msgid "add_a_new_ruleset_description"
 msgstr ""
 "มาเพิ่ม ruleset ใหม่กัน! นี่เป็นของคุณหรือเปล่า? ไม่ต้องห่วง! "
@@ -447,12 +451,14 @@ msgstr "น้อน Rūrusetto จตรวจเจอมาว่าลิง
 #, fuzzy
 #| msgid "name_description"
 msgid "ruleset_filename_description2"
-msgstr "เพียงแค่ใส่ชื่อไฟล์เต็มๆของ ruleset ที่อยู่ในหน้า release บน GitHub และกระบวนการอื่นๆอย่างเช่นอัพเดทลิงก์ดาวน์โหลดน้อน Rūrusetto จะทำให้คุณเอง!"
+msgstr ""
+"เพียงแค่ใส่ชื่อไฟล์เต็มๆของ ruleset ที่อยู่ในหน้า release บน GitHub "
+"และกระบวนการอื่นๆอย่างเช่นอัพเดทลิงก์ดาวน์โหลดน้อน Rūrusetto จะทำให้คุณเอง!"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:177
 msgid ""
-"ตัวอย่างจาก <a href=\"https://github.com/naoei/tau\">tau</a> : osu.Game."
-"Rulesets.Tau.dll และลิงก์จะแสดงผลเป็น <a href=\"https://github.com/"
+"Ex. From <a href=\"https://github.com/naoei/tau\">tau</a> : osu.Game."
+"Rulesets.Tau.dll and the link will render as <a href=\"https://github.com/"
 "naoei/tau/releases/latest/download/osu.Game.Rulesets.Tau.dll\">https://"
 "github.com/naoei/tau/releases/latest/download/osu.Game.Rulesets.Tau.dll</a>"
 msgstr ""
@@ -475,7 +481,9 @@ msgstr "การตั้งค่าของเจ้าของ ruleset"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:208
 msgid "pre_release_description"
-msgstr "ถ้ากล่องนี้ถูกเช็ค ระบบเช็คสถานะ ruleset อัตโนมัติจะดึงสถานะนของ ruleset นี้ในแบบ pre-release แทนการดึงปกติและในหน้าสถานะของ ruleset ป้าย pre-release จะถูกแสดงด้วย"
+msgstr ""
+"ถ้ากล่องนี้ถูกเช็ค ระบบเช็คสถานะ ruleset อัตโนมัติจะดึงสถานะนของ ruleset นี้ในแบบ pre-"
+"release แทนการดึงปกติและในหน้าสถานะของ ruleset ป้าย pre-release จะถูกแสดงด้วย"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:214 .\templates\wiki\status.html:54
 #: .\templates\wiki\status.html:119 .\templates\wiki\status.html:154
@@ -485,18 +493,21 @@ msgstr "เล่นได้"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:218
 msgid "playable_description"
-msgstr "สถานะว่า ruleset ของคุณยังเล่นได้อยู่มั้ย (สถานะนี้สามารถเปลี่ยนโดยผู้ดูแลวิกิได้ถ้าสถานะนี้ไม่ถูกต้องตามจริง)"
+msgstr ""
+"สถานะว่า ruleset ของคุณยังเล่นได้อยู่มั้ย "
+"(สถานะนี้สามารถเปลี่ยนโดยผู้ดูแลวิกิได้ถ้าสถานะนี้ไม่ถูกต้องตามจริง)"
 
 #: .\templates\wiki\edit_subpage.html:10
 msgid "edit_subpage"
 msgstr "แก้ไขหน้าย่อย"
 
-#: .\templates\wiki\edit_subpage.html:11
+#: .\templates\wiki\edit_subpage.html:11 .\views.py:391
 #, python-format
 msgid ""
 "You are currently edit subpage \"%(subpage_name)s\" on ruleset name "
 "\"%(ruleset_name)s\"."
-msgstr "คุณกำลังแก้ไขหน้าย่อย \"%(subpage_name)s\" ของ ruleset ที่ชื่อ \"%(ruleset_name)s\"."
+msgstr ""
+"คุณกำลังแก้ไขหน้าย่อย \"%(subpage_name)s\" ของ ruleset ที่ชื่อ \"%(ruleset_name)s\"."
 
 #: .\templates\wiki\edit_subpage.html:64
 msgid "submit"
@@ -508,7 +519,8 @@ msgstr "ลบหน้าย่อย"
 
 #: .\templates\wiki\edit_subpage.html:70
 msgid "delete_subpage_description"
-msgstr "คลิกปุ่มข้างล่างนี้ถ้าคุณต้องการลบหน้าย่อยนี้ โปรดทราบว่าการดำเนินการนี้ไม่สามารถย่อนกลับได้นะ!"
+msgstr ""
+"คลิกปุ่มข้างล่างนี้ถ้าคุณต้องการลบหน้าย่อยนี้ โปรดทราบว่าการดำเนินการนี้ไม่สามารถย่อนกลับได้นะ!"
 
 #: .\templates\wiki\edit_subpage.html:71
 msgid "delete_this_subpage"
@@ -518,7 +530,7 @@ msgstr "ลบหน้าย่อยนี้"
 msgid "welcome_to_rurusetto"
 msgstr "ยินดีต้อนรับเข้าสู่ rūrusetto!"
 
-#: .\templates\wiki\home.html:10
+#: .\templates\wiki\home.html:10 .\views.py:41
 msgid "wiki_that_contain"
 msgstr "วิกิที่รวม rulesets ทุกอันของ osu!"
 
@@ -538,11 +550,11 @@ msgstr ""
 "คุณกำลังอยู่ในเซิฟเวอร์ที่ใช้ทดสอบ, กรุณาไปที่ <a href=\"https://rulesets.info"
 "\">เวอร์ชั่นทั่วไป</a> สำหรับประสบการณ์ที่เต็มที่"
 
-#: .\templates\wiki\install.html:9
+#: .\templates\wiki\install.html:9 .\views.py:307
 msgid "install_and_update_rulesets"
 msgstr "ติดตั้งและอัพเดท rulesets"
 
-#: .\templates\wiki\install.html:11
+#: .\templates\wiki\install.html:11 .\views.py:310
 msgid "install_and_update_rulesets_description"
 msgstr "ติดตั้งและอัพเดท rulesets ใน osu!lazer ด้วย rūrusetto"
 
@@ -558,10 +570,11 @@ msgid ""
 "\"><i class=\"fas fa-info-circle icon-menu hvr-icon\"></i> rulesets status "
 "page</a> and then clicking on the <code>Download latest version</code> on "
 "the desired ruleset."
-msgstr "ไฟล์ ruleset สามารถหาได้จาก <a class=\"text-decoration-none text-center "
+msgstr ""
+"ไฟล์ ruleset สามารถหาได้จาก <a class=\"text-decoration-none text-center "
 "spacing-hover-short hvr-icon-bounce\" target=\"_blank\" href=\"%(url_status)s"
-"\"><i class=\"fas fa-info-circle icon-menu hvr-icon\"></i> หน้าสถานะของ ruleset"
-"</a> และคลิกไปที่ <code>ดาวน์โหลดเวอร์ชั่นล่าสุด</code> บน ruleset ที่ต้องการได้เลย"
+"\"><i class=\"fas fa-info-circle icon-menu hvr-icon\"></i> หน้าสถานะของ "
+"ruleset</a> และคลิกไปที่ <code>ดาวน์โหลดเวอร์ชั่นล่าสุด</code> บน ruleset ที่ต้องการได้เลย"
 
 #: .\templates\wiki\install.html:55
 msgid ""
@@ -585,10 +598,11 @@ msgid ""
 "data folder directly via Windows Explorer, by default this location is <code>"
 "%%AppData%%/osu!/rulesets</code>. On MacOS default this location is in "
 "application itself."
-msgstr "ในแผงหน้าการตั้งค่าจะมีปุ่มเพื่อไปที่ <code>Open osu! folder (เปิดโฟลเดอร์ osu!)</"
-"code> ภายในส่วน “General (ทั่วไป)” ใน windows คุณสามารถไปที่โฟล์เดอร์ข้อมูล "
-"ได้โดยตรงผ่าน Windows Explorer ปกติที่อยู่ของโฟลเดอร์นี้จะอยู่ที่ <code>"
-"%%AppData%%/osu!/rulesets</code>. ใน MacOS โฟลเดอร์นี้จะอยู่ที่ภายในแอป"
+msgstr ""
+"ในแผงหน้าการตั้งค่าจะมีปุ่มเพื่อไปที่ <code>Open osu! folder (เปิดโฟลเดอร์ osu!)</code> "
+"ภายในส่วน “General (ทั่วไป)” ใน windows คุณสามารถไปที่โฟล์เดอร์ข้อมูล ได้โดยตรงผ่าน "
+"Windows Explorer ปกติที่อยู่ของโฟลเดอร์นี้จะอยู่ที่ <code>%%AppData%%/osu!/rulesets</"
+"code>. ใน MacOS โฟลเดอร์นี้จะอยู่ที่ภายในแอป"
 
 #: .\templates\wiki\install.html:68
 msgid "open_osu_folder"
@@ -606,8 +620,9 @@ msgstr "ขั้นตอนที่ 2: ติดตั้ง ruleset"
 msgid ""
 "Copy the ruleset file (.dll file that you just downloaded) into the rulesets "
 "directory, do make sure that duplicate copies of the ruleset are overwritten."
-msgstr "คัดลอกไฟล์ ruleset (ไฟล์ .dll ที่คุณเพิ่งดาวน์โหลดมา) ไปในโฟลเดอร์ที่ชื่อว่า rulesets"
-" ตรวจสอบให้มั่นใจด้วยว่าไฟล์ ruleset ที่ซ้ำกันถูกเขียนทับแล้ว"
+msgstr ""
+"คัดลอกไฟล์ ruleset (ไฟล์ .dll ที่คุณเพิ่งดาวน์โหลดมา) ไปในโฟลเดอร์ที่ชื่อว่า rulesets "
+"ตรวจสอบให้มั่นใจด้วยว่าไฟล์ ruleset ที่ซ้ำกันถูกเขียนทับแล้ว"
 
 #: .\templates\wiki\install.html:78
 msgid "Other rulesets also could share the same folder."
@@ -622,8 +637,9 @@ msgid ""
 "After completing the above steps, you may need to restart osu!lazer if it is "
 "already open. Once restarted, you should see the ruleset alongside the "
 "standard rulesets."
-msgstr "หลังจากเสร็จทุกขั้นตอนแล้วคุณอาจจะต้องปิดและเปิด osu!lazer ใหม่ถ้ามันเปิดอยู่แล้ว"
-"หลังจากที่ปิดและเปิดใหม่แล้วคุณจะเห็น ruleset ใหม่อยู่ข้างๆ ruleset มาตรฐาน"
+msgstr ""
+"หลังจากเสร็จทุกขั้นตอนแล้วคุณอาจจะต้องปิดและเปิด osu!lazer "
+"ใหม่ถ้ามันเปิดอยู่แล้วหลังจากที่ปิดและเปิดใหม่แล้วคุณจะเห็น ruleset ใหม่อยู่ข้างๆ ruleset มาตรฐาน"
 
 #: .\templates\wiki\install.html:87
 msgid "rulesets_show_in_lazer_toolbar"
@@ -639,7 +655,7 @@ msgid ""
 "file."
 msgstr "ในการอัพเดท rulesets เพียงแค่ทำขั้นตอนเดิมและเขียนทับไฟล์ rulesets เก่า"
 
-#: .\templates\wiki\listing.html:11
+#: .\templates\wiki\listing.html:11 .\views.py:93
 msgid "listing_description"
 msgstr "รายการของ rulesets ที่มีอยู่"
 
@@ -651,11 +667,11 @@ msgstr "Ruleset ที่คุณซ่อนไว้อยู่"
 msgid "all_rulesets"
 msgstr "Ruleset ทุกอัน"
 
-#: .\templates\wiki\maintainer.html:11
+#: .\templates\wiki\maintainer.html:11 .\views.py:709
 msgid "maintainer_menu"
 msgstr "เมนูผู้ดูแล"
 
-#: .\templates\wiki\maintainer.html:12
+#: .\templates\wiki\maintainer.html:12 .\views.py:712
 msgid "maintainer_menu_description"
 msgstr "เมนูสำหรับผู้ดูแลเท่านั้น"
 
@@ -685,7 +701,10 @@ msgstr "อัพเดทเวอร์ชั่นของ rulesets"
 
 #: .\templates\wiki\maintainer.html:59
 msgid "update_rulesets_version_description"
-msgstr "นี่เป็น action ที่วิ่งยาวๆและต้องปล่อยให้มันวิ่งเสมอ มันจะดึงข้อมูลจาก GitHub API และอัพเดทเวอร์ชั่นของ ruleset บนหน้าสถานะทุกๆ 30 นาที กรุณาเช็คงานอื่นๆก่อนเริ่ม action นี้เพราะ rate limit ของ GitHub API"
+msgstr ""
+"นี่เป็น action ที่วิ่งยาวๆและต้องปล่อยให้มันวิ่งเสมอ มันจะดึงข้อมูลจาก GitHub API "
+"และอัพเดทเวอร์ชั่นของ ruleset บนหน้าสถานะทุกๆ 30 นาที กรุณาเช็คงานอื่นๆก่อนเริ่ม action "
+"นี้เพราะ rate limit ของ GitHub API"
 
 #: .\templates\wiki\maintainer.html:64
 msgid "update_rulesets_version_once"
@@ -693,7 +712,9 @@ msgstr "อัพเดทเวอร์ชั่นของ rulesets คร�
 
 #: .\templates\wiki\maintainer.html:67
 msgid "update_rulesets_version_once_description"
-msgstr "action นี้จะอัพเดทเวอร์ชั่นของ ruleset อย่างรวดเร็ว action นี้สามารถเริ่มได้เมื่อบางสิ่งบางอย่างผิดปกติหรือไม่อยางเริ่ม action ที่วิ่งยาวๆ"
+msgstr ""
+"action นี้จะอัพเดทเวอร์ชั่นของ ruleset อย่างรวดเร็ว action "
+"นี้สามารถเริ่มได้เมื่อบางสิ่งบางอย่างผิดปกติหรือไม่อยางเริ่ม action ที่วิ่งยาวๆ"
 
 #: .\templates\wiki\maintainer.html:84
 msgid "start_at"
@@ -862,9 +883,11 @@ msgstr "อนุมัติ"
 msgid "deny"
 msgstr "ปฏิเสธ"
 
-#: .\templates\wiki\status.html:14
+#: .\templates\wiki\status.html:14 .\views.py:684
 msgid "status_description"
-msgstr "สถานะของ rulesets ทุกอันอยู่ที่นี่ (และคุณสามารถดาวน์โหลดและอัพเดท rulesets อย่างรวดเร็วได้ด้วยหน้านี้!)"
+msgstr ""
+"สถานะของ rulesets ทุกอันอยู่ที่นี่ (และคุณสามารถดาวน์โหลดและอัพเดท rulesets "
+"อย่างรวดเร็วได้ด้วยหน้านี้!)"
 
 #: .\templates\wiki\status.html:56 .\templates\wiki\status.html:121
 #: .\templates\wiki\status.html:156 .\templates\wiki\status.html:191
@@ -908,7 +931,9 @@ msgstr "ดาวน์โหลดเวอร์ชั่นล่าสุด
 
 #: .\templates\wiki\status.html:103
 msgid "not_support_pre_release_ruleset"
-msgstr "เรายังไม่รับรองการดาวร์โหลดโดยตรงสำหรับ ruleset ที่ pre-release มาจาก GitHub กรุณาไปโหลดในหน้า release ของ GitHub แทน"
+msgstr ""
+"เรายังไม่รับรองการดาวร์โหลดโดยตรงสำหรับ ruleset ที่ pre-release มาจาก GitHub "
+"กรุณาไปโหลดในหน้า release ของ GitHub แทน"
 
 #: .\templates\wiki\status.html:105 .\templates\wiki\status.html:140
 msgid "github_release_page"
@@ -924,15 +949,18 @@ msgid ""
 "Function is not available due to the rulesets source is from GitHub and "
 "<code>Ruleset Filename</code> field is missing or blank. Please fill the "
 "<code>Ruleset Filename</code> in the rulesets setting!"
-msgstr "ฟังก์ชั่นไม่พร้อมใช้งานเนื่องจากที่มาของ rulesets มาจาก GitHub และช่อง "
-"<code>ชื่อไฟล์ Ruleset</code> ถูกปล่อยว่าง กรุณาไปใส่ "
-"<code>ชื่อไฟล์ Ruleset</code> ในการตั้งต่า rulesets ด้วย"
+msgstr ""
+"ฟังก์ชั่นไม่พร้อมใช้งานเนื่องจากที่มาของ rulesets มาจาก GitHub และช่อง <code>ชื่อไฟล์ "
+"Ruleset</code> ถูกปล่อยว่าง กรุณาไปใส่ <code>ชื่อไฟล์ Ruleset</code> ในการตั้งต่า "
+"rulesets ด้วย"
 
 #: .\templates\wiki\status.html:172
 msgid ""
 "This function is not support in rulesets that is from Patreon. You can go to "
 "rulesets creator's Patreon at <code>Get from Patreon</code>!"
-msgstr "ฟังก์ชั่นนี้ไม่รองรับ rulesets ที่มาจาก Patreon คุณสามารถไปที่หน้า Patreon ของผู้สร้างได้ที่ <code>Get from Patreon</code>!"
+msgstr ""
+"ฟังก์ชั่นนี้ไม่รองรับ rulesets ที่มาจาก Patreon คุณสามารถไปที่หน้า Patreon ของผู้สร้างได้ที่ "
+"<code>Get from Patreon</code>!"
 
 #: .\templates\wiki\status.html:175 .\templates\wiki\wiki_page.html:165
 msgid "get_from_patreon"
@@ -942,7 +970,9 @@ msgstr "รับจาก Patreon"
 msgid ""
 "Rūrusetto-chan don't know this link's type so you can download the ruleset "
 "from its source."
-msgstr "น้อน Rūrusetto ไม่รู้ชนิดของลิงก์นี้ฉะนั้นคุณสามารถดาวน์โหลด ruleset นี้ได้จากที่มาของ ruleset นี้ได้เลย"
+msgstr ""
+"น้อน Rūrusetto ไม่รู้ชนิดของลิงก์นี้ฉะนั้นคุณสามารถดาวน์โหลด ruleset นี้ได้จากที่มาของ ruleset "
+"นี้ได้เลย"
 
 #: .\templates\wiki\status.html:210 .\templates\wiki\wiki_page.html:167
 msgid "ruleset_source"
@@ -1009,3 +1039,111 @@ msgstr "ซื้อกาแฟให้"
 #: .\templates\wiki\wiki_page.html:193
 msgid "github_sponsors"
 msgstr "GitHub Sponsors"
+
+#: .\views.py:38
+msgid "home"
+msgstr "หน้าหลัก"
+
+#: .\views.py:123
+#, python-format
+msgid "Ruleset name %(name)s has added to the list!"
+msgstr "Ruleset ชื่อ %(name)s ถูกเพิ่มเข้ารายการแล้ว!"
+
+#: .\views.py:243
+#, fuzzy, python-format
+#| msgid ""
+#| " You are currently editing content on ruleset named \"%(ruleset_name)s\"."
+msgid ""
+"You are currently editing content on ruleset named \"%(ruleset_name)s\"."
+msgstr "คุณกำลังแก้ไขเนื้อหาของ ruleset ที่ชื่อ \"%(ruleset_name)s\"."
+
+#: .\views.py:278
+#, python-format
+msgid "Subpage \"%(title)s\" for %(name)s has been created!"
+msgstr "หน้าย่อย \"%(title)s\" สำหรับ %(name)s ถูกสร้างขึ้นแล้ว!"
+
+#: .\views.py:288
+#, fuzzy, python-format
+#| msgid ""
+#| "You are currently edit subpage \"%(subpage_name)s\" on ruleset name "
+#| "\"%(ruleset_name)s\"."
+msgid "You are currently add a subpage for ruleset name \"%(name)s\"."
+msgstr ""
+"คุณกำลังแก้ไขหน้าย่อย \"%(subpage_name)s\" ของ ruleset ที่ชื่อ \"%(ruleset_name)s\"."
+
+#: .\views.py:375
+msgid "Edit subpage successfully!"
+msgstr "แก้ไขหน้าย่อยสำเร็จ!"
+
+#: .\views.py:421
+msgid "Delete subpage successfully!"
+msgstr "ลบหน้าย่อยสำเร็จ!"
+
+#: .\views.py:423
+msgid "You don't have permission to do this!"
+msgstr "คุณไม่มีสิทธิ์ทำสิ่งนี้!"
+
+#: .\views.py:507
+#, python-format
+msgid "Added %(title)s [%(version)s] as a recommended beatmap successfully!"
+msgstr "เพิ่ม %(title)s [%(version)s] เป็นบีทแมพแนะนำสำเร็จแล้ว!"
+
+#: .\views.py:509
+#, python-format
+msgid ""
+"Added %(title)s [%(version)s] to a waiting list! Please wait for the ruleset "
+"owner to approve your beatmap!"
+msgstr ""
+"เพิ่ม %(title)s [%(version)s] เข้ารายการรออนุมัติแล้ว! กรุณารอเจ้าของ ruleset เข้ามาอนุมัติบีทแมพนะ!"
+
+#: .\views.py:512
+msgid "Adding beatmap failed! (Cannot connect to osu! API)"
+msgstr "เพิ่มบีทแมพไม่สำเร็จ (เชื่อมต่อ osu! API ไม่สำเร็จ)"
+
+#: .\views.py:514
+msgid "Adding beatmap failed! (Beatmap ID not found in osu! mode.)"
+msgstr "เพิ่มบีทแมพไม่สำเร็จ (ไม่พบบีทแมพไอดีนี้ในโหมด osu!)"
+
+#: .\views.py:517
+msgid "Adding beatmap failed! (You are already recommend this beatmap.)"
+msgstr "เพิ่มบีทแมพไม่สำเร็จ (คุณแนะนำบีทแมพนี้ไปแล้ว)"
+
+#: .\views.py:522
+msgid ""
+"Adding beatmap failed! (This beatmap is already recommended by other user in "
+"this ruleset.)"
+msgstr "เพิ่มบีทแมพไม่สำเร็จ (บีทแมพนี้ถูกแนะนำโดยผู้เล่นอื่นใน ruleset นี้แล้ว)"
+
+#: .\views.py:524
+msgid "Adding beatmap failed! (Unknown error.)"
+msgstr "เพิ่มบีทแมพไม่สำเร็จ (ไม่ทราบข้อผิดพลาด)"
+
+#: .\views.py:530
+#, fuzzy, python-format
+#| msgid "You are currently add a new recommend beatmap for %(ruleset_name)s."
+msgid "add a new recommend beatmap for %(name)s"
+msgstr "คุณกำลังเพิ่มบีทแมพแนะนำสำหรับ %(ruleset_name)s"
+
+#: .\views.py:559
+#, fuzzy, python-format
+#| msgid "recommend_beatmaps"
+msgid "recommend beatmaps for %(name)s"
+msgstr "บีทแมปแนะนำ"
+
+#: .\views.py:602
+#, fuzzy, python-format
+#| msgid "You are currently add a new recommend beatmap for %(ruleset_name)s."
+msgid "approve a recommend beatmap for %(name)s"
+msgstr "คุณกำลังเพิ่มบีทแมพแนะนำสำหรับ %(ruleset_name)s"
+
+#: .\views.py:631 .\views.py:658
+msgid "You already qualified this beatmap!"
+msgstr "คุณได้คัดเลือกบีทแมพนี้ไปแล้ว!"
+
+#: .\views.py:636
+msgid "Approve beatmap successfully!"
+msgstr "อนุมัติบีทแมพสำเร็จ!"
+
+#: .\views.py:664
+msgid "Deny beatmap successfully!"
+msgstr "ปฏิเสธบีทแมพสำเร็จ!"

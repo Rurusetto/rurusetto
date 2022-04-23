@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2022.410.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-09 06:04+0700\n"
-"PO-Revision-Date: 2022-04-09 06:20+0700\n"
+"POT-Creation-Date: 2022-04-24 00:33+0700\n"
+"PO-Revision-Date: 2022-04-24 00:33+0700\n"
 "Last-Translator: Phawit Pornwattanakul <me@helloyeew.dev>\n"
 "Language-Team: Rūrusetto <me@helloyeew.dev>\n"
 "Language: Thai\n"
@@ -441,3 +441,29 @@ msgstr "บัญชีนี้ถูกเชื่อมต่อกับบ
 #: .\templates\users\settings.html:269
 msgid "delete_account_process"
 msgstr "กระบวนการลบบัญชี"
+
+#: .\views.py:54 .\views.py:63 .\views.py:74 .\views.py:86 .\views.py:98
+msgid "Your settings has been updated!"
+msgstr "การตั้งค่าของคุณได้รับการอัพเดทแล้ว!"
+
+#: .\views.py:132
+msgid "All profile and website settings are visible here!"
+msgstr "การตั้งค่าโปรไฟล์และเว็ปไซต์ทั้งหมดอยู่ที่นี่!"
+
+#: .\views.py:169
+#, python-format
+msgid "%(username)s 's profile"
+msgstr "โปรไฟล์ของ %(username)s"
+
+#: .\views.py:172
+#, python-format
+msgid "%(username)s 's profile page"
+msgstr "หน้าโปรไฟล์ของ %(username)s"
+
+#: .\views.py:200
+msgid "Account successfully deleted."
+msgstr "บัญชีของคุณถูกลบแล้ว"
+
+#: .\views.py:203
+msgid "Delete Account failed. Please check your username and password."
+msgstr "ลบบัญชีไม่สำเร็จ กรุณาตรวจสอบชื่อผู้ใช้และรหัสผ่านของคุณ"

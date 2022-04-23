@@ -204,7 +204,7 @@ msgstr "Stable"
 
 #: .\templates\wiki\changelog.html:35
 msgid "release_at"
-msgstr "Publication le"
+msgstr "Publié le"
 
 #: .\templates\wiki\create_ruleset.html:10 .\templates\wiki\listing.html:20
 msgid "add_a_new_ruleset"
@@ -367,15 +367,15 @@ msgstr "Une miniature qui est visible lorsque quelqu'un partage le lien. Le rés
 
 #: .\templates\wiki\edit_ruleset_wiki.html:134
 msgid "recommend_beatmaps_cover_image"
-msgstr "Recommend Beatmaps Cover Image"
+msgstr "Image de couverture pour les beatmaps recommandées"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:136
 msgid "current_recommend_beatmaps_cover_image"
-msgstr "Current Recommend Beatmaps Cover Image"
+msgstr "Image de couverture actuelle pour les beatmaps recommandées"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:139
 msgid "recommend_beatmaps_cover_image_description"
-msgstr "A cover image of the ruleset's recommend beatmaps page."
+msgstr "Une image de couverture de la page des beatmaps recommandées pour le ruleset."
 
 #: .\templates\wiki\edit_ruleset_wiki.html:145
 msgid "custom_css"
@@ -400,7 +400,7 @@ msgstr "Nom du fichier du ruleset"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:176
 msgid "source_description2"
-msgstr "Mettez juste le nom du fichier ruleset complet qui est disponible dans le GitHub et Rūrusetto-chan fera les autres opérations pour vous comme mettre à jour, télécharger et lier !"
+msgstr "Mettez juste le nom du fichier ruleset complet qui est disponible sur GitHub et Rūrusetto-chan fera les autres opérations pour vous comme mettre à jour, télécharger et lier !"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:177
 msgid "Ex. From <a href=\"https://github.com/naoei/tau\">tau</a> : osu.Game.Rulesets.Tau.dll and the link will render as <a href=\"https://github.com/naoei/tau/releases/latest/download/osu.Game.Rulesets.Tau.dll\">https://github.com/naoei/tau/releases/latest/download/osu.Game.Rulesets.Tau.dll</a>"
@@ -487,337 +487,337 @@ msgstr "télécharger le fichier des rulesets"
 
 #: .\templates\wiki\install.html:47
 msgid "Ruleset files can be obtained at <a class=\"text-decoration-none text-center spacing-hover-short hvr-icon-bounce\" target=\"_blank\" href=\"%(url_status)s\"><i class=\"fas fa-info-circle icon-menu hvr-icon\"></i> rulesets status page</a> and then clicking on the <code>Download latest version</code> on the desired ruleset."
-msgstr "Les fichiers du ruleset peuvent être obtenus à la <a class=\"text-decoration-none text-center spacing-hover-short hvr-icon-bounce\" target=\"_blank\" href=\"%(url_status)s\"><i class=\"fas fa-info-circle icon-menu hvr-icon\"></i>page de statut des rulesets</a>, puis cliquez sur <code>Télécharger la dernière version</code> sur le ruleset souhaité."
+msgstr "Les fichiers de rulesets peuvent être obtenus à la <a class=\"text-decoration-none text-center spacing-hover-short hvr-icon-bounce\" target=\"_blank\" href=\"%(url_status)s\"><i class=\"fas fa-info-circle icon-menu hvr-icon\"></i> page de statut des rulesets</a>, puis cliquez sur <code>Télécharger la dernière version</code> sur le ruleset souhaité."
 
 #: .\templates\wiki\install.html:55
 msgid "The changelog and download link will automatically update when a ruleset is updated."
-msgstr "The changelog and download link will automatically update when a ruleset is updated."
+msgstr "Le journal de modifications et le lien de téléchargement se mettront automatiquement à jour lorsqu'un ruleset sera mis à jour."
 
 #: .\templates\wiki\install.html:59
 msgid "import rulesets to osu!lazer"
-msgstr "import rulesets to osu!lazer"
+msgstr "importer des rulesets dans osu!lazer"
 
 #: .\templates\wiki\install.html:64
 msgid "step 1: navigate to osu! data directory"
-msgstr "step 1: navigate to osu! data directory"
+msgstr "étape 1 : allez dans votre dossier contenant les données d'osu!"
 
 #: .\templates\wiki\install.html:65
 msgid "In osu!lazer’s setting panel, there is a button to <code>Open osu! folder</code> within the “General” section. On windows you could navigate to the data folder directly via Windows Explorer, by default this location is <code>%%AppData%%/osu!/rulesets</code>. On MacOS default this location is in application itself."
-msgstr "In osu!lazer’s setting panel, there is a button to <code>Open osu! folder</code> within the “General” section. On windows you could navigate to the data folder directly via Windows Explorer, by default this location is <code>%AppData%/osu!/rulesets</code>. On MacOS default this location is in application itself."
+msgstr "Dans le panneau de configuration d'osu!lazer, il y a un bouton <code>Ouvrir le dossier d'osu!</code> dans la section \"Général\". Sur Windows vous pourriez vous rendre dans ce dossier directement depuis l'Explorateur de Fichiers. Par défaut, son chemin est <code>%AppData%/osu!/rulesets</code>. Sur MacOS, son chemin est dans l'application elle-même."
 
 #: .\templates\wiki\install.html:68
 msgid "open_osu_folder"
-msgstr "Open osu! folder"
+msgstr "Ouvrez le dossier osu!"
 
 #: .\templates\wiki\install.html:73
 msgid "move_rulesets_file"
-msgstr "Move rulesets file"
+msgstr "Déplacez le fichier de ruleset"
 
 #: .\templates\wiki\install.html:76
 msgid "step 2: installing the ruleset"
-msgstr "step 2: installing the ruleset"
+msgstr "étape 2 : installer le ruleset"
 
 #: .\templates\wiki\install.html:77
 msgid "Copy the ruleset file (.dll file that you just downloaded) into the rulesets directory, do make sure that duplicate copies of the ruleset are overwritten."
-msgstr "Copy the ruleset file (.dll file that you just downloaded) into the rulesets directory, do make sure that duplicate copies of the ruleset are overwritten."
+msgstr "Copiez le fichier de ruleset (le .dll que vous venez juste de télécharger) dans le dossier de rulesets, assurez-vous que les doublons du ruleset soient écrasées."
 
 #: .\templates\wiki\install.html:78
 msgid "Other rulesets also could share the same folder."
-msgstr "Other rulesets also could share the same folder."
+msgstr "D'autres rulesets peuvent également partager le même dossier."
 
 #: .\templates\wiki\install.html:83
 msgid "step 3: have fun!"
-msgstr "step 3: have fun!"
+msgstr "étape 3 : amusez-vous !"
 
 #: .\templates\wiki\install.html:84
 msgid "After completing the above steps, you may need to restart osu!lazer if it is already open. Once restarted, you should see the ruleset alongside the standard rulesets."
-msgstr "After completing the above steps, you may need to restart osu!lazer if it is already open. Once restarted, you should see the ruleset alongside the standard rulesets."
+msgstr "Après avoir terminé les étapes ci-dessus, il se peut que vous deviez redémarrer osu!lazer s'il est déjà ouvert. Une fois redémarré, vous devriez voir le ruleset parmi les rulesets standard."
 
 #: .\templates\wiki\install.html:87
 msgid "rulesets_show_in_lazer_toolbar"
-msgstr "Rulesets show in lazer's toolbar"
+msgstr "Les rulesets sont affichés dans la barre d'outils d'osu!lazer"
 
 #: .\templates\wiki\install.html:93
 msgid "update rulesets"
-msgstr "update rulesets"
+msgstr "mettre à jour des rulesets"
 
 #: .\templates\wiki\install.html:96
 msgid "To update rulesets, just do the same step and overwrite the old rulesets file."
-msgstr "To update rulesets, just do the same step and overwrite the old rulesets file."
+msgstr "Pour mettre à jour des rulesets, recommencez les étapes précédentes et écrasez l'ancien fichier de ruleset."
 
 #: .\templates\wiki\listing.html:11
 msgid "listing_description"
-msgstr "List of available rulesets."
+msgstr "Liste des rulesets disponibles."
 
 #: .\templates\wiki\listing.html:48
 msgid "your_hidden_rulesets"
-msgstr "Your hidden rulesets"
+msgstr "Vos rulesets masqués"
 
 #: .\templates\wiki\listing.html:76
 msgid "all_rulesets"
-msgstr "All rulesets"
+msgstr "Tous les rulesets"
 
 #: .\templates\wiki\maintainer.html:11
 msgid "maintainer_menu"
-msgstr "Maintainer Menu"
+msgstr "Menu du mainteneur"
 
 #: .\templates\wiki\maintainer.html:12
 msgid "maintainer_menu_description"
-msgstr "Menu for maintainer only!"
+msgstr "Un menu uniquement pour le mainteneur !"
 
 #: .\templates\wiki\maintainer.html:41
 msgid "run_action_for_maintainer"
-msgstr "Run an action only for maintainer"
+msgstr "Réaliser une action uniquement pour le mainteneur"
 
 #: .\templates\wiki\maintainer.html:43
 msgid "warning"
-msgstr "Warning"
+msgstr "Attention"
 
 #: .\templates\wiki\maintainer.html:43
 msgid "action_warning"
-msgstr "This action is running in background and consume a lot of calculation power. Please use it carefully!"
+msgstr "Cette action fonctionne en arrière-plan et consomme énormément de puissance de calcul. Utilisez-la avec précaution !"
 
 #: .\templates\wiki\maintainer.html:47
 msgid "update_all_beatmaps_metadata"
-msgstr "Update all beatmaps metadata"
+msgstr "Mettre à jour les métadonnées de toutes les beatmaps"
 
 #: .\templates\wiki\maintainer.html:50
 msgid "update_all_beatmaps_metadata_description"
-msgstr "Update all beatmap metadata in the server."
+msgstr "Mettre à jour les métadonnées de toutes les beatmaps dans le serveur"
 
 #: .\templates\wiki\maintainer.html:56
 msgid "update_rulesets_version"
-msgstr "Update rulesets version"
+msgstr "Mettre à jour les versions des rulesets"
 
 #: .\templates\wiki\maintainer.html:59
 msgid "update_rulesets_version_description"
-msgstr "This is a long task that must be always run. It will fetch the data from GitHub API and update the ruleset version from on status page every 30 minutes. Please check on other worker before run this due to the rate limit of GitHub API."
+msgstr "Ceci est une longue tâche qui doit toujours être exécutée. Elle récupèrera les données de l'API GitHub et mettra à jour les versions des rulesets sur la page de statut toutes les 30 minutes. Vérifiez auprès des autres contributeurs avant de lancer ceci à cause de la limite de requêtes de l'API GitHub."
 
 #: .\templates\wiki\maintainer.html:64
 msgid "update_rulesets_version_once"
-msgstr "Update rulesets version once"
+msgstr "Mettre à jour les versions des rulesets une seule fois"
 
 #: .\templates\wiki\maintainer.html:67
 msgid "update_rulesets_version_once_description"
-msgstr "This action will be quickly update all rulesets version. This can be run when something happen or don't want to use the long task."
+msgstr "Cette action mettra rapidement à jour toutes les versions des rulesets. Ceci peut être utilisé lorsque quelque chose est déjà en exécution ou lorsqu'on ne veut pas utiliser la longue tâche."
 
 #: .\templates\wiki\maintainer.html:84
 msgid "start_at"
-msgstr "Start at"
+msgstr "Démarré à"
 
 #: .\templates\wiki\maintainer.html:85
 msgid "duration"
-msgstr "Duration"
+msgstr "Durée"
 
 #: .\templates\wiki\maintainer.html:85 .\templates\wiki\maintainer.html:98
 msgid "calculating"
-msgstr "Calculating"
+msgstr "En calcul"
 
 #: .\templates\wiki\maintainer.html:91 .\templates\wiki\maintainer.html:92
 #: .\templates\wiki\maintainer.html:141 .\templates\wiki\maintainer.html:142
 msgid "idle"
-msgstr "Idle"
+msgstr "Inactif"
 
 #: .\templates\wiki\maintainer.html:97 .\templates\wiki\maintainer.html:145
 msgid "loading"
-msgstr "Loading"
+msgstr "En chargement"
 
 #: .\templates\wiki\maintainer.html:101 .\templates\wiki\maintainer.html:148
 msgid "successfully_running"
-msgstr "Successfully running"
+msgstr "S'exécute avec succès"
 
 #: .\templates\wiki\maintainer.html:103 .\templates\wiki\maintainer.html:150
 msgid "run_failed"
-msgstr "Run failed"
+msgstr "Exécution échouée"
 
 #: .\templates\wiki\maintainer.html:107
 msgid "running_status"
-msgstr "Running status"
+msgstr "Statut d'exécution"
 
 #: .\templates\wiki\maintainer.html:146
 msgid "running"
-msgstr "Running"
+msgstr "En cours d'exécution"
 
 #: .\templates\socialaccount\connections.html:46
 msgid "unknown_status"
-msgstr "Unknown status"
+msgstr "Statut inconnu"
 
 #: .\templates\wiki\recommend_beatmap.html:13
 msgid "%(ruleset_name)s recommended beatmaps"
-msgstr "%(ruleset_name)s recommended beatmaps"
+msgstr "Beatmaps recommandées de %(ruleset_name)s"
 
 #: .\templates\wiki\recommend_beatmap.html:14
 msgid "Recommend beatmaps for playing with %(ruleset_name)s from ruleset creator and other player."
-msgstr "Recommend beatmaps for playing with %(ruleset_name)s from ruleset creator and other player."
+msgstr "Recommander des beatmaps pour jouer avec %(ruleset_name)s du créateur du ruleset et d'autres joueurs"
 
 #: .\templates\wiki\recommend_beatmap.html:22 .\templates\wiki\subpage.html:30
 msgid "back_to_main_page"
-msgstr "Back to main page"
+msgstr "Revenir à la page principale"
 
 #: .\templates\wiki\recommend_beatmap.html:26
 msgid "add_a_recommend_beatmap"
-msgstr "Add a recommend beatmap"
+msgstr "Ajouter une beatmap recommandée"
 
 #: .\templates\wiki\recommend_beatmap.html:29
 msgid "approve_pending_beatmap"
-msgstr "Approve pending beatmap"
+msgstr "Approuver une beatmap en attente"
 
 #: .\templates\wiki\recommend_beatmap.html:33
 msgid "suggest_a_beatmap"
-msgstr "Suggest a beatmap"
+msgstr "Suggérer une beatmap"
 
 #: .\templates\wiki\recommend_beatmap.html:57
 msgid "Recommended by %(ruleset_name)s creator"
-msgstr "Recommended by %(ruleset_name)s creator"
+msgstr "Recommandé par le créateur de %(ruleset_name)s"
 
 #: .\templates\wiki\recommend_beatmap.html:66
 msgid "recommend_by_players"
-msgstr "Recommended by players"
+msgstr "Recommandé par les joueurs"
 
 #: .\templates\wiki\recommend_beatmap.html:76
 msgid "no_recommend_beatmap"
-msgstr "No recommended beatmaps added for this ruleset."
+msgstr "Aucune beatmap recommandé pour ce ruleset."
 
 #: .\templates\wiki\recommend_beatmap.html:77
 msgid "lets_add_one"
-msgstr "Let's add one!"
+msgstr "Ajoutons-en une !"
 
 #: .\templates\wiki\recommend_beatmap_approval.html:13
 msgid "%(ruleset_name)s recommended beatmaps approval"
-msgstr "%(ruleset_name)s recommended beatmaps approval"
+msgstr "Approbation des beatmaps recommandées de %(ruleset_name)s"
 
 #: .\templates\wiki\recommend_beatmap_approval.html:14
 msgid "recommend_beatmaps_approval_description"
-msgstr "Let's see how is the recommendation from other player."
+msgstr "Voyons les recommandations des autres joueurs."
 
 #: .\templates\wiki\recommend_beatmap_approval.html:23
 msgid "back_to_recommend_beatmaps"
-msgstr "Back to recommend beatmaps"
+msgstr "Revenir au beatmaps recommandées"
 
 #: .\templates\wiki\recommend_beatmap_approval.html:60
 msgid "already_approve_all_beatmaps"
-msgstr "You are already response to all beatmaps."
+msgstr "Vous êtes déjà approuvés pour toutes les beatmaps"
 
 #: .\templates\wiki\recommend_beatmap_approval.html:61
 msgid "congrats"
-msgstr "Congrats!"
+msgstr "Félicitations !"
 
 #: .\templates\wiki\snippets\beatmap_approval_card.html:16
 #: .\templates\wiki\snippets\beatmap_card.html:16
 msgid "by"
-msgstr "by"
+msgstr "par"
 
 #: .\templates\wiki\snippets\beatmap_approval_card.html:24
 #: .\templates\wiki\snippets\beatmap_card.html:24
 msgid "loved"
-msgstr "loved"
+msgstr "aimée"
 
 #: .\templates\wiki\snippets\beatmap_approval_card.html:26
 #: .\templates\wiki\snippets\beatmap_card.html:26
 msgid "qualified"
-msgstr "qualified"
+msgstr "qualifiée"
 
 #: .\templates\wiki\snippets\beatmap_approval_card.html:28
 #: .\templates\wiki\snippets\beatmap_card.html:28
 msgid "approved"
-msgstr "approved"
+msgstr "approuvée"
 
 #: .\templates\wiki\snippets\beatmap_approval_card.html:30
 #: .\templates\wiki\snippets\beatmap_card.html:30
 msgid "ranked"
-msgstr "ranked"
+msgstr "classée"
 
 #: .\templates\wiki\snippets\beatmap_approval_card.html:32
 #: .\templates\wiki\snippets\beatmap_card.html:32
 msgid "pending"
-msgstr "pending"
+msgstr "en attente"
 
 #: .\templates\wiki\snippets\beatmap_approval_card.html:34
 #: .\templates\wiki\snippets\beatmap_card.html:34
 msgid "wip"
-msgstr "wip"
+msgstr "en construction"
 
 #: .\templates\wiki\snippets\beatmap_approval_card.html:36
 #: .\templates\wiki\snippets\beatmap_card.html:36
 msgid "graveyard"
-msgstr "graveyard"
+msgstr "cimetière"
 
 #: .\templates\wiki\snippets\beatmap_approval_card.html:40
 #: .\templates\wiki\snippets\beatmap_card.html:40
 msgid "mapped_by"
-msgstr "mapped by"
+msgstr "mappé par"
 
 #: .\templates\wiki\snippets\beatmap_approval_card.html:43
 #: .\templates\wiki\snippets\beatmap_approval_card.html:45
 #: .\templates\wiki\snippets\beatmap_card.html:43
 #: .\templates\wiki\snippets\beatmap_card.html:45
 msgid "recommend_by"
-msgstr "Recommend by"
+msgstr "Recommandé par"
 
 #: .\templates\wiki\snippets\beatmap_approval_card.html:47
 msgid "approve"
-msgstr "Approve"
+msgstr "Approuver"
 
 #: .\templates\wiki\snippets\beatmap_approval_card.html:47
 msgid "deny"
-msgstr "Deny"
+msgstr "Rejeter"
 
 #: .\templates\wiki\status.html:14
 msgid "status_description"
-msgstr "Status of all rulesets are here. (and you can download and update the rulesets instantly with this page!)"
+msgstr "Les status de tous les rulesets sont ici. (et vous pouvez télécharger et mettre à jour les rulesets instantanément avec cette page !)"
 
 #: .\templates\wiki\status.html:56 .\templates\wiki\status.html:121
 #: .\templates\wiki\status.html:156 .\templates\wiki\status.html:191
 msgid "borked"
-msgstr "borked"
+msgstr "cassé"
 
 #: .\templates\wiki\status.html:58 .\templates\wiki\status.html:123
 #: .\templates\wiki\status.html:158 .\templates\wiki\status.html:193
 msgid "unknown"
-msgstr "unknown"
+msgstr "inconnu"
 
 #: .\templates\wiki\status.html:67 .\templates\wiki\status.html:132
 #: .\templates\wiki\status.html:167 .\templates\wiki\status.html:202
 #: .\templates\wiki\wiki_page.html:74
 msgid "mark_as_archived"
-msgstr "This ruleset is marked as archived and no longer update by the creator."
+msgstr "Ce ruleset est marqué comme archivé et n'est plus mis à jour par son créateur."
 
 #: .\templates\wiki\status.html:72
 msgid "latest_version_name"
-msgstr "Latest version name"
+msgstr "Nom de la dernière version"
 
 #: .\templates\wiki\status.html:74
 msgid "latest_release"
-msgstr "Latest release"
+msgstr "Dernière version"
 
 #: .\templates\wiki\status.html:76
 msgid "file_detail"
-msgstr "File Detail"
+msgstr "Détails du fichier"
 
 #: .\templates\wiki\status.html:77
 msgid "size"
-msgstr "Size"
+msgstr "Taille"
 
 #: .\templates\wiki\status.html:84
 msgid "latest_version_changelog"
-msgstr "Latest Version Changelog"
+msgstr "Journal de modifications de la dernière version"
 
 #: .\templates\wiki\status.html:101
 msgid "download_latest_version"
-msgstr "Download latest version"
+msgstr "Télécharger la dernière version"
 
 #: .\templates\wiki\status.html:103
 msgid "not_support_pre_release_ruleset"
-msgstr "We are not support direct download for pre-release rulesets from GitHub now. Please get it from ruleset release page instead."
+msgstr "Nous ne supportons pas le téléchargement direct des pré-versions de rulesets depuis GitHub. Veuillez le récupérer depuis la page des versions du ruleset."
 
 #: .\templates\wiki\status.html:105 .\templates\wiki\status.html:140
 msgid "github_release_page"
-msgstr "GitHub release page"
+msgstr "Page des versions GitHub"
 
 #: .\templates\wiki\status.html:106 .\templates\wiki\status.html:141
 #: .\templates\wiki\status.html:176 .\templates\wiki\status.html:211
 msgid "go_to_rulesets_wiki_page"
-msgstr "Go to rulesets wiki page"
+msgstr "Aller à la page wiki du ruleset"
 
 #: .\templates\wiki\status.html:137
 msgid "Function is not available due to the rulesets source is from GitHub and <code>Ruleset Filename</code> field is missing or blank. Please fill the <code>Ruleset Filename</code> in the rulesets setting!"
@@ -829,65 +829,65 @@ msgstr "This function is not support in rulesets that is from Patreon. You can g
 
 #: .\templates\wiki\status.html:175 .\templates\wiki\wiki_page.html:165
 msgid "get_from_patreon"
-msgstr "Get from Patreon"
+msgstr "Obtenir depuis Patreon"
 
 #: .\templates\wiki\status.html:207
 msgid "Rūrusetto-chan don't know this link's type so you can download the ruleset from its source."
-msgstr "Rūrusetto-chan don't know this link's type so you can download the ruleset from its source."
+msgstr "Rūrusetto-chan ne connaît pas ce type de lien donc vous pouvez télécharger le ruleset depuis sa source."
 
 #: .\templates\wiki\status.html:210 .\templates\wiki\wiki_page.html:167
 msgid "ruleset_source"
-msgstr "Ruleset source"
+msgstr "Source du ruleset"
 
 #: .\templates\wiki\subpage.html:34
 msgid "edit_this_subpage"
-msgstr "Edit this subpage"
+msgstr "Modifier cette sous-page"
 
 #: .\templates\wiki\subpage.html:56 .\templates\wiki\subpage.html:58
 #: .\templates\wiki\wiki_page.html:80 .\templates\wiki\wiki_page.html:82
 msgid "last_edited_by"
-msgstr "Last edited by"
+msgstr "Modifié pour la dernière fois par"
 
 #: .\templates\wiki\subpage.html:56 .\templates\wiki\subpage.html:58
 #: .\templates\wiki\wiki_page.html:80 .\templates\wiki\wiki_page.html:82
 msgid "at"
-msgstr "at"
+msgstr "le"
 
 #: .\templates\wiki\wiki_page.html:40
 msgid "edit_rulesets_info"
-msgstr "Edit rulesets info"
+msgstr "Modifier les information des rulesets"
 
 #: .\templates\wiki\wiki_page.html:43
 msgid "add_new_subpage"
-msgstr "Add new subpage"
+msgstr "Ajouter une nouvelle sous-page"
 
 #: .\templates\wiki\wiki_page.html:47
 msgid "recommend_beatmaps"
-msgstr "Recommend beatmaps"
+msgstr "Beatmaps recommandées"
 
 #: .\templates\users\settings.html:176
 msgid "subpage_index"
-msgstr "Subpage Index"
+msgstr "Index de la sous-page"
 
 #: .\templates\users\settings.html:49
 msgid "creator"
-msgstr "Creator"
+msgstr "Créateur"
 
 #: .\templates\wiki\wiki_page.html:163
 msgid "github_repositories"
-msgstr "GitHub Repositories"
+msgstr "Dépôts GitHub"
 
 #: .\templates\wiki\wiki_page.html:172
 msgid "support_the_creator"
-msgstr "Support the creator"
+msgstr "Supporter le créateur"
 
 #: .\templates\users\settings.html:199
 msgid "support"
-msgstr "Support"
+msgstr "Supporter"
 
 #: .\templates\wiki\wiki_page.html:183
 msgid "message_from"
-msgstr "Message from"
+msgstr "Message de"
 
 #: .\templates\wiki\wiki_page.html:187
 msgid "patreon"
@@ -895,15 +895,15 @@ msgstr "Patreon"
 
 #: .\templates\wiki\wiki_page.html:190
 msgid "buy_a_coffee"
-msgstr "Buy a coffee"
+msgstr "Acheter un café"
 
 #: .\templates\wiki\wiki_page.html:193
 msgid "github_sponsors"
-msgstr "GitHub Sponsors"
+msgstr "Github Sponsors"
 
 #: .\templates\wiki\add_recommend_beatmap.html:11
 msgid "You are currently add a new recommend beatmap for %(ruleset_name)s."
-msgstr "You are currently editing content on ruleset named \"%(ruleset_name)s\"."
+msgstr "Vous êtes actuellement en train de modifier le contenu du ruleset \"%(ruleset_name)s\"."
 
 #: .\templates\account\login.html:20 .\templates\account\login.html:26
 #: .\templates\account\login.html:34 .\templates\account\login.html:63
@@ -911,61 +911,61 @@ msgstr "You are currently editing content on ruleset named \"%(ruleset_name)s\".
 #: .\templates\socialaccount\login.html:23
 #: .\templates\socialaccount\login.html:31
 msgid "login"
-msgstr "Log In"
+msgstr "Se connecter"
 
 #: .\templates\account\login.html:21 .\templates\account\login.html:27
 #: .\templates\account\login.html:35 .\templates\socialaccount\login.html:18
 #: .\templates\socialaccount\login.html:24
 #: .\templates\socialaccount\login.html:32
 msgid "login_to_rurusetto"
-msgstr "login to rūrusetto"
+msgstr "se connecter à rūrusetto"
 
 #: .\templates\account\login.html:68
 msgid "login_with"
-msgstr "Log in with"
+msgstr "Se connecter avec"
 
 #: .\templates\account\login.html:78
 msgid "no_account"
-msgstr "Don't have an account?"
+msgstr "Pas encore inscrit ?"
 
 #: .\templates\account\signup.html:13 .\templates\account\signup.html:19
 #: .\templates\account\signup.html:27
 msgid "register"
-msgstr "register"
+msgstr "s'inscrire"
 
 #: .\templates\account\signup.html:14 .\templates\account\signup.html:20
 #: .\templates\account\signup.html:28
 msgid "register_to_rurusetto"
-msgstr "register to rūrusetto world"
+msgstr "s'inscrire dans le monde de rūrusetto"
 
 #: .\templates\account\signup.html:54
 msgid "sign_up_with"
-msgstr "Sign up with"
+msgstr "S'inscrire avec"
 
 #: .\templates\account\signup.html:64
 msgid "already_have_account"
-msgstr "Already have an account?"
+msgstr "Déjà inscrit ?"
 
 #: .\templates\account\signup.html:64
 msgid "login_instead"
-msgstr "Login instead"
+msgstr "Se connecter"
 
 #: .\templates\socialaccount\authentication_error.html:18
 #: .\templates\socialaccount\authentication_error.html:46
 msgid "login_failed"
-msgstr "Login Failed"
+msgstr "Connexion échouée"
 
 #: .\templates\socialaccount\authentication_error.html:19
 msgid "login_failed_description"
-msgstr "failed to login to rūrusetto"
+msgstr "Echec de la connexion à rūrusetto"
 
 #: .\templates\socialaccount\authentication_error.html:49
 msgid "error_while_login_osu"
-msgstr "An error occurred while attempting to login via your osu! account."
+msgstr "Une erreur s'est produite en essayant de se connecter à votre compte osu!."
 
 #: .\templates\socialaccount\authentication_error.html:51
 msgid "back_to_login"
-msgstr "Back to login page"
+msgstr "Revenir à la page de connexion"
 
 #: .\templates\socialaccount\authentication_error.html:53
 msgid "return_to_homepage"
@@ -1055,23 +1055,23 @@ msgstr "Are you sure you want to delete your account? All of your info will be d
 
 #: .\templates\users\delete_account.html:70
 msgid "return_to_settings"
-msgstr "Return to settings"
+msgstr "Revenir aux paramètres"
 
 #: .\templates\users\profile.html:45
 msgid "edit_profile"
-msgstr "Edit Profile"
+msgstr "Modifier son profil"
 
 #: .\templates\users\profile.html:54
 msgid "created_ruleset"
-msgstr "created rulesets"
+msgstr "rulesets créés"
 
 #: .\templates\users\settings.html:12
 msgid "settings_description"
-msgstr "All profile and website settings are visible here!"
+msgstr "Tous les paramètres de profil et du site web sont visibles ici !"
 
 #: .\templates\users\settings.html:35
 msgid "main_menu"
-msgstr "Main Menu"
+msgstr "Menu Principal"
 
 #: .\templates\users\settings.html:42
 msgid "configuration"
@@ -1079,59 +1079,59 @@ msgstr "Configuration"
 
 #: .\templates\users\settings.html:45 .\templates\users\settings.html:251
 msgid "account"
-msgstr "Account"
+msgstr "Compte"
 
 #: .\templates\users\settings.html:58
 msgid "profile_sync"
-msgstr "Profile Sync"
+msgstr "Synchronisation"
 
 #: .\templates\users\settings.html:61
 msgid "update_profile_every_login_session"
-msgstr "Update profile every login session"
+msgstr "Mettre à jour le profil à chaque connexion"
 
 #: .\templates\users\settings.html:67
 msgid "update_profile_every_login_session_description"
-msgstr "If this is checked, the system will update your profile to make it the same as your osu! profile everytime time you login (Your profile setting will be disabled)."
+msgstr "Si cette case est cochée, le système mettra à jour votre profil pour qu'il soit le même que votre profil osu! à chaque fois que vous vous connecterez (Vos paramètres de profil seront désactivés)."
 
 #: .\templates\users\settings.html:72
 msgid "user_information"
-msgstr "User Information"
+msgstr "Informations de l'utilisateur"
 
 #: .\templates\users\settings.html:76
 msgid "username"
-msgstr "Username"
+msgstr "Pseudo"
 
 #: .\templates\users\settings.html:85
 msgid "email"
-msgstr "Email"
+msgstr "Adresse mail"
 
 #: .\templates\users\settings.html:93
 msgid "User information is handled by the system. If you want to customize your profile, please uncheck the <i>Update Profile Every Login Session</i> setting."
-msgstr "User information is handled by the system. If you want to customize your profile, please uncheck the <i>Update Profile Every Login Session</i> setting."
+msgstr "Les informations de l'utilisateur sont traitées par le système. Si vous souhaitez personnaliser votre profil, veuillez décocher le paramètre <i>Mettre à jour le profil à chaque connexion</i>."
 
 #: .\templates\users\settings.html:95
 msgid "profile_page_detail"
-msgstr "Profile Page Detail"
+msgstr "Détails du profil"
 
 #: .\templates\users\settings.html:99
 msgid "profile_picture"
-msgstr "Profile picture"
+msgstr "Photo de profil"
 
 #: .\templates\users\settings.html:101
 msgid "current_profile_picture"
-msgstr "Current Profile Picture"
+msgstr "Photo de profil actuelle"
 
 #: .\templates\users\settings.html:109
 msgid "profile_page_cover_image"
-msgstr "Profile page cover image"
+msgstr "Image de couverture du profil"
 
 #: .\templates\users\settings.html:119
 msgid "profile_page_cover_image_light_mode"
-msgstr "Profile page cover image in light mode"
+msgstr "Image de couverture du profil dans le mode clair"
 
 #: .\templates\users\settings.html:121
 msgid "current_light_mode_cover_image"
-msgstr "Current Light Mode Cover Image"
+msgstr "Image de couverture du profil actuelle dans le mode clair"
 
 #: .\templates\users\settings.html:129
 msgid "about_me"
@@ -1215,11 +1215,11 @@ msgstr "Link to your Ko-fi page so users can buy you coffee! (Leave blank if you
 
 #: .\templates\users\settings.html:233
 msgid "github_sponsors_link"
-msgstr "GitHub Sponsors Link"
+msgstr "Lien Github Sponsors"
 
 #: .\templates\users\settings.html:237
 msgid "github_sponsors_link_description"
-msgstr "Link to your GitHub Sponsors page. (Leave blank if you don't have a sponsors page)"
+msgstr "Reliez à votre page Github Sponsors. (Laissez vide si vous n'en avez pas)"
 
 #: .\templates\users\settings.html:252
 msgid "account_connection_settings"

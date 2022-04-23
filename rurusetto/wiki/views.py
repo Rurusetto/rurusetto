@@ -5,6 +5,7 @@ from django.shortcuts import render, redirect, get_object_or_404, resolve_url
 from django.templatetags.static import static
 from django.utils import timezone, translation
 from django.http import HttpResponse, JsonResponse
+from django.utils.translation import gettext
 from .models import Changelog, Ruleset, Subpage, RecommendBeatmap, Action, RulesetStatus
 from users.models import Profile
 from django.contrib.auth.models import User
@@ -34,10 +35,10 @@ def home(request):
     hero_image_light = 'img/home-cover-light.jpeg'
 
     context = {
-        'title': 'home',
+        'title': gettext('home'),
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
-        'opengraph_description': 'A page that contain all osu! ruleset',
+        'opengraph_description': gettext('wiki_that_contain'),
         'opengraph_url': resolve_url('home'),
         # Use make_listing_view function to get the User object from database and pass to template
         'rulesets': make_listing_view(Ruleset.objects.filter(hidden=False, archive=False).order_by(Lower('name'))),
@@ -61,10 +62,10 @@ def changelog(request):
 
     context = {
         'changelog_list': Changelog.objects.all().order_by('-time'),
-        'title': 'changelog',
+        'title': gettext('changelog'),
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
-        'opengraph_description': 'All update history of website are here.',
+        'opengraph_description': gettext('changelog_description'),
         'opengraph_url': resolve_url('changelog'),
     }
     if request.user.is_authenticated:
@@ -83,12 +84,13 @@ def listing(request):
     hero_image_light = 'img/listing-cover-light.png'
 
     context = {
-        'hidden_rulesets': make_listing_view(Ruleset.objects.filter(hidden=True, owner=str(request.user.id)).order_by(Lower('name'))),
+        'hidden_rulesets': make_listing_view(
+            Ruleset.objects.filter(hidden=True, owner=str(request.user.id)).order_by(Lower('name'))),
         'rulesets': make_listing_view(Ruleset.objects.filter(hidden=False, archive=False).order_by(Lower('name'))),
-        'title': 'listing',
+        'title': gettext('listing'),
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
-        'opengraph_description': 'List of available rulesets.',
+        'opengraph_description': gettext('listing_description'),
         'opengraph_url': resolve_url('listing'),
     }
     if request.user.is_authenticated:
@@ -118,16 +120,16 @@ def create_ruleset(request):
             form.instance.slug = slugify(unidecode(form.cleaned_data.get('name')))
             form.save()
             name = form.cleaned_data.get('name')
-            messages.success(request, f'Ruleset name {name} has added to the list!')
+            messages.success(request, gettext('Ruleset name %(name)s has added to the list!') % {'name': name})
             return redirect('listing')
     else:
         form = RulesetForm()
     context = {
         'form': form,
-        'title': 'add a new ruleset',
+        'title': gettext('add_a_new_ruleset'),
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
-        'opengraph_description': "Let's add a new ruleset! Is it yours? Don't worry! You can add it even if you didn't make the ruleset.",
+        'opengraph_description': gettext('add_a_new_ruleset_description'),
         'opengraph_url': resolve_url('create_ruleset'),
     }
     if request.user.is_authenticated:
@@ -145,7 +147,6 @@ def wiki_page(request, slug):
     :return: Render the wiki page and pass the value from context to the template (wiki_page.html)
     """
     ruleset = get_object_or_404(Ruleset, slug=slug)
-    can_support = False
     try:
         ruleset_owner_profile = Profile.objects.get(user=User.objects.get(id=int(ruleset.owner)))
         if ruleset_owner_profile.support_message == '' and ruleset_owner_profile.support_patreon == '' and ruleset_owner_profile.support_kofi == '' and ruleset_owner_profile.support_github_sponsors == '':
@@ -201,14 +202,16 @@ def edit_ruleset_wiki(request, slug):
         form = RulesetForm(request.POST, request.FILES, instance=ruleset)
         status_form = RulesetStatusForm(request.POST, instance=ruleset_status)
         if form.is_valid() and status_form.is_valid():
-            if source_link_type(form.instance.source) == "github" and not ruleset_status.pre_release and not status_form.cleaned_data['pre_release']:
+            if source_link_type(form.instance.source) == "github" and not ruleset_status.pre_release and not \
+            status_form.cleaned_data['pre_release']:
                 # Check that the download link when render is valid
                 if form.instance.source[-1] != "/":
                     download_url = f"{form.instance.source}/releases/latest/download/{form.instance.github_download_filename}"
                 else:
                     download_url = f"{form.instance.source}releases/latest/download/{form.instance.github_download_filename}"
                 html_status = requests.head(download_url)
-                if (html_status.status_code != 200) and (html_status.status_code != 302) and (html_status.status_code != 301):
+                if (html_status.status_code != 200) and (html_status.status_code != 302) and (
+                        html_status.status_code != 301):
                     error_message = f"The response of {download_url} is not success ({html_status.status_code}). Please check your filename or ruleset source link!"
                     messages.error(request, error_message)
                     return redirect('edit_wiki', slug=ruleset.slug)
@@ -232,11 +235,13 @@ def edit_ruleset_wiki(request, slug):
         'ruleset': ruleset,
         'name': Ruleset.objects.get(slug=slug).name,
         'source_type': source_link_type(ruleset.source),
-        'has_edit_permission': ruleset.owner == str(request.user.id) or request.user.is_superuser or request.user.is_staff,
+        'has_edit_permission': ruleset.owner == str(
+            request.user.id) or request.user.is_superuser or request.user.is_staff,
         'title': f'edit {ruleset.name}',
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
-        'opengraph_description': f'You are currently editing content on ruleset named "{Ruleset.objects.get(slug=slug).name}".',
+        'opengraph_description': gettext("You are currently editing content on ruleset named \"%(ruleset_name)s\".") % {
+            'ruleset_name': Ruleset.objects.get(slug=slug).name},
         'opengraph_url': resolve_url('edit_wiki', slug=slug),
     }
     if request.user.is_authenticated:
@@ -270,7 +275,8 @@ def add_subpage(request, slug):
             form.instance.slug = slugify(unidecode(form.cleaned_data.get('title')))
             form.save()
             title = form.cleaned_data.get('title')
-            messages.success(request, f'Subpage "{title}" for {target_ruleset.name} has been created! ')
+            messages.success(request, gettext('Subpage "%(title)s" for %(name)s has been created!') % {'title': title,
+                                                                                                       'name': target_ruleset.name})
             return redirect('wiki', slug=slug)
     else:
         form = SubpageForm()
@@ -279,7 +285,8 @@ def add_subpage(request, slug):
         'title': f'add a new subpage for {target_ruleset.name}',
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
-        'opengraph_description': f'You are currently add a subpage for ruleset name "{target_ruleset.name}".',
+        'opengraph_description': gettext('You are currently add a subpage for ruleset name "%(name)s".') % {
+            'name': target_ruleset.name},
         'opengraph_url': resolve_url('add_subpage', slug=slug),
     }
     if request.user.is_authenticated:
@@ -297,10 +304,10 @@ def install(request):
     hero_image = 'img/install-cover-night.png'
     hero_image_light = 'img/install-cover-light.png'
     context = {
-        'title': 'install and update rulesets',
+        'title': gettext('install_and_update_rulesets'),
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
-        'opengraph_description': 'How to install and update rulesets by using Rūrusetto.',
+        'opengraph_description': gettext('install_and_update_rulesets_description'),
         'opengraph_url': resolve_url('install'),
     }
     if request.user.is_authenticated:
@@ -365,7 +372,7 @@ def edit_subpage(request, rulesets_slug, subpage_slug):
             form.instance.slug = slugify(unidecode(form.cleaned_data.get('title')))
             form.save()
             changed_slug = form.instance.slug
-            messages.success(request, f'Edit subpage successfully!')
+            messages.success(request, gettext('Edit subpage successfully!'))
             return redirect('wiki', slug=changed_slug)
     else:
         form = SubpageForm(instance=subpage)
@@ -380,7 +387,10 @@ def edit_subpage(request, rulesets_slug, subpage_slug):
         'title': f'edit {ruleset.name}',
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
-        'opengraph_description': f'You are currently edit subpage "{Subpage.objects.get(slug=subpage_slug).title}" on ruleset name "{Ruleset.objects.get(slug=rulesets_slug).name}".',
+        'opengraph_description': gettext(
+            "You are currently edit subpage \"%(subpage_name)s\" on ruleset name \"%(ruleset_name)s\".") % {
+                                     'subpage_name': Subpage.objects.get(slug=subpage_slug).title,
+                                     'ruleset_name': Ruleset.objects.get(slug=rulesets_slug).name},
         'opengraph_url': resolve_url('edit_subpage', rulesets_slug=ruleset.slug, subpage_slug=subpage.slug),
     }
     if request.user.is_authenticated:
@@ -408,9 +418,9 @@ def delete_subpage(request, rulesets_slug, subpage_slug):
     subpage = Subpage.objects.get(slug=subpage_slug)
     if subpage.creator == str(request.user.id) or ruleset.owner == str(request.user.id):
         subpage.delete()
-        messages.success(request, "Delete subpage successfully!")
+        messages.success(request, gettext("Delete subpage successfully!"))
     else:
-        messages.error(request, "You don't have permission to do this!")
+        messages.error(request, gettext("You don't have permission to do this!"))
     return redirect('wiki', slug=rulesets_slug)
 
 
@@ -439,8 +449,8 @@ def add_recommend_beatmap(request, slug):
             if (request_data.status_code == 200) and (request_data.json() != []) and (
                     not RecommendBeatmap.objects.filter(beatmap_id=form.instance.beatmap_id, ruleset_id=ruleset.id,
                                                         owner_approved=True, owner_seen=True).exists()) and (
-            not RecommendBeatmap.objects.filter(user_id=str(request.user.id), owner_seen=False,
-                                                beatmap_id=form.instance.beatmap_id).exists()):
+                    not RecommendBeatmap.objects.filter(user_id=str(request.user.id), owner_seen=False,
+                                                        beatmap_id=form.instance.beatmap_id).exists()):
                 beatmap_json_data = request_data.json()[0]
                 # Download beatmap cover from osu! server and save it to the media storage and put the address in the
                 # RecommendBeatmap model that user want to add.
@@ -465,7 +475,7 @@ def add_recommend_beatmap(request, slug):
                 card_temp.write(card_pic.content)
                 card_temp.flush()
                 form.instance.beatmap_card.save(f"{form.instance.beatmap_id}.jpg",
-                                                     File(card_temp), save=True)
+                                                File(card_temp), save=True)
                 # Download beatmap list picture to beatmap_list field
                 list_pic = requests.get(
                     f"https://assets.ppy.sh/beatmaps/{beatmap_json_data['beatmapset_id']}/covers/list.jpg")
@@ -494,32 +504,30 @@ def add_recommend_beatmap(request, slug):
                     form.instance.owner_seen = True
                 form.save()
                 if request.user.id == int(ruleset.owner):
-                    messages.success(request,
-                                     f"Added {beatmap_json_data['title']} [{beatmap_json_data['version']}] as a recommended beatmap successfully!")
+                    messages.success(request, gettext("Added %(title)s [%(version)s] as a recommended beatmap successfully!") % {"title": beatmap_json_data['title'], "version": beatmap_json_data['version']})
                 else:
-                    messages.success(request,
-                                     f"Added {beatmap_json_data['title']} [{beatmap_json_data['version']}] to a waiting list! Please wait for the ruleset owner to approve your beatmap!")
+                    messages.success(request, gettext("Added %(title)s [%(version)s] to a waiting list! Please wait for the ruleset owner to approve your beatmap!") % {"title": beatmap_json_data['title'], "version": beatmap_json_data['version']})
             else:
                 if request_data.status_code != 200:
-                    messages.error(request, f"Adding beatmap failed! (Cannot connect to osu! API)")
+                    messages.error(request, gettext(f"Adding beatmap failed! (Cannot connect to osu! API)"))
                 elif not request_data.json():
-                    messages.error(request, f"Adding beatmap failed! (Beatmap ID not found in osu! mode.)")
+                    messages.error(request, gettext(f"Adding beatmap failed! (Beatmap ID not found in osu! mode.)"))
                 elif RecommendBeatmap.objects.filter(user_id=str(request.user.id), owner_seen=False,
                                                      beatmap_id=form.instance.beatmap_id).exists():
-                    messages.error(request, f"Adding beatmap failed! (You are already recommend this beatmap.)")
+                    messages.error(request, gettext(f"Adding beatmap failed! (You are already recommend this beatmap.)"))
                 elif RecommendBeatmap.objects.filter(beatmap_id=form.instance.beatmap_id, ruleset_id=ruleset.id,
                                                      owner_approved=True, owner_seen=True).exclude(
-                        user_id=str(request.user.id)).exists:
+                    user_id=str(request.user.id)).exists:
                     messages.error(request,
-                                   f"Adding beatmap failed! (This beatmap is already recommended by other user in this ruleset.)")
+                                   gettext(f"Adding beatmap failed! (This beatmap is already recommended by other user in this ruleset.)"))
                 else:
-                    messages.error(request, f"Adding beatmap failed! (Unknown error.)")
+                    messages.error(request, gettext(f"Adding beatmap failed! (Unknown error.)"))
             return redirect('recommend_beatmap', slug=ruleset.slug)
     else:
         form = RecommendBeatmapForm()
     context = {
         'form': form,
-        'title': f'add a new recommend beatmap for {ruleset.name}',
+        'title': gettext(f'add a new recommend beatmap for %(name)s') % {'name': ruleset.name},
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
         'ruleset': ruleset,
@@ -548,7 +556,7 @@ def recommend_beatmap(request, slug):
     else:
         no_beatmap = False
     context = {
-        'title': f'recommend beatmaps for {ruleset.name}',
+        'title': gettext('recommend beatmaps for %(name)s') % {'name': ruleset.name},
         'ruleset': ruleset,
         'beatmap_owner': beatmap_list_owner,
         'beatmap_other': beatmap_list_other,
@@ -591,7 +599,7 @@ def recommend_beatmap_approval(request, rulesets_slug):
             'no_beatmap': no_beatmap,
             'hero_image': hero_image,
             'hero_image_light': hero_image_light,
-            'title': f'approve a recommend beatmap for {ruleset.name}',
+            'title': gettext('approve a recommend beatmap for %(name)s') % {'name': ruleset.name},
             'opengraph_url': resolve_url('recommend_beatmap', slug=ruleset.slug),
             'opengraph_image': ruleset.opengraph_image.url
         }
@@ -620,12 +628,12 @@ def approve_recommend_beatmap(request, rulesets_slug, beatmap_id):
     ruleset = Ruleset.objects.get(id=beatmap.ruleset_id)
     if request.user.id == int(ruleset.owner) or request.user.is_staff:
         if beatmap.owner_seen:
-            messages.error(request, f"You already qualified this beatmap!")
+            messages.error(request, gettext("You already qualified this beatmap!"))
         else:
             beatmap.owner_approved = True
             beatmap.owner_seen = True
             beatmap.save()
-            messages.success(request, f"Approve beatmap successfully!")
+            messages.success(request, gettext("Approve beatmap successfully!"))
         return redirect('recommend_beatmap_approval', rulesets_slug)
     else:
         raise PermissionDenied()
@@ -647,13 +655,13 @@ def deny_recommend_beatmap(request, rulesets_slug, beatmap_id):
     ruleset = Ruleset.objects.get(id=beatmap.ruleset_id)
     if request.user.id == int(ruleset.owner) or request.user.is_staff:
         if beatmap.owner_seen:
-            messages.error(request, f"You already qualified this beatmap!")
+            messages.error(request, gettext("You already qualified this beatmap!"))
         else:
             # Delete beatmap cover and thumbnail before delete the object out
             os.remove(f"media/{beatmap.beatmap_cover}")
             os.remove(f"media/{beatmap.beatmap_thumbnail}")
             beatmap.delete()
-            messages.success(request, f"Deny beatmap successfully!")
+            messages.success(request, gettext("Deny beatmap successfully!"))
         return redirect('recommend_beatmap_approval', rulesets_slug)
     else:
         raise PermissionDenied()
@@ -670,10 +678,10 @@ def status(request):
     hero_image_light = 'img/status-cover-light.png'
     context = {
         'all_ruleset': make_status_view(),
-        'title': 'status',
+        'title': gettext('status'),
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
-        'opengraph_description': 'Status of all rulesets are here. (and you can download and update the rulesets instantly with this page!)',
+        'opengraph_description': gettext('status_description'),
         'opengraph_url': resolve_url('status')
     }
     if request.user.is_authenticated:
@@ -698,10 +706,10 @@ def maintainer_menu(request):
         action_list.append([action, get_user_by_id(action.start_user)])
     context = {
         'action_list': action_list,
-        'title': 'maintainer menu',
+        'title': gettext('maintainer_menu'),
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
-        'opengraph_description': 'Menu for maintainer only!',
+        'opengraph_description': gettext('maintainer_menu_description'),
         'opengraph_url': resolve_url('maintainer')
     }
     if request.user.is_authenticated:
@@ -798,14 +806,15 @@ def check_action_log(request, log_id):
         duration = "Unknown"
 
     if duration != "Unknown":
-        hours = duration//3600
-        duration = duration - (hours*3600)
-        minutes = duration//60
-        seconds = duration - (minutes*60)
+        hours = duration // 3600
+        duration = duration - (hours * 3600)
+        minutes = duration // 60
+        seconds = duration - (minutes * 60)
         duration = '{:02}:{:02}:{:02}'.format(int(hours), int(minutes), int(seconds))
 
     if request.method == "GET":
-        return JsonResponse({"running_text": action.running_text, "status": action.status, "duration": duration}, status=200)
+        return JsonResponse({"running_text": action.running_text, "status": action.status, "duration": duration},
+                            status=200)
     return JsonResponse({}, status=400)
 
 
@@ -820,10 +829,10 @@ def archived_rulesets(request):
     hero_image_light = "img/archived-rulesets-cover-light.png"
     context = {
         'rulesets': make_listing_view(Ruleset.objects.filter(archive=True, hidden=False).order_by(Lower('name'))),
-        'title': 'archived rulesets',
+        'title': gettext('archived_rulesets'),
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
-        'opengraph_description': "The list of rulesets that's stop update or archived by rulesets creator.",
+        'opengraph_description': gettext('archived_rulesets_description'),
         'opengraph_url': resolve_url('listing'),
     }
     if request.user.is_authenticated:

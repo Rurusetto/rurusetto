@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.templatetags.static import static
 from django.contrib.auth import logout
 from django.utils import translation
+from django.utils.translation import gettext
 
 from .forms import UserUpdateForm, ProfileUpdateForm, UpdateProfileEveryLoginConfigForm, UserDeleteAccountForm, \
     UserThemeConfigForm, UserSubpageConfigForm, UserSupportCreatorForm, UserHideEmailConfigForm, UserLanguageConfigForm
@@ -50,7 +51,7 @@ def settings(request):
                     language_config_form.save()
                     support_form.save()
                     hide_email_config_form.save()
-                    messages.success(request, f'Your settings has been updated!')
+                    messages.success(request, gettext('Your settings has been updated!'))
                     return redirect('settings')
                 else:
                     # Nothing changed here except website config that must be save
@@ -59,7 +60,7 @@ def settings(request):
                     language_config_form.save()
                     support_form.save()
                     hide_email_config_form.save()
-                    messages.success(request, f'Your settings has been updated!')
+                    messages.success(request, gettext('Your settings has been updated!'))
                     return redirect('settings')
             else:
                 if not profile_sync_form['update_profile_every_login'].value() and request.user.config.update_profile_every_login:
@@ -70,7 +71,7 @@ def settings(request):
                     language_config_form.save()
                     support_form.save()
                     hide_email_config_form.save()
-                    messages.success(request, f'Your settings has been updated!')
+                    messages.success(request, gettext('Your settings has been updated!'))
                     return redirect('settings')
                 else:
                     # User want to change sync config from False to True, must check on the valid of other form too.
@@ -82,7 +83,7 @@ def settings(request):
                     language_config_form.save()
                     support_form.save()
                     hide_email_config_form.save()
-                    messages.success(request, f'Your settings has been updated!')
+                    messages.success(request, gettext('Your settings has been updated!'))
                     return redirect('settings')
         else:
             # User that send request are login by normal Django login, cannot use profile sync system.
@@ -94,7 +95,7 @@ def settings(request):
             language_config_form.save()
             support_form.save()
             hide_email_config_form.save()
-            messages.success(request, f'Your settings has been updated!')
+            messages.success(request, gettext('Your settings has been updated!'))
             return redirect('settings')
 
     else:
@@ -128,7 +129,7 @@ def settings(request):
         'osu_confirm_username': osu_confirm_username,
         'hero_image': static(hero_image),
         'hero_image_light': static(hero_image_light),
-        'opengraph_description': 'All profile and website settings are visible here!',
+        'opengraph_description': gettext('All profile and website settings are visible here!'),
         'opengraph_url': resolve_url('settings'),
     }
     if request.user.is_authenticated:
@@ -165,10 +166,10 @@ def profile_detail(request, pk):
         'tag_list': tag_object_list,
         'hide_email': config_object.hide_email,
         'created_ruleset': fetch_created_ruleset(profile_object.id),
-        'title': f"{profile_object.user.username}'s profile",
+        'title': gettext(f"%(username)s 's profile") % {'username': profile_object.user.username},
         'hero_image': profile_object.cover.url,
         'hero_image_light': profile_object.cover_light.url,
-        'opengraph_description': f"{profile_object.user.username}'s profile page",
+        'opengraph_description': gettext(f"%(username)s 's profile page") % {'username': profile_object.user.username},
         'opengraph_url': resolve_url('profile', pk=profile_object.user.id),
         'opengraph_image': profile_object.cover.url
     }
@@ -196,10 +197,10 @@ def delete_account(request):
             # Delete user (and any associated ForeignKeys, according to
             # on_delete parameters).
             user.delete()
-            messages.success(request, 'Account successfully deleted.')
+            messages.success(request, gettext('Account successfully deleted.'))
             return redirect('home')
         else:
-            messages.error(request, f'Delete Account failed. Please check your username and password.')
+            messages.error(request, gettext(f'Delete Account failed. Please check your username and password.'))
             return redirect('settings')
     else:
         account_delete_form = UserDeleteAccountForm()

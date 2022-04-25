@@ -96,6 +96,18 @@ cd rurusetto # get in the Rūrusetto project config folder
 python manage.py migrate
 ```
 
+### Compile localization file
+
+We must render the localization file to make the localization work properly.
+
+```shell
+cd rurusetto/wiki # get in wiki app
+django-admin compilemessages # make localization file
+cd ..
+cd users
+django-admin compilemessages # make localization file
+```
+
 ### Fill the configuration value and secret key
 
 Rūrusetto uses `python-decouple` library to separate the configuration value and secret key. This library will read the configuration value from the `.env` file. Create the `.env` file in `rurusetto` folder. Below is the template for this file.

@@ -15,6 +15,8 @@ from django.core.management.utils import get_random_secret_key
 from decouple import config, Csv
 from django.utils.translation import gettext_lazy as _
 import os
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -252,6 +254,8 @@ MDEDITOR_CONFIGS = {
     }
 }
 
+# Django OAuth Configuration
+
 SOCIALACCOUNT_PROVIDERS = {
     'osu': {
         'SCOPE': [
@@ -266,6 +270,9 @@ SOCIALACCOUNT_PROVIDERS = {
 
 USE_X_FORWARDED_HOST = True
 
+# Django Rest Frameworks Configuration
+# https://www.django-rest-framework.org/api-guide/settings/
+
 REST_FRAMEWORK = {
     'DEFAULT_THROTTLE_CLASSES': [
         'rest_framework.throttling.AnonRateThrottle',
@@ -276,3 +283,21 @@ REST_FRAMEWORK = {
         'user': '500/minute'
     }
 }
+
+# Sentry SDK Configuration
+# https://docs.sentry.io/platforms/python/guides/django/
+
+if config('SENTRY_DSN', default="") != "":
+    sentry_sdk.init(
+        dsn=config('SENTRY_DSN', default=""),
+        integrations=[DjangoIntegration()],
+
+        # Set traces_sample_rate to 1.0 to capture 100%
+        # of transactions for performance monitoring.
+        # We recommend adjusting this value in production.
+        traces_sample_rate=1.0,
+
+        # If you wish to associate users to errors (assuming you are using
+        # django.contrib.auth) you may enable sending PII data.
+        send_default_pii=True
+    )

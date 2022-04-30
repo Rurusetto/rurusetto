@@ -82,14 +82,24 @@ msgid "create"
 msgstr "Créer"
 
 #: .\templates\wiki\archived_rulesets.html:10 .\templates\wiki\listing.html:24
+#: .\views.py:832
 msgid "archived_rulesets"
 msgstr "Rulesets archivés"
 
-#: .\templates\wiki\archived_rulesets.html:11
+#: .\templates\wiki\archived_rulesets.html:11 .\views.py:835
 msgid "archived_rulesets_description"
 msgstr "La liste des rulesets non mis à jours ou archivés par le créateur du ruleset."
 
-#: .\templates\users\profile.html:70 .\templates\users\profile.html:72
+#: .\templates\wiki\archived_rulesets.html:46
+#: .\templates\wiki\archived_rulesets.html:48 .\templates\wiki\home.html:66
+#: .\templates\wiki\home.html:68 .\templates\wiki\listing.html:61
+#: .\templates\wiki\listing.html:63 .\templates\wiki\listing.html:90
+#: .\templates\wiki\listing.html:92 .\templates\wiki\maintainer.html:79
+#: .\templates\wiki\snippets\beatmap_approval_card.html:43
+#: .\templates\wiki\snippets\beatmap_card.html:43
+#: .\templates\wiki\subpage.html:56 .\templates\wiki\wiki_page.html:18
+#: .\templates\wiki\wiki_page.html:20 .\templates\wiki\wiki_page.html:80
+#: .\templates\wiki\wiki_page.html:147 .\templates\wiki\wiki_page.html:149
 msgid "deleted_user"
 msgstr "Utilisateur supprimé"
 
@@ -103,7 +113,8 @@ msgstr "Utilisateur supprimé"
 msgid "verified_rulesets_creator"
 msgstr "Créateur de ruleset vérifié"
 
-#: .\templates\users\profile.html:82
+#: .\templates\wiki\archived_rulesets.html:58 .\templates\wiki\home.html:78
+#: .\templates\wiki\listing.html:73 .\templates\wiki\listing.html:102
 msgid "read"
 msgstr "Lire"
 
@@ -115,12 +126,13 @@ msgstr "Logo"
 
 #: .\templates\wiki\base.html:89 .\templates\wiki\base.html:147
 #: .\templates\wiki\base.html:178 .\templates\wiki\listing.html:10
+#: .\views.py:90
 msgid "listing"
 msgstr "Liste"
 
 #: .\templates\wiki\base.html:92 .\templates\wiki\base.html:148
 #: .\templates\wiki\base.html:179 .\templates\wiki\edit_ruleset_wiki.html:199
-#: .\templates\wiki\status.html:13
+#: .\templates\wiki\status.html:13 .\views.py:681
 msgid "status"
 msgstr "Statut"
 
@@ -131,6 +143,7 @@ msgstr "Installer"
 
 #: .\templates\wiki\base.html:98 .\templates\wiki\base.html:150
 #: .\templates\wiki\base.html:181 .\templates\wiki\changelog.html:14
+#: .\views.py:65
 msgid "changelog"
 msgstr "Journal de modifications"
 
@@ -142,11 +155,11 @@ msgstr "Mainteneur"
 msgid "admin"
 msgstr "Administrateur"
 
-#: .\templates\users\settings.html:11
+#: .\templates\wiki\base.html:113 .\templates\wiki\base.html:158
 msgid "settings"
 msgstr "Paramètres"
 
-#: .\templates\users\settings.html:39 .\templates\users\settings.html:56
+#: .\templates\wiki\base.html:114 .\templates\wiki\base.html:159
 msgid "profile"
 msgstr "Profil"
 
@@ -159,7 +172,7 @@ msgstr "Se déconnecter"
 msgid "sign_in"
 msgstr "Se connecter"
 
-#: .\templates\account\login.html:78 .\templates\account\signup.html:49
+#: .\templates\wiki\base.html:126 .\templates\wiki\base.html:183
 msgid "sign_up"
 msgstr "S'inscrire"
 
@@ -187,7 +200,7 @@ msgstr "Fait avec ❤️ par"
 msgid "and"
 msgstr "et"
 
-#: .\templates\wiki\changelog.html:15
+#: .\templates\wiki\changelog.html:15 .\views.py:68
 msgid "changelog_description"
 msgstr "Tout l'historique de mise à jour du site web est ici :"
 
@@ -207,10 +220,11 @@ msgid "release_at"
 msgstr "Publié le"
 
 #: .\templates\wiki\create_ruleset.html:10 .\templates\wiki\listing.html:20
+#: .\views.py:129
 msgid "add_a_new_ruleset"
 msgstr "Ajouter un nouveau ruleset"
 
-#: .\templates\wiki\create_ruleset.html:11
+#: .\templates\wiki\create_ruleset.html:11 .\views.py:132
 msgid "add_a_new_ruleset_description"
 msgstr "Ajoutons un nouveau ruleset ! Est-ce le vôtre ? Ne vous en faites pas ! Vous pouvez l'ajouter même si vous n'avez pas fait le ruleset."
 
@@ -337,7 +351,7 @@ msgstr "Icône claire actuelle"
 msgid "current_logo"
 msgstr "Logo actuel"
 
-#: .\templates\users\settings.html:111
+#: .\templates\wiki\edit_ruleset_wiki.html:103
 msgid "current_cover_image"
 msgstr "Image de couverture actuelle"
 
@@ -436,12 +450,11 @@ msgstr "Le statut de jouabilité de votre ruleset. (Ceci peut aussi changer selo
 msgid "edit_subpage"
 msgstr "Modifier la sous-page"
 
-#: .\templates\wiki\edit_subpage.html:11
+#: .\templates\wiki\edit_subpage.html:11 .\views.py:391
 msgid "You are currently edit subpage \"%(subpage_name)s\" on ruleset name \"%(ruleset_name)s\"."
 msgstr "Vous modifiez actuellement la sous-page \"%(subpage_name)s\" sur le ruleset \"%(ruleset_name)s\"."
 
-#: .\templates\account\login.html:75 .\templates\account\signup.html:61
-#: .\templates\users\delete_account.html:67 .\templates\users\settings.html:243
+#: .\templates\wiki\edit_subpage.html:64
 msgid "submit"
 msgstr "Envoyer"
 
@@ -461,7 +474,7 @@ msgstr "Supprimer cette sous-page"
 msgid "welcome_to_rurusetto"
 msgstr "Bienvenue sur rūrusetto !"
 
-#: .\templates\wiki\home.html:10
+#: .\templates\wiki\home.html:10 .\views.py:41
 msgid "wiki_that_contain"
 msgstr "Un wiki qui contient tous les rulesets osu!."
 
@@ -473,17 +486,17 @@ msgstr "Actuellement, le paramètre <code>DEBUG</code> dans les paramètres du s
 msgid "You are currently in test server environment, please go to <a href=\"https://rulesets.info\">live version</a> for a full experience."
 msgstr "Vous êtes actuellement sur l'environnement du serveur de test, veuillez vous rendre à la <a href=\"https://rulesets.info\">version en ligne</a> pour une expérience complète."
 
-#: .\templates\wiki\install.html:9
+#: .\templates\wiki\install.html:9 .\views.py:307
 msgid "install_and_update_rulesets"
 msgstr "installer et mettre à jour les rulesets"
 
-#: .\templates\wiki\install.html:11
+#: .\templates\wiki\install.html:11 .\views.py:310
 msgid "install_and_update_rulesets_description"
 msgstr "installer et mettre à jour les rulesets dans osu!lazer avec rūrusetto."
 
 #: .\templates\wiki\install.html:40
 msgid "download rulesets file"
-msgstr "télécharger le fichier des rulesets"
+msgstr "télécharger un fichier de ruleset"
 
 #: .\templates\wiki\install.html:47
 msgid "Ruleset files can be obtained at <a class=\"text-decoration-none text-center spacing-hover-short hvr-icon-bounce\" target=\"_blank\" href=\"%(url_status)s\"><i class=\"fas fa-info-circle icon-menu hvr-icon\"></i> rulesets status page</a> and then clicking on the <code>Download latest version</code> on the desired ruleset."
@@ -545,7 +558,7 @@ msgstr "mettre à jour des rulesets"
 msgid "To update rulesets, just do the same step and overwrite the old rulesets file."
 msgstr "Pour mettre à jour des rulesets, recommencez les étapes précédentes et écrasez l'ancien fichier de ruleset."
 
-#: .\templates\wiki\listing.html:11
+#: .\templates\wiki\listing.html:11 .\views.py:93
 msgid "listing_description"
 msgstr "Liste des rulesets disponibles."
 
@@ -557,11 +570,11 @@ msgstr "Vos rulesets masqués"
 msgid "all_rulesets"
 msgstr "Tous les rulesets"
 
-#: .\templates\wiki\maintainer.html:11
+#: .\templates\wiki\maintainer.html:11 .\views.py:709
 msgid "maintainer_menu"
 msgstr "Menu du mainteneur"
 
-#: .\templates\wiki\maintainer.html:12
+#: .\templates\wiki\maintainer.html:12 .\views.py:712
 msgid "maintainer_menu_description"
 msgstr "Un menu uniquement pour le mainteneur !"
 
@@ -638,7 +651,7 @@ msgstr "Statut d'exécution"
 msgid "running"
 msgstr "En cours d'exécution"
 
-#: .\templates\socialaccount\connections.html:46
+#: .\templates\wiki\maintainer.html:152
 msgid "unknown_status"
 msgstr "Statut inconnu"
 
@@ -762,7 +775,7 @@ msgstr "Approuver"
 msgid "deny"
 msgstr "Rejeter"
 
-#: .\templates\wiki\status.html:14
+#: .\templates\wiki\status.html:14 .\views.py:684
 msgid "status_description"
 msgstr "Les status de tous les rulesets sont ici. (et vous pouvez télécharger et mettre à jour les rulesets instantanément avec cette page !)"
 
@@ -821,11 +834,11 @@ msgstr "Aller à la page wiki du ruleset"
 
 #: .\templates\wiki\status.html:137
 msgid "Function is not available due to the rulesets source is from GitHub and <code>Ruleset Filename</code> field is missing or blank. Please fill the <code>Ruleset Filename</code> in the rulesets setting!"
-msgstr "Function is not available due to the rulesets source is from GitHub and <code>Ruleset Filename</code> field is missing or blank. Please fill the <code>Ruleset Filename</code> in the rulesets setting!"
+msgstr "Cette fonctionnalité n'est pas disponible car la source du ruleset est GitHub et le champ <code>Nom du ruleset</code> est manquant ou vide. Veuillez remplir le <code>Nom du ruleset</code> dans les paramètres du ruleset !"
 
 #: .\templates\wiki\status.html:172
 msgid "This function is not support in rulesets that is from Patreon. You can go to rulesets creator's Patreon at <code>Get from Patreon</code>!"
-msgstr "This function is not support in rulesets that is from Patreon. You can go to rulesets creator's Patreon at <code>Get from Patreon</code>!"
+msgstr "Cette fonctionnalité n'est pas supportée par les rulesets provenant de Patreon. Vous pouvez accéder au Patreon du créateur du ruleset à <code>Obtenir depuis Patreon</code> !"
 
 #: .\templates\wiki\status.html:175 .\templates\wiki\wiki_page.html:165
 msgid "get_from_patreon"
@@ -865,11 +878,11 @@ msgstr "Ajouter une nouvelle sous-page"
 msgid "recommend_beatmaps"
 msgstr "Beatmaps recommandées"
 
-#: .\templates\users\settings.html:176
+#: .\templates\wiki\wiki_page.html:93
 msgid "subpage_index"
 msgstr "Index de la sous-page"
 
-#: .\templates\users\settings.html:49
+#: .\templates\wiki\wiki_page.html:143
 msgid "creator"
 msgstr "Créateur"
 
@@ -881,7 +894,7 @@ msgstr "Dépôts GitHub"
 msgid "support_the_creator"
 msgstr "Supporter le créateur"
 
-#: .\templates\users\settings.html:199
+#: .\templates\wiki\wiki_page.html:178
 msgid "support"
 msgstr "Supporter"
 
@@ -969,89 +982,89 @@ msgstr "Revenir à la page de connexion"
 
 #: .\templates\socialaccount\authentication_error.html:53
 msgid "return_to_homepage"
-msgstr "Return to homepage"
+msgstr "Revenir à la page principale"
 
 #: .\templates\socialaccount\connections.html:18
 msgid "account_connection"
-msgstr "account connection"
+msgstr "connexion au compte"
 
 #: .\templates\socialaccount\connections.html:19
 msgid "account_connection_description"
-msgstr "connect rūrusetto account with osu! account"
+msgstr "connecter votre compte rūrusetto avec votre compte osu!"
 
 #: .\templates\socialaccount\connections.html:41
 msgid "connection_status"
-msgstr "Connection status"
+msgstr "Statut de connection"
 
 #: .\templates\socialaccount\connections.html:48
 msgid "no_status_provided"
-msgstr "No status provided"
+msgstr "Aucun statut fourni"
 
 #: .\templates\socialaccount\connections.html:50
 msgid "back_to_setting_page"
-msgstr "Back to settings page"
+msgstr "Revenir aux paramètres"
 
 #: .\templates\socialaccount\login.html:62
 msgid "Connect %(provider)s"
-msgstr "Connect %(provider)s"
+msgstr "Lier %(provider)s"
 
 #: .\templates\socialaccount\login.html:64
 msgid "You are about to connect a new account from %(provider)s."
-msgstr "You are about to connect a new account from %(provider)s."
+msgstr "Vous allez lier un nouveau compte depuis %(provider)s."
 
 #: .\templates\socialaccount\login.html:66
 msgid "Sign in via %(provider)s"
-msgstr "Sign in via %(provider)s"
+msgstr "S'inscrire via %(provider)s"
 
 #: .\templates\socialaccount\login.html:68
 msgid "You are about to sign in using account from %(provider)s."
-msgstr "You are about to sign in using account from %(provider)s."
+msgstr "Vous allez vous inscrire en utilisant votre compte %(provider)s"
 
 #: .\templates\socialaccount\login.html:72
 msgid "Continue"
-msgstr "Continue"
+msgstr "Continuer"
 
 #: .\templates\socialaccount\login.html:75
 msgid "no_dont_want"
-msgstr "No, I don't want!"
+msgstr "Non, je ne veux pas !"
 
 #: .\templates\socialaccount\login.html:75
 msgid "go_back"
-msgstr "Go back!"
+msgstr "Revenir en arrière !"
 
 #: .\templates\socialaccount\login_cancelled.html:21
 #: .\templates\socialaccount\login_cancelled.html:38
 msgid "login_cancelled"
-msgstr "login cancelled"
+msgstr "connexion annulée"
 
 #: .\templates\socialaccount\login_cancelled.html:22
 msgid "login_cancelled_description"
-msgstr "login cancelled by user"
+msgstr "connexion annulée par l'utilisateur"
 
 #: .\templates\socialaccount\login_cancelled.html:41
 msgid "You decided to cancel logging in to rūrusetto using your osu! account. If this was a mistake, please <a class=\"text-decoration-none spacing-hover\" href=\"%(login_url)s\">sign in again</a>."
-msgstr "You decided to cancel logging in to rūrusetto using your osu! account. If this was a mistake, please <a class=\"text-decoration-none spacing-hover\" href=\"%(login_url)s\">sign in again</a>."
+msgstr "Vous avez décidé d'annuler votre connexion à rūrusetto avec votre compte osu!. Si ceci était une erreur, veuillez vous <a class=\"text-decoration-none spacing-hover\" href=\"%(login_url)s\">inscrire à nouveau</a>."
 
 #: .\templates\socialaccount\snippets\provider_list.html:19
 msgid "connect_to"
-msgstr "Connect to"
+msgstr "Se connecter à"
 
 #: .\templates\users\delete_account.html:18
 #: .\templates\users\delete_account.html:24
 #: .\templates\users\delete_account.html:32
 #: .\templates\users\delete_account.html:61 .\templates\users\settings.html:268
 msgid "delete_account"
-msgstr "Delete Account"
+msgstr "Supprimer le compte"
 
 #: .\templates\users\delete_account.html:19
 #: .\templates\users\delete_account.html:25
 #: .\templates\users\delete_account.html:33
 msgid "delete_account_description"
-msgstr "this is danger page!"
+msgstr "c'est une page dangereuse !"
 
 #: .\templates\users\delete_account.html:62
 msgid "delete_account_confirmations"
-msgstr "Are you sure you want to delete your account? All of your info will be deleted. You cannot undo this action!"
+msgstr "Êtes-vous sûr de vouloir supprimer votre compte ? Toutes vos informations seront supprimées. Vous ne pouvez pas annuler cette action !"
 
 #: .\templates\users\delete_account.html:70
 msgid "return_to_settings"
@@ -1107,7 +1120,7 @@ msgstr "Adresse mail"
 
 #: .\templates\users\settings.html:93
 msgid "User information is handled by the system. If you want to customize your profile, please uncheck the <i>Update Profile Every Login Session</i> setting."
-msgstr "Les informations de l'utilisateur sont traitées par le système. Si vous souhaitez personnaliser votre profil, veuillez décocher le paramètre <i>Mettre à jour le profil à chaque connexion</i>."
+msgstr "Les informations de l'utilisateur sont gérées par le système. Si vous voulez personnaliser votre profil, veuillez décocher le paramètre <i>Mettre à jour le profil à chaque connexion</i>."
 
 #: .\templates\users\settings.html:95
 msgid "profile_page_detail"
@@ -1135,55 +1148,55 @@ msgstr "Image de couverture du profil actuelle dans le mode clair"
 
 #: .\templates\users\settings.html:129
 msgid "about_me"
-msgstr "About Me"
+msgstr "A propos de moi"
 
 #: .\templates\users\settings.html:138
 msgid "osu_username"
-msgstr "osu! username"
+msgstr "Pseudo osu!"
 
 #: .\templates\users\settings.html:146
 msgid "Profile page details are handled by the system. If you want to customize your profile, please uncheck the <i>Update Profile Every Login Session</i> setting."
-msgstr "Profile page details are handled by the system. If you want to customize your profile, please uncheck the <i>Update Profile Every Login Session</i> setting."
+msgstr "Les informations de votre profil sont gérées par le système. Si vous voulez personnaliser votre profil, veuillez décocher le paramètre <i>Mettre à jour le profil à chaque connexion</i>."
 
 #: .\templates\users\settings.html:148
 msgid "profile_page_display_settings"
-msgstr "Profile Page Display Settings"
+msgstr "Paramètres d'affichage du profil"
 
 #: .\templates\users\settings.html:151
 msgid "hide_email"
-msgstr "Hide Email"
+msgstr "Cacher l'adresse mail"
 
 #: .\templates\users\settings.html:157
 msgid "hide_email_description"
-msgstr "If checked, your email will not be visible on your profile page."
+msgstr "Si coché, votre adresse mail ne sera pas visible sur votre profil."
 
 #: .\templates\users\settings.html:162
 msgid "website_configuration"
-msgstr "Website Configuration"
+msgstr "Configuration du site web"
 
 #: .\templates\users\settings.html:163
 msgid "website_theme"
-msgstr "Website Theme"
+msgstr "Thème du site web"
 
 #: .\templates\users\settings.html:166
 msgid "appearance"
-msgstr "Appearance"
+msgstr "Apparence"
 
 #: .\templates\users\settings.html:173
 msgid "wiki_page_display"
-msgstr "Wiki Page Display"
+msgstr "Affichage de la page wiki"
 
 #: .\templates\users\settings.html:180
 msgid "subpage_index_description"
-msgstr "Appearance settings of the subpage menu at the top of the rulesets page."
+msgstr "Paramètres d'affichage du menu de la sous-page en haut de la page de ruleset."
 
 #: .\templates\users\settings.html:197
 msgid "rulesets_creator_settings"
-msgstr "Rulesets Creator Settings"
+msgstr "Paramètres de créateur de rulesets"
 
 #: .\templates\users\settings.html:198
 msgid "rulesets_creator_settings_description"
-msgstr "These settings will only be visible when you are one of the rulesets creator in the wiki."
+msgstr "Ces paramètres seront uniquement visibles lorsque vous êtes l'un des créateurs d'un ruleset du wiki."
 
 #: .\templates\users\settings.html:200
 msgid "These are the settings of the detail in <code>Support the creator</code> modal so other players who love your rulesets can support you. If you don't want to use this function please leave all fields blank."
@@ -1264,4 +1277,112 @@ msgstr "Site Languages"
 #: .\templates\users\settings.html:191
 msgid "site_languages_description"
 msgstr "Settings for global site languages. (This function is under test phase)"
+
+#: .\views.py:54 .\views.py:63 .\views.py:74 .\views.py:86 .\views.py:98
+msgid "Your settings has been updated!"
+msgstr "Your settings has been updated!"
+
+#: .\views.py:132
+msgid "All profile and website settings are visible here!"
+msgstr "All profile and website settings are visible here!"
+
+#: .\views.py:169
+msgid "%(username)s 's profile"
+msgstr "%(username)s 's profile"
+
+#: .\views.py:172
+msgid "%(username)s 's profile page"
+msgstr "%(username)s 's profile page"
+
+#: .\views.py:200
+msgid "Account successfully deleted."
+msgstr "Account successfully deleted."
+
+#: .\views.py:203
+msgid "Delete Account failed. Please check your username and password."
+msgstr "Delete Account failed. Please check your username and password."
+
+#: .\views.py:38
+msgid "home"
+msgstr "home"
+
+#: .\views.py:123
+msgid "Ruleset name %(name)s has added to the list!"
+msgstr "Ruleset name %(name)s has added to the list!"
+
+#: .\views.py:243
+msgid "You are currently editing content on ruleset named \"%(ruleset_name)s\"."
+msgstr "You are currently editing content on ruleset named \"%(ruleset_name)s\"."
+
+#: .\views.py:278
+msgid "Subpage \"%(title)s\" for %(name)s has been created!"
+msgstr "Subpage \"%(title)s\" for %(name)s has been created!"
+
+#: .\views.py:288
+msgid "You are currently add a subpage for ruleset name \"%(name)s\"."
+msgstr "You are currently edit subpage \"%(subpage_name)s\" on ruleset name \"%(ruleset_name)s\"."
+
+#: .\views.py:375
+msgid "Edit subpage successfully!"
+msgstr "Edit subpage successfully!"
+
+#: .\views.py:421
+msgid "Delete subpage successfully!"
+msgstr "Delete subpage successfully!"
+
+#: .\views.py:423
+msgid "You don't have permission to do this!"
+msgstr "You don't have permission to do this!"
+
+#: .\views.py:507
+msgid "Added %(title)s [%(version)s] as a recommended beatmap successfully!"
+msgstr "Added %(title)s [%(version)s] as a recommended beatmap successfully!"
+
+#: .\views.py:509
+msgid "Added %(title)s [%(version)s] to a waiting list! Please wait for the ruleset owner to approve your beatmap!"
+msgstr "Added %(title)s [%(version)s] to a waiting list! Please wait for the ruleset owner to approve your beatmap!"
+
+#: .\views.py:512
+msgid "Adding beatmap failed! (Cannot connect to osu! API)"
+msgstr "Adding beatmap failed! (Cannot connect to osu! API)"
+
+#: .\views.py:514
+msgid "Adding beatmap failed! (Beatmap ID not found in osu! mode.)"
+msgstr "Adding beatmap failed! (Beatmap ID not found in osu! mode.)"
+
+#: .\views.py:517
+msgid "Adding beatmap failed! (You are already recommend this beatmap.)"
+msgstr "Adding beatmap failed! (You are already recommend this beatmap.)"
+
+#: .\views.py:522
+msgid "Adding beatmap failed! (This beatmap is already recommended by other user in this ruleset.)"
+msgstr "Adding beatmap failed! (This beatmap is already recommended by other user in this ruleset.)"
+
+#: .\views.py:524
+msgid "Adding beatmap failed! (Unknown error.)"
+msgstr "Adding beatmap failed! (Unknown error.)"
+
+#: .\views.py:530
+msgid "add a new recommend beatmap for %(name)s"
+msgstr "You are currently editing content on ruleset named \"%(ruleset_name)s\"."
+
+#: .\views.py:559
+msgid "recommend beatmaps for %(name)s"
+msgstr "recommend beatmaps for %(name)s"
+
+#: .\views.py:602
+msgid "approve a recommend beatmap for %(name)s"
+msgstr "approve a recommend beatmap for %(name)s"
+
+#: .\views.py:631 .\views.py:658
+msgid "You already qualified this beatmap!"
+msgstr "You already qualified this beatmap!"
+
+#: .\views.py:636
+msgid "Approve beatmap successfully!"
+msgstr "Approve beatmap successfully!"
+
+#: .\views.py:664
+msgid "Deny beatmap successfully!"
+msgstr "Deny beatmap successfully!"
 

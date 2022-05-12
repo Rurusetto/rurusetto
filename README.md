@@ -142,9 +142,13 @@ Note that the contributing guidelines are not exhaustive. Nothing is set in ston
 
 We use [code of conduct](code_of_conduct.md) from `Contributor Covenant`.
 
-## License
+## Special Thanks
 
-Icon and new color scheme is designed by [@IKeepItNoodles](https://github.com/IKeepItNoodles)
+- [@IKeepItNoodles](https://github.com/IKeepItNoodles) for icon, branding design and new color schemes.
+- [Netlify](https://www.netlify.com/) for sponsors us the open source plan using in hosting some static site of our project like documentation site.
+- [Sentry](https://sentry.io/) for sponsor us a sponsored plan using in error monitoring tool for our project.
+
+## License
 
 The code in this repository is licensed under the MIT license. Please see [the license file](LICENSE) for more information. 
 

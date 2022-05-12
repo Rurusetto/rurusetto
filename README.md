@@ -146,7 +146,7 @@ We use [code of conduct](code_of_conduct.md) from `Contributor Covenant`.
 
 - [@IKeepItNoodles](https://github.com/IKeepItNoodles) for icon, branding design and new color schemes.
 - [Netlify](https://www.netlify.com/) for sponsors us the open source plan using in hosting some static site of our project like documentation site.
-- [Sentry](https://sentry.io/) for sponsor us a sponsored plan using in monitoring our project.
+- [Sentry](https://sentry.io/) for sponsor us a sponsored plan using in error monitoring tool for our project.
 
 ## License
 

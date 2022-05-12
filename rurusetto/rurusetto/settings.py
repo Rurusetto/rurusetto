@@ -57,7 +57,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.osu',
     'rest_framework',
-    'storages'
+    'storages',
+    'ddtrace.contrib.django',
 ]
 
 SITE_ID = 1

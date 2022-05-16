@@ -523,6 +523,10 @@ button.accordion-button:focus {
     filter: invert(0.4);
 }
 
+.accordion-body img {
+    width: 100%!important;
+}
+
 .editormd-preview p,
 .editormd-preview label,
 .editormd-preview li {

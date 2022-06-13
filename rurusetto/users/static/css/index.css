@@ -351,6 +351,14 @@ a.dropdown-item {
     #desktop-header {
         opacity: 0;
     }
+
+    .beatmap-stat-text {
+        text-align: left!important;
+    }
+
+    .beatmap-info-modal {
+        background-image: none!important;
+    }
 }
 
 @media (max-width: 991px) {

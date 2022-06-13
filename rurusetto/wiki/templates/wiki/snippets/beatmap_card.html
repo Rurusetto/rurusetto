@@ -1,4 +1,9 @@
 {% load convert_star_rating %}
+{% load thousand_seperator %}
+{% load length_format %}
+{% load round_up %}
+{% load get_genre_name %}
+{% load get_language_name %}
 {% load i18n %}
 {% load static %}
 
@@ -36,7 +41,7 @@
                 <span class="badge rounded-pill round-font-bold" style="background-color: rgb(0, 0, 0); color: rgb(83, 94, 101); margin-top: -2px">{% trans 'graveyard' %}</span>
             {% endif %}
 
-            </p>
+            <p></p>
               <p class="card-text text-muted" style="margin-top: -5px"><small>{% trans 'mapped_by' %} <a href="https://osu.ppy.sh/u/{{ beatmap.0.creator }}" class="text-decoration-none spacing-hover-short">{{ beatmap.0.creator }}</a></small></p>
               <p class="card-text beatmap-comment" style="margin-top: -5px"><small>{{ beatmap.0.comment }}</small></p>
           {% if beatmap.1 == None %}
@@ -45,8 +50,78 @@
               <p class="card-text text-muted" style="margin-top: -10px"><small>{% trans 'recommend_by' %} <a href="{% url "profile" beatmap.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><img src="{{ beatmap.1.profile.image.url }}" alt="{{ beatmap.1.username }}" width="32" height="32" class="rounded-circle hvr-icon" style="transition: 0.2s"> {{ beatmap.1.username }}</a></small></p>
           {% endif %}
           <a class="btn btn-rurusetto btn-sm hvr-bounce-to-bottom" href="osu://b/{{ beatmap.0.beatmap_id }}" role="button" style="margin-top: -10px"><i class="fas fa-download color-white"></i> osu!direct</a>
+          <button type="button" class="btn btn-rurusetto btn-sm hvr-bounce-to-bottom" data-bs-toggle="modal" data-bs-target="#modal{{ beatmap.0.beatmap_id }}" style="margin-top: -10px"><i class="fas fa-info-circle color-white"></i> Beatmap Detail</button>
           </div>
         </div>
       </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal{{ beatmap.0.beatmap_id }}" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Beatmap Detail</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body beatmap-info-modal" style="background-image: linear-gradient(to bottom, transparent, #4a4a4a 140px), url({{ beatmap.0.beatmap_cover.url }}); background-size:100%; background-repeat: no-repeat;">
+                <h4 class="beatmap-title fw-bold">{{ beatmap.0.title }}</h4>
+                <h6 class="fw-bold">{{ beatmap.0.artist }}</h6>
+                <h6 class="fw-bold" style="color: #a5a5a5">{{ beatmap.0.version }}</h6>
+                {% if beatmap.0.approved == "4" %}
+                    <span class="badge rounded-pill bold-font" style="background-color: rgb(241, 101, 160); color: rgb(51, 58, 61); margin-top: -2px">LOVED</span>
+                {% elif beatmap.0.approved == "3" %}
+                    <span class="badge rounded-pill bold-font" style="background-color: rgb(106, 196, 254); color: rgb(51, 58, 61); margin-top: -2px">QUALIFIED</span>
+                {% elif beatmap.0.approved == "2" %}
+                    <span class="badge rounded-pill bold-font" style="background-color: rgb(210, 208, 85); color: rgb(51, 58, 61); margin-top: -2px">APPROVED</span>
+                {% elif beatmap.0.approved == "1" %}
+                    <span class="badge rounded-pill bold-font" style="background-color: rgb(185, 251, 98); color: rgb(51, 58, 61); margin-top: -2px">RANKED</span>
+                {% elif beatmap.0.approved == "0" %}
+                    <span class="badge rounded-pill bold-font" style="background-color: rgb(252, 212, 96); color: rgb(51, 58, 61); margin-top: -2px">PENDING</span>
+                {% elif beatmap.0.approved == "-1" %}
+                    <span class="badge rounded-pill bold-font" style="background-color: rgb(245, 146, 93); color: rgb(51, 58, 61); margin-top: -2px">WIP</span>
+                {% elif beatmap.0.approved == "-2" %}
+                    <span class="badge rounded-pill bold-font" style="background-color: rgb(0, 0, 0); color: rgb(83, 94, 101); margin-top: -2px">GRAVEYARD</span>
+                {% endif %}
+                <i class="fas fa-play-circle"></i> {{ beatmap.0.playcount | thousand_seperator }}
+                <i class="fas fa-heart"></i> {{ beatmap.0.favourite_count | thousand_seperator }}
+                    <p></p>
+                <div class="row">
+                      <div class="col-sm-2">
+                          <img src="https://s.ppy.sh/a/{{ beatmap.0.creator_id }}" width="120px" height="120px" alt="{{ beatmap.0.creator }}'s profile" class="rounded-3">
+                      </div>
+                      <div class="col-sm-10">
+                           <p class="beatmap-infobox-date">mapped by <a href="https://osu.ppy.sh/users/{{ beatmap.0.creator_id }}" class="text-decoration-none spacing-hover">{{ beatmap.0.creator }}</a></p>
+                          <p class="beatmap-infobox-date">submitted {{ beatmap.0.submit_date | date:"j F Y H:i:s" }} UTC</p>
+                            {% if beatmap.0.approved == '1' %}
+                                <p class="beatmap-infobox-date">ranked {{ beatmap.0.approved_date | date:"j F Y H:i:s" }} UTC</p>
+                            {% elif beatmap.0.approved == '3' %}
+                                <p class="beatmap-infobox-date">qualified {{ beatmap.0.approved_date | date:"j F Y H:i:s" }} UTC</p>
+                            {% else %}
+                                <p class="beatmap-infobox-date">last updated {{ beatmap.0.last_update | date:"j F Y H:i:s" }} UTC</p>
+                            {% endif %}
+                      </div>
+                  </div>
+                    {% if beatmap.0.source %}
+                    <p class="fw-bold">Source</p>
+                    <p>{{ beatmap.0.source }}</p>
+                    {% endif %}
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p class="fw-bold">Genre</p>
+                            <p>{{ beatmap.0.genre_id|get_genre_name }}</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="fw-bold">Language</p>
+                            <p>{{ beatmap.0.language_id|get_language_name }}</p>
+                        </div>
+
+                    </div>
+                    {% if beatmap.0.tags %}
+                    <p class="fw-bold">Tags</p>
+                    <p>{{ beatmap.0.tags }}</p>
+                    {% endif %}
+            </div>
+        </div>
     </div>
 </div>

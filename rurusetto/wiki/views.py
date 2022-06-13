@@ -22,6 +22,9 @@ from django.contrib.auth.decorators import user_passes_test
 import os
 import threading
 from .action import update_all_beatmap_action, update_ruleset_version_action, update_ruleset_version_once_action
+from django.utils import timezone
+from django.utils.timezone import make_aware
+from django.db.models.functions import datetime
 
 
 def home(request):
@@ -494,6 +497,17 @@ def add_recommend_beatmap(request, slug):
                 form.instance.difficultyrating = beatmap_json_data['difficultyrating']
                 form.instance.bpm = beatmap_json_data['bpm']
                 form.instance.version = beatmap_json_data['version']
+                form.instance.playcount = beatmap_json_data['playcount']
+                form.instance.favourite_count = beatmap_json_data['favourite_count']
+                form.instance.total_length = beatmap_json_data['total_length']
+                form.instance.creator_id = beatmap_json_data['creator_id']
+                form.instance.genre_id = beatmap_json_data['genre_id']
+                form.instance.language_id = beatmap_json_data['language_id']
+                form.instance.tags = beatmap_json_data['tags']
+                form.instance.submit_date = make_aware(datetime.datetime.strptime(beatmap_json_data['submit_date'], '%Y-%m-%d %H:%M:%S'))
+                if beatmap_json_data['approved_date'] is not None:
+                    form.instance.approved_date = make_aware(datetime.datetime.strptime(beatmap_json_data['approved_date'], '%Y-%m-%d %H:%M:%S'))
+                form.instance.last_update = make_aware(datetime.datetime.strptime(beatmap_json_data['last_update'], '%Y-%m-%d %H:%M:%S'))
                 # Save the ruleset and user ID to the RecommendBeatmap object.
                 form.instance.ruleset_id = ruleset.id
                 form.instance.user_id = request.user.id

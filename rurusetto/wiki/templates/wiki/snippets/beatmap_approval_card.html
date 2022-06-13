@@ -44,9 +44,12 @@
           {% else %}
               <p class="card-text text-muted" style="margin-top: -10px"><small>{% trans 'recommend_by' %} <a href="{% url "profile" beatmap.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><img src="{{ beatmap.1.profile.image.url }}" alt="{{ beatmap.1.username }}" width="32" height="32" class="rounded-circle hvr-icon" style="transition: 0.2s"> {{ beatmap.1.username }}</a></small></p>
           {% endif %}
+          <p class="card-text"><button type="button" class="btn btn-rurusetto btn-sm hvr-bounce-to-bottom" data-bs-toggle="modal" data-bs-target="#modal{{ beatmap.0.beatmap_id }}" style="margin-top: -10px"><i class="fas fa-info-circle color-white"></i> Beatmap Detail</button></p>
             <p class="card-text"><a class="btn btn-success btn-sm" href="{% url 'approve_recommend_beatmap' ruleset.slug beatmap.0.id %}" role="button" style="margin-top: -10px"><i class="fas fa-check color-white"></i> {% trans 'approve' %}</a> <a class="btn btn-danger btn-sm" href="{% url 'deny_recommend_beatmap' ruleset.slug beatmap.0.id %}" role="button" style="margin-top: -10px"><i class="fas fa-times color-white"></i> {% trans 'deny' %}</a></p>
           </div>
         </div>
       </div>
     </div>
 </div>
+
+{% include "wiki/snippets/beatmap_info_modal.html" %}

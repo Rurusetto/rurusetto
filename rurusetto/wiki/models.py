@@ -3,6 +3,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from mdeditor.fields import MDTextField
 from django.contrib.sitemaps import ping_google
+from django.utils import timezone
 from PIL import Image
 
 
@@ -220,6 +221,18 @@ class RecommendBeatmap(models.Model):
         FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
     beatmap_list = models.ImageField(default='default_beatmap_thumbnail.jpeg', upload_to='beatmap_list', validators=[
         FileExtensionValidator(allowed_extensions=['png', 'gif', 'jpg', 'jpeg', 'bmp', 'svg', 'webp'])])
+
+    playcount = models.IntegerField(default=0)
+    favourite_count = models.IntegerField(default=0)
+    total_length = models.IntegerField(default=0)
+    creator_id = models.IntegerField(default=0)
+    genre_id = models.IntegerField(default=0)
+    language_id = models.IntegerField(default=0)
+    tags = models.CharField(max_length=5000, blank=True)
+
+    submit_date = models.DateTimeField(default=timezone.now)
+    approved_date = models.DateTimeField(default=timezone.now)
+    last_update = models.DateTimeField(default=timezone.now)
 
     comment = models.TextField(default=None, blank=True)
 

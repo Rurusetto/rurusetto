@@ -1,12 +1,14 @@
 """File that contain all action command that can run from web interface."""
 
 from django.core.exceptions import ObjectDoesNotExist
-from django.utils import timezone
+from django.db.models.functions import datetime
 from .function import source_link_type
 from .models import RecommendBeatmap, Ruleset, RulesetStatus
 from rurusetto.settings import OSU_API_V1_KEY, GITHUB_TOKEN
 from django.core.files.temp import NamedTemporaryFile
 from django.core.files import File
+from django.utils.timezone import make_aware
+from django.utils import timezone
 import requests
 import os
 import time
@@ -118,6 +120,20 @@ def update_all_beatmap_action(action):
                 beatmap.bpm = beatmap_json_data['bpm']
                 beatmap.version = beatmap_json_data['version']
                 beatmap.url = f"https://osu.ppy.sh/beatmapsets/{beatmap_json_data['beatmapset_id']}#osu/{beatmap.beatmap_id}"
+                beatmap.playcount = beatmap_json_data['playcount']
+                beatmap.favourite_count = beatmap_json_data['favourite_count']
+                beatmap.total_length = beatmap_json_data['total_length']
+                beatmap.creator_id = beatmap_json_data['creator_id']
+                beatmap.genre_id = beatmap_json_data['genre_id']
+                beatmap.language_id = beatmap_json_data['language_id']
+                beatmap.tags = beatmap_json_data['tags']
+                beatmap.submit_date = make_aware(
+                    datetime.datetime.strptime(beatmap_json_data['submit_date'], '%Y-%m-%d %H:%M:%S'))
+                if beatmap_json_data['approved_date'] is not None:
+                    beatmap.approved_date = make_aware(
+                        datetime.datetime.strptime(beatmap_json_data['approved_date'], '%Y-%m-%d %H:%M:%S'))
+                beatmap.last_update = make_aware(
+                    datetime.datetime.strptime(beatmap_json_data['last_update'], '%Y-%m-%d %H:%M:%S'))
                 beatmap.save()
                 success += 1
             except ObjectDoesNotExist:

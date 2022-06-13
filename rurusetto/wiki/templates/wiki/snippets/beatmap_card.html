@@ -1,4 +1,4 @@
-{% load convert_star_rating %}
+
 {% load i18n %}
 {% load static %}
 
@@ -36,7 +36,7 @@
                 <span class="badge rounded-pill round-font-bold" style="background-color: rgb(0, 0, 0); color: rgb(83, 94, 101); margin-top: -2px">{% trans 'graveyard' %}</span>
             {% endif %}
 
-            </p>
+            <p></p>
               <p class="card-text text-muted" style="margin-top: -5px"><small>{% trans 'mapped_by' %} <a href="https://osu.ppy.sh/u/{{ beatmap.0.creator }}" class="text-decoration-none spacing-hover-short">{{ beatmap.0.creator }}</a></small></p>
               <p class="card-text beatmap-comment" style="margin-top: -5px"><small>{{ beatmap.0.comment }}</small></p>
           {% if beatmap.1 == None %}
@@ -45,8 +45,11 @@
               <p class="card-text text-muted" style="margin-top: -10px"><small>{% trans 'recommend_by' %} <a href="{% url "profile" beatmap.1.id %}" class="hvr-picture-bounce text-decoration-none spacing-hover"><img src="{{ beatmap.1.profile.image.url }}" alt="{{ beatmap.1.username }}" width="32" height="32" class="rounded-circle hvr-icon" style="transition: 0.2s"> {{ beatmap.1.username }}</a></small></p>
           {% endif %}
           <a class="btn btn-rurusetto btn-sm hvr-bounce-to-bottom" href="osu://b/{{ beatmap.0.beatmap_id }}" role="button" style="margin-top: -10px"><i class="fas fa-download color-white"></i> osu!direct</a>
+          <button type="button" class="btn btn-rurusetto btn-sm hvr-bounce-to-bottom" data-bs-toggle="modal" data-bs-target="#modal{{ beatmap.0.beatmap_id }}" style="margin-top: -10px"><i class="fas fa-info-circle color-white"></i> Beatmap Detail</button>
           </div>
         </div>
       </div>
     </div>
 </div>
+
+{% include "wiki/snippets/beatmap_info_modal.html" %}

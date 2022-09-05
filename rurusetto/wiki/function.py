@@ -130,7 +130,9 @@ def make_recommend_beatmap_view(ruleset_id):
     # Create a list of recommend beatmaps that is recommend by other player
     recommend_by_other = []
     if len(RecommendBeatmap.objects.exclude(user_id=ruleset.owner).filter(ruleset_id=ruleset.id)) != 0:
-        for beatmap in RecommendBeatmap.objects.exclude(user_id=ruleset.owner).filter(ruleset_id=ruleset.id, owner_approved=True, owner_seen=True):
+        for beatmap in RecommendBeatmap.objects.exclude(user_id=ruleset.owner).filter(ruleset_id=ruleset.id,
+                                                                                      owner_approved=True,
+                                                                                      owner_seen=True):
             try:
                 user_detail = User.objects.get(id=beatmap.user_id)
                 recommend_by_other.append([beatmap, user_detail])
@@ -154,7 +156,8 @@ def make_beatmap_aapproval_view(ruleset_id):
     """
     ruleset = Ruleset.objects.get(id=ruleset_id)
     beatmap_list = []
-    beatmap_not_approved = RecommendBeatmap.objects.filter(ruleset_id=ruleset.id, owner_seen=False).exclude(user_id=ruleset.owner)
+    beatmap_not_approved = RecommendBeatmap.objects.filter(ruleset_id=ruleset.id, owner_seen=False).exclude(
+        user_id=ruleset.owner)
     if len(beatmap_not_approved) != 0:
         for beatmap in beatmap_not_approved:
             try:
@@ -194,14 +197,25 @@ def make_status_view():
             else:
                 download_link = f"{ruleset.source}releases/latest/download/{ruleset.github_download_filename}"
                 latest_release = f"{ruleset.source}releases"
-            show_ruleset.append([ruleset, 'github_with_direct', [download_link, latest_release, RulesetStatus.objects.get(ruleset=ruleset)]])
+            if ruleset.localisation_support and ruleset.github_localisation_filename != "":
+                localisation_download_link = f"{ruleset.source}/releases/latest/download/{ruleset.github_localisation_filename}"
+            else:
+                localisation_download_link = None
+            show_ruleset.append([ruleset, 'github_with_direct',
+                                 [download_link, latest_release, RulesetStatus.objects.get(ruleset=ruleset), ruleset,
+                                  localisation_download_link]])
         elif (source_link_type(ruleset.source) == 'github') and (ruleset.github_download_filename == ""):
             # No filename, so we can render only the link to release page.
             if ruleset.source[-1] != "/":
                 latest_release = f"{ruleset.source}/releases"
             else:
                 latest_release = f"{ruleset.source}releases"
-            show_ruleset.append([ruleset, 'github', [latest_release, RulesetStatus.objects.get(ruleset=ruleset)]])
+            if ruleset.localisation_support and ruleset.github_localisation_filename != "":
+                localisation_download_link = f"{ruleset.source}/releases/latest/download/{ruleset.github_localisation_filename}"
+            else:
+                localisation_download_link = None
+            show_ruleset.append([ruleset, 'github', [latest_release, RulesetStatus.objects.get(ruleset=ruleset), ruleset,
+                                                     localisation_download_link]])
         else:
             continue
     return show_ruleset

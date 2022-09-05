@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2022.410.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-24 01:55+0700\n"
+"POT-Creation-Date: 2022-09-06 01:33+0700\n"
 "PO-Revision-Date: 2022-04-24 01:55+0700\n"
 "Last-Translator: Phawit Pornwattanakul <me@helloyeew.dev>\n"
 "Language-Team: Rūrusetto <me@helloyeew.dev>\n"
@@ -25,8 +25,7 @@ msgstr "Recommend a new beatmap"
 #: .\templates\wiki\add_recommend_beatmap.html:11
 #, python-format
 msgid "You are currently add a new recommend beatmap for %(ruleset_name)s."
-msgstr ""
-"You are currently add a new recommend beatmap for %(ruleset_name)s."
+msgstr "You are currently add a new recommend beatmap for %(ruleset_name)s."
 
 #: .\templates\wiki\add_recommend_beatmap.html:38
 msgid "beatmap_id"
@@ -106,11 +105,11 @@ msgid "create"
 msgstr "Create"
 
 #: .\templates\wiki\archived_rulesets.html:10 .\templates\wiki\listing.html:24
-#: .\views.py:832
+#: .\views.py:846
 msgid "archived_rulesets"
 msgstr "Archived rulesets"
 
-#: .\templates\wiki\archived_rulesets.html:11 .\views.py:835
+#: .\templates\wiki\archived_rulesets.html:11 .\views.py:849
 msgid "archived_rulesets_description"
 msgstr ""
 "The list of rulesets that's stop update or archived by rulesets creator."
@@ -123,8 +122,8 @@ msgstr ""
 #: .\templates\wiki\snippets\beatmap_approval_card.html:43
 #: .\templates\wiki\snippets\beatmap_card.html:43
 #: .\templates\wiki\subpage.html:56 .\templates\wiki\wiki_page.html:18
-#: .\templates\wiki\wiki_page.html:20 .\templates\wiki\wiki_page.html:80
-#: .\templates\wiki\wiki_page.html:147 .\templates\wiki\wiki_page.html:149
+#: .\templates\wiki\wiki_page.html:20 .\templates\wiki\wiki_page.html:87
+#: .\templates\wiki\wiki_page.html:154 .\templates\wiki\wiki_page.html:156
 msgid "deleted_user"
 msgstr "Deleted User"
 
@@ -133,8 +132,8 @@ msgstr "Deleted User"
 #: .\templates\wiki\home.html:72 .\templates\wiki\listing.html:61
 #: .\templates\wiki\listing.html:67 .\templates\wiki\listing.html:90
 #: .\templates\wiki\listing.html:96 .\templates\wiki\wiki_page.html:18
-#: .\templates\wiki\wiki_page.html:24 .\templates\wiki\wiki_page.html:147
-#: .\templates\wiki\wiki_page.html:153
+#: .\templates\wiki\wiki_page.html:24 .\templates\wiki\wiki_page.html:154
+#: .\templates\wiki\wiki_page.html:160
 msgid "verified_rulesets_creator"
 msgstr "Verified rulesets creator"
 
@@ -151,13 +150,13 @@ msgstr "Logo"
 
 #: .\templates\wiki\base.html:89 .\templates\wiki\base.html:147
 #: .\templates\wiki\base.html:178 .\templates\wiki\listing.html:10
-#: .\views.py:90
+#: .\views.py:93
 msgid "listing"
 msgstr "Listing"
 
 #: .\templates\wiki\base.html:92 .\templates\wiki\base.html:148
 #: .\templates\wiki\base.html:179 .\templates\wiki\edit_ruleset_wiki.html:199
-#: .\templates\wiki\status.html:13 .\views.py:681
+#: .\templates\wiki\status.html:13 .\views.py:695
 msgid "status"
 msgstr "Status"
 
@@ -168,7 +167,7 @@ msgstr "Install"
 
 #: .\templates\wiki\base.html:98 .\templates\wiki\base.html:150
 #: .\templates\wiki\base.html:181 .\templates\wiki\changelog.html:14
-#: .\views.py:65
+#: .\views.py:68
 msgid "changelog"
 msgstr "Changelog"
 
@@ -225,14 +224,14 @@ msgstr "Made with ❤️ by"
 msgid "and"
 msgstr "and"
 
-#: .\templates\wiki\changelog.html:15 .\views.py:68
+#: .\templates\wiki\changelog.html:15 .\views.py:71
 msgid "changelog_description"
 msgstr "All update history of website are here."
 
 #: .\templates\wiki\changelog.html:30
 #: .\templates\wiki\edit_ruleset_wiki.html:202 .\templates\wiki\status.html:61
-#: .\templates\wiki\status.html:126 .\templates\wiki\status.html:161
-#: .\templates\wiki\status.html:196
+#: .\templates\wiki\status.html:133 .\templates\wiki\status.html:168
+#: .\templates\wiki\status.html:203
 msgid "pre_release"
 msgstr "pre-release"
 
@@ -245,11 +244,11 @@ msgid "release_at"
 msgstr "Release at"
 
 #: .\templates\wiki\create_ruleset.html:10 .\templates\wiki\listing.html:20
-#: .\views.py:129
+#: .\views.py:132
 msgid "add_a_new_ruleset"
 msgstr "Add a new ruleset"
 
-#: .\templates\wiki\create_ruleset.html:11 .\views.py:132
+#: .\templates\wiki\create_ruleset.html:11 .\views.py:135
 msgid "add_a_new_ruleset_description"
 msgstr ""
 "Let's add a new ruleset! Is it yours? Don't worry! You can add it even if "
@@ -506,8 +505,8 @@ msgstr ""
 "show pre-release badge too."
 
 #: .\templates\wiki\edit_ruleset_wiki.html:214 .\templates\wiki\status.html:54
-#: .\templates\wiki\status.html:119 .\templates\wiki\status.html:154
-#: .\templates\wiki\status.html:189
+#: .\templates\wiki\status.html:126 .\templates\wiki\status.html:161
+#: .\templates\wiki\status.html:196
 msgid "playable"
 msgstr "Playable"
 
@@ -521,7 +520,7 @@ msgstr ""
 msgid "edit_subpage"
 msgstr "Edit Subpage"
 
-#: .\templates\wiki\edit_subpage.html:11 .\views.py:391
+#: .\templates\wiki\edit_subpage.html:11 .\views.py:394
 #, python-format
 msgid ""
 "You are currently edit subpage \"%(subpage_name)s\" on ruleset name "
@@ -552,7 +551,7 @@ msgstr "Delete This Subpage"
 msgid "welcome_to_rurusetto"
 msgstr "Welcome to rūrusetto!"
 
-#: .\templates\wiki\home.html:10 .\views.py:41
+#: .\templates\wiki\home.html:10 .\views.py:44
 msgid "wiki_that_contain"
 msgstr "A wiki that contain all osu! rulesets."
 
@@ -570,11 +569,11 @@ msgstr ""
 "You are currently in test server environment, please go to <a href=\"https://"
 "rulesets.info\">live version</a> for a full experience."
 
-#: .\templates\wiki\install.html:9 .\views.py:307
+#: .\templates\wiki\install.html:9 .\views.py:310
 msgid "install_and_update_rulesets"
 msgstr "install and update the rulesets"
 
-#: .\templates\wiki\install.html:11 .\views.py:310
+#: .\templates\wiki\install.html:11 .\views.py:313
 msgid "install_and_update_rulesets_description"
 msgstr "install and update the rulesets in osu!lazer with rūrusetto."
 
@@ -688,7 +687,7 @@ msgstr ""
 "To update rulesets, just do the same step and overwrite the old rulesets "
 "file."
 
-#: .\templates\wiki\listing.html:11 .\views.py:93
+#: .\templates\wiki\listing.html:11 .\views.py:96
 msgid "listing_description"
 msgstr "List of available rulesets."
 
@@ -700,11 +699,11 @@ msgstr "Your hidden rulesets"
 msgid "all_rulesets"
 msgstr "All rulesets"
 
-#: .\templates\wiki\maintainer.html:11 .\views.py:709
+#: .\templates\wiki\maintainer.html:11 .\views.py:723
 msgid "maintainer_menu"
 msgstr "Maintainer Menu"
 
-#: .\templates\wiki\maintainer.html:12 .\views.py:712
+#: .\templates\wiki\maintainer.html:12 .\views.py:726
 msgid "maintainer_menu_description"
 msgstr "Menu for maintainer only!"
 
@@ -913,32 +912,32 @@ msgstr "mapped by"
 msgid "recommend_by"
 msgstr "Recommend by"
 
-#: .\templates\wiki\snippets\beatmap_approval_card.html:47
+#: .\templates\wiki\snippets\beatmap_approval_card.html:48
 msgid "approve"
 msgstr "Approve"
 
-#: .\templates\wiki\snippets\beatmap_approval_card.html:47
+#: .\templates\wiki\snippets\beatmap_approval_card.html:48
 msgid "deny"
 msgstr "Deny"
 
-#: .\templates\wiki\status.html:14 .\views.py:684
+#: .\templates\wiki\status.html:14 .\views.py:698
 msgid "status_description"
 msgstr ""
 "Status of all rulesets are here. (and you can download and update the "
 "rulesets instantly with this page!)"
 
-#: .\templates\wiki\status.html:56 .\templates\wiki\status.html:121
-#: .\templates\wiki\status.html:156 .\templates\wiki\status.html:191
+#: .\templates\wiki\status.html:56 .\templates\wiki\status.html:128
+#: .\templates\wiki\status.html:163 .\templates\wiki\status.html:198
 msgid "borked"
 msgstr "borked"
 
-#: .\templates\wiki\status.html:58 .\templates\wiki\status.html:123
-#: .\templates\wiki\status.html:158 .\templates\wiki\status.html:193
+#: .\templates\wiki\status.html:58 .\templates\wiki\status.html:130
+#: .\templates\wiki\status.html:165 .\templates\wiki\status.html:200
 msgid "unknown"
 msgstr "unknown"
 
-#: .\templates\wiki\status.html:67 .\templates\wiki\status.html:132
-#: .\templates\wiki\status.html:167 .\templates\wiki\status.html:202
+#: .\templates\wiki\status.html:67 .\templates\wiki\status.html:139
+#: .\templates\wiki\status.html:174 .\templates\wiki\status.html:209
 #: .\templates\wiki\wiki_page.html:74
 msgid "mark_as_archived"
 msgstr ""
@@ -974,23 +973,31 @@ msgstr ""
 "We are not support direct download for pre-release rulesets from GitHub now. "
 "Please get it from ruleset release page instead."
 
-#: .\templates\wiki\status.html:105 .\templates\wiki\status.html:140
+#: .\templates\wiki\status.html:107
+msgid "download_localisation_file"
+msgstr "Download localisation file"
+
+#: .\templates\wiki\status.html:109
+msgid "support_localisation_no_filename"
+msgstr "This ruleset is support localisation but no filename provided on our database, you can download it from GitHub release page."
+
+#: .\templates\wiki\status.html:112 .\templates\wiki\status.html:147
 msgid "github_release_page"
 msgstr "GitHub release page"
 
-#: .\templates\wiki\status.html:106 .\templates\wiki\status.html:141
-#: .\templates\wiki\status.html:176 .\templates\wiki\status.html:211
+#: .\templates\wiki\status.html:113 .\templates\wiki\status.html:148
+#: .\templates\wiki\status.html:183 .\templates\wiki\status.html:218
 msgid "go_to_rulesets_wiki_page"
 msgstr "Go to rulesets wiki page"
 
-#: .\templates\wiki\status.html:137
+#: .\templates\wiki\status.html:144
 msgid ""
 "Function is not available due to the rulesets source is from GitHub and "
 "<code>Ruleset Filename</code> field is missing or blank. Please fill the "
 "<code>Ruleset Filename</code> in the rulesets setting!"
 msgstr ""
 
-#: .\templates\wiki\status.html:172
+#: .\templates\wiki\status.html:179
 msgid ""
 "This function is not support in rulesets that is from Patreon. You can go to "
 "rulesets creator's Patreon at <code>Get from Patreon</code>!"
@@ -998,11 +1005,11 @@ msgstr ""
 "This function is not support in rulesets that is from Patreon. You can go to "
 "rulesets creator's Patreon at <code>Get from Patreon</code>!"
 
-#: .\templates\wiki\status.html:175 .\templates\wiki\wiki_page.html:165
+#: .\templates\wiki\status.html:182 .\templates\wiki\wiki_page.html:172
 msgid "get_from_patreon"
 msgstr "Get from Patreon"
 
-#: .\templates\wiki\status.html:207
+#: .\templates\wiki\status.html:214
 msgid ""
 "Rūrusetto-chan don't know this link's type so you can download the ruleset "
 "from its source."
@@ -1010,7 +1017,7 @@ msgstr ""
 "Rūrusetto-chan don't know this link's type so you can download the ruleset "
 "from its source."
 
-#: .\templates\wiki\status.html:210 .\templates\wiki\wiki_page.html:167
+#: .\templates\wiki\status.html:217 .\templates\wiki\wiki_page.html:174
 msgid "ruleset_source"
 msgstr "Ruleset source"
 
@@ -1019,12 +1026,12 @@ msgid "edit_this_subpage"
 msgstr "Edit this subpage"
 
 #: .\templates\wiki\subpage.html:56 .\templates\wiki\subpage.html:58
-#: .\templates\wiki\wiki_page.html:80 .\templates\wiki\wiki_page.html:82
+#: .\templates\wiki\wiki_page.html:87 .\templates\wiki\wiki_page.html:89
 msgid "last_edited_by"
 msgstr "Last edited by"
 
 #: .\templates\wiki\subpage.html:56 .\templates\wiki\subpage.html:58
-#: .\templates\wiki\wiki_page.html:80 .\templates\wiki\wiki_page.html:82
+#: .\templates\wiki\wiki_page.html:87 .\templates\wiki\wiki_page.html:89
 msgid "at"
 msgstr "at"
 
@@ -1040,52 +1047,56 @@ msgstr "Add new subpage"
 msgid "recommend_beatmaps"
 msgstr "Recommend beatmaps"
 
-#: .\templates\wiki\wiki_page.html:93
+#: .\templates\wiki\wiki_page.html:81
+msgid "localisation_support"
+msgstr "This ruleset support localisation function! See more info on how to setup <a href='#'>here</a>."
+
+#: .\templates\wiki\wiki_page.html:100
 msgid "subpage_index"
 msgstr "Subpage Index"
 
-#: .\templates\wiki\wiki_page.html:143
+#: .\templates\wiki\wiki_page.html:150
 msgid "creator"
 msgstr "Creator"
 
-#: .\templates\wiki\wiki_page.html:163
+#: .\templates\wiki\wiki_page.html:170
 msgid "github_repositories"
 msgstr "GitHub Repositories"
 
-#: .\templates\wiki\wiki_page.html:172
+#: .\templates\wiki\wiki_page.html:179
 msgid "support_the_creator"
 msgstr "Support the creator"
 
-#: .\templates\wiki\wiki_page.html:178
+#: .\templates\wiki\wiki_page.html:185
 msgid "support"
 msgstr "Support"
 
-#: .\templates\wiki\wiki_page.html:183
+#: .\templates\wiki\wiki_page.html:190
 msgid "message_from"
 msgstr "Message from"
 
-#: .\templates\wiki\wiki_page.html:187
+#: .\templates\wiki\wiki_page.html:194
 msgid "patreon"
 msgstr "Patreon"
 
-#: .\templates\wiki\wiki_page.html:190
+#: .\templates\wiki\wiki_page.html:197
 msgid "buy_a_coffee"
 msgstr "Buy a coffee"
 
-#: .\templates\wiki\wiki_page.html:193
+#: .\templates\wiki\wiki_page.html:200
 msgid "github_sponsors"
 msgstr "GitHub Sponsors"
 
-#: .\views.py:38
+#: .\views.py:41
 msgid "home"
 msgstr "home"
 
-#: .\views.py:123
+#: .\views.py:126
 #, python-format
 msgid "Ruleset name %(name)s has added to the list!"
 msgstr "Ruleset name %(name)s has added to the list!"
 
-#: .\views.py:243
+#: .\views.py:246
 #, fuzzy, python-format
 #| msgid ""
 #| " You are currently editing content on ruleset named \"%(ruleset_name)s\"."
@@ -1094,12 +1105,12 @@ msgid ""
 msgstr ""
 "You are currently editing content on ruleset named \"%(ruleset_name)s\"."
 
-#: .\views.py:278
+#: .\views.py:281
 #, python-format
 msgid "Subpage \"%(title)s\" for %(name)s has been created!"
 msgstr ""
 
-#: .\views.py:288
+#: .\views.py:291
 #, fuzzy, python-format
 #| msgid ""
 #| "You are currently edit subpage \"%(subpage_name)s\" on ruleset name "
@@ -1109,24 +1120,24 @@ msgstr ""
 "You are currently edit subpage \"%(subpage_name)s\" on ruleset name "
 "\"%(ruleset_name)s\"."
 
-#: .\views.py:375
+#: .\views.py:378
 msgid "Edit subpage successfully!"
 msgstr "Edit subpage successfully!"
 
-#: .\views.py:421
+#: .\views.py:424
 msgid "Delete subpage successfully!"
 msgstr "Delete subpage successfully!"
 
-#: .\views.py:423
+#: .\views.py:426
 msgid "You don't have permission to do this!"
 msgstr "You don't have permission to do this!"
 
-#: .\views.py:507
+#: .\views.py:521
 #, python-format
 msgid "Added %(title)s [%(version)s] as a recommended beatmap successfully!"
 msgstr "Added %(title)s [%(version)s] as a recommended beatmap successfully!"
 
-#: .\views.py:509
+#: .\views.py:523
 #, python-format
 msgid ""
 "Added %(title)s [%(version)s] to a waiting list! Please wait for the ruleset "
@@ -1135,19 +1146,19 @@ msgstr ""
 "Added %(title)s [%(version)s] to a waiting list! Please wait for the ruleset "
 "owner to approve your beatmap!"
 
-#: .\views.py:512
+#: .\views.py:526
 msgid "Adding beatmap failed! (Cannot connect to osu! API)"
 msgstr "Adding beatmap failed! (Cannot connect to osu! API)"
 
-#: .\views.py:514
+#: .\views.py:528
 msgid "Adding beatmap failed! (Beatmap ID not found in osu! mode.)"
 msgstr "Adding beatmap failed! (Beatmap ID not found in osu! mode.)"
 
-#: .\views.py:517
+#: .\views.py:531
 msgid "Adding beatmap failed! (You are already recommend this beatmap.)"
 msgstr "Adding beatmap failed! (You are already recommend this beatmap.)"
 
-#: .\views.py:522
+#: .\views.py:536
 msgid ""
 "Adding beatmap failed! (This beatmap is already recommended by other user in "
 "this ruleset.)"
@@ -1155,11 +1166,11 @@ msgstr ""
 "Adding beatmap failed! (This beatmap is already recommended by other user in "
 "this ruleset.)"
 
-#: .\views.py:524
+#: .\views.py:538
 msgid "Adding beatmap failed! (Unknown error.)"
 msgstr "Adding beatmap failed! (Unknown error.)"
 
-#: .\views.py:530
+#: .\views.py:544
 #, fuzzy, python-format
 #| msgid ""
 #| " You are currently editing content on ruleset named \"%(ruleset_name)s\"."
@@ -1167,25 +1178,25 @@ msgid "add a new recommend beatmap for %(name)s"
 msgstr ""
 "You are currently editing content on ruleset named \"%(ruleset_name)s\"."
 
-#: .\views.py:559
+#: .\views.py:573
 #, python-format
 msgid "recommend beatmaps for %(name)s"
 msgstr "recommend beatmaps for %(name)s"
 
-#: .\views.py:602
+#: .\views.py:616
 #, python-format
 msgid "approve a recommend beatmap for %(name)s"
 msgstr "approve a recommend beatmap for %(name)s"
 
-#: .\views.py:631 .\views.py:658
+#: .\views.py:645 .\views.py:672
 msgid "You already qualified this beatmap!"
 msgstr "You already qualified this beatmap!"
 
-#: .\views.py:636
+#: .\views.py:650
 msgid "Approve beatmap successfully!"
 msgstr "Approve beatmap successfully!"
 
-#: .\views.py:664
+#: .\views.py:678
 msgid "Deny beatmap successfully!"
 msgstr "Deny beatmap successfully!"
 

@@ -75,6 +75,13 @@
             </div>
         </div>
         {% endif %}
+        {% if content.localisation_support %}
+        <div class="row">
+            <div class="alert alert-info raleway-font">
+                <i class="fas fa-language"></i> {% trans "localisation_support" %}
+            </div>
+        </div>
+        {% endif %}
         <div class="row" id="last-edit">
             {% if user_detail.2 == None %}
             <p class="text-muted" data-aos="fade-up" data-aos-duration="1000">{% trans "last_edited_by" %} <img src="{% static 'img/default.png'%}" alt="{% trans 'deleted_user' %}" width="32" height="32" class="rounded-circle hvr-icon"> {% trans 'deleted_user' %} {% trans 'at' %} {{ content.last_edited_at|date:"F j, Y h:i A" }} UTC</p>

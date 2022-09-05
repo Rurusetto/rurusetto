@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2022.410.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-24 02:02+0700\n"
+"POT-Creation-Date: 2022-09-06 01:33+0700\n"
 "PO-Revision-Date: 2022-04-24 02:13+0700\n"
 "Last-Translator: Phawit Pornwattanakul <me@helloyeew.dev>\n"
 "Language-Team: Rūrusetto <me@helloyeew.dev>\n"
@@ -100,11 +100,11 @@ msgid "create"
 msgstr "สร้าง"
 
 #: .\templates\wiki\archived_rulesets.html:10 .\templates\wiki\listing.html:24
-#: .\views.py:832
+#: .\views.py:846
 msgid "archived_rulesets"
 msgstr "rulesets ที่ถูกเก็บแล้ว"
 
-#: .\templates\wiki\archived_rulesets.html:11 .\views.py:835
+#: .\templates\wiki\archived_rulesets.html:11 .\views.py:849
 msgid "archived_rulesets_description"
 msgstr "รายการของ rulesets ที่หยุดอัพเดทหรือถูกเก็บโดยผู้สร้าง rulesets"
 
@@ -116,8 +116,8 @@ msgstr "รายการของ rulesets ที่หยุดอัพเ�
 #: .\templates\wiki\snippets\beatmap_approval_card.html:43
 #: .\templates\wiki\snippets\beatmap_card.html:43
 #: .\templates\wiki\subpage.html:56 .\templates\wiki\wiki_page.html:18
-#: .\templates\wiki\wiki_page.html:20 .\templates\wiki\wiki_page.html:80
-#: .\templates\wiki\wiki_page.html:147 .\templates\wiki\wiki_page.html:149
+#: .\templates\wiki\wiki_page.html:20 .\templates\wiki\wiki_page.html:87
+#: .\templates\wiki\wiki_page.html:154 .\templates\wiki\wiki_page.html:156
 msgid "deleted_user"
 msgstr "User ที่ถูกลบ"
 
@@ -126,8 +126,8 @@ msgstr "User ที่ถูกลบ"
 #: .\templates\wiki\home.html:72 .\templates\wiki\listing.html:61
 #: .\templates\wiki\listing.html:67 .\templates\wiki\listing.html:90
 #: .\templates\wiki\listing.html:96 .\templates\wiki\wiki_page.html:18
-#: .\templates\wiki\wiki_page.html:24 .\templates\wiki\wiki_page.html:147
-#: .\templates\wiki\wiki_page.html:153
+#: .\templates\wiki\wiki_page.html:24 .\templates\wiki\wiki_page.html:154
+#: .\templates\wiki\wiki_page.html:160
 msgid "verified_rulesets_creator"
 msgstr "ผู้สร้าง rulesets ที่ได้รับการยืนยันแล้ว"
 
@@ -144,13 +144,13 @@ msgstr "โลโก้"
 
 #: .\templates\wiki\base.html:89 .\templates\wiki\base.html:147
 #: .\templates\wiki\base.html:178 .\templates\wiki\listing.html:10
-#: .\views.py:90
+#: .\views.py:93
 msgid "listing"
 msgstr "รายการ"
 
 #: .\templates\wiki\base.html:92 .\templates\wiki\base.html:148
 #: .\templates\wiki\base.html:179 .\templates\wiki\edit_ruleset_wiki.html:199
-#: .\templates\wiki\status.html:13 .\views.py:681
+#: .\templates\wiki\status.html:13 .\views.py:695
 msgid "status"
 msgstr "สถานะ"
 
@@ -161,7 +161,7 @@ msgstr "ติดตั้ง"
 
 #: .\templates\wiki\base.html:98 .\templates\wiki\base.html:150
 #: .\templates\wiki\base.html:181 .\templates\wiki\changelog.html:14
-#: .\views.py:65
+#: .\views.py:68
 msgid "changelog"
 msgstr "บันทึกการเปลี่ยนแปลง"
 
@@ -218,14 +218,14 @@ msgstr "สร้างด้วย ❤️ โดย"
 msgid "and"
 msgstr "และ"
 
-#: .\templates\wiki\changelog.html:15 .\views.py:68
+#: .\templates\wiki\changelog.html:15 .\views.py:71
 msgid "changelog_description"
 msgstr "ประวัติการอัพเดทของเว็ปไซต์อยู่ที่นี่"
 
 #: .\templates\wiki\changelog.html:30
 #: .\templates\wiki\edit_ruleset_wiki.html:202 .\templates\wiki\status.html:61
-#: .\templates\wiki\status.html:126 .\templates\wiki\status.html:161
-#: .\templates\wiki\status.html:196
+#: .\templates\wiki\status.html:133 .\templates\wiki\status.html:168
+#: .\templates\wiki\status.html:203
 msgid "pre_release"
 msgstr "pre-release"
 
@@ -238,11 +238,11 @@ msgid "release_at"
 msgstr "ปล่อยเมื่อ"
 
 #: .\templates\wiki\create_ruleset.html:10 .\templates\wiki\listing.html:20
-#: .\views.py:129
+#: .\views.py:132
 msgid "add_a_new_ruleset"
 msgstr "เพิ่ม ruleset ใหม่"
 
-#: .\templates\wiki\create_ruleset.html:11 .\views.py:132
+#: .\templates\wiki\create_ruleset.html:11 .\views.py:135
 msgid "add_a_new_ruleset_description"
 msgstr ""
 "มาเพิ่ม ruleset ใหม่กัน! นี่เป็นของคุณหรือเปล่า? ไม่ต้องห่วง! "
@@ -486,8 +486,8 @@ msgstr ""
 "release แทนการดึงปกติและในหน้าสถานะของ ruleset ป้าย pre-release จะถูกแสดงด้วย"
 
 #: .\templates\wiki\edit_ruleset_wiki.html:214 .\templates\wiki\status.html:54
-#: .\templates\wiki\status.html:119 .\templates\wiki\status.html:154
-#: .\templates\wiki\status.html:189
+#: .\templates\wiki\status.html:126 .\templates\wiki\status.html:161
+#: .\templates\wiki\status.html:196
 msgid "playable"
 msgstr "เล่นได้"
 
@@ -501,7 +501,7 @@ msgstr ""
 msgid "edit_subpage"
 msgstr "แก้ไขหน้าย่อย"
 
-#: .\templates\wiki\edit_subpage.html:11 .\views.py:391
+#: .\templates\wiki\edit_subpage.html:11 .\views.py:394
 #, python-format
 msgid ""
 "You are currently edit subpage \"%(subpage_name)s\" on ruleset name "
@@ -530,7 +530,7 @@ msgstr "ลบหน้าย่อยนี้"
 msgid "welcome_to_rurusetto"
 msgstr "ยินดีต้อนรับเข้าสู่ rūrusetto!"
 
-#: .\templates\wiki\home.html:10 .\views.py:41
+#: .\templates\wiki\home.html:10 .\views.py:44
 msgid "wiki_that_contain"
 msgstr "วิกิที่รวม rulesets ทุกอันของ osu!"
 
@@ -550,11 +550,11 @@ msgstr ""
 "คุณกำลังอยู่ในเซิฟเวอร์ที่ใช้ทดสอบ, กรุณาไปที่ <a href=\"https://rulesets.info"
 "\">เวอร์ชั่นทั่วไป</a> สำหรับประสบการณ์ที่เต็มที่"
 
-#: .\templates\wiki\install.html:9 .\views.py:307
+#: .\templates\wiki\install.html:9 .\views.py:310
 msgid "install_and_update_rulesets"
 msgstr "ติดตั้งและอัพเดท rulesets"
 
-#: .\templates\wiki\install.html:11 .\views.py:310
+#: .\templates\wiki\install.html:11 .\views.py:313
 msgid "install_and_update_rulesets_description"
 msgstr "ติดตั้งและอัพเดท rulesets ใน osu!lazer ด้วย rūrusetto"
 
@@ -655,7 +655,7 @@ msgid ""
 "file."
 msgstr "ในการอัพเดท rulesets เพียงแค่ทำขั้นตอนเดิมและเขียนทับไฟล์ rulesets เก่า"
 
-#: .\templates\wiki\listing.html:11 .\views.py:93
+#: .\templates\wiki\listing.html:11 .\views.py:96
 msgid "listing_description"
 msgstr "รายการของ rulesets ที่มีอยู่"
 
@@ -667,11 +667,11 @@ msgstr "Ruleset ที่คุณซ่อนไว้อยู่"
 msgid "all_rulesets"
 msgstr "Ruleset ทุกอัน"
 
-#: .\templates\wiki\maintainer.html:11 .\views.py:709
+#: .\templates\wiki\maintainer.html:11 .\views.py:723
 msgid "maintainer_menu"
 msgstr "เมนูผู้ดูแล"
 
-#: .\templates\wiki\maintainer.html:12 .\views.py:712
+#: .\templates\wiki\maintainer.html:12 .\views.py:726
 msgid "maintainer_menu_description"
 msgstr "เมนูสำหรับผู้ดูแลเท่านั้น"
 
@@ -875,32 +875,32 @@ msgstr "แมพโดย"
 msgid "recommend_by"
 msgstr "แนะนำโดย"
 
-#: .\templates\wiki\snippets\beatmap_approval_card.html:47
+#: .\templates\wiki\snippets\beatmap_approval_card.html:48
 msgid "approve"
 msgstr "อนุมัติ"
 
-#: .\templates\wiki\snippets\beatmap_approval_card.html:47
+#: .\templates\wiki\snippets\beatmap_approval_card.html:48
 msgid "deny"
 msgstr "ปฏิเสธ"
 
-#: .\templates\wiki\status.html:14 .\views.py:684
+#: .\templates\wiki\status.html:14 .\views.py:698
 msgid "status_description"
 msgstr ""
 "สถานะของ rulesets ทุกอันอยู่ที่นี่ (และคุณสามารถดาวน์โหลดและอัพเดท rulesets "
 "อย่างรวดเร็วได้ด้วยหน้านี้!)"
 
-#: .\templates\wiki\status.html:56 .\templates\wiki\status.html:121
-#: .\templates\wiki\status.html:156 .\templates\wiki\status.html:191
+#: .\templates\wiki\status.html:56 .\templates\wiki\status.html:128
+#: .\templates\wiki\status.html:163 .\templates\wiki\status.html:198
 msgid "borked"
 msgstr "เล่นไม่ได้"
 
-#: .\templates\wiki\status.html:58 .\templates\wiki\status.html:123
-#: .\templates\wiki\status.html:158 .\templates\wiki\status.html:193
+#: .\templates\wiki\status.html:58 .\templates\wiki\status.html:130
+#: .\templates\wiki\status.html:165 .\templates\wiki\status.html:200
 msgid "unknown"
 msgstr "ไม่ทราบ"
 
-#: .\templates\wiki\status.html:67 .\templates\wiki\status.html:132
-#: .\templates\wiki\status.html:167 .\templates\wiki\status.html:202
+#: .\templates\wiki\status.html:67 .\templates\wiki\status.html:139
+#: .\templates\wiki\status.html:174 .\templates\wiki\status.html:209
 #: .\templates\wiki\wiki_page.html:74
 msgid "mark_as_archived"
 msgstr "ruleset อันนี้ถูกตั้งว่าถูกเก็บแล้วและไม้ได้รับการอัพเดทโดยผู้สร้างอีก"
@@ -935,16 +935,24 @@ msgstr ""
 "เรายังไม่รับรองการดาวร์โหลดโดยตรงสำหรับ ruleset ที่ pre-release มาจาก GitHub "
 "กรุณาไปโหลดในหน้า release ของ GitHub แทน"
 
-#: .\templates\wiki\status.html:105 .\templates\wiki\status.html:140
+#: .\templates\wiki\status.html:107
+msgid "download_localisation_file"
+msgstr "ดาวน์โหลดไฟล์ภาษา"
+
+#: .\templates\wiki\status.html:109
+msgid "support_localisation_no_filename"
+msgstr "Ruleset นี้รองรับการใช้งานหลายภาษาแต่ไม่มีชื่อไฟล์ภาษาในฐานข้อมูลของเรา คุณสามารถดาวน์โหลดมันได้จากหน้า release ของ GitHub"
+
+#: .\templates\wiki\status.html:112 .\templates\wiki\status.html:147
 msgid "github_release_page"
 msgstr "หน้า release ของ GitHub"
 
-#: .\templates\wiki\status.html:106 .\templates\wiki\status.html:141
-#: .\templates\wiki\status.html:176 .\templates\wiki\status.html:211
+#: .\templates\wiki\status.html:113 .\templates\wiki\status.html:148
+#: .\templates\wiki\status.html:183 .\templates\wiki\status.html:218
 msgid "go_to_rulesets_wiki_page"
 msgstr "ไปที่หน้าวิกิของ rulesets"
 
-#: .\templates\wiki\status.html:137
+#: .\templates\wiki\status.html:144
 msgid ""
 "Function is not available due to the rulesets source is from GitHub and "
 "<code>Ruleset Filename</code> field is missing or blank. Please fill the "
@@ -954,7 +962,7 @@ msgstr ""
 "Ruleset</code> ถูกปล่อยว่าง กรุณาไปใส่ <code>ชื่อไฟล์ Ruleset</code> ในการตั้งต่า "
 "rulesets ด้วย"
 
-#: .\templates\wiki\status.html:172
+#: .\templates\wiki\status.html:179
 msgid ""
 "This function is not support in rulesets that is from Patreon. You can go to "
 "rulesets creator's Patreon at <code>Get from Patreon</code>!"
@@ -962,11 +970,11 @@ msgstr ""
 "ฟังก์ชั่นนี้ไม่รองรับ rulesets ที่มาจาก Patreon คุณสามารถไปที่หน้า Patreon ของผู้สร้างได้ที่ "
 "<code>Get from Patreon</code>!"
 
-#: .\templates\wiki\status.html:175 .\templates\wiki\wiki_page.html:165
+#: .\templates\wiki\status.html:182 .\templates\wiki\wiki_page.html:172
 msgid "get_from_patreon"
 msgstr "รับจาก Patreon"
 
-#: .\templates\wiki\status.html:207
+#: .\templates\wiki\status.html:214
 msgid ""
 "Rūrusetto-chan don't know this link's type so you can download the ruleset "
 "from its source."
@@ -974,7 +982,7 @@ msgstr ""
 "น้อน Rūrusetto ไม่รู้ชนิดของลิงก์นี้ฉะนั้นคุณสามารถดาวน์โหลด ruleset นี้ได้จากที่มาของ ruleset "
 "นี้ได้เลย"
 
-#: .\templates\wiki\status.html:210 .\templates\wiki\wiki_page.html:167
+#: .\templates\wiki\status.html:217 .\templates\wiki\wiki_page.html:174
 msgid "ruleset_source"
 msgstr "ที่มาของ ruleset"
 
@@ -983,12 +991,12 @@ msgid "edit_this_subpage"
 msgstr "แก้ไขหน้าย่อยนี้"
 
 #: .\templates\wiki\subpage.html:56 .\templates\wiki\subpage.html:58
-#: .\templates\wiki\wiki_page.html:80 .\templates\wiki\wiki_page.html:82
+#: .\templates\wiki\wiki_page.html:87 .\templates\wiki\wiki_page.html:89
 msgid "last_edited_by"
 msgstr "แก้ไขล่าสุดโดย"
 
 #: .\templates\wiki\subpage.html:56 .\templates\wiki\subpage.html:58
-#: .\templates\wiki\wiki_page.html:80 .\templates\wiki\wiki_page.html:82
+#: .\templates\wiki\wiki_page.html:87 .\templates\wiki\wiki_page.html:89
 msgid "at"
 msgstr "เมื่อ"
 
@@ -1004,52 +1012,56 @@ msgstr "เพิ่มหน้าย่อยใหม่"
 msgid "recommend_beatmaps"
 msgstr "บีทแมปแนะนำ"
 
-#: .\templates\wiki\wiki_page.html:93
+#: .\templates\wiki\wiki_page.html:81
+msgid "localisation_support"
+msgstr "Ruleset นี้รองรับการใช้งานหลายภาษา สามารถศึกษาต้อเกี่ยวกับฟังก์ชั่นนี้ได้<a href='#'>ที่นี่</a>."
+
+#: .\templates\wiki\wiki_page.html:100
 msgid "subpage_index"
 msgstr "สารบัญหน้าย่อย"
 
-#: .\templates\wiki\wiki_page.html:143
+#: .\templates\wiki\wiki_page.html:150
 msgid "creator"
 msgstr "ผู้สร้าง"
 
-#: .\templates\wiki\wiki_page.html:163
+#: .\templates\wiki\wiki_page.html:170
 msgid "github_repositories"
 msgstr "GitHub Repositories"
 
-#: .\templates\wiki\wiki_page.html:172
+#: .\templates\wiki\wiki_page.html:179
 msgid "support_the_creator"
 msgstr "สนับสนุนผู้สร้าง"
 
-#: .\templates\wiki\wiki_page.html:178
+#: .\templates\wiki\wiki_page.html:185
 msgid "support"
 msgstr "สนับสนุน"
 
-#: .\templates\wiki\wiki_page.html:183
+#: .\templates\wiki\wiki_page.html:190
 msgid "message_from"
 msgstr "ข้อความจาก"
 
-#: .\templates\wiki\wiki_page.html:187
+#: .\templates\wiki\wiki_page.html:194
 msgid "patreon"
 msgstr "Patreon"
 
-#: .\templates\wiki\wiki_page.html:190
+#: .\templates\wiki\wiki_page.html:197
 msgid "buy_a_coffee"
 msgstr "ซื้อกาแฟให้"
 
-#: .\templates\wiki\wiki_page.html:193
+#: .\templates\wiki\wiki_page.html:200
 msgid "github_sponsors"
 msgstr "GitHub Sponsors"
 
-#: .\views.py:38
+#: .\views.py:41
 msgid "home"
 msgstr "หน้าหลัก"
 
-#: .\views.py:123
+#: .\views.py:126
 #, python-format
 msgid "Ruleset name %(name)s has added to the list!"
 msgstr "Ruleset ชื่อ %(name)s ถูกเพิ่มเข้ารายการแล้ว!"
 
-#: .\views.py:243
+#: .\views.py:246
 #, fuzzy, python-format
 #| msgid ""
 #| " You are currently editing content on ruleset named \"%(ruleset_name)s\"."
@@ -1057,12 +1069,12 @@ msgid ""
 "You are currently editing content on ruleset named \"%(ruleset_name)s\"."
 msgstr "คุณกำลังแก้ไขเนื้อหาของ ruleset ที่ชื่อ \"%(ruleset_name)s\"."
 
-#: .\views.py:278
+#: .\views.py:281
 #, python-format
 msgid "Subpage \"%(title)s\" for %(name)s has been created!"
 msgstr "หน้าย่อย \"%(title)s\" สำหรับ %(name)s ถูกสร้างขึ้นแล้ว!"
 
-#: .\views.py:288
+#: .\views.py:291
 #, fuzzy, python-format
 #| msgid ""
 #| "You are currently edit subpage \"%(subpage_name)s\" on ruleset name "
@@ -1071,79 +1083,80 @@ msgid "You are currently add a subpage for ruleset name \"%(name)s\"."
 msgstr ""
 "คุณกำลังแก้ไขหน้าย่อย \"%(subpage_name)s\" ของ ruleset ที่ชื่อ \"%(ruleset_name)s\"."
 
-#: .\views.py:375
+#: .\views.py:378
 msgid "Edit subpage successfully!"
 msgstr "แก้ไขหน้าย่อยสำเร็จ!"
 
-#: .\views.py:421
+#: .\views.py:424
 msgid "Delete subpage successfully!"
 msgstr "ลบหน้าย่อยสำเร็จ!"
 
-#: .\views.py:423
+#: .\views.py:426
 msgid "You don't have permission to do this!"
 msgstr "คุณไม่มีสิทธิ์ทำสิ่งนี้!"
 
-#: .\views.py:507
+#: .\views.py:521
 #, python-format
 msgid "Added %(title)s [%(version)s] as a recommended beatmap successfully!"
 msgstr "เพิ่ม %(title)s [%(version)s] เป็นบีทแมพแนะนำสำเร็จแล้ว!"
 
-#: .\views.py:509
+#: .\views.py:523
 #, python-format
 msgid ""
 "Added %(title)s [%(version)s] to a waiting list! Please wait for the ruleset "
 "owner to approve your beatmap!"
 msgstr ""
-"เพิ่ม %(title)s [%(version)s] เข้ารายการรออนุมัติแล้ว! กรุณารอเจ้าของ ruleset เข้ามาอนุมัติบีทแมพนะ!"
+"เพิ่ม %(title)s [%(version)s] เข้ารายการรออนุมัติแล้ว! กรุณารอเจ้าของ ruleset "
+"เข้ามาอนุมัติบีทแมพนะ!"
 
-#: .\views.py:512
+#: .\views.py:526
 msgid "Adding beatmap failed! (Cannot connect to osu! API)"
 msgstr "เพิ่มบีทแมพไม่สำเร็จ (เชื่อมต่อ osu! API ไม่สำเร็จ)"
 
-#: .\views.py:514
+#: .\views.py:528
 msgid "Adding beatmap failed! (Beatmap ID not found in osu! mode.)"
 msgstr "เพิ่มบีทแมพไม่สำเร็จ (ไม่พบบีทแมพไอดีนี้ในโหมด osu!)"
 
-#: .\views.py:517
+#: .\views.py:531
 msgid "Adding beatmap failed! (You are already recommend this beatmap.)"
 msgstr "เพิ่มบีทแมพไม่สำเร็จ (คุณแนะนำบีทแมพนี้ไปแล้ว)"
 
-#: .\views.py:522
+#: .\views.py:536
 msgid ""
 "Adding beatmap failed! (This beatmap is already recommended by other user in "
 "this ruleset.)"
 msgstr "เพิ่มบีทแมพไม่สำเร็จ (บีทแมพนี้ถูกแนะนำโดยผู้เล่นอื่นใน ruleset นี้แล้ว)"
 
-#: .\views.py:524
+#: .\views.py:538
 msgid "Adding beatmap failed! (Unknown error.)"
 msgstr "เพิ่มบีทแมพไม่สำเร็จ (ไม่ทราบข้อผิดพลาด)"
 
-#: .\views.py:530
+#: .\views.py:544
 #, fuzzy, python-format
 #| msgid "You are currently add a new recommend beatmap for %(ruleset_name)s."
 msgid "add a new recommend beatmap for %(name)s"
 msgstr "คุณกำลังเพิ่มบีทแมพแนะนำสำหรับ %(ruleset_name)s"
 
-#: .\views.py:559
+#: .\views.py:573
 #, fuzzy, python-format
 #| msgid "recommend_beatmaps"
 msgid "recommend beatmaps for %(name)s"
 msgstr "บีทแมปแนะนำ"
 
-#: .\views.py:602
+#: .\views.py:616
 #, fuzzy, python-format
 #| msgid "You are currently add a new recommend beatmap for %(ruleset_name)s."
 msgid "approve a recommend beatmap for %(name)s"
 msgstr "คุณกำลังเพิ่มบีทแมพแนะนำสำหรับ %(ruleset_name)s"
 
-#: .\views.py:631 .\views.py:658
+#: .\views.py:645 .\views.py:672
 msgid "You already qualified this beatmap!"
 msgstr "คุณได้คัดเลือกบีทแมพนี้ไปแล้ว!"
 
-#: .\views.py:636
+#: .\views.py:650
 msgid "Approve beatmap successfully!"
 msgstr "อนุมัติบีทแมพสำเร็จ!"
 
-#: .\views.py:664
+#: .\views.py:678
 msgid "Deny beatmap successfully!"
 msgstr "ปฏิเสธบีทแมพสำเร็จ!"

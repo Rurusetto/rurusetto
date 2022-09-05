@@ -103,7 +103,7 @@
             <p><i class="fas fa-exclamation-circle"></i> {% trans "not_support_pre_release_ruleset" %}.</p>
             {% endif %}
             {% if ruleset.2.3.localisation_support %}
-                {% if ruleset.2.2.github_localisation_filename != "" %}
+                {% if ruleset.2.4 != None %}
                     <p><a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" href="{{ ruleset.2.4 }}"><i class="fas fa-download icon-menu hvr-icon"></i> {% trans "download_localisation_file" %}</a></p>
                 {% else %}
                     <p><i class="fas fa-exclamation-circle"></i> {% trans "support_localisation_no_filename" %}.</p>

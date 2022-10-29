@@ -34,7 +34,7 @@ We always update localization file weekly.
 
 Please make sure you have the following prerequisites:
 
-- [Python 3.7 or newer](https://www.python.org/)
+- [Python 3.8 or newer](https://www.python.org/)
 - During development on the codebase, we recommend an IDE with intelligent code completion and syntax highlighting. Our recommendation is [PyCharm](https://www.jetbrains.com/pycharm/) or [Visual Studio Code](https://code.visualstudio.com/)
 - [Git](https://git-scm.com/)
 
@@ -149,6 +149,7 @@ We use [code of conduct](code_of_conduct.md) from `Contributor Covenant`.
 - [@IKeepItNoodles](https://github.com/IKeepItNoodles) for icon, branding design and new color schemes.
 - [Netlify](https://www.netlify.com/) for sponsors us the open source plan using in hosting some static site of our project like documentation site.
 - [Sentry](https://sentry.io/) for sponsor us a sponsored plan using in error monitoring tool for our project.
+- [POEditor](https://poeditor.com/) for sponsor us a sponsored plan using in localization tool for our project.
 
 ## License
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2022.410.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-06 01:33+0700\n"
+"POT-Creation-Date: 2022-12-06 02:25+0700\n"
 "PO-Revision-Date: 2022-04-24 01:55+0700\n"
 "Last-Translator: Phawit Pornwattanakul <me@helloyeew.dev>\n"
 "Language-Team: Rūrusetto <me@helloyeew.dev>\n"
@@ -105,11 +105,11 @@ msgid "create"
 msgstr "Create"
 
 #: .\templates\wiki\archived_rulesets.html:10 .\templates\wiki\listing.html:24
-#: .\views.py:846
+#: .\views.py:867
 msgid "archived_rulesets"
 msgstr "Archived rulesets"
 
-#: .\templates\wiki\archived_rulesets.html:11 .\views.py:849
+#: .\templates\wiki\archived_rulesets.html:11 .\views.py:870
 msgid "archived_rulesets_description"
 msgstr ""
 "The list of rulesets that's stop update or archived by rulesets creator."
@@ -597,6 +597,7 @@ msgstr ""
 "the desired ruleset."
 
 #: .\templates\wiki\install.html:55
+#: .\templates\wiki\localisation_how_to.html:55
 msgid ""
 "The changelog and download link will automatically update when a ruleset is "
 "updated."
@@ -609,10 +610,12 @@ msgid "import rulesets to osu!lazer"
 msgstr "import rulesets to osu!lazer"
 
 #: .\templates\wiki\install.html:64
+#: .\templates\wiki\localisation_how_to.html:64
 msgid "step 1: navigate to osu! data directory"
 msgstr "step 1: navigate to osu! data directory"
 
 #: .\templates\wiki\install.html:65
+#: .\templates\wiki\localisation_how_to.html:65
 #, fuzzy, python-format
 #| msgid ""
 #| "In osu!lazer’s setting panel, there is a button to <code>Open osu! "
@@ -634,6 +637,7 @@ msgstr ""
 "application itself."
 
 #: .\templates\wiki\install.html:68
+#: .\templates\wiki\localisation_how_to.html:68
 msgid "open_osu_folder"
 msgstr "Open osu! folder"
 
@@ -654,10 +658,12 @@ msgstr ""
 "directory, do make sure that duplicate copies of the ruleset are overwritten."
 
 #: .\templates\wiki\install.html:78
+#: .\templates\wiki\localisation_how_to.html:78
 msgid "Other rulesets also could share the same folder."
 msgstr "Other rulesets also could share the same folder."
 
 #: .\templates\wiki\install.html:83
+#: .\templates\wiki\localisation_how_to.html:83
 msgid "step 3: have fun!"
 msgstr "step 3: have fun!"
 
@@ -699,11 +705,109 @@ msgstr "Your hidden rulesets"
 msgid "all_rulesets"
 msgstr "All rulesets"
 
-#: .\templates\wiki\maintainer.html:11 .\views.py:723
+#: .\templates\wiki\localisation_how_to.html:9 .\views.py:716
+msgid "install_and_update_localization"
+msgstr "install and update the localization files"
+
+#: .\templates\wiki\localisation_how_to.html:11 .\views.py:719
+msgid "install_and_update_localization_description"
+msgstr "install and update the localization files in osu!lazer with rūrusetto"
+
+#: .\templates\wiki\localisation_how_to.html:40
+#, fuzzy
+#| msgid "download_localisation_file"
+msgid "download localization file"
+msgstr "Download localization file"
+
+#: .\templates\wiki\localisation_how_to.html:47
+#, python-format
+msgid ""
+"Localisation files can be obtained at <a class=\"text-decoration-none text-"
+"center spacing-hover-short hvr-icon-bounce\" target=\"_blank\" href="
+"\"%(url_status)s\"><i class=\"fas fa-info-circle icon-menu hvr-icon\"></i> "
+"rulesets status page</a> and then clicking on the <code>Download "
+"localisation file</code> on the desired ruleset."
+msgstr ""
+"Localisation files can be obtained at <a class=\"text-decoration-none text-"
+"center spacing-hover-short hvr-icon-bounce\" target=\"_blank\" href="
+"\"%(url_status)s\"><i class=\"fas fa-info-circle icon-menu hvr-icon\"></i> "
+"rulesets status page</a> and then clicking on the <code>Download "
+"localisation file</code> on the desired ruleset."
+
+#: .\templates\wiki\localisation_how_to.html:59
+#, fuzzy
+#| msgid "download_localisation_file"
+msgid "import localization file to osu!lazer"
+msgstr "import localization file to osu!lazer"
+
+#: .\templates\wiki\localisation_how_to.html:73
+msgid "move_localization_file"
+msgstr "Move localization file"
+
+#: .\templates\wiki\localisation_how_to.html:76
+#, fuzzy
+#| msgid "step 2: installing the ruleset"
+msgid "step 2: installing the localization file"
+msgstr "step 2: installing the localization file"
+
+#: .\templates\wiki\localisation_how_to.html:77
+#, fuzzy
+#| msgid ""
+#| "Extract the zip that you just downloaded, the folder(s) for languages are "
+#| "set by their <a href=\"https://en.wikipedia.org/wiki/"
+#| "List_of_ISO_639-1_codes\">ISO codes</a>. To install your desire language, "
+#| "get in the folder of your language, grab .dll file inside the folder and "
+#| "paste it inside the language folder."
+msgid ""
+"Extract the zip that you just downloaded, the folder(s) for languages are "
+"set by their <a class=\"text-decoration-none text-center spacing-hover-short "
+"hvr-icon-bounce\" target=\"_blank\" href=\"https://en.wikipedia.org/wiki/"
+"List_of_ISO_639-1_codes\">ISO codes</a>. To install your desire language, "
+"get in the folder of your language, grab .dll file inside the folder and "
+"paste it inside the language folder."
+msgstr ""
+"Extract the zip that you just downloaded, the folder(s) for languages are "
+"set by their <a class=\"text-decoration-none text-center spacing-hover-short "
+"hvr-icon-bounce\" target=\"_blank\" href=\"https://en.wikipedia.org/wiki/"
+"List_of_ISO_639-1_codes\">ISO codes</a>. To install your desire language, "
+"get in the folder of your language, grab .dll file inside the folder and "
+"paste it inside the language folder."
+
+#: .\templates\wiki\localisation_how_to.html:84
+msgid ""
+"After completing the above steps, you may need to restart osu!lazer if it is "
+"already open. Once restarted, you should see the localized text in the "
+"rulesets setting part. You can change the osu!lazer's language in the "
+"<code>General > Language</code> section of osu!lazer's settings."
+msgstr ""
+"After completing the above steps, you may need to restart osu!lazer if it is "
+"already open. Once restarted, you should see the localized text in the "
+"rulesets setting part. You can change the osu!lazer's language in the "
+"<code>General > Language</code> section of osu!lazer's settings."
+
+#: .\templates\wiki\localisation_how_to.html:87
+msgid "lazer_language_setting"
+msgstr "osu!lazer language settings"
+
+#: .\templates\wiki\localisation_how_to.html:93
+#, fuzzy
+#| msgid "download_localisation_file"
+msgid "update localization files"
+msgstr "Download localisation file"
+
+#: .\templates\wiki\localisation_how_to.html:96
+msgid ""
+"To update localization files, just do the same step and overwrite the old "
+"localization files."
+msgstr ""
+"To update localization files, just do the same step and overwrite the old "
+"localization files."
+
+#: .\templates\wiki\maintainer.html:11 .\views.py:744
 msgid "maintainer_menu"
 msgstr "Maintainer Menu"
 
-#: .\templates\wiki\maintainer.html:12 .\views.py:726
+#: .\templates\wiki\maintainer.html:12 .\views.py:747
 msgid "maintainer_menu_description"
 msgstr "Menu for maintainer only!"
 
@@ -979,7 +1083,9 @@ msgstr "Download localisation file"
 
 #: .\templates\wiki\status.html:109
 msgid "support_localisation_no_filename"
-msgstr "This ruleset is support localisation but no filename provided on our database, you can download it from GitHub release page."
+msgstr ""
+"This ruleset is support localisation but no filename provided on our "
+"database, you can download it from GitHub release page."
 
 #: .\templates\wiki\status.html:112 .\templates\wiki\status.html:147
 msgid "github_release_page"
@@ -1049,7 +1155,9 @@ msgstr "Recommend beatmaps"
 
 #: .\templates\wiki\wiki_page.html:81
 msgid "localisation_support"
-msgstr "This ruleset support localisation function! See more info on how to setup <a href='#'>here</a>."
+msgstr ""
+"This ruleset support localisation function! See more info on how to setup <a "
+"href='/install/localization'>here</a>."
 
 #: .\templates\wiki\wiki_page.html:100
 msgid "subpage_index"

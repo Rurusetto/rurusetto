@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2022.410.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-06 01:33+0700\n"
+"POT-Creation-Date: 2022-12-06 02:25+0700\n"
 "PO-Revision-Date: 2022-04-24 02:13+0700\n"
 "Last-Translator: Phawit Pornwattanakul <me@helloyeew.dev>\n"
 "Language-Team: Rūrusetto <me@helloyeew.dev>\n"
@@ -100,11 +100,11 @@ msgid "create"
 msgstr "สร้าง"
 
 #: .\templates\wiki\archived_rulesets.html:10 .\templates\wiki\listing.html:24
-#: .\views.py:846
+#: .\views.py:867
 msgid "archived_rulesets"
 msgstr "rulesets ที่ถูกเก็บแล้ว"
 
-#: .\templates\wiki\archived_rulesets.html:11 .\views.py:849
+#: .\templates\wiki\archived_rulesets.html:11 .\views.py:870
 msgid "archived_rulesets_description"
 msgstr "รายการของ rulesets ที่หยุดอัพเดทหรือถูกเก็บโดยผู้สร้าง rulesets"
 
@@ -577,6 +577,7 @@ msgstr ""
 "ruleset</a> และคลิกไปที่ <code>ดาวน์โหลดเวอร์ชั่นล่าสุด</code> บน ruleset ที่ต้องการได้เลย"
 
 #: .\templates\wiki\install.html:55
+#: .\templates\wiki\localisation_how_to.html:55
 msgid ""
 "The changelog and download link will automatically update when a ruleset is "
 "updated."
@@ -587,10 +588,12 @@ msgid "import rulesets to osu!lazer"
 msgstr "นำ rulesets เข้าใน osu!lazer"
 
 #: .\templates\wiki\install.html:64
+#: .\templates\wiki\localisation_how_to.html:64
 msgid "step 1: navigate to osu! data directory"
 msgstr "ขั้นตอนที่ 1: ไปที่โฟลเดอร์ข้อมูลของ osu!"
 
 #: .\templates\wiki\install.html:65
+#: .\templates\wiki\localisation_how_to.html:65
 #, python-format
 msgid ""
 "In osu!lazer’s setting panel, there is a button to <code>Open osu! folder</"
@@ -605,6 +608,7 @@ msgstr ""
 "code>. ใน MacOS โฟลเดอร์นี้จะอยู่ที่ภายในแอป"
 
 #: .\templates\wiki\install.html:68
+#: .\templates\wiki\localisation_how_to.html:68
 msgid "open_osu_folder"
 msgstr "เปิดโฟลเดอร์ osu!"
 
@@ -625,10 +629,12 @@ msgstr ""
 "ตรวจสอบให้มั่นใจด้วยว่าไฟล์ ruleset ที่ซ้ำกันถูกเขียนทับแล้ว"
 
 #: .\templates\wiki\install.html:78
+#: .\templates\wiki\localisation_how_to.html:78
 msgid "Other rulesets also could share the same folder."
 msgstr "rulesets อื่นสามารถใช้โฟลเดอร์เดียวกันได้"
 
 #: .\templates\wiki\install.html:83
+#: .\templates\wiki\localisation_how_to.html:83
 msgid "step 3: have fun!"
 msgstr "ขั้นตอนที่ 3: เล่นให้สนุก!"
 
@@ -667,11 +673,112 @@ msgstr "Ruleset ที่คุณซ่อนไว้อยู่"
 msgid "all_rulesets"
 msgstr "Ruleset ทุกอัน"
 
-#: .\templates\wiki\maintainer.html:11 .\views.py:723
+#: .\templates\wiki\localisation_how_to.html:9 .\views.py:716
+#, fuzzy
+#| msgid "install_and_update_rulesets_description"
+msgid "install_and_update_localization"
+msgstr "ติดตั้งและอัพเดท rulesets ใน osu!lazer ด้วย rūrusetto"
+
+#: .\templates\wiki\localisation_how_to.html:11 .\views.py:719
+#, fuzzy
+#| msgid "install_and_update_rulesets_description"
+msgid "install_and_update_localization_description"
+msgstr "ติดตั้งและอัพเดท rulesets ใน osu!lazer ด้วย rūrusetto"
+
+#: .\templates\wiki\localisation_how_to.html:40
+#, fuzzy
+#| msgid "download_localisation_file"
+msgid "download localization file"
+msgstr "ดาวน์โหลดไฟล์ภาษา"
+
+#: .\templates\wiki\localisation_how_to.html:47
+#, fuzzy, python-format
+#| msgid ""
+#| "Ruleset files can be obtained at <a class=\"text-decoration-none text-"
+#| "center spacing-hover-short hvr-icon-bounce\" target=\"_blank\" href="
+#| "\"%(url_status)s\"><i class=\"fas fa-info-circle icon-menu hvr-icon\"></"
+#| "i> rulesets status page</a> and then clicking on the <code>Download "
+#| "latest version</code> on the desired ruleset."
+msgid ""
+"Localisation files can be obtained at <a class=\"text-decoration-none text-"
+"center spacing-hover-short hvr-icon-bounce\" target=\"_blank\" href="
+"\"%(url_status)s\"><i class=\"fas fa-info-circle icon-menu hvr-icon\"></i> "
+"rulesets status page</a> and then clicking on the <code>Download "
+"localisation file</code> on the desired ruleset."
+msgstr ""
+"ไฟล์ ruleset สามารถหาได้จาก <a class=\"text-decoration-none text-center "
+"spacing-hover-short hvr-icon-bounce\" target=\"_blank\" href=\"%(url_status)s"
+"\"><i class=\"fas fa-info-circle icon-menu hvr-icon\"></i> หน้าสถานะของ "
+"ruleset</a> และคลิกไปที่ <code>ดาวน์โหลดเวอร์ชั่นล่าสุด</code> บน ruleset ที่ต้องการได้เลย"
+
+#: .\templates\wiki\localisation_how_to.html:59
+#, fuzzy
+#| msgid "download_localisation_file"
+msgid "import localization file to osu!lazer"
+msgstr "ดาวน์โหลดไฟล์ภาษา"
+
+#: .\templates\wiki\localisation_how_to.html:73
+#, fuzzy
+#| msgid "download_localisation_file"
+msgid "move_localization_file"
+msgstr "ดาวน์โหลดไฟล์ภาษา"
+
+#: .\templates\wiki\localisation_how_to.html:76
+#, fuzzy
+#| msgid "step 2: installing the ruleset"
+msgid "step 2: installing the localization file"
+msgstr "ขั้นตอนที่ 2: ติดตั้ง ruleset"
+
+#: .\templates\wiki\localisation_how_to.html:77
+msgid ""
+"Extract the zip that you just downloaded, the folder(s) for languages are "
+"set by their <a class=\"text-decoration-none text-center spacing-hover-short "
+"hvr-icon-bounce\" target=\"_blank\" href=\"https://en.wikipedia.org/wiki/"
+"List_of_ISO_639-1_codes\">ISO codes</a>. To install your desire language, "
+"get in the folder of your language, grab .dll file inside the folder and "
+"paste it inside the language folder."
+msgstr ""
+
+#: .\templates\wiki\localisation_how_to.html:84
+#, fuzzy
+#| msgid ""
+#| "After completing the above steps, you may need to restart osu!lazer if it "
+#| "is already open. Once restarted, you should see the ruleset alongside the "
+#| "standard rulesets."
+msgid ""
+"After completing the above steps, you may need to restart osu!lazer if it is "
+"already open. Once restarted, you should see the localized text in the "
+"rulesets setting part. You can change the osu!lazer's language in the "
+"<code>General > Language</code> section of osu!lazer's settings."
+msgstr ""
+"หลังจากเสร็จทุกขั้นตอนแล้วคุณอาจจะต้องปิดและเปิด osu!lazer "
+"ใหม่ถ้ามันเปิดอยู่แล้วหลังจากที่ปิดและเปิดใหม่แล้วคุณจะเห็น ruleset ใหม่อยู่ข้างๆ ruleset มาตรฐาน"
+
+#: .\templates\wiki\localisation_how_to.html:87
+msgid "lazer_language_setting"
+msgstr ""
+
+#: .\templates\wiki\localisation_how_to.html:93
+#, fuzzy
+#| msgid "download_localisation_file"
+msgid "update localization files"
+msgstr "ดาวน์โหลดไฟล์ภาษา"
+
+#: .\templates\wiki\localisation_how_to.html:96
+#, fuzzy
+#| msgid ""
+#| "To update rulesets, just do the same step and overwrite the old rulesets "
+#| "file."
+msgid ""
+"To update localization files, just do the same step and overwrite the old "
+"localization files."
+msgstr "ในการอัพเดท rulesets เพียงแค่ทำขั้นตอนเดิมและเขียนทับไฟล์ rulesets เก่า"
+
+#: .\templates\wiki\maintainer.html:11 .\views.py:744
 msgid "maintainer_menu"
 msgstr "เมนูผู้ดูแล"
 
-#: .\templates\wiki\maintainer.html:12 .\views.py:726
+#: .\templates\wiki\maintainer.html:12 .\views.py:747
 msgid "maintainer_menu_description"
 msgstr "เมนูสำหรับผู้ดูแลเท่านั้น"
 
@@ -941,7 +1048,9 @@ msgstr "ดาวน์โหลดไฟล์ภาษา"
 
 #: .\templates\wiki\status.html:109
 msgid "support_localisation_no_filename"
-msgstr "Ruleset นี้รองรับการใช้งานหลายภาษาแต่ไม่มีชื่อไฟล์ภาษาในฐานข้อมูลของเรา คุณสามารถดาวน์โหลดมันได้จากหน้า release ของ GitHub"
+msgstr ""
+"Ruleset นี้รองรับการใช้งานหลายภาษาแต่ไม่มีชื่อไฟล์ภาษาในฐานข้อมูลของเรา "
+"คุณสามารถดาวน์โหลดมันได้จากหน้า release ของ GitHub"
 
 #: .\templates\wiki\status.html:112 .\templates\wiki\status.html:147
 msgid "github_release_page"
@@ -1014,7 +1123,8 @@ msgstr "บีทแมปแนะนำ"
 
 #: .\templates\wiki\wiki_page.html:81
 msgid "localisation_support"
-msgstr "Ruleset นี้รองรับการใช้งานหลายภาษา สามารถศึกษาต้อเกี่ยวกับฟังก์ชั่นนี้ได้<a href='#'>ที่นี่</a>."
+msgstr ""
+"Ruleset นี้รองรับการใช้งานหลายภาษา สามารถศึกษาต้อเกี่ยวกับฟังก์ชั่นนี้ได้<a href='#'>ที่นี่</a>."
 
 #: .\templates\wiki\wiki_page.html:100
 msgid "subpage_index"

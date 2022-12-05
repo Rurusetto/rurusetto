@@ -703,6 +703,27 @@ def status(request):
     return render(request, 'wiki/status.html', context)
 
 
+def install_localization_page(request):
+    """
+    View for how to install localisation file page. This page is static so nothing much here.
+
+    :param request: WSGI request from user.
+    :return: Render the install page and pass the value from context to the template (localisation_how_to.html)
+    """
+    hero_image = 'img/install-localization-cover-night.jpg'
+    hero_image_light = 'img/install-localization-cover-light.png'
+    context = {
+        'title': gettext('install_and_update_localization'),
+        'hero_image': static(hero_image),
+        'hero_image_light': static(hero_image_light),
+        'opengraph_description': gettext('install_and_update_localization_description'),
+        'opengraph_url': resolve_url('install_localization_page'),
+    }
+    if request.user.is_authenticated:
+        translation.activate(request.user.config.language)
+    return render(request, 'wiki/localisation_how_to.html', context)
+
+
 @user_passes_test(lambda u: u.is_superuser or u.is_staff)
 def maintainer_menu(request):
     """

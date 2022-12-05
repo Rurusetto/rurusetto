@@ -1,0 +1,101 @@
+{% extends "wiki/base.html" %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+
+    <div class="px-4 py-4 my-4 text-center align-middle hero">
+        <i class="fas fa-download fa-4x" style="transition: 0.5s" id="install-logo"></i>
+        <p></p>
+        <h1 class="display-5 fw-bold" id="home-welcome" data-aos="fade-down">{% trans "install_and_update_localization" %}</h1>
+        <div class="col-lg-4 mx-auto">
+            <p class="lead mb-4" id="home-description" data-aos="fade-down">{% trans "install_and_update_localization_description" %}</p>
+        </div>
+    </div>
+
+    <p></p>
+
+    <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == "success"%}
+                    <div class="alert alert-success">
+                        <i class="fas fa-check"></i> {{ message }}
+                    </div>
+                {% endif %}
+                {% if message.tags == "error"%}
+                    <div class="alert alert-danger">
+                        <i class="fas fa-times"></i> {{ message }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        <div class="row text-center gy-4">
+        </div>
+    </div>
+
+    <p></p>
+
+    <div class="d-grid gap-4">
+        <div class="container" data-aos="fade-up">
+            <h1 class="install-header text-center">{% blocktrans %}download localization file{% endblocktrans %}</h1>
+        </div>
+        <div class="container d-grid gap-4">
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h2></h2>
+                    {% url 'status' as url_status %}
+                    <p class="install-text">{% blocktrans %}Localisation files can be obtained at <a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" target="_blank" href="{{ url_status }}"><i class="fas fa-info-circle icon-menu hvr-icon"></i> rulesets status page</a> and then clicking on the <code>Download localisation file</code> on the desired ruleset.{% endblocktrans %}</p>
+                </div>
+                <div class="col-lg-6 text-center" data-aos="fade-left">
+                    <img src="{% static "img/download-localization.png" %}" alt="Download the rulesets file" class="install-img">
+                </div>
+            </div>
+        </div>
+        <div class="container text-center fs-5" data-aos="fade-up">
+            <p><i class="fas fa-sync-alt"></i> {% blocktrans %}The changelog and download link will automatically update when a ruleset is updated.{% endblocktrans %}</p>
+        </div>
+        <p></p>
+        <div class="container" data-aos="fade-up">
+            <h1 class="install-header text-center" data-aos="fade-up">{% blocktrans %}import localization file to osu!lazer{% endblocktrans %}</h1>
+        </div>
+        <div class="container d-grid gap-4">
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h2>{% blocktrans %}step 1: navigate to osu! data directory{% endblocktrans %}</h2>
+                    <p class="install-text">{% blocktrans %}In osu!lazer’s setting panel, there is a button to <code>Open osu! folder</code> within the “General” section. On windows you could navigate to the data folder directly via Windows Explorer, by default this location is <code>%AppData%/osu!/rulesets</code>. On MacOS default this location is in application itself.{% endblocktrans %}</p>
+                </div>
+                <div class="col-lg-6 text-center" data-aos="fade-left">
+                    <img src="{% static "img/open-osu-folder-update.png" %}" alt="{% trans 'open_osu_folder' %}" class="install-img">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 text-center" data-aos="fade-right">
+                    <img src="{% static "img/installing-localization.png" %}" alt="{% trans "move_localization_file" %}" class="install-img">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2>{% blocktrans %}step 2: installing the localization file{% endblocktrans %}</h2>
+                    <p class="install-text">{% blocktrans %}Extract the zip that you just downloaded, the folder(s) for languages are set by their <a class="text-decoration-none text-center spacing-hover-short hvr-icon-bounce" target="_blank" href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO codes</a>. To install your desire language, get in the folder of your language, grab .dll file inside the folder and paste it inside the language folder.{% endblocktrans %}</p>
+                    <p class="install-text">{% blocktrans %}Other rulesets also could share the same folder.{% endblocktrans %}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h2>{% blocktrans %}step 3: have fun!{% endblocktrans %}</h2>
+                    <p class="install-text">{% blocktrans %}After completing the above steps, you may need to restart osu!lazer if it is already open. Once restarted, you should see the localized text in the rulesets setting part. You can change the osu!lazer's language in the <code>General > Language</code> section of osu!lazer's settings.{% endblocktrans %}</p>
+                </div>
+                <div class="col-lg-6 text-center" data-aos="fade-left">
+                    <img src="{% static "img/localization-complete.png" %}" alt="{% trans "lazer_language_setting" %}" class="install-img">
+                </div>
+            </div>
+        </div>
+        <p></p>
+        <div class="container" data-aos="fade-up">
+            <h1 class="install-header text-center">{% blocktrans %}update localization files{% endblocktrans %}</h1>
+        </div>
+        <div class="container text-center fs-5" data-aos="fade-up">
+            <p><i class="fas fa-sync-alt"></i> {% blocktrans %}To update localization files, just do the same step and overwrite the old localization files.{% endblocktrans %}</p>
+        </div>
+    </div>
+
+    <br>
+{% endblock content %}

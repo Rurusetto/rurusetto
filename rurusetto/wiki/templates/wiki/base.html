@@ -95,7 +95,10 @@
                 <li><a id="nav-install" data-aos-duration="800" href="{% url 'install' %}" class="nav-link px-2 nav-text round-font-bold hvr-underline-from-center">{% trans "install" %}</a></li>
             </div>
             <div data-aos="fade-up" data-aos-duration="900">
-                <li><a id="nav-changelog" data-aos-duration="900" href="{% url 'changelog' %}" class="nav-link px-2 nav-text round-font-bold hvr-underline-from-center">{% trans "changelog" %}</a></li>
+                <li><a id="nav-api" data-aos-duration="900" href="https://docs.rulesets.info/" class="nav-link px-2 nav-text round-font-bold hvr-underline-from-center">API</a></li>
+            </div>
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <li><a id="nav-changelog" data-aos-duration="1000" href="{% url 'changelog' %}" class="nav-link px-2 nav-text round-font-bold hvr-underline-from-center">{% trans "changelog" %}</a></li>
             </div>
         </ul>
 
@@ -147,6 +150,7 @@
             <a href="{% url 'listing' %}" class="list-group-item list-group-item-action mobile-header-text">{% trans "listing" %}</a>
             <a href="{% url 'status' %}" class="list-group-item list-group-item-action mobile-header-text">{% trans "status" %}</a>
             <a href="{% url 'install' %}" class="list-group-item list-group-item-action mobile-header-text">{% trans "install" %}</a>
+            <a href="https://docs.rulesets.info/" class="list-group-item list-group-item-action mobile-header-text">API</a>
             <a href="{% url 'changelog' %}" class="list-group-item list-group-item-action mobile-header-text">{% trans "changelog" %}</a>
             <a href="#collapseProfileMenu" class="list-group-item list-group-item-action mobile-header-text profile-menu" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapseProfileMenu" onclick="rotateArrowMenu()" id="profile-menu"><img id="profile-picture-mobile" src="{{ user.profile.image.url }}" alt="{{ user.username }}" height="32" width="32" class="rounded-circle"> {{ user.username }} <i class="fas fa-chevron-down" id="arrow-profile-menu"></i></a>
             <div class="collapse" id="collapseProfileMenu">
@@ -178,6 +182,7 @@
             <a href="{% url 'listing' %}" class="list-group-item list-group-item-action mobile-header-text">{% trans "listing" %}</a>
             <a href="{% url 'status' %}" class="list-group-item list-group-item-action mobile-header-text">{% trans "status" %}</a>
             <a href="{% url 'install' %}" class="list-group-item list-group-item-action mobile-header-text">{% trans "install" %}</a>
+            <a href="https://docs.rulesets.info/" class="list-group-item list-group-item-action mobile-header-text">API</a>
             <a href="{% url 'changelog' %}" class="list-group-item list-group-item-action mobile-header-text">{% trans "changelog" %}</a>
             <a href="{% url 'account_login' %}" class="list-group-item list-group-item-action mobile-header-text">{% trans "sign_in" %}</a>
             <a href="{% url 'account_signup' %}" class="list-group-item list-group-item-action mobile-header-text">{% trans "sign_up" %}</a>

@@ -4,13 +4,13 @@
 
 <div class="col-sm-6" data-aos="fade-up" data-aos-duration="600" data-aos-once="true">
     <div class="card mb-3" style="max-width: 100%;">
-      <div class="row g-0 rounded" style="background-image: url({{ beatmap.0.beatmap_card.url }}); background-size: cover; background-position: center">
-        <div class="col-md-4 position-relative" style="min-height: 200px; background-image: url({{ beatmap.0.beatmap_list.url }}); background-size: cover; background-position: center;">
+      <div class="row g-0 rounded" style="background-image: url({{ beatmap.0.beatmap_card.url }}),url({% static 'img/default-beatmap-background.png' %}); background-size: cover; background-position: center">
+        <div class="col-md-4 position-relative" style="min-height: 200px; background-image: url({{ beatmap.0.beatmap_list.url }}),url({% static 'img/default-beatmap-background.png' %}); background-size: cover; background-position: center;">
             <div class="mediPlayer position-absolute top-50 start-50 translate-middle">
                 <audio class="listen" preload="none" data-size="80" src="//b.ppy.sh/preview/{{ beatmap.0.beatmapset_id }}.mp3"></audio>
             </div>
         </div>
-        <div class="col-md-8 rounded-start" style="line-height: 0.3; background-image: url({{ beatmap.0.beatmap_card.url }}); background-size: cover; background-position: center;">
+        <div class="col-md-8 rounded-start" style="line-height: 0.3; background-image: url({{ beatmap.0.beatmap_card.url }}),url({% static 'img/default-beatmap-background.png' %}); background-size: cover; background-position: center;">
           <div class="card-body beatmap-card rounded-start rounded-3">
             <a href="{{ beatmap.0.url }}" class="text-decoration-none"><h4 class="card-title spacing-hover-short beatmap-title">{{ beatmap.0.title }}</h4></a>
             <p class="card-text">{% trans "by" %} {{ beatmap.0.artist }}</p>
